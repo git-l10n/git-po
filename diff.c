@@ -1476,7 +1476,7 @@ static void show_stats(struct diffstat_t *data, struct diff_options *options)
 	}
 	fprintf(options->file, "%s", line_prefix);
 	fprintf(options->file,
-	       " %d files changed, %d insertions(+), %d deletions(-)\n",
+	       _(" %d files changed, %d insertions(+), %d deletions(-)\n"),
 	       total_files, adds, dels);
 }
 
@@ -1507,7 +1507,7 @@ static void show_shortstats(struct diffstat_t *data, struct diff_options *option
 				options->output_prefix_data);
 		fprintf(options->file, "%s", msg->buf);
 	}
-	fprintf(options->file, " %d files changed, %d insertions(+), %d deletions(-)\n",
+	fprintf(options->file, _(" %d files changed, %d insertions(+), %d deletions(-)\n"),
 	       total_files, adds, dels);
 }
 

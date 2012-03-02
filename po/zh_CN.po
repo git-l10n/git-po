@@ -105,13 +105,13 @@ msgstr[0] " %d 个文件被修改"
 #, c-format
 msgid ", %d insertion(+)"
 msgid_plural ", %d insertions(+)"
-msgstr[0] "，%d 行插入(+)"
+msgstr[0] "，插入 %d 行(+)"
 
 #: diff.c:1363
 #, c-format
 msgid ", %d deletion(-)"
 msgid_plural ", %d deletions(-)"
-msgstr[0] "，%d 行删除(-)"
+msgstr[0] "，删除 %d 行(-)"
 
 #: diff.c:3364
 #, c-format
@@ -797,23 +797,25 @@ msgstr "git archive: 协议错误"
 msgid "git archive: expected a flush"
 msgstr "git archive: 预期一个刷新"
 
+#  保持原换行格式，在输出时 %s 的替代内容会让字串变长
 #: builtin/branch.c:137
 #, c-format
 msgid ""
 "deleting branch '%s' that has been merged to\n"
 "         '%s', but not yet merged to HEAD."
 msgstr ""
-"要删除的分支 '%s' 已经合并到\n"
+"将要删除的分支 '%s' 已经被合并到\n"
 "         '%s'，但未合并到 HEAD。"
 
+#  保持原换行格式，在输出时 %s 的替代内容会让字串变长
 #: builtin/branch.c:141
 #, c-format
 msgid ""
 "not deleting branch '%s' that is not yet merged to\n"
 "         '%s', even though it is merged to HEAD."
 msgstr ""
-"不要删除分支 '%s' 其尚未合并到\n"
-"         '%s'，虽然它已经合并到 HEAD。"
+"并未删除分支 '%s'， 虽然它已经合并到 HEAD，\n"
+"         然而却尚未被合并到分支 '%s' 。"
 
 #  汉字之间无空格，故删除尾部空格
 #. TRANSLATORS: This is "remote " in "remote branch '%s' not found"
@@ -1383,8 +1385,8 @@ msgid ""
 "it empty. You can repeat your command with --allow-empty, or you can\n"
 "remove the commit entirely with \"git reset HEAD^\".\n"
 msgstr ""
-"您要求修补最近的提交，但这么做会造成空提交。您可重复您的命令并带上\n"
-"--allow-empty 选项，或者您可以整个删除该提交用 \"git reset HEAD^\"。\n"
+"您要修补最近的提交，但这么做会让它成为空提交。您可以重复您的命令并带上\n"
+"--allow-empty 选项，或者您可用命令 \"git reset HEAD^\" 整个删除该提交。\n"
 
 #: builtin/commit.c:59
 msgid ""
@@ -1395,11 +1397,12 @@ msgid ""
 "\n"
 "Otherwise, please use 'git reset'\n"
 msgstr ""
-"之前的拣选操作现在为空，可能是由冲突解决导致的。如果您想继续提交，用：\n"
+"之前的拣选操作现在是一个空提交，可能是由冲突解决导致的。如果您无论如何\n"
+"也要提交，使用命令：\n"
 "\n"
 "    git commit --allow-empty\n"
 "\n"
-"否则，请用 'git reset'\n"
+"否则，请使用命令 'git reset'\n"
 
 #: builtin/commit.c:205 builtin/reset.c:33
 msgid "merge"
@@ -1514,28 +1517,29 @@ msgstr ""
 "\t%s\n"
 "然后重试。\n"
 
-#  注意保持前导空格
 #: builtin/commit.c:796
 msgid "Please enter the commit message for your changes."
 msgstr "请为您的修改输入提交说明。"
 
+#  前导空格用于拼接英文字串，中文字串拼接无需空格
 #: builtin/commit.c:799
 msgid ""
 " Lines starting\n"
 "with '#' will be ignored, and an empty message aborts the commit.\n"
 msgstr ""
-" 以 '#' 开头\n"
-"的行将被忽略，而且空提交说明将会终止提交。\n"
+"以 '#' 开头\n"
+"的行将被忽略，并且空的提交说明将会中止提交。\n"
 
-#  注意保持前导空格
+#  前导空格用于拼接英文字串，中文字串拼接无需空格
 #: builtin/commit.c:804
 msgid ""
 " Lines starting\n"
 "with '#' will be kept; you may remove them yourself if you want to.\n"
 "An empty message aborts the commit.\n"
 msgstr ""
-" 以 '#' 开头\n"
-"的行将被保留，您可以删除它们如果您想这样做。空提交说明将会终止提交。\n"
+"以 '#' 开头\n"
+"的行将被保留，您可以删除它们如果您想这样做的话。空的提交说明将会\n"
+"中止提交。\n"
 
 #  为保证在输出中对齐，注意调整句中空格！
 #: builtin/commit.c:816

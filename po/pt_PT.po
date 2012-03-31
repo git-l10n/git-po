@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2012-03-16 20:18+0800\n"
-"PO-Revision-Date: 2012-03-31 17:43+0100\n"
+"PO-Revision-Date: 2012-03-31 18:32+0100\n"
 "Last-Translator: Marco Sousa <marcomsousa AT gmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: advice.c:34
 #, c-format
 msgid "hint: %.*s\n"
-msgstr ""
+msgstr "dica: %.*s\n"
 
 #.
 #. * Message used both when 'git commit' fails and when
@@ -38,12 +38,12 @@ msgstr ""
 #: commit.c:47
 #, c-format
 msgid "could not parse %s"
-msgstr ""
+msgstr "não consigo parsear %s"
 
 #: commit.c:49
 #, c-format
 msgid "%s %s is not a commit!"
-msgstr ""
+msgstr "%s %s não é um commit!"
 
 #: compat/obstack.c:406
 #: compat/obstack.c:408
@@ -83,7 +83,7 @@ msgstr ""
 
 #: diff.c:1336
 msgid " 0 files changed\n"
-msgstr ""
+msgstr " 0 ficheros modificados\n"
 
 #: diff.c:1340
 #, c-format
@@ -2863,19 +2863,19 @@ msgstr ""
 
 #: builtin/reset.c:33
 msgid "mixed"
-msgstr ""
+msgstr "mistura"
 
 #: builtin/reset.c:33
 msgid "soft"
-msgstr ""
+msgstr "leve"
 
 #: builtin/reset.c:33
 msgid "hard"
-msgstr ""
+msgstr "forte"
 
 #: builtin/reset.c:33
 msgid "keep"
-msgstr ""
+msgstr "manter"
 
 #: builtin/reset.c:77
 msgid "You do not have a valid HEAD."
@@ -3178,12 +3178,12 @@ msgstr ""
 #. input at this point.
 #: git-am.sh:759
 msgid "Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all "
-msgstr ""
+msgstr "Aplicar? Sim[y]/[n]ão/[e]ditar/[v]er patch/[a]ceitar todos "
 
 #: git-am.sh:795
 #, sh-format
 msgid "Applying: $FIRSTLINE"
-msgstr ""
+msgstr "Aplicando: $FIRSTLINE"
 
 #: git-am.sh:840
 msgid "No changes -- Patch already applied."
@@ -3197,7 +3197,7 @@ msgstr ""
 #. translation. The program will only accept English input
 #. at this point.
 #: git-bisect.sh:54
-msgid "Do you want me to do it for you [Y/n]? "
+msgid "Queres que eu faça por sí [Y/n]? "
 msgstr ""
 
 #: git-bisect.sh:95
@@ -3255,7 +3255,7 @@ msgstr ""
 #. at this point.
 #: git-bisect.sh:279
 msgid "Are you sure [Y/n]? "
-msgstr ""
+msgstr "Tens a certeza [Y/n]? "
 
 #: git-bisect.sh:354
 #, sh-format
@@ -3315,7 +3315,7 @@ msgstr ""
 
 #: git-stash.sh:74
 msgid "You do not have the initial commit yet"
-msgstr ""
+msgstr "Tu ainda não tens o commit inicial"
 
 #: git-stash.sh:89
 msgid "Cannot save the current index state"
@@ -3356,7 +3356,7 @@ msgstr ""
 
 #: git-stash.sh:352
 msgid "No stash found."
-msgstr ""
+msgstr "nenhum stash encontrado."
 
 #: git-stash.sh:359
 #, sh-format
@@ -3392,7 +3392,7 @@ msgstr ""
 
 #: git-stash.sh:426
 msgid "Could not save index tree"
-msgstr ""
+msgstr "Não foi posivel guardar o index tree"
 
 #: git-stash.sh:460
 msgid "Cannot unstage modified files"
@@ -3551,7 +3551,7 @@ msgstr ""
 
 #: git-submodule.sh:708
 msgid "--"
-msgstr ""
+msgstr "--"
 
 #: git-submodule.sh:766
 #, sh-format
@@ -3570,11 +3570,11 @@ msgstr ""
 
 #: git-submodule.sh:797
 msgid "blob"
-msgstr ""
+msgstr "blob"
 
 #: git-submodule.sh:798
 msgid "submodule"
-msgstr ""
+msgstr "submodulo"
 
 #: git-submodule.sh:969
 #, sh-format

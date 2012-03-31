@@ -1,4 +1,4 @@
-# Portuguese translations for Git package.
+Ôªø# Portuguese translations for Git package.
 # Copyright (C) 2012 Marco Sousa <marcomsousa AT gmail.com>
 # This file is distributed under the same license as the Git package.
 # Contributers:
@@ -38,12 +38,12 @@ msgstr ""
 #: commit.c:47
 #, c-format
 msgid "could not parse %s"
-msgstr "n„o consigo parsear %s"
+msgstr "n√£o consigo parsear %s"
 
 #: commit.c:49
 #, c-format
 msgid "%s %s is not a commit!"
-msgstr "%s %s n„o È um commit!"
+msgstr "%s %s n√£o √© um commit!"
 
 #: compat/obstack.c:406
 #: compat/obstack.c:408
@@ -3178,7 +3178,7 @@ msgstr ""
 #. input at this point.
 #: git-am.sh:759
 msgid "Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all "
-msgstr "Aplicar? Sim[y]/[n]„o/[e]ditar/[v]er patch/[a]ceitar todos "
+msgstr "Aplicar? Sim[y]/[n]√£o/[e]ditar/[v]er patch/[a]ceitar todos "
 
 #: git-am.sh:795
 #, sh-format
@@ -3197,8 +3197,8 @@ msgstr ""
 #. translation. The program will only accept English input
 #. at this point.
 #: git-bisect.sh:54
-msgid "Queres que eu faÁa por sÌ [Y/n]? "
-msgstr ""
+msgid "Do you want me to do it for you [Y/n]? "
+msgstr "Queres que eu fa√ßa por s√≠ [Y/n]?"
 
 #: git-bisect.sh:95
 #, sh-format
@@ -3315,7 +3315,7 @@ msgstr ""
 
 #: git-stash.sh:74
 msgid "You do not have the initial commit yet"
-msgstr "Tu ainda n„o tens o commit inicial"
+msgstr "Tu ainda n√£o tens o commit inicial"
 
 #: git-stash.sh:89
 msgid "Cannot save the current index state"
@@ -3392,7 +3392,7 @@ msgstr ""
 
 #: git-stash.sh:426
 msgid "Could not save index tree"
-msgstr "N„o foi posivel guardar o index tree"
+msgstr "N√£o foi posivel guardar o index tree"
 
 #: git-stash.sh:460
 msgid "Cannot unstage modified files"

@@ -5,6 +5,10 @@
 #include "csum-file.h"
 #include "pack.h"
 
+#ifndef CHUNK_MAX
+#define CHUNK_MAX 2000
+#endif
+
 static int pack_compression_level = Z_DEFAULT_COMPRESSION;
 
 static struct bulk_checkin_state {
@@ -75,6 +79,20 @@ static int already_written(struct bulk_checkin_state *state, unsigned char sha1[
 	return 0;
 }
 
+struct chunk_ctx {
+	struct chunk_ctx *up;
+	git_SHA_CTX ctx;
+};
+
+static void chunk_SHA1_Update(struct chunk_ctx *ctx,
+			      const unsigned char *buf, size_t size)
+{
+	while (ctx) {
+		git_SHA1_Update(&ctx->ctx, buf, size);
+		ctx = ctx->up;
+	}
+}
+
 /*
  * Read the contents from fd for size bytes, streaming it to the
  * packfile in state while updating the hash in ctx. Signal a failure
@@ -91,7 +109,7 @@ static int already_written(struct bulk_checkin_state *state, unsigned char sha1[
  * with a new pack.
  */
 static int stream_to_pack(struct bulk_checkin_state *state,
-			  git_SHA_CTX *ctx, off_t *already_hashed_to,
+			  struct chunk_ctx *ctx, off_t *already_hashed_to,
 			  int fd, size_t size, enum object_type type,
 			  const char *path, unsigned flags)
 {
@@ -123,7 +141,7 @@ static int stream_to_pack(struct bulk_checkin_state *state,
 				if (rsize < hsize)
 					hsize = rsize;
 				if (hsize)
-					git_SHA1_Update(ctx, ibuf, hsize);
+					chunk_SHA1_Update(ctx, ibuf, hsize);
 				*already_hashed_to = offset;
 			}
 			s.next_in = ibuf;
@@ -185,10 +203,11 @@ static int deflate_to_pack(struct bulk_checkin_state *state,
 			   unsigned char result_sha1[],
 			   int fd, size_t size,
 			   enum object_type type, const char *path,
-			   unsigned flags)
+			   unsigned flags,
+			   struct chunk_ctx *up)
 {
 	off_t seekback, already_hashed_to;
-	git_SHA_CTX ctx;
+	struct chunk_ctx ctx;
 	unsigned char obuf[16384];
 	unsigned header_len;
 	struct sha1file_checkpoint checkpoint;
@@ -200,8 +219,10 @@ static int deflate_to_pack(struct bulk_checkin_state *state,
 
 	header_len = sprintf((char *)obuf, "%s %" PRIuMAX,
 			     typename(type), (uintmax_t)size) + 1;
-	git_SHA1_Init(&ctx);
-	git_SHA1_Update(&ctx, obuf, header_len);
+	memset(&ctx, 0, sizeof(ctx));
+	ctx.up = up;
+	git_SHA1_Init(&ctx.ctx);
+	git_SHA1_Update(&ctx.ctx, obuf, header_len);
 
 	/* Note: idx is non-NULL when we are writing */
 	if ((flags & HASH_WRITE_OBJECT) != 0)
@@ -232,7 +253,7 @@ static int deflate_to_pack(struct bulk_checkin_state *state,
 		if (lseek(fd, seekback, SEEK_SET) == (off_t) -1)
 			return error("cannot seek back");
 	}
-	git_SHA1_Final(result_sha1, &ctx);
+	git_SHA1_Final(result_sha1, &ctx.ctx);
 	if (!idx)
 		return 0;
 
@@ -251,12 +272,135 @@ static int deflate_to_pack(struct bulk_checkin_state *state,
 	return 0;
 }
 
+/*
+ * This is only called when actually writing the object out.
+ * When only hashing to compute the object name, we will pass
+ * the data through deflate_to_pack() codepath.
+ */
+static int store_in_chunks(struct bulk_checkin_state *state,
+			   unsigned char result_sha1[],
+			   int fd, size_t size,
+			   enum object_type type, const char *path,
+			   unsigned flags,
+			   struct chunk_ctx *up)
+{
+	struct pack_idx_entry *idx;
+	struct chunk_ctx ctx;
+	unsigned char chunk[CHUNK_MAX][20];
+	unsigned char header[100];
+	unsigned header_len;
+	unsigned chunk_cnt, i;
+	size_t remainder = size;
+	size_t write_size;
+	int status;
+
+	header_len = sprintf((char *)header, "%s %" PRIuMAX,
+			     typename(type), (uintmax_t)size) + 1;
+
+	memset(&ctx, 0, sizeof(ctx));
+	ctx.up = up;
+	git_SHA1_Init(&ctx.ctx);
+	git_SHA1_Update(&ctx.ctx, header, header_len);
+
+	for (chunk_cnt = 0, remainder = size;
+	     remainder && chunk_cnt < CHUNK_MAX - 1;
+	     chunk_cnt++) {
+		size_t chunk_size = carve_chunk(fd, remainder);
+		status = deflate_to_pack(state, chunk[chunk_cnt], fd,
+					 chunk_size, OBJ_BLOB, path, flags,
+					 &ctx);
+		if (status)
+			return status;
+		remainder -= chunk_size;
+	}
+
+	if (remainder) {
+		if (split_size_limit_cfg && split_size_limit_cfg < remainder)
+			status = store_in_chunks(state, chunk[chunk_cnt], fd,
+						 remainder, OBJ_BLOB, path, flags,
+						 &ctx);
+		else
+			status = deflate_to_pack(state, chunk[chunk_cnt], fd,
+						 remainder, OBJ_BLOB, path, flags,
+						 &ctx);
+		if (status)
+			return status;
+		chunk_cnt++;
+	}
+
+	/*
+	 * Now we have chunk_cnt chunks (the last one may be a large
+	 * blob that itself is represented as concatenation of
+	 * multiple blobs).
+	 */
+	git_SHA1_Final(result_sha1, &ctx.ctx);
+	if (already_written(state, result_sha1))
+		return 0;
+
+	/*
+	 * The standard type & size header is followed by
+	 * - the number of chunks (varint)
+	 * - the object names of the chunks (20 * chunk_cnt bytes)
+	 * - the resulting object name (20 bytes)
+	 */
+	type = OBJ_CHUNKED(type);
+	header_len = encode_in_pack_object_header(type, size, header);
+	header_len += encode_in_pack_varint(chunk_cnt, header + header_len);
+
+	write_size = header_len + 20 * (chunk_cnt + 1);
+
+	prepare_to_stream(state, flags);
+	if (state->nr_written &&
+	    pack_size_limit_cfg &&
+	    pack_size_limit_cfg < (state->offset + write_size)) {
+		finish_bulk_checkin(state);
+		prepare_to_stream(state, flags);
+	}
+
+	idx = xcalloc(1, sizeof(*idx));
+	idx->offset = state->offset;
+
+	crc32_begin(state->f);
+	sha1write(state->f, header, header_len);
+	for (i = 0; i < chunk_cnt; i++)
+		sha1write(state->f, chunk[i], 20);
+	sha1write(state->f, result_sha1, 20);
+	idx->crc32 = crc32_end(state->f);
+	hashcpy(idx->sha1, result_sha1);
+	ALLOC_GROW(state->written,
+		   state->nr_written + 1,
+		   state->alloc_written);
+	state->written[state->nr_written++] = idx;
+	state->offset += write_size;
+
+	return 0;
+}
+
 int index_bulk_checkin(unsigned char *sha1,
 		       int fd, size_t size, enum object_type type,
 		       const char *path, unsigned flags)
 {
-	int status = deflate_to_pack(&state, sha1, fd, size, type,
-				     path, flags);
+	int status;
+
+	/*
+	 * For now, we only deal with blob objects, as validation
+	 * of a huge tree object that is split into chunks will be
+	 * too cumbersome to be worth it.
+	 *
+	 * Note that we only have to use store_in_chunks() codepath
+	 * when we are actually writing things out. deflate_to_pack()
+	 * codepath can hash arbitrarily huge object without keeping
+	 * everything in core just fine.
+	 */
+	if ((flags & HASH_WRITE_OBJECT) &&
+	    type == OBJ_BLOB &&
+	    split_size_limit_cfg &&
+	    split_size_limit_cfg < size)
+		status = store_in_chunks(&state, sha1, fd, size, type,
+					 path, flags, NULL);
+	else
+		status = deflate_to_pack(&state, sha1, fd, size, type,
+					 path, flags, NULL);
 	if (!state.plugged)
 		finish_bulk_checkin(&state);
 	return status;

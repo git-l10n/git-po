@@ -306,6 +306,33 @@ char *index_pack_lockfile(int ip_out)
 	return NULL;
 }
 
+uintmax_t decode_in_pack_varint(const unsigned char **bufp)
+{
+	const unsigned char *buf = *bufp;
+	unsigned char c = *buf++;
+	uintmax_t val = c & 127;
+	while (c & 128) {
+		val += 1;
+		if (!val || MSB(val, 7))
+			return 0; /* overflow */
+		c = *buf++;
+		val = (val << 7) + (c & 127);
+	}
+	*bufp = buf;
+	return val;
+}
+
+int encode_in_pack_varint(uintmax_t value, unsigned char *buf)
+{
+	unsigned char varint[16];
+	unsigned pos = sizeof(varint) - 1;
+	varint[pos] = value & 127;
+	while (value >>= 7)
+		varint[--pos] = 128 | (--value & 127);
+	memcpy(buf, varint + pos, sizeof(varint) - pos);
+	return sizeof(varint) - pos;
+}
+
 /*
  * The per-object header is a pretty dense thing, which is
  *  - first byte: low four bits are "size", then three bits of "type",
@@ -315,22 +342,33 @@ char *index_pack_lockfile(int ip_out)
  */
 int encode_in_pack_object_header(enum object_type type, uintmax_t size, unsigned char *hdr)
 {
-	int n = 1;
+	unsigned char *hdr_base;
 	unsigned char c;
+	enum object_type header_type;
 
-	if (type < OBJ_COMMIT || type > OBJ_REF_DELTA)
+	if (type < OBJ_COMMIT || OBJ_LAST_VALID_TYPE < type)
 		die("bad type %d", type);
+	else if (OBJ_LAST_BASE_TYPE < type)
+		header_type = OBJ_EXT;
+	else
+		header_type = type;
 
-	c = (type << 4) | (size & 15);
+	c = (header_type << 4) | (size & 15);
 	size >>= 4;
+	hdr_base = hdr;
 	while (size) {
 		*hdr++ = c | 0x80;
 		c = size & 0x7f;
 		size >>= 7;
-		n++;
 	}
-	*hdr = c;
-	return n;
+	*hdr++ = c;
+	if (header_type != type) {
+		int sz;
+		type = type - (OBJ_LAST_BASE_TYPE + 1);
+		sz = encode_in_pack_varint(type, hdr);
+		hdr += sz;
+	}
+	return hdr - hdr_base;
 }
 
 struct sha1file *create_tmp_packfile(char **pack_tmp_name)

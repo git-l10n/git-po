@@ -26,6 +26,7 @@
 /git-cherry-pick
 /git-clean
 /git-clone
+/git-column
 /git-commit
 /git-commit-tree
 /git-config
@@ -183,6 +184,7 @@
 /test-mktemp
 /test-parse-options
 /test-path-utils
+/test-revision-walking
 /test-run-command
 /test-sha1
 /test-sigchain

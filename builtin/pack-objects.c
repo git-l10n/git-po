@@ -205,7 +205,7 @@ static unsigned long write_object(struct sha1file *f,
 {
 	unsigned long size, limit, datalen;
 	void *buf;
-	unsigned char header[10], dheader[10];
+	unsigned char header[10];
 	unsigned hdrlen;
 	enum object_type type;
 	int usable_delta, to_reuse;
@@ -299,17 +299,16 @@ static unsigned long write_object(struct sha1file *f,
 			 * base from this object's position in the pack.
 			 */
 			off_t ofs = entry->idx.offset - entry->delta->idx.offset;
-			unsigned pos = sizeof(dheader) - 1;
-			dheader[pos] = ofs & 127;
-			while (ofs >>= 7)
-				dheader[--pos] = 128 | (--ofs & 127);
-			if (limit && hdrlen + sizeof(dheader) - pos + datalen + 20 >= limit) {
+			unsigned char dheader[10];
+			unsigned pos = encode_in_pack_varint(ofs, dheader);
+
+			if (limit && hdrlen + pos + datalen + 20 >= limit) {
 				free(buf);
 				return 0;
 			}
 			sha1write(f, header, hdrlen);
-			sha1write(f, dheader + pos, sizeof(dheader) - pos);
-			hdrlen += sizeof(dheader) - pos;
+			sha1write(f, dheader, pos);
+			hdrlen += pos;
 		} else if (type == OBJ_REF_DELTA) {
 			/*
 			 * Deltas with a base reference contain
@@ -364,17 +363,16 @@ static unsigned long write_object(struct sha1file *f,
 
 		if (type == OBJ_OFS_DELTA) {
 			off_t ofs = entry->idx.offset - entry->delta->idx.offset;
-			unsigned pos = sizeof(dheader) - 1;
-			dheader[pos] = ofs & 127;
-			while (ofs >>= 7)
-				dheader[--pos] = 128 | (--ofs & 127);
-			if (limit && hdrlen + sizeof(dheader) - pos + datalen + 20 >= limit) {
+			unsigned char dheader[10];
+			unsigned pos = encode_in_pack_varint(ofs, dheader);
+
+			if (limit && hdrlen + pos + datalen + 20 >= limit) {
 				unuse_pack(&w_curs);
 				return 0;
 			}
 			sha1write(f, header, hdrlen);
-			sha1write(f, dheader + pos, sizeof(dheader) - pos);
-			hdrlen += sizeof(dheader) - pos;
+			sha1write(f, dheader, pos);
+			hdrlen += pos;
 			reused_delta++;
 		} else if (type == OBJ_REF_DELTA) {
 			if (limit && hdrlen + 20 + datalen + 20 >= limit) {

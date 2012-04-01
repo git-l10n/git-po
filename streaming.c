@@ -3,12 +3,14 @@
  */
 #include "cache.h"
 #include "streaming.h"
+#include "pack.h"
 
 enum input_source {
 	stream_error = -1,
 	incore = 0,
 	loose = 1,
-	pack_non_delta = 2
+	pack_non_delta = 2,
+	pack_chunked = 3,
 };
 
 typedef int (*open_istream_fn)(struct git_istream *,
@@ -41,6 +43,7 @@ struct stream_vtbl {
 static open_method_decl(incore);
 static open_method_decl(loose);
 static open_method_decl(pack_non_delta);
+static open_method_decl(pack_chunked);
 static struct git_istream *attach_stream_filter(struct git_istream *st,
 						struct stream_filter *filter);
 
@@ -49,6 +52,7 @@ static open_istream_fn open_istream_tbl[] = {
 	open_istream_incore,
 	open_istream_loose,
 	open_istream_pack_non_delta,
+	open_istream_pack_chunked,
 };
 
 #define FILTER_BUFFER (1024*16)
@@ -88,6 +92,13 @@ struct git_istream {
 			off_t pos;
 		} in_pack;
 
+		struct {
+			int component_cnt;
+			int component_idx;
+			struct git_istream *current;
+			unsigned char (*component)[20];
+		} chunked;
+
 		struct filtered_istream filtered;
 	} u;
 };
@@ -121,6 +132,8 @@ static enum input_source istream_source(const unsigned char *sha1,
 	case OI_LOOSE:
 		return loose;
 	case OI_PACKED:
+		if (oi->u.packed.is_chunked)
+			return pack_chunked;
 		if (!oi->u.packed.is_delta && big_file_threshold <= size)
 			return pack_non_delta;
 		/* fallthru */
@@ -452,6 +465,104 @@ static open_method_decl(pack_non_delta)
 
 /*****************************************************************
  *
+ * Chunked packed object stream
+ *
+ *****************************************************************/
+
+static int prepare_component(struct git_istream *st)
+{
+	if (!st->u.chunked.current) {
+		int idx = ++st->u.chunked.component_idx;
+		enum object_type type;
+		unsigned long size;
+		struct git_istream *component;
+
+		if (st->u.chunked.component_cnt <= idx)
+			return -1; /* EOF */
+		component = open_istream(st->u.chunked.component[idx],
+					 &type, &size, NULL);
+		if (!component)
+			return -1; /* I/O Error */
+		st->u.chunked.current = component;
+	}
+	return 0;
+}
+
+static read_method_decl(pack_chunked)
+{
+	size_t total = 0;
+
+	while (sz) {
+		ssize_t filled;
+
+		if (prepare_component(st))
+			break;
+		filled = read_istream(st->u.chunked.current, buf, sz);
+		if (filled < 0) {
+			close_istream(st->u.chunked.current);
+			st->u.chunked.current = NULL;
+			st->u.chunked.component_idx = st->u.chunked.component_cnt;
+			return -1; /* I/O error */
+		} else if (!filled) {
+			close_istream(st->u.chunked.current);
+			st->u.chunked.current = NULL;
+		} else {
+			sz -= filled;
+			buf += filled;
+			total += filled;
+		}
+	}
+	return total;
+}
+
+static close_method_decl(pack_chunked)
+{
+	if (st->u.chunked.current)
+		close_istream(st->u.chunked.current);
+	free(st->u.chunked.component);
+	return 0;
+}
+
+static struct stream_vtbl pack_chunked_vtbl = {
+	close_istream_pack_chunked,
+	read_istream_pack_chunked,
+};
+
+static open_method_decl(pack_chunked)
+{
+	struct pack_window *window;
+	struct packed_git *pack = oi->u.packed.pack;
+	off_t offset = oi->u.packed.offset;
+	const unsigned char *in, *ptr;
+	unsigned long avail;
+	int cnt;
+
+	window = NULL;
+	unpack_object_header(pack, &window, &offset, &st->size);
+	in = use_pack(pack, &window, offset, &avail);
+	ptr = in;
+	cnt = decode_in_pack_varint(&ptr);
+	offset += ptr - in;
+	st->u.chunked.component_cnt = cnt;
+	st->u.chunked.component = xcalloc(20, cnt);
+
+	for (cnt = 0; cnt < st->u.chunked.component_cnt; cnt++) {
+		in = use_pack(pack, &window, offset, &avail);
+		memcpy(st->u.chunked.component + cnt, in, 20);
+		offset += 20;
+	}
+	unuse_pack(&window);
+
+	st->u.chunked.component_idx = -1;
+	st->u.chunked.current = NULL;
+	st->z_state = z_unused;
+	st->vtbl = &pack_chunked_vtbl;
+	return 0;
+}
+
+
+/*****************************************************************
+ *
  * In-core stream
  *
  *****************************************************************/
@@ -488,4 +599,59 @@ static open_method_decl(incore)
 	st->vtbl = &incore_vtbl;
 
 	return st->u.incore.buf ? 0 : -1;
+}
+
+
+/****************************************************************
+ * Users of streaming interface
+ ****************************************************************/
+
+int stream_blob_to_fd(int fd, unsigned const char *sha1, struct stream_filter *filter,
+		      int can_seek)
+{
+	struct git_istream *st;
+	enum object_type type;
+	unsigned long sz;
+	ssize_t kept = 0;
+	int result = -1;
+
+	st = open_istream(sha1, &type, &sz, filter);
+	if (!st)
+		return result;
+	if (type != OBJ_BLOB)
+		goto close_and_exit;
+	for (;;) {
+		char buf[1024 * 16];
+		ssize_t wrote, holeto;
+		ssize_t readlen = read_istream(st, buf, sizeof(buf));
+
+		if (!readlen)
+			break;
+		if (can_seek && sizeof(buf) == readlen) {
+			for (holeto = 0; holeto < readlen; holeto++)
+				if (buf[holeto])
+					break;
+			if (readlen == holeto) {
+				kept += holeto;
+				continue;
+			}
+		}
+
+		if (kept && lseek(fd, kept, SEEK_CUR) == (off_t) -1)
+			goto close_and_exit;
+		else
+			kept = 0;
+		wrote = write_in_full(fd, buf, readlen);
+
+		if (wrote != readlen)
+			goto close_and_exit;
+	}
+	if (kept && (lseek(fd, kept - 1, SEEK_CUR) == (off_t) -1 ||
+		     write(fd, "", 1) != 1))
+		goto close_and_exit;
+	result = 0;
+
+ close_and_exit:
+	close_istream(st);
+	return result;
 }

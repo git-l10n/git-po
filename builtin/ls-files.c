@@ -13,6 +13,7 @@
 #include "parse-options.h"
 #include "resolve-undo.h"
 #include "string-list.h"
+#include "column.h"
 
 static int abbrev;
 static int show_deleted;
@@ -35,6 +36,7 @@ static int error_unmatch;
 static char *ps_matched;
 static const char *with_tree;
 static int exc_given;
+static unsigned int colopts;
 
 static const char *tag_cached = "";
 static const char *tag_unmerged = "";
@@ -496,6 +498,7 @@ int cmd_ls_files(int argc, const char **argv, const char *cmd_prefix)
 		OPT_STRING(0, "with-tree", &with_tree, "tree-ish",
 			"pretend that paths removed since <tree-ish> are still present"),
 		OPT__ABBREV(&abbrev),
+		OPT_COLUMN(0, "column", &colopts, "list branches in columns"),
 		OPT_BOOLEAN(0, "debug", &debug_mode, "show debugging data"),
 		OPT_END()
 	};
@@ -514,6 +517,7 @@ int cmd_ls_files(int argc, const char **argv, const char *cmd_prefix)
 
 	argc = parse_options(argc, argv, prefix, builtin_ls_files_options,
 			ls_files_usage, 0);
+	finalize_colopts(&colopts, -1);
 	if (show_tag || show_valid_bit) {
 		tag_cached = "H ";
 		tag_unmerged = "M ";
@@ -575,7 +579,11 @@ int cmd_ls_files(int argc, const char **argv, const char *cmd_prefix)
 			die("ls-files --with-tree is incompatible with -s or -u");
 		overlay_tree_on_cache(with_tree, max_prefix);
 	}
+	if (COL_ENABLE(colopts))
+		run_column_filter(colopts, NULL);
 	show_files(&dir);
+	if (COL_ENABLE(colopts))
+		stop_column_filter();
 	if (show_resolve_undo)
 		show_ru_info();
 

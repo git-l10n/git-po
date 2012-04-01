@@ -12,5 +12,6 @@ extern int index_bulk_checkin(unsigned char sha1[],
 
 extern void plug_bulk_checkin(void);
 extern void unplug_bulk_checkin(void);
+extern size_t carve_chunk(int fd, size_t size);
 
 #endif

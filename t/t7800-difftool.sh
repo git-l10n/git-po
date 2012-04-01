@@ -83,12 +83,36 @@ test_expect_success PERL 'difftool ignores bad --tool values' '
 	test "$diff" = ""
 '
 
+test_expect_success PERL 'difftool forwards arguments to diff' '
+	>for-diff &&
+	git add for-diff &&
+	echo changes>for-diff &&
+	git add for-diff &&
+	diff=$(git difftool --cached --no-prompt -- for-diff) &&
+	test "$diff" = "" &&
+	git reset -- for-diff &&
+	rm for-diff
+'
+
 test_expect_success PERL 'difftool honors --gui' '
 	git config merge.tool bogus-tool &&
 	git config diff.tool bogus-tool &&
 	git config diff.guitool test-tool &&
 
 	diff=$(git difftool --no-prompt --gui branch) &&
+	test "$diff" = "branch" &&
+
+	restore_test_defaults
+'
+
+test_expect_success PERL 'difftool --gui last setting wins' '
+	git config diff.guitool bogus-tool &&
+	git difftool --no-prompt --gui --no-gui &&
+
+	git config merge.tool bogus-tool &&
+	git config diff.tool bogus-tool &&
+	git config diff.guitool test-tool &&
+	diff=$(git difftool --no-prompt --no-gui --gui branch) &&
 	test "$diff" = "branch" &&
 
 	restore_test_defaults
@@ -304,6 +328,50 @@ test_expect_success PERL 'say no to the second file' '
 	echo "$diff" | stdin_contains branch &&
 	echo "$diff" | stdin_doesnot_contain m2 &&
 	echo "$diff" | stdin_doesnot_contain br2
+'
+
+test_expect_success PERL 'difftool --tool-help' '
+	tool_help=$(git difftool --tool-help) &&
+	echo "$tool_help" | stdin_contains tool
+'
+
+test_expect_success PERL 'setup change in subdirectory' '
+	git checkout master &&
+	mkdir sub &&
+	echo master >sub/sub &&
+	git add sub/sub &&
+	git commit -m "added sub/sub" &&
+	echo test >>file &&
+	echo test >>sub/sub &&
+	git add . &&
+	git commit -m "modified both"
+'
+
+test_expect_success PERL 'difftool -d' '
+	diff=$(git difftool -d --extcmd ls branch) &&
+	echo "$diff" | stdin_contains sub &&
+	echo "$diff" | stdin_contains file
+'
+
+test_expect_success PERL 'difftool --dir-diff' '
+	diff=$(git difftool --dir-diff --extcmd ls branch) &&
+	echo "$diff" | stdin_contains sub &&
+	echo "$diff" | stdin_contains file
+'
+
+test_expect_success PERL 'difftool --dir-diff ignores --prompt' '
+	diff=$(git difftool --dir-diff --prompt --extcmd ls branch) &&
+	echo "$diff" | stdin_contains sub &&
+	echo "$diff" | stdin_contains file
+'
+
+test_expect_success PERL 'difftool --dir-diff from subdirectory' '
+	(
+		cd sub &&
+		diff=$(git difftool --dir-diff --extcmd ls branch) &&
+		echo "$diff" | stdin_contains sub &&
+		echo "$diff" | stdin_contains file
+	)
 '
 
 test_done

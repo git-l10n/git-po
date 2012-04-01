@@ -15,6 +15,8 @@
 #include "branch.h"
 #include "diff.h"
 #include "revision.h"
+#include "string-list.h"
+#include "column.h"
 
 static const char * const builtin_branch_usage[] = {
 	"git branch [options] [-r | -a] [--merged | --no-merged]",
@@ -53,6 +55,9 @@ static enum merge_filter {
 } merge_filter;
 static unsigned char merge_filter_ref[20];
 
+static struct string_list output = STRING_LIST_INIT_DUP;
+static unsigned int colopts;
+
 static int parse_branch_color_slot(const char *var, int ofs)
 {
 	if (!strcasecmp(var+ofs, "plain"))
@@ -70,6 +75,8 @@ static int parse_branch_color_slot(const char *var, int ofs)
 
 static int git_branch_config(const char *var, const char *value, void *cb)
 {
+	if (!prefixcmp(var, "column."))
+		return git_column_config(var, value, "branch", &colopts);
 	if (!strcmp(var, "color.branch")) {
 		branch_use_color = git_config_colorbool(var, value);
 		return 0;
@@ -146,7 +153,8 @@ static int branch_merged(int kind, const char *name,
 	return merged;
 }
 
-static int delete_branches(int argc, const char **argv, int force, int kinds)
+static int delete_branches(int argc, const char **argv, int force, int kinds,
+			   int quiet)
 {
 	struct commit *rev, *head_rev = NULL;
 	unsigned char sha1[20];
@@ -216,9 +224,10 @@ static int delete_branches(int argc, const char **argv, int force, int kinds)
 			ret = 1;
 		} else {
 			struct strbuf buf = STRBUF_INIT;
-			printf(_("Deleted %sbranch %s (was %s).\n"), remote,
-			       bname.buf,
-			       find_unique_abbrev(sha1, DEFAULT_ABBREV));
+			if (!quiet)
+				printf(_("Deleted %sbranch %s (was %s).\n"),
+				       remote, bname.buf,
+				       find_unique_abbrev(sha1, DEFAULT_ABBREV));
 			strbuf_addf(&buf, "branch.%s", bname.buf);
 			if (git_config_rename_section(buf.buf, NULL) < 0)
 				warning(_("Update of config-file failed"));
@@ -474,7 +483,12 @@ static void print_ref_item(struct ref_item *item, int maxwidth, int verbose,
 	else if (verbose)
 		/* " f7c0c00 [ahead 58, behind 197] vcs-svn: drop obj_pool.h" */
 		add_verbose_info(&out, item, verbose, abbrev);
-	printf("%s\n", out.buf);
+	if (COL_ENABLE(colopts)) {
+		assert(!verbose && "--column and --verbose are incompatible");
+		string_list_append(&output, out.buf);
+	} else {
+		printf("%s\n", out.buf);
+	}
 	strbuf_release(&name);
 	strbuf_release(&out);
 }
@@ -678,6 +692,7 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 	int delete = 0, rename = 0, force_create = 0, list = 0;
 	int verbose = 0, abbrev = -1, detached = 0;
 	int reflog = 0, edit_description = 0;
+	int quiet = 0;
 	enum branch_track track;
 	int kinds = REF_LOCAL_BRANCH;
 	struct commit_list *with_commit = NULL;
@@ -686,6 +701,7 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 		OPT_GROUP("Generic options"),
 		OPT__VERBOSE(&verbose,
 			"show hash and subject, give twice for upstream branch"),
+		OPT__QUIET(&quiet, "suppress informational messages"),
 		OPT_SET_INT('t', "track",  &track, "set up tracking mode (see git-pull(1))",
 			BRANCH_TRACK_EXPLICIT),
 		OPT_SET_INT( 0, "set-upstream",  &track, "change upstream info",
@@ -731,6 +747,7 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 			PARSE_OPT_LASTARG_DEFAULT | PARSE_OPT_NONEG,
 			opt_parse_merge_filter, (intptr_t) "HEAD",
 		},
+		OPT_COLUMN(0, "column", &colopts, "list branches in columns"),
 		OPT_END(),
 	};
 
@@ -753,6 +770,7 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 	}
 	hashcpy(merge_filter_ref, head_sha1);
 
+
 	argc = parse_options(argc, argv, prefix, options, builtin_branch_usage,
 			     0);
 
@@ -764,12 +782,22 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 
 	if (abbrev == -1)
 		abbrev = DEFAULT_ABBREV;
+	finalize_colopts(&colopts, -1);
+	if (verbose) {
+		if (explicitly_enable_column(colopts))
+			die(_("--column and --verbose are incompatible"));
+		colopts = 0;
+	}
 
 	if (delete)
-		return delete_branches(argc, argv, delete > 1, kinds);
-	else if (list)
-		return print_ref_list(kinds, detached, verbose, abbrev,
-				      with_commit, argv);
+		return delete_branches(argc, argv, delete > 1, kinds, quiet);
+	else if (list) {
+		int ret = print_ref_list(kinds, detached, verbose, abbrev,
+					 with_commit, argv);
+		print_columns(&output, colopts, NULL);
+		string_list_clear(&output, 0);
+		return ret;
+	}
 	else if (edit_description) {
 		const char *branch_name;
 		struct strbuf branch_ref = STRBUF_INIT;
@@ -808,7 +836,7 @@ int cmd_branch(int argc, const char **argv, const char *prefix)
 		if (kinds != REF_LOCAL_BRANCH)
 			die(_("-a and -r options to 'git branch' do not make sense with a branch name"));
 		create_branch(head, argv[0], (argc == 2) ? argv[1] : head,
-			      force_create, reflog, 0, track);
+			      force_create, reflog, 0, quiet, track);
 	} else
 		usage_with_options(builtin_branch_usage, options);
 

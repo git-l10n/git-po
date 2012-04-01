@@ -380,12 +380,20 @@ enum object_type {
 	OBJ_TREE = 2,
 	OBJ_BLOB = 3,
 	OBJ_TAG = 4,
-	/* 5 for future expansion */
+	OBJ_EXT = 5,
 	OBJ_OFS_DELTA = 6,
 	OBJ_REF_DELTA = 7,
+	OBJ_CHUNKED_COMMIT = 8,
+	OBJ_CHUNKED_TREE = 9,
+	OBJ_CHUNKED_BLOB = 10,
+	OBJ_CHUNKED_TAG = 11,
 	OBJ_ANY,
 	OBJ_MAX
 };
+#define OBJ_LAST_BASE_TYPE OBJ_REF_DELTA
+#define OBJ_LAST_VALID_TYPE OBJ_CHUNKED_BLOB
+#define OBJ_CHUNKED(type) ((type) + 7)
+#define OBJ_DEKNUHC(type) ((type) - 7)
 
 static inline enum object_type object_type(unsigned int mode)
 {
@@ -600,6 +608,7 @@ extern size_t packed_git_limit;
 extern size_t delta_base_cache_limit;
 extern unsigned long big_file_threshold;
 extern unsigned long pack_size_limit_cfg;
+extern unsigned long split_size_limit_cfg;
 extern int read_replace_refs;
 extern int fsync_object_files;
 extern int core_preload_index;
@@ -625,7 +634,8 @@ enum push_default_type {
 	PUSH_DEFAULT_NOTHING = 0,
 	PUSH_DEFAULT_MATCHING,
 	PUSH_DEFAULT_UPSTREAM,
-	PUSH_DEFAULT_CURRENT
+	PUSH_DEFAULT_CURRENT,
+	PUSH_DEFAULT_UNSPECIFIED
 };
 
 extern enum branch_track git_branch_track;
@@ -707,6 +717,19 @@ static inline void hashclr(unsigned char *hash)
 	 "\xe5\x4b\xf8\xd6\x92\x88\xfb\xee\x49\x04"
 #define EMPTY_TREE_SHA1_BIN \
 	 ((const unsigned char *) EMPTY_TREE_SHA1_BIN_LITERAL)
+
+#define EMPTY_BLOB_SHA1_HEX \
+	"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+#define EMPTY_BLOB_SHA1_BIN_LITERAL \
+	"\xe6\x9d\xe2\x9b\xb2\xd1\xd6\x43\x4b\x8b" \
+	"\x29\xae\x77\x5a\xd8\xc2\xe4\x8c\x53\x91"
+#define EMPTY_BLOB_SHA1_BIN \
+	((const unsigned char *) EMPTY_BLOB_SHA1_BIN_LITERAL)
+
+static inline int is_empty_blob_sha1(const unsigned char *sha1)
+{
+	return !hashcmp(sha1, EMPTY_BLOB_SHA1_BIN);
+}
 
 int git_mkstemp(char *path, size_t n, const char *template);
 
@@ -928,6 +951,22 @@ extern const char *fmt_name(const char *name, const char *email);
 extern const char *git_editor(void);
 extern const char *git_pager(int stdout_is_tty);
 
+struct ident_split {
+	const char *name_begin;
+	const char *name_end;
+	const char *mail_begin;
+	const char *mail_end;
+	const char *date_begin;
+	const char *date_end;
+	const char *tz_begin;
+	const char *tz_end;
+};
+/*
+ * Signals an success with 0, but time part of the result may be NULL
+ * if the input lacks timestamp and zone
+ */
+extern int split_ident_line(struct ident_split *, const char *, int);
+
 struct checkout {
 	const char *base_dir;
 	int base_dir_len;
@@ -1092,7 +1131,8 @@ struct object_info {
 		struct {
 			struct packed_git *pack;
 			off_t offset;
-			unsigned int is_delta;
+			unsigned int is_delta:1;
+			unsigned int is_chunked:1;
 		} packed;
 	} u;
 };
@@ -1275,5 +1315,7 @@ extern struct startup_info *startup_info;
 
 /* builtin/merge.c */
 int checkout_fast_forward(const unsigned char *from, const unsigned char *to);
+
+int sane_execvp(const char *file, char *const argv[]);
 
 #endif /* CACHE_H */

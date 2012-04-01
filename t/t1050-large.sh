@@ -6,11 +6,15 @@ test_description='adding and checking out large blobs'
 . ./test-lib.sh
 
 test_expect_success setup '
-	git config core.bigfilethreshold 200k &&
+	# clone does not allow us to pass core.bigfilethreshold to
+	# new repos, so set core.bigfilethreshold globally
+	git config --global core.bigfilethreshold 200k &&
 	echo X | dd of=large1 bs=1k seek=2000 &&
 	echo X | dd of=large2 bs=1k seek=2000 &&
 	echo X | dd of=large3 bs=1k seek=2000 &&
-	echo Y | dd of=huge bs=1k seek=2500
+	echo Y | dd of=huge bs=1k seek=2500 &&
+	GIT_ALLOC_LIMIT=1500 &&
+	export GIT_ALLOC_LIMIT
 '
 
 test_expect_success 'add a large file or two' '
@@ -97,6 +101,77 @@ test_expect_success 'packsize limit' '
 		sort >actual &&
 
 		test_cmp expect actual
+	)
+'
+
+test_expect_success 'diff --raw' '
+	git commit -q -m initial &&
+	echo modified >>large1 &&
+	git add large1 &&
+	git commit -q -m modified &&
+	git diff --raw HEAD^
+'
+
+test_expect_success 'hash-object' '
+	git hash-object large1
+'
+
+test_expect_success 'cat-file a large file' '
+	git cat-file blob :large1 >/dev/null
+'
+
+test_expect_success 'cat-file a large file from a tag' '
+	git tag -m largefile largefiletag :large1 &&
+	git cat-file blob largefiletag >/dev/null
+'
+
+test_expect_success 'git-show a large file' '
+	git show :large1 >/dev/null
+
+'
+
+test_expect_success 'repack' '
+	git repack -ad
+'
+
+test_expect_success 'split limit' '
+	test_create_repo split &&
+	(
+		cd split &&
+		git config core.bigfilethreshold 2m &&
+		git config pack.splitsizelimit 1m &&
+
+		test-genrandom "a" $(( 4800 * 1024 )) >split &&
+		git add split &&
+
+		# This should result in a new chunked object "tail"
+		# that shares most of the component blobs in its
+		# early part with "split".
+		cat split >tail &&
+		echo cruft >>tail &&
+		git add tail &&
+
+		# This should result in a new chunked object "head"
+		# that begins with its own unique component blobs
+		# but quickly synchronize and start using the same
+		# component blobs with "split" and "tail", once we
+		# switch to a better chunking heuristics.
+		echo cruft >head &&
+		cat split >>head &&
+		git add head &&
+
+		echo blob >expect &&
+		git cat-file -t :split >actual &&
+		test_cmp expect actual &&
+
+		git cat-file -p :split >actual &&
+		# You probably do not want to use test_cmp here...
+		cmp split actual &&
+
+		mv split expect &&
+		git checkout split &&
+		# You probably do not want to use test_cmp here...
+		cmp expect split
 	)
 '
 

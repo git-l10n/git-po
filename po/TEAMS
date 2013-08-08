@@ -1,6 +1,10 @@
 Core Git translation language teams
 (please keep the list sorted alphabetically on language field)
 
+Language:	cs (Czech)
+Repository:	https://github.com/davidhrbac/git-po-cs
+Leader:		David Hrbáč <david@hrbac.cz>
+
 Language:	da (Danish)
 Repository:	https://github.com/git-da/git-po/
 Leader:		Byrial Jensen <byrial@vip.cybercity.dk>

@@ -25,6 +25,7 @@ Usage:
  * po-helper.sh check XX.po ...
        Perform syntax check on XX.po file(s)
 
+ * po-helper.sh check commit <commit>
  * po-helper.sh check commits <since> [<til>]
        Check proper encoding of non-ascii chars in commit logs
 
@@ -488,8 +489,14 @@ check_commits () {
 		usage "check commits only needs 2 arguments"
 	fi
 	. $(git --exec-path)/git-parse-remote
-	since=${1:-$(get_remote_merge_branch)}
-	til=${2:-$(git symbolic-ref -q HEAD)}
+	if test $# -eq 1
+	then
+		since=${1}~1
+		til=${1}
+	else
+		since=${1:-$(get_remote_merge_branch)}
+		til=${2:-$(git symbolic-ref -q HEAD)}
+	fi
 	if git diff-tree -r "$since" "$til" | awk '{print $6}' | grep -qv "^po/"
 	then
 		echo >&2 "============================================================"

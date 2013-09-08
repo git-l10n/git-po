@@ -19,10 +19,14 @@ Usage:
  * po-helper.sh update XX.po ...
        Update XX.po file(s) from the new git.pot template
 
+ * po-helper.sh check
+       Check XX.po files as well as commits.
+
  * po-helper.sh check XX.po ...
        Perform syntax check on XX.po file(s)
 
- * po-helper.sh check [commits [ <since> <til> ]]
+ * po-helper.sh check commit <commit>
+ * po-helper.sh check commits <since> [<til>]
        Check proper encoding of non-ascii chars in commit logs
 
        - don't write commit log with non-ascii chars without proper
@@ -32,7 +36,7 @@ Usage:
 
        - don't change files outside this directory (po/)
 
- * po-helper.sh diff [ <old> <new> ]
+ * po-helper.sh diff [<old> <new>]
        Show difference between old and new po/pot files.
        Default show changes of git.pot since last update.
 END_OF_USAGE
@@ -485,8 +489,14 @@ check_commits () {
 		usage "check commits only needs 2 arguments"
 	fi
 	. $(git --exec-path)/git-parse-remote
-	since=${1:-$(get_remote_merge_branch)}
-	til=${2:-$(git symbolic-ref -q HEAD)}
+	if test $# -eq 1
+	then
+		since=${1}~1
+		til=${1}
+	else
+		since=${1:-$(get_remote_merge_branch)}
+		til=${2:-$(git symbolic-ref -q HEAD)}
+	fi
 	if git diff-tree -r "$since" "$til" | awk '{print $6}' | grep -qv "^po/"
 	then
 		echo >&2 "============================================================"

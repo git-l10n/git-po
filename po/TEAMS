@@ -1,6 +1,10 @@
 Core Git translation language teams
 (please keep the list sorted alphabetically on language field)
 
+Language:	bg (Bulgarian)
+Repository:	https://github.com/alshopov/git-po
+Leader:		Alexander Shopov (Александър Шопов) <ash@kambanaria.org>
+
 Language:	da (Danish)
 Repository:	https://github.com/git-da/git-po/
 Leader:		Byrial Jensen <byrial@vip.cybercity.dk>

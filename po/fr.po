@@ -4969,7 +4969,7 @@ msgstr "obtenir la valeur : nom [regex-de-valeur]"
 
 #: builtin/config.c:61
 msgid "get all values: key [value-regex]"
-msgstr "obtenir toutes le valeurs : clé [regex-de-valeur]"
+msgstr "obtenir toutes les valeurs : clé [regex-de-valeur]"
 
 #: builtin/config.c:62
 msgid "get values for regexp: name-regex [value-regex]"

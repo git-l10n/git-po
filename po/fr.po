@@ -4927,7 +4927,7 @@ msgid ""
 "If you are sure you want to delete it, run 'git branch -D %s'."
 msgstr ""
 "La branche '%s' n'est pas totalement fusionnée.\n"
-"Si vous êtes sur que vous voulez la supprimer, lancez 'git branch -D %s'."
+"Si vous êtes sûr que vous voulez la supprimer, lancez 'git branch -D %s'."
 
 #: builtin/branch.c:178
 msgid "Update of config-file failed"
@@ -5314,7 +5314,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Si vous vouliez que '%s' suive '%s', faîtes ceci :\n"
+"Si vous vouliez que '%s' suive '%s', faites ceci :\n"
 "\n"
 
 #: builtin/bundle.c:51

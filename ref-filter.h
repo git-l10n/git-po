@@ -51,8 +51,9 @@ struct ref_array {
 
 struct ref_filter {
 	const char **name_patterns;
-	struct sha1_array points_at;
+	struct oid_array points_at;
 	struct commit_list *with_commit;
+	struct commit_list *no_commit;
 
 	enum {
 		REF_FILTER_MERGED_NONE = 0,
@@ -69,11 +70,6 @@ struct ref_filter {
 		lines;
 	int abbrev,
 		verbose;
-};
-
-struct ref_filter_cbdata {
-	struct ref_array *array;
-	struct ref_filter *filter;
 };
 
 /*  Macros for checking --merged and --no-merged options */
@@ -100,6 +96,9 @@ int parse_ref_filter_atom(const char *atom, const char *ep);
 int verify_ref_format(const char *format);
 /*  Sort the given ref_array as per the ref_sorting provided */
 void ref_array_sort(struct ref_sorting *sort, struct ref_array *array);
+/*  Based on the given format and quote_style, fill the strbuf */
+void format_ref_array_item(struct ref_array_item *info, const char *format,
+			   int quote_style, struct strbuf *final_buf);
 /*  Print the ref using the given format and quote_style */
 void show_ref_array_item(struct ref_array_item *info, const char *format, int quote_style);
 /*  Callback function for parsing the sort option */
@@ -108,6 +107,10 @@ int parse_opt_ref_sorting(const struct option *opt, const char *arg, int unset);
 struct ref_sorting *ref_default_sorting(void);
 /*  Function to parse --merged and --no-merged options */
 int parse_opt_merge_filter(const struct option *opt, const char *arg, int unset);
+/*  Get the current HEAD's description */
+char *get_head_description(void);
+/*  Set up translated strings in the output. */
+void setup_ref_filter_porcelain_msg(void);
 
 /*
  * Print a single ref, outside of any ref-filter. Note that the

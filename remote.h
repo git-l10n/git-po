@@ -89,8 +89,13 @@ struct ref {
 		force:1,
 		forced_update:1,
 		expect_old_sha1:1,
-		deletion:1,
-		matched:1;
+		deletion:1;
+
+	enum {
+		REF_NOT_MATCHED = 0, /* initial value */
+		REF_MATCHED,
+		REF_UNADVERTISED_NOT_ALLOWED
+	} match_status;
 
 	/*
 	 * Order is important here, as we write to FETCH_HEAD
@@ -144,11 +149,11 @@ int check_ref_type(const struct ref *ref, int flags);
  */
 void free_refs(struct ref *ref);
 
-struct sha1_array;
+struct oid_array;
 extern struct ref **get_remote_heads(int in, char *src_buf, size_t src_len,
 				     struct ref **list, unsigned int flags,
-				     struct sha1_array *extra_have,
-				     struct sha1_array *shallow);
+				     struct oid_array *extra_have,
+				     struct oid_array *shallow);
 
 int resolve_remote_symref(struct ref *ref, struct ref *list);
 int ref_newer(const struct object_id *new_oid, const struct object_id *old_oid);
@@ -164,6 +169,7 @@ struct ref *ref_remove_duplicates(struct ref *ref_map);
 
 int valid_fetch_refspec(const char *refspec);
 struct refspec *parse_fetch_refspec(int nr_refspec, const char **refspec);
+extern struct refspec *parse_push_refspec(int nr_refspec, const char **refspec);
 
 void free_refspec(int nr_refspec, struct refspec *refspec);
 
@@ -285,7 +291,6 @@ struct push_cas_option {
 };
 
 extern int parseopt_push_cas_option(const struct option *, const char *arg, int unset);
-extern int parse_push_cas_option(struct push_cas_option *, const char *arg, int unset);
 
 extern int is_empty_cas(const struct push_cas_option *);
 void apply_push_cas(struct push_cas_option *, struct remote *, struct ref *);

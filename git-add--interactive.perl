@@ -92,7 +92,7 @@ sub colored {
 }
 
 # command line options
-my $cmd;
+my $patch_mode_only;
 my $patch_mode;
 my $patch_mode_revision;
 
@@ -275,20 +275,11 @@ sub list_modified {
 	my ($only) = @_;
 	my (%data, @return);
 	my ($add, $del, $adddel, $file);
-	my @tracked = ();
-
-	if (@ARGV) {
-		@tracked = map {
-			chomp $_;
-			unquote_path($_);
-		} run_cmd_pipe(qw(git ls-files --), @ARGV);
-		return if (!@tracked);
-	}
 
 	my $reference = get_diff_reference($patch_mode_revision);
 	for (run_cmd_pipe(qw(git diff-index --cached
 			     --numstat --summary), $reference,
-			     '--', @tracked)) {
+			     '--', @ARGV)) {
 		if (($add, $del, $file) =
 		    /^([-\d]+)	([-\d]+)	(.*)/) {
 			my ($change, $bin);
@@ -313,7 +304,7 @@ sub list_modified {
 		}
 	}
 
-	for (run_cmd_pipe(qw(git diff-files --numstat --summary --raw --), @tracked)) {
+	for (run_cmd_pipe(qw(git diff-files --numstat --summary --raw --), @ARGV)) {
 		if (($add, $del, $file) =
 		    /^([-\d]+)	([-\d]+)	(.*)/) {
 			$file = unquote_path($file);
@@ -1049,7 +1040,7 @@ marked for unstaging."),
 marked for applying."),
 	checkout_index => N__(
 "If the patch applies cleanly, the edited hunk will immediately be
-marked for discarding"),
+marked for discarding."),
 	checkout_head => N__(
 "If the patch applies cleanly, the edited hunk will immediately be
 marked for discarding."),
@@ -1299,7 +1290,7 @@ sub patch_update_cmd {
 		}
 		return 0;
 	}
-	if ($patch_mode) {
+	if ($patch_mode_only) {
 		@them = @mods;
 	}
 	else {
@@ -1678,7 +1669,7 @@ status        - show paths with changes
 update        - add working tree state to the staged set of changes
 revert        - revert staged set of changes back to the HEAD version
 patch         - pick hunks and update selectively
-diff	      - view diff between HEAD and index
+diff          - view diff between HEAD and index
 add untracked - add contents of untracked files to the staged set of changes
 EOF
 }
@@ -1721,7 +1712,7 @@ sub process_args {
 		die sprintf(__("invalid argument %s, expecting --"),
 			       $arg) unless $arg eq "--";
 		%patch_mode_flavour = %{$patch_modes{$patch_mode}};
-		$cmd = 1;
+		$patch_mode_only = 1;
 	}
 	elsif ($arg ne "--") {
 		die sprintf(__("invalid argument %s, expecting --"), $arg);
@@ -1758,7 +1749,7 @@ sub main_loop {
 
 process_args();
 refresh();
-if ($cmd) {
+if ($patch_mode_only) {
 	patch_update_cmd();
 }
 else {

@@ -35,6 +35,7 @@ static const char *alternate_shallow_file;
 #define COMMON_REF	(1U << 2)
 #define SEEN		(1U << 3)
 #define POPPED		(1U << 4)
+#define ALTERNATE	(1U << 5)
 
 static int marked;
 
@@ -65,6 +66,41 @@ static inline void print_verbose(const struct fetch_pack_args *args,
 	vfprintf(stderr, fmt, params);
 	va_end(params);
 	fputc('\n', stderr);
+}
+
+struct alternate_object_cache {
+	struct object **items;
+	size_t nr, alloc;
+};
+
+static void cache_one_alternate(const char *refname,
+				const struct object_id *oid,
+				void *vcache)
+{
+	struct alternate_object_cache *cache = vcache;
+	struct object *obj = parse_object(oid->hash);
+
+	if (!obj || (obj->flags & ALTERNATE))
+		return;
+
+	obj->flags |= ALTERNATE;
+	ALLOC_GROW(cache->items, cache->nr + 1, cache->alloc);
+	cache->items[cache->nr++] = obj;
+}
+
+static void for_each_cached_alternate(void (*cb)(struct object *))
+{
+	static int initialized;
+	static struct alternate_object_cache cache;
+	size_t i;
+
+	if (!initialized) {
+		for_each_alternate_ref(cache_one_alternate, &cache);
+		initialized = 1;
+	}
+
+	for (i = 0; i < cache.nr; i++)
+		cb(cache.items[i]);
 }
 
 static void rev_list_push(struct commit *commit, int mark)
@@ -253,9 +289,9 @@ static void send_request(struct fetch_pack_args *args,
 		write_or_die(fd, buf->buf, buf->len);
 }
 
-static void insert_one_alternate_ref(const struct ref *ref, void *unused)
+static void insert_one_alternate_object(struct object *obj)
 {
-	rev_list_insert_ref(NULL, ref->old_oid.hash);
+	rev_list_insert_ref(NULL, obj->oid.hash);
 }
 
 #define INITIAL_FLUSH 16
@@ -298,7 +334,7 @@ static int find_common(struct fetch_pack_args *args,
 	marked = 1;
 
 	for_each_ref(rev_list_insert_ref_oid, NULL);
-	for_each_alternate_ref(insert_one_alternate_ref, NULL);
+	for_each_cached_alternate(insert_one_alternate_object);
 
 	fetching = 0;
 	for ( ; refs ; refs = refs->next) {
@@ -578,7 +614,7 @@ static void filter_refs(struct fetch_pack_args *args,
 					break; /* definitely do not have it */
 				else if (cmp == 0) {
 					keep = 1; /* definitely have it */
-					sought[i]->matched = 1;
+					sought[i]->match_status = REF_MATCHED;
 				}
 				i++;
 			}
@@ -598,30 +634,32 @@ static void filter_refs(struct fetch_pack_args *args,
 	}
 
 	/* Append unmatched requests to the list */
-	if ((allow_unadvertised_object_request &
-	    (ALLOW_TIP_SHA1 | ALLOW_REACHABLE_SHA1))) {
-		for (i = 0; i < nr_sought; i++) {
-			unsigned char sha1[20];
+	for (i = 0; i < nr_sought; i++) {
+		unsigned char sha1[20];
 
-			ref = sought[i];
-			if (ref->matched)
-				continue;
-			if (get_sha1_hex(ref->name, sha1) ||
-			    ref->name[40] != '\0' ||
-			    hashcmp(sha1, ref->old_oid.hash))
-				continue;
+		ref = sought[i];
+		if (ref->match_status != REF_NOT_MATCHED)
+			continue;
+		if (get_sha1_hex(ref->name, sha1) ||
+		    ref->name[40] != '\0' ||
+		    hashcmp(sha1, ref->old_oid.hash))
+			continue;
 
-			ref->matched = 1;
+		if ((allow_unadvertised_object_request &
+		    (ALLOW_TIP_SHA1 | ALLOW_REACHABLE_SHA1))) {
+			ref->match_status = REF_MATCHED;
 			*newtail = copy_ref(ref);
 			newtail = &(*newtail)->next;
+		} else {
+			ref->match_status = REF_UNADVERTISED_NOT_ALLOWED;
 		}
 	}
 	*refs = newlist;
 }
 
-static void mark_alternate_complete(const struct ref *ref, void *unused)
+static void mark_alternate_complete(struct object *obj)
 {
-	mark_complete(ref->old_oid.hash);
+	mark_complete(obj->oid.hash);
 }
 
 static int everything_local(struct fetch_pack_args *args,
@@ -657,7 +695,7 @@ static int everything_local(struct fetch_pack_args *args,
 
 	if (!args->deepen) {
 		for_each_ref(mark_complete_oid, NULL);
-		for_each_alternate_ref(mark_alternate_complete, NULL);
+		for_each_cached_alternate(mark_alternate_complete);
 		commit_list_sort_by_date(&complete);
 		if (cutoff)
 			mark_recent_complete_commits(args, cutoff);
@@ -977,7 +1015,7 @@ static void update_shallow(struct fetch_pack_args *args,
 			   struct ref **sought, int nr_sought,
 			   struct shallow_info *si)
 {
-	struct sha1_array ref = SHA1_ARRAY_INIT;
+	struct oid_array ref = OID_ARRAY_INIT;
 	int *status;
 	int i;
 
@@ -1000,18 +1038,18 @@ static void update_shallow(struct fetch_pack_args *args,
 		 * shallow points that exist in the pack (iow in repo
 		 * after get_pack() and reprepare_packed_git())
 		 */
-		struct sha1_array extra = SHA1_ARRAY_INIT;
-		unsigned char (*sha1)[20] = si->shallow->sha1;
+		struct oid_array extra = OID_ARRAY_INIT;
+		struct object_id *oid = si->shallow->oid;
 		for (i = 0; i < si->shallow->nr; i++)
-			if (has_sha1_file(sha1[i]))
-				sha1_array_append(&extra, sha1[i]);
+			if (has_object_file(&oid[i]))
+				oid_array_append(&extra, &oid[i]);
 		if (extra.nr) {
 			setup_alternate_shallow(&shallow_lock,
 						&alternate_shallow_file,
 						&extra);
 			commit_lock_file(&shallow_lock);
 		}
-		sha1_array_clear(&extra);
+		oid_array_clear(&extra);
 		return;
 	}
 
@@ -1022,7 +1060,7 @@ static void update_shallow(struct fetch_pack_args *args,
 	if (!si->nr_ours && !si->nr_theirs)
 		return;
 	for (i = 0; i < nr_sought; i++)
-		sha1_array_append(&ref, sought[i]->old_oid.hash);
+		oid_array_append(&ref, &sought[i]->old_oid);
 	si->ref = &ref;
 
 	if (args->update_shallow) {
@@ -1032,23 +1070,23 @@ static void update_shallow(struct fetch_pack_args *args,
 		 * shallow roots that are actually reachable from new
 		 * refs.
 		 */
-		struct sha1_array extra = SHA1_ARRAY_INIT;
-		unsigned char (*sha1)[20] = si->shallow->sha1;
+		struct oid_array extra = OID_ARRAY_INIT;
+		struct object_id *oid = si->shallow->oid;
 		assign_shallow_commits_to_refs(si, NULL, NULL);
 		if (!si->nr_ours && !si->nr_theirs) {
-			sha1_array_clear(&ref);
+			oid_array_clear(&ref);
 			return;
 		}
 		for (i = 0; i < si->nr_ours; i++)
-			sha1_array_append(&extra, sha1[si->ours[i]]);
+			oid_array_append(&extra, &oid[si->ours[i]]);
 		for (i = 0; i < si->nr_theirs; i++)
-			sha1_array_append(&extra, sha1[si->theirs[i]]);
+			oid_array_append(&extra, &oid[si->theirs[i]]);
 		setup_alternate_shallow(&shallow_lock,
 					&alternate_shallow_file,
 					&extra);
 		commit_lock_file(&shallow_lock);
-		sha1_array_clear(&extra);
-		sha1_array_clear(&ref);
+		oid_array_clear(&extra);
+		oid_array_clear(&ref);
 		return;
 	}
 
@@ -1064,7 +1102,7 @@ static void update_shallow(struct fetch_pack_args *args,
 				sought[i]->status = REF_STATUS_REJECT_SHALLOW;
 	}
 	free(status);
-	sha1_array_clear(&ref);
+	oid_array_clear(&ref);
 }
 
 struct ref *fetch_pack(struct fetch_pack_args *args,
@@ -1072,7 +1110,7 @@ struct ref *fetch_pack(struct fetch_pack_args *args,
 		       const struct ref *ref,
 		       const char *dest,
 		       struct ref **sought, int nr_sought,
-		       struct sha1_array *shallow,
+		       struct oid_array *shallow,
 		       char **pack_lockfile)
 {
 	struct ref *ref_cpy;
@@ -1093,4 +1131,27 @@ struct ref *fetch_pack(struct fetch_pack_args *args,
 	update_shallow(args, sought, nr_sought, &si);
 	clear_shallow_info(&si);
 	return ref_cpy;
+}
+
+int report_unmatched_refs(struct ref **sought, int nr_sought)
+{
+	int i, ret = 0;
+
+	for (i = 0; i < nr_sought; i++) {
+		if (!sought[i])
+			continue;
+		switch (sought[i]->match_status) {
+		case REF_MATCHED:
+			continue;
+		case REF_NOT_MATCHED:
+			error(_("no such remote ref %s"), sought[i]->name);
+			break;
+		case REF_UNADVERTISED_NOT_ALLOWED:
+			error(_("Server does not allow request for unadvertised object %s"),
+			      sought[i]->name);
+			break;
+		}
+		ret = 1;
+	}
+	return ret;
 }

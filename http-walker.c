@@ -168,6 +168,11 @@ static int is_alternate_allowed(const char *url)
 	};
 	int i;
 
+	if (http_follow_config != HTTP_FOLLOW_ALWAYS) {
+		warning("alternate disabled by http.followRedirects: %s", url);
+		return 0;
+	}
+
 	for (i = 0; i < ARRAY_SIZE(protocols); i++) {
 		const char *end;
 		if (skip_prefix(url, protocols[i], &end) &&
@@ -296,13 +301,16 @@ static void process_alternates_response(void *callback_data)
 					okay = 1;
 				}
 			}
-			/* skip "objects\n" at end */
 			if (okay) {
 				struct strbuf target = STRBUF_INIT;
 				strbuf_add(&target, base, serverlen);
-				strbuf_add(&target, data + i, posn - i - 7);
-
-				if (is_alternate_allowed(target.buf)) {
+				strbuf_add(&target, data + i, posn - i);
+				if (!strbuf_strip_suffix(&target, "objects")) {
+					warning("ignoring alternate that does"
+						" not end in 'objects': %s",
+						target.buf);
+					strbuf_release(&target);
+				} else if (is_alternate_allowed(target.buf)) {
 					warning("adding alternate object store: %s",
 						target.buf);
 					newalt = xmalloc(sizeof(*newalt));
@@ -314,6 +322,8 @@ static void process_alternates_response(void *callback_data)
 					while (tail->next != NULL)
 						tail = tail->next;
 					tail->next = newalt;
+				} else {
+					strbuf_release(&target);
 				}
 			}
 		}
@@ -330,9 +340,6 @@ static void fetch_alternates(struct walker *walker, const char *base)
 	struct active_request_slot *slot;
 	struct alternates_request alt_req;
 	struct walker_data *cdata = walker->data;
-
-	if (http_follow_config != HTTP_FOLLOW_ALWAYS)
-		return;
 
 	/*
 	 * If another request has already started fetching alternates,

@@ -175,7 +175,7 @@ struct worktree **get_worktrees(unsigned flags)
 	struct dirent *d;
 	int counter = 0, alloc = 2;
 
-	list = xmalloc(alloc * sizeof(struct worktree *));
+	ALLOC_ARRAY(list, alloc);
 
 	list[counter++] = get_main_worktree();
 
@@ -250,16 +250,19 @@ struct worktree *find_worktree(struct worktree **list,
 {
 	struct worktree *wt;
 	char *path;
+	char *to_free = NULL;
 
 	if ((wt = find_worktree_by_suffix(list, arg)))
 		return wt;
 
-	arg = prefix_filename(prefix, strlen(prefix), arg);
-	path = real_pathdup(arg);
+	if (prefix)
+		arg = to_free = prefix_filename(prefix, arg);
+	path = real_pathdup(arg, 1);
 	for (; *list; list++)
 		if (!fspathcmp(path, real_path((*list)->path)))
 			break;
 	free(path);
+	free(to_free);
 	return *list;
 }
 

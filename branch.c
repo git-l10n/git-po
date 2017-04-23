@@ -234,7 +234,7 @@ void create_branch(const char *name, const char *start_name,
 {
 	struct commit *commit;
 	unsigned char sha1[20];
-	char *real_ref, msg[PATH_MAX + 20];
+	char *real_ref;
 	struct strbuf ref = STRBUF_INIT;
 	int forcing = 0;
 	int dont_change_ref = 0;
@@ -290,19 +290,18 @@ void create_branch(const char *name, const char *start_name,
 		die(_("Not a valid branch point: '%s'."), start_name);
 	hashcpy(sha1, commit->object.oid.hash);
 
-	if (forcing)
-		snprintf(msg, sizeof msg, "branch: Reset to %s",
-			 start_name);
-	else if (!dont_change_ref)
-		snprintf(msg, sizeof msg, "branch: Created from %s",
-			 start_name);
-
 	if (reflog)
 		log_all_ref_updates = LOG_REFS_NORMAL;
 
 	if (!dont_change_ref) {
 		struct ref_transaction *transaction;
 		struct strbuf err = STRBUF_INIT;
+		char *msg;
+
+		if (forcing)
+			msg = xstrfmt("branch: Reset to %s", start_name);
+		else
+			msg = xstrfmt("branch: Created from %s", start_name);
 
 		transaction = ref_transaction_begin(&err);
 		if (!transaction ||
@@ -313,6 +312,7 @@ void create_branch(const char *name, const char *start_name,
 			die("%s", err.buf);
 		ref_transaction_free(transaction);
 		strbuf_release(&err);
+		free(msg);
 	}
 
 	if (real_ref && track)
@@ -345,7 +345,8 @@ void die_if_checked_out(const char *branch, int ignore_current_worktree)
 	    branch, wt->path);
 }
 
-int replace_each_worktree_head_symref(const char *oldref, const char *newref)
+int replace_each_worktree_head_symref(const char *oldref, const char *newref,
+				      const char *logmsg)
 {
 	int ret = 0;
 	struct worktree **worktrees = get_worktrees(0);
@@ -358,7 +359,7 @@ int replace_each_worktree_head_symref(const char *oldref, const char *newref)
 			continue;
 
 		if (set_worktree_head_symref(get_worktree_git_dir(worktrees[i]),
-					     newref)) {
+					     newref, logmsg)) {
 			ret = -1;
 			error(_("HEAD of working tree %s is not updated"),
 			      worktrees[i]->path);

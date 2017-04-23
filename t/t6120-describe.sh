@@ -182,6 +182,10 @@ check_describe "test2-lightweight-*" --tags --match="test2-*"
 
 check_describe "test2-lightweight-*" --long --tags --match="test2-*" HEAD^
 
+check_describe "test1-lightweight-*" --long --tags --match="test1-*" --match="test2-*" HEAD^
+
+check_describe "test2-lightweight-*" --long --tags --match="test1-*" --no-match --match="test2-*" HEAD^
+
 test_expect_success 'name-rev with exact tags' '
 	echo A >expect &&
 	tag_object=$(git rev-parse refs/tags/A) &&
@@ -204,6 +208,49 @@ test_expect_success 'describe --contains with the exact tags' '
 	tagged_commit=$(git rev-parse "refs/tags/A^0") &&
 	git describe --contains $tagged_commit >actual &&
 	test_cmp expect actual
+'
+
+test_expect_success 'describe --contains and --match' '
+	echo "A^0" >expect &&
+	tagged_commit=$(git rev-parse "refs/tags/A^0") &&
+	test_must_fail git describe --contains --match="B" $tagged_commit &&
+	git describe --contains --match="B" --match="A" $tagged_commit >actual &&
+	test_cmp expect actual
+'
+
+test_expect_success 'describe --exclude' '
+	echo "c~1" >expect &&
+	tagged_commit=$(git rev-parse "refs/tags/A^0") &&
+	test_must_fail git describe --contains --match="B" $tagged_commit &&
+	git describe --contains --match="?" --exclude="A" $tagged_commit >actual &&
+	test_cmp expect actual
+'
+
+test_expect_success 'describe --contains and --no-match' '
+	echo "A^0" >expect &&
+	tagged_commit=$(git rev-parse "refs/tags/A^0") &&
+	git describe --contains --match="B" --no-match $tagged_commit >actual &&
+	test_cmp expect actual
+'
+
+test_expect_success 'setup and absorb a submodule' '
+	test_create_repo sub1 &&
+	test_commit -C sub1 initial &&
+	git submodule add ./sub1 &&
+	git submodule absorbgitdirs &&
+	git commit -a -m "add submodule" &&
+	git describe --dirty >expect &&
+	git describe --broken >out &&
+	test_cmp expect out
+'
+
+test_expect_success 'describe chokes on severly broken submodules' '
+	mv .git/modules/sub1/ .git/modules/sub_moved &&
+	test_must_fail git describe --dirty
+'
+test_expect_success 'describe ignoring a borken submodule' '
+	git describe --broken >out &&
+	grep broken out
 '
 
 test_done

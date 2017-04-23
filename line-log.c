@@ -43,9 +43,10 @@ void range_set_release(struct range_set *rs)
 static void range_set_copy(struct range_set *dst, struct range_set *src)
 {
 	range_set_init(dst, src->nr);
-	memcpy(dst->ranges, src->ranges, src->nr*sizeof(struct range_set));
+	COPY_ARRAY(dst->ranges, src->ranges, src->nr);
 	dst->nr = src->nr;
 }
+
 static void range_set_move(struct range_set *dst, struct range_set *src)
 {
 	range_set_release(dst);
@@ -144,7 +145,7 @@ void sort_and_merge_range_set(struct range_set *rs)
 static void range_set_union(struct range_set *out,
 			     struct range_set *a, struct range_set *b)
 {
-	int i = 0, j = 0, o = 0;
+	int i = 0, j = 0;
 	struct range *ra = a->ranges;
 	struct range *rb = b->ranges;
 	/* cannot make an alias of out->ranges: it may change during grow */
@@ -167,16 +168,15 @@ static void range_set_union(struct range_set *out,
 			new = &rb[j++];
 		if (new->start == new->end)
 			; /* empty range */
-		else if (!o || out->ranges[o-1].end < new->start) {
+		else if (!out->nr || out->ranges[out->nr-1].end < new->start) {
 			range_set_grow(out, 1);
-			out->ranges[o].start = new->start;
-			out->ranges[o].end = new->end;
-			o++;
-		} else if (out->ranges[o-1].end < new->end) {
-			out->ranges[o-1].end = new->end;
+			out->ranges[out->nr].start = new->start;
+			out->ranges[out->nr].end = new->end;
+			out->nr++;
+		} else if (out->ranges[out->nr-1].end < new->end) {
+			out->ranges[out->nr-1].end = new->end;
 		}
 	}
-	out->nr = o;
 }
 
 /*

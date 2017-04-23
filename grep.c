@@ -12,6 +12,11 @@ static int grep_source_is_binary(struct grep_source *gs);
 
 static struct grep_opt grep_defaults;
 
+static void std_output(struct grep_opt *opt, const void *buf, size_t size)
+{
+	fwrite(buf, size, 1, stdout);
+}
+
 /*
  * Initialize the grep_defaults template with hardcoded defaults.
  * We could let the compiler do this, but without C99 initializers
@@ -42,6 +47,7 @@ void init_grep_defaults(void)
 	color_set(opt->color_selected, "");
 	color_set(opt->color_sep, GIT_COLOR_CYAN);
 	opt->color = -1;
+	opt->output = std_output;
 }
 
 static int parse_pattern_type_arg(const char *opt, const char *arg)
@@ -152,6 +158,7 @@ void grep_init(struct grep_opt *opt, const char *prefix)
 	opt->pathname = def->pathname;
 	opt->regflags = def->regflags;
 	opt->relative = def->relative;
+	opt->output = def->output;
 
 	color_set(opt->color_context, def->color_context);
 	color_set(opt->color_filename, def->color_filename);
@@ -1164,7 +1171,7 @@ static void show_line(struct grep_opt *opt, char *bol, char *eol,
 	}
 	if (opt->linenum) {
 		char buf[32];
-		snprintf(buf, sizeof(buf), "%d", lno);
+		xsnprintf(buf, sizeof(buf), "%d", lno);
 		output_color(opt, buf, strlen(buf), opt->color_lineno);
 		output_sep(opt, sign);
 	}
@@ -1377,11 +1384,6 @@ static int look_ahead(struct grep_opt *opt,
 	*bol_p = last_bol;
 	*lno_p = lno;
 	return 0;
-}
-
-static void std_output(struct grep_opt *opt, const void *buf, size_t size)
-{
-	fwrite(buf, size, 1, stdout);
 }
 
 static int fill_textconv_grep(struct userdiff_driver *driver,
@@ -1651,7 +1653,7 @@ static int grep_source_1(struct grep_opt *opt, struct grep_source *gs, int colle
 				     opt->color_filename);
 			output_sep(opt, ':');
 		}
-		snprintf(buf, sizeof(buf), "%u\n", count);
+		xsnprintf(buf, sizeof(buf), "%u\n", count);
 		opt->output(opt, buf, strlen(buf));
 		return 1;
 	}

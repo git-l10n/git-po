@@ -393,6 +393,25 @@ test_expect_success 'setup change in subdirectory' '
 	git commit -m "modified both"
 '
 
+test_expect_success 'difftool -d with growing paths' '
+	a=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa &&
+	git init growing &&
+	(
+		cd growing &&
+		echo "test -f \"\$2/b\"" | write_script .git/test-for-b.sh &&
+		one=$(printf 1 | git hash-object -w --stdin) &&
+		two=$(printf 2 | git hash-object -w --stdin) &&
+		git update-index --add \
+			--cacheinfo 100644,$one,$a --cacheinfo 100644,$two,b &&
+		tree1=$(git write-tree) &&
+		git update-index --add \
+			--cacheinfo 100644,$two,$a --cacheinfo 100644,$one,b &&
+		tree2=$(git write-tree) &&
+		git checkout -- $a &&
+		git difftool -d --extcmd .git/test-for-b.sh $tree1 $tree2
+	)
+'
+
 run_dir_diff_test () {
 	test_expect_success "$1 --no-symlinks" "
 		symlinks=--no-symlinks &&
@@ -428,7 +447,7 @@ run_dir_diff_test 'difftool --dir-diff branch from subdirectory' '
 		git difftool --dir-diff $symlinks --extcmd ls branch >output &&
 		# "sub" must only exist in "right"
 		# "file" and "file2" must be listed in both "left" and "right"
-		grep sub output > sub-output &&
+		grep sub output >sub-output &&
 		test_line_count = 1 sub-output &&
 		grep file"$" output >file-output &&
 		test_line_count = 2 file-output &&
@@ -591,6 +610,7 @@ test_expect_success 'difftool --no-symlinks detects conflict ' '
 '
 
 test_expect_success 'difftool properly honors gitlink and core.worktree' '
+	test_when_finished rm -rf submod/ule &&
 	git submodule add ./. submod/ule &&
 	test_config -C submod/ule diff.tool checktrees &&
 	test_config -C submod/ule difftool.checktrees.cmd '\''
@@ -600,11 +620,13 @@ test_expect_success 'difftool properly honors gitlink and core.worktree' '
 		cd submod/ule &&
 		echo good >expect &&
 		git difftool --tool=checktrees --dir-diff HEAD~ >actual &&
-		test_cmp expect actual
+		test_cmp expect actual &&
+		rm -f expect actual
 	)
 '
 
 test_expect_success SYMLINKS 'difftool --dir-diff symlinked directories' '
+	test_when_finished git reset --hard &&
 	git init dirlinks &&
 	(
 		cd dirlinks &&
@@ -621,6 +643,66 @@ test_expect_success SYMLINKS 'difftool --dir-diff symlinked directories' '
 		git difftool --tool=checktrees --dir-diff HEAD~ >actual &&
 		test_cmp expect actual
 	)
+'
+
+test_expect_success SYMLINKS 'difftool --dir-diff handles modified symlinks' '
+	test_when_finished git reset --hard &&
+	touch b &&
+	ln -s b c &&
+	git add b c &&
+	test_tick &&
+	git commit -m initial &&
+	touch d &&
+	rm c &&
+	ln -s d c &&
+	cat >expect <<-EOF &&
+		b
+		c
+
+		c
+	EOF
+	git difftool --symlinks --dir-diff --extcmd ls >output &&
+	grep -v ^/ output >actual &&
+	test_cmp expect actual &&
+
+	git difftool --no-symlinks --dir-diff --extcmd ls >output &&
+	grep -v ^/ output >actual &&
+	test_cmp expect actual &&
+
+	# The left side contains symlink "c" that points to "b"
+	test_config difftool.cat.cmd "cat \$LOCAL/c" &&
+	printf "%s\n" b >expect &&
+
+	git difftool --symlinks --dir-diff --tool cat >actual &&
+	test_cmp expect actual &&
+
+	git difftool --symlinks --no-symlinks --dir-diff --tool cat >actual &&
+	test_cmp expect actual &&
+
+	# The right side contains symlink "c" that points to "d"
+	test_config difftool.cat.cmd "cat \$REMOTE/c" &&
+	printf "%s\n" d >expect &&
+
+	git difftool --symlinks --dir-diff --tool cat >actual &&
+	test_cmp expect actual &&
+
+	git difftool --no-symlinks --dir-diff --tool cat >actual &&
+	test_cmp expect actual &&
+
+	# Deleted symlinks
+	rm -f c &&
+	cat >expect <<-EOF &&
+		b
+		c
+
+	EOF
+	git difftool --symlinks --dir-diff --extcmd ls >output &&
+	grep -v ^/ output >actual &&
+	test_cmp expect actual &&
+
+	git difftool --no-symlinks --dir-diff --extcmd ls >output &&
+	grep -v ^/ output >actual &&
+	test_cmp expect actual
 '
 
 test_done

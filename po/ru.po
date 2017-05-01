@@ -3362,7 +3362,7 @@ msgstr "оба добавлены:"
 
 #: wt-status.c:265
 msgid "both modified:"
-msgstr "оба измены:"
+msgstr "оба изменены:"
 
 #: wt-status.c:275
 msgid "new file:"

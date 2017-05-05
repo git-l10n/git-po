@@ -182,6 +182,25 @@ UI, Workflows & Features
    to the working tree of the submodule but not the commit that is
    checked out.
 
+ * Allow the http.postbuffer configuration variable to be set to a
+   size that can be expressed in size_t, which can be larger than
+   ulong on some platforms.
+
+ * "git rebase" learns "--signoff" option.
+
+ * The completion script (in contrib/) learned to complete "git push
+   --delete b<TAB>" to complete branch name to be deleted.
+
+ * "git worktree add --lock" allows to lock a worktree immediately
+   after it's created. This helps prevent a race between "git worktree
+   add; git worktree lock" and "git worktree prune".
+
+ * Completion for "git checkout <branch>" that auto-creates the branch
+   out of a remote tracking branch can now be disabled, as this
+   completion often gets in the way when completing to checkout an
+   existing local branch that happens to share the same prefix with
+   bunch of remote tracking branches.
+
 
 Performance, Internal Implementation, Development Support etc.
 
@@ -242,8 +261,6 @@ Performance, Internal Implementation, Development Support etc.
    older one and the newer one interoperate happily has now become
    possible.
 
- * "uchar [40]" to "struct object_id" conversion continues.
-
  * "git tag --contains" used to (ab)use the object bits to keep track
    of the state of object reachability without clearing them after
    use; this has been cleaned up and made to use the newer commit-slab
@@ -278,12 +295,43 @@ Performance, Internal Implementation, Development Support etc.
  * Define a new task in .travis.yml that triggers a test session on
    Windows run elsewhere.
 
- * Conversion from unsigned char [40] to struct object_id continues.
+ * Conversion from uchar[20] to struct object_id continues.
 
  * The "submodule" specific field in the ref_store structure is
    replaced with a more generic "gitdir" that can later be used also
    when dealing with ref_store that represents the set of refs visible
    from the other worktrees.
+
+ * The string-list API used a custom reallocation strategy that was
+   very inefficient, instead of using the usual ALLOC_GROW() macro,
+   which has been fixed.
+   (merge 950a234cbd jh/string-list-micro-optim later to maint).
+
+ * In a 2- and 3-way merge of trees, more than one source trees often
+   end up sharing an identical subtree; optimize by not reading the
+   same tree multiple times in such a case.
+   (merge d12a8cf0af jh/unpack-trees-micro-optim later to maint).
+
+ * The index file has a trailing SHA-1 checksum to detect file
+   corruption, and historically we checked it every time the index
+   file is used.  Omit the validation during normal use, and instead
+   verify only in "git fsck".
+
+ * Having a git command on the upstream side of a pipe in a test
+   script will hide the exit status from the command, which may cause
+   us to fail to notice a breakage; rewrite tests in a script to avoid
+   this issue.
+
+ * Travis CI learns to run coccicheck.
+
+ * "git checkout" that handles a lot of paths has been optimized by
+   reducing the number of unnecessary checks of paths in the
+   has_dir_name() function.
+
+ * The internals of the refs API around the cached refs has been
+   streamlined.
+
+ * Output from perf tests have been updated to align their titles.
 
 Also contains various documentation updates and code clean-ups.
 
@@ -492,6 +540,45 @@ notes for details).
    checked out; it should use "symbolic-ref HEAD".
    (merge eff451101d ld/p4-current-branch-fix later to maint).
 
+ * "http.proxy" set to an empty string is used to disable the usage of
+   proxy.  We broke this early last year.
+   (merge ae51d91105 sr/http-proxy-configuration-fix later to maint).
+
+ * $GIT_DIR may in some cases be normalized with all symlinks resolved
+   while "gitdir" path expansion in the pattern does not receive the
+   same treatment, leading to incorrect mismatch.  This has been fixed.
+
+ * "git submodule" script does not work well with strange pathnames.
+   Protect it from a path with slashes in them, at least.
+
+ * "git fetch-pack" was not prepared to accept ERR packet that the
+   upload-pack can send with a human-readable error message.  It
+   showed the packet contents with ERR prefix, so there was no data
+   loss, but it was redundant to say "ERR" in an error message.
+   (merge 8e2c7bef03 jt/fetch-pack-error-reporting later to maint).
+
+ * "ls-files --recurse-submodules" did not quite work well in a
+   project with nested submodules.
+
+ * gethostname(2) may not NUL terminate the buffer if hostname does
+   not fit; unfortunately there is no easy way to see if our buffer
+   was too small, but at least this will make sure we will not end up
+   using garbage past the end of the buffer.
+   (merge 5781a9a270 dt/xgethostname-nul-termination later to maint).
+
+ * A recent update broke "git add -p ../foo" from a subdirectory.
+
+ * While handy, "git_path()" is a dangerous function to use as a
+   callsite that uses it safely one day can be broken by changes
+   to other code that calls it.  Reduction of its use continues.
+   (merge 16d2676c9e jk/war-on-git-path later to maint).
+
+ * The split-index code configuration code used an unsafe git_path()
+   function without copying its result out.
+
+ * Many stale HTTP(s) links have been updated in our documentation.
+   (merge 613416f0be jk/update-links-in-docs later to maint).
+
  * Other minor doc, test and build updates and code cleanups.
    (merge df2a6e38b7 jk/pager-in-use later to maint).
    (merge 75ec4a6cb0 ab/branch-list-doc later to maint).
@@ -509,3 +596,16 @@ notes for details).
    (merge 35ad44cbd8 sb/submodule-rm-absorb later to maint).
    (merge 0301f1fd92 va/i18n-perl-scripts later to maint).
    (merge 733e064d98 vn/revision-shorthand-for-side-branch-log later to maint).
+   (merge 85999743e7 tb/doc-eol-normalization later to maint).
+   (merge 0747fb49fd jk/loose-object-fsck later to maint).
+   (merge d8f4481c4f jk/quarantine-received-objects later to maint).
+   (merge 7ba1ceef95 xy/format-patch-base later to maint).
+   (merge fa1912c89a rs/misc-cppcheck-fixes later to maint).
+   (merge f17d642d3b ab/push-cas-doc-n-test later to maint).
+   (merge 61e282425a ss/gitmodules-ignore-doc later to maint).
+   (merge 8d3047cd5b ss/submodule-shallow-doc later to maint).
+   (merge 1f9e18b772 jk/prio-queue-avoid-swap-with-self later to maint).
+   (merge 627fde1025 jk/submodule-init-segv-fix later to maint).
+   (merge d395745d81 rg/doc-pull-typofix later to maint).
+   (merge 01e60a9a22 rg/doc-submittingpatches-wordfix later to maint).
+   (merge 501d3cd7b8 sr/hooks-cwd-doc later to maint).

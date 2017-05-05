@@ -276,6 +276,8 @@ static enum ack_type get_ack(int fd, unsigned char *result_sha1)
 			return ACK;
 		}
 	}
+	if (skip_prefix(line, "ERR ", &arg))
+		die(_("remote error: %s"), arg);
 	die(_("git fetch-pack: expected ACK/NAK, got '%s'"), line);
 }
 
@@ -802,8 +804,8 @@ static int get_pack(struct fetch_pack_args *args,
 		if (args->use_thin_pack)
 			argv_array_push(&cmd.args, "--fix-thin");
 		if (args->lock_pack || unpack_limit) {
-			char hostname[256];
-			if (gethostname(hostname, sizeof(hostname)))
+			char hostname[HOST_NAME_MAX + 1];
+			if (xgethostname(hostname, sizeof(hostname)))
 				xsnprintf(hostname, sizeof(hostname), "localhost");
 			argv_array_pushf(&cmd.args,
 					"--keep=fetch-pack %"PRIuMAX " on %s",

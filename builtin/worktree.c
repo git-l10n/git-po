@@ -24,6 +24,7 @@ struct add_opts {
 	int force;
 	int detach;
 	int checkout;
+	int keep_locked;
 	const char *new_branch;
 	int force_new_branch;
 };
@@ -106,8 +107,7 @@ static void prune_worktrees(void)
 			printf("%s\n", reason.buf);
 		if (show_only)
 			continue;
-		strbuf_reset(&path);
-		strbuf_addstr(&path, git_path("worktrees/%s", d->d_name));
+		git_path_buf(&path, "worktrees/%s", d->d_name);
 		ret = remove_dir_recursively(&path, 0);
 		if (ret < 0 && errno == ENOTDIR)
 			ret = unlink(path.buf);
@@ -215,8 +215,7 @@ static int add_worktree(const char *path, const char *refname,
 	}
 
 	name = worktree_basename(path, &len);
-	strbuf_addstr(&sb_repo,
-		      git_path("worktrees/%.*s", (int)(path + len - name), name));
+	git_path_buf(&sb_repo, "worktrees/%.*s", (int)(path + len - name), name);
 	len = sb_repo.len;
 	if (safe_create_leading_directories_const(sb_repo.buf))
 		die_errno(_("could not create leading directories of '%s'"),
@@ -242,7 +241,10 @@ static int add_worktree(const char *path, const char *refname,
 	 * after the preparation is over.
 	 */
 	strbuf_addf(&sb, "%s/locked", sb_repo.buf);
-	write_file(sb.buf, "initializing");
+	if (!opts->keep_locked)
+		write_file(sb.buf, "initializing");
+	else
+		write_file(sb.buf, "added with --lock");
 
 	strbuf_addf(&sb_git, "%s/.git", path);
 	if (safe_create_leading_directories_const(sb_git.buf))
@@ -303,9 +305,11 @@ static int add_worktree(const char *path, const char *refname,
 	junk_git_dir = NULL;
 
 done:
-	strbuf_reset(&sb);
-	strbuf_addf(&sb, "%s/locked", sb_repo.buf);
-	unlink_or_warn(sb.buf);
+	if (ret || !opts->keep_locked) {
+		strbuf_reset(&sb);
+		strbuf_addf(&sb, "%s/locked", sb_repo.buf);
+		unlink_or_warn(sb.buf);
+	}
 	argv_array_clear(&child_env);
 	strbuf_release(&sb);
 	strbuf_release(&symref);
@@ -328,6 +332,7 @@ static int add(int ac, const char **av, const char *prefix)
 			   N_("create or reset a branch")),
 		OPT_BOOL(0, "detach", &opts.detach, N_("detach HEAD at named commit")),
 		OPT_BOOL(0, "checkout", &opts.checkout, N_("populate the new working tree")),
+		OPT_BOOL(0, "lock", &opts.keep_locked, N_("keep the new working tree locked")),
 		OPT_END()
 	};
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Script to trigger the a Git for Windows build and test run.
+# Script to trigger the Git for Windows build and test run.
 # Set the $GFW_CI_TOKEN as environment variable.
 # Pass the branch (only branches on https://github.com/git/git are
 # supported) and a commit hash.
@@ -55,7 +55,7 @@ while true
 do
 	LAST_STATUS=$STATUS
 	STATUS=$(gfwci "action=status&buildId=$BUILD_ID")
-	test "$STATUS" = "$LAST_STATUS" || printf "\nStatus: $STATUS "
+	test "$STATUS" = "$LAST_STATUS" || printf "\nStatus: %s " "$STATUS"
 	printf "."
 
 	case "$STATUS" in

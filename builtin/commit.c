@@ -821,9 +821,9 @@ static int prepare_to_commit(const char *index_file, const char *prefix,
 					"If this is not correct, please remove the file\n"
 					"	%s\n"
 					"and try again.\n"),
-				git_path(whence == FROM_MERGE
-					 ? "MERGE_HEAD"
-					 : "CHERRY_PICK_HEAD"));
+				whence == FROM_MERGE ?
+					git_path_merge_head() :
+					git_path_cherry_pick_head());
 		}
 
 		fprintf(s->fp, "\n");
@@ -1404,7 +1404,7 @@ int cmd_status(int argc, const char **argv, const char *prefix)
 
 static const char *implicit_ident_advice(void)
 {
-	char *user_config = expand_user_path("~/.gitconfig");
+	char *user_config = expand_user_path("~/.gitconfig", 0);
 	char *xdg_config = xdg_config_home("config");
 	int config_exists = file_exists(user_config) || file_exists(xdg_config);
 

@@ -599,6 +599,7 @@ extern int write_locked_index(struct index_state *, struct lock_file *lock, unsi
 extern int discard_index(struct index_state *);
 extern int unmerged_index(const struct index_state *);
 extern int verify_path(const char *path);
+extern int strcmp_offset(const char *s1, const char *s2, size_t *first_change);
 extern int index_dir_exists(struct index_state *istate, const char *name, int namelen);
 extern void adjust_dirname_case(struct index_state *istate, char *name);
 extern struct cache_entry *index_file_exists(struct index_state *istate, const char *name, int namelen, int igncase);
@@ -709,6 +710,8 @@ extern void update_index_if_able(struct index_state *, struct lock_file *);
 
 extern int hold_locked_index(struct lock_file *, int);
 extern void set_alternate_index_output(const char *);
+
+extern int verify_index_checksum;
 
 /* Environment bits from configuration mechanism */
 extern int trust_executable_bit;
@@ -1164,7 +1167,7 @@ typedef int create_file_fn(const char *path, void *cb);
 int raceproof_create_file(const char *path, create_file_fn fn, void *cb);
 
 int mkdir_in_gitdir(const char *path);
-extern char *expand_user_path(const char *path);
+extern char *expand_user_path(const char *path, int real_home);
 const char *enter_repo(const char *path, int strict);
 static inline int is_absolute_path(const char *path)
 {
@@ -1889,6 +1892,11 @@ enum config_origin_type {
 	CONFIG_ORIGIN_CMDLINE
 };
 
+struct config_options {
+	unsigned int respect_includes : 1;
+	const char *git_dir;
+};
+
 typedef int (*config_fn_t)(const char *, const char *, void *);
 extern int git_default_config(const char *, const char *, void *);
 extern int git_config_from_file(config_fn_t fn, const char *, void *);
@@ -1902,12 +1910,13 @@ extern void read_early_config(config_fn_t cb, void *data);
 extern void git_config(config_fn_t fn, void *);
 extern int git_config_with_options(config_fn_t fn, void *,
 				   struct git_config_source *config_source,
-				   int respect_includes);
+				   const struct config_options *opts);
 extern int git_parse_ulong(const char *, unsigned long *);
 extern int git_parse_maybe_bool(const char *);
 extern int git_config_int(const char *, const char *);
 extern int64_t git_config_int64(const char *, const char *);
 extern unsigned long git_config_ulong(const char *, const char *);
+extern ssize_t git_config_ssize_t(const char *, const char *);
 extern int git_config_bool_or_int(const char *, const char *, int *);
 extern int git_config_bool(const char *, const char *);
 extern int git_config_maybe_bool(const char *, const char *);
@@ -1954,6 +1963,7 @@ struct config_include_data {
 	int depth;
 	config_fn_t fn;
 	void *data;
+	const struct config_options *opts;
 };
 #define CONFIG_INCLUDE_INIT { 0 }
 extern int git_config_include(const char *name, const char *value, void *data);

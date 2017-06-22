@@ -14094,7 +14094,7 @@ msgstr "-b, -B et --detach sont mutuellement exclusifs"
 
 #: builtin/worktree.c:478
 msgid "reason for locking"
-msgstr "raison du vérouillage"
+msgstr "raison du verrouillage"
 
 #: builtin/worktree.c:490 builtin/worktree.c:523
 #, c-format
@@ -14104,7 +14104,7 @@ msgstr "'%s' n'est pas une copie de travail"
 #: builtin/worktree.c:492 builtin/worktree.c:525
 msgid "The main working tree cannot be locked or unlocked"
 msgstr ""
-"La copie de travail principale ne peut pas être vérouillée ou dévérouillée"
+"La copie de travail principale ne peut pas être verrouillée ou déverrouillée"
 
 #: builtin/worktree.c:497
 #, c-format
@@ -14157,7 +14157,7 @@ msgstr ""
 
 #: upload-pack.c:1046
 msgid "interrupt transfer after <n> seconds of inactivity"
-msgstr "interrompre le transfer après <n> secondes d'inactivité"
+msgstr "interrompre le transfert après <n> secondes d'inactivité"
 
 #: credential-cache--daemon.c:223
 #, c-format
@@ -15746,7 +15746,7 @@ msgid ""
 "marked for applying."
 msgstr ""
 "Si le patch s'applique proprement, la section éditée sera\n"
-"immediatement marquée comme appliquée."
+"immédiatement marquée comme appliquée."
 
 #: git-add--interactive.perl:1042 git-add--interactive.perl:1045
 msgid ""
@@ -15754,7 +15754,7 @@ msgid ""
 "marked for discarding."
 msgstr ""
 "Si le patch s'applique proprement, la section éditée sera\n"
-"immediatement marquée comme éliminée."
+"immédiatement marquée comme éliminée."
 
 #: git-add--interactive.perl:1058
 #, perl-format
@@ -16160,7 +16160,7 @@ msgstr "argument invalide %s, -- attendu"
 
 #: git-send-email.perl:121
 msgid "local zone differs from GMT by a non-minute interval\n"
-msgstr "la zone locale diffère du GMT par un interval supérieur à une minute\n"
+msgstr "la zone locale diffère du GMT par un intervalle supérieur à une minute\n"
 
 #: git-send-email.perl:128 git-send-email.perl:134
 msgid "local time offset greater than or equal to 24 hours\n"

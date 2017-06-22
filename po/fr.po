@@ -2029,7 +2029,7 @@ msgstr ""
 
 #: ident.c:367
 msgid "no email was given and auto-detection is disabled"
-msgstr "aucun courriel fourni et l'auto-détection est désactivée"
+msgstr "aucun e-mail fourni et l'auto-détection est désactivée"
 
 #: ident.c:372
 #, c-format
@@ -16175,12 +16175,12 @@ msgstr "l'éditeur est sorti en erreur, abandon total"
 msgid ""
 "'%s' contains an intermediate version of the email you were composing.\n"
 msgstr ""
-"'%s' contient une version intermédiaire du courriel que vous composiez.\n"
+"'%s' contient une version intermédiaire du e-mail que vous composiez.\n"
 
 #: git-send-email.perl:287
 #, perl-format
 msgid "'%s.final' contains the composed email.\n"
-msgstr "'%s.final' contient le courriel composé.\n"
+msgstr "'%s.final' contient le e-mail composé.\n"
 
 #: git-send-email.perl:305
 msgid "--dump-aliases incompatible with other options\n"
@@ -16302,7 +16302,7 @@ msgstr ""
 
 #: git-send-email.perl:748
 msgid "Summary email is empty, skipping it\n"
-msgstr "Le courriel de résumé etant vide, il a été ignoré\n"
+msgstr "Le e-mail de résumé etant vide, il a été ignoré\n"
 
 #. TRANSLATORS: please keep [y/N] as is.
 #: git-send-email.perl:780
@@ -16337,7 +16337,7 @@ msgstr ""
 
 #: git-send-email.perl:841
 msgid "To whom should the emails be sent (if anyone)?"
-msgstr "À qui les courriels doivent-ils être envoyés (s'il y en a) ?"
+msgstr "À qui les e-mails doivent-ils être envoyés (s'il y en a) ?"
 
 #: git-send-email.perl:859
 #, perl-format
@@ -16347,7 +16347,7 @@ msgstr "fatal : l'alias '%s' se développe en lui-même\n"
 #: git-send-email.perl:871
 msgid "Message-ID to be used as In-Reply-To for the first email (if any)? "
 msgstr ""
-"Message-ID à utiliser comme In-Reply-to pour le premier courriel (s'il y en "
+"Message-ID à utiliser comme In-Reply-to pour le premier e-mail (s'il y en "
 "a) ? "
 
 #: git-send-email.perl:921 git-send-email.perl:929
@@ -16396,7 +16396,7 @@ msgstr ""
 #. at this point.
 #: git-send-email.perl:1324
 msgid "Send this email? ([y]es|[n]o|[q]uit|[a]ll): "
-msgstr "Envoyer ce courriel ? ([y]es|[n]o|[q]uit|[a]ll) : "
+msgstr "Envoyer ce e-mail ? ([y]es|[n]o|[q]uit|[a]ll) : "
 
 #: git-send-email.perl:1327
 msgid "Send this email reply required"

@@ -16347,7 +16347,7 @@ msgstr "fatal : l'alias '%s' se développe en lui-même\n"
 #: git-send-email.perl:871
 msgid "Message-ID to be used as In-Reply-To for the first email (if any)? "
 msgstr ""
-"Message-ID à utiliser comme In-Reply-to pour le premier e-mail (s'il y en "
+"Message-ID à utiliser comme In-Reply-To pour le premier e-mail (s'il y en "
 "a) ? "
 
 #: git-send-email.perl:921 git-send-email.perl:929

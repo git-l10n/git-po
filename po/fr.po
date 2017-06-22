@@ -2029,7 +2029,7 @@ msgstr ""
 
 #: ident.c:367
 msgid "no email was given and auto-detection is disabled"
-msgstr "aucun courriel fourni et l'auto-détection est désactivée"
+msgstr "aucun e-mail fourni et l'auto-détection est désactivée"
 
 #: ident.c:372
 #, c-format
@@ -14094,7 +14094,7 @@ msgstr "-b, -B et --detach sont mutuellement exclusifs"
 
 #: builtin/worktree.c:478
 msgid "reason for locking"
-msgstr "raison du vérouillage"
+msgstr "raison du verrouillage"
 
 #: builtin/worktree.c:490 builtin/worktree.c:523
 #, c-format
@@ -14104,7 +14104,7 @@ msgstr "'%s' n'est pas une copie de travail"
 #: builtin/worktree.c:492 builtin/worktree.c:525
 msgid "The main working tree cannot be locked or unlocked"
 msgstr ""
-"La copie de travail principale ne peut pas être vérouillée ou dévérouillée"
+"La copie de travail principale ne peut pas être verrouillée ou déverrouillée"
 
 #: builtin/worktree.c:497
 #, c-format
@@ -14157,7 +14157,7 @@ msgstr ""
 
 #: upload-pack.c:1046
 msgid "interrupt transfer after <n> seconds of inactivity"
-msgstr "interrompre le transfer après <n> secondes d'inactivité"
+msgstr "interrompre le transfert après <n> secondes d'inactivité"
 
 #: credential-cache--daemon.c:223
 #, c-format
@@ -15746,7 +15746,7 @@ msgid ""
 "marked for applying."
 msgstr ""
 "Si le patch s'applique proprement, la section éditée sera\n"
-"immediatement marquée comme appliquée."
+"immédiatement marquée comme appliquée."
 
 #: git-add--interactive.perl:1042 git-add--interactive.perl:1045
 msgid ""
@@ -15754,7 +15754,7 @@ msgid ""
 "marked for discarding."
 msgstr ""
 "Si le patch s'applique proprement, la section éditée sera\n"
-"immediatement marquée comme éliminée."
+"immédiatement marquée comme éliminée."
 
 #: git-add--interactive.perl:1058
 #, perl-format
@@ -16160,7 +16160,7 @@ msgstr "argument invalide %s, -- attendu"
 
 #: git-send-email.perl:121
 msgid "local zone differs from GMT by a non-minute interval\n"
-msgstr "la zone locale diffère du GMT par un interval supérieur à une minute\n"
+msgstr "la zone locale diffère du GMT par un intervalle supérieur à une minute\n"
 
 #: git-send-email.perl:128 git-send-email.perl:134
 msgid "local time offset greater than or equal to 24 hours\n"
@@ -16175,12 +16175,12 @@ msgstr "l'éditeur est sorti en erreur, abandon total"
 msgid ""
 "'%s' contains an intermediate version of the email you were composing.\n"
 msgstr ""
-"'%s' contient une version intermédiaire du courriel que vous composiez.\n"
+"'%s' contient une version intermédiaire du e-mail que vous composiez.\n"
 
 #: git-send-email.perl:287
 #, perl-format
 msgid "'%s.final' contains the composed email.\n"
-msgstr "'%s.final' contient le courriel composé.\n"
+msgstr "'%s.final' contient le e-mail composé.\n"
 
 #: git-send-email.perl:305
 msgid "--dump-aliases incompatible with other options\n"
@@ -16302,7 +16302,7 @@ msgstr ""
 
 #: git-send-email.perl:748
 msgid "Summary email is empty, skipping it\n"
-msgstr "Le courriel de résumé etant vide, il a été ignoré\n"
+msgstr "Le e-mail de résumé etant vide, il a été ignoré\n"
 
 #. TRANSLATORS: please keep [y/N] as is.
 #: git-send-email.perl:780
@@ -16337,7 +16337,7 @@ msgstr ""
 
 #: git-send-email.perl:841
 msgid "To whom should the emails be sent (if anyone)?"
-msgstr "À qui les courriels doivent-ils être envoyés (s'il y en a) ?"
+msgstr "À qui les e-mails doivent-ils être envoyés (s'il y en a) ?"
 
 #: git-send-email.perl:859
 #, perl-format
@@ -16347,7 +16347,7 @@ msgstr "fatal : l'alias '%s' se développe en lui-même\n"
 #: git-send-email.perl:871
 msgid "Message-ID to be used as In-Reply-To for the first email (if any)? "
 msgstr ""
-"Message-ID à utiliser comme In-Reply-to pour le premier courriel (s'il y en "
+"Message-ID à utiliser comme In-Reply-To pour le premier e-mail (s'il y en "
 "a) ? "
 
 #: git-send-email.perl:921 git-send-email.perl:929
@@ -16396,7 +16396,7 @@ msgstr ""
 #. at this point.
 #: git-send-email.perl:1324
 msgid "Send this email? ([y]es|[n]o|[q]uit|[a]ll): "
-msgstr "Envoyer ce courriel ? ([y]es|[n]o|[q]uit|[a]ll) : "
+msgstr "Envoyer ce e-mail ? ([y]es|[n]o|[q]uit|[a]ll) : "
 
 #: git-send-email.perl:1327
 msgid "Send this email reply required"

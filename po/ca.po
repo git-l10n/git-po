@@ -14,6 +14,7 @@
 #   dry              |  simulació
 #   deprecated       |  en desús
 #   fatal            |  fatal
+#   hook             |  lligam
 #   hunk             |  tros
 #   not supported    |  no està admès
 #   repository       |  dipòsit
@@ -39,6 +40,7 @@
 #   stage            |  «stage»
 #   stash            |  «sta»
 #   squash           |  «squash»
+#   trailer          |  «trailer»
 #   unstage          |  «unstage»
 msgid ""
 msgstr ""
@@ -1316,7 +1318,7 @@ msgstr "memòria esgotada"
 
 #: config.c:187
 msgid "relative config include conditionals must come from files"
-msgstr ""
+msgstr "els condicionals d'inclusió de configuració relatius han de venir de fitxers"
 
 #: config.c:721
 #, c-format
@@ -1432,12 +1434,12 @@ msgstr "%s no vàlid: «%s»"
 #: config.c:2130
 #, c-format
 msgid "unknown core.untrackedCache value '%s'; using 'keep' default value"
-msgstr ""
+msgstr "valor «%s» a core.untrackedCache desconegut; utilitzant el valor per defecte «keep»"
 
 #: config.c:2156
 #, c-format
 msgid "splitIndex.maxPercentChange value '%d' should be between 0 and 100"
-msgstr ""
+msgstr "valor «%d» a splitIndex.maxPercentChange ha d'estar entre 0 i 100"
 
 #: config.c:2167
 #, c-format
@@ -2070,7 +2072,7 @@ msgstr "no s'ha pogut detectar automàticament el nom («%s» rebut)"
 #: ident.c:395
 #, c-format
 msgid "empty ident name (for <%s>) not allowed"
-msgstr ""
+msgstr "nom d'identitat buit (per <%s>) no és permès"
 
 #: ident.c:401
 #, c-format
@@ -2608,7 +2610,7 @@ msgstr "No s'ha pogut obrir «%s» per a escriptura"
 
 #: refs.c:1792
 msgid "ref updates forbidden inside quarantine environment"
-msgstr ""
+msgstr "no està permès actualitzar les referències en un entorn de quarantena"
 
 #: refs/files-backend.c:1136
 #, c-format
@@ -2681,9 +2683,9 @@ msgid "%%(subject) does not take arguments"
 msgstr "%%(subject) no accepta paràmetres"
 
 #: ref-filter.c:198
-#, fuzzy, c-format
+#, c-format
 msgid "unknown %%(trailers) argument: %s"
-msgstr "paràmetre de reflexió desconegut: %s"
+msgstr "paràmetre %%(trailers) desconegut: %s"
 
 #: ref-filter.c:221
 #, c-format
@@ -4958,6 +4960,19 @@ msgid ""
 "\n"
 "See \"git help submodule\" for more information."
 msgstr ""
+"Heu afegit un altre dipòsit git dins del dipòsit actual.\n"
+"Els clons de dipòsits externs no contindran els continguts de\n"
+"del dipòsit incrustat i no saben com obtenir-ho.\n"
+"Si volíeu afegir un submòdul, useu:\n"
+"\n"
+"\tgit submodule add <url> %s\n"
+"\n"
+"Si heu afegit aquest camí per error, podeu suprimir-lo de\n"
+" l'índex amb:\n"
+"\n"
+"\tgit rm --cached %s\n"
+"\n"
+"Vegeu \"git help submodule\" per a més informació."
 
 #: builtin/add.c:333
 #, c-format
@@ -5010,7 +5025,7 @@ msgstr "no s'ha pogut analitzar l'script d'autor"
 #: builtin/am.c:498
 #, c-format
 msgid "'%s' was deleted by the applypatch-msg hook"
-msgstr "s'ha suprimit «%s» pel ganxo applypatch-msg"
+msgstr "s'ha suprimit «%s» pel lligam applypatch-msg"
 
 #: builtin/am.c:539
 #, c-format
@@ -5200,6 +5215,10 @@ msgid ""
 "such.\n"
 "You might run `git rm` on a file to accept \"deleted by them\" for it."
 msgstr ""
+"Encara teniu camins sense fusionar a l'índex.\n"
+"Heu de fer 'git add' a cada fitxer amb conflictes resolts per marcar-los "
+"com a tal.\n"
+"Podeu executar `git rm` en un fitxer per acceptar \"suprimit per ells\" pel fitxer."
 
 #: builtin/am.c:2029 builtin/am.c:2033 builtin/am.c:2045 builtin/reset.c:332
 #: builtin/reset.c:340
@@ -6804,7 +6823,7 @@ msgstr "clona només una branca, HEAD o --branch"
 
 #: builtin/clone.c:127
 msgid "don't clone any tags, and make later fetches not to follow them"
-msgstr ""
+msgstr "no cloneu cap etiqueta, i feu que els «fetch» següents no els segueixen"
 
 #: builtin/clone.c:129
 msgid "any cloned submodules will be shallow"
@@ -7604,7 +7623,7 @@ msgstr "comet només els fitxers especificats"
 
 #: builtin/commit.c:1624
 msgid "bypass pre-commit and commit-msg hooks"
-msgstr "evita els ganxos de precomissió i missatge de comissió"
+msgstr "evita els lligams de precomissió i missatge de comissió"
 
 #: builtin/commit.c:1625
 msgid "show what would be committed"
@@ -7616,7 +7635,7 @@ msgstr "esmena la comissió anterior"
 
 #: builtin/commit.c:1637
 msgid "bypass post-rewrite hook"
-msgstr "evita el ganxo de post escriptura"
+msgstr "evita el lligam de post escriptura"
 
 #: builtin/commit.c:1642
 msgid "ok to record an empty change"
@@ -9414,7 +9433,7 @@ msgstr "--fix-thin no es pot usar sense --stdin"
 
 #: builtin/index-pack.c:1746
 msgid "--stdin requires a git repository"
-msgstr "--stdin requereix d'un dipòsit git"
+msgstr "--stdin requereix un dipòsit git"
 
 #: builtin/index-pack.c:1754
 msgid "--verify with no packfile name given"
@@ -9558,30 +9577,27 @@ msgstr "escurça els remolcs buits"
 
 #: builtin/interpret-trailers.c:96
 msgid "where to place the new trailer"
-msgstr ""
+msgstr "on ubica"
 
 #: builtin/interpret-trailers.c:98
-#, fuzzy
 msgid "action if trailer already exists"
-msgstr "l'arbre de treball '%s' ja existeix."
+msgstr "acció si el «trailer» ja existeix"
 
 #: builtin/interpret-trailers.c:100
 msgid "action if trailer is missing"
-msgstr ""
+msgstr "acció si el «trailer» falta"
 
 #: builtin/interpret-trailers.c:102
-#, fuzzy
 msgid "output only the trailers"
-msgstr "escurça els remolcs buits"
+msgstr "mostra només els «trailer»"
 
 #: builtin/interpret-trailers.c:103
-#, fuzzy
 msgid "do not apply config rules"
-msgstr "cerca les variables de configuració"
+msgstr "no apliquis les regles de configuració"
 
 #: builtin/interpret-trailers.c:104
 msgid "join whitespace-continued values"
-msgstr ""
+msgstr "uneix els valors continus amb espais en blanc"
 
 #: builtin/interpret-trailers.c:105
 msgid "set parsing options"
@@ -9596,9 +9612,8 @@ msgid "trailer(s) to add"
 msgstr "remolcs a afegir"
 
 #: builtin/interpret-trailers.c:117
-#, fuzzy
 msgid "--trailer with --only-input does not make sense"
-msgstr "--name-only no té sentit"
+msgstr "--trailer amb --only-input no té sentit"
 
 #: builtin/interpret-trailers.c:127
 msgid "no input file given for in-place editing"
@@ -10248,9 +10263,8 @@ msgid "allow merging unrelated histories"
 msgstr "permet fusionar històries no relacionades"
 
 #: builtin/merge.c:240
-#, fuzzy
 msgid "verify commit-msg hook"
-msgstr "evita els ganxos de precomissió i missatge de comissió"
+msgstr "verifica el lligam de missatge de comissió"
 
 #: builtin/merge.c:265
 msgid "could not run stash."
@@ -11899,7 +11913,7 @@ msgstr "poda les referències eliminades localment"
 
 #: builtin/push.c:547
 msgid "bypass pre-push hook"
-msgstr "evita el ganxo de prepujada"
+msgstr "evita el lligam de prepujada"
 
 #: builtin/push.c:548
 msgid "push missing but relevant tags"
@@ -12079,7 +12093,7 @@ msgstr ""
 "recomana això a menys que hàgiu decidit actualitzar el seu arbre en\n"
 "alguna altra manera per a coincidir amb el que hàgiu pujat.\n"
 "\n"
-"Per a silenciar aquest missatge i mantenir el el comportament\n"
+"Per a silenciar aquest missatge i mantenir el comportament\n"
 "predeterminat, establiu la variable de configuració\n"
 "'receive.denyCurrentBranch' a 'refuse'."
 
@@ -14365,7 +14379,7 @@ msgstr ""
 #: http.c:338
 #, c-format
 msgid "negative value for http.postbuffer; defaulting to %d"
-msgstr ""
+msgstr "valor negatiu per http.postbuffer; utilitzant el valor %d"
 
 #: http.c:359
 msgid "Delegation control is not supported with cURL < 7.22.0"
@@ -14793,7 +14807,7 @@ msgstr "No es pot emmagatzemar $stash_sha1"
 
 #: git-rebase.sh:214
 msgid "The pre-rebase hook refused to rebase."
-msgstr "El ganxo pre-«rebase» ha refusat a fer «rebase»."
+msgstr "El lligam pre-«rebase» ha refusat a fer «rebase»."
 
 #: git-rebase.sh:219
 msgid "It looks like git-am is in progress. Cannot rebase."
@@ -15489,8 +15503,8 @@ msgid ""
 msgstr ""
 "No s'ha pogut esmenar la comissió després d'escollir amb èxit $sha1... "
 "$rest\n"
-"Això és probablement a causa d'un missatge de comissió buit, o el ganxo de\n"
-"precomissió ha fallat. Si el ganxo de precomissió ha fallat, pot ser que\n"
+"Això és probablement a causa d'un missatge de comissió buit, o el lligam de\n"
+"precomissió ha fallat. Si el lligam de precomissió ha fallat, pot ser que\n"
 "necessiteu resoldre el problema abans que pugueu canviar el missatge de\n"
 "comissió."
 
@@ -15741,7 +15755,7 @@ msgstr "No s'ha pogut determinar el camí absolut del directori de git"
 #: git-add--interactive.perl:196
 #, perl-format
 msgid "%12s %12s %s"
-msgstr ""
+msgstr "%12s %12s %s"
 
 #: git-add--interactive.perl:197
 msgid "staged"
@@ -15955,6 +15969,12 @@ msgid ""
 "a - apply this hunk and all later hunks in the file\n"
 "d - do not apply this hunk or any of the later hunks in the file"
 msgstr ""
+"y - aplica aquest tros a l'índex\n"
+"n - no apliquis aquest tros a l'índex\n"
+"q - surt; no apliquis aquest tros ni cap dels pendents\n"
+"a - aplica aquest tros i tots els trossos posteriors en el fitxer\n"
+"d - no apliquis aquest tros ni cap dels trossos posteriors en el fitxer"
+
 
 #: git-add--interactive.perl:1167
 msgid ""
@@ -15964,6 +15984,11 @@ msgid ""
 "a - discard this hunk and all later hunks in the file\n"
 "d - do not discard this hunk or any of the later hunks in the file"
 msgstr ""
+"y - descarta aquest tros de l'arbre de treball\n"
+"n - no descartis aquest tros des de l'arbre de treball\n"
+"q - surt; no apliquis aquest tros ni cap dels pendents\n"
+"a - descarta aquest tros i tots els trossos posteriors en el fitxer\n"
+"d - no descartis aquest tros ni cap dels trossos posteriors en el fitxer"
 
 #: git-add--interactive.perl:1173
 msgid ""
@@ -15973,6 +15998,11 @@ msgid ""
 "a - discard this hunk and all later hunks in the file\n"
 "d - do not discard this hunk or any of the later hunks in the file"
 msgstr ""
+"y - descarta aquest tros de l'índex i de l'arbre de treball\n"
+"n - no descartis aquest tros des de l'índex i de l'arbre de treball\n"
+"q - surt; no apliquis aquest tros ni cap dels pendents\n"
+"a - descarta aquest tros i tots els trossos posteriors en el fitxer\n"
+"d - no descartis aquest tros ni cap dels trossos posteriors en el fitxer"
 
 #: git-add--interactive.perl:1179
 msgid ""
@@ -15982,6 +16012,11 @@ msgid ""
 "a - apply this hunk and all later hunks in the file\n"
 "d - do not apply this hunk or any of the later hunks in the file"
 msgstr ""
+"y - aplica aquest tros a l'índex i l'arbre de treball\n"
+"n - no apliquis aquest tros des de l'índex i de l'arbre de treball\n"
+"q - surt; no apliquis aquest tros ni cap dels pendents\n"
+"a - aplica aquest tros i tots els trossos posteriors en el fitxer\n"
+"d - no apliquis aquest tros ni cap dels trossos posteriors en el fitxer"
 
 #: git-add--interactive.perl:1188
 msgid ""
@@ -15995,6 +16030,15 @@ msgid ""
 "e - manually edit the current hunk\n"
 "? - print help\n"
 msgstr ""
+"g - selecciona el tros on voleu anar\n"
+"/ - cerca un tros que coincideixi amb l'expressió regular donada\n"
+"j - deixa aquest tros sense decidir, veure el tros sense decidir següent\n"
+"J - deixa aquest tros sense decidir, veure el tros següent\n"
+"k - deixa aquest tros sense decidir, veure el tros sense decidir anterior\n"
+"K - deixa aquest tros sense decidir, veure el tros anterior\n"
+"s - divideix el tros actual en trossos més petits\n"
+"e - edita manualment el tros actual\n"
+"? - mostra l'ajuda\n"
 
 #: git-add--interactive.perl:1219
 msgid "The selected hunks do not apply to the index!\n"
@@ -16200,6 +16244,12 @@ msgid ""
 "add untracked - add contents of untracked files to the staged set of "
 "changes\n"
 msgstr ""
+"status        - mostra els camins amb canvis\n"
+"update        - afegeix l'estat de l'arbre de treball al conjunt de canvis «staged»\n"
+"revert        - reverteix el conjunt de canvis de «staged» a la versió HEAD\n"
+"patch         - selecciona trossos i actualitza'ls selectivament\n"
+"diff          - mostra la diferència entre HEAD i l'índex\n"
+"add untracked - afegeix el contingut dels fitxers no seguits al conjunt de canvis «staged»\n"
 
 #: git-add--interactive.perl:1641 git-add--interactive.perl:1646
 #: git-add--interactive.perl:1649 git-add--interactive.perl:1656
@@ -16466,7 +16516,7 @@ msgstr "El servidor no admet STARTTLS! %s"
 #: git-send-email.perl:1431 git-send-email.perl:1435
 #, perl-format
 msgid "STARTTLS failed! %s"
-msgstr ""
+msgstr "STARTTLS ha fallat! %s"
 
 #: git-send-email.perl:1445
 msgid "Unable to initialize SMTP properly. Check config and use --smtp-debug."

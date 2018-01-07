@@ -6,6 +6,7 @@
 #  Hyunjun Kim <yoloseem@users.noreply.github.com>, 2015.
 #  Changwoo Ryu <cwryu@debian.org>, 2015-2018.
 #  Sihyeon Jang <uneedsihyeon@gmail.com>, 2018.
+#  Gwan-gyeong Mun <elongbug@gmail.com>, 2018.
 #
 # - 작업자는 위 Contributors 목록에 추가해 주세요.
 # - 번역하면서 80컬럼을 넘어가지 않도록 해 주세요.
@@ -3065,16 +3066,12 @@ msgid "%s: Unable to write new index file"
 msgstr "%s: 새 인덱스 파일을 쓸 수 없습니다"
 
 #: sequencer.c:496
-#, fuzzy
-#| msgid "could not resolve HEAD commit\n"
 msgid "could not resolve HEAD commit"
-msgstr "HEAD 커밋을 처리할 수 없습니다\n"
+msgstr "HEAD 커밋을 처리할 수 없습니다"
 
 #: sequencer.c:516
-#, fuzzy
-#| msgid "unable to update cache tree\n"
 msgid "unable to update cache tree"
-msgstr "캐시 트리를 업데이트할 수 없습니다\n"
+msgstr "캐시 트리를 업데이트할 수 없습니다"
 
 #: sequencer.c:600
 #, c-format
@@ -3107,16 +3104,14 @@ msgstr ""
 "  git rebase --continue\n"
 
 #: sequencer.c:702
-#, fuzzy, c-format
-#| msgid "could not parse commit %s\n"
+#, c-format
 msgid "could not parse commit %s"
-msgstr "%s 커밋을 파싱할 수 없습니다\n"
+msgstr "%s 커밋을 파싱할 수 없습니다"
 
 #: sequencer.c:707
-#, fuzzy, c-format
-#| msgid "could not parse parent commit %s\n"
+#, c-format
 msgid "could not parse parent commit %s"
-msgstr "%s 이전 커밋을 파싱할 수 없습니다\n"
+msgstr "%s 이전 커밋을 파싱할 수 없습니다"
 
 #: sequencer.c:836
 #, c-format
@@ -7276,10 +7271,9 @@ msgstr ""
 "--author '%s' 옵션이 '이름 <전자메일>' 형식이 아니고 기존 작성자에도 없습니다"
 
 #: builtin/commit.c:1090
-#, fuzzy, c-format
-#| msgid "Invalid untracked files mode '%s'"
+#, c-format
 msgid "Invalid ignored mode '%s'"
-msgstr "추적되지 않는 파일 모드가 ('%s') 잘못되었습니다"
+msgstr "무시한 모드가 ('%s') 잘못되었습니다"
 
 #: builtin/commit.c:1104 builtin/commit.c:1349
 #, c-format
@@ -7417,10 +7411,8 @@ msgid "could not parse newly created commit"
 msgstr "새로 만든 커밋을 파싱할 수 없습니다"
 
 #: builtin/commit.c:1516
-#, fuzzy
-#| msgid "could not resolve HEAD commit\n"
 msgid "unable to resolve HEAD after creating commit"
-msgstr "HEAD 커밋을 처리할 수 없습니다\n"
+msgstr "커밋을 만든 후 HEAD를 찾을 수 없습니다"
 
 #: builtin/commit.c:1518
 msgid "detached HEAD"
@@ -9559,16 +9551,12 @@ msgid "Use mail map file"
 msgstr "메일 맵 파일을 사용합니다"
 
 #: builtin/log.c:155
-#, fuzzy
-#| msgid "only use refs matching <pattern>"
 msgid "only decorate refs that match <pattern>"
-msgstr "<패턴>과 일치하는 레퍼런스만 사용합니다"
+msgstr "<패턴>과 일치하는 레퍼런스만 꾸미게 합니다"
 
 #: builtin/log.c:157
-#, fuzzy
-#| msgid "do not consider tags matching <pattern>"
 msgid "do not decorate refs that match <pattern>"
-msgstr "<패턴>과 일치하는 태그를 고려하지 않습니다"
+msgstr "<패턴>과 일치하는 레퍼런스를 꾸미지 않습니다"
 
 #: builtin/log.c:158
 msgid "decorate options"

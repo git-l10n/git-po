@@ -1005,7 +1005,7 @@ msgstr "no se puede usar --contents con el nombre de objeto commit final"
 #: blame.c:1788
 msgid "--reverse and --first-parent together require specified latest commit"
 msgstr ""
-"--reverse y --first-parent juntos requieren especificar el ultimo commit"
+"--reverse y --first-parent juntos requieren especificar el último commit"
 
 #: blame.c:1797 bundle.c:169 ref-filter.c:1981 sequencer.c:1177
 #: sequencer.c:2370 builtin/commit.c:1066 builtin/log.c:364 builtin/log.c:918
@@ -2463,7 +2463,7 @@ msgstr "No se pudo hacer que %s fuera escribible por el grupo"
 #: pathspec.c:129
 msgid "Escape character '\\' not allowed as last character in attr value"
 msgstr ""
-"Carácter de escape '\\' no permitido como ultimo carácter en el valor attr"
+"Carácter de escape '\\' no permitido como último carácter en el valor attr"
 
 #: pathspec.c:147
 msgid "Only one 'attr:' specification is allowed."
@@ -4368,7 +4368,7 @@ msgstr "agregado por nosotros:"
 
 #: wt-status.c:256
 msgid "deleted by them:"
-msgstr "borrados por ellso:"
+msgstr "borrados por ellos:"
 
 #: wt-status.c:258
 msgid "added by them:"
@@ -4475,7 +4475,7 @@ msgstr "  (usa \"git commit\" para concluir la fusión)"
 
 #: wt-status.c:1076
 msgid "You are in the middle of an am session."
-msgstr "Estas en medio de una sesión am."
+msgstr "Estás en medio de una sesión am."
 
 #: wt-status.c:1079
 msgid "The current patch is empty."
@@ -4505,8 +4505,8 @@ msgstr "No se realizaron los comandos."
 #, c-format
 msgid "Last command done (%d command done):"
 msgid_plural "Last commands done (%d commands done):"
-msgstr[0] "El ultimo comando realizado (%d comando realizado):"
-msgstr[1] "Los ultimos comandos realizados (%d comandos realizados):"
+msgstr[0] "El último comando realizado (%d comando realizado):"
+msgstr[1] "Los últimos comandos realizados (%d comandos realizados):"
 
 #: wt-status.c:1235
 #, c-format
@@ -4531,11 +4531,11 @@ msgstr "  (usa \"git rebase --edit-todo\" para ver y editar)"
 #: wt-status.c:1264
 #, c-format
 msgid "You are currently rebasing branch '%s' on '%s'."
-msgstr "Estas aplicando un rebase de la rama '%s' en '%s."
+msgstr "Estás aplicando un rebase de la rama '%s' en '%s."
 
 #: wt-status.c:1269
 msgid "You are currently rebasing."
-msgstr "Estas aplicando un rebase."
+msgstr "Estás aplicando un rebase."
 
 #: wt-status.c:1283
 msgid "  (fix conflicts and then run \"git rebase --continue\")"
@@ -4558,12 +4558,12 @@ msgstr "  (todos los conflictos corregidos: ejecuta \"git rebase --continue\")"
 msgid ""
 "You are currently splitting a commit while rebasing branch '%s' on '%s'."
 msgstr ""
-"Estas dividiendo un commit mientras aplicas un rebase de la rama '%s' en "
+"Estás dividiendo un commit mientras aplicas un rebase de la rama '%s' en "
 "'%s'."
 
 #: wt-status.c:1302
 msgid "You are currently splitting a commit during a rebase."
-msgstr "Estas dividiendo un commit durante un rebase."
+msgstr "Estás dividiendo un commit durante un rebase."
 
 #: wt-status.c:1305
 msgid "  (Once your working directory is clean, run \"git rebase --continue\")"
@@ -4575,12 +4575,12 @@ msgstr ""
 #, c-format
 msgid "You are currently editing a commit while rebasing branch '%s' on '%s'."
 msgstr ""
-"Estas editando un commit mientras se aplica un rebase de la rama '%s' en "
+"Estás editando un commit mientras se aplica un rebase de la rama '%s' en "
 "'%s'."
 
 #: wt-status.c:1314
 msgid "You are currently editing a commit during a rebase."
-msgstr "Estas editando un commit durante un rebase."
+msgstr "Estás editando un commit durante un rebase."
 
 #: wt-status.c:1317
 msgid "  (use \"git commit --amend\" to amend the current commit)"
@@ -4596,7 +4596,7 @@ msgstr ""
 #: wt-status.c:1329
 #, c-format
 msgid "You are currently cherry-picking commit %s."
-msgstr "Estas realizando un cherry-picking en el commit %s."
+msgstr "Estás realizando un cherry-picking en el commit %s."
 
 #: wt-status.c:1334
 msgid "  (fix conflicts and run \"git cherry-pick --continue\")"
@@ -4615,7 +4615,7 @@ msgstr ""
 #: wt-status.c:1348
 #, c-format
 msgid "You are currently reverting commit %s."
-msgstr "Estas revirtiendo el commit %s."
+msgstr "Estás revirtiendo el commit %s."
 
 #: wt-status.c:1353
 msgid "  (fix conflicts and run \"git revert --continue\")"
@@ -4632,11 +4632,11 @@ msgstr "  (usa \"git revert --abort\" para cancelar la operación de revertir)"
 #: wt-status.c:1369
 #, c-format
 msgid "You are currently bisecting, started from branch '%s'."
-msgstr "Estas aplicando un bisect, comenzando en la rama '%s'."
+msgstr "Estás aplicando un bisect, comenzando en la rama '%s'."
 
 #: wt-status.c:1373
 msgid "You are currently bisecting."
-msgstr "Estas aplicando un bisect."
+msgstr "Estás aplicando un bisect."
 
 #: wt-status.c:1376
 msgid "  (use \"git bisect reset\" to get back to the original branch)"
@@ -6386,7 +6386,7 @@ msgstr "La posición previa de HEAD era"
 
 #: builtin/checkout.c:848 builtin/checkout.c:1046
 msgid "You are on a branch yet to be born"
-msgstr "Estas en una rama por nacer"
+msgstr "Estás en una rama por nacer"
 
 #: builtin/checkout.c:952
 #, c-format

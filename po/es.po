@@ -343,7 +343,7 @@ msgstr ""
 #: apply.c:3225
 #, c-format
 msgid "patch failed: %s:%ld"
-msgstr "el parche fallo: %s:%ld"
+msgstr "el parche falló: %s:%ld"
 
 #: apply.c:3347
 #, c-format
@@ -394,7 +394,7 @@ msgstr "no se pueden leer los contenidos actuales de '%s'"
 #: apply.c:3595
 #, c-format
 msgid "Failed to fall back on three-way merge...\n"
-msgstr "Fallo el merge en retroceso de tres-vías...\n"
+msgstr "Falló el merge en retroceso de tres-vías...\n"
 
 #: apply.c:3609
 #, c-format
@@ -478,7 +478,7 @@ msgstr "falta información sha1 o es inútil (%s)."
 #: apply.c:4095 builtin/checkout.c:235 builtin/reset.c:140
 #, c-format
 msgid "make_cache_entry failed for path '%s'"
-msgstr "make_cache_entry fallo para la ruta '%s'"
+msgstr "make_cache_entry falló para la ruta '%s'"
 
 #: apply.c:4099
 #, c-format
@@ -519,7 +519,7 @@ msgstr "no es posible agregar una entrada en el cache para %s"
 #: apply.c:4343
 #, c-format
 msgid "failed to write to '%s'"
-msgstr "fallo escribir para '%s'"
+msgstr "falló escribir para '%s'"
 
 #: apply.c:4347
 #, c-format
@@ -961,7 +961,7 @@ msgstr "no se pudo leer el archivo '%s'"
 
 #: bisect.c:950
 msgid "reading bisect refs failed"
-msgstr "fallo leer las refs de bisect"
+msgstr "falló leer las refs de bisect"
 
 #: bisect.c:969
 #, c-format
@@ -1012,7 +1012,7 @@ msgstr ""
 #: builtin/log.c:1371 builtin/log.c:1702 builtin/log.c:1950 builtin/merge.c:370
 #: builtin/shortlog.c:191
 msgid "revision walk setup failed"
-msgstr "fallo la configuración del camino de revisión"
+msgstr "falló la configuración del camino de revisión"
 
 #: blame.c:1816
 msgid ""
@@ -1366,7 +1366,7 @@ msgstr "mal valor de config numérica '%s' para '%s' en %s: %s"
 #: config.c:989
 #, c-format
 msgid "failed to expand user dir in: '%s'"
-msgstr "fallo al expandir el directorio de usuario en: '%s'"
+msgstr "falló al expandir el directorio de usuario en: '%s'"
 
 #: config.c:998
 #, c-format
@@ -1432,7 +1432,7 @@ msgstr "%s tiene múltiples valores"
 #: config.c:2599 config.c:2816
 #, c-format
 msgid "fstat on %s failed"
-msgstr "fstat en %s fallo"
+msgstr "fstat en %s falló"
 
 #: config.c:2706
 #, c-format
@@ -1470,11 +1470,11 @@ msgstr "No se pudo correr 'git rev-list'"
 
 #: connected.c:98
 msgid "failed write to rev-list"
-msgstr "fallo escribir a rev-list"
+msgstr "falló escribir a rev-list"
 
 #: connected.c:105
 msgid "failed to close rev-list's stdin"
-msgstr "fallo al cerrar la entrada standard de rev-list"
+msgstr "falló al cerrar la entrada standard de rev-list"
 
 #: convert.c:205
 #, c-format
@@ -1577,7 +1577,7 @@ msgstr[1] "hace %<PRIuMAX> años"
 #: diffcore-order.c:24
 #, c-format
 msgid "failed to read orderfile '%s'"
-msgstr "fallo al leer orden de archivos '%s'"
+msgstr "falló al leer orden de archivos '%s'"
 
 #: diffcore-rename.c:535
 msgid "Performing inexact rename detection"
@@ -1591,7 +1591,7 @@ msgstr "opción '%s' requiere un valor"
 #: diff.c:152
 #, c-format
 msgid "  Failed to parse dirstat cut-off percentage '%s'\n"
-msgstr "  Fallo al analizar dirstat porcentaje de corte '%s'\n"
+msgstr "  Falló al analizar dirstat porcentaje de corte '%s'\n"
 
 #: diff.c:157
 #, c-format
@@ -1644,13 +1644,13 @@ msgid ""
 "Failed to parse --dirstat/-X option parameter:\n"
 "%s"
 msgstr ""
-"Fallo al analizar parámetro de opción --dirstat/-X:\n"
+"Falló al analizar parámetro de opción --dirstat/-X:\n"
 "%s"
 
 #: diff.c:4417
 #, c-format
 msgid "Failed to parse --submodule option parameter: '%s'"
-msgstr "Fallo al analizar parámetro de opción --submodule: '%s'"
+msgstr "Falló al analizar parámetro de opción --submodule: '%s'"
 
 #: diff.c:5493
 msgid "inexact rename detection was skipped due to too many files."
@@ -1677,7 +1677,7 @@ msgstr "no se pudo abrir el directorio '%s'"
 
 #: dir.c:2108
 msgid "failed to get kernel name and information"
-msgstr "fallo al conseguir la información y nombre del kernel"
+msgstr "falló al conseguir la información y nombre del kernel"
 
 #: dir.c:2232
 msgid "Untracked cache is disabled on this system or location."
@@ -1812,7 +1812,7 @@ msgstr "fetch-pack: no se puede quitar %s"
 #: fetch-pack.c:911
 #, c-format
 msgid "%s failed"
-msgstr "%s fallo"
+msgstr "%s falló"
 
 #: fetch-pack.c:913
 msgid "error in sideband demultiplexer"
@@ -1881,7 +1881,7 @@ msgstr "no hay commits comunes"
 
 #: fetch-pack.c:1028
 msgid "git fetch-pack: fetch failed."
-msgstr "git fetch-pack: fetch fallo."
+msgstr "git fetch-pack: fetch falló."
 
 #: fetch-pack.c:1190
 msgid "no matching remote head"
@@ -1899,7 +1899,7 @@ msgstr "Servidor no permite solicitudes de objetos inadvertidos %s"
 
 #: gpg-interface.c:181
 msgid "gpg failed to sign the data"
-msgstr "gpg fallo al firmar la data"
+msgstr "gpg falló al firmar la data"
 
 #: gpg-interface.c:211
 msgid "could not create temporary file"
@@ -1908,7 +1908,7 @@ msgstr "no se pudo crear archivo temporal"
 #: gpg-interface.c:214
 #, c-format
 msgid "failed writing detached signature to '%s'"
-msgstr "fallo al escribir la firma separada para '%s'"
+msgstr "falló al escribir la firma separada para '%s'"
 
 #: graph.c:97
 #, c-format
@@ -1924,7 +1924,7 @@ msgstr "'%s': no es posible leer %s"
 #: builtin/rm.c:134
 #, c-format
 msgid "failed to stat '%s'"
-msgstr "fallo al marcar '%s'"
+msgstr "falló al marcar '%s'"
 
 #: grep.c:2050
 #, c-format
@@ -2097,7 +2097,7 @@ msgstr ""
 "Otro proceso git parece estar corriendo en el repositorio, es decir\n"
 "un editor abierto con 'git commit'. Por favor asegúrese de que todos los "
 "procesos\n"
-"están terminados y vuelve a intentar. Si el fallo permanece, un proceso git\n"
+"están terminados y vuelve a intentar. Si el falló permanece, un proceso git\n"
 "puede haber roto el repositorio antes:\n"
 "borra el archivo manualmente para continuar."
 
@@ -2108,7 +2108,7 @@ msgstr "No se pudo crear '%s.lock': %s"
 
 #: merge.c:74
 msgid "failed to read the cache"
-msgstr "fallo al leer la cache"
+msgstr "falló al leer la cache"
 
 #: merge.c:134 builtin/am.c:1946 builtin/am.c:1980 builtin/checkout.c:378
 #: builtin/checkout.c:599 builtin/clone.c:759
@@ -2122,7 +2122,7 @@ msgstr "(mal commit)\n"
 #: merge-recursive.c:257 merge-recursive.c:265
 #, c-format
 msgid "addinfo_cache failed for path '%s'"
-msgstr "addinfo_cache fallo para la ruta '%s'"
+msgstr "addinfo_cache falló para la ruta '%s'"
 
 #: merge-recursive.c:329
 msgid "error building trees"
@@ -2131,7 +2131,7 @@ msgstr "error construyendo árboles"
 #: merge-recursive.c:771
 #, c-format
 msgid "failed to create path '%s'%s"
-msgstr "fallo al crear la ruta '%s'%s"
+msgstr "falló al crear la ruta '%s'%s"
 
 #: merge-recursive.c:782
 #, c-format
@@ -2160,12 +2160,12 @@ msgstr "se esperaba blob para %s '%s'"
 #: merge-recursive.c:873
 #, c-format
 msgid "failed to open '%s': %s"
-msgstr "fallo al abrir '%s': %s"
+msgstr "falló al abrir '%s': %s"
 
 #: merge-recursive.c:884
 #, c-format
 msgid "failed to symlink '%s': %s"
-msgstr "fallo al crear el enlace simbólico '%s': %s"
+msgstr "falló al crear el enlace simbólico '%s': %s"
 
 #: merge-recursive.c:889
 #, c-format
@@ -2174,7 +2174,7 @@ msgstr "no se que hacer con %06o %s '%s'"
 
 #: merge-recursive.c:1029
 msgid "Failed to execute internal merge"
-msgstr "Fallo al ejecutar la fusión interna"
+msgstr "Falló al ejecutar la fusión interna"
 
 #: merge-recursive.c:1034
 #, c-format
@@ -3276,7 +3276,7 @@ msgstr "no se puede leer el mensaje del commit de '%s'"
 #: sequencer.c:1154 builtin/am.c:1650 builtin/commit.c:1594 builtin/merge.c:826
 #: builtin/merge.c:851
 msgid "failed to write commit object"
-msgstr "fallo al escribir el objeto commit"
+msgstr "falló al escribir el objeto commit"
 
 #: sequencer.c:1213
 #, c-format
@@ -3409,12 +3409,12 @@ msgstr "conjunto de commits vacío entregado"
 #: sequencer.c:1712
 #, c-format
 msgid "git %s: failed to read the index"
-msgstr "git %s: fallo al leer el índice"
+msgstr "git %s: falló al leer el índice"
 
 #: sequencer.c:1718
 #, c-format
 msgid "git %s: failed to refresh the index"
-msgstr "git %s: fallo al refrescar el índice"
+msgstr "git %s: falló al refrescar el índice"
 
 #: sequencer.c:1792
 #, c-format
@@ -3872,7 +3872,7 @@ msgstr ""
 #: setup.c:827
 #, c-format
 msgid "failed to stat '%*s%s%s'"
-msgstr "fallo al determinar '%*s%s%s'"
+msgstr "falló al determinar '%*s%s%s'"
 
 #: setup.c:1057
 msgid "Unable to read current working directory"
@@ -4014,7 +4014,7 @@ msgstr "entrada de submódulo '%s' (%s) es un %s, no un commit"
 
 #: submodule.c:1065 builtin/branch.c:648 builtin/submodule--helper.c:1724
 msgid "Failed to resolve HEAD as a valid ref."
-msgstr "Fallo al resolver HEAD como un ref valido."
+msgstr "Falló al resolver HEAD como un ref valido."
 
 #: submodule.c:1370
 #, c-format
@@ -4225,7 +4225,7 @@ msgid ""
 "%%sPlease commit your changes or stash them before you switch branches."
 msgstr ""
 "Los cambios locales de los siguientes archivos serán sobrescritos por "
-"checkuot:\n"
+"checkout:\n"
 "%%sPor favor realiza un commit con los cambios o un stash antes de cambiar "
 "ramas."
 
@@ -4496,7 +4496,7 @@ msgstr "segmento de ruta '..' invalido"
 #: worktree.c:245 builtin/am.c:2147
 #, c-format
 msgid "failed to read '%s'"
-msgstr "fallo al leer '%s'"
+msgstr "falló al leer '%s'"
 
 #: worktree.c:291
 #, c-format
@@ -5047,7 +5047,7 @@ msgstr "no se puede %s: Tu índice contiene cambios que no están en un commit."
 #: compat/precompose_utf8.c:58 builtin/clone.c:440
 #, c-format
 msgid "failed to unlink '%s'"
-msgstr "fallo al desvincular '%s'"
+msgstr "falló al desvincular '%s'"
 
 #: builtin/add.c:24
 msgid "git add [<options>] [--] <pathspec>..."
@@ -5060,7 +5060,7 @@ msgstr "diff status inesperado %c"
 
 #: builtin/add.c:88 builtin/commit.c:257
 msgid "updating files failed"
-msgstr "fallo la actualización de carpetas"
+msgstr "falló la actualización de carpetas"
 
 #: builtin/add.c:98
 #, c-format
@@ -5086,7 +5086,7 @@ msgstr "No se puede escribir el parche"
 
 #: builtin/add.c:251
 msgid "editing patch failed"
-msgstr "fallo la edición del parche"
+msgstr "falló la edición del parche"
 
 #: builtin/add.c:254
 #, c-format
@@ -5216,7 +5216,7 @@ msgstr "Use -f si realmente quiere agregarlos.\n"
 
 #: builtin/add.c:380
 msgid "adding files failed"
-msgstr "fallo al agregar archivos"
+msgstr "falló al agregar archivos"
 
 #: builtin/add.c:417
 msgid "-A and -u are mutually incompatible"
@@ -5265,7 +5265,7 @@ msgstr "Línea mal formada: '%s'."
 #: builtin/am.c:576
 #, c-format
 msgid "Failed to copy notes from '%s' to '%s'"
-msgstr "Fallo al copiar notas de '%s' a '%s'"
+msgstr "Falló al copiar notas de '%s' a '%s'"
 
 #: builtin/am.c:602
 msgid "fseek failed"
@@ -5299,11 +5299,11 @@ msgstr "Falló al detectar el formato del parche."
 #: builtin/am.c:1013 builtin/clone.c:405
 #, c-format
 msgid "failed to create directory '%s'"
-msgstr "fallo al crear el directorio '%s'"
+msgstr "falló al crear el directorio '%s'"
 
 #: builtin/am.c:1018
 msgid "Failed to split patches."
-msgstr "Fallo al dividir parches."
+msgstr "Falló al dividir parches."
 
 #: builtin/am.c:1148 builtin/commit.c:342
 msgid "unable to write index file"
@@ -5408,7 +5408,7 @@ msgstr "Sin cambios -- parche ya aplicado."
 #: builtin/am.c:1832
 #, c-format
 msgid "Patch failed at %s %.*s"
-msgstr "El parche fallo en %s %.*s"
+msgstr "El parche falló en %s %.*s"
 
 #: builtin/am.c:1838
 msgid "Use 'git am --show-current-patch' to see the failed patch"
@@ -5445,14 +5445,14 @@ msgstr "No se pudo analizar el objeto '%s'."
 
 #: builtin/am.c:2048
 msgid "failed to clean index"
-msgstr "fallo al limpiar el índice"
+msgstr "falló al limpiar el índice"
 
 #: builtin/am.c:2083
 msgid ""
 "You seem to have moved HEAD since the last 'am' failure.\n"
 "Not rewinding to ORIG_HEAD"
 msgstr ""
-"Parece haber movido HEAD desde el último fallo 'am'.\n"
+"Parece haber movido HEAD desde el último falló 'am'.\n"
 "No rebobinando a ORIG_HEAD"
 
 #: builtin/am.c:2174
@@ -5543,7 +5543,7 @@ msgstr "formatear el parche(s)"
 
 #: builtin/am.c:2273
 msgid "override error message when patch failure occurs"
-msgstr "sobrescribir mensajes de error cuando fallos de parchado ocurran"
+msgstr "sobrescribir mensajes de error cuando fallós de parchado ocurran"
 
 #: builtin/am.c:2275
 msgid "continue applying patches after resolving a conflict"
@@ -5600,7 +5600,7 @@ msgstr ""
 
 #: builtin/am.c:2327
 msgid "failed to read the index"
-msgstr "fallo al leer el índice"
+msgstr "falló al leer el índice"
 
 #: builtin/am.c:2342
 #, c-format
@@ -5914,7 +5914,7 @@ msgstr ""
 
 #: builtin/branch.c:181
 msgid "Update of config-file failed"
-msgstr "Fallo de actualización de config-file"
+msgstr "Falló de actualización de config-file"
 
 #: builtin/branch.c:212
 msgid "cannot use -a with -d"
@@ -6821,7 +6821,7 @@ msgstr "Se saltara repositorio %s\n"
 #: builtin/clean.c:34
 #, c-format
 msgid "failed to remove %s"
-msgstr "fallo al borrar %s"
+msgstr "falló al borrar %s"
 
 #: builtin/clean.c:302 git-add--interactive.perl:572
 #, c-format
@@ -7132,7 +7132,7 @@ msgstr "info: No se pudo agregar un alterno para '%s': %s\n"
 #: builtin/clone.c:401
 #, c-format
 msgid "failed to open '%s'"
-msgstr "fallo al abrir '%s'"
+msgstr "falló al abrir '%s'"
 
 #: builtin/clone.c:409
 #, c-format
@@ -7147,12 +7147,12 @@ msgstr "falló al analizar %s\n"
 #: builtin/clone.c:445
 #, c-format
 msgid "failed to create link '%s'"
-msgstr "fallo al crear link '%s'"
+msgstr "falló al crear link '%s'"
 
 #: builtin/clone.c:449
 #, c-format
 msgid "failed to copy file to '%s'"
-msgstr "fallo al copiar archivo a '%s'"
+msgstr "falló al copiar archivo a '%s'"
 
 #: builtin/clone.c:475
 #, c-format
@@ -7390,7 +7390,7 @@ msgstr ""
 
 #: builtin/commit.c:284
 msgid "failed to unpack HEAD tree object"
-msgstr "fallo al desempaquetar objeto del árbol HEAD"
+msgstr "falló al desempaquetar objeto del árbol HEAD"
 
 #: builtin/commit.c:325
 msgid "unable to create temporary index"
@@ -7406,7 +7406,7 @@ msgstr "no es posible actualizar el índice temporal"
 
 #: builtin/commit.c:346
 msgid "Failed to update main cache tree"
-msgstr "Fallo al actualizar el cache principal del árbol"
+msgstr "Falló al actualizar el cache principal del árbol"
 
 #: builtin/commit.c:371 builtin/commit.c:395 builtin/commit.c:444
 msgid "unable to write new_index file"
@@ -9274,11 +9274,11 @@ msgstr "formato help no reconocido '%s'"
 
 #: builtin/help.c:94
 msgid "Failed to start emacsclient."
-msgstr "Fallo al iniciar emacsclient."
+msgstr "Falló al iniciar emacsclient."
 
 #: builtin/help.c:107
 msgid "Failed to parse emacsclient version."
-msgstr "Fallo al analizar la versión de emacsclient."
+msgstr "Falló al analizar la versión de emacsclient."
 
 #: builtin/help.c:115
 #, c-format
@@ -9288,7 +9288,7 @@ msgstr "la versión '%d' de emacsclient es muy antigua (<22)."
 #: builtin/help.c:133 builtin/help.c:155 builtin/help.c:165 builtin/help.c:173
 #, c-format
 msgid "failed to exec '%s'"
-msgstr "fallo al ejecutar '%s'"
+msgstr "falló al ejecutar '%s'"
 
 #: builtin/help.c:211
 #, c-format
@@ -9968,7 +9968,7 @@ msgstr ""
 
 #: builtin/log.c:1318
 msgid "Failed to find exact merge base"
-msgstr "Fallo al encontrar una base de fusión exacta"
+msgstr "Falló al encontrar una base de fusión exacta"
 
 #: builtin/log.c:1329
 msgid "base commit should be the ancestor of revision list"
@@ -12045,7 +12045,7 @@ msgstr "Haciendo push a %s\n"
 #: builtin/push.c:341
 #, c-format
 msgid "failed to push some refs to '%s'"
-msgstr "fallo el push de algunas referencias a '%s'"
+msgstr "falló el push de algunas referencias a '%s'"
 
 #: builtin/push.c:372
 #, c-format
@@ -14263,27 +14263,27 @@ msgstr "Desempaquetando objetos"
 #: builtin/update-index.c:82
 #, c-format
 msgid "failed to create directory %s"
-msgstr "fallo al crear directorio %s"
+msgstr "falló al crear directorio %s"
 
 #: builtin/update-index.c:88
 #, c-format
 msgid "failed to stat %s"
-msgstr "fallo al iniciar %s"
+msgstr "falló al iniciar %s"
 
 #: builtin/update-index.c:98
 #, c-format
 msgid "failed to create file %s"
-msgstr "fallo al crear el archivo %s"
+msgstr "falló al crear el archivo %s"
 
 #: builtin/update-index.c:106
 #, c-format
 msgid "failed to delete file %s"
-msgstr "fallo al eliminar el archivo %s"
+msgstr "falló al eliminar el archivo %s"
 
 #: builtin/update-index.c:113 builtin/update-index.c:219
 #, c-format
 msgid "failed to delete directory %s"
-msgstr "fallo al eliminar directorio %s"
+msgstr "falló al eliminar directorio %s"
 
 #: builtin/update-index.c:138
 #, c-format
@@ -14785,7 +14785,7 @@ msgstr "falló validación, no se puede mover el árbol de trabajo: %s"
 #: builtin/worktree.c:700
 #, c-format
 msgid "failed to move '%s' to '%s'"
-msgstr "fallo al mover '%s' a '%s'"
+msgstr "falló al mover '%s' a '%s'"
 
 #: builtin/worktree.c:748
 #, c-format
@@ -14805,7 +14805,7 @@ msgstr "no se pudo ejecutar 'git status' en '%s', código %d"
 #: builtin/worktree.c:768 builtin/worktree.c:782
 #, c-format
 msgid "failed to delete '%s'"
-msgstr "fallo al borrar '%s'"
+msgstr "falló al borrar '%s'"
 
 #: builtin/worktree.c:794
 msgid "force removing even if the worktree is dirty"
@@ -14947,7 +14947,7 @@ msgstr "expansión del alias '%s' falló; '%s' no es un comando de git\n"
 #: git.c:699
 #, c-format
 msgid "failed to run command '%s': %s\n"
-msgstr "fallo al ejecutar comando '%s': %s\n"
+msgstr "falló al ejecutar comando '%s': %s\n"
 
 #: http.c:342
 #, c-format
@@ -15717,12 +15717,12 @@ msgstr "No es posible hacer checkout al submódulo '$sm_path'"
 #: git-submodule.sh:272
 #, sh-format
 msgid "Failed to add submodule '$sm_path'"
-msgstr "Fallo al agregar el submódulo '$sm_path'"
+msgstr "Falló al agregar el submódulo '$sm_path'"
 
 #: git-submodule.sh:281
 #, sh-format
 msgid "Failed to register submodule '$sm_path'"
-msgstr "Fallo al registrar el submódulo '$sm_path'"
+msgstr "Falló al registrar el submódulo '$sm_path'"
 
 #: git-submodule.sh:342
 #, sh-format
@@ -16381,7 +16381,7 @@ msgstr ""
 #: git-add--interactive.perl:1078
 #, perl-format
 msgid "failed to open hunk edit file for writing: %s"
-msgstr "fallo al abrir el archivo de adición del hunk para escritura: %s"
+msgstr "falló al abrir el archivo de adición del hunk para escritura: %s"
 
 #: git-add--interactive.perl:1079
 msgid "Manual hunk edit mode -- see bottom for a quick guide.\n"
@@ -16414,7 +16414,7 @@ msgstr ""
 #: git-add--interactive.perl:1107
 #, perl-format
 msgid "failed to open hunk edit file for reading: %s"
-msgstr "fallo al abrir el archivo de edición del hunk para lectura: %s"
+msgstr "falló al abrir el archivo de edición del hunk para lectura: %s"
 
 #. TRANSLATORS: do not translate [y/n]
 #. The program will only accept that input
@@ -16880,7 +16880,7 @@ msgstr ""
 #: git-send-email.perl:625
 #, perl-format
 msgid "Failed to opendir %s: %s"
-msgstr "Fallo al abrir directorio %s: %s"
+msgstr "Falló al abrir directorio %s: %s"
 
 #: git-send-email.perl:649
 #, perl-format
@@ -16909,7 +16909,7 @@ msgstr "No hay línea de subject en %s?"
 #: git-send-email.perl:683
 #, perl-format
 msgid "Failed to open for writing %s: %s"
-msgstr "Fallo al abrir para escritura %s: %s"
+msgstr "Falló al abrir para escritura %s: %s"
 
 #: git-send-email.perl:694
 msgid ""
@@ -16928,12 +16928,12 @@ msgstr ""
 #: git-send-email.perl:718
 #, perl-format
 msgid "Failed to open %s: %s"
-msgstr "Fallo al abrir %s: %s"
+msgstr "Falló al abrir %s: %s"
 
 #: git-send-email.perl:735
 #, perl-format
 msgid "Failed to open %s.final: %s"
-msgstr "Fallo al abrir %s.final: %s"
+msgstr "Falló al abrir %s.final: %s"
 
 #: git-send-email.perl:778
 msgid "Summary email is empty, skipping it\n"
@@ -17061,7 +17061,7 @@ msgstr ""
 #: git-send-email.perl:1523
 #, perl-format
 msgid "Failed to send %s\n"
-msgstr "Fallo al enviar %s\n"
+msgstr "Falló al enviar %s\n"
 
 #: git-send-email.perl:1526
 #, perl-format
@@ -17127,7 +17127,7 @@ msgstr "(%s) Agregando %s: %s de: '%s'\n"
 #: git-send-email.perl:1799
 #, perl-format
 msgid "(%s) failed to close pipe to '%s'"
-msgstr "(%s) fallo al cerrar el pipe para '%s'"
+msgstr "(%s) falló al cerrar el pipe para '%s'"
 
 #: git-send-email.perl:1826
 msgid "cannot send message as 7bit"

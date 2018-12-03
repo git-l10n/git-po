@@ -39,6 +39,10 @@ Leader:		Gwan-gyeong Mun <elongbug@gmail.com>
 Members:	Changwoo Ryu <cwryu@debian.org>
 		Sihyeon Jang <uneedsihyeon@gmail.com>
 
+Language:	nb (Norwegian Bokmål)
+Repository:	https://github.com/petterreinholdtsen/git-po-nb
+Leader:		Petter Reinholdtsen <pere@hungry.com>
+
 Language:	pt_PT (Portuguese - Portugal)
 Repository:	https://github.com/vascool/git-po-pt/
 Leader:		Vasco Almeida <vascomalmeida@sapo.pt>

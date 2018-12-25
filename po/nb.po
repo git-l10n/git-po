@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2018-12-02 10:55+0800\n"
-"PO-Revision-Date: 2018-12-19 20:42+0100\n"
+"PO-Revision-Date: 2018-12-25 22:24+0100\n"
 "Last-Translator: Petter Reinholdtsen <pere@hungry.com>\n"
 "Language-Team: Norsk Bokmål <i18n-no@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -2439,7 +2439,7 @@ msgstr ""
 
 #: fetch-pack.c:1660 builtin/clone.c:664
 msgid "remote did not send all necessary objects"
-msgstr ""
+msgstr "fjerndepot sendte ikke alle nødvendige objekter"
 
 #: fetch-pack.c:1686
 #, c-format
@@ -4002,7 +4002,7 @@ msgstr "det er ikke satt opp en oppstrøms-gren for «%s»"
 #: remote.c:1587
 #, c-format
 msgid "upstream branch '%s' not stored as a remote-tracking branch"
-msgstr ""
+msgstr "oppstrømsgren %s er ikke lagret som en fjerndepot-sporet gren"
 
 #: remote.c:1602
 #, c-format
@@ -6198,7 +6198,7 @@ msgstr "  (bruk «git add <fil>...» for å markere som løst)"
 
 #: wt-status.c:189 wt-status.c:193
 msgid "  (use \"git add/rm <file>...\" as appropriate to mark resolution)"
-msgstr ""
+msgstr "  (bruk «git add/rm <fil>...» som aktuelt for å markere som løst)"
 
 #: wt-status.c:191
 msgid "  (use \"git rm <file>...\" to mark resolution)"
@@ -6333,7 +6333,7 @@ msgstr ""
 
 #: wt-status.c:1097
 msgid "You have unmerged paths."
-msgstr ""
+msgstr "Du har stier som ikke er slått sammen."
 
 #: wt-status.c:1100
 msgid "  (fix conflicts and run \"git commit\")"
@@ -6357,7 +6357,7 @@ msgstr "Du er midt i en am-økt."
 
 #: wt-status.c:1121
 msgid "The current patch is empty."
-msgstr ""
+msgstr "Gjeldende endring er tom."
 
 #: wt-status.c:1125
 msgid "  (fix conflicts and then run \"git am --continue\")"
@@ -6365,7 +6365,7 @@ msgstr "  (rydd opp i konflikter og kjør så «git am --continue»)"
 
 #: wt-status.c:1127
 msgid "  (use \"git am --skip\" to skip this patch)"
-msgstr ""
+msgstr "  (bruk «git am --skip» for å hoppe over denne endringen)"
 
 #: wt-status.c:1129
 msgid "  (use \"git am --abort\" to restore the original branch)"
@@ -6421,7 +6421,7 @@ msgstr ""
 
 #: wt-status.c:1324
 msgid "  (use \"git rebase --skip\" to skip this patch)"
-msgstr ""
+msgstr "  (bruk «git rebase --skip» å hoppe over denne endringen)"
 
 #: wt-status.c:1326
 msgid "  (use \"git rebase --abort\" to check out the original branch)"
@@ -6644,7 +6644,7 @@ msgstr ""
 #: wt-status.c:2374
 #, c-format
 msgid "cannot %s: You have unstaged changes."
-msgstr ""
+msgstr "kan ikke %s: Du har endringer utenfor settet."
 
 #: wt-status.c:2380
 msgid "additionally, your index contains uncommitted changes."
@@ -7012,7 +7012,7 @@ msgstr ""
 #: builtin/reset.c:336
 #, c-format
 msgid "Could not parse object '%s'."
-msgstr ""
+msgstr "Klarte ikke tolke objekt '%s'."
 
 #: builtin/am.c:2001
 msgid "failed to clean index"
@@ -8597,11 +8597,11 @@ msgstr ""
 
 #: builtin/clone.c:120
 msgid "checkout <branch> instead of the remote's HEAD"
-msgstr ""
+msgstr "sjekk ut <gren> i stedet for fjerndepotets HEAD"
 
 #: builtin/clone.c:122
 msgid "path to git-upload-pack on the remote"
-msgstr ""
+msgstr "sti til git-upload-pack på fjerndepotet"
 
 #: builtin/clone.c:123 builtin/fetch.c:142 builtin/grep.c:825
 #: builtin/pull.c:217
@@ -8723,7 +8723,7 @@ msgstr ""
 #: builtin/clone.c:569
 #, c-format
 msgid "Could not find remote branch %s to clone."
-msgstr "Klarte ikke finne fjerndepotgren %s for kloning"
+msgstr "Klarte ikke finne fjerndepotgren %s for kloning."
 
 #: builtin/clone.c:680
 #, c-format
@@ -8733,6 +8733,8 @@ msgstr "klarte ikke oppdatere %s"
 #: builtin/clone.c:730
 msgid "remote HEAD refers to nonexistent ref, unable to checkout.\n"
 msgstr ""
+"fjerndepots HEAD refererer til ikke-eksisterende referanse, kan ikke sjekke "
+"ut.\n"
 
 #: builtin/clone.c:761
 msgid "unable to checkout working tree"
@@ -8843,7 +8845,7 @@ msgstr "ignorerer --local"
 #: builtin/clone.c:1181 builtin/clone.c:1189
 #, c-format
 msgid "Remote branch %s not found in upstream %s"
-msgstr ""
+msgstr "Fjerndepotgren %s finnes ikke i oppstrømsdepot %s"
 
 #: builtin/clone.c:1192
 msgid "You appear to have cloned an empty repository."
@@ -10186,7 +10188,7 @@ msgstr ""
 #: builtin/fetch.c:164 builtin/ls-remote.c:77 builtin/push.c:582
 #: builtin/send-pack.c:172
 msgid "server-specific"
-msgstr ""
+msgstr "tjenermaskinspesifikt"
 
 #: builtin/fetch.c:164 builtin/ls-remote.c:77 builtin/push.c:582
 #: builtin/send-pack.c:173
@@ -13762,6 +13764,7 @@ msgstr ""
 #: builtin/push.c:293
 msgid "Updates were rejected because the tag already exists in the remote."
 msgstr ""
+"Oppdateringer ble avvist da merkelappen allerede eksisterer i fjerndepotet."
 
 #: builtin/push.c:296
 msgid ""
@@ -13849,7 +13852,7 @@ msgstr ""
 
 #: builtin/push.c:573
 msgid "prune locally removed refs"
-msgstr ""
+msgstr "klipp vekk lokalt fjernede refs"
 
 #: builtin/push.c:575
 msgid "bypass pre-push hook"
@@ -13865,11 +13868,11 @@ msgstr ""
 
 #: builtin/push.c:581 builtin/send-pack.c:176
 msgid "request atomic transaction on remote side"
-msgstr ""
+msgstr "be om atomisk transaksjon på fjerndepotsiden"
 
 #: builtin/push.c:599
 msgid "--delete is incompatible with --all, --mirror and --tags"
-msgstr ""
+msgstr "--delete kan ikke brukes sammen med --all, --mirror og --tags"
 
 #: builtin/push.c:601
 msgid "--delete doesn't make sense without any refs"
@@ -13877,7 +13880,7 @@ msgstr ""
 
 #: builtin/push.c:604
 msgid "--all and --tags are incompatible"
-msgstr ""
+msgstr "--all og --tags kan ikke brukes sammen"
 
 #: builtin/push.c:606
 msgid "--all can't be combined with refspecs"
@@ -13885,7 +13888,7 @@ msgstr ""
 
 #: builtin/push.c:610
 msgid "--mirror and --tags are incompatible"
-msgstr ""
+msgstr "--mirror og --tags kan ikke brukes sammen"
 
 #: builtin/push.c:612
 msgid "--mirror can't be combined with refspecs"
@@ -13893,7 +13896,7 @@ msgstr ""
 
 #: builtin/push.c:615
 msgid "--all and --mirror are incompatible"
-msgstr ""
+msgstr "--all og --mirror kan ikke brukes sammen"
 
 #: builtin/push.c:634
 msgid "push options must not have new line characters"
@@ -14360,7 +14363,7 @@ msgstr ""
 #: builtin/rebase.c:1415 builtin/reset.c:113
 #, c-format
 msgid "HEAD is now at %s"
-msgstr ""
+msgstr "HEAD er nå på %s"
 
 #: builtin/rebase.c:1431 git-legacy-rebase.sh:674
 msgid "Please commit or stash them."
@@ -15492,69 +15495,69 @@ msgstr ""
 
 #: builtin/reset.c:32
 msgid "git reset [-q] [<tree-ish>] [--] <paths>..."
-msgstr ""
+msgstr "git reset [-q] [<treaktig>] [--] <stier>..."
 
 #: builtin/reset.c:33
 msgid "git reset --patch [<tree-ish>] [--] [<paths>...]"
-msgstr ""
+msgstr "git reset --patch [<treaktig>] [--] [<stier>...]"
 
 #: builtin/reset.c:39
 msgid "mixed"
-msgstr ""
+msgstr "blandet"
 
 #: builtin/reset.c:39
 msgid "soft"
-msgstr ""
+msgstr "myk"
 
 #: builtin/reset.c:39
 msgid "hard"
-msgstr ""
+msgstr "hard"
 
 #: builtin/reset.c:39
 msgid "merge"
-msgstr ""
+msgstr "slå sammen"
 
 #: builtin/reset.c:39
 msgid "keep"
-msgstr ""
+msgstr "behold"
 
 #: builtin/reset.c:80
 msgid "You do not have a valid HEAD."
-msgstr ""
+msgstr "Du har ikke gyldig HEAD."
 
 #: builtin/reset.c:82
 msgid "Failed to find tree of HEAD."
-msgstr ""
+msgstr "Klarte ikke finne tre for HEAD."
 
 #: builtin/reset.c:88
 #, c-format
 msgid "Failed to find tree of %s."
-msgstr ""
+msgstr "Klarte ikke finne tre for %s."
 
 #: builtin/reset.c:192
 #, c-format
 msgid "Cannot do a %s reset in the middle of a merge."
-msgstr ""
+msgstr "Kan ikke gjennomføre en %s nullstilling midt i en sammenslåing."
 
 #: builtin/reset.c:292
 msgid "be quiet, only report errors"
-msgstr ""
+msgstr "vær stille, rapporter kun feil"
 
 #: builtin/reset.c:294
 msgid "reset HEAD and index"
-msgstr ""
+msgstr "nullstill HEAD og indeks"
 
 #: builtin/reset.c:295
 msgid "reset only HEAD"
-msgstr ""
+msgstr "nullstill kun HEAD"
 
 #: builtin/reset.c:297 builtin/reset.c:299
 msgid "reset HEAD, index and working tree"
-msgstr ""
+msgstr "nullstill HEAD, indeks og arbeidstre"
 
 #: builtin/reset.c:301
 msgid "reset HEAD but keep local changes"
-msgstr ""
+msgstr "nullstill HEAD for å ta vare på lokale endringer"
 
 #: builtin/reset.c:307
 msgid "record only the fact that removed paths will be added later"
@@ -15568,15 +15571,17 @@ msgstr ""
 #: builtin/reset.c:333
 #, c-format
 msgid "Failed to resolve '%s' as a valid tree."
-msgstr ""
+msgstr "Klarte ikke finne '%s' som et gyldig tre."
 
 #: builtin/reset.c:342
 msgid "--patch is incompatible with --{hard,mixed,soft}"
-msgstr ""
+msgstr "--patch kan ikke brukes sammen med --{hard,mixed,soft}"
 
 #: builtin/reset.c:351
 msgid "--mixed with paths is deprecated; use 'git reset -- <paths>' instead."
 msgstr ""
+"--mixed med stier anbefales ikke brukt;  bruk 'git reset -- <stier>' i "
+"stedet."
 
 #: builtin/reset.c:353
 #, c-format
@@ -15590,11 +15595,11 @@ msgstr ""
 
 #: builtin/reset.c:367
 msgid "-N can only be used with --mixed"
-msgstr ""
+msgstr "-N kan kun brukes med --mixed"
 
 #: builtin/reset.c:387
 msgid "Unstaged changes after reset:"
-msgstr ""
+msgstr "Endringer utenfor settet etter nullstilling:"
 
 #: builtin/reset.c:390
 #, c-format
@@ -15604,6 +15609,12 @@ msgid ""
 "use '--quiet' to avoid this.  Set the config setting reset.quiet to true\n"
 "to make this the default.\n"
 msgstr ""
+"\n"
+"Det tok %.f2 sekunder å telle opp endringer som ikke er i settet etter "
+"nullstilling.\n"
+"Du kan bruke '--quiet' for å unngå dette.  Sett oppsettverdien reset.quiet "
+"til sann\n"
+"for å gjøre dette til standardinnstilling.\n"
 
 #: builtin/reset.c:400
 #, c-format

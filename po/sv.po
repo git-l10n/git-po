@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: git 2.21.0\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2019-02-09 20:54+0800\n"
-"PO-Revision-Date: 2019-02-11 22:32+0100\n"
+"POT-Creation-Date: 2019-02-15 10:09+0800\n"
+"PO-Revision-Date: 2019-02-15 09:03+0100\n"
 "Last-Translator: Peter Krefting <peter@softwolves.pp.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -8253,13 +8253,6 @@ msgstr "\"%s\" är inte en giltig incheckning"
 
 #: builtin/bisect--helper.c:174
 #, c-format
-msgid "could not check out original HEAD '%s'. Try 'git bisectreset <commit>'."
-msgstr ""
-"Kunde inte checka ut original-HEAD \"%s\". Försök \"git bisect reset "
-"<incheckning>\"."
-
-#: builtin/bisect--helper.c:174
-#, c-format
 msgid ""
 "could not check out original HEAD '%s'. Try 'git bisect reset <commit>'."
 msgstr ""
@@ -8415,7 +8408,7 @@ msgid "update BISECT_HEAD instead of checking out the current commit"
 msgstr "uppdatera BISECT_HEAD istället för att checka ut aktuell incheckning"
 
 #: builtin/bisect--helper.c:649
-msgid "no log for BISECT_WRITE "
+msgid "no log for BISECT_WRITE"
 msgstr "ingen logg för BISECT_WRITE"
 
 #: builtin/bisect--helper.c:666
@@ -11684,13 +11677,13 @@ msgstr "Hämtar %s\n"
 msgid "Could not fetch %s"
 msgstr "Kunde inte hämta %s"
 
-#: builtin/fetch.c:1482 builtin/fetch.c:1651
+#: builtin/fetch.c:1482
 msgid ""
 "--filter can only be used with the remote configured in extensions."
-"partialclone"
+"partialClone"
 msgstr ""
 "--filter kan endast användas med fjärren konfigurerad i extensions."
-"partialclone"
+"partialClone"
 
 #: builtin/fetch.c:1506
 msgid ""
@@ -11736,6 +11729,14 @@ msgstr "Fjärren eller fjärrgruppen finns inte: %s"
 #: builtin/fetch.c:1635
 msgid "Fetching a group and specifying refspecs does not make sense"
 msgstr "Kan inte hämta från grupp och ange referensspecifikationer"
+
+#: builtin/fetch.c:1651
+msgid ""
+"--filter can only be used with the remote configured in extensions."
+"partialclone"
+msgstr ""
+"--filter kan endast användas med fjärren konfigurerad i extensions."
+"partialclone"
 
 #: builtin/fmt-merge-msg.c:18
 msgid ""
@@ -11926,7 +11927,7 @@ msgstr "%s: ogiltig reflog-post %s"
 #: builtin/fsck.c:461
 #, c-format
 msgid "Checking reflog %s->%s"
-msgstr "Kontrollerar reflog %s->%s\n"
+msgstr "Kontrollerar reflog %s->%s"
 
 #: builtin/fsck.c:495
 #, c-format
@@ -15731,7 +15732,7 @@ msgstr ""
 msgid "git rebase --continue | --abort | --skip | --edit-todo"
 msgstr "git rebase --continue | --abort | --skip | --edit-todo"
 
-#: builtin/rebase.c:121
+#: builtin/rebase.c:121 builtin/rebase.c:1437
 #, c-format
 msgid "%s requires an interactive rebase"
 msgstr "%s kräver en interaktiv ombasering"
@@ -16036,10 +16037,6 @@ msgstr "Okänt läge: %s"
 #: builtin/rebase.c:1397
 msgid "--strategy requires --merge or --interactive"
 msgstr "--strategy kräver --merge eller --interactive"
-
-#: builtin/rebase.c:1437
-msgid "--reschedule-failed-exec requires an interactive rebase"
-msgstr "--reschedule-failed-exec kräver en interaktiv ombasering"
 
 #: builtin/rebase.c:1446
 msgid "cannot combine am options with either interactive or merge options"
@@ -21993,6 +21990,9 @@ msgstr ""
 #, perl-format
 msgid "Do you really want to send %s? [y|N]: "
 msgstr "Vill du verkligen sända %s? [y=ja, n=nej]: "
+
+#~ msgid "--reschedule-failed-exec requires an interactive rebase"
+#~ msgstr "--reschedule-failed-exec kräver en interaktiv ombasering"
 
 #~ msgid "ignoring unknown color-moved-ws mode '%s'"
 #~ msgstr "ignorerar okänt läge för color-mode-ws \"%s\""

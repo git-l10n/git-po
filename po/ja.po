@@ -9,9 +9,10 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2019-02-15 10:09+0800\n"
-"PO-Revision-Date: 2019-02-20 09:22-0400\n"
+"PO-Revision-Date: 2019-02-20 13:13-0400\n"
 "Last-Translator: Tsuneake Kaemitsu <tsuneake.kaemitsu@gmail.com>\n"
-"Language-Team: Japanese Translation Team <https://github.com/kaemitsu/git-l10n-ja>\n"
+"Language-Team: Japanese Translation Team <https://github.com/kaemitsu/git-"
+"l10n-ja>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: advice.c:101
 #, c-format
 msgid "%shint: %.*s%s\n"
-msgstr ""
+msgstr "%sヒント： %.*s%s\n"
 
 #: advice.c:154
 msgid "Cherry-picking is not possible because you have unmerged files."
@@ -30,15 +31,15 @@ msgstr ""
 
 #: advice.c:156
 msgid "Committing is not possible because you have unmerged files."
-msgstr ""
+msgstr "未統合のファイルがあるために、コミットをできません。"
 
 #: advice.c:158
 msgid "Merging is not possible because you have unmerged files."
-msgstr ""
+msgstr "未統合のファイルがあるために、コミットをできません。"
 
 #: advice.c:160
 msgid "Pulling is not possible because you have unmerged files."
-msgstr ""
+msgstr "未統合のファイルがあるために、引くことができません。"
 
 #: advice.c:162
 msgid "Reverting is not possible because you have unmerged files."
@@ -57,15 +58,15 @@ msgstr ""
 
 #: advice.c:180
 msgid "Exiting because of an unresolved conflict."
-msgstr ""
+msgstr "未解決の衝突により終了します。"
 
 #: advice.c:185 builtin/merge.c:1290
 msgid "You have not concluded your merge (MERGE_HEAD exists)."
-msgstr ""
+msgstr "統合は完了していません (MERGE_HEAD 存在します)。"
 
 #: advice.c:187
 msgid "Please, commit your changes before merging."
-msgstr ""
+msgstr "統合する前に、変更をコミットして下さい。"
 
 #: advice.c:188
 msgid "Exiting because of unfinished merge."
@@ -221,7 +222,7 @@ msgstr ""
 #: apply.c:1846
 #, c-format
 msgid "** warning: file %s becomes empty but is not deleted"
-msgstr ""
+msgstr "**警告： %s ファイルは空になっても削除されません"
 
 #: apply.c:1993
 #, c-format
@@ -241,7 +242,7 @@ msgstr ""
 #: apply.c:2278
 #, c-format
 msgid "unable to read symlink %s"
-msgstr ""
+msgstr "システムリンク %s を読み込みません"
 
 #: apply.c:2282
 #, c-format
@@ -394,7 +395,7 @@ msgstr ""
 #: read-cache.c:1299
 #, c-format
 msgid "invalid path '%s'"
-msgstr ""
+msgstr "無効なパス '%s'"
 
 #: apply.c:3939
 #, c-format
@@ -494,7 +495,7 @@ msgstr ""
 #: apply.c:4366
 #, c-format
 msgid "closing file '%s'"
-msgstr ""
+msgstr "ファイル '%s' を閉じます"
 
 #: apply.c:4436
 #, c-format
@@ -508,7 +509,7 @@ msgstr ""
 
 #: apply.c:4542
 msgid "internal error"
-msgstr ""
+msgstr "内部エラー"
 
 #: apply.c:4545
 #, c-format
@@ -583,7 +584,7 @@ msgstr ""
 #: builtin/submodule--helper.c:1850 builtin/submodule--helper.c:1853
 #: builtin/submodule--helper.c:2092 git-add--interactive.perl:197
 msgid "path"
-msgstr ""
+msgstr "パス"
 
 #: apply.c:4960
 msgid "don't apply changes matching the given path"
@@ -773,7 +774,7 @@ msgstr ""
 #: builtin/notes.c:412 builtin/notes.c:578 builtin/read-tree.c:123
 #: parse-options.h:162
 msgid "file"
-msgstr ""
+msgstr "ファイル"
 
 #: archive.c:459 builtin/archive.c:90
 msgid "write the archive to this file"
@@ -815,7 +816,7 @@ msgstr ""
 #: archive.c:479 builtin/archive.c:93 builtin/difftool.c:715
 #: builtin/notes.c:498
 msgid "command"
-msgstr ""
+msgstr "コマンド"
 
 #: archive.c:480 builtin/archive.c:94
 msgid "path to the remote git-upload-archive command"
@@ -921,7 +922,7 @@ msgstr ""
 #: bisect.c:733
 #, c-format
 msgid "Not a valid commit name %s"
-msgstr ""
+msgstr "無効なコミット名 %s"
 
 #: bisect.c:758
 #, c-format
@@ -973,7 +974,7 @@ msgstr ""
 #: bisect.c:884 builtin/notes.c:177 builtin/tag.c:237
 #, c-format
 msgid "could not create file '%s'"
-msgstr ""
+msgstr "'%s' ファイルを作成できません"
 
 #: bisect.c:937 builtin/merge.c:139
 #, c-format
@@ -1838,7 +1839,7 @@ msgstr ""
 #: connect.c:708
 #, c-format
 msgid "unknown port %s"
-msgstr ""
+msgstr "不明なポート %s"
 
 #: connect.c:845 connect.c:1171
 #, c-format
@@ -1878,7 +1879,7 @@ msgstr ""
 
 #: connect.c:1304
 msgid "unable to fork"
-msgstr ""
+msgstr "フォクをできません"
 
 #: connected.c:68 builtin/fsck.c:221 builtin/prune.c:146
 msgid "Checking connectivity"
@@ -2324,7 +2325,7 @@ msgstr ""
 #: fetch-pack.c:432
 #, c-format
 msgid "invalid commit %s"
-msgstr ""
+msgstr "無効なコミット %s"
 
 #: fetch-pack.c:463
 msgid "giving up"
@@ -2365,7 +2366,7 @@ msgstr ""
 #: fetch-pack.c:871
 #, c-format
 msgid "%s failed"
-msgstr ""
+msgstr "%s 失敗しました"
 
 #: fetch-pack.c:873
 msgid "error in sideband demultiplexer"
@@ -2512,7 +2513,7 @@ msgstr ""
 
 #: gpg-interface.c:344
 msgid "could not create temporary file"
-msgstr ""
+msgstr "一時的ファイルを作成できません"
 
 #: gpg-interface.c:347
 #, c-format

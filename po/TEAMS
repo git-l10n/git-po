@@ -36,6 +36,10 @@ Language:	it (Italian)
 Repository:	https://github.com/AlessandroMenti/git-po
 Leader:		Alessandro Menti <alessandro.menti@alessandromenti.it>
 
+Language:	ja (Japanese)
+Repository:	https://github.com/kaemitsu/git-l10n-ja
+Leader:		Tsuneake Kaemitsu <tsuneake.kaemitsu@gmail.com>
+
 Language:	ko (Korean)
 Repository:	https://github.com/git-l10n-ko/git-l10n-ko/
 Leader:		Gwan-gyeong Mun <elongbug@gmail.com>

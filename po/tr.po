@@ -2961,7 +2961,7 @@ msgstr "<n>"
 
 #: diff.c:5268 diff.c:5271
 msgid "generate diffs with <n> lines context"
-msgstr "diff'leri <n> satır bağlam ile oluştur"
+msgstr "diff'leri <n> satır bağlamlı oluştur"
 
 #: diff.c:5273
 msgid "generate the diff in raw format"
@@ -3004,12 +3004,12 @@ msgstr "--dirstat=files,param1,param2... eşanlamlısı"
 #: diff.c:5302
 msgid "warn if changes introduce conflict markers or whitespace errors"
 msgstr ""
-"eğer değişiklikler çakışma imleyicileri veya boşluk hataları doğuruyorsa uyar"
+"değişiklikler çakışma imleyicileri veya boşluk hataları doğuruyorsa uyar"
 
 #: diff.c:5305
 msgid "condensed summary such as creations, renames and mode changes"
-msgstr "sıkıştırılmış özet; örneğin oluşturmalar, yeniden adlandırmalar ve "
-"kip değişiklikleri"
+msgstr "sıkışık özet; örn. oluşumlar, yeniden adlandırmalar ve kip "
+"değişiklikleri"
 
 #: diff.c:5308
 msgid "show only names of changed files"
@@ -3057,7 +3057,7 @@ msgstr "diffstat içinde ufak özet oluştur"
 
 #: diff.c:5332
 msgid "output a binary diff that can be applied"
-msgstr "uygulanabilir bir ikili diff çıktı ver"
+msgstr "uygulanabilir bir ikili diff çıktısı ver"
 
 #: diff.c:5335
 msgid "show full pre- and post-image object names on the \"index\" lines"
@@ -3076,7 +3076,7 @@ msgid ""
 "highlight whitespace errors in the 'context', 'old' or 'new' lines in the "
 "diff"
 msgstr ""
-"diff içinde boşluk hatalarını 'context', 'old' veya 'new' satırlarında vurgula"
+"diff'teki boşluk hatalarını 'context', 'old' veya 'new' satırlarında vurgula"
 
 #: diff.c:5342
 msgid ""
@@ -3137,7 +3137,7 @@ msgstr "<n>[/<m>]"
 
 #: diff.c:5378
 msgid "break complete rewrite changes into pairs of delete and create"
-msgstr "tümüyle yeniden yazım değişikliklerini silme ve oluşturma olarak dök"
+msgstr "tam yeniden yazım değişikliklerini silme ve oluşturma olarak ayır"
 
 #: diff.c:5382
 msgid "detect renames"
@@ -3190,7 +3190,7 @@ msgstr "satırları karşılaştırırken boşlukları yok say"
 
 #: diff.c:5413
 msgid "ignore changes in amount of whitespace"
-msgstr "boşluk miktarındaki değişiklikleri yok say"
+msgstr "boşluk sayısındaki değişiklikleri yok say"
 
 #: diff.c:5416
 msgid "ignore changes in whitespace at EOL"
@@ -3372,7 +3372,7 @@ msgstr "<dosya>"
 
 #: diff.c:5509
 msgid "Output to a specific file"
-msgstr "Belirli bir dosyaya çıktı ver"
+msgstr "belirli bir dosyaya çıktı ver"
 
 #: diff.c:6164
 msgid "inexact rename detection was skipped due to too many files."
@@ -8807,13 +8807,13 @@ msgstr "Değişiklik yok"
 #: wt-status.c:1770
 #, c-format
 msgid "no changes added to commit (use \"git add\" and/or \"git commit -a\")\n"
-msgstr "değişiklikler gönderiye eklenmedi (\"git add\" ve/veya \"git commit "
+msgstr "Gönderiye eklenen değişiklik yok (\"git add\" ve/veya \"git commit "
 "-a\" kullanın)\n"
 
 #: wt-status.c:1773
 #, c-format
 msgid "no changes added to commit\n"
-msgstr "değişiklikler gönderiye eklenmedi\n"
+msgstr "Gönderiye eklenen değişiklik yok\n"
 
 #: wt-status.c:1776
 #, c-format
@@ -10989,7 +10989,7 @@ msgstr "dal veya gönderi değişkeni eksik"
 #: builtin/multi-pack-index.c:27 builtin/pull.c:138 builtin/push.c:563
 #: builtin/send-pack.c:174
 msgid "force progress reporting"
-msgstr "durum belirtmeyi zorla"
+msgstr "durum belirtimini zorla"
 
 #: builtin/checkout.c:1440
 msgid "perform a 3-way merge with the new branch"
@@ -11388,7 +11388,7 @@ msgstr "bir yansı depo oluştur (çıplak ima eder)"
 
 #: builtin/clone.c:100
 msgid "to clone from a local repository"
-msgstr "bir yerel depodan klonlamak için"
+msgstr "bir yerel depodan klonla"
 
 #: builtin/clone.c:102
 msgid "don't use local hardlinks, always copy"
@@ -11396,7 +11396,7 @@ msgstr "yerel sabit bağlantıları kullanma, her zaman kopyala"
 
 #: builtin/clone.c:104
 msgid "setup as shared repository"
-msgstr "paylaşılan depo olarak ayarla"
+msgstr "paylaşılan depo ayarla"
 
 #: builtin/clone.c:107
 msgid "pathspec"
@@ -11408,7 +11408,7 @@ msgstr "klon içerisindeki altmodülleri ilklendir"
 
 #: builtin/clone.c:110
 msgid "number of submodules cloned in parallel"
-msgstr "paralel olarak klonlanan altmodüllerin sayısı"
+msgstr "paralelde klonlanan altmodüllerin sayısı"
 
 #: builtin/clone.c:111 builtin/init-db.c:486
 msgid "template-directory"
@@ -11460,7 +11460,7 @@ msgstr "zaman"
 
 #: builtin/clone.c:128
 msgid "create a shallow clone since a specific time"
-msgstr "verilen zamandan bu yana bir sığ depo oluştur"
+msgstr "verilen zamandan sonrasını içeren bir sığ depo oluştur"
 
 #: builtin/clone.c:129 builtin/fetch.c:172 builtin/fetch.c:195
 #: builtin/rebase.c:1445
@@ -11477,12 +11477,11 @@ msgstr "yalnızca bir dal klonla, HEAD veya --branch"
 
 #: builtin/clone.c:134
 msgid "don't clone any tags, and make later fetches not to follow them"
-msgstr "hiçbir etiketi klonlama ve sonraki getirmelerin de onları izlememesini "
-"sağla"
+msgstr "etiket klonlama ve sonraki getirmeler de onları izlemesin"
 
 #: builtin/clone.c:136
 msgid "any cloned submodules will be shallow"
-msgstr "klonlanan herhangi bir altmodül sığ olacak"
+msgstr "klonlanan altmodüller sığ olarak klonla"
 
 #: builtin/clone.c:137 builtin/init-db.c:495
 msgid "gitdir"
@@ -21957,7 +21956,7 @@ msgstr "Verileri sütunlarla göster"
 
 #: command-list.h:73
 msgid "Record changes to the repository"
-msgstr "Depoya olan değişikliklerin kaydını yaz"
+msgstr "Depoya değişikliklerin kaydını yaz"
 
 #: command-list.h:74
 msgid "Write and verify Git commit-graph files"
@@ -22114,7 +22113,7 @@ msgstr "Mevcut paketli bir arşiv için paket indeks dosyası yap"
 
 #: command-list.h:111
 msgid "Create an empty Git repository or reinitialize an existing one"
-msgstr "Boş bir Git deposu oluşturun veya var olanı yeniden başlat"
+msgstr "Boş bir Git deposu oluştur veya var olanı yeniden başlat"
 
 #: command-list.h:112
 msgid "Instantly browse your working repository in gitweb"
@@ -22154,7 +22153,7 @@ msgstr "Yalın UNIX mbox bölücü yazılımı"
 
 #: command-list.h:121
 msgid "Join two or more development histories together"
-msgstr "İki veya daha fazla geliştirme geçmişini birleştirin"
+msgstr "İki veya daha fazla geliştirme geçmişini birleştir"
 
 #: command-list.h:122
 msgid "Find as good common ancestors as possible for a merge"
@@ -22259,7 +22258,7 @@ msgstr "Ağaç bilgisini indekse okur"
 
 #: command-list.h:147
 msgid "Reapply commits on top of another base tip"
-msgstr "Gönderileri başka bir temel ucunun üstüne uygula"
+msgstr "Gönderileri başka bir temel ucu üzerine uygula"
 
 #: command-list.h:148
 msgid "Receive what is pushed into the repository"

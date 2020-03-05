@@ -22241,7 +22241,7 @@ msgstr "Başka bir depo veya yerel daldan getir ve entegre et"
 
 #: command-list.h:143
 msgid "Update remote refs along with associated objects"
-msgstr "İlişkili nesnelerle birlikte uzak başvuruları da güncelle"
+msgstr "Bağlantılı nesnelerle birlikte uzak başvuruları da güncelle"
 
 #: command-list.h:144
 msgid "Applies a quilt patchset onto the current branch"
@@ -24048,7 +24048,7 @@ msgstr "(non-mbox) Cc: %s, '%s' satırından ekleniyor\n"
 #: git-send-email.perl:1753
 #, perl-format
 msgid "(body) Adding cc: %s from line '%s'\n"
-msgstr "(body) Cc: %s, '%s'. satırından ekleniyor\n"
+msgstr "(body) Cc: %s, '%s' satırından ekleniyor\n"
 
 #: git-send-email.perl:1864
 #, perl-format

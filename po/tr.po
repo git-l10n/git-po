@@ -8832,24 +8832,24 @@ msgstr "gönderiye bir şey eklenmedi ancak izlenmeyen dosyalar var\n"
 #: wt-status.c:1782
 #, c-format
 msgid "nothing to commit (create/copy files and use \"git add\" to track)\n"
-msgstr "gönderilecek bir şey yok (dosyalar oluşturun/kopyalayın ve izlemek "
+msgstr "Gönderilecek bir şey yok (dosyalar oluşturun/kopyalayın ve izlemek "
 "için \"git add\" kullanın)\n"
 
 #: wt-status.c:1785 wt-status.c:1790
 #, c-format
 msgid "nothing to commit\n"
-msgstr "gönderilecek bir şey yok\n"
+msgstr "Gönderilecek bir şey yok\n"
 
 #: wt-status.c:1788
 #, c-format
 msgid "nothing to commit (use -u to show untracked files)\n"
-msgstr "gönderilecek bir şey yok (izlenmeyen dosyaları göstermek için -u "
+msgstr "Gönderilecek bir şey yok (izlenmeyen dosyaları göstermek için -u "
 "kullanın)\n"
 
 #: wt-status.c:1792
 #, c-format
 msgid "nothing to commit, working tree clean\n"
-msgstr "gönderilecek bir şey yok, çalışma ağacı temiz\n"
+msgstr "Gönderilecek bir şey yok, çalışma ağacı temiz\n"
 
 #: wt-status.c:1905
 msgid "No commits yet on "
@@ -12009,8 +12009,8 @@ msgid ""
 "Please enter the commit message for your changes. Lines starting\n"
 "with '%c' will be ignored, and an empty message aborts the commit.\n"
 msgstr ""
-"Lütfen değişiklikleriniz için bir gönderi iletisi girin. '%c' ile\n"
-"başlayan satırlar yok sayılacaktır. Boş bir ileti gönderiyi iptal eder.\n"
+"Lütfen değişiklikleriniz için bir gönderi iletisi girin. '%c' ile başlayan\n"
+"satırlar yok sayılacaktır. Boş bir ileti gönderiyi iptal eder.\n"
 
 #: builtin/commit.c:875
 #, c-format
@@ -12019,8 +12019,8 @@ msgid ""
 "with '%c' will be kept; you may remove them yourself if you want to.\n"
 "An empty message aborts the commit.\n"
 msgstr ""
-"Lütfen değişiklikleriniz için bir gönderi iletisi girin. '%c' ile\n"
-"başlayan satırlar tutulacaktır; isterseniz onları kaldırabilirsiniz.\n"
+"Lütfen değişiklikleriniz için bir gönderi iletisi girin. '%c' ile başlayan\n"
+"satırlar tutulacaktır; isterseniz onları kaldırabilirsiniz.\n"
 "Boş bir ileti gönderiyi iptal eder.\n"
 
 #: builtin/commit.c:892
@@ -16639,7 +16639,7 @@ msgstr "standart altı paket - bellek yetersiz"
 #: builtin/pack-objects.c:2440
 #, c-format
 msgid "Delta compression using up to %d threads"
-msgstr "En çok %d iş parçacığı kullanarak delta sıkıştırması"
+msgstr "Delta sıkıştırması %d iş parçacığı kullanıyor"
 
 #: builtin/pack-objects.c:2572
 #, c-format
@@ -18036,8 +18036,8 @@ msgid ""
 "and run me again.  I am stopping in case you still have something\n"
 "valuable there.\n"
 msgstr ""
-"Görünüşe bakılırsa bir %s dizini zaten var ve acaba siz başka bir\n"
-"yeniden temellendirmenin ortasında mısınız, merak ediyorum. Eğer\n"
+"Görünüşe bakılırsa bir %s dizini zaten var ve merak ediyorum acaba\n"
+"siz başka bir yeniden temellendirmenin ortasında mısınız? Eğer\n"
 "durum buysa lütfen şunu deneyin:\n"
 "\t%s\n"
 "Eğer başka bir şeyse, lütfen\n"
@@ -18296,7 +18296,7 @@ msgstr "Ulaşılabilir nesneler imleniyor..."
 #: builtin/reflog.c:643
 #, c-format
 msgid "%s points nowhere!"
-msgstr "%s hiçbir yere işaret etmiyor"
+msgstr "%s hiçbir yere işaret etmiyor!"
 
 #: builtin/reflog.c:695
 msgid "no reflog specified to delete"
@@ -18652,7 +18652,7 @@ msgstr "(URL yok)"
 #: builtin/remote.c:1172 builtin/remote.c:1174
 #, c-format
 msgid "  Push  URL: %s"
-msgstr " URL'yi it: %s"
+msgstr "     URL'yi it: %s"
 
 #: builtin/remote.c:1176 builtin/remote.c:1178 builtin/remote.c:1180
 #, c-format
@@ -21393,7 +21393,6 @@ msgstr ""
 "kilitli bir çalışma ağacı taşınamıyor;\n"
 "geçersiz kılmak için 'move -f -f' kullanın veya önce kilidini açın"
 
-
 #: builtin/worktree.c:825
 #, c-format
 msgid "validation failed, cannot move working tree: %s"
@@ -21456,7 +21455,7 @@ msgstr "<önek>/"
 
 #: builtin/write-tree.c:29
 msgid "write tree object for a subdirectory <prefix>"
-msgstr "<önek> altdizini için ağaç nesnesi yaz"
+msgstr "bir <önek> altdizini için ağaç nesnesi yaz"
 
 #: builtin/write-tree.c:31
 msgid "only useful for debugging"
@@ -21916,7 +21915,7 @@ msgstr "gitignore / exclude dosyalarında hata ayıkla"
 
 #: command-list.h:63
 msgid "Show canonical names and email addresses of contacts"
-msgstr "Kişilerin gerçek adlarını ve e-posta adreslerini göster"
+msgstr "Kişilerin adlarını ve e-posta adreslerini göster"
 
 #: command-list.h:64
 msgid "Switch branches or restore working tree files"
@@ -21928,15 +21927,15 @@ msgstr "Dosyaları indeksten çalışma ağacına kopyala"
 
 #: command-list.h:66
 msgid "Ensures that a reference name is well formed"
-msgstr "Bir başvuru adının düzgünce oluşturulduğundan emin olur"
+msgstr "Bir başvuru adının düzgünce oluşturulduğundan emin ol"
 
 #: command-list.h:67
 msgid "Find commits yet to be applied to upstream"
-msgstr "Henüz üstkaynağa uygulanmayan gönderileri bulur"
+msgstr "Henüz üstkaynağa uygulanmayan gönderileri bul"
 
 #: command-list.h:68
 msgid "Apply the changes introduced by some existing commits"
-msgstr "Bazı mevcut gönderiler tarafından sunulan değişiklikleri uygula"
+msgstr "Var olan bazı gönderiler tarafından getirilen değişiklikleri uygula"
 
 #: command-list.h:69
 msgid "Graphical alternative to git-commit"
@@ -21956,7 +21955,7 @@ msgstr "Verileri sütunlarla göster"
 
 #: command-list.h:73
 msgid "Record changes to the repository"
-msgstr "Depoya değişikliklerin kaydını yaz"
+msgstr "Değişikliklerin kaydını depoya yaz"
 
 #: command-list.h:74
 msgid "Write and verify Git commit-graph files"
@@ -21993,7 +21992,7 @@ msgstr "Bir CVS çıkışına tek bir gönderiyi dışa aktar"
 
 #: command-list.h:82
 msgid "Salvage your data out of another SCM people love to hate"
-msgstr "'Tiskindiğiniz' başka bir KDY'den verilerinizi kurtarın"
+msgstr "Tiskindiğiniz başka bir KDY'den verileri kurtar"
 
 #: command-list.h:83
 msgid "A CVS server emulator for Git"
@@ -22023,7 +22022,7 @@ msgstr "Bir ağacı çalışma ağacı veya indeks ile karşılaştır"
 #: command-list.h:89
 msgid "Compares the content and mode of blobs found via two tree objects"
 msgstr ""
-"İki ağaç nesnesinde bulunan ikili nesnelerin içerik ve kiplerini karşılaştırır"
+"İki ağaç nesnesinde bulunan ikili nesnelerin içerik ve kiplerini karşılaştır"
 
 #: command-list.h:90
 msgid "Show changes using common diff tools"
@@ -22064,7 +22063,7 @@ msgstr "E-posta teslimi için yamaları hazırla"
 #: command-list.h:99
 msgid "Verifies the connectivity and validity of the objects in the database"
 msgstr ""
-"Veritabanındaki nesnelerin bağlanılabilirliğini ve geçerliliğini doğrular"
+"Veritabanındaki nesnelerin bağlanılabilirliğini ve geçerliliğini doğrula"
 
 #: command-list.h:100
 msgid "Cleanup unnecessary files and optimize the local repository"
@@ -22117,7 +22116,7 @@ msgstr "Boş bir Git deposu oluştur veya var olanı yeniden başlat"
 
 #: command-list.h:112
 msgid "Instantly browse your working repository in gitweb"
-msgstr "gitweb'deki çalışma deponuza anında göz atın"
+msgstr "gitweb'deki çalışma deponuza anında göz at"
 
 #: command-list.h:113
 msgid "Add or parse structured information in commit messages"
@@ -22145,7 +22144,7 @@ msgstr "Bir ağaç nesnesinin içeriğini listele"
 
 #: command-list.h:119
 msgid "Extracts patch and authorship from a single e-mail message"
-msgstr "Tek bir e-posta iletisinden yama ve yazar bilgisini çıkartır"
+msgstr "Tek bir e-posta iletisinden yama ve yazar bilgisini çıkart"
 
 #: command-list.h:120
 msgid "Simple UNIX mbox splitter program"
@@ -22185,7 +22184,7 @@ msgstr "multi-pack-index doğrula ve yaz"
 
 #: command-list.h:129
 msgid "Creates a tag object"
-msgstr "Bir etiket nesnesi oluşturur"
+msgstr "Bir etiket nesnesi oluştur"
 
 #: command-list.h:130
 msgid "Build a tree-object from ls-tree formatted text"
@@ -22246,7 +22245,7 @@ msgstr "İlişkili nesnelerle birlikte uzak başvuruları da güncelle"
 
 #: command-list.h:144
 msgid "Applies a quilt patchset onto the current branch"
-msgstr "Geçerli dala bir \"Quilt\" yama seti uygular"
+msgstr "Geçerli dala bir \"Quilt\" yama seti uygula"
 
 #: command-list.h:145
 msgid "Compare two commit ranges (e.g. two versions of a branch)"
@@ -22282,11 +22281,11 @@ msgstr "Nesneleri başkasıyla değiştirmek için başvurular oluştur, sil, li
 
 #: command-list.h:153
 msgid "Generates a summary of pending changes"
-msgstr "Bekleyen değişikliklerin bir özetini çıkartır"
+msgstr "Bekleyen değişikliklerin bir özetini çıkart"
 
 #: command-list.h:154
 msgid "Reuse recorded resolution of conflicted merges"
-msgstr "Çakışan birleştirmelerin kaydı yazılan çözümlerini yeniden kullan"
+msgstr "Çakışmalı birleştirmelerin kaydı yazılan çözümlerini yeniden kullan"
 
 #: command-list.h:155
 msgid "Reset current HEAD to the specified state"
@@ -22298,7 +22297,7 @@ msgstr "Çalışma ağacı dosyalarını eski durumuna getir"
 
 #: command-list.h:157
 msgid "Revert some existing commits"
-msgstr "Bazı mevcut gönderileri geri al"
+msgstr "Bazı var olan gönderileri geri al"
 
 #: command-list.h:158
 msgid "Lists commit objects in reverse chronological order"
@@ -22471,11 +22470,11 @@ msgstr "CVS kullanıcıları için Git"
 
 #: command-list.h:200
 msgid "Tweaking diff output"
-msgstr "diff çıktısı geliştiriliyor"
+msgstr "diff çıktısını kullanma"
 
 #: command-list.h:201
 msgid "A useful minimum set of commands for Everyday Git"
-msgstr "Günlük Git kullanımı için yararlı bir komut seti"
+msgstr "Günlük Git kullanımı için yararlı komutlar"
 
 #: command-list.h:202
 msgid "A Git Glossary"
@@ -22487,11 +22486,11 @@ msgstr "Git tarafından kullanılan kancalar"
 
 #: command-list.h:204
 msgid "Specifies intentionally untracked files to ignore"
-msgstr "Yok saymak için özellikle izlenmeyen dosyaları belirtir"
+msgstr "Özellikle yok sayılması istenen dosyaları belirt"
 
 #: command-list.h:205
 msgid "Defining submodule properties"
-msgstr "Altmodül özellikleri tanımlanıyor"
+msgstr "Altmodül özelliklerini tanımlama"
 
 #: command-list.h:206
 msgid "Git namespaces"
@@ -22503,11 +22502,11 @@ msgstr "Git Depo Yerleşimi"
 
 #: command-list.h:208
 msgid "Specifying revisions and ranges for Git"
-msgstr "Git için revizyonlar ve erimler belirtiliyor"
+msgstr "Git için revizyonları ve erimleri belirtme"
 
 #: command-list.h:209
 msgid "Mounting one repository inside another"
-msgstr "Bir depo bir başkasının içinde bağlanıyor"
+msgstr "Bir depoyu bir başkasının içine bağlama"
 
 #: command-list.h:210
 msgid "A tutorial introduction to Git: part two"
@@ -24049,7 +24048,7 @@ msgstr "(non-mbox) Cc: %s, '%s' satırından ekleniyor\n"
 #: git-send-email.perl:1753
 #, perl-format
 msgid "(body) Adding cc: %s from line '%s'\n"
-msgstr "(body) Cc: %s, '%s' satırından ekleniyor\n"
+msgstr "(body) Cc: %s, '%s'. satırından ekleniyor\n"
 
 #: git-send-email.perl:1864
 #, perl-format

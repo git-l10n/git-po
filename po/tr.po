@@ -894,7 +894,7 @@ msgstr "%s: yama uygulanamıyor"
 #: apply.c:4001
 #, c-format
 msgid "Checking patch %s..."
-msgstr "Yama %s denetleniyor..."
+msgstr "%s yaması denetleniyor..."
 
 #: apply.c:4093
 #, c-format
@@ -1510,8 +1510,8 @@ msgstr "revizyonda gezinme ayarlaması başarısız oldu"
 msgid ""
 "--reverse --first-parent together require range along first-parent chain"
 msgstr ""
-"--reverse --first-parent kullanımında ilk üst öge zincirinin yanında erimin "
-"belirtilmesi gerek"
+"--reverse --first-parent birlikte ilk üst öge zincirinin yanında erim "
+"gerektiriyor"
 
 #: blame.c:2773
 #, c-format
@@ -1607,7 +1607,7 @@ msgstr "'%s' adında bir dal halihazırda var."
 
 #: branch.c:213
 msgid "Cannot force update the current branch."
-msgstr "Şu anki dal zorla güncellenemiyor."
+msgstr "Geçerli dal zorla güncellenemiyor."
 
 #: branch.c:233
 #, c-format
@@ -2199,7 +2199,7 @@ msgstr "hatalı sayısal yapılandırma değeri '%s', '%s' için, standart girdi
 #, c-format
 msgid "bad numeric config value '%s' for '%s' in submodule-blob %s: %s"
 msgstr "hatalı sayısal yapılandırma değeri '%s', '%s' için, %s altmodül ikili "
-"geniş nesnesi içinde: %s"
+"nesnesi içinde: %s"
 
 #: config.c:1010
 #, c-format
@@ -2253,7 +2253,7 @@ msgstr "%s için hatalı oluşturulmuş değer: %s"
 
 #: config.c:1457
 msgid "must be one of nothing, matching, simple, upstream or current"
-msgstr "hiçbir şey, eşleşen, yalın, üstkaynak veya geçerli içinden biri olmalı"
+msgstr "nothing, matching, simple, upstream veya current içinden biri olmalı"
 
 #: config.c:1518 builtin/pack-objects.c:3394
 #, c-format
@@ -2385,7 +2385,7 @@ msgstr "'%s' için değer eksik"
 
 #: connect.c:61
 msgid "the remote end hung up upon initial contact"
-msgstr "uzak uç ilk iletişim ile birlikte hattı kapattı"
+msgstr "uzak uç ilk iletişimle birlikte hattı kapattı"
 
 #: connect.c:63
 msgid ""
@@ -2411,7 +2411,7 @@ msgstr "sunucu '%s' özelliğini desteklemiyor"
 
 #: connect.c:114
 msgid "expected flush after capabilities"
-msgstr "yeteneklerden sonra boşaltım bekleniyordu"
+msgstr "yeteneklerden sonra floş bekleniyordu"
 
 #: connect.c:233
 #, c-format
@@ -2447,7 +2447,7 @@ msgstr "geçersiz ls-refs yanıtı: %s"
 
 #: connect.c:445
 msgid "expected flush after ref listing"
-msgstr "başvuru listelemesinden sonra boşaltım bekleniyordu"
+msgstr "başvuru listelemesinden sonra floş bekleniyordu"
 
 #: connect.c:544
 #, c-format
@@ -3298,7 +3298,7 @@ msgstr ""
 
 #: diff.c:5474
 msgid "<when>"
-msgstr "<nezaman>"
+msgstr "<ne-zaman>"
 
 #: diff.c:5475
 msgid "ignore changes to submodules in the diff generation"
@@ -3484,11 +3484,11 @@ msgstr "git fetch-pack: sığ bir liste bekleniyordu"
 
 #: fetch-pack.c:153
 msgid "git fetch-pack: expected a flush packet after shallow list"
-msgstr "git fetch-pack: sığ listeden sonra boşaltma paketi bekleniyordu"
+msgstr "git fetch-pack: sığ listeden sonra floş paketi bekleniyordu"
 
 #: fetch-pack.c:164
 msgid "git fetch-pack: expected ACK/NAK, got a flush packet"
-msgstr "git fetch-pack: ACK/NAK bekleniyordu, boşaltma paket alındı"
+msgstr "git fetch-pack: ACK/NAK bekleniyordu, floş paket alındı"
 
 #: fetch-pack.c:184
 #, c-format
@@ -4665,9 +4665,9 @@ msgid ""
 "commit/abort the previous merge before you start a new notes merge."
 msgstr ""
 "Bir önceki not birleştirmenizi sonuçlandırmadınız (%s var).\n"
-"Lütfen 'git notes merge --commit' veya 'git notes merge --abort' "
-"kullanarak başka bir not birleştirmesine başlamadan önce bir önceki "
-"birleştirmeyi gönderin/durdurun."
+"Lütfen başka bir not birleştirmesine başlamadan önce 'git notes merge "
+"--commit' veya 'git notes merge --abort' kullanarak bir önceki birleştirmeyi "
+"gönderin/durdurun."
 
 #: notes-merge.c:284
 #, c-format
@@ -4927,7 +4927,7 @@ msgstr "satırda hatalı tırnaklar: %s"
 
 #: pkt-line.c:92
 msgid "unable to write flush packet"
-msgstr "boşaltım paketi yazılamıyor"
+msgstr "floş paketi yazılamıyor"
 
 #: pkt-line.c:99
 msgid "unable to write delim packet"
@@ -4935,7 +4935,7 @@ msgstr "sınırlandıran paket yazılamıyor"
 
 #: pkt-line.c:106
 msgid "flush packet write failed"
-msgstr "boşaltım paketi yazımı başarısız"
+msgstr "floş paketi yazımı başarısız"
 
 #: pkt-line.c:146 pkt-line.c:232
 msgid "protocol error: impossibly long line"
@@ -5211,7 +5211,7 @@ msgstr "git dizini açılamıyor: %s"
 #: read-cache.c:3149
 #, c-format
 msgid "unable to unlink: %s"
-msgstr "bağ kaldırılamıyor: %s"
+msgstr "bağlantı kesilemiyor: %s"
 
 #: read-cache.c:3174
 #, c-format
@@ -5305,7 +5305,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Şu anda sürmekte olan bir etkileşimli yeniden temellendirmenin yapılacaklar "
+"Sürmekte olan bir etkileşimli yeniden temellendirmenin yapılacaklar "
 "dosyasını düzenlemektesiniz.\n"
 "Düzenlemenin ardından yeniden temellendirmeyi sürdürmek için şunu kullanın:\n"
 "	git rebase --continue\n"
@@ -5318,7 +5318,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Şöyle ki, eğer her şeyi kaldırırsanız yeniden temellendirme durdurulacaktır.\n"
+"Şöyle ki, her şeyi kaldırırsanız yeniden temellendirme iptal edilecektir.\n"
 "\n"
 
 #: rebase-interactive.c:85 git-rebase--preserve-merges.sh:955
@@ -6027,7 +6027,7 @@ msgstr "'%s' yazılırken hatalar vardı (%s)"
 #: rerere.c:498
 #, c-format
 msgid "failed to flush '%s'"
-msgstr "'%s' boşaltılamadı"
+msgstr "'%s' floş yapılamadı"
 
 #: rerere.c:503 rerere.c:1039
 #, c-format
@@ -6062,7 +6062,7 @@ msgstr "'%s' bir önceki çözüm kullanılarak çözüldü."
 #: rerere.c:803
 #, c-format
 msgid "cannot unlink stray '%s'"
-msgstr "'%s' başıboşunun bağı kesilemiyor"
+msgstr "'%s' başıboşunun bağlantısı kesilemiyor"
 
 #: rerere.c:807
 #, c-format
@@ -6088,7 +6088,7 @@ msgstr "'%s' için hatırlanan çözüm yok"
 #: rerere.c:1077
 #, c-format
 msgid "cannot unlink '%s'"
-msgstr "'%s' bağı kesilemiyor"
+msgstr "'%s' bağlantısı kesilemiyor"
 
 #: rerere.c:1087
 #, c-format
@@ -6141,7 +6141,7 @@ msgstr ""
 
 #: send-pack.c:144
 msgid "unexpected flush packet while reading remote unpack status"
-msgstr "uzak konum açım durumu okunurken beklenmedik boşaltım paketi"
+msgstr "uzak konum açım durumu okunurken beklenmedik floş paketi"
 
 #: send-pack.c:146
 #, c-format
@@ -9500,7 +9500,7 @@ msgstr "git archive: URL'si olmayan uzak konum"
 
 #: builtin/archive.c:61
 msgid "git archive: expected ACK/NAK, got a flush packet"
-msgstr "git archive: ACK/NAK bekleniyordu, boşaltım paketi alındı"
+msgstr "git archive: ACK/NAK bekleniyordu, floş paketi alındı"
 
 #: builtin/archive.c:64
 #, c-format
@@ -9513,7 +9513,7 @@ msgstr "git archive: Protokol hatası"
 
 #: builtin/archive.c:69
 msgid "git archive: expected a flush"
-msgstr "git archive: Boşaltım bekleniyordu"
+msgstr "git archive: floş bekleniyordu"
 
 #: builtin/bisect--helper.c:22
 msgid "git bisect--helper --next-all [--no-checkout]"
@@ -21701,7 +21701,7 @@ msgstr "%sinfo/refs geçerli değil: bu bir git deposu mu?"
 
 #: remote-curl.c:364
 msgid "invalid server response; expected service, got flush packet"
-msgstr "geçersiz sunucu yanıtı; servis bekleniyordu, boşaltım paketi alındı"
+msgstr "geçersiz sunucu yanıtı; servis bekleniyordu, floş paketi alındı"
 
 #: remote-curl.c:395
 #, c-format

@@ -3875,10 +3875,10 @@ msgid_plural ""
 "The most similar commands are"
 msgstr[0] ""
 "\n"
-"Buna en yakın komut"
+"Buna en yakın komut:"
 msgstr[1] ""
 "\n"
-"Buna en yakın komutlar"
+"Buna en yakın komutlar:"
 
 #: help.c:714
 msgid "git version [<options>]"
@@ -9001,7 +9001,7 @@ msgstr "yalnızca hatalardan dolayı eklenemeyen dosyaları atla"
 
 #: builtin/add.c:325
 msgid "check if - even missing - files are ignored in dry run"
-msgstr "dosyaların - eksik olsalar bile - sınama turunda yok sayılıp "
+msgstr "dosyaların -eksik olsalar bile- sınama turunda yok sayılıp "
 "sayılmadığını denetle"
 
 #: builtin/add.c:327 builtin/update-index.c:1004
@@ -9824,43 +9824,43 @@ msgstr "yok saymak için %s revizyonu bulunamıyor"
 
 #: builtin/blame.c:844
 msgid "Show blame entries as we find them, incrementally"
-msgstr "Genel bakış girdilerini buldukça artan biçimde göster"
+msgstr "genel bakış girdilerini buldukça artan biçimde göster"
 
 #: builtin/blame.c:845
 msgid "Show blank SHA-1 for boundary commits (Default: off)"
-msgstr "Sınır gönderileri için boş SHA-1 göster (Öntanımlı: Kapalı)"
+msgstr "sınır gönderileri için boş SHA-1 göster (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:846
 msgid "Do not treat root commits as boundaries (Default: off)"
-msgstr "Kök gönderilerini sınır olarak varsayma (Öntanımlı: Kapalı)"
+msgstr "kök gönderilerini sınır olarak varsayma (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:847
 msgid "Show work cost statistics"
-msgstr "İş maliyet istatistiklerini göster"
+msgstr "iş maliyet istatistiklerini göster"
 
 #: builtin/blame.c:848
 msgid "Force progress reporting"
-msgstr "Durum bildirmeyi zorla"
+msgstr "durum bildirmeyi zorla"
 
 #: builtin/blame.c:849
 msgid "Show output score for blame entries"
-msgstr "Genel bakış girdileri için çıktı skorunu göster"
+msgstr "genel bakış girdileri için çıktı skorunu göster"
 
 #: builtin/blame.c:850
 msgid "Show original filename (Default: auto)"
-msgstr "Orijinal dosya adını göster (Öntanımlı: Otomatik)"
+msgstr "orijinal dosya adını göster (Öntanımlı: Otomatik)"
 
 #: builtin/blame.c:851
 msgid "Show original linenumber (Default: off)"
-msgstr "Orijinal satır numarasını göster (Öntanımlı: Kapalı)"
+msgstr "orijinal satır numarasını göster (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:852
 msgid "Show in a format designed for machine consumption"
-msgstr "Makine işlemesi için tasarlanmış bir biçimde göster"
+msgstr "makine işlemesi için tasarlanmış bir biçimde göster"
 
 #: builtin/blame.c:853
 msgid "Show porcelain format with per-line commit information"
-msgstr "Okunabilir biçimde her satır için gönderi bilgisi ile göster"
+msgstr "okunabilir biçimde her satır için gönderi bilgisi ile göster"
 
 #: builtin/blame.c:854
 msgid "Use the same output mode as git-annotate (Default: off)"
@@ -9868,23 +9868,23 @@ msgstr "git-annotate ile aynı çıktı kipini kullan (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:855
 msgid "Show raw timestamp (Default: off)"
-msgstr "Ham zaman damgasını göster (Öntanımlı: Kapalı)"
+msgstr "ham zaman damgasını göster (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:856
 msgid "Show long commit SHA1 (Default: off)"
-msgstr "Uzun gönderi SHA1'ini göster (Öntanımlı: Kapalı)"
+msgstr "uzun gönderi SHA1'ini göster (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:857
 msgid "Suppress author name and timestamp (Default: off)"
-msgstr "Yazar adını ve zaman damgasını gizle (Öntanımlı: Kapalı)"
+msgstr "yazar adını ve zaman damgasını gizle (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:858
 msgid "Show author email instead of name (Default: off)"
-msgstr "Yazar adı yerine e-postasını göster (Öntanımlı: Kapalı)"
+msgstr "yazar adı yerine e-postasını göster (Öntanımlı: Kapalı)"
 
 #: builtin/blame.c:859
 msgid "Ignore whitespace differences"
-msgstr "Boşluk ayrımlarını yok say"
+msgstr "boşluk ayrımlarını yok say"
 
 #: builtin/blame.c:860 builtin/log.c:1702
 msgid "rev"
@@ -9892,7 +9892,7 @@ msgstr "revizyon"
 
 #: builtin/blame.c:860
 msgid "Ignore <rev> when blaming"
-msgstr "Suçlarken <revizyon>'u yok say"
+msgstr "suçlarken <revizyon>'u yok say"
 
 #: builtin/blame.c:861
 msgid "Ignore revisions from <file>"
@@ -9908,7 +9908,7 @@ msgstr "satırları yaşına göre renklendir"
 
 #: builtin/blame.c:864
 msgid "Spend extra cycles to find better match"
-msgstr "Daha iyi eşleşme bulmak için ek döngüler harca"
+msgstr "daha iyi eşleşme bulmak için ek döngüler harca"
 
 #: builtin/blame.c:865
 msgid "Use revisions from <file> instead of calling git-rev-list"
@@ -9924,11 +9924,11 @@ msgstr "skor"
 
 #: builtin/blame.c:867
 msgid "Find line copies within and across files"
-msgstr "Satır kopyalarını dosyalar içinde ve arasında ara"
+msgstr "satır kopyalarını dosyalar içinde ve arasında ara"
 
 #: builtin/blame.c:868
 msgid "Find line movements within and across files"
-msgstr "Satır hareketlerini dosyalar içinde ve arasında ara"
+msgstr "satır hareketlerini dosyalar içinde ve arasında ara"
 
 #: builtin/blame.c:869
 msgid "n,m"
@@ -10989,7 +10989,7 @@ msgstr "dal veya gönderi değişkeni eksik"
 #: builtin/multi-pack-index.c:27 builtin/pull.c:138 builtin/push.c:563
 #: builtin/send-pack.c:174
 msgid "force progress reporting"
-msgstr "durum belirtimini zorla"
+msgstr "durum belirtmeyi zorla"
 
 #: builtin/checkout.c:1440
 msgid "perform a 3-way merge with the new branch"
@@ -11013,7 +11013,7 @@ msgstr "yeni dal için üstkaynak bilgisi ayarla"
 
 #: builtin/checkout.c:1457
 msgid "force checkout (throw away local modifications)"
-msgstr "çıkış yapmayı zorla (yerel değişiklikleri çöpe at)"
+msgstr "zorla çıkış yap (yerel değişiklikleri çöpe at)"
 
 #: builtin/checkout.c:1459
 msgid "new-branch"
@@ -11173,7 +11173,7 @@ msgstr "yerel değişiklikleri çöpe at"
 
 #: builtin/checkout.c:1804
 msgid "which tree-ish to checkout from"
-msgstr "hangi ağacımsıdan çıkış yapılacağı"
+msgstr "çıkış yapılacak ağacımsı"
 
 #: builtin/checkout.c:1806
 msgid "restore the index"
@@ -11452,7 +11452,7 @@ msgstr "derinlik"
 
 #: builtin/clone.c:126
 msgid "create a shallow clone of that depth"
-msgstr "verilen derinlikte bir sığ depo oluştur"
+msgstr "verilen derinlikte sığ bir depo oluştur"
 
 #: builtin/clone.c:127 builtin/fetch.c:170 builtin/pack-objects.c:3283
 msgid "time"
@@ -11481,7 +11481,7 @@ msgstr "etiket klonlama ve sonraki getirmeler de onları izlemesin"
 
 #: builtin/clone.c:136
 msgid "any cloned submodules will be shallow"
-msgstr "klonlanan altmodüller sığ olarak klonla"
+msgstr "klonlanan altmodüller sığ olacak"
 
 #: builtin/clone.c:137 builtin/init-db.c:495
 msgid "gitdir"
@@ -11728,19 +11728,19 @@ msgstr "kullanılacak yerleşim"
 
 #: builtin/column.c:30
 msgid "Maximum width"
-msgstr "Olabilecek en çok genişlik"
+msgstr "olabilecek en çok genişlik"
 
 #: builtin/column.c:31
 msgid "Padding space on left border"
-msgstr "Sol kenardaki dolgu boşluğu"
+msgstr "sol kenardaki dolgu boşluğu"
 
 #: builtin/column.c:32
 msgid "Padding space on right border"
-msgstr "Sağ kenardaki dolgu boşluğu"
+msgstr "sağ kenardaki dolgu boşluğu"
 
 #: builtin/column.c:33
 msgid "Padding space between columns"
-msgstr "Sütunlar arasındaki dolgu boşluğu"
+msgstr "sütunlar arasındaki dolgu boşluğu"
 
 #: builtin/column.c:51
 msgid "--command must be the first argument"
@@ -11785,7 +11785,7 @@ msgstr "üst öge"
 
 #: builtin/commit-tree.c:112
 msgid "id of a parent commit object"
-msgstr "bir üst gönderi ögesinin numarası"
+msgstr "bir üst gönderi ögesinin no'su"
 
 #: builtin/commit-tree.c:114 builtin/commit.c:1496 builtin/merge.c:270
 #: builtin/notes.c:409 builtin/notes.c:575 builtin/stash.c:1469
@@ -12155,8 +12155,8 @@ msgstr "kip"
 
 #: builtin/commit.c:1374 builtin/commit.c:1533
 msgid "show untracked files, optional modes: all, normal, no. (Default: all)"
-msgstr "izlenmeyen dosyaları göster, isteğe bağlı kipler: all (tümü), normal, "
-"no (hayır). (Öntanımlı: all)"
+msgstr ""
+"izlenmeyen dosyaları göster, ist. bağlı kipler: all, normal, no (Öntanım.: all)"
 
 #: builtin/commit.c:1378
 msgid ""
@@ -12259,7 +12259,7 @@ msgstr ""
 #: builtin/commit.c:1502 builtin/log.c:1634 builtin/merge.c:289
 #: builtin/pull.c:164 builtin/revert.c:110
 msgid "add Signed-off-by:"
-msgstr "Signed-off-by ekle:"
+msgstr "Signed-off-by: ekle"
 
 #: builtin/commit.c:1503
 msgid "use specified template file"
@@ -12267,7 +12267,7 @@ msgstr "belirtilen şablon dosyasını kullan"
 
 #: builtin/commit.c:1504
 msgid "force edit of commit"
-msgstr "gönderi düzenlemesini zorla"
+msgstr "gönderiyi zorla düzenle"
 
 #: builtin/commit.c:1506
 msgid "include status in commit message template"
@@ -13108,31 +13108,31 @@ msgstr "başka bir kodlamaya iye gönderi iletilerinin nasıl işleneceğini se�
 
 #: builtin/fast-export.c:1163
 msgid "Dump marks to this file"
-msgstr "İmleri bu dosyaya boşalt"
+msgstr "imleri bu dosyaya boşalt"
 
 #: builtin/fast-export.c:1165
 msgid "Import marks from this file"
-msgstr "İmleri bu dosyadan içe aktar"
+msgstr "imleri bu dosyadan içe aktar"
 
 #: builtin/fast-export.c:1169
 msgid "Import marks from this file if it exists"
-msgstr "Eğer varsa bu dosyadan imleri içe aktar"
+msgstr "eğer varsa bu dosyadan imleri içe aktar"
 
 #: builtin/fast-export.c:1171
 msgid "Fake a tagger when tags lack one"
-msgstr "Etiketlerin bir etiketleyicisi yoksa varmış gibi davran"
+msgstr "etiketlerin bir etiketleyicisi yoksa varmış gibi davran"
 
 #: builtin/fast-export.c:1173
 msgid "Output full tree for each commit"
-msgstr "Her gönderi için tüm ağacın çıktısını ver"
+msgstr "her gönderi için tüm ağacın çıktısını ver"
 
 #: builtin/fast-export.c:1175
 msgid "Use the done feature to terminate the stream"
-msgstr "Akışı sonlandırmak için 'done' özelliğini kullan"
+msgstr "akışı sonlandırmak için 'done' özelliğini kullan"
 
 #: builtin/fast-export.c:1176
 msgid "Skip output of blob data"
-msgstr "İkili nesne verisi çıktısını atla"
+msgstr "ikili nesne verisi çıktısını atla"
 
 #: builtin/fast-export.c:1177 builtin/log.c:1705
 msgid "refspec"
@@ -13140,7 +13140,7 @@ msgstr "başvuru belirteci"
 
 #: builtin/fast-export.c:1178
 msgid "Apply refspec to exported refs"
-msgstr "Başvuru belirtecini dışa aktarılan başvurulara aktar"
+msgstr "başvuru belirtecini dışa aktarılan başvurulara aktar"
 
 #: builtin/fast-export.c:1179
 msgid "anonymize output"
@@ -13152,11 +13152,11 @@ msgstr "'fast-export' akışında olmayan üst ögelere nesne numarası ile baş
 
 #: builtin/fast-export.c:1183
 msgid "Show original object ids of blobs/commits"
-msgstr "İkili nesnelerin/gönderilerin orijinal nesne numaralarını göster"
+msgstr "ikili nesnelerin/gönderilerin orijinal nesne numaralarını göster"
 
 #: builtin/fast-export.c:1185
 msgid "Label tags with mark ids"
-msgstr "Etiketleri im numaralarıyla adlandır"
+msgstr "etiketleri im numaralarıyla adlandır"
 
 #: builtin/fast-export.c:1220
 msgid "Cannot pass both --import-marks and --import-marks-if-exists"
@@ -13200,7 +13200,7 @@ msgstr "uzak uçtaki yükleme paketine olan yol"
 
 #: builtin/fetch.c:146
 msgid "force overwrite of local reference"
-msgstr "yerel başvurunun üzerine yazılmasını zorla"
+msgstr "yerel başvurunun üzerine zorla yaz"
 
 #: builtin/fetch.c:148
 msgid "fetch from multiple remotes"
@@ -13289,7 +13289,7 @@ msgstr "getirme sonrasında 'gc --auto' çalıştır"
 
 #: builtin/fetch.c:201 builtin/pull.c:246
 msgid "check for forced-updates on all updated branches"
-msgstr "tüm güncellenmiş dalları zorla güncellemeler için denetle"
+msgstr "tüm güncellenmiş dalları zorlanmış güncellemeler için denetle"
 
 #: builtin/fetch.c:203
 msgid "write the commit-graph after fetching"
@@ -13907,7 +13907,7 @@ msgstr "auto-gc kipini etkinleştir"
 
 #: builtin/gc.c:545
 msgid "force running gc even if there may be another gc running"
-msgstr "başka bir gc çalışıyor olsa bile gc çalıştırmayı zorla"
+msgstr "başka bir gc çalışıyor olsa bile zorla gc çalıştır"
 
 #: builtin/gc.c:548
 msgid "repack all other packs except the largest pack"
@@ -14744,7 +14744,7 @@ msgstr "izinler"
 #: builtin/init-db.c:492
 msgid "specify that the git repository is to be shared amongst several users"
 msgstr ""
-"git deposunun kullanıcılar arasında paylaşıp paylaşılmayacağını belirtin"
+"git deposunun kullanıcılar arasında paylaşıp paylaşılmayacağını belirt"
 
 #: builtin/init-db.c:529 builtin/init-db.c:534
 #, c-format
@@ -14815,7 +14815,7 @@ msgstr "ayrıştırma seçeneklerini ayarla"
 
 #: builtin/interpret-trailers.c:110
 msgid "do not treat --- specially"
-msgstr "şuna özel olarak davranma: ---"
+msgstr "şuna özel davranma: ---"
 
 #: builtin/interpret-trailers.c:111
 msgid "trailer"
@@ -14852,7 +14852,7 @@ msgstr "kaynağı göster"
 
 #: builtin/log.c:175
 msgid "Use mail map file"
-msgstr "Posta eşlem dosyasını kullan"
+msgstr "posta eşlem dosyasını kullan"
 
 #: builtin/log.c:177
 msgid "only decorate refs that match <pattern>"
@@ -14868,7 +14868,7 @@ msgstr "süsleme seçenekleri"
 
 #: builtin/log.c:183
 msgid "Process line range n,m in file, counting from 1"
-msgstr "Dosya içindeki n,m satır aralığını 1'den sayarak işle"
+msgstr "dosya içindeki n,m satır aralığını 1'den sayarak işle"
 
 #: builtin/log.c:281
 #, c-format
@@ -15488,7 +15488,7 @@ msgstr ""
 
 #: builtin/merge.c:253 builtin/pull.c:167
 msgid "create a single commit instead of doing a merge"
-msgstr "bir birleştirme yapma yerine tek bir gönderi oluştur"
+msgstr "bir birleştirme yerine tek bir gönderi oluştur"
 
 #: builtin/merge.c:255 builtin/pull.c:170
 msgid "perform a commit if the merge succeeds (default)"
@@ -15851,12 +15851,12 @@ msgstr "başkaları tarafından ulaşılabilir revizyonları listele"
 
 #: builtin/merge-base.c:159
 msgid "is the first one ancestor of the other?"
-msgstr "İlki diğerlerinin atası mı?"
+msgstr "ilki diğerlerinin atası mı?"
 
 #: builtin/merge-base.c:161
 msgid "find where <commit> forked from reflog of <ref>"
 msgstr ""
-"<gönderi>'nin nerede <başvuru>'nun başvuru günlüğünden çatallandığını bul"
+"<gönderi>'nin nerede <başvuru>'nun günlüğünden çatallandığını bul"
 
 #: builtin/merge-file.c:9
 msgid ""
@@ -16974,7 +16974,7 @@ msgstr "Getirme ile ilgili seçenekler"
 
 #: builtin/pull.c:212
 msgid "force overwrite of local branch"
-msgstr "yerel dalın üzerine yazılmasını zorla"
+msgstr "zorla yerel dalın üzerine yaz"
 
 #: builtin/pull.c:220
 msgid "number of submodules pulled in parallel"
@@ -17031,12 +17031,12 @@ msgstr "Lütfen hangi dal ile birleştirmek istediğinizi belirtin."
 
 #: builtin/pull.c:453 builtin/pull.c:468
 msgid "See git-pull(1) for details."
-msgstr "Ayrıntılar için git-pull(1)'a bakın."
+msgstr "Ayrıntılar için: git-pull(1)"
 
 #: builtin/pull.c:455 builtin/pull.c:461 builtin/pull.c:470
 #: builtin/rebase.c:1381 git-parse-remote.sh:64
 msgid "<remote>"
-msgstr "<uzak konum>"
+msgstr "<uzak-konum>"
 
 #: builtin/pull.c:455 builtin/pull.c:470 builtin/pull.c:475
 #: git-parse-remote.sh:65
@@ -17050,8 +17050,8 @@ msgstr "Geçerli dal için izleme bilgisi yok."
 #: builtin/pull.c:472 git-parse-remote.sh:95
 msgid ""
 "If you wish to set tracking information for this branch you can do so with:"
-msgstr "Eğer bu dal için izleme bilgisi ayarlamak isterseniz bunu şununla "
-"yapabilirsiniz:"
+msgstr ""
+"Eğer bu dal için izleme bilgisi ayarlamak isterseniz şununla yapabilirsiniz:"
 
 #: builtin/pull.c:477
 #, c-format
@@ -17309,7 +17309,7 @@ msgstr "etiketleri it (--all veya --mirror ile kullanılamaz)"
 
 #: builtin/push.c:550 builtin/send-pack.c:167
 msgid "force updates"
-msgstr "güncellemeleri zorla"
+msgstr "zorla güncelle"
 
 #: builtin/push.c:552 builtin/send-pack.c:181
 msgid "<refname>:<expect>"
@@ -17429,7 +17429,7 @@ msgstr "git range-diff [<seçenekler>] <base> <old-tip> <new-tip>"
 
 #: builtin/range-diff.c:22
 msgid "Percentage by which creation is weighted"
-msgstr "Oluşumun tartıldığı yüzde"
+msgstr "oluşumun tartıldığı yüzde"
 
 #: builtin/range-diff.c:24
 msgid "use simple diff colors"
@@ -17480,7 +17480,7 @@ msgstr "Birleştiriliyor"
 
 #: builtin/read-tree.c:131
 msgid "perform a merge in addition to a read"
-msgstr "Bir okumaya ek olarak bir birleştirme gerçekleştir"
+msgstr "bir okumaya ek olarak bir birleştirme gerçekleştir"
 
 #: builtin/read-tree.c:133
 msgid "3-way merge if no file level merging required"
@@ -17811,7 +17811,7 @@ msgid ""
 msgstr ""
 "%s\n"
 "Lütfen hangi dala karşı yeniden temellendirmek istediğinizi belirtin.\n"
-"Ayrıntılar için git-rebase(1)'e bakın.\n"
+"Ayrıntılar için: git-rebase(1)\n"
 "\n"
 "	git rebase '<dal>'\n"
 "\n"
@@ -17851,7 +17851,7 @@ msgstr "pre-rebase kancasının çalışmasına izin ver"
 
 #: builtin/rebase.c:1452
 msgid "be quiet. implies --no-stat"
-msgstr "sessiz ol. --no-stat ima eder."
+msgstr "sessiz ol (--no-stat ima eder)"
 
 #: builtin/rebase.c:1458
 msgid "do not show diffstat of what changed upstream"
@@ -19535,7 +19535,7 @@ msgid ""
 "(use -f to force removal)"
 msgstr ""
 "\n"
-"(kaldırmayı zorlamak için -f kullanın)"
+"(zorla kaldırmak için -f kullanın)"
 
 #: builtin/rm.c:216
 msgid "the following file has changes staged in the index:"
@@ -19549,7 +19549,7 @@ msgid ""
 "(use --cached to keep the file, or -f to force removal)"
 msgstr ""
 "\n"
-"(dosyayı tutmak için --cached, kaldırmayı zorlamak için -f kullanın)"
+"(dosyayı tutmak için --cached, zorla kaldırmak için -f kullanın)"
 
 #: builtin/rm.c:226
 msgid "the following file has local modifications:"
@@ -19813,7 +19813,7 @@ msgstr "yalnızca dal uçlarını göster (etiketlerle birlikte kullanılabilir)
 
 #: builtin/show-ref.c:164
 msgid "stricter reference checking, requires exact ref path"
-msgstr "daha sıkı başvuru denetlemesi, kesin başvuru yolu gerektirir"
+msgstr "daha sıkı başvuru denetlemesi; kesin başvuru yolu gerektirir"
 
 #: builtin/show-ref.c:167 builtin/show-ref.c:169
 msgid "show the HEAD reference, even if it would be filtered out"
@@ -20397,7 +20397,7 @@ msgstr "sığ klonların derinliği"
 
 #: builtin/submodule--helper.c:1400 builtin/submodule--helper.c:1897
 msgid "force cloning progress"
-msgstr "klonlama işlemini zorla"
+msgstr "zorla klonla"
 
 #: builtin/submodule--helper.c:1402 builtin/submodule--helper.c:1899
 msgid "disallow cloning into non-empty directory"
@@ -20718,7 +20718,7 @@ msgstr "etiket iletisi"
 
 #: builtin/tag.c:415
 msgid "force edit of tag message"
-msgstr "etiket iletisinin zorla düzenlenmesi"
+msgstr "etiket iletisini zorla düzenle"
 
 #: builtin/tag.c:416
 msgid "annotated and GPG-signed tag"
@@ -21359,7 +21359,7 @@ msgstr "altmodül içeren çalışma ağaçları taşınamaz veya kaldırılamaz
 
 #: builtin/worktree.c:778
 msgid "force move even if worktree is dirty or locked"
-msgstr "çalışma ağacı kirli veya kilitli olsa bile taşımayı zorla"
+msgstr "çalışma ağacı kirli veya kilitli olsa bile zorla taşı"
 
 #: builtin/worktree.c:801 builtin/worktree.c:928
 #, c-format
@@ -21421,7 +21421,7 @@ msgstr "'%s' üzerinde 'git status' çalıştırılamadı, kod %d"
 
 #: builtin/worktree.c:910
 msgid "force removal even if worktree is dirty or locked"
-msgstr "çalışma ağacı kirli veya kilitli olsa bile kaldırmayı zorla"
+msgstr "çalışma ağacı kirli veya kilitli olsa bile zorla kaldır"
 
 #: builtin/worktree.c:933
 #, c-format
@@ -21827,7 +21827,7 @@ msgstr "SHA-1'leri görüntülemek için <n> rakam kullan"
 
 #: parse-options.h:336
 msgid "how to strip spaces and #comments from message"
-msgstr "iletiden boşluklar ve #yorumlar nasıl çıkarılır"
+msgstr "iletiden boşlukları ve #yorumları çıkart"
 
 #: parse-options.h:337
 msgid "read pathspec from file"
@@ -22470,7 +22470,7 @@ msgstr "CVS kullanıcıları için Git"
 
 #: command-list.h:200
 msgid "Tweaking diff output"
-msgstr "diff çıktısını kullanma"
+msgstr "diff çıktısından yararlanma"
 
 #: command-list.h:201
 msgid "A useful minimum set of commands for Everyday Git"

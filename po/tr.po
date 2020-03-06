@@ -6592,7 +6592,7 @@ msgstr "%s değişken kabul etmiyor: '%s'"
 #: sequencer.c:2198
 #, c-format
 msgid "missing arguments for %s"
-msgstr "%s için eksik değişkenler"
+msgstr "%s için eksik değişken"
 
 #: sequencer.c:2235
 #, c-format
@@ -11392,7 +11392,7 @@ msgstr "bir yerel depodan klonla"
 
 #: builtin/clone.c:102
 msgid "don't use local hardlinks, always copy"
-msgstr "yerel sabit bağlantıları kullanma, her zaman kopyala"
+msgstr "yerel sabit bağları kullanma, her zaman kopyala"
 
 #: builtin/clone.c:104
 msgid "setup as shared repository"
@@ -12910,7 +12910,7 @@ msgstr "--broken, gönderimsilerle uyumsuz"
 #: builtin/diff.c:84
 #, c-format
 msgid "'%s': not a regular file or symlink"
-msgstr "'%s': Sıradan bir dosya veya sembolik bağlantı değil"
+msgstr "'%s': Sıradan bir dosya veya sembolik bağ değil"
 
 #: builtin/diff.c:235
 #, c-format
@@ -18036,14 +18036,14 @@ msgid ""
 "and run me again.  I am stopping in case you still have something\n"
 "valuable there.\n"
 msgstr ""
-"Görünüşe bakılırsa bir %s dizini zaten var ve merak ediyorum acaba\n"
-"siz başka bir yeniden temellendirmenin ortasında mısınız? Eğer\n"
-"durum buysa lütfen şunu deneyin:\n"
+"Görünüşe bakılırsa bir %s dizini zaten var ve merak\n"
+"ediyorum acaba siz başka bir yeniden temellendirmenin ortasında mısınız?\n"
+"Durum buysa lütfen şunu deneyin:\n"
 "\t%s\n"
 "Eğer başka bir şeyse, lütfen\n"
 "\t%s\n"
-"ve beni yeniden çalıştırın. Ben sizi belki orada hâlâ değerli bir şeyler\n"
-"vardır diye durdurdum.\n"
+"yapın ve beni yeniden çalıştırın. Ben sizi belki orada hâlâ değerli bir\n"
+"şeyler olabilir diye durdurdum.\n"
 
 #: builtin/rebase.c:1757
 msgid "switch `C' expects a numerical value"
@@ -21533,10 +21533,10 @@ msgid ""
 "to read about a specific subcommand or concept.\n"
 "See 'git help git' for an overview of the system."
 msgstr ""
-"'git help -a' ve 'git help -g' kullanılabilir komutları ve bazı\n"
-"konsept kılavuzlarını listeler. Belirli bir komut veya konsept\n"
-"üzerine bilgi almak için 'git help <komut> veya 'git help <konsept>\n"
-"yazın. Genel bir görünüm için 'git help git' kullanabilirsiniz."
+"'git help -a' ve 'git help -g' kullanılabilir komutları ve bazı konsept\n"
+"kılavuzlarını listeler. Belirli bir komut veya konsept üzerine bilgi almak\n"
+"için 'git help <komut>' veya 'git help <konsept>' yazın. Genel bir görünüm\n"
+"için 'git help git' kullanabilirsiniz."
 
 #: git.c:186
 #, c-format
@@ -21870,7 +21870,7 @@ msgstr "Bir posta kutusundan bir dizi yama uygula"
 
 #: command-list.h:52
 msgid "Annotate file lines with commit information"
-msgstr "Dosya satırlarına gönderi bilgisini içeren açıklamalar ekle"
+msgstr "Gönderi bilgisini dosya içi açıklama olarak ekle"
 
 #: command-list.h:53
 msgid "Apply a patch to files and/or to the index"
@@ -21886,12 +21886,11 @@ msgstr "Ad verilmiş ağaçtan bir dosyalar arşivi oluştur"
 
 #: command-list.h:56
 msgid "Use binary search to find the commit that introduced a bug"
-msgstr "Bir hataya neden olan gönderiyi bulmak için ikili arama kullan"
+msgstr "Hatalara neden olan gönderiyi bulmada ikili arama kullan"
 
 #: command-list.h:57
 msgid "Show what revision and author last modified each line of a file"
-msgstr ""
-"Bir dosyanın her satırını hangi revizyon ve yazarın değiştirdiğini göster"
+msgstr "Dosya satırlarını son değiştiren revizyon/yazarı göster"
 
 #: command-list.h:58
 msgid "List, create, or delete branches"
@@ -21903,7 +21902,7 @@ msgstr "Nesneleri ve başvuruları arşive göre taşı"
 
 #: command-list.h:60
 msgid "Provide content or type and size information for repository objects"
-msgstr "Depo nesneleri için içerik bilgisi veya tür ve boyut bilgisi sağla"
+msgstr "Depo nesneleri için içerik veya tür/boyut bilgisi sağla"
 
 #: command-list.h:61
 msgid "Display gitattributes information"
@@ -21919,7 +21918,7 @@ msgstr "Kişilerin adlarını ve e-posta adreslerini göster"
 
 #: command-list.h:64
 msgid "Switch branches or restore working tree files"
-msgstr "Dal değiştir veya çalışma ağacı dosyalarını eski durumuna geri getir"
+msgstr "Dal değiştir veya çalışma ağacını eski haline geri getir"
 
 #: command-list.h:65
 msgid "Copy files from the index to the working tree"
@@ -21935,7 +21934,7 @@ msgstr "Henüz üstkaynağa uygulanmayan gönderileri bul"
 
 #: command-list.h:68
 msgid "Apply the changes introduced by some existing commits"
-msgstr "Var olan bazı gönderiler tarafından getirilen değişiklikleri uygula"
+msgstr "Mevcut bazı gönderilerin getirdiği değişiklikleri uygula"
 
 #: command-list.h:69
 msgid "Graphical alternative to git-commit"
@@ -21971,8 +21970,7 @@ msgstr "Depoyu veya global seçenekleri al ve ayarla"
 
 #: command-list.h:77
 msgid "Count unpacked number of objects and their disk consumption"
-msgstr ""
-"Açılmamış nesnelerin sayısını ve onların disk kullanımını hesapla"
+msgstr "Açılmamış nesne sayısını ve disk kullanımını hesapla"
 
 #: command-list.h:78
 msgid "Retrieve and store user credentials"
@@ -22004,12 +22002,12 @@ msgstr "Git depoları için gerçekten yalın bir sunucu"
 
 #: command-list.h:85
 msgid "Give an object a human readable name based on an available ref"
-msgstr "Kullanılabilir başvuruyu temel alarak nesneye okunabilir bir ad ver"
+msgstr "Uygun bir başvuruyu temel alıp nesneye okunabilir ad ver"
 
 #: command-list.h:86
 msgid "Show changes between commits, commit and working tree, etc"
 msgstr ""
-"Gönderiler, gönderi ve çalışma ağacı vb. arasındaki değişiklikleri göster"
+"Gönderiler, gönderi ve ağaçlar vb. arası değişiklikler"
 
 #: command-list.h:87
 msgid "Compares files in the working tree and the index"
@@ -22022,7 +22020,7 @@ msgstr "Bir ağacı çalışma ağacı veya indeks ile karşılaştır"
 #: command-list.h:89
 msgid "Compares the content and mode of blobs found via two tree objects"
 msgstr ""
-"İki ağaç nesnesinde bulunan ikili nesnelerin içerik ve kiplerini karşılaştır"
+"İki ağaç nesnesi ile bulunan ikililerin içerik ve kiplerini karşılaştır"
 
 #: command-list.h:90
 msgid "Show changes using common diff tools"
@@ -22067,12 +22065,11 @@ msgstr ""
 
 #: command-list.h:100
 msgid "Cleanup unnecessary files and optimize the local repository"
-msgstr "Gereksiz dosyaları temizle ve yerel depoyu en iyi duruma getir"
+msgstr "Gereksiz dosyaları temizle ve yerel depoyu eniyile"
 
 #: command-list.h:101
 msgid "Extract commit ID from an archive created using git-archive"
-msgstr ""
-"Gönderi iletisini git-archive tabanlı bir arşivden çıkartıp kenara koy"
+msgstr "Gönderi iletisini bir git-archive arşivinden çıkartıp al"
 
 #: command-list.h:102
 msgid "Print lines matching a pattern"
@@ -22120,7 +22117,7 @@ msgstr "gitweb'deki çalışma deponuza anında göz at"
 
 #: command-list.h:113
 msgid "Add or parse structured information in commit messages"
-msgstr "Gönderi iletilerine yapılandırılmış bilgi ekle veya ayrıştır"
+msgstr "Gönderi iletilerine düzenli bilgi ekle veya ayrıştır"
 
 #: command-list.h:114
 msgid "The Git repository browser"
@@ -22132,7 +22129,7 @@ msgstr "Gönderi günlüklerini göster"
 
 #: command-list.h:116
 msgid "Show information about files in the index and the working tree"
-msgstr "İndeksteki ve çalışma ağacındaki dosyalar üzerine bilgi göster"
+msgstr "İndeks ve çalışma ağacındaki dosya bilgilerini göster"
 
 #: command-list.h:117
 msgid "List references in a remote repository"
@@ -22144,7 +22141,7 @@ msgstr "Bir ağaç nesnesinin içeriğini listele"
 
 #: command-list.h:119
 msgid "Extracts patch and authorship from a single e-mail message"
-msgstr "Tek bir e-posta iletisinden yama ve yazar bilgisini çıkart"
+msgstr "E-posta iletisinden yama ve yazar bilgisini çıkart"
 
 #: command-list.h:120
 msgid "Simple UNIX mbox splitter program"
@@ -22156,7 +22153,7 @@ msgstr "İki veya daha fazla geliştirme geçmişini birleştir"
 
 #: command-list.h:122
 msgid "Find as good common ancestors as possible for a merge"
-msgstr "Bir birleştirme için olabildiğince iyi ortak ataları bulun"
+msgstr "Birleştirme için olabildiğince en iyi ortak ataları bul"
 
 #: command-list.h:123
 msgid "Run a three-way file merge"
@@ -22164,15 +22161,15 @@ msgstr "Bir üç yönlü dosya birleştirmesi çalıştır"
 
 #: command-list.h:124
 msgid "Run a merge for files needing merging"
-msgstr "Birleştirilmesi gereken dosyalar için bir birleştirme çalıştır"
+msgstr "Birleştirilmesi gereken dosyaları birleştir"
 
 #: command-list.h:125
 msgid "The standard helper program to use with git-merge-index"
-msgstr "Standart yardımcı programı git-merge-index ile kullanım içindir"
+msgstr "Bu yardımcı program git-merge-index kullanımı içindir"
 
 #: command-list.h:126
 msgid "Run merge conflict resolution tools to resolve merge conflicts"
-msgstr "Birleştirme çakışmalarını çözmek için çakışma çözüm araçlarını çalıştır"
+msgstr "Çakışmalarını çözmek için çözüm araçlarını çalıştır"
 
 #: command-list.h:127
 msgid "Show three-way merge without touching index"
@@ -22193,7 +22190,7 @@ msgstr "ls-tree biçimli metinden bir ağaç nesnesi yap"
 #: command-list.h:131
 msgid "Move or rename a file, a directory, or a symlink"
 msgstr ""
-"Bir dosyayı, dizini veya sembolik bağlantıyı taşı veya yeniden adlandır"
+"Dosya, dizin veya sembolik bağları taşı/yeniden adlandır"
 
 #: command-list.h:132
 msgid "Find symbolic names for given revs"
@@ -22217,7 +22214,7 @@ msgstr "Gereksiz paket dosyalarını bul"
 
 #: command-list.h:137
 msgid "Pack heads and tags for efficient repository access"
-msgstr "Etkili depo erişimi için dal uçlarını ve etiketleri paketle"
+msgstr "Etkili depo erişimi için dal uçları ve etiketler paketle"
 
 #: command-list.h:138
 msgid "Routines to help parsing remote repository access parameters"
@@ -22241,7 +22238,7 @@ msgstr "Başka bir depo veya yerel daldan getir ve entegre et"
 
 #: command-list.h:143
 msgid "Update remote refs along with associated objects"
-msgstr "Bağlantılı nesnelerle birlikte uzak başvuruları da güncelle"
+msgstr "İlişkin nesnelerle birlikte uzak başvuruları da güncelle"
 
 #: command-list.h:144
 msgid "Applies a quilt patchset onto the current branch"
@@ -22470,7 +22467,7 @@ msgstr "CVS kullanıcıları için Git"
 
 #: command-list.h:200
 msgid "Tweaking diff output"
-msgstr "diff çıktısından yararlanma"
+msgstr "diff çıktısı için ince ayarlar"
 
 #: command-list.h:201
 msgid "A useful minimum set of commands for Everyday Git"

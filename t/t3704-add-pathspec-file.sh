@@ -97,7 +97,11 @@ test_expect_success 'CRLF delimiters' '
 test_expect_success 'quotes' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" | git add --pathspec-from-file=- &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
+	git add --pathspec-from-file=list &&
 
 	cat >expect <<-\EOF &&
 	A  fileA.t
@@ -108,7 +112,10 @@ test_expect_success 'quotes' '
 test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" >list &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	test_must_fail git add --pathspec-from-file=list --pathspec-file-nul
 '
 
@@ -122,6 +129,31 @@ test_expect_success 'only touches what was listed' '
 	A  fileC.t
 	EOF
 	verify_expect
+'
+
+test_expect_success 'error conditions' '
+	restore_checkpoint &&
+	echo fileA.t >list &&
+	>empty_list &&
+
+	test_must_fail git add --pathspec-from-file=list --interactive 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --interactive/--patch" err &&
+
+	test_must_fail git add --pathspec-from-file=list --patch 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --interactive/--patch" err &&
+
+	test_must_fail git add --pathspec-from-file=list --edit 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --edit" err &&
+
+	test_must_fail git add --pathspec-from-file=list -- fileA.t 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with pathspec arguments" err &&
+
+	test_must_fail git add --pathspec-file-nul 2>err &&
+	test_i18ngrep -e "--pathspec-file-nul requires --pathspec-from-file" err &&
+
+	# This case succeeds, but still prints to stderr
+	git add --pathspec-from-file=empty_list 2>err &&
+	test_i18ngrep -e "Nothing specified, nothing added." err
 '
 
 test_done

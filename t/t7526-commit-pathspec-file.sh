@@ -100,7 +100,11 @@ test_expect_success 'CRLF delimiters' '
 test_expect_success 'quotes' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" | git commit --pathspec-from-file=- -m "Commit" &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
+	git commit --pathspec-from-file=list -m "Commit" &&
 
 	cat >expect <<-\EOF &&
 	A	fileA.t
@@ -111,7 +115,10 @@ test_expect_success 'quotes' '
 test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" >list &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	test_must_fail git commit --pathspec-from-file=list --pathspec-file-nul -m "Commit"
 '
 
@@ -127,10 +134,31 @@ test_expect_success 'only touches what was listed' '
 	verify_expect
 '
 
-test_expect_success '--pathspec-from-file and --all cannot be used together' '
+test_expect_success 'error conditions' '
 	restore_checkpoint &&
-	test_must_fail git commit --pathspec-from-file=- --all -m "Commit" 2>err &&
-	test_i18ngrep "[-]-pathspec-from-file with -a does not make sense" err
+	echo fileA.t >list &&
+	>empty_list &&
+
+	test_must_fail git commit --pathspec-from-file=list --interactive -m "Commit" 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --interactive/--patch" err &&
+
+	test_must_fail git commit --pathspec-from-file=list --patch -m "Commit" 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --interactive/--patch" err &&
+
+	test_must_fail git commit --pathspec-from-file=list --all -m "Commit" 2>err &&
+	test_i18ngrep -e "--pathspec-from-file with -a does not make sense" err &&
+
+	test_must_fail git commit --pathspec-from-file=list -m "Commit" -- fileA.t 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with pathspec arguments" err &&
+
+	test_must_fail git commit --pathspec-file-nul -m "Commit" 2>err &&
+	test_i18ngrep -e "--pathspec-file-nul requires --pathspec-from-file" err &&
+
+	test_must_fail git commit --pathspec-from-file=empty_list --include -m "Commit" 2>err &&
+	test_i18ngrep -e "No paths with --include/--only does not make sense." err &&
+
+	test_must_fail git commit --pathspec-from-file=empty_list --only -m "Commit" 2>err &&
+	test_i18ngrep -e "No paths with --include/--only does not make sense." err
 '
 
 test_done

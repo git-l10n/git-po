@@ -3,12 +3,11 @@
 test_description='git log --graph of skewed merges'
 
 . ./test-lib.sh
+. "$TEST_DIRECTORY"/lib-log-graph.sh
 
 check_graph () {
 	cat >expect &&
-	git log --graph --pretty=tformat:%s "$@" >actual.raw &&
-	sed "s/ *$//" actual.raw >actual &&
-	test_cmp expect actual
+	lib_test_cmp_graph --format=%s "$@"
 }
 
 test_expect_success 'log --graph with merge fusing with its left and right neighbors' '
@@ -306,9 +305,69 @@ test_expect_success 'log --graph with multiple tips and colors' '
 	<BLUE>|<RESET><BLUE>/<RESET>
 	* 6_A
 	EOF
-	git log --color=always --graph --date-order --pretty=tformat:%s 6_1 6_3 6_5 >actual.colors.raw &&
-	test_decode_color <actual.colors.raw | sed "s/ *\$//" >actual.colors &&
-	test_cmp expect.colors actual.colors
+	lib_test_cmp_colored_graph --date-order --pretty=tformat:%s 6_1 6_3 6_5
+'
+
+test_expect_success 'log --graph with multiple tips' '
+	git checkout --orphan 7_1 &&
+	test_commit 7_A &&
+	test_commit 7_B &&
+	test_commit 7_C &&
+	git checkout -b 7_2 7_1~2 &&
+	test_commit 7_D &&
+	test_commit 7_E &&
+	git checkout -b 7_3 7_1~1 &&
+	test_commit 7_F &&
+	test_commit 7_G &&
+	git checkout -b 7_4 7_2~1 &&
+	test_commit 7_H &&
+	git checkout -b 7_5 7_1~2 &&
+	test_commit 7_I &&
+	git checkout -b 7_6 7_3~1 &&
+	test_commit 7_J &&
+	git checkout -b M_1 7_1 &&
+	git merge --no-ff 7_2 -m 7_M1 &&
+	git checkout -b M_3 7_3 &&
+	git merge --no-ff 7_4 -m 7_M2 &&
+	git checkout -b M_5 7_5 &&
+	git merge --no-ff 7_6 -m 7_M3 &&
+	git checkout -b M_7 7_1 &&
+	git merge --no-ff 7_2 7_3 -m 7_M4 &&
+
+	check_graph M_1 M_3 M_5 M_7 <<-\EOF
+	*   7_M1
+	|\
+	| | *   7_M2
+	| | |\
+	| | | * 7_H
+	| | | | *   7_M3
+	| | | | |\
+	| | | | | * 7_J
+	| | | | * | 7_I
+	| | | | | | *   7_M4
+	| |_|_|_|_|/|\
+	|/| | | | |/ /
+	| | |_|_|/| /
+	| |/| | | |/
+	| | | |_|/|
+	| | |/| | |
+	| | * | | | 7_G
+	| | | |_|/
+	| | |/| |
+	| | * | | 7_F
+	| * | | | 7_E
+	| | |/ /
+	| |/| |
+	| * | | 7_D
+	| | |/
+	| |/|
+	* | | 7_C
+	| |/
+	|/|
+	* | 7_B
+	|/
+	* 7_A
+	EOF
 '
 
 test_done

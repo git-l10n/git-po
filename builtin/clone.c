@@ -673,7 +673,7 @@ static void update_remote_refs(const struct ref *refs,
 			       const char *msg,
 			       struct transport *transport,
 			       int check_connectivity,
-			       int check_refs_only)
+			       int check_refs_are_promisor_objects_only)
 {
 	const struct ref *rm = mapped_refs;
 
@@ -682,7 +682,8 @@ static void update_remote_refs(const struct ref *refs,
 
 		opt.transport = transport;
 		opt.progress = transport->progress;
-		opt.check_refs_only = !!check_refs_only;
+		opt.check_refs_are_promisor_objects_only =
+			!!check_refs_are_promisor_objects_only;
 
 		if (check_connected(iterate_ref_map, &rm, &opt))
 			die(_("remote did not send all necessary objects"));
@@ -831,6 +832,11 @@ static int checkout(int submodule_progress)
 			argv_array_push(&args, "--remote");
 			argv_array_push(&args, "--no-fetch");
 		}
+
+		if (option_single_branch >= 0)
+			argv_array_push(&args, option_single_branch ?
+					       "--single-branch" :
+					       "--no-single-branch");
 
 		err = run_command_v_opt(args.argv, RUN_GIT_CMD);
 		argv_array_clear(&args);
@@ -1128,7 +1134,7 @@ int cmd_clone(int argc, const char **argv, const char *prefix)
 	if (option_required_reference.nr || option_optional_reference.nr)
 		setup_reference();
 
-	if (option_sparse_checkout && git_sparse_checkout_init(repo))
+	if (option_sparse_checkout && git_sparse_checkout_init(dir))
 		return 1;
 
 	remote = remote_get(option_origin);

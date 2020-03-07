@@ -41,7 +41,8 @@ struct cached_dir {
 	int nr_files;
 	int nr_dirs;
 
-	struct dirent *de;
+	const char *d_name;
+	int d_type;
 	const char *file;
 	struct untracked_cache_dir *ucd;
 };
@@ -50,8 +51,8 @@ static enum path_treatment read_directory_recursive(struct dir_struct *dir,
 	struct index_state *istate, const char *path, int len,
 	struct untracked_cache_dir *untracked,
 	int check_only, int stop_at_first_file, const struct pathspec *pathspec);
-static int get_dtype(struct dirent *de, struct index_state *istate,
-		     const char *path, int len);
+static int resolve_dtype(int dtype, struct index_state *istate,
+			 const char *path, int len);
 
 int count_slashes(const char *s)
 {
@@ -635,11 +636,42 @@ int pl_hashmap_cmp(const void *unused_cmp_data,
 	return strncmp(ee1->pattern, ee2->pattern, min_len);
 }
 
+static char *dup_and_filter_pattern(const char *pattern)
+{
+	char *set, *read;
+	size_t count  = 0;
+	char *result = xstrdup(pattern);
+
+	set = result;
+	read = result;
+
+	while (*read) {
+		/* skip escape characters (once) */
+		if (*read == '\\')
+			read++;
+
+		*set = *read;
+
+		set++;
+		read++;
+		count++;
+	}
+	*set = 0;
+
+	if (count > 2 &&
+	    *(set - 1) == '*' &&
+	    *(set - 2) == '/')
+		*(set - 2) = 0;
+
+	return result;
+}
+
 static void add_pattern_to_hashsets(struct pattern_list *pl, struct path_pattern *given)
 {
 	struct pattern_entry *translated;
 	char *truncated;
 	char *data = NULL;
+	const char *prev, *cur, *next;
 
 	if (!pl->use_cone_patterns)
 		return;
@@ -656,17 +688,57 @@ static void add_pattern_to_hashsets(struct pattern_list *pl, struct path_pattern
 		return;
 	}
 
+	if (given->patternlen < 2 ||
+	    *given->pattern == '*' ||
+	    strstr(given->pattern, "**")) {
+		/* Not a cone pattern. */
+		warning(_("unrecognized pattern: '%s'"), given->pattern);
+		goto clear_hashmaps;
+	}
+
+	prev = given->pattern;
+	cur = given->pattern + 1;
+	next = given->pattern + 2;
+
+	while (*cur) {
+		/* Watch for glob characters '*', '\', '[', '?' */
+		if (!is_glob_special(*cur))
+			goto increment;
+
+		/* But only if *prev != '\\' */
+		if (*prev == '\\')
+			goto increment;
+
+		/* But allow the initial '\' */
+		if (*cur == '\\' &&
+		    is_glob_special(*next))
+			goto increment;
+
+		/* But a trailing '/' then '*' is fine */
+		if (*prev == '/' &&
+		    *cur == '*' &&
+		    *next == 0)
+			goto increment;
+
+		/* Not a cone pattern. */
+		warning(_("unrecognized pattern: '%s'"), given->pattern);
+		goto clear_hashmaps;
+
+	increment:
+		prev++;
+		cur++;
+		next++;
+	}
+
 	if (given->patternlen > 2 &&
 	    !strcmp(given->pattern + given->patternlen - 2, "/*")) {
 		if (!(given->flags & PATTERN_FLAG_NEGATIVE)) {
 			/* Not a cone pattern. */
-			pl->use_cone_patterns = 0;
 			warning(_("unrecognized pattern: '%s'"), given->pattern);
 			goto clear_hashmaps;
 		}
 
-		truncated = xstrdup(given->pattern);
-		truncated[given->patternlen - 2] = 0;
+		truncated = dup_and_filter_pattern(given->pattern);
 
 		translated = xmalloc(sizeof(struct pattern_entry));
 		translated->pattern = truncated;
@@ -700,7 +772,7 @@ static void add_pattern_to_hashsets(struct pattern_list *pl, struct path_pattern
 
 	translated = xmalloc(sizeof(struct pattern_entry));
 
-	translated->pattern = xstrdup(given->pattern);
+	translated->pattern = dup_and_filter_pattern(given->pattern);
 	translated->patternlen = given->patternlen;
 	hashmap_entry_init(&translated->ent,
 			   ignore_case ?
@@ -1002,8 +1074,8 @@ static int add_patterns(const char *fname, const char *base, int baselen,
 				oidcpy(&oid_stat->oid,
 				       &istate->cache[pos]->oid);
 			else
-				hash_object_file(buf, size, "blob",
-						 &oid_stat->oid);
+				hash_object_file(the_hash_algo, buf, size,
+						 "blob", &oid_stat->oid);
 			fill_stat_data(&oid_stat->stat, &st);
 			oid_stat->valid = 1;
 		}
@@ -1215,8 +1287,7 @@ static struct path_pattern *last_matching_pattern_from_list(const char *pathname
 		int prefix = pattern->nowildcardlen;
 
 		if (pattern->flags & PATTERN_FLAG_MUSTBEDIR) {
-			if (*dtype == DT_UNKNOWN)
-				*dtype = get_dtype(NULL, istate, pathname, pathlen);
+			*dtype = resolve_dtype(*dtype, istate, pathname, pathlen);
 			if (*dtype != DT_DIR)
 				continue;
 		}
@@ -1842,10 +1913,9 @@ static int get_index_dtype(struct index_state *istate,
 	return DT_UNKNOWN;
 }
 
-static int get_dtype(struct dirent *de, struct index_state *istate,
-		     const char *path, int len)
+static int resolve_dtype(int dtype, struct index_state *istate,
+			 const char *path, int len)
 {
-	int dtype = de ? DTYPE(de) : DT_UNKNOWN;
 	struct stat st;
 
 	if (dtype != DT_UNKNOWN)
@@ -1870,14 +1940,13 @@ static enum path_treatment treat_one_path(struct dir_struct *dir,
 					  struct strbuf *path,
 					  int baselen,
 					  const struct pathspec *pathspec,
-					  int dtype, struct dirent *de)
+					  int dtype)
 {
 	int exclude;
 	int has_path_in_index = !!index_file_exists(istate, path->buf, path->len, ignore_case);
 	enum path_treatment path_treatment;
 
-	if (dtype == DT_UNKNOWN)
-		dtype = get_dtype(de, istate, path->buf, path->len);
+	dtype = resolve_dtype(dtype, istate, path->buf, path->len);
 
 	/* Always exclude indexed files */
 	if (dtype != DT_DIR && has_path_in_index)
@@ -1985,21 +2054,18 @@ static enum path_treatment treat_path(struct dir_struct *dir,
 				      int baselen,
 				      const struct pathspec *pathspec)
 {
-	int dtype;
-	struct dirent *de = cdir->de;
-
-	if (!de)
+	if (!cdir->d_name)
 		return treat_path_fast(dir, untracked, cdir, istate, path,
 				       baselen, pathspec);
-	if (is_dot_or_dotdot(de->d_name) || !fspathcmp(de->d_name, ".git"))
+	if (is_dot_or_dotdot(cdir->d_name) || !fspathcmp(cdir->d_name, ".git"))
 		return path_none;
 	strbuf_setlen(path, baselen);
-	strbuf_addstr(path, de->d_name);
+	strbuf_addstr(path, cdir->d_name);
 	if (simplify_away(path->buf, path->len, pathspec))
 		return path_none;
 
-	dtype = DTYPE(de);
-	return treat_one_path(dir, untracked, istate, path, baselen, pathspec, dtype, de);
+	return treat_one_path(dir, untracked, istate, path, baselen, pathspec,
+			      cdir->d_type);
 }
 
 static void add_untracked(struct untracked_cache_dir *dir, const char *name)
@@ -2087,10 +2153,17 @@ static int open_cached_dir(struct cached_dir *cdir,
 
 static int read_cached_dir(struct cached_dir *cdir)
 {
+	struct dirent *de;
+
 	if (cdir->fdir) {
-		cdir->de = readdir(cdir->fdir);
-		if (!cdir->de)
+		de = readdir(cdir->fdir);
+		if (!de) {
+			cdir->d_name = NULL;
+			cdir->d_type = DT_UNKNOWN;
 			return -1;
+		}
+		cdir->d_name = de->d_name;
+		cdir->d_type = DTYPE(de);
 		return 0;
 	}
 	while (cdir->nr_dirs < cdir->untracked->dirs_nr) {
@@ -2216,7 +2289,7 @@ static enum path_treatment read_directory_recursive(struct dir_struct *dir,
 		/* recurse into subdir if instructed by treat_path */
 		if ((state == path_recurse) ||
 			((state == path_untracked) &&
-			 (get_dtype(cdir.de, istate, path.buf, path.len) == DT_DIR) &&
+			 (resolve_dtype(cdir.d_type, istate, path.buf, path.len) == DT_DIR) &&
 			 ((dir->flags & DIR_SHOW_IGNORED_TOO) ||
 			  (pathspec &&
 			   do_match_pathspec(istate, pathspec, path.buf, path.len,
@@ -2308,16 +2381,16 @@ static int treat_leading_path(struct dir_struct *dir,
 	 * WARNING WARNING WARNING:
 	 *
 	 * Any updates to the traversal logic here may need corresponding
-	 * updates in treat_leading_path().  See the commit message for the
-	 * commit adding this warning as well as the commit preceding it
-	 * for details.
+	 * updates in read_directory_recursive().  See 777b420347 (dir:
+	 * synchronize treat_leading_path() and read_directory_recursive(),
+	 * 2019-12-19) and its parent commit for details.
 	 */
 
 	struct strbuf sb = STRBUF_INIT;
+	struct strbuf subdir = STRBUF_INIT;
 	int prevlen, baselen;
 	const char *cp;
 	struct cached_dir cdir;
-	struct dirent *de;
 	enum path_treatment state = path_none;
 
 	/*
@@ -2342,22 +2415,8 @@ static int treat_leading_path(struct dir_struct *dir,
 	if (!len)
 		return 1;
 
-	/*
-	 * We need a manufactured dirent with sufficient space to store a
-	 * leading directory component of path in its d_name.  Here, we
-	 * assume that the dirent's d_name is either declared as
-	 *    char d_name[BIG_ENOUGH]
-	 * or that it is declared at the end of the struct as
-	 *    char d_name[]
-	 * For either case, padding with len+1 bytes at the end will ensure
-	 * sufficient storage space.
-	 */
-	de = xcalloc(1, st_add3(sizeof(struct dirent), len, 1));
 	memset(&cdir, 0, sizeof(cdir));
-	cdir.de = de;
-#if defined(DT_UNKNOWN) && !defined(NO_D_TYPE_IN_DIRENT)
-	de->d_type = DT_DIR;
-#endif
+	cdir.d_type = DT_DIR;
 	baselen = 0;
 	prevlen = 0;
 	while (1) {
@@ -2374,15 +2433,20 @@ static int treat_leading_path(struct dir_struct *dir,
 			break;
 		strbuf_reset(&sb);
 		strbuf_add(&sb, path, prevlen);
-		memcpy(de->d_name, path+prevlen, baselen-prevlen);
-		de->d_name[baselen-prevlen] = '\0';
+		strbuf_reset(&subdir);
+		strbuf_add(&subdir, path+prevlen, baselen-prevlen);
+		cdir.d_name = subdir.buf;
 		state = treat_path(dir, NULL, &cdir, istate, &sb, prevlen,
 				    pathspec);
 		if (state == path_untracked &&
-		    get_dtype(cdir.de, istate, sb.buf, sb.len) == DT_DIR &&
+		    resolve_dtype(cdir.d_type, istate, sb.buf, sb.len) == DT_DIR &&
 		    (dir->flags & DIR_SHOW_IGNORED_TOO ||
 		     do_match_pathspec(istate, pathspec, sb.buf, sb.len,
 				       baselen, NULL, DO_MATCH_LEADING_PATHSPEC) == MATCHED_RECURSIVELY_LEADING_PATHSPEC)) {
+			if (!match_pathspec(istate, pathspec, sb.buf, sb.len,
+					    0 /* prefix */, NULL,
+					    0 /* do NOT special case dirs */))
+				state = path_none;
 			add_path_to_appropriate_result_list(dir, NULL, &cdir,
 							    istate,
 							    &sb, baselen,
@@ -2399,7 +2463,7 @@ static int treat_leading_path(struct dir_struct *dir,
 					    &sb, baselen, pathspec,
 					    state);
 
-	free(de);
+	strbuf_release(&subdir);
 	strbuf_release(&sb);
 	return state == path_recurse;
 }

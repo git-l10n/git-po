@@ -109,7 +109,11 @@ test_expect_success 'CRLF delimiters' '
 test_expect_success 'quotes' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" | git checkout --pathspec-from-file=- HEAD^1 &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
+	git checkout --pathspec-from-file=list HEAD^1 &&
 
 	cat >expect <<-\EOF &&
 	M  fileA.t
@@ -120,7 +124,10 @@ test_expect_success 'quotes' '
 test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" >list &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	test_must_fail git checkout --pathspec-from-file=list --pathspec-file-nul HEAD^1
 '
 
@@ -134,6 +141,23 @@ test_expect_success 'only touches what was listed' '
 	M  fileC.t
 	EOF
 	verify_expect
+'
+
+test_expect_success 'error conditions' '
+	restore_checkpoint &&
+	echo fileA.t >list &&
+
+	test_must_fail git checkout --pathspec-from-file=list --detach 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --detach" err &&
+
+	test_must_fail git checkout --pathspec-from-file=list --patch 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --patch" err &&
+
+	test_must_fail git checkout --pathspec-from-file=list -- fileA.t 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with pathspec arguments" err &&
+
+	test_must_fail git checkout --pathspec-file-nul 2>err &&
+	test_i18ngrep -e "--pathspec-file-nul requires --pathspec-from-file" err
 '
 
 test_done

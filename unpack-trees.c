@@ -291,11 +291,11 @@ static void load_gitmodules_file(struct index_state *index,
 	if (pos >= 0) {
 		struct cache_entry *ce = index->cache[pos];
 		if (!state && ce->ce_flags & CE_WT_REMOVE) {
-			repo_read_gitmodules(the_repository);
+			repo_read_gitmodules(the_repository, 0);
 		} else if (state && (ce->ce_flags & CE_UPDATE)) {
 			submodule_free(the_repository);
 			checkout_entry(ce, state, NULL, NULL);
-			repo_read_gitmodules(the_repository);
+			repo_read_gitmodules(the_repository, 0);
 		}
 	}
 }
@@ -372,15 +372,20 @@ static int check_updates(struct unpack_trees_options *o)
 	state.refresh_cache = 1;
 	state.istate = index;
 
+	if (!o->update || o->dry_run) {
+		remove_marked_cache_entries(index, 0);
+		trace_performance_leave("check_updates");
+		return 0;
+	}
+
 	if (o->clone)
 		setup_collided_checkout_detection(&state, index);
 
 	progress = get_progress(o);
 
-	if (o->update)
-		git_attr_set_direction(GIT_ATTR_CHECKOUT);
+	git_attr_set_direction(GIT_ATTR_CHECKOUT);
 
-	if (should_update_submodules() && o->update && !o->dry_run)
+	if (should_update_submodules())
 		load_gitmodules_file(index, NULL);
 
 	for (i = 0; i < index->cache_nr; i++) {
@@ -388,18 +393,18 @@ static int check_updates(struct unpack_trees_options *o)
 
 		if (ce->ce_flags & CE_WT_REMOVE) {
 			display_progress(progress, ++cnt);
-			if (o->update && !o->dry_run)
-				unlink_entry(ce);
+			unlink_entry(ce);
 		}
 	}
+
 	remove_marked_cache_entries(index, 0);
 	remove_scheduled_dirs();
 
-	if (should_update_submodules() && o->update && !o->dry_run)
+	if (should_update_submodules())
 		load_gitmodules_file(index, &state);
 
 	enable_delayed_checkout(&state);
-	if (has_promisor_remote() && o->update && !o->dry_run) {
+	if (has_promisor_remote()) {
 		/*
 		 * Prefetch the objects that are to be checked out in the loop
 		 * below.
@@ -431,15 +436,12 @@ static int check_updates(struct unpack_trees_options *o)
 				    ce->name);
 			display_progress(progress, ++cnt);
 			ce->ce_flags &= ~CE_UPDATE;
-			if (o->update && !o->dry_run) {
-				errs |= checkout_entry(ce, &state, NULL, NULL);
-			}
+			errs |= checkout_entry(ce, &state, NULL, NULL);
 		}
 	}
 	stop_progress(&progress);
 	errs |= finish_delayed_checkout(&state, NULL);
-	if (o->update)
-		git_attr_set_direction(GIT_ATTR_CHECKIN);
+	git_attr_set_direction(GIT_ATTR_CHECKIN);
 
 	if (o->clone)
 		report_collided_checkout(index);
@@ -694,9 +696,11 @@ static int index_pos_by_traverse_info(struct name_entry *names,
 	if (pos >= 0)
 		BUG("This is a directory and should not exist in index");
 	pos = -pos - 1;
-	if (!starts_with(o->src_index->cache[pos]->name, name.buf) ||
+	if (pos >= o->src_index->cache_nr ||
+	    !starts_with(o->src_index->cache[pos]->name, name.buf) ||
 	    (pos > 0 && starts_with(o->src_index->cache[pos-1]->name, name.buf)))
-		BUG("pos must point at the first entry in this directory");
+		BUG("pos %d doesn't point to the first entry of %s in index",
+		    pos, name.buf);
 	strbuf_release(&name);
 	return pos;
 }
@@ -1305,14 +1309,14 @@ static int clear_ce_flags_dir(struct index_state *istate,
 
 	if (pl->use_cone_patterns && orig_ret == MATCHED_RECURSIVE) {
 		struct cache_entry **ce = cache;
-		rc = (cache_end - cache) / sizeof(struct cache_entry *);
+		rc = cache_end - cache;
 
 		while (ce < cache_end) {
 			(*ce)->ce_flags &= ~clear_mask;
 			ce++;
 		}
 	} else if (pl->use_cone_patterns && orig_ret == NOT_MATCHED) {
-		rc = (cache_end - cache) / sizeof(struct cache_entry *);
+		rc = cache_end - cache;
 	} else {
 		rc = clear_ce_flags_1(istate, cache, cache_end - cache,
 				      prefix,
@@ -1348,7 +1352,7 @@ static int clear_ce_flags_1(struct index_state *istate,
 			    enum pattern_match_result default_match,
 			    int progress_nr)
 {
-	struct cache_entry **cache_end = cache + nr;
+	struct cache_entry **cache_end = nr ? cache + nr : cache;
 
 	/*
 	 * Process all entries that have the given prefix and meet
@@ -1416,7 +1420,7 @@ static int clear_ce_flags_1(struct index_state *istate,
 						name, &dtype, pl, istate);
 		if (ret == UNDECIDED)
 			ret = default_match;
-		if (ret == MATCHED)
+		if (ret == MATCHED || ret == MATCHED_RECURSIVE)
 			ce->ce_flags &= ~clear_mask;
 		cache++;
 		progress_nr++;

@@ -68,6 +68,15 @@ test_expect_success 'revert works (initial)' '
 	! grep . output
 '
 
+test_expect_success 'add untracked (multiple)' '
+	test_when_finished "git reset && rm [1-9]" &&
+	touch $(test_seq 9) &&
+	test_write_lines a "2-5 8-" | git add -i -- [1-9] &&
+	test_write_lines 2 3 4 5 8 9 >expected &&
+	git ls-files [1-9] >output &&
+	test_cmp expected output
+'
+
 test_expect_success 'setup (commit)' '
 	echo baseline >file &&
 	git add file &&
@@ -544,6 +553,19 @@ test_expect_success 'diffs can be colorized' '
 	grep "$(printf "\\033")" output
 '
 
+test_expect_success 'colorized diffs respect diff.wsErrorHighlight' '
+	git reset --hard &&
+
+	echo "old " >test &&
+	git add test &&
+	echo "new " >test &&
+
+	printf y >y &&
+	force_color git -c diff.wsErrorHighlight=all add -p >output.raw 2>&1 <y &&
+	test_decode_color <output.raw >output &&
+	grep "old<" output
+'
+
 test_expect_success 'diffFilter filters diff' '
 	git reset --hard &&
 
@@ -561,7 +583,7 @@ test_expect_success 'detect bogus diffFilter output' '
 	git reset --hard &&
 
 	echo content >test &&
-	test_config interactive.diffFilter "echo too-short" &&
+	test_config interactive.diffFilter "sed 1d" &&
 	printf y >y &&
 	test_must_fail force_color git add -p <y
 '

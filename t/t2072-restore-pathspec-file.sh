@@ -109,7 +109,11 @@ test_expect_success 'CRLF delimiters' '
 test_expect_success 'quotes' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" | git restore --pathspec-from-file=- --source=HEAD^1 &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
+	git restore --pathspec-from-file=list --source=HEAD^1 &&
 
 	cat >expect <<-\EOF &&
 	 M fileA.t
@@ -120,7 +124,10 @@ test_expect_success 'quotes' '
 test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	restore_checkpoint &&
 
-	printf "\"file\\101.t\"" >list &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	test_must_fail git restore --pathspec-from-file=list --pathspec-file-nul --source=HEAD^1
 '
 
@@ -134,6 +141,24 @@ test_expect_success 'only touches what was listed' '
 	 M fileC.t
 	EOF
 	verify_expect
+'
+
+test_expect_success 'error conditions' '
+	restore_checkpoint &&
+	echo fileA.t >list &&
+	>empty_list &&
+
+	test_must_fail git restore --pathspec-from-file=list --patch --source=HEAD^1 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --patch" err &&
+
+	test_must_fail git restore --pathspec-from-file=list --source=HEAD^1 -- fileA.t 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with pathspec arguments" err &&
+
+	test_must_fail git restore --pathspec-file-nul --source=HEAD^1 2>err &&
+	test_i18ngrep -e "--pathspec-file-nul requires --pathspec-from-file" err &&
+
+	test_must_fail git restore --pathspec-from-file=empty_list --source=HEAD^1 2>err &&
+	test_i18ngrep -e "you must specify path(s) to restore" err
 '
 
 test_done

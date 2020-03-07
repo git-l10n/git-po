@@ -105,8 +105,12 @@ test_expect_success 'CRLF delimiters' '
 test_expect_success 'quotes' '
 	restore_checkpoint &&
 
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	git rm fileA.t &&
-	printf "\"file\\101.t\"" | git reset --pathspec-from-file=- &&
+	git reset --pathspec-from-file=list &&
 
 	cat >expect <<-\EOF &&
 	 D fileA.t
@@ -117,8 +121,10 @@ test_expect_success 'quotes' '
 test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	restore_checkpoint &&
 
-	git rm fileA.t &&
-	printf "\"file\\101.t\"" >list &&
+	cat >list <<-\EOF &&
+	"file\101.t"
+	EOF
+
 	# Note: "git reset" has not yet learned to fail on wrong pathspecs
 	git reset --pathspec-from-file=list --pathspec-file-nul &&
 
@@ -126,15 +132,6 @@ test_expect_success 'quotes not compatible with --pathspec-file-nul' '
 	 D fileA.t
 	EOF
 	test_must_fail verify_expect
-'
-
-test_expect_success '--pathspec-from-file is not compatible with --soft or --hard' '
-	restore_checkpoint &&
-
-	git rm fileA.t &&
-	echo fileA.t >list &&
-	test_must_fail git reset --soft --pathspec-from-file=list &&
-	test_must_fail git reset --hard --pathspec-from-file=list
 '
 
 test_expect_success 'only touches what was listed' '
@@ -150,6 +147,27 @@ test_expect_success 'only touches what was listed' '
 	D  fileD.t
 	EOF
 	verify_expect
+'
+
+test_expect_success 'error conditions' '
+	restore_checkpoint &&
+	echo fileA.t >list &&
+	git rm fileA.t &&
+
+	test_must_fail git reset --pathspec-from-file=list --patch 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with --patch" err &&
+
+	test_must_fail git reset --pathspec-from-file=list -- fileA.t 2>err &&
+	test_i18ngrep -e "--pathspec-from-file is incompatible with pathspec arguments" err &&
+
+	test_must_fail git reset --pathspec-file-nul 2>err &&
+	test_i18ngrep -e "--pathspec-file-nul requires --pathspec-from-file" err &&
+
+	test_must_fail git reset --soft --pathspec-from-file=list 2>err &&
+	test_i18ngrep -e "fatal: Cannot do soft reset with paths" err &&
+
+	test_must_fail git reset --hard --pathspec-from-file=list 2>err &&
+	test_i18ngrep -e "fatal: Cannot do hard reset with paths" err
 '
 
 test_done

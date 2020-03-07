@@ -324,7 +324,7 @@ struct index_state {
 	struct hashmap dir_hash;
 	struct object_id oid;
 	struct untracked_cache *untracked;
-	uint64_t fsmonitor_last_update;
+	char *fsmonitor_last_update;
 	struct ewah_bitmap *fsmonitor_dirty;
 	struct mem_pool *ce_mem_pool;
 	struct progress *progress;
@@ -1363,7 +1363,8 @@ int git_open_cloexec(const char *name, int flags);
 int unpack_loose_header(git_zstream *stream, unsigned char *map, unsigned long mapsize, void *buffer, unsigned long bufsiz);
 int parse_loose_header(const char *hdr, unsigned long *sizep);
 
-int check_object_signature(const struct object_id *oid, void *buf, unsigned long size, const char *type);
+int check_object_signature(struct repository *r, const struct object_id *oid,
+			   void *buf, unsigned long size, const char *type);
 
 int finalize_object_file(const char *tmpfile, const char *filename);
 

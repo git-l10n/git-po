@@ -95,7 +95,7 @@
 #   pull                             |  拉，拉取
 #   push                             |  推，推送
 #   reachable                        |  可达
-#   rebase                           |  变基
+#   rebase                           |  嫁接
 #   ref                              |  引用
 #   reflog                           |  引用日志
 #   refspec                          |  引用规格
@@ -1910,7 +1910,7 @@ msgstr "未设置分支 %s 作为它自己的上游。"
 #: branch.c:93
 #, c-format
 msgid "Branch '%s' set up to track remote branch '%s' from '%s' by rebasing."
-msgstr "分支 '%1$s' 设置为使用变基来跟踪来自 '%3$s' 的远程分支 '%2$s'。"
+msgstr "分支 '%1$s' 设置为使用嫁接来跟踪来自 '%3$s' 的远程分支 '%2$s'。"
 
 #: branch.c:94
 #, c-format
@@ -1920,7 +1920,7 @@ msgstr "分支 '%1$s' 设置为跟踪来自 '%3$s' 的远程分支 '%2$s'。"
 #: branch.c:98
 #, c-format
 msgid "Branch '%s' set up to track local branch '%s' by rebasing."
-msgstr "分支 '%s' 设置为使用变基来跟踪本地分支 '%s'。"
+msgstr "分支 '%s' 设置为使用嫁接来跟踪本地分支 '%s'。"
 
 #: branch.c:99
 #, c-format
@@ -1930,7 +1930,7 @@ msgstr "分支 '%s' 设置为跟踪本地分支 '%s'。"
 #: branch.c:104
 #, c-format
 msgid "Branch '%s' set up to track remote ref '%s' by rebasing."
-msgstr "分支 '%s' 设置为使用变基来跟踪远程引用 '%s'。"
+msgstr "分支 '%s' 设置为使用嫁接来跟踪远程引用 '%s'。"
 
 #: branch.c:105
 #, c-format
@@ -1940,7 +1940,7 @@ msgstr "分支 '%s' 设置为跟踪远程引用 '%s'。"
 #: branch.c:109
 #, c-format
 msgid "Branch '%s' set up to track local ref '%s' by rebasing."
-msgstr "分支 '%s' 设置为使用变基来跟踪本地引用 '%s'。"
+msgstr "分支 '%s' 设置为使用嫁接来跟踪本地引用 '%s'。"
 
 #: branch.c:110
 #, c-format
@@ -5595,7 +5595,7 @@ msgid ""
 "Or you can abort the rebase with 'git rebase --abort'.\n"
 msgstr ""
 "您可以用 'git rebase --edit-todo' 修正，然后执行 'git rebase --continue'。\n"
-"或者您可以用 'git rebase --abort' 终止变基。\n"
+"或者您可以用 'git rebase --abort' 终止嫁接。\n"
 
 #: rebase-interactive.c:33
 #, c-format
@@ -5632,7 +5632,7 @@ msgstr ""
 "s, squash <提交> = 使用提交，但融合到前一个提交\n"
 "f, fixup <提交> = 类似于 \"squash\"，但丢弃提交说明日志\n"
 "x, exec <命令> = 使用 shell 运行命令（此行剩余部分）\n"
-"b, break = 在此处停止（使用 'git rebase --continue' 继续变基）\n"
+"b, break = 在此处停止（使用 'git rebase --continue' 继续嫁接）\n"
 "d, drop <提交> = 删除提交\n"
 "l, label <label> = 为当前 HEAD 打上标记\n"
 "t, reset <label> = 重置 HEAD 到该标记\n"
@@ -5647,8 +5647,8 @@ msgstr ""
 #, c-format
 msgid "Rebase %s onto %s (%d command)"
 msgid_plural "Rebase %s onto %s (%d commands)"
-msgstr[0] "变基 %s 到 %s（%d 个提交）"
-msgstr[1] "变基 %s 到 %s（%d 个提交）"
+msgstr[0] "嫁接 %s 到 %s（%d 个提交）"
+msgstr[1] "嫁接 %s 到 %s（%d 个提交）"
 
 #: rebase-interactive.c:72 git-rebase--preserve-merges.sh:228
 msgid ""
@@ -5675,7 +5675,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"您正在修改进行中的交互式变基待办列表。若要在编辑结束后继续变基，\n"
+"您正在修改进行中的交互式嫁接待办列表。若要在编辑结束后继续嫁接，\n"
 "请执行：\n"
 "    git rebase --continue\n"
 "\n"
@@ -5687,7 +5687,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"然而，如果您删除全部内容，变基操作将会终止。\n"
+"然而，如果您删除全部内容，嫁接操作将会终止。\n"
 "\n"
 
 #: rebase-interactive.c:110 rerere.c:485 rerere.c:692 sequencer.c:3463
@@ -5922,12 +5922,12 @@ msgstr "错误的格式化字符串 %s"
 #: ref-filter.c:1486
 #, c-format
 msgid "no branch, rebasing %s"
-msgstr "非分支，正变基 %s"
+msgstr "非分支，正嫁接 %s"
 
 #: ref-filter.c:1489
 #, c-format
 msgid "no branch, rebasing detached HEAD %s"
-msgstr "非分支，正变基分离头指针 %s"
+msgstr "非分支，正嫁接分离头指针 %s"
 
 #: ref-filter.c:1492
 #, c-format
@@ -6578,7 +6578,7 @@ msgstr "拣选"
 
 #: sequencer.c:330
 msgid "rebase"
-msgstr "变基"
+msgstr "嫁接"
 
 #: sequencer.c:332
 #, c-format
@@ -7345,7 +7345,7 @@ msgstr ""
 #: sequencer.c:3931
 #, c-format
 msgid "Rebasing (%d/%d)%s"
-msgstr "正在变基（%d/%d）%s"
+msgstr "正在嫁接（%d/%d）%s"
 
 #: sequencer.c:3976
 #, c-format
@@ -7373,11 +7373,11 @@ msgstr "不能更新 HEAD 为 %s"
 #: sequencer.c:4185
 #, c-format
 msgid "Successfully rebased and updated %s.\n"
-msgstr "成功变基并更新 %s。\n"
+msgstr "成功嫁接并更新 %s。\n"
 
 #: sequencer.c:4218
 msgid "cannot rebase: You have unstaged changes."
-msgstr "不能变基：您有未暂存的变更。"
+msgstr "不能嫁接：您有未暂存的变更。"
 
 #: sequencer.c:4227
 msgid "cannot amend non-existing commit"
@@ -9137,11 +9137,11 @@ msgstr "  （使用 \"git rebase --edit-todo\" 来查看和编辑）"
 #: wt-status.c:1351
 #, c-format
 msgid "You are currently rebasing branch '%s' on '%s'."
-msgstr "您在执行将分支 '%s' 变基到 '%s' 的操作。"
+msgstr "您在执行将分支 '%s' 嫁接到 '%s' 的操作。"
 
 #: wt-status.c:1356
 msgid "You are currently rebasing."
-msgstr "您在执行变基操作。"
+msgstr "您在执行嫁接操作。"
 
 #  译者：注意保持前导空格
 #: wt-status.c:1369
@@ -9167,11 +9167,11 @@ msgstr "  （所有冲突已解决：运行 \"git rebase --continue\"）"
 #, c-format
 msgid ""
 "You are currently splitting a commit while rebasing branch '%s' on '%s'."
-msgstr "您在执行将分支 '%s' 变基到 '%s' 的操作时拆分提交。"
+msgstr "您在执行将分支 '%s' 嫁接到 '%s' 的操作时拆分提交。"
 
 #: wt-status.c:1389
 msgid "You are currently splitting a commit during a rebase."
-msgstr "您在执行变基操作时拆分提交。"
+msgstr "您在执行嫁接操作时拆分提交。"
 
 #  译者：注意保持前导空格
 #: wt-status.c:1392
@@ -9181,11 +9181,11 @@ msgstr "  （一旦您工作目录提交干净后，运行 \"git rebase --contin
 #: wt-status.c:1396
 #, c-format
 msgid "You are currently editing a commit while rebasing branch '%s' on '%s'."
-msgstr "您在执行将分支 '%s' 变基到 '%s' 的操作时编辑提交。"
+msgstr "您在执行将分支 '%s' 嫁接到 '%s' 的操作时编辑提交。"
 
 #: wt-status.c:1401
 msgid "You are currently editing a commit during a rebase."
-msgstr "您在执行变基操作时编辑提交。"
+msgstr "您在执行嫁接操作时编辑提交。"
 
 #  译者：注意保持前导空格
 #: wt-status.c:1404
@@ -9286,11 +9286,11 @@ msgstr "位于分支 "
 
 #: wt-status.c:1699
 msgid "interactive rebase in progress; onto "
-msgstr "交互式变基操作正在进行中；至 "
+msgstr "交互式嫁接操作正在进行中；至 "
 
 #: wt-status.c:1701
 msgid "rebase in progress; onto "
-msgstr "变基操作正在进行中；至 "
+msgstr "嫁接操作正在进行中；至 "
 
 #: wt-status.c:1711
 msgid "Not currently on any branch."
@@ -10002,7 +10002,7 @@ msgstr "读取索引失败"
 #: builtin/am.c:2340
 #, c-format
 msgid "previous rebase directory %s still exists but mbox given."
-msgstr "之前的变基目录 %s 仍然存在，但却提供了 mbox。"
+msgstr "之前的嫁接目录 %s 仍然存在，但却提供了 mbox。"
 
 #: builtin/am.c:2364
 #, c-format
@@ -10626,7 +10626,7 @@ msgstr "HEAD (%s) 指向 refs/heads/ 之外"
 #: builtin/branch.c:481
 #, c-format
 msgid "Branch %s is being rebased at %s"
-msgstr "分支 %s 正被变基到 %s"
+msgstr "分支 %s 正被嫁接到 %s"
 
 #: builtin/branch.c:485
 #, c-format
@@ -11489,7 +11489,7 @@ msgid ""
 "cannot switch branch while rebasing\n"
 "Consider \"git rebase --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在变基时切换分支\n"
+"不能在嫁接时切换分支\n"
 "考虑使用 \"git rebase --quit\" 或 \"git worktree add\"。"
 
 #: builtin/checkout.c:1392
@@ -12531,7 +12531,7 @@ msgstr "在拣选过程中不能做部分提交。"
 
 #: builtin/commit.c:480
 msgid "cannot do a partial commit during a rebase."
-msgstr "在变基过程中不能做部分提交。"
+msgstr "在嫁接过程中不能做部分提交。"
 
 #: builtin/commit.c:488
 msgid "cannot read the index"
@@ -12707,7 +12707,7 @@ msgstr "您正处于一个拣选过程中 -- 无法修补提交。"
 
 #: builtin/commit.c:1189
 msgid "You are in the middle of a rebase -- cannot amend."
-msgstr "您正处于一个变基过程中 -- 无法修补提交。"
+msgstr "您正处于一个嫁接过程中 -- 无法修补提交。"
 
 #: builtin/commit.c:1192
 msgid "Options --squash and --fixup cannot be used together"
@@ -17451,7 +17451,7 @@ msgstr "和合并相关的选项"
 
 #: builtin/pull.c:130
 msgid "incorporate changes by rebasing rather than merging"
-msgstr "使用变基操作取代合并操作以合入修改"
+msgstr "使用嫁接操作取代合并操作以合入修改"
 
 #: builtin/pull.c:158 builtin/rebase.c:478 builtin/revert.c:126
 msgid "allow fast-forward"
@@ -17498,7 +17498,7 @@ msgstr ""
 "pull 操作之前执行下面一条命令来抑制本消息：\n"
 "\n"
 "  git config pull.rebase false  # 合并（缺省策略）\n"
-"  git config pull.rebase true   # 变基\n"
+"  git config pull.rebase true   # 嫁接\n"
 "  git config pull.ff only       # 仅快进\n"
 "\n"
 "您可以将 \"git config\" 替换为 \"git config --global\" 以便为所有仓库设置\n"
@@ -17509,7 +17509,7 @@ msgstr ""
 msgid ""
 "There is no candidate for rebasing against among the refs that you just "
 "fetched."
-msgstr "在您刚刚获取到的引用中没有变基操作的候选。"
+msgstr "在您刚刚获取到的引用中没有嫁接操作的候选。"
 
 #: builtin/pull.c:461
 msgid ""
@@ -17538,7 +17538,7 @@ msgstr "您当前不在一个分支上。"
 
 #: builtin/pull.c:472 builtin/pull.c:487 git-parse-remote.sh:79
 msgid "Please specify which branch you want to rebase against."
-msgstr "请指定您要变基到哪一个分支。"
+msgstr "请指定您要嫁接到哪一个分支。"
 
 #: builtin/pull.c:474 builtin/pull.c:489 git-parse-remote.sh:82
 msgid "Please specify which branch you want to merge with."
@@ -17583,7 +17583,7 @@ msgstr "无法访问提交 %s"
 
 #: builtin/pull.c:895
 msgid "ignoring --verify-signatures for rebase"
-msgstr "为变基操作忽略 --verify-signatures"
+msgstr "为嫁接操作忽略 --verify-signatures"
 
 #: builtin/pull.c:955
 msgid "Updating an unborn branch with changes added to the index."
@@ -17591,7 +17591,7 @@ msgstr "更新尚未诞生的分支，变更添加至索引。"
 
 #: builtin/pull.c:959
 msgid "pull with rebase"
-msgstr "变基式拉取"
+msgstr "嫁接式拉取"
 
 #: builtin/pull.c:960
 msgid "please commit or stash them."
@@ -17630,11 +17630,11 @@ msgstr "无法将多个分支合并到空分支。"
 
 #: builtin/pull.c:1010
 msgid "Cannot rebase onto multiple branches."
-msgstr "无法变基到多个分支。"
+msgstr "无法嫁接到多个分支。"
 
 #: builtin/pull.c:1018
 msgid "cannot rebase with locally recorded submodule modifications"
-msgstr "本地子模组中有修改，无法变基"
+msgstr "本地子模组中有修改，无法嫁接"
 
 #: builtin/push.c:19
 msgid "git push [<options>] [<repository> [<refspec>...]]"
@@ -18089,7 +18089,7 @@ msgstr "允许提交说明为空"
 
 #: builtin/rebase.c:487
 msgid "rebase merge commits"
-msgstr "对合并提交变基"
+msgstr "对合并提交嫁接"
 
 #: builtin/rebase.c:489
 msgid "keep original branch points of cousins"
@@ -18109,7 +18109,7 @@ msgstr "显示上游变化的差异统计"
 
 #: builtin/rebase.c:496
 msgid "continue rebase"
-msgstr "继续变基"
+msgstr "继续嫁接"
 
 #: builtin/rebase.c:498
 msgid "skip commit"
@@ -18117,7 +18117,7 @@ msgstr "跳过提交"
 
 #: builtin/rebase.c:499
 msgid "edit the todo list"
-msgstr "变基待办列表"
+msgstr "嫁接待办列表"
 
 #: builtin/rebase.c:501
 msgid "show the current patch"
@@ -18177,7 +18177,7 @@ msgstr "head 名称"
 
 #: builtin/rebase.c:528
 msgid "rebase strategy"
-msgstr "变基策略"
+msgstr "嫁接策略"
 
 #: builtin/rebase.c:529
 msgid "strategy-opts"
@@ -18268,7 +18268,7 @@ msgstr ""
 "\n"
 "    %s\n"
 "\n"
-"因此 git 无法对其变基。"
+"因此 git 无法对其嫁接。"
 
 #: builtin/rebase.c:1208
 #, c-format
@@ -18288,7 +18288,7 @@ msgid ""
 "\n"
 msgstr ""
 "%s\n"
-"请指定您要变基到哪个分支。\n"
+"请指定您要嫁接到哪个分支。\n"
 "详见 git-rebase(1)。\n"
 "\n"
 "    git rebase '<branch>'\n"
@@ -18317,7 +18317,7 @@ msgstr "空的 exec 命令"
 
 #: builtin/rebase.c:1305
 msgid "rebase onto given branch instead of upstream"
-msgstr "变基到给定的分支而非上游"
+msgstr "嫁接到给定的分支而非上游"
 
 #: builtin/rebase.c:1307
 msgid "use the merge-base of upstream and branch as the current base"
@@ -18370,7 +18370,7 @@ msgstr "终止但保持 HEAD 不变"
 
 #: builtin/rebase.c:1348
 msgid "edit the todo list during an interactive rebase"
-msgstr "在交互式变基中编辑待办列表"
+msgstr "在交互式嫁接中编辑待办列表"
 
 #: builtin/rebase.c:1351
 msgid "show the patch file being applied or merged"
@@ -18378,15 +18378,15 @@ msgstr "显示正在应用或合并的补丁文件"
 
 #: builtin/rebase.c:1354
 msgid "use apply strategies to rebase"
-msgstr "使用应用策略进行变基"
+msgstr "使用应用策略进行嫁接"
 
 #: builtin/rebase.c:1358
 msgid "use merging strategies to rebase"
-msgstr "使用合并策略进行变基"
+msgstr "使用合并策略进行嫁接"
 
 #: builtin/rebase.c:1362
 msgid "let the user edit the list of commits to rebase"
-msgstr "让用户编辑要变基的提交列表"
+msgstr "让用户编辑要嫁接的提交列表"
 
 #: builtin/rebase.c:1366
 msgid "(DEPRECATED) try to recreate merges instead of ignoring them"
@@ -18406,11 +18406,11 @@ msgstr "可编辑列表的每一个提交下面增加一行 exec"
 
 #: builtin/rebase.c:1389
 msgid "allow rebasing commits with empty messages"
-msgstr "允许针对空提交说明的提交变基"
+msgstr "允许针对空提交说明的提交嫁接"
 
 #: builtin/rebase.c:1393
 msgid "try to rebase merges instead of skipping them"
-msgstr "尝试对合并提交变基而不是忽略它们"
+msgstr "尝试对合并提交嫁接而不是忽略它们"
 
 #: builtin/rebase.c:1396
 msgid "use 'merge-base --fork-point' to refine upstream"
@@ -18430,7 +18430,7 @@ msgstr "将参数传递给合并策略"
 
 #: builtin/rebase.c:1404
 msgid "rebase all reachable commits up to the root(s)"
-msgstr "将所有可达的提交变基到根提交"
+msgstr "将所有可达的提交嫁接到根提交"
 
 #: builtin/rebase.c:1409
 msgid "apply all changes, even those already present upstream"
@@ -18446,7 +18446,7 @@ msgstr ""
 
 #: builtin/rebase.c:1432
 msgid "It looks like 'git am' is in progress. Cannot rebase."
-msgstr "看起来 'git-am' 正在执行中。无法变基。"
+msgstr "看起来 'git-am' 正在执行中。无法嫁接。"
 
 #: builtin/rebase.c:1473
 msgid ""
@@ -18467,11 +18467,11 @@ msgstr "不能将 '--root' 和 '--fork-point' 组合使用"
 
 #: builtin/rebase.c:1487
 msgid "No rebase in progress?"
-msgstr "没有正在进行的变基？"
+msgstr "没有正在进行的嫁接？"
 
 #: builtin/rebase.c:1491
 msgid "The --edit-todo action can only be used during interactive rebase."
-msgstr "动作 --edit-todo 只能用在交互式变基过程中。"
+msgstr "动作 --edit-todo 只能用在交互式嫁接过程中。"
 
 #: builtin/rebase.c:1514
 msgid "Cannot read HEAD"
@@ -18506,7 +18506,7 @@ msgid ""
 "and run me again.  I am stopping in case you still have something\n"
 "valuable there.\n"
 msgstr ""
-"似乎已有一个 %s 目录，我怀疑您正处于另外一个变基操作过程中。\n"
+"似乎已有一个 %s 目录，我怀疑您正处于另外一个嫁接操作过程中。\n"
 "如果是这样，请执行\n"
 "\t%s\n"
 "如果不是这样，请执行\n"
@@ -18533,7 +18533,7 @@ msgstr "不能组合使用应用选项和合并选项"
 #: builtin/rebase.c:1745
 #, c-format
 msgid "Unknown rebase backend: %s"
-msgstr "未知的变基后端：%s"
+msgstr "未知的嫁接后端：%s"
 
 #: builtin/rebase.c:1770
 msgid "--reschedule-failed-exec requires --exec or --interactive"
@@ -18608,16 +18608,16 @@ msgstr "当前分支 %s 是最新的。\n"
 
 #: builtin/rebase.c:1984
 msgid "HEAD is up to date, rebase forced."
-msgstr "HEAD 是最新的，强制变基。"
+msgstr "HEAD 是最新的，强制嫁接。"
 
 #: builtin/rebase.c:1986
 #, c-format
 msgid "Current branch %s is up to date, rebase forced.\n"
-msgstr "当前分支 %s 是最新的，强制变基。\n"
+msgstr "当前分支 %s 是最新的，强制嫁接。\n"
 
 #: builtin/rebase.c:1994
 msgid "The pre-rebase hook refused to rebase."
-msgstr "pre-rebase 钩子拒绝了变基操作。"
+msgstr "pre-rebase 钩子拒绝了嫁接操作。"
 
 #: builtin/rebase.c:2001
 #, c-format
@@ -19001,22 +19001,22 @@ msgstr " ???"
 #: builtin/remote.c:1041
 #, c-format
 msgid "invalid branch.%s.merge; cannot rebase onto > 1 branch"
-msgstr "无效的 branch.%s.merge，不能变基到一个以上的分支"
+msgstr "无效的 branch.%s.merge，不能嫁接到一个以上的分支"
 
 #: builtin/remote.c:1050
 #, c-format
 msgid "rebases interactively onto remote %s"
-msgstr "交互式变基到远程 %s"
+msgstr "交互式嫁接到远程 %s"
 
 #: builtin/remote.c:1052
 #, c-format
 msgid "rebases interactively (with merges) onto remote %s"
-msgstr "交互式变基（含合并提交）到远程 %s"
+msgstr "交互式嫁接（含合并提交）到远程 %s"
 
 #: builtin/remote.c:1055
 #, c-format
 msgid "rebases onto remote %s"
-msgstr "变基到远程 %s"
+msgstr "嫁接到远程 %s"
 
 #: builtin/remote.c:1059
 #, c-format
@@ -23313,12 +23313,12 @@ msgstr "子模组路径 '$displaypath'：检出 '$sha1'"
 #: git-submodule.sh:643
 #, sh-format
 msgid "Unable to rebase '$sha1' in submodule path '$displaypath'"
-msgstr "无法在子模组路径 '$displaypath' 中变基 '$sha1'"
+msgstr "无法在子模组路径 '$displaypath' 中嫁接 '$sha1'"
 
 #: git-submodule.sh:644
 #, sh-format
 msgid "Submodule path '$displaypath': rebased into '$sha1'"
-msgstr "子模组路径 '$displaypath'：变基至 '$sha1'"
+msgstr "子模组路径 '$displaypath'：嫁接至 '$sha1'"
 
 #: git-submodule.sh:649
 #, sh-format
@@ -23399,7 +23399,7 @@ msgstr ""
 #: git-rebase--preserve-merges.sh:191
 #, sh-format
 msgid "Rebasing ($new_count/$total)"
-msgstr "变基中（$new_count/$total）"
+msgstr "嫁接中（$new_count/$total）"
 
 #: git-rebase--preserve-merges.sh:207
 msgid ""
@@ -23609,7 +23609,7 @@ msgstr "要修改请使用命令 'git rebase --edit-todo'。"
 #: git-rebase--preserve-merges.sh:755
 #, sh-format
 msgid "Successfully rebased and updated $head_name."
-msgstr "成功变基并更新 $head_name。"
+msgstr "成功嫁接并更新 $head_name。"
 
 #: git-rebase--preserve-merges.sh:812
 msgid "Could not remove CHERRY_PICK_HEAD"
@@ -23685,8 +23685,8 @@ msgstr "不能标记为交互式"
 #, sh-format
 msgid "Rebase $shortrevisions onto $shortonto ($todocount command)"
 msgid_plural "Rebase $shortrevisions onto $shortonto ($todocount commands)"
-msgstr[0] "变基 $shortrevisions 到 $shortonto（$todocount 个提交）"
-msgstr[1] "变基 $shortrevisions 到 $shortonto（$todocount 个提交）"
+msgstr[0] "嫁接 $shortrevisions 到 $shortonto（$todocount 个提交）"
+msgstr[1] "嫁接 $shortrevisions 到 $shortonto（$todocount 个提交）"
 
 #: git-rebase--preserve-merges.sh:955
 msgid "Note that empty commits are commented out"
@@ -23713,7 +23713,7 @@ msgstr "致命错误：$program_name 不能在没有工作区的情况下使用"
 
 #: git-sh-setup.sh:221
 msgid "Cannot rebase: You have unstaged changes."
-msgstr "不能变基：您有未暂存的变更。"
+msgstr "不能嫁接：您有未暂存的变更。"
 
 #: git-sh-setup.sh:224
 msgid "Cannot rewrite branches: You have unstaged changes."
@@ -23721,7 +23721,7 @@ msgstr "不能重写分支：您有未暂存的变更。"
 
 #: git-sh-setup.sh:227
 msgid "Cannot pull with rebase: You have unstaged changes."
-msgstr "无法通过变基方式拉取：您有未暂存的变更。"
+msgstr "无法通过嫁接方式拉取：您有未暂存的变更。"
 
 #: git-sh-setup.sh:230
 #, sh-format
@@ -23730,11 +23730,11 @@ msgstr "不能 $action：您有未暂存的变更。"
 
 #: git-sh-setup.sh:243
 msgid "Cannot rebase: Your index contains uncommitted changes."
-msgstr "不能变基：您的索引中包含未提交的变更。"
+msgstr "不能嫁接：您的索引中包含未提交的变更。"
 
 #: git-sh-setup.sh:246
 msgid "Cannot pull with rebase: Your index contains uncommitted changes."
-msgstr "无法通过变基方式拉取：您的索引中包含未提交的变更。"
+msgstr "无法通过嫁接方式拉取：您的索引中包含未提交的变更。"
 
 #: git-sh-setup.sh:249
 #, sh-format

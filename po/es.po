@@ -6264,7 +6264,7 @@ msgstr "valor '%s' del patrón no tiene '*'"
 #: remote.c:986
 #, c-format
 msgid "src refspec %s does not match any"
-msgstr "src refsoec %s: no concuerda con ninguno"
+msgstr "src refspec %s: no concuerda con ninguno"
 
 #: remote.c:991
 #, c-format

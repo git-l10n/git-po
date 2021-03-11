@@ -39,6 +39,42 @@ coordinate among yourselves and nominate the team leader for your
 language, so that the l10n coordinator only needs to interact with one
 person per language.
 
+Because there are now over 5000 messages that needs to be translated,
+we expect to complete translation for core subset of messages before
+a new language translation can be merged. See "Core translation"
+below.
+
+
+Core translation
+----------------
+The core translation file, core-XX.po, covers some of commonly used
+commands:
+
+  - wt-status.c
+  - builtin/clone.c
+  - builtin/checkout.c
+  - builtin/index-pack.c
+  - builtin/push.c
+  - builtin/reset.c
+
+To generate core-XX.po, install the helper script (see "PO Helper")
+and check the main PO file:
+
+    cd po/
+    po-helper.sh check XX.po
+
+This will generate po/core-XX.po and corresponding po/core-XX.pot
+template. Now complete the translation in po/core-XX.po.
+
+When it is completed, merge core translation back to main PO file:
+
+    msgcat core-XX.po XX.po -s -o /tmp/XX.po
+    mv /tmp/XX.po XX.po
+    msgmerge --add-location --backup=off -U XX.po git.pot
+
+Fix any "fuzzy" errors that occurs, such as misplaced translated
+messages and duplicate messages.
+
 
 Translation Process Flow
 ------------------------

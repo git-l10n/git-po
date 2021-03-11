@@ -344,3 +344,24 @@ Below are the usage examples:
         po-helper.sh check XX.po
 
 Run po-helper.sh without arguments for usage help.
+
+
+Conventions
+-----------
+
+There are some conventions that l10n contributors must follow:
+
+   1. The subject of each commit should be prefixed with `l10n: `.
+   2. The length of commit log title (subject) should be less than 50
+      characters, and the length of other lines (commit log body)
+      should be no more than 72 characters.
+   3. Add "Signed-off-by" trailer to your commit log, like other
+      commits in Git. You can automatically add the trailer by
+      committing with `git commit -s`.
+   4. Check syntax with `msgfmt` or `po-helper.sh check` before
+      committing.
+   5. Squash trivial commits to make history clear.
+   6. Do NOT edit files outside po/ directory.
+   7. Other subsystems ("git-gui", "gitk", and Git itself) have their
+      own workflow. See Documentation/SubmittingPatches for
+      instructions on how to contribute patches to these subsystems.

@@ -171,6 +171,18 @@ in the po/ directory, where XX.po is the file you want to update.
 Once you are done testing the translation (see below), commit the result
 and ask the l10n coordinator to pull from you.
 
+Fuzzy translation
+-----------------
+
+"Fuzzy" translation problems may occur when you update XX.po. This is
+caused by gettext not able to find exact translation string during
+updating with msgmerge, so the translation is applied to the msgid
+strings that are similar to ones before being updated.
+
+To fix the problem, edit the resulting translation so that it matches
+the corresponding msgid string, then remove `#, fuzzy` comment line.
+After that, try updating XX.po again to confirm that no fuzzies are
+occurred anymore.
 
 Testing your changes
 --------------------

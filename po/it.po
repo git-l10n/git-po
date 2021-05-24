@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2020-10-10 09:32+0800\n"
-"PO-Revision-Date: 2020-10-10 09:31+0200\n"
+"PO-Revision-Date: 2021-05-24 09:46+0200\n"
 "Last-Translator: Alessandro Menti <alessandro.menti@alessandromenti.it>\n"
 "Language-Team: Italian <>\n"
 "Language: it\n"
@@ -17602,7 +17602,7 @@ msgstr "Controllo la ridenominazione di '%s' in '%s'\n"
 
 #: builtin/mv.c:185
 msgid "bad source"
-msgstr "sourgente errata"
+msgstr "sorgente errata"
 
 #: builtin/mv.c:188
 msgid "can not move directory into itself"

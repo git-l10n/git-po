@@ -1,0 +1,93 @@
+name: git-l10n
+
+on: [push, pull_request_target]
+
+jobs:
+  git-po-helper:
+    if: >-
+      endsWith(github.repository, '/git-po') ||
+      contains(github.head_ref, 'l10n') ||
+      contains(github.ref, 'l10n')
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '1'
+      - name: Fetch missing commits
+        id: fetch-commits
+        run: |
+          if test "${{ github.event_name }}" = "pull_request_target"
+          then
+            base=${{ github.event.pull_request.base.sha }}
+            head=${{ github.event.pull_request.head.sha }}
+          else
+            base=${{ github.event.before }}
+            head=${{ github.event.after }}
+          fi
+          args=
+          for commit in $base $head
+          do
+            case $commit in
+            *[^0]*)
+              args="$args $commit"
+              ;;
+            *)
+              # Ignore ZERO-OID.
+              ;;
+            esac
+          done
+          # Unshallow the repository, and fetch missing commits using partial
+          # clone.  "$base" may be missing due to forced push, and "$head"
+          # may be missing due to the "pull_request_target" event.
+          git fetch --unshallow --filter=blob:none origin $args
+          echo "::set-output name=base::$base"
+          echo "::set-output name=head::$head"
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '>=1.16'
+      - name: Install git-po-helper
+        run: go install github.com/git-l10n/git-po-helper@main
+      - name: Install other dependencies
+        run: |
+          sudo apt-get update -q &&
+          sudo apt-get install -q -y gettext
+      - name: Run git-po-helper
+        id: check-commits
+        run: |
+          exit_code=0
+          git-po-helper check-commits \
+              --github-action-event="${{ github.event_name }}" -- \
+              ${{ steps.fetch-commits.outputs.base }}..${{ steps.fetch-commits.outputs.head }} \
+              >git-po-helper.out 2>&1 ||
+            exit_code=$?
+          if test $exit_code -ne 0 || grep -q WARNING git-po-helper.out
+          then
+            # Remove ANSI colors which are proper for console logs but not
+            # proper for PR comment.
+            echo "COMMENT_BODY<<EOF" >>$GITHUB_ENV
+            perl -pe 's/\e\[[0-9;]*m//g; s/\bEOF$//g' git-po-helper.out >>$GITHUB_ENV
+            echo "EOF" >>$GITHUB_ENV
+          fi
+          cat git-po-helper.out
+          exit $exit_code
+      - name: Create comment in pull request for report
+        uses: mshick/add-pr-comment@v1
+        if: >-
+          always() &&
+          github.event_name == 'pull_request_target' &&
+          env.COMMENT_BODY != ''
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: >
+            ${{ steps.check-commits.outcome == 'failure' && 'Errors and warnings' || 'Warnings' }}
+            found by [git-po-helper](https://github.com/git-l10n/git-po-helper#readme) in workflow
+            [#${{ github.run_number }}](${{ env.GITHUB_SERVER_URL }}/${{ github.repository }}/actions/runs/${{ github.run_id }}):
+
+            ```
+
+            ${{ env.COMMENT_BODY }}
+
+            ```

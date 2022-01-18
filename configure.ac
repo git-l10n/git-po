@@ -507,14 +507,6 @@ if test -n "$ASCIIDOC"; then
 	esac
 fi
 
-if grep -a ascii configure.ac >/dev/null; then
-  AC_MSG_RESULT([Using 'grep -a' for sane_grep])
-  SANE_TEXT_GREP=-a
-else
-  SANE_TEXT_GREP=
-fi
-GIT_CONF_SUBST([SANE_TEXT_GREP])
-
 ## Checks for libraries.
 AC_MSG_NOTICE([CHECKS for libraries])
 #
@@ -672,9 +664,22 @@ AC_LINK_IFELSE([ZLIBTEST_SRC],
 	NO_DEFLATE_BOUND=yes])
 LIBS="$old_LIBS"
 
+AC_DEFUN([ZLIBTEST_UNCOMPRESS2_SRC], [
+AC_LANG_PROGRAM([#include <zlib.h>],
+ [uncompress2(NULL,NULL,NULL,NULL);])])
+AC_MSG_CHECKING([for uncompress2 in -lz])
+old_LIBS="$LIBS"
+LIBS="$LIBS -lz"
+AC_LINK_IFELSE([ZLIBTEST_UNCOMPRESS2_SRC],
+	[AC_MSG_RESULT([yes])],
+	[AC_MSG_RESULT([no])
+	NO_UNCOMPRESS2=yes])
+LIBS="$old_LIBS"
+
 GIT_UNSTASH_FLAGS($ZLIB_PATH)
 
 GIT_CONF_SUBST([NO_DEFLATE_BOUND])
+GIT_CONF_SUBST([NO_UNCOMPRESS2])
 
 #
 # Define NEEDS_SOCKET if linking with libc is not enough (SunOS,

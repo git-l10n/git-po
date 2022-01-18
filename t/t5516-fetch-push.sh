@@ -541,6 +541,15 @@ do
 
 done
 
+test_expect_success "push to remote with no explicit refspec and config remote.*.push = src:dest" '
+	mk_test testrepo heads/main &&
+	git checkout $the_first_commit &&
+	test_config remote.there.url testrepo &&
+	test_config remote.there.push refs/heads/main:refs/heads/main &&
+	git push there &&
+	check_push_result testrepo $the_commit heads/main
+'
+
 test_expect_success 'push with remote.pushdefault' '
 	mk_test up_repo heads/main &&
 	mk_test down_repo heads/main &&
@@ -1316,10 +1325,7 @@ test_expect_success 'fetch follows tags by default' '
 		git pull ../testrepo main &&
 		git tag -m "annotated" tag &&
 		git for-each-ref >tmp1 &&
-		(
-			cat tmp1
-			sed -n "s|refs/heads/main$|refs/remotes/origin/main|p" tmp1
-		) |
+		sed -n "p; s|refs/heads/main$|refs/remotes/origin/main|p" tmp1 |
 		sort -k 3 >../expect
 	) &&
 	git init dst &&
@@ -1769,6 +1775,38 @@ test_expect_success 'denyCurrentBranch and worktrees' '
 	test_must_fail git -C cloned push origin HEAD:new-wt &&
 	test_config receive.denyCurrentBranch updateInstead &&
 	git -C cloned push origin HEAD:new-wt &&
+	test_path_exists new-wt/first.t &&
 	test_must_fail git -C cloned push --delete origin new-wt
 '
+
+test_expect_success 'denyCurrentBranch and bare repository worktrees' '
+	test_when_finished "rm -fr bare.git" &&
+	git clone --bare . bare.git &&
+	git -C bare.git worktree add wt &&
+	test_commit grape &&
+	git -C bare.git config receive.denyCurrentBranch refuse &&
+	test_must_fail git push bare.git HEAD:wt &&
+	git -C bare.git config receive.denyCurrentBranch updateInstead &&
+	git push bare.git HEAD:wt &&
+	test_path_exists bare.git/wt/grape.t &&
+	test_must_fail git push --delete bare.git wt
+'
+
+test_expect_success 'refuse fetch to current branch of worktree' '
+	test_when_finished "git worktree remove --force wt && git branch -D wt" &&
+	git worktree add wt &&
+	test_commit apple &&
+	test_must_fail git fetch . HEAD:wt &&
+	git fetch -u . HEAD:wt
+'
+
+test_expect_success 'refuse fetch to current branch of bare repository worktree' '
+	test_when_finished "rm -fr bare.git" &&
+	git clone --bare . bare.git &&
+	git -C bare.git worktree add wt &&
+	test_commit banana &&
+	test_must_fail git -C bare.git fetch .. HEAD:wt &&
+	git -C bare.git fetch -u .. HEAD:wt
+'
+
 test_done

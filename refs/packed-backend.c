@@ -194,20 +194,19 @@ static int release_snapshot(struct snapshot *snapshot)
 }
 
 struct ref_store *packed_ref_store_create(struct repository *repo,
-					  const char *path,
+					  const char *gitdir,
 					  unsigned int store_flags)
 {
 	struct packed_ref_store *refs = xcalloc(1, sizeof(*refs));
 	struct ref_store *ref_store = (struct ref_store *)refs;
+	struct strbuf sb = STRBUF_INIT;
 
-	base_ref_store_init(ref_store, &refs_be_packed);
-	ref_store->repo = repo;
-	ref_store->gitdir = xstrdup(path);
+	base_ref_store_init(ref_store, repo, gitdir, &refs_be_packed);
 	refs->store_flags = store_flags;
 
-	refs->path = xstrdup(path);
+	strbuf_addf(&sb, "%s/packed-refs", gitdir);
+	refs->path = strbuf_detach(&sb, NULL);
 	chdir_notify_reparent("packed-refs", &refs->path);
-
 	return ref_store;
 }
 
@@ -1354,6 +1353,7 @@ int is_packed_transaction_needed(struct ref_store *ref_store,
 	ret = 0;
 	for (i = 0; i < transaction->nr; i++) {
 		struct ref_update *update = transaction->updates[i];
+		int failure_errno;
 		unsigned int type;
 		struct object_id oid;
 
@@ -1364,9 +1364,9 @@ int is_packed_transaction_needed(struct ref_store *ref_store,
 			 */
 			continue;
 
-		if (!refs_read_raw_ref(ref_store, update->refname,
-				       &oid, &referent, &type) ||
-		    errno != ENOENT) {
+		if (!refs_read_raw_ref(ref_store, update->refname, &oid,
+				       &referent, &type, &failure_errno) ||
+		    failure_errno != ENOENT) {
 			/*
 			 * We have to actually delete that reference
 			 * -> this transaction is needed.
@@ -1628,8 +1628,7 @@ static int packed_reflog_exists(struct ref_store *ref_store,
 }
 
 static int packed_create_reflog(struct ref_store *ref_store,
-			       const char *refname, int force_create,
-			       struct strbuf *err)
+				const char *refname, struct strbuf *err)
 {
 	BUG("packed reference store does not support reflogs");
 }

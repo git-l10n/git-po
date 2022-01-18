@@ -470,7 +470,8 @@ static const char *lock_repo_for_gc(int force, pid_t* ret_pid)
 /*
  * Returns 0 if there was no previous error and gc can proceed, 1 if
  * gc should not proceed due to an error in the last run. Prints a
- * message and returns -1 if an error occurred while reading gc.log
+ * message and returns with a non-[01] status code if an error occurred
+ * while reading gc.log
  */
 static int report_last_gc_error(void)
 {
@@ -484,7 +485,7 @@ static int report_last_gc_error(void)
 		if (errno == ENOENT)
 			goto done;
 
-		ret = error_errno(_("cannot stat '%s'"), gc_log_path);
+		ret = die_message_errno(_("cannot stat '%s'"), gc_log_path);
 		goto done;
 	}
 
@@ -493,7 +494,7 @@ static int report_last_gc_error(void)
 
 	len = strbuf_read_file(&sb, gc_log_path, 0);
 	if (len < 0)
-		ret = error_errno(_("cannot read '%s'"), gc_log_path);
+		ret = die_message_errno(_("cannot read '%s'"), gc_log_path);
 	else if (len > 0) {
 		/*
 		 * A previous gc failed.  Report the error, and don't
@@ -611,12 +612,13 @@ int cmd_gc(int argc, const char **argv, const char *prefix)
 		}
 		if (detach_auto) {
 			int ret = report_last_gc_error();
-			if (ret < 0)
-				/* an I/O error occurred, already reported */
-				exit(128);
+
 			if (ret == 1)
 				/* Last gc --auto failed. Skip this one. */
 				return 0;
+			else if (ret)
+				/* an I/O error occurred, already reported */
+				return ret;
 
 			if (lock_repo_for_gc(force, &pid))
 				return 0;
@@ -1999,14 +2001,10 @@ static int schtasks_update_schedule(int run_maintenance, int fd)
 		return schtasks_remove_tasks();
 }
 
-static int is_crontab_available(void)
+MAYBE_UNUSED
+static int check_crontab_process(const char *cmd)
 {
-	const char *cmd = "crontab";
-	int is_available;
 	struct child_process child = CHILD_PROCESS_INIT;
-
-	if (get_schedule_cmd(&cmd, &is_available))
-		return is_available;
 
 	strvec_split(&child.args, cmd);
 	strvec_push(&child.args, "-l");
@@ -2020,6 +2018,25 @@ static int is_crontab_available(void)
 	/* Ignore exit code, as an empty crontab will return error. */
 	finish_command(&child);
 	return 1;
+}
+
+static int is_crontab_available(void)
+{
+	const char *cmd = "crontab";
+	int is_available;
+
+	if (get_schedule_cmd(&cmd, &is_available))
+		return is_available;
+
+#ifdef __APPLE__
+	/*
+	 * macOS has cron, but it requires special permissions and will
+	 * create a UI alert when attempting to run this command.
+	 */
+	return 0;
+#else
+	return check_crontab_process(cmd);
+#endif
 }
 
 #define BEGIN_LINE "# BEGIN GIT MAINTENANCE SCHEDULE"

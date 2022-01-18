@@ -2,6 +2,7 @@
 
 test_description='Test that adding/removing many notes triggers automatic fanout restructuring'
 
+TEST_PASSES_SANITIZE_LEAK=true
 . ./test-lib.sh
 
 path_has_fanout() {
@@ -57,7 +58,7 @@ test_expect_success 'many notes created correctly with git-notes' '
 	do
 		echo "    commit #$i" &&
 		echo "    note #$i" &&
-		i=$(($i - 1));
+		i=$(($i - 1)) || return 1
 	done > expect &&
 	test_cmp expect output
 '
@@ -106,7 +107,7 @@ test_expect_success 'most notes deleted correctly with git-notes' '
 	do
 		echo "    commit #$i" &&
 		echo "    note #$i" &&
-		i=$(($i - 1));
+		i=$(($i - 1)) || return 1
 	done > expect &&
 	test_cmp expect output
 '

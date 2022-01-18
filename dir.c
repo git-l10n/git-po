@@ -727,7 +727,7 @@ static void add_pattern_to_hashsets(struct pattern_list *pl, struct path_pattern
 	}
 
 	if (given->patternlen < 2 ||
-	    *given->pattern == '*' ||
+	    *given->pattern != '/' ||
 	    strstr(given->pattern, "**")) {
 		/* Not a cone pattern. */
 		warning(_("unrecognized pattern: '%s'"), given->pattern);
@@ -819,9 +819,7 @@ static void add_pattern_to_hashsets(struct pattern_list *pl, struct path_pattern
 		/* we already included this at the parent level */
 		warning(_("your sparse-checkout file may have issues: pattern '%s' is repeated"),
 			given->pattern);
-		hashmap_remove(&pl->parent_hashmap, &translated->ent, &data);
-		free(data);
-		free(translated);
+		goto clear_hashmaps;
 	}
 
 	return;
@@ -1303,44 +1301,6 @@ int match_pathname(const char *pathname, int pathlen,
 				 WM_PATHNAME) == 0;
 }
 
-static int path_matches_dir_pattern(const char *pathname,
-				    int pathlen,
-				    struct strbuf **path_parent,
-				    int *dtype,
-				    struct path_pattern *pattern,
-				    struct index_state *istate)
-{
-	if (!*path_parent) {
-		char *slash;
-		CALLOC_ARRAY(*path_parent, 1);
-		strbuf_add(*path_parent, pathname, pathlen);
-		slash = find_last_dir_sep((*path_parent)->buf);
-
-		if (slash)
-			strbuf_setlen(*path_parent, slash - (*path_parent)->buf);
-		else
-			strbuf_setlen(*path_parent, 0);
-	}
-
-	/*
-	 * If the parent directory matches the pattern, then we do not
-	 * need to check for dtype.
-	 */
-	if ((*path_parent)->len &&
-	    match_pathname((*path_parent)->buf, (*path_parent)->len,
-			   pattern->base,
-			   pattern->baselen ? pattern->baselen - 1 : 0,
-			   pattern->pattern, pattern->nowildcardlen,
-			   pattern->patternlen, pattern->flags))
-		return 1;
-
-	*dtype = resolve_dtype(*dtype, istate, pathname, pathlen);
-	if (*dtype != DT_DIR)
-		return 0;
-
-	return 1;
-}
-
 /*
  * Scan the given exclude list in reverse to see whether pathname
  * should be ignored.  The first match (i.e. the last on the list), if
@@ -1356,7 +1316,6 @@ static struct path_pattern *last_matching_pattern_from_list(const char *pathname
 {
 	struct path_pattern *res = NULL; /* undecided */
 	int i;
-	struct strbuf *path_parent = NULL;
 
 	if (!pl->nr)
 		return NULL;	/* undefined */
@@ -1366,10 +1325,11 @@ static struct path_pattern *last_matching_pattern_from_list(const char *pathname
 		const char *exclude = pattern->pattern;
 		int prefix = pattern->nowildcardlen;
 
-		if (pattern->flags & PATTERN_FLAG_MUSTBEDIR &&
-		    !path_matches_dir_pattern(pathname, pathlen, &path_parent,
-					      dtype, pattern, istate))
-			continue;
+		if (pattern->flags & PATTERN_FLAG_MUSTBEDIR) {
+			*dtype = resolve_dtype(*dtype, istate, pathname, pathlen);
+			if (*dtype != DT_DIR)
+				continue;
+		}
 
 		if (pattern->flags & PATTERN_FLAG_NODIR) {
 			if (match_basename(basename,
@@ -1393,12 +1353,6 @@ static struct path_pattern *last_matching_pattern_from_list(const char *pathname
 			break;
 		}
 	}
-
-	if (path_parent) {
-		strbuf_release(path_parent);
-		free(path_parent);
-	}
-
 	return res;
 }
 
@@ -3204,6 +3158,7 @@ static int remove_dir_recurse(struct strbuf *path, int flag, int *kept_up)
 	int ret = 0, original_len = path->len, len, kept_down = 0;
 	int only_empty = (flag & REMOVE_DIR_EMPTY_ONLY);
 	int keep_toplevel = (flag & REMOVE_DIR_KEEP_TOPLEVEL);
+	int purge_original_cwd = (flag & REMOVE_DIR_PURGE_ORIGINAL_CWD);
 	struct object_id submodule_head;
 
 	if ((flag & REMOVE_DIR_KEEP_NESTED_GIT) &&
@@ -3259,9 +3214,14 @@ static int remove_dir_recurse(struct strbuf *path, int flag, int *kept_up)
 	closedir(dir);
 
 	strbuf_setlen(path, original_len);
-	if (!ret && !keep_toplevel && !kept_down)
-		ret = (!rmdir(path->buf) || errno == ENOENT) ? 0 : -1;
-	else if (kept_up)
+	if (!ret && !keep_toplevel && !kept_down) {
+		if (!purge_original_cwd &&
+		    startup_info->original_cwd &&
+		    !strcmp(startup_info->original_cwd, path->buf))
+			ret = -1; /* Do not remove current working directory */
+		else
+			ret = (!rmdir(path->buf) || errno == ENOENT) ? 0 : -1;
+	} else if (kept_up)
 		/*
 		 * report the uplevel that it is not an error that we
 		 * did not rmdir() our directory.
@@ -3327,6 +3287,9 @@ int remove_path(const char *name)
 		slash = dirs + (slash - name);
 		do {
 			*slash = '\0';
+			if (startup_info->original_cwd &&
+			    !strcmp(startup_info->original_cwd, dirs))
+				break;
 		} while (rmdir(dirs) == 0 && (slash = strrchr(dirs, '/')));
 		free(dirs);
 	}

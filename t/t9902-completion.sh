@@ -5,9 +5,6 @@
 
 test_description='test bash completion'
 
-GIT_TEST_DEFAULT_INITIAL_BRANCH_NAME=master
-export GIT_TEST_DEFAULT_INITIAL_BRANCH_NAME
-
 . ./lib-bash.sh
 
 complete ()
@@ -879,7 +876,7 @@ test_expect_success '__git_refs - unique remote branches for git checkout DWIMer
 		refs/remotes/remote/branch-in-remote
 	do
 		git update-ref $remote_ref main &&
-		test_when_finished "git update-ref -d $remote_ref"
+		test_when_finished "git update-ref -d $remote_ref" || return 1
 	done &&
 	(
 		cur= &&
@@ -1052,7 +1049,7 @@ test_expect_success '__git_refs - only matching refs - checkout DWIMery' '
 		refs/remotes/remote/branch-in-remote
 	do
 		git update-ref $remote_ref main &&
-		test_when_finished "git update-ref -d $remote_ref"
+		test_when_finished "git update-ref -d $remote_ref" || return 1
 	done &&
 	(
 		cur=mat &&
@@ -2147,6 +2144,9 @@ test_expect_success PERL 'send-email' '
 	test_completion "git send-email --cov" <<-\EOF &&
 	--cover-from-description=Z
 	--cover-letter Z
+	EOF
+	test_completion "git send-email --val" <<-\EOF &&
+	--validate Z
 	EOF
 	test_completion "git send-email ma" "main "
 '

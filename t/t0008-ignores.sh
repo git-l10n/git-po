@@ -200,7 +200,7 @@ test_expect_success 'setup' '
 	do
 		: >$dir/not-ignored &&
 		: >$dir/ignored-and-untracked &&
-		: >$dir/ignored-but-in-index
+		: >$dir/ignored-but-in-index || return 1
 	done &&
 	git add -f ignored-but-in-index a/ignored-but-in-index &&
 	cat <<-\EOF >a/.gitignore &&
@@ -825,6 +825,23 @@ test_expect_success 'exact prefix matching (without root)' '
 	cat >expect <<-\EOF &&
 	a/git
 	a/git/foo
+	EOF
+	test_cmp expect actual
+'
+
+test_expect_success 'directories and ** matches' '
+	cat >.gitignore <<-\EOF &&
+	data/**
+	!data/**/
+	!data/**/*.txt
+	EOF
+	git check-ignore file \
+		data/file data/data1/file1 data/data1/file1.txt \
+		data/data2/file2 data/data2/file2.txt >actual &&
+	cat >expect <<-\EOF &&
+	data/file
+	data/data1/file1
+	data/data2/file2
 	EOF
 	test_cmp expect actual
 '

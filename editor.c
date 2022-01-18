@@ -1,9 +1,9 @@
 #include "cache.h"
 #include "config.h"
 #include "strbuf.h"
+#include "strvec.h"
 #include "run-command.h"
 #include "sigchain.h"
-#include "compat/terminal.h"
 
 #ifndef DEFAULT_EDITOR
 #define DEFAULT_EDITOR "vi"
@@ -51,14 +51,11 @@ const char *git_sequence_editor(void)
 static int launch_specified_editor(const char *editor, const char *path,
 				   struct strbuf *buffer, const char *const *env)
 {
-	int term_fail;
-
 	if (!editor)
 		return error("Terminal is dumb, but EDITOR unset");
 
 	if (strcmp(editor, ":")) {
 		struct strbuf realpath = STRBUF_INIT;
-		const char *args[] = { editor, NULL, NULL };
 		struct child_process p = CHILD_PROCESS_INIT;
 		int ret, sig;
 		int print_waiting_for_editor = advice_enabled(ADVICE_WAITING_FOR_EDITOR) && isatty(2);
@@ -80,16 +77,13 @@ static int launch_specified_editor(const char *editor, const char *path,
 		}
 
 		strbuf_realpath(&realpath, path, 1);
-		args[1] = realpath.buf;
 
-		p.argv = args;
-		p.env = env;
+		strvec_pushl(&p.args, editor, realpath.buf, NULL);
+		if (env)
+			strvec_pushv(&p.env_array, (const char **)env);
 		p.use_shell = 1;
 		p.trace2_child_class = "editor";
-		term_fail = save_term(1);
 		if (start_command(&p) < 0) {
-			if (!term_fail)
-				restore_term();
 			strbuf_release(&realpath);
 			return error("unable to start editor '%s'", editor);
 		}
@@ -97,8 +91,6 @@ static int launch_specified_editor(const char *editor, const char *path,
 		sigchain_push(SIGINT, SIG_IGN);
 		sigchain_push(SIGQUIT, SIG_IGN);
 		ret = finish_command(&p);
-		if (!term_fail)
-			restore_term();
 		strbuf_release(&realpath);
 		sig = ret - 128;
 		sigchain_pop(SIGINT);

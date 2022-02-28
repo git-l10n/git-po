@@ -15492,8 +15492,8 @@ msgid "you need to specify a tag name"
 msgstr "bạn cần chỉ định một tên thẻ"
 
 #: builtin/fetch.c:2032
-msgid "--negotiate-only needs one or more --negotiate-tip=*"
-msgstr "--negotiate-only cần một tham số hay nhiều --negotiate-tip=* hơn"
+msgid "--negotiate-only needs one or more --negotiation-tip=*"
+msgstr "--negotiate-only cần một tham số hay nhiều --negotiation-tip=* hơn"
 
 #: builtin/fetch.c:2036
 msgid "negative depth in --deepen is not supported"

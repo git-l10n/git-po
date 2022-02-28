@@ -15388,8 +15388,8 @@ msgid "you need to specify a tag name"
 msgstr "du måste ange namnet på en tagg"
 
 #: builtin/fetch.c:2032
-msgid "--negotiate-only needs one or more --negotiate-tip=*"
-msgstr "--negotiate-only behöver en eller flera --negotiate-tip=*"
+msgid "--negotiate-only needs one or more --negotiation-tip=*"
+msgstr "--negotiate-only behöver en eller flera --negotiation-tip=*"
 
 #: builtin/fetch.c:2036
 msgid "negative depth in --deepen is not supported"

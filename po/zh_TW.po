@@ -26,7 +26,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-11 00:28+0800\n"
 "PO-Revision-Date: 2022-12-10 16:41+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -2092,9 +2092,8 @@ msgstr "“%s” 子模組：找不到子模組"
 msgid ""
 "You may try updating the submodules using 'git checkout %s && git submodule "
 "update --init'"
-msgstr ""
-"您可以嘗試使用 “git checkout %s && git submodule update --init” 命令，更新子"
-"模組"
+msgstr "您可以嘗試使用 “git checkout %s && git submodule update --init” "
+"命令，更新子模組"
 
 #: branch.c:770 branch.c:796
 #, c-format
@@ -2836,9 +2835,9 @@ msgid ""
 "=<term>] [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
 "[<paths>...]"
 msgstr ""
-"git bisect--helper --bisect-start [--term-{new,bad}=<term> --term-{old,good}"
-"=<term>] [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
-"[<paths>...]"
+"git bisect--helper --bisect-start [--term-{new,bad}=<term> "
+"--term-{old,good}=<term>] [--no-checkout] [--first-parent] [<bad> "
+"[<good>...]] [--] [<paths>...]"
 
 #: builtin/bisect--helper.c:29
 msgid "git bisect--helper --bisect-state (bad|new) [<rev>]"
@@ -3139,8 +3138,7 @@ msgstr "二分搜尋發現到第一個有問題的提交"
 msgid ""
 "bisect run failed: 'git bisect--helper --bisect-state %s' exited with error "
 "code %d"
-msgstr ""
-"二分搜尋執行失敗：“git bisect--helper --bisect-state %s” 以錯誤碼 %d 離開"
+msgstr "二分搜尋執行失敗：“git bisect--helper --bisect-state %s” 以錯誤碼 %d 離開"
 
 #: builtin/bisect--helper.c:1285
 msgid "--bisect-reset requires either no argument or a commit"
@@ -3664,8 +3662,7 @@ msgstr "HEAD 沒有位於 /refs/heads 之下！"
 msgid ""
 "branch with --recurse-submodules can only be used if submodule."
 "propagateBranches is enabled"
-msgstr ""
-"有 --recurse-submodules 的分支只能在啟用 submodule.propagateBranches 時使用"
+msgstr "有 --recurse-submodules 的分支只能在啟用 submodule.propagateBranches 時使用"
 
 #: builtin/branch.c:735
 msgid "--recurse-submodules can only be used to create branches"
@@ -4696,8 +4693,7 @@ msgstr "git checkout：--detach 不能接收路徑參數 '%s'"
 msgid ""
 "git checkout: --ours/--theirs, --force and --merge are incompatible when\n"
 "checking out of the index."
-msgstr ""
-"git checkout：在從索引簽出時，--ours/--theirs、--force 和 --merge 不相容。"
+msgstr "git checkout：在從索引簽出時，--ours/--theirs、--force 和 --merge 不相容。"
 
 #: builtin/checkout.c:1805
 msgid "you must specify path(s) to restore"
@@ -4771,8 +4767,7 @@ msgstr "使用疊加模式"
 msgid ""
 "git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] "
 "[<pathspec>...]"
-msgstr ""
-"git clean [-d] [-f] [-i] [-n] [-q] [-e <模式>] [-x | -X] [--] [<路徑規格>...]"
+msgstr "git clean [-d] [-f] [-i] [-n] [-q] [-e <模式>] [-x | -X] [--] [<路徑規格>...]"
 
 #: builtin/clean.c:33
 #, c-format
@@ -5402,8 +5397,8 @@ msgstr ""
 "git commit-graph write [--object-dir <dir>] [--append]\n"
 "                       [--split[=<strategy>]] [--reachable | --stdin-packs | "
 "--stdin-commits]\n"
-"                       [--changed-paths] [--[no-]max-new-filters <n>] [--"
-"[no-]progress]\n"
+"                       [--changed-paths] [--[no-]max-new-filters <n>] "
+"[--[no-]progress]\n"
 "                       <split options>"
 
 #: builtin/commit-graph.c:51 builtin/fetch.c:198 builtin/log.c:1907
@@ -5572,8 +5567,8 @@ msgid ""
 "           [--] [<pathspec>...]"
 msgstr ""
 "git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]\n"
-"           [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|"
-"reword):]<commit>)]\n"
+"           [--dry-run] [(-c | -C | --squash) <commit> | --fixup "
+"[(amend|reword):]<commit>)]\n"
 "           [-F <file> | -m <msg>] [--reset-author] [--allow-empty]\n"
 "           [--allow-empty-message] [--no-verify] [-e] [--author=<author>]\n"
 "           [--date=<date>] [--cleanup=<mode>] [--[no-]status]\n"
@@ -7332,8 +7327,7 @@ msgstr "檢測到多分支，和 --set-upstream 不相容"
 msgid ""
 "could not set upstream of HEAD to '%s' from '%s' when it does not point to "
 "any branch."
-msgstr ""
-"無法將 HEAD 的上游從「%2$s」設定為「%1$s」，因為 HEAD 沒有指向任何分支。"
+msgstr "無法將 HEAD 的上游從「%2$s」設定為「%1$s」，因為 HEAD 沒有指向任何分支。"
 
 #: builtin/fetch.c:1779
 msgid "not setting upstream for a remote remote-tracking branch"
@@ -12189,8 +12183,8 @@ msgid ""
 "              [-u | -i]] [--index-output=<file>] [--no-sparse-checkout]\n"
 "              (--empty | <tree-ish1> [<tree-ish2> [<tree-ish3>]])"
 msgstr ""
-"git read-tree [(-m [--trivial] [--aggressive] | --reset | --"
-"prefix=<prefix>)\n"
+"git read-tree [(-m [--trivial] [--aggressive] | --reset | --prefix=<prefix>)"
+"\n"
 "              [-u | -i]] [--index-output=<file>] [--no-sparse-checkout]\n"
 "              (--empty | <tree-ish1> [<tree-ish2> [<tree-ish3>]])"
 
@@ -14712,8 +14706,7 @@ msgstr "指定目錄而非模式。若您的目錄是以「!」開頭，請傳�
 msgid ""
 "specify directories rather than patterns.  If your directory really has any "
 "of '*?[]\\' in it, pass --skip-checks"
-msgstr ""
-"指定目錄而非模式。若您的目錄名稱真的包含「*?[]\\」其中一個，請傳入 --skip-"
+msgstr "指定目錄而非模式。若您的目錄名稱真的包含「*?[]\\」其中一個，請傳入 --skip-"
 "checks"
 
 #: builtin/sparse-checkout.c:735
@@ -15259,8 +15252,7 @@ msgstr "git submodule sync [--quiet] [--recursive] [<path>]"
 msgid ""
 "Submodule work tree '%s' contains a .git directory. This will be replaced "
 "with a .git file by using absorbgitdirs."
-msgstr ""
-"子模組工作區「%s」內有 .git 目錄。使用 absorbgitdirs 會將其替換為 .git 檔案。"
+msgstr "子模組工作區「%s」內有 .git 目錄。使用 absorbgitdirs 會將其替換為 .git 檔案。"
 
 #: builtin/submodule--helper.c:1394
 #, c-format
@@ -15576,8 +15568,8 @@ msgid ""
 msgstr ""
 "git submodule [--quiet] update [--init [--filter=<filter-spec>]] [--remote] "
 "[-N|--no-fetch] [-f|--force] [--checkout|--merge|--rebase] [--[no-]recommend-"
-"shallow] [--reference <repository>] [--recursive] [--[no-]single-branch] "
-"[--] [<path>...]"
+"shallow] [--reference <repository>] [--recursive] [--[no-]single-branch] [--]"
+" [<path>...]"
 
 #: builtin/submodule--helper.c:2835
 msgid "git submodule absorbgitdirs [<options>] [<path>...]"
@@ -20658,9 +20650,8 @@ msgid ""
 "CONFLICT (directory rename split): Unclear where to rename %s to; it was "
 "renamed to multiple other directories, with no destination getting a "
 "majority of the files."
-msgstr ""
-"衝突（分割的目錄重新命名）：未知 %s 重新命名的位置。它被重新命名為多個其他目"
-"錄，但沒有目的地取得過半檔案。"
+msgstr "衝突（分割的目錄重新命名）：未知 %s "
+"重新命名的位置。它被重新命名為多個其他目錄，但沒有目的地取得過半檔案。"
 
 #: merge-ort.c:2520 merge-recursive.c:2482
 #, c-format
@@ -20742,18 +20733,16 @@ msgstr "衝突（檔案/目錄）：目錄佔住 %2$s 中 %1$s 的位置。改�
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed both "
 "of them so each can be recorded somewhere."
-msgstr ""
-"衝突（類型有異）：兩方的 %s 類型皆不同。已經重新命名這兩個來源，這樣就可以分"
-"別記錄這兩方檔案。"
+msgstr "衝突（類型有異）：兩方的 %s "
+"類型皆不同。已經重新命名這兩個來源，這樣就可以分別記錄這兩方檔案。"
 
 #: merge-ort.c:4040
 #, c-format
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed one "
 "of them so each can be recorded somewhere."
-msgstr ""
-"衝突（類型有異）：兩方的 %s 類型皆不同。已經重新命名其中一個來源，這樣就可以"
-"分別記錄這兩方檔案。"
+msgstr "衝突（類型有異）：兩方的 %s "
+"類型皆不同。已經重新命名其中一個來源，這樣就可以分別記錄這兩方檔案。"
 
 #: merge-ort.c:4127 merge-recursive.c:3105
 msgid "content"

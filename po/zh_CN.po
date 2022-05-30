@@ -139,7 +139,7 @@
 #   upstream branch                  |  上游分支
 #   working tree                     |  工作区
 # Fangyi Zhou <me@fangyi.io>, 2021-2022.
-#
+# test
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"

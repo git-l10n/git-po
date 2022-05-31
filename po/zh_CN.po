@@ -185,7 +185,7 @@ msgstr "更新"
 msgid "could not stage '%s'"
 msgstr "不能暂存 '%s'"
 
-#: add-interactive.c reset.c sequencer.c
+#: add-interactive.c reset.c sequencer.c builtin/stash.c
 msgid "could not write index"
 msgstr "不能写入索引"
 
@@ -3125,11 +3125,9 @@ msgstr "%s 中的 CRLF 将被 LF 替换"
 #: convert.c
 #, c-format
 msgid ""
-"CRLF will be replaced by LF in %s.\n"
-"The file will have its original line endings in your working directory"
+"in the working copy of '%s', CRLF will be replaced by LF the next time Git "
+"touches it"
 msgstr ""
-"%s 中的 CRLF 将被 LF 替换。<\n"
-"在工作区中该文件仍保持原有的换行符。"
 
 #: convert.c
 #, c-format
@@ -3139,11 +3137,9 @@ msgstr "文件 %s 中的 LF 将被 CRLF 替换"
 #: convert.c
 #, c-format
 msgid ""
-"LF will be replaced by CRLF in %s.\n"
-"The file will have its original line endings in your working directory"
+"in the working copy of '%s', LF will be replaced by CRLF the next time Git "
+"touches it"
 msgstr ""
-"%s 中的 LF 将被 CRLF 替换。\n"
-"在工作区中该文件仍保持原有的换行符"
 
 #: convert.c
 #, c-format
@@ -4281,13 +4277,13 @@ msgstr "无法将请求写到远程"
 
 #: fetch-pack.c
 #, c-format
-msgid "error reading section header '%s'"
-msgstr "读取节标题 '%s' 出错"
-
-#: fetch-pack.c
-#, c-format
 msgid "expected '%s', received '%s'"
 msgstr "预期 '%s'，得到 '%s'"
+
+#: fetch-pack.c
+#, fuzzy, c-format
+msgid "expected '%s'"
+msgstr "意外的行：'%s'"
 
 #: fetch-pack.c
 #, c-format
@@ -10441,19 +10437,6 @@ msgstr "无法启动 accept_thread '%s'"
 msgid "could not start worker[0] for '%s'"
 msgstr "无法启动 '%s' 的 worker[0]"
 
-#: compat/precompose_utf8.c builtin/clone.c
-#, c-format
-msgid "failed to unlink '%s'"
-msgstr "无法删除 '%s'"
-
-#: compat/fsmonitor/fsm-listen-darwin.c
-msgid "Unable to create FSEventStream."
-msgstr "无法创建 FSEventStream。"
-
-#: compat/fsmonitor/fsm-listen-darwin.c
-msgid "Failed to start the FSEventStream"
-msgstr "无法启动 FSEventStream"
-
 #: builtin/add.c
 msgid "git add [<options>] [--] <pathspec>..."
 msgstr "git add [<选项>] [--] <路径规格>..."
@@ -11215,6 +11198,21 @@ msgstr "在只有一个 %s 提交的情况下二分查找"
 #: builtin/bisect--helper.c
 msgid "Are you sure [Y/n]? "
 msgstr "您确认么[Y/n]？ "
+
+#: builtin/bisect--helper.c
+msgid "status: waiting for both good and bad commits\n"
+msgstr ""
+
+#: builtin/bisect--helper.c
+#, c-format
+msgid "status: waiting for bad commit, %d good commit known\n"
+msgid_plural "status: waiting for bad commit, %d good commits known\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: builtin/bisect--helper.c
+msgid "status: waiting for good commit(s), bad commit known\n"
+msgstr ""
 
 #: builtin/bisect--helper.c
 msgid "no terms defined"
@@ -13366,6 +13364,11 @@ msgstr "%s 存在且不是一个目录"
 #, c-format
 msgid "failed to start iterator over '%s'"
 msgstr "无法在 '%s' 上启动迭代器"
+
+#: builtin/clone.c
+#, c-format
+msgid "failed to unlink '%s'"
+msgstr "无法删除 '%s'"
 
 #: builtin/clone.c
 #, c-format
@@ -18417,6 +18420,11 @@ msgid "git multi-pack-index [<options>] repack [--batch-size=<size>]"
 msgstr "git multi-pack-index [<选项>] repack [--batch-size=<尺寸>]"
 
 #: builtin/multi-pack-index.c
+#, fuzzy
+msgid "directory"
+msgstr "文件/目录"
+
+#: builtin/multi-pack-index.c
 msgid "object directory containing set of packfile and pack-index pairs"
 msgstr "包含成对包文件和包索引的对象目录"
 
@@ -19639,15 +19647,25 @@ msgid "--delete only accepts plain target ref names"
 msgstr "--delete 只接受简单的目标引用名"
 
 #: builtin/push.c
+#, fuzzy
 msgid ""
 "\n"
-"To choose either option permanently, see push.default in 'git help config'."
+"To choose either option permanently, see push.default in 'git help config'.\n"
 msgstr ""
 "\n"
 "为了永久地选择任一选项，参见 'git help config' 中的 push.default。"
 
 #: builtin/push.c
-#, c-format
+msgid ""
+"\n"
+"To avoid automatically configuring upstream branches when their name\n"
+"doesn't match the local branch, see option 'simple' of branch."
+"autosetupmerge\n"
+"in 'git help config'.\n"
+msgstr ""
+
+#: builtin/push.c
+#, fuzzy, c-format
 msgid ""
 "The upstream branch of your current branch does not match\n"
 "the name of your current branch.  To push to the upstream branch\n"
@@ -19658,7 +19676,7 @@ msgid ""
 "To push to the branch of the same name on the remote, use\n"
 "\n"
 "    git push %s HEAD\n"
-"%s"
+"%s%s"
 msgstr ""
 "您当前分支的上游分支和您当前分支名不匹配，为推送到远程的上游分支，\n"
 "使用\n"
@@ -19685,12 +19703,20 @@ msgstr ""
 "    git push %s HEAD:<远程分支名字>\n"
 
 #: builtin/push.c
-#, c-format
+msgid ""
+"\n"
+"To have this happen automatically for branches without a tracking\n"
+"upstream, see 'push.autoSetupRemote' in 'git help config'.\n"
+msgstr ""
+
+#: builtin/push.c
+#, fuzzy, c-format
 msgid ""
 "The current branch %s has no upstream branch.\n"
 "To push the current branch and set the remote as upstream, use\n"
 "\n"
 "    git push --set-upstream %s %s\n"
+"%s"
 msgstr ""
 "当前分支 %s 没有对应的上游分支。\n"
 "为推送当前分支并建立与远程上游的跟踪，使用\n"
@@ -20395,6 +20421,20 @@ msgstr "不能创建新的根提交"
 
 #: builtin/rebase.c
 #, c-format
+msgid "no such branch/commit '%s'"
+msgstr "无此分支/提交 '%s'"
+
+#: builtin/rebase.c builtin/submodule--helper.c
+#, c-format
+msgid "No such ref: %s"
+msgstr "没有这样的引用：%s"
+
+#: builtin/rebase.c
+msgid "Could not resolve HEAD to a revision"
+msgstr "无法将 HEAD 解析为一个版本"
+
+#: builtin/rebase.c
+#, c-format
 msgid "'%s': need exactly one merge base with branch"
 msgstr "'%s'：只需要与分支的一个合并基线"
 
@@ -20407,20 +20447,6 @@ msgstr "'%s'：只需要一个合并基线"
 #, c-format
 msgid "Does not point to a valid commit '%s'"
 msgstr "没有指向一个有效的提交 '%s'"
-
-#: builtin/rebase.c
-#, c-format
-msgid "no such branch/commit '%s'"
-msgstr "无此分支/提交 '%s'"
-
-#: builtin/rebase.c builtin/submodule--helper.c
-#, c-format
-msgid "No such ref: %s"
-msgstr "没有这样的引用：%s"
-
-#: builtin/rebase.c
-msgid "Could not resolve HEAD to a revision"
-msgstr "无法将 HEAD 解析为一个版本"
 
 #: builtin/rebase.c
 msgid "Please commit or stash them."
@@ -24221,8 +24247,9 @@ msgid "only useful for debugging"
 msgstr "只对调试有用"
 
 #: git.c
+#, fuzzy
 msgid ""
-"git [--version] [--help] [-C <path>] [-c <name>=<value>]\n"
+"git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
 "           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
 "bare]\n"
@@ -26320,3 +26347,29 @@ msgstr "略过 %s 含备份后缀 '%s'。\n"
 #, perl-format
 msgid "Do you really want to send %s? [y|N]: "
 msgstr "您真的要发送 %s？[y|N]："
+
+#, c-format
+#~ msgid ""
+#~ "CRLF will be replaced by LF in %s.\n"
+#~ "The file will have its original line endings in your working directory"
+#~ msgstr ""
+#~ "%s 中的 CRLF 将被 LF 替换。<\n"
+#~ "在工作区中该文件仍保持原有的换行符。"
+
+#, c-format
+#~ msgid ""
+#~ "LF will be replaced by CRLF in %s.\n"
+#~ "The file will have its original line endings in your working directory"
+#~ msgstr ""
+#~ "%s 中的 LF 将被 CRLF 替换。\n"
+#~ "在工作区中该文件仍保持原有的换行符"
+
+#, c-format
+#~ msgid "error reading section header '%s'"
+#~ msgstr "读取节标题 '%s' 出错"
+
+#~ msgid "Unable to create FSEventStream."
+#~ msgstr "无法创建 FSEventStream。"
+
+#~ msgid "Failed to start the FSEventStream"
+#~ msgstr "无法启动 FSEventStream"

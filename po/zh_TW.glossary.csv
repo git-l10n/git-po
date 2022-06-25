@@ -1,0 +1,101 @@
+,原文,翻譯,解釋,類別
+詞彙,,,,
+,3-way merge,三方合併,,詞彙
+,abort,中止,,詞彙
+,add,加入,,詞彙
+,add,加入,,詞彙
+,add new,新增,,詞彙
+,ambiguous,歧義,,詞彙
+,ancestor,祖先,,詞彙
+,archive,封存,,詞彙
+,argument,引數,,詞彙
+,bad,壞的；無效,,詞彙
+,bisect,二分搜尋,,詞彙
+,blob,資料物件,,詞彙
+,body,內文,,詞彙
+,changes,(v.) 變更; (n.) 更動,,詞彙
+,Cherry-pick,揀選,,詞彙
+,clone,複製,,詞彙
+,column,直行,,詞彙
+,command,命令,,詞彙
+,commit,提交,,詞彙
+,cone,cone,,詞彙
+,config,組態,,詞彙
+,context,情境,,詞彙
+,copy,拷貝,,詞彙
+,descriptor,描述元,,詞彙
+,diff,差異,,詞彙
+,dirty,有異動；異動處,,詞彙
+,discard,捨棄,,詞彙
+,dry run,測試執行,,詞彙
+,expected,預期,,詞彙
+,fall back,回復,,詞彙
+,fast-forward,快轉,,詞彙
+,fetch,抓取,,詞彙
+,filter,過濾器,,詞彙
+,flag,標記,,詞彙
+,fragment,區段,,詞彙
+,good,良好；好的,,詞彙
+,HEAD,HEAD,,詞彙
+,history,歷史記錄,,詞彙
+,hunk,區塊,,詞彙
+,inherit,繼承,,詞彙
+,line,橫列,,詞彙
+,multi-pack-index,多封裝索引,,詞彙
+,note,註,,詞彙
+,offset,偏移,,詞彙
+,override,覆寫,,詞彙
+,pack,封裝,,詞彙
+,parent,上層；上級；父,,詞彙
+,pass,傳入,,詞彙
+,patch,修補檔 (n.) 修補 (v.),,詞彙
+,pathspec,路徑規格,,詞彙
+,pattern,模式,,詞彙
+,pick,挑選,,詞彙
+,pull,拉取,,詞彙
+,rebase,重定基底,,詞彙
+,record,錄製；錄入,,詞彙
+,redirect,重新導向,,詞彙
+,ref,引用,,詞彙
+,reference,引用,,詞彙
+,refspec,引用規格,,詞彙
+,Regexp,常規表示式,,詞彙
+,rev,修訂版,,詞彙
+,revert,還原,,詞彙
+,revision,修訂版,,詞彙
+,rewind,倒轉,,詞彙
+,script,文稿,,詞彙
+,series,序列,,詞彙
+,sorry,抱歉,,詞彙
+,sparse-checkout,稀疏簽出,,詞彙
+,spec,規格,,詞彙
+,stage,暫存,,詞彙
+,stash,貯存,,詞彙
+,temporary,暫時性; 暫存,,詞彙
+,temporary index,暫存索引,,詞彙
+,timestamp,時間戳,,詞彙
+,track,追蹤,,詞彙
+,tree,樹；樹狀物件？,,詞彙
+,truncating,截短,,詞彙
+,undecided,未決定,,詞彙
+,verbose,詳細輸出,,詞彙
+,working tree,工作目錄,,詞彙
+片語,,,,
+,{1} failed for {2},無法對 {2} 執行 {1},,片語
+,Be used together,同時使用,,片語
+,can not,無法,,片語
+,flag,標記,,片語
+,for more information,深入了解,,片語
+,Invalid …,… 無效,,片語
+,path ‘%s’,「%s」路徑,,片語
+,Unrecognized …,… 無法識別,,片語
+標點符號,,,,
+,: ,：,,標點符號
+,? ,？,,標點符號
+,...,……,,標點符號
+,"""""",“” 英文；「」中文,,標點符號
+,(),() 英文；（）中文,,標點符號
+,``,``,,標點符號
+,Open ‘%s’ for reading/writing,開啟 “%s” 進行讀取/寫入,,標點符號
+進度,,,,
+,5367,470,,進度

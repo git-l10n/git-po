@@ -21328,8 +21328,8 @@ msgstr "  (işlenecekleri güncellemek için \"git add/rm <dosya>...\" kullanın
 msgid ""
 "  (use \"git restore <file>...\" to discard changes in working directory)"
 msgstr ""
-"  (çalışma dizinindeki değişiklikleri atmak için \"git restore <dosya>...\" "
-"kullanın)"
+"  (çalışma dizinindeki değişiklikleri atmak için\n"
+"    \"git restore <dosya>...\" kullanın)"
 
 msgid "  (commit or discard the untracked or modified content in submodules)"
 msgstr "  (altmodüllerdeki izlenmeyen/değiştirilen içeriği gönder veya at)"
@@ -21650,8 +21650,8 @@ msgstr "Değişiklik yok"
 #, c-format
 msgid "no changes added to commit (use \"git add\" and/or \"git commit -a\")\n"
 msgstr ""
-"İşlemeye eklenen değişiklik yok (\"git add\" ve/veya \"git commit -a\" "
-"kullanın)\n"
+"İşlemeye eklenen değişiklik yok\n
+"  (\"git add\" ve/veya \"git commit -a\" kullanın)\n"
 
 #, c-format
 msgid "no changes added to commit\n"
@@ -21662,8 +21662,8 @@ msgid ""
 "nothing added to commit but untracked files present (use \"git add\" to "
 "track)\n"
 msgstr ""
-"işlemeye bir şey eklenmedi; ancak izlenmeyen dosyalar var (izlemek için "
-"\"git add\" kullanın)\n"
+"işlemeye bir şey eklenmedi; ancak izlenmeyen dosyalar var\n"
+"  (izlemek için \"git add\" kullanın)\n"
 
 #, c-format
 msgid "nothing added to commit but untracked files present\n"
@@ -21672,8 +21672,8 @@ msgstr "işlemeye bir şey eklenmedi; ancak izlenmeyen dosyalar var\n"
 #, c-format
 msgid "nothing to commit (create/copy files and use \"git add\" to track)\n"
 msgstr ""
-"İşlenecek bir şey yok (dosyalar oluşturun/kopyalayın ve izlemek için \"git "
-"add\" kullanın)\n"
+"İşlenecek bir şey yok\n"
+"  (dosyalar oluşturun/kopyalayın ve izlemek için \"git add\" kullanın)\n"
 
 #, c-format
 msgid "nothing to commit\n"

@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git Turkish Localization Project\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2022-11-23 21:10+0300\n"
+"POT-Creation-Date: 2022-12-07 17:32+0300\n"
 "PO-Revision-Date: 2022-09-28 14:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish (https://github.com/bitigchi/git-po/)\n"
@@ -11422,10 +11422,10 @@ msgid "unknown mode for --show-object-format: %s"
 msgstr "--show-object-format için bilinmeyen kip: %s"
 
 msgid ""
-"git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] "
+"git revert [--[no-]edit] [-n] [-m <parent-number>] [-s] [-S[<keyid>]] "
 "<commit>..."
 msgstr ""
-"git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<anahtar-"
+"git revert [--[no-]edit] [-n] [-m <üst-öge-numarası>] [-s] [-S[<anahtar-"
 "kimliği>]] <işleme>..."
 
 msgid "git revert (--continue | --skip | --abort | --quit)"
@@ -17276,10 +17276,6 @@ msgstr "alternatif nesne yolu olağanlaştırılamıyor: %s"
 #, c-format
 msgid "%s: ignoring alternate object stores, nesting too deep"
 msgstr "%s: alternatif nesne depoları yok sayılıyor, iç içe geçme pek derin"
-
-#, c-format
-msgid "unable to normalize object directory: %s"
-msgstr "nesne dizini olağanlaştırılamıyor: %s"
 
 msgid "unable to fdopen alternates lockfile"
 msgstr "alternatifler kilit dosyası fdopen yapılamıyor"

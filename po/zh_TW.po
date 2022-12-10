@@ -26,8 +26,8 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-11 00:28+0800\n"
-"PO-Revision-Date: 2022-12-10 17:11+0000\n"
-"Last-Translator: Kaiyang Wu <self@origincode.me>\n"
+"PO-Revision-Date: 2022-12-10 17:12+0000\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -6701,7 +6701,7 @@ msgstr ""
 
 #: builtin/diagnose.c:23
 msgid "specify a destination for the diagnostics archive"
-msgstr "請指定診斷歸檔的目的地"
+msgstr "請指定診斷封存檔的目的地"
 
 #: builtin/diagnose.c:25
 msgid "specify a strftime format suffix for the filename"
@@ -9891,7 +9891,7 @@ msgstr "在訊息內文中使用標頭"
 
 #: builtin/mailsplit.c:227
 msgid "reading patches from stdin/tty..."
-msgstr "正在從標準輸入或 tty 讀取修補檔內容⋯⋯"
+msgstr "正在從標準輸入或 tty 讀取修補檔內容……"
 
 #: builtin/mailsplit.c:242
 #, c-format
@@ -25986,19 +25986,19 @@ msgstr "無效的 '..' 路徑區塊"
 
 #: usage.c:36
 msgid "usage: "
-msgstr "用法："
+msgstr "用法: "
 
 #: usage.c:61
 msgid "fatal: "
-msgstr "致命錯誤："
+msgstr "致命錯誤: "
 
 #: usage.c:81
 msgid "error: "
-msgstr "錯誤："
+msgstr "錯誤: "
 
 #: usage.c:88
 msgid "warning: "
-msgstr "警告："
+msgstr "警告: "
 
 #: walker.c:170
 msgid "Fetching objects"

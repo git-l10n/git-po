@@ -146,15 +146,16 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-01 14:04+0000\n"
-"PO-Revision-Date: 2022-12-01 14:17+0000\n"
-"Last-Translator: Fangyi Zhou <me@fangyi.io>\n"
-"Language-Team: GitHub <https://github.com/fangyi-zhou/git-po/>\n"
+"PO-Revision-Date: 2022-12-10 16:41+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <http://weblate.slat.org/projects/git-po/"
+"git-cli/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: add-interactive.c
 #, c-format
@@ -1679,8 +1680,7 @@ msgstr "git archive [<选项>] <树对象> [<路径>...]"
 #: archive.c
 msgid ""
 "git archive --remote <repo> [--exec <cmd>] [<options>] <tree-ish> [<path>...]"
-msgstr ""
-"git archive --remote <仓库> [--exec <命令>] [<选项>] <树对象> [<路径>...]"
+msgstr "git archive --remote <仓库> [--exec <命令>] [<选项>] <树对象> [<路径>...]"
 
 #: archive.c
 msgid "git archive --remote <repo> [--exec <cmd>] --list"
@@ -2092,8 +2092,8 @@ msgstr ""
 "%s\n"
 "这一般是个配置错误。\n"
 "\n"
-"如果要支持设置追踪分支，请保证不同远程的获取引用规格映射至不同的追踪命名空"
-"间。"
+"如果要支持设置追踪分支，请保证不同远程的获取引用规格映射至不同的追踪命名空间"
+"。"
 
 #: branch.c
 #, c-format
@@ -2163,8 +2163,7 @@ msgstr "子模组 '%s'：无法找到子模组"
 msgid ""
 "You may try updating the submodules using 'git checkout %s && git submodule "
 "update --init'"
-msgstr ""
-"你可以用 'git checkout %s && git submodule update --init' 来尝试更新子模组"
+msgstr "你可以用 'git checkout %s && git submodule update --init' 来尝试更新子模组"
 
 #: branch.c
 #, c-format
@@ -2880,8 +2879,9 @@ msgid ""
 "=<term>] [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
 "[<paths>...]"
 msgstr ""
-"git bisect--helper --bisect-start [--term-{new,bad}=<术语> --term-{old,good}"
-"=<术语>] [--no-checkout] [--first-parent] [<坏> [<好>...]] [--] [<路径>...]"
+"git bisect--helper --bisect-start [--term-{new,bad}=<术语> "
+"--term-{old,good}=<术语>] [--no-checkout] [--first-parent] [<坏> [<好>...]] "
+"[--] [<路径>...]"
 
 #: builtin/bisect--helper.c
 msgid "git bisect--helper --bisect-state (bad|new) [<rev>]"
@@ -3698,8 +3698,7 @@ msgstr "HEAD 没有位于 /refs/heads 之下！"
 msgid ""
 "branch with --recurse-submodules can only be used if submodule."
 "propagateBranches is enabled"
-msgstr ""
-"带有 --recurse-submodules 的分支只能在 submodule.propagateBranches 启用时使用"
+msgstr "带有 --recurse-submodules 的分支只能在 submodule.propagateBranches 启用时使用"
 
 #: builtin/branch.c
 msgid "--recurse-submodules can only be used to create branches"
@@ -3778,8 +3777,7 @@ msgstr ""
 msgid ""
 "the '--set-upstream' option is no longer supported. Please use '--track' or "
 "'--set-upstream-to' instead."
-msgstr ""
-"不再支持选项 '--set-upstream'。请使用 '--track' 或 '--set-upstream-to'。"
+msgstr "不再支持选项 '--set-upstream'。请使用 '--track' 或 '--set-upstream-to'。"
 
 #: builtin/bugreport.c
 msgid "git version:\n"
@@ -4736,8 +4734,7 @@ msgstr "git checkout：--detach 不能接收路径参数 '%s'"
 msgid ""
 "git checkout: --ours/--theirs, --force and --merge are incompatible when\n"
 "checking out of the index."
-msgstr ""
-"git checkout：在从索引检出时，--ours/--theirs、--force 和 --merge 不兼容。"
+msgstr "git checkout：在从索引检出时，--ours/--theirs、--force 和 --merge 不兼容。"
 
 #: builtin/checkout.c
 msgid "you must specify path(s) to restore"
@@ -4808,8 +4805,7 @@ msgstr "使用叠加模式"
 msgid ""
 "git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] "
 "[<pathspec>...]"
-msgstr ""
-"git clean [-d] [-f] [-i] [-n] [-q] [-e <模式>] [-x | -X] [--] <路径规格>..."
+msgstr "git clean [-d] [-f] [-i] [-n] [-q] [-e <模式>] [-x | -X] [--] <路径规格>..."
 
 #: builtin/clean.c
 #, c-format
@@ -4973,15 +4969,13 @@ msgstr "只删除忽略的文件"
 msgid ""
 "clean.requireForce set to true and neither -i, -n, nor -f given; refusing to "
 "clean"
-msgstr ""
-"clean.requireForce 设置为 true 且未提供 -i、-n 或 -f 选项，拒绝执行清理动作"
+msgstr "clean.requireForce 设置为 true 且未提供 -i、-n 或 -f 选项，拒绝执行清理动作"
 
 #: builtin/clean.c
 msgid ""
 "clean.requireForce defaults to true and neither -i, -n, nor -f given; "
 "refusing to clean"
-msgstr ""
-"clean.requireForce 默认为 true 且未提供 -i、-n 或 -f 选项，拒绝执行清理动作"
+msgstr "clean.requireForce 默认为 true 且未提供 -i、-n 或 -f 选项，拒绝执行清理动作"
 
 #: builtin/clean.c
 msgid "-x and -X cannot be used together"
@@ -5425,10 +5419,10 @@ msgid ""
 "                       <split options>"
 msgstr ""
 "git commit-graph write [--object-dir <目录>] [--append]\n"
-"                       [--split[=<策略>]] [--reachable | --stdin-packs | --"
-"stdin-commits] \n"
-"                       [--changed-paths] [--[no-]max-new-filters <n>] [--"
-"[no-]progress]\n"
+"                       [--split[=<策略>]] [--reachable | --stdin-packs | "
+"--stdin-commits] \n"
+"                       [--changed-paths] [--[no-]max-new-filters <n>] "
+"[--[no-]progress]\n"
 "                       <切分选项>"
 
 #: builtin/commit-graph.c builtin/fetch.c builtin/log.c builtin/repack.c
@@ -5595,8 +5589,8 @@ msgid ""
 "           [--] [<pathspec>...]"
 msgstr ""
 "git commit [-a | --interactive | --patch] [-s] [-v] [-u<模式>] [--amend]\n"
-"           [--dry-run] [(-c | -C | --squash) <提交> | --fixup [(amend|"
-"reword):]<提交>)]\n"
+"           [--dry-run] [(-c | -C | --squash) <提交> | --fixup "
+"[(amend|reword):]<提交>)]\n"
 "           [-F <文件> | -m <消息>] [--reset-author] [--allow-empty]\n"
 "           [--allow-empty-message] [--no-verify] [-e] [--author=<作者>]\n"
 "           [--date=<日期>] [--cleanup=<模式>] [--[no-]status]\n"
@@ -5973,8 +5967,7 @@ msgstr "显示未跟踪的文件，“模式”的可选参数：all、normal、
 msgid ""
 "show ignored files, optional modes: traditional, matching, no. (Default: "
 "traditional)"
-msgstr ""
-"显示已忽略的文件，可选模式：traditional、matching、no。（默认：traditional）"
+msgstr "显示已忽略的文件，可选模式：traditional、matching、no。（默认：traditional）"
 
 #: builtin/commit.c parse-options.h
 msgid "when"
@@ -5984,8 +5977,7 @@ msgstr "何时"
 msgid ""
 "ignore changes to submodules, optional when: all, dirty, untracked. "
 "(Default: all)"
-msgstr ""
-"忽略子模组的更改，“何时”的可选参数：all、dirty、untracked。（默认：all）"
+msgstr "忽略子模组的更改，“何时”的可选参数：all、dirty、untracked。（默认：all）"
 
 #: builtin/commit.c
 msgid "list untracked files in columns"
@@ -6523,8 +6515,8 @@ msgid ""
 "\n"
 "\tchmod 0700 %s"
 msgstr ""
-"您的 socket 目录权限过于宽松，其他用户可能会读取您缓存的认证信息。考虑执"
-"行：\n"
+"您的 socket 目录权限过于宽松，其他用户可能会读取您缓存的认证信息。考虑执行："
+"\n"
 "\n"
 "\tchmod 0700 %s"
 
@@ -6548,8 +6540,7 @@ msgstr "无法在 %d ms 获得凭证存储锁"
 #: builtin/describe.c
 msgid ""
 "git describe [--all] [--tags] [--contains] [--abbrev=<n>] [<commit-ish>...]"
-msgstr ""
-"git describe [--all] [--tags] [--contains] [--abbrev=<n>] [<提交号>...]"
+msgstr "git describe [--all] [--tags] [--contains] [--abbrev=<n>] [<提交号>...]"
 
 #: builtin/describe.c
 msgid ""
@@ -6800,8 +6791,7 @@ msgstr "无法读取符号链接 %2$s 指向的对象 %1$s"
 msgid ""
 "combined diff formats ('-c' and '--cc') are not supported in\n"
 "directory diff mode ('-d' and '--dir-diff')."
-msgstr ""
-"不支持在目录比较模式（'-d' 和 '--dir-diff'）中采用组合差异格式（'-c' 和 '--"
+msgstr "不支持在目录比较模式（'-d' 和 '--dir-diff'）中采用组合差异格式（'-c' 和 '--"
 "cc'）。"
 
 #: builtin/difftool.c
@@ -8026,8 +8016,7 @@ msgstr "手工维护参见 \"git help gc\"。\n"
 #, c-format
 msgid ""
 "gc is already running on machine '%s' pid %<PRIuMAX> (use --force if not)"
-msgstr ""
-"已经有一个 gc 正运行在机器 '%s' pid %<PRIuMAX>（如果不是，使用 --force）"
+msgstr "已经有一个 gc 正运行在机器 '%s' pid %<PRIuMAX>（如果不是，使用 --force）"
 
 #: builtin/gc.c
 msgid ""
@@ -8037,8 +8026,7 @@ msgstr "有太多不可达的松散对象，运行 'git prune' 删除它们。"
 #: builtin/gc.c
 msgid ""
 "git maintenance run [--auto] [--[no-]quiet] [--task=<task>] [--schedule]"
-msgstr ""
-"git maintenance run [--auto] [--[no-]quiet] [--task=<任务>] [--schedule]"
+msgstr "git maintenance run [--auto] [--[no-]quiet] [--task=<任务>] [--schedule]"
 
 #: builtin/gc.c
 msgid "--no-schedule is not allowed"
@@ -9741,9 +9729,8 @@ msgstr "在稀疏索引存在时显示稀疏目录"
 msgid ""
 "--format cannot be used with -s, -o, -k, -t, --resolve-undo, --deduplicate, "
 "--eol"
-msgstr ""
-"--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate 和 --eol 同时使"
-"用"
+msgstr "--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate 和 --eol "
+"同时使用"
 
 #: builtin/ls-remote.c
 msgid ""
@@ -9958,8 +9945,8 @@ msgid ""
 "git merge-file [<options>] [-L <name1> [-L <orig> [-L <name2>]]] <file1> "
 "<orig-file> <file2>"
 msgstr ""
-"git merge-file [<选项>] [-L <名字1> [-L <初始名字> [-L <名字2>]]] <文件1> <初"
-"始文件> <文件2>"
+"git merge-file [<选项>] [-L <名字1> [-L <初始名字> [-L <名字2>]]] <文件1> "
+"<初始文件> <文件2>"
 
 #: builtin/merge-file.c
 msgid "send results to standard output"
@@ -10514,8 +10501,8 @@ msgid ""
 "git multi-pack-index [<options>] write [--preferred-pack=<pack>][--refs-"
 "snapshot=<path>]"
 msgstr ""
-"git multi-pack-index [<选项>] write [--preferred-pack=<包>][--refs-snapshot=<"
-"路径>]"
+"git multi-pack-index [<选项>] write [--preferred-pack=<包>][--refs-"
+"snapshot=<路径>]"
 
 #: builtin/multi-pack-index.c
 msgid "git multi-pack-index [<options>] verify"
@@ -11048,8 +11035,8 @@ msgid ""
 "'git notes merge --commit', or abort the merge with 'git notes merge --"
 "abort'.\n"
 msgstr ""
-"自动合并说明失败。修改 %s 中的冲突并且使用命令 'git notes merge --commit' 提"
-"交结果，或者使用命令 'git notes merge --abort' 终止合并。\n"
+"自动合并说明失败。修改 %s 中的冲突并且使用命令 'git notes merge --commit' "
+"提交结果，或者使用命令 'git notes merge --abort' 终止合并。\n"
 
 #: builtin/notes.c builtin/tag.c
 #, c-format
@@ -11104,8 +11091,7 @@ msgstr "git pack-objects [<选项>] <前缀名称> [< <引用列表> | < <对象
 msgid ""
 "write_reuse_object: could not locate %s, expected at offset %<PRIuMAX> in "
 "pack %s"
-msgstr ""
-"write_reuse_object：无法定位 %1$s，预期在包 %3$s 中的偏移量 %2$<PRIuMAX> 上"
+msgstr "write_reuse_object：无法定位 %1$s，预期在包 %3$s 中的偏移量 %2$<PRIuMAX> 上"
 
 #: builtin/pack-objects.c
 #, c-format
@@ -11230,8 +11216,8 @@ msgid ""
 "value of uploadpack.blobpackfileuri must be of the form '<object-hash> <pack-"
 "hash> <uri>' (got '%s')"
 msgstr ""
-"uploadpack.blobpackfileuri 的取值必须是 '<object-hash> <pack-hash> <uri>' 格"
-"式（得到 '%s'）"
+"uploadpack.blobpackfileuri 的取值必须是 '<object-hash> <pack-hash> <uri>' "
+"格式（得到 '%s'）"
 
 #: builtin/pack-objects.c
 #, c-format
@@ -11549,8 +11535,7 @@ msgstr "枚举对象中"
 msgid ""
 "Total %<PRIu32> (delta %<PRIu32>), reused %<PRIu32> (delta %<PRIu32>), pack-"
 "reused %<PRIu32>"
-msgstr ""
-"总共 %<PRIu32>（差异 %<PRIu32>），复用 %<PRIu32>（差异 %<PRIu32>），包复用 "
+msgstr "总共 %<PRIu32>（差异 %<PRIu32>），复用 %<PRIu32>（差异 %<PRIu32>），包复用 "
 "%<PRIu32>"
 
 #: builtin/pack-redundant.c
@@ -12004,8 +11989,7 @@ msgstr "无法推送一些引用到 '%s'"
 msgid ""
 "recursing into submodule with push.recurseSubmodules=only; using on-demand "
 "instead"
-msgstr ""
-"在 push.recurseSubmodules=only 时递归进入子模组；取而代之使用 on-demand"
+msgstr "在 push.recurseSubmodules=only 时递归进入子模组；取而代之使用 on-demand"
 
 #: builtin/push.c builtin/send-pack.c submodule-config.c
 #, c-format
@@ -12265,14 +12249,13 @@ msgid ""
 "git rebase [-i] [options] [--exec <cmd>] [--onto <newbase> | --keep-base] "
 "[<upstream> [<branch>]]"
 msgstr ""
-"git rebase [-i] [options] [--exec <命令>] [--onto <新基线> | --keep-base] [<"
-"上游> [<分支>]]"
+"git rebase [-i] [options] [--exec <命令>] [--onto <新基线> | --keep-base] ["
+"<上游> [<分支>]]"
 
 #: builtin/rebase.c
 msgid ""
 "git rebase [-i] [options] [--exec <cmd>] [--onto <newbase>] --root [<branch>]"
-msgstr ""
-"git rebase [-i] [选项] [--exec <命令>] [--onto <新基线>] --root [<分支>]"
+msgstr "git rebase [-i] [选项] [--exec <命令>] [--onto <新基线>] --root [<分支>]"
 
 #: builtin/rebase.c sequencer.c
 #, c-format
@@ -12806,8 +12789,8 @@ msgid ""
 msgstr ""
 "git reflog expire [--expire=<时间>] [--expire-unreachable=<时间>]\n"
 "                  [--rewrite] [--updateref] [--stale-fix]\n"
-"                  [--dry-run | -n] [--verbose] [--all [--single-worktree] | <"
-"引用>...]"
+"                  [--dry-run | -n] [--verbose] [--all [--single-worktree] | "
+"<引用>...]"
 
 #: builtin/reflog.c
 msgid ""
@@ -12893,8 +12876,8 @@ msgid ""
 "git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--"
 "mirror=<fetch|push>] <name> <url>"
 msgstr ""
-"git remote add [-t <分支>] [-m <master>] [-f] [--tags | --no-tags] [--"
-"mirror=<fetch|push>] <名称> <地址>"
+"git remote add [-t <分支>] [-m <master>] [-f] [--tags | --no-tags] "
+"[--mirror=<fetch|push>] <名称> <地址>"
 
 #: builtin/remote.c
 msgid "git remote rename [--[no-]progress] <old> <new>"
@@ -13842,8 +13825,7 @@ msgstr "只能为 -l 提供一个模式"
 #: builtin/rerere.c
 msgid ""
 "git rerere [clear | forget <pathspec>... | diff | status | remaining | gc]"
-msgstr ""
-"git rerere [clear | forget <路径规格>... | diff | status | remaining | gc]"
+msgstr "git rerere [clear | forget <路径规格>... | diff | status | remaining | gc]"
 
 #: builtin/rerere.c
 msgid "register clean resolutions in index"
@@ -14123,8 +14105,7 @@ msgstr "未知的 --show-object-format 模式：%s"
 msgid ""
 "git revert [--[no-]edit] [-n] [-m <parent-number>] [-s] [-S[<keyid>]] "
 "<commit>..."
-msgstr ""
-"git revert [--[no-]edit] [-n] [-m <父编号>] [-s] [-S[<私钥 ID>]] <提交>..."
+msgstr "git revert [--[no-]edit] [-n] [-m <父编号>] [-s] [-S[<私钥 ID>]] <提交>..."
 
 #: builtin/revert.c
 msgid "git revert (--continue | --skip | --abort | --quit)"
@@ -14671,8 +14652,7 @@ msgstr "指定目录而不是模式。若你的目录以 '!' 开头，传入 --s
 msgid ""
 "specify directories rather than patterns.  If your directory really has any "
 "of '*?[]\\' in it, pass --skip-checks"
-msgstr ""
-"指定目录而不是模式。若你的目录真的包含 '*?[]\\' 中的字符，传入 --skip-checks"
+msgstr "指定目录而不是模式。若你的目录真的包含 '*?[]\\' 中的字符，传入 --skip-checks"
 
 #: builtin/sparse-checkout.c
 #, c-format
@@ -14732,8 +14712,8 @@ msgid ""
 "git stash show [-u | --include-untracked | --only-untracked] [<diff-"
 "options>] [<stash>]"
 msgstr ""
-"git stash show [-u | --include-untracked | --only-untracked] [<差异选项>] [<"
-"贮存>]"
+"git stash show [-u | --include-untracked | --only-untracked] [<差异选项>] "
+"[<贮存>]"
 
 #: builtin/stash.c
 msgid "git stash drop [-q | --quiet] [<stash>]"
@@ -14764,8 +14744,8 @@ msgid ""
 "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
 "          [--] [<pathspec>...]]"
 msgstr ""
-"git stash [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q "
-"| --quiet]\n"
+"git stash [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q |"
+" --quiet]\n"
 "          [-u | --include-untracked] [-a | --all] [(-m | --message <消息>]\n"
 "          [--pathspec-from-file=<文件> [--pathspec-file-nul]]\n"
 "          [--] [<路径规格>...]]"
@@ -15193,9 +15173,8 @@ msgstr "git submodule sync [--quiet] [--recursive] [<路径>]"
 msgid ""
 "Submodule work tree '%s' contains a .git directory. This will be replaced "
 "with a .git file by using absorbgitdirs."
-msgstr ""
-"子模组工作区 '%s' 包含一个 .git 目录。这将会用 absorbgitdirs 子命令替换成一"
-"个 .git 文件。"
+msgstr "子模组工作区 '%s' 包含一个 .git 目录。这将会用 absorbgitdirs "
+"子命令替换成一个 .git 文件。"
 
 #: builtin/submodule--helper.c
 #, c-format
@@ -15235,8 +15214,7 @@ msgstr "将所有子模组取消注册"
 #: builtin/submodule--helper.c
 msgid ""
 "git submodule deinit [--quiet] [-f | --force] [--all | [--] [<path>...]]"
-msgstr ""
-"git submodule deinit [--quiet] [-f | --force] [--all | [--] [<路径>...]]"
+msgstr "git submodule deinit [--quiet] [-f | --force] [--all | [--] [<路径>...]]"
 
 #: builtin/submodule--helper.c
 msgid "Use '--all' if you really want to deinitialize all submodules"
@@ -15509,10 +15487,10 @@ msgid ""
 "shallow] [--reference <repository>] [--recursive] [--[no-]single-branch] "
 "[--] [<path>...]"
 msgstr ""
-"git submodule [--quiet] update [--init [--filter=<过滤器规格>]] [--remote] [-"
-"N|--no-fetch] [-f|--force] [--checkout|--merge|--rebase] [--[no-]recommend-"
-"shallow] [--reference <仓库>] [--recursive] [--[no-]single-branch] [--] [<路"
-"径>...]"
+"git submodule [--quiet] update [--init [--filter=<过滤器规格>]] [--remote] "
+"[-N|--no-fetch] [-f|--force] [--checkout|--merge|--rebase] [--[no-]recommend-"
+"shallow] [--reference <仓库>] [--recursive] [--[no-]single-branch] [--] "
+"[<路径>...]"
 
 #: builtin/submodule--helper.c
 msgid "git submodule absorbgitdirs [<options>] [<path>...]"
@@ -15563,8 +15541,8 @@ msgid ""
 "git submodule--helper create-branch [-f|--force] [--create-reflog] [-q|--"
 "quiet] [-t|--track] [-n|--dry-run] <name> <start-oid> <start-name>"
 msgstr ""
-"git submodule--helper create-branch [-f|--force] [--create-reflog] [-q|--"
-"quiet] [-t|--track] [-n|--dry-run] <名称> <起始对象 ID> <起始名称>"
+"git submodule--helper create-branch [-f|--force] [--create-reflog] "
+"[-q|--quiet] [-t|--track] [-n|--dry-run] <名称> <起始对象 ID> <起始名称>"
 
 #: builtin/submodule--helper.c
 #, c-format
@@ -16130,23 +16108,20 @@ msgstr "清除 fsmonitor 有效位"
 msgid ""
 "core.splitIndex is set to false; remove or change it, if you really want to "
 "enable split index"
-msgstr ""
-"core.splitIndex 被设置为 false。如果您确实要启用索引拆分，请删除或修改它。"
+msgstr "core.splitIndex 被设置为 false。如果您确实要启用索引拆分，请删除或修改它。"
 
 #: builtin/update-index.c
 msgid ""
 "core.splitIndex is set to true; remove or change it, if you really want to "
 "disable split index"
-msgstr ""
-"core.splitIndex 被设置为 true。如果您确实要禁用索引拆分，请删除或修改它。"
+msgstr "core.splitIndex 被设置为 true。如果您确实要禁用索引拆分，请删除或修改它。"
 
 #: builtin/update-index.c
 msgid ""
 "core.untrackedCache is set to true; remove or change it, if you really want "
 "to disable the untracked cache"
-msgstr ""
-"core.untrackedCache 被设置为 true。如果您确实要禁用未跟踪文件缓存，请删除或修"
-"改它。"
+msgstr "core.untrackedCache 被设置为 "
+"true。如果您确实要禁用未跟踪文件缓存，请删除或修改它。"
 
 #: builtin/update-index.c
 msgid "Untracked cache disabled"
@@ -16156,9 +16131,8 @@ msgstr "缓存未跟踪文件被禁用"
 msgid ""
 "core.untrackedCache is set to false; remove or change it, if you really want "
 "to enable the untracked cache"
-msgstr ""
-"core.untrackedCache 被设置为 false。如果您确实要启用未跟踪文件缓存，请删除或"
-"修改它。"
+msgstr "core.untrackedCache 被设置为 "
+"false。如果您确实要启用未跟踪文件缓存，请删除或修改它。"
 
 #: builtin/update-index.c
 #, c-format
@@ -18050,8 +18024,7 @@ msgstr "相对路径的配置文件条件引用必须来自于文件"
 msgid ""
 "remote URLs cannot be configured in file directly or indirectly included by "
 "includeIf.hasconfig:remote.*.url"
-msgstr ""
-"远程 URL 不能在文件中配置，不管直接地还是通过 includeIf.hasconfig:remote.*."
+msgstr "远程 URL 不能在文件中配置，不管直接地还是通过 includeIf.hasconfig:remote.*."
 "url 间接地包含。"
 
 #: config.c
@@ -18598,8 +18571,7 @@ msgstr "如果使用 %2$s 编码，禁止在 '%1$s' 中使用 BOM"
 msgid ""
 "The file '%s' contains a byte order mark (BOM). Please use UTF-%.*s as "
 "working-tree-encoding."
-msgstr ""
-"文件 '%s' 包含一个字节顺序标记（BOM）。请使用 UTF-%.*s 作为工作区编码。"
+msgstr "文件 '%s' 包含一个字节顺序标记（BOM）。请使用 UTF-%.*s 作为工作区编码。"
 
 #: convert.c
 #, c-format
@@ -18611,9 +18583,8 @@ msgstr "如果编码为 %2$s，需要在 '%1$s' 中使用 BOM"
 msgid ""
 "The file '%s' is missing a byte order mark (BOM). Please use UTF-%sBE or UTF-"
 "%sLE (depending on the byte order) as working-tree-encoding."
-msgstr ""
-"文件 '%s' 缺失一个字节顺序标记（BOM）。请使用 UTF-%sBE or UTF-%sLE（取决于字"
-"节序）作为工作区编码。"
+msgstr "文件 '%s' 缺失一个字节顺序标记（BOM）。请使用 UTF-%sBE or "
+"UTF-%sLE（取决于字节序）作为工作区编码。"
 
 #: convert.c
 #, c-format
@@ -18878,8 +18849,7 @@ msgstr "  未知的 dirstat 参数 '%s'\n"
 msgid ""
 "color moved setting must be one of 'no', 'default', 'blocks', 'zebra', "
 "'dimmed-zebra', 'plain'"
-msgstr ""
-"移动的颜色设置必须是 'no'、'default'、'blocks'、'zebra'、'dimmed-zebra' 或 "
+msgstr "移动的颜色设置必须是 'no'、'default'、'blocks'、'zebra'、'dimmed-zebra' 或 "
 "'plain'"
 
 #: diff.c
@@ -18994,8 +18964,7 @@ msgstr "--color-moved-ws 中的无效模式 '%s' "
 msgid ""
 "option diff-algorithm accepts \"myers\", \"minimal\", \"patience\" and "
 "\"histogram\""
-msgstr ""
-"diff-algorithm 选项有 \"myers\"、\"minimal\"、\"patience\" 和 \"histogram\""
+msgstr "diff-algorithm 选项有 \"myers\"、\"minimal\"、\"patience\" 和 \"histogram\""
 
 #: diff.c
 #, c-format
@@ -19148,9 +19117,8 @@ msgstr "对于差异中的上下文、旧的和新的行，加亮显示错误的
 msgid ""
 "do not munge pathnames and use NULs as output field terminators in --raw or "
 "--numstat"
-msgstr ""
-"在 --raw 或者 --numstat 中，不对路径字符转码并使用 NUL 字符做为输出字段的分隔"
-"符"
+msgstr "在 --raw 或者 --numstat 中，不对路径字符转码并使用 NUL "
+"字符做为输出字段的分隔符"
 
 #: diff.c
 msgid "<prefix>"
@@ -19866,8 +19834,8 @@ msgid ""
 msgstr ""
 "git [-v | --version] [--help] [-C <路径>] [-c <名称>=<取值>]\n"
 "           [--exec-path[=<路径>]] [--html-path] [--man-path] [--info-path]\n"
-"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-"bare]\n"
+"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] "
+"[--bare]\n"
 "           [--git-dir=<路径>] [--work-tree=<路径>] [--namespace=<名称>]\n"
 "           [--super-prefix=<路径>] [--config-env=<名称>=<环境变量>]\n"
 "           <命令> [<参数>]"
@@ -20075,9 +20043,8 @@ msgstr "忽略 log.graphColors 中无效的颜色 '%.*s'"
 msgid ""
 "given pattern contains NULL byte (via -f <file>). This is only supported "
 "with -P under PCRE v2"
-msgstr ""
-"给定的模式包含 NULL 字符（通过 -f <文件> 参数）。只有 PCRE v2 下的 -P 支持此"
-"功能"
+msgstr "给定的模式包含 NULL 字符（通过 -f <文件> 参数）。只有 PCRE v2 下的 -P "
+"支持此功能"
 
 #: grep.c
 #, c-format
@@ -20551,18 +20518,16 @@ msgstr "自动合并 %s"
 msgid ""
 "CONFLICT (implicit dir rename): Existing file/dir at %s in the way of "
 "implicit directory rename(s) putting the following path(s) there: %s."
-msgstr ""
-"冲突（隐式目录重命名）：处于隐式目录重命名的现存文件/目录 %s，将以下路径放"
-"在：%s。"
+msgstr "冲突（隐式目录重命名）：处于隐式目录重命名的现存文件/目录 "
+"%s，将以下路径放在：%s。"
 
 #: merge-ort.c merge-recursive.c
 #, c-format
 msgid ""
 "CONFLICT (implicit dir rename): Cannot map more than one path to %s; "
 "implicit directory renames tried to put these paths there: %s"
-msgstr ""
-"冲突（隐式目录重命名）：无法映射一个以上路径到 %s，隐式目录重命名尝试将这些路"
-"径放置于此：%s"
+msgstr "冲突（隐式目录重命名）：无法映射一个以上路径到 "
+"%s，隐式目录重命名尝试将这些路径放置于此：%s"
 
 #: merge-ort.c
 #, c-format
@@ -20570,9 +20535,8 @@ msgid ""
 "CONFLICT (directory rename split): Unclear where to rename %s to; it was "
 "renamed to multiple other directories, with no destination getting a "
 "majority of the files."
-msgstr ""
-"冲突（分割的目录重命名）：不清楚重命名 %s 到哪里，因为它被重命名到多个其他目"
-"录中，没有一个目标目录中包含多数文件。"
+msgstr "冲突（分割的目录重命名）：不清楚重命名 %s "
+"到哪里，因为它被重命名到多个其他目录中，没有一个目标目录中包含多数文件。"
 
 #: merge-ort.c merge-recursive.c
 #, c-format
@@ -20586,41 +20550,36 @@ msgstr "警告：避免应用 %s -> %s 的重命名到 %s，因为 %s 本身已�
 msgid ""
 "Path updated: %s added in %s inside a directory that was renamed in %s; "
 "moving it to %s."
-msgstr ""
-"路径已更新：%s 添加到 %s，位于一个被重命名到 %s 的目录中，将其移动到 %s。"
+msgstr "路径已更新：%s 添加到 %s，位于一个被重命名到 %s 的目录中，将其移动到 %s。"
 
 #: merge-ort.c merge-recursive.c
 #, c-format
 msgid ""
 "Path updated: %s renamed to %s in %s, inside a directory that was renamed in "
 "%s; moving it to %s."
-msgstr ""
-"路径已更新：%1$s 重命名为 %3$s 中的 %2$s，而该目录被重命名到 %4$s 中，将其移"
-"动到 %5$s。"
+msgstr "路径已更新：%1$s 重命名为 %3$s 中的 %2$s，而该目录被重命名到 %4$s 中，"
+"将其移动到 %5$s。"
 
 #: merge-ort.c merge-recursive.c
 #, c-format
 msgid ""
 "CONFLICT (file location): %s added in %s inside a directory that was renamed "
 "in %s, suggesting it should perhaps be moved to %s."
-msgstr ""
-"冲突（文件位置）：%s 添加到 %s，位于一个被重命名为 %s 的目录中，建议将其移动"
-"到 %s。"
+msgstr "冲突（文件位置）：%s 添加到 %s，位于一个被重命名为 %s 的目录中，"
+"建议将其移动到 %s。"
 
 #: merge-ort.c merge-recursive.c
 #, c-format
 msgid ""
 "CONFLICT (file location): %s renamed to %s in %s, inside a directory that "
 "was renamed in %s, suggesting it should perhaps be moved to %s."
-msgstr ""
-"冲突（文件位置）：%1$s 重命名为 %3$s 中的 %2$s，而该目录被重命名到 %4$s 中，"
+msgstr "冲突（文件位置）：%1$s 重命名为 %3$s 中的 %2$s，而该目录被重命名到 %4$s 中，"
 "建议将其移动到 %5$s。"
 
 #: merge-ort.c
 #, c-format
 msgid "CONFLICT (rename/rename): %s renamed to %s in %s and to %s in %s."
-msgstr ""
-"冲突（重命名/重命名）：%1$s 重命名为 %3$s 中的 %2$s，以及在 %5$s 中的 %4$s。"
+msgstr "冲突（重命名/重命名）：%1$s 重命名为 %3$s 中的 %2$s，以及在 %5$s 中的 %4$s。"
 
 #: merge-ort.c
 #, c-format
@@ -20628,9 +20587,8 @@ msgid ""
 "CONFLICT (rename involved in collision): rename of %s -> %s has content "
 "conflicts AND collides with another path; this may result in nested conflict "
 "markers."
-msgstr ""
-"冲突（重命名卷入冲突）：重命名 %s -> %s 有内容冲突并且和另外一个路径碰撞，这"
-"可能导致嵌套的冲突标签。"
+msgstr "冲突（重命名卷入冲突）：重命名 %s -> %s "
+"有内容冲突并且和另外一个路径碰撞，这可能导致嵌套的冲突标签。"
 
 #: merge-ort.c
 #, c-format
@@ -20659,18 +20617,16 @@ msgstr "冲突（文件/目录）：目录已存在于 %2$s 中的 %1$s，将其
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed both "
 "of them so each can be recorded somewhere."
-msgstr ""
-"冲突（不同类型）：%s 在两侧有不同的类型，将两者都重命名以便它们能记录在不同位"
-"置。"
+msgstr "冲突（不同类型）：%s "
+"在两侧有不同的类型，将两者都重命名以便它们能记录在不同位置。"
 
 #: merge-ort.c
 #, c-format
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed one "
 "of them so each can be recorded somewhere."
-msgstr ""
-"冲突（不同类型）：%s 在两侧有不同的类型，将其中之一重命名以便它们能记录在不同"
-"位置。"
+msgstr "冲突（不同类型）：%s "
+"在两侧有不同的类型，将其中之一重命名以便它们能记录在不同位置。"
 
 #: merge-ort.c merge-recursive.c
 msgid "content"
@@ -20694,9 +20650,8 @@ msgstr "冲突（%s）：合并冲突于 %s"
 msgid ""
 "CONFLICT (modify/delete): %s deleted in %s and modified in %s.  Version %s "
 "of %s left in tree."
-msgstr ""
-"冲突（修改/删除）：%1$s 在 %2$s 中被删除，在 %3$s 中被修改。%5$s 的 %4$s 版本"
-"在树中被保留。"
+msgstr "冲突（修改/删除）：%1$s 在 %2$s 中被删除，在 %3$s 中被修改。%5$s 的 %4$s "
+"版本在树中被保留。"
 
 #. TRANSLATORS: This is a line of advice to resolve a merge
 #. conflict in a submodule. The first argument is the submodule
@@ -20854,17 +20809,15 @@ msgstr "错误：拒绝丢失未跟踪文件 '%s'，而是写入 %s。"
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s in %s. Version %s of %s left "
 "in tree."
-msgstr ""
-"冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %5$s 中被 %4$s。%7$s 的 %6$s 版"
-"本被保留。"
+msgstr "冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %5$s 中被 %4$s。%7$s 的 %6$s "
+"版本被保留。"
 
 #: merge-recursive.c
 #, c-format
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s to %s in %s. Version %s of %s "
 "left in tree."
-msgstr ""
-"冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %6$s 中的 %5$s 被 %4$s。%8$s 的 "
+msgstr "冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %6$s 中的 %5$s 被 %4$s。%8$s 的 "
 "%7$s 版本被保留。"
 
 #: merge-recursive.c
@@ -20872,9 +20825,8 @@ msgstr ""
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s in %s. Version %s of %s left "
 "in tree at %s."
-msgstr ""
-"冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %5$s 中被 %4$s。%7$s 的 %6$s 版"
-"本保留在 %8$s 中。"
+msgstr "冲突（%1$s/删除）：%2$s 在 %3$s 中被删除，在 %5$s 中被 %4$s。%7$s 的 %6$s "
+"版本保留在 %8$s 中。"
 
 #: merge-recursive.c
 #, c-format
@@ -20924,8 +20876,8 @@ msgid ""
 "CONFLICT (rename/rename): Rename \"%s\"->\"%s\" in branch \"%s\" rename "
 "\"%s\"->\"%s\" in \"%s\"%s"
 msgstr ""
-"冲突（重命名/重命名）：在分支 \"%3$s\" 中重命名 \"%1$s\"->\"%2$s\"，在分支 "
-"\"%6$s\" 中重命名 \"%4$s\"->\"%5$s\"%7$s"
+"冲突（重命名/重命名）：在分支 \"%3$s\" 中重命名 \"%1$s\"->\"%2$s\"，在分支 \""
+"%6$s\" 中重命名 \"%4$s\"->\"%5$s\"%7$s"
 
 #: merge-recursive.c
 msgid " (left unresolved)"
@@ -20934,9 +20886,8 @@ msgstr "（留下未解决）"
 #: merge-recursive.c
 #, c-format
 msgid "CONFLICT (rename/rename): Rename %s->%s in %s. Rename %s->%s in %s"
-msgstr ""
-"冲突（重命名/重命名）：在 %3$s 中重命名 %1$s->%2$s，在 %6$s 中重命名 %4$s-"
-">%5$s"
+msgstr "冲突（重命名/重命名）：在 %3$s 中重命名 %1$s->%2$s，在 %6$s 中重命名 "
+"%4$s->%5$s"
 
 #: merge-recursive.c
 #, c-format
@@ -20944,17 +20895,15 @@ msgid ""
 "CONFLICT (directory rename split): Unclear where to place %s because "
 "directory %s was renamed to multiple other directories, with no destination "
 "getting a majority of the files."
-msgstr ""
-"冲突（分割的目录重命名）：不清楚 %s 应该放在哪里，因为目录 %s 被重命名到多个"
-"其它目录，没有目录包含大部分文件。"
+msgstr "冲突（分割的目录重命名）：不清楚 %s 应该放在哪里，因为目录 %s "
+"被重命名到多个其它目录，没有目录包含大部分文件。"
 
 #: merge-recursive.c
 #, c-format
 msgid ""
 "CONFLICT (rename/rename): Rename directory %s->%s in %s. Rename directory %s-"
 ">%s in %s"
-msgstr ""
-"冲突（重命名/重命名）：在 %3$s 中重命名目录 %1$s->%2$s，在 %6$s 中重命名目录 "
+msgstr "冲突（重命名/重命名）：在 %3$s 中重命名目录 %1$s->%2$s，在 %6$s 中重命名目录 "
 "%4$s->%5$s"
 
 #: merge-recursive.c
@@ -22616,8 +22565,8 @@ msgstr ""
 ".       创建一个合并提交，并使用原始的合并提交说明（如果没有指定\n"
 ".       原始提交，使用注释部分的 oneline 作为提交说明）。使用\n"
 ".       -c <提交> 可以编辑提交说明。\n"
-"u, update-ref <引用> = 为引用 <ref> 设置一个占位符，以将该引用更新为此处的新"
-"提交。\n"
+"u, update-ref <引用> = 为引用 <ref> "
+"设置一个占位符，以将该引用更新为此处的新提交。\n"
 "                      此 <引用> 在变基结束后更新。\n"
 "\n"
 "可以对这些行重新排序，将从上至下执行。\n"
@@ -25339,9 +25288,8 @@ msgstr "test-helper simple-ipc sendbytes    [<名字>] [<字节数>] [<字节>]"
 msgid ""
 "test-helper simple-ipc multiple     [<name>] [<threads>] [<bytecount>] "
 "[<batchsize>]"
-msgstr ""
-"test-helper simple-ipc multiple     [<名字>] [<线程>] [<字节计数>] [<批处理大"
-"小>]"
+msgstr "test-helper simple-ipc multiple     [<名字>] [<线程>] [<字节计数>] "
+"[<批处理大小>]"
 
 #: t/helper/test-simple-ipc.c
 msgid "name or pathname of unix domain socket"
@@ -27190,8 +27138,8 @@ msgid ""
 "    * Saying \"./%s\" if you mean a file; or\n"
 "    * Giving --format-patch option if you mean a range.\n"
 msgstr ""
-"存在文件 '%s' 但是它也可能是一个用于产生补丁列表的提交范围。请用如下方法消除"
-"歧义：\n"
+"存在文件 '%s' "
+"但是它也可能是一个用于产生补丁列表的提交范围。请用如下方法消除歧义：\n"
 "\n"
 "    * 如果含义为一个文件，使用 \"./%s\"，或者\n"
 "    * 如果含义为一个范围，使用 --format-patch 选项。\n"

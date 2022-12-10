@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-11 00:28+0800\n"
-"PO-Revision-Date: 2022-12-10 16:41+0000\n"
+"PO-Revision-Date: 2022-12-10 17:10+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -3893,15 +3893,15 @@ msgstr "當進度表顯示時類似於 --all-progress"
 
 #: builtin/bundle.c:84
 msgid "specify bundle format version"
-msgstr "指定套件的格式版本"
+msgstr "指定套件包的格式版本"
 
 #: builtin/bundle.c:104
 msgid "Need a repository to create a bundle."
-msgstr "需要版本庫來建立套件。"
+msgstr "需要版本庫來建立套件包。"
 
 #: builtin/bundle.c:118
 msgid "do not show bundle details"
-msgstr "不顯示套件詳細資訊"
+msgstr "不顯示套件包的詳細資訊"
 
 #: builtin/bundle.c:138
 #, c-format
@@ -3910,7 +3910,7 @@ msgstr "%s 可以\n"
 
 #: builtin/bundle.c:194
 msgid "Need a repository to unbundle."
-msgstr "需要版本庫才能拆分套件。"
+msgstr "需要版本庫才能拆分套件包。"
 
 #: builtin/bundle.c:197
 msgid "Unbundling objects"
@@ -5121,7 +5121,7 @@ msgstr "uri"
 
 #: builtin/clone.c:166
 msgid "a URI for downloading bundles before fetching from origin remote"
-msgstr "在從 origin 遠端抓取前，用來下載套件的 URI"
+msgstr "在從 origin 遠端抓取前，用來下載套件包的 URI"
 
 #: builtin/clone.c:241
 #, c-format
@@ -5323,16 +5323,16 @@ msgstr "--local 被忽略"
 
 #: builtin/clone.c:1209
 msgid "cannot clone from filtered bundle"
-msgstr "無法從過濾後的套件複製"
+msgstr "無法從過濾後的套件包複製"
 
 #: builtin/clone.c:1253
 msgid "failed to initialize the repo, skipping bundle URI"
-msgstr "無法初始化版本庫，略過套件 URI"
+msgstr "無法初始化版本庫，略過套件包 URI"
 
 #: builtin/clone.c:1255
 #, c-format
 msgid "failed to fetch objects from bundle URI '%s'"
-msgstr "無法從套件 URL “%s” 抓取物件"
+msgstr "無法從套件包 URL “%s” 抓取物件"
 
 #: builtin/clone.c:1301 builtin/clone.c:1358
 msgid "remote transport reported error"
@@ -10052,9 +10052,8 @@ msgid "allow merging unrelated histories"
 msgstr "允許合並不相關的歷史"
 
 #: builtin/merge-tree.c:516
-#, fuzzy
 msgid "perform multiple merges, one per line of input"
-msgstr "執行多次合併，一次處理輸入一列"
+msgstr "執行多次合併，一次執行輸入一列"
 
 #: builtin/merge-tree.c:531 builtin/merge-tree.c:577
 msgid "--trivial-merge is incompatible with all other options"
@@ -12172,11 +12171,6 @@ msgid "need two commit ranges"
 msgstr "需要兩個提交範圍"
 
 #: builtin/read-tree.c:41
-#, fuzzy
-#| msgid ""
-#| "git read-tree [(-m [--trivial] [--aggressive] | --reset | --"
-#| "prefix=<prefix>) [-u | -i]] [--no-sparse-checkout] [--index-"
-#| "output=<file>] (--empty | <tree-ish1> [<tree-ish2> [<tree-ish3>]])"
 msgid ""
 "git read-tree [(-m [--trivial] [--aggressive] | --reset | --"
 "prefix=<prefix>)\n"
@@ -13596,7 +13590,7 @@ msgstr "無法將包重新命名為「%s」"
 #: builtin/repack.c:1073
 #, c-format
 msgid "pack-objects did not write a '%s' file for pack %s-%s"
-msgstr ""
+msgstr "pack-objects 沒有為 %2$s-%3$s 套件包寫入 “%1$s” 檔案"
 
 #: builtin/repack.c:1076 sequencer.c:4156
 #, c-format
@@ -13840,12 +13834,10 @@ msgid "only one pattern can be given with -l"
 msgstr "只能為 -l 提供一個模式"
 
 #: builtin/rerere.c:13
-#, fuzzy
-#| msgid ""
-#| "git rerere [clear | forget <path>... | status | remaining | diff | gc]"
 msgid ""
 "git rerere [clear | forget <pathspec>... | diff | status | remaining | gc]"
-msgstr "git rerere [clear | forget <路徑>... | status | remaining | diff | gc]"
+msgstr ""
+"git rerere [clear | forget <pathspec>... | diff | status | remaining | gc]"
 
 #: builtin/rerere.c:58
 msgid "register clean resolutions in index"
@@ -14104,22 +14096,16 @@ msgid "unknown mode for --abbrev-ref: %s"
 msgstr "--abbrev-ref 的模式未知：%s"
 
 #: builtin/rev-parse.c:880 revision.c:2714 revision.c:2748
-#, fuzzy
-#| msgid "--recurse-submodules can only be used to create branches"
 msgid "--exclude-hidden cannot be used together with --branches"
-msgstr "--recurse-submodules 只能用來建立分支"
+msgstr "--exclude-hidden 無法與 --branches 同時使用"
 
 #: builtin/rev-parse.c:886 revision.c:2725 revision.c:2755
-#, fuzzy
-#| msgid "-x and -X cannot be used together"
 msgid "--exclude-hidden cannot be used together with --tags"
-msgstr "-x 和 -X 不能同時使用"
+msgstr "--exclude-hidden 無法與 --tags 同時使用"
 
 #: builtin/rev-parse.c:896 revision.c:2730 revision.c:2762
-#, fuzzy
-#| msgid "--[no-]exclude-standard cannot be used for tracked contents"
 msgid "--exclude-hidden cannot be used together with --remotes"
-msgstr "--[no-]exclude-standard 不能用於已追蹤內容"
+msgstr "--exclude-hidden 無法與 --remotes 同時使用"
 
 #: builtin/rev-parse.c:913 setup.c:429
 msgid "this operation must be run in a work tree"
@@ -14135,24 +14121,24 @@ msgid ""
 "git revert [--[no-]edit] [-n] [-m <parent-number>] [-s] [-S[<keyid>]] "
 "<commit>..."
 msgstr ""
+"git revert [--[no-]edit] [-n] [-m <parent-number>] [-s] [-S[<keyid>]] "
+"<commit>..."
 
 #: builtin/revert.c:25
-#, fuzzy
-#| msgid "try \"git revert (--continue | %s--abort | --quit)\""
 msgid "git revert (--continue | --skip | --abort | --quit)"
-msgstr "嘗試 \"git revert (--continue | %s--abort | --quit)\""
+msgstr "git revert (--continue | --skip | --abort | --quit)"
 
 #: builtin/revert.c:30
 msgid ""
 "git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff]\n"
 "                [-S[<keyid>]] <commit>..."
 msgstr ""
+"git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff]\n"
+"                [-S[<keyid>]] <commit>..."
 
 #: builtin/revert.c:32
-#, fuzzy
-#| msgid "try \"git cherry-pick (--continue | %s--abort | --quit)\""
 msgid "git cherry-pick (--continue | --skip | --abort | --quit)"
-msgstr "嘗試 \"git cherry-pick (--continue | %s--abort | --quit)\""
+msgstr "git cherry-pick (--continue | --skip | --abort | --quit)"
 
 #: builtin/revert.c:73
 #, c-format
@@ -14233,23 +14219,14 @@ msgid "cherry-pick failed"
 msgstr "揀選失敗"
 
 #: builtin/rm.c:20
-#, fuzzy
-#| msgid ""
-#| "git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-#| "quiet]\n"
-#| "          [-u|--include-untracked] [-a|--all] [-m|--message <message>]\n"
-#| "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
-#| "          [--] [<pathspec>...]]"
 msgid ""
 "git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]\n"
 "       [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
 "       [--] [<pathspec>...]"
 msgstr ""
-"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] "
-"[-q|--quiet]\n"
-"          [-u|--include-untracked] [-a|--all] [-m|--message <訊息>]\n"
-"          [--pathspec-from-file=<檔案> [--pathspec-file-nul]]\n"
-"          [--] [<路徑規格>...]]"
+"git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]\n"
+"       [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
+"       [--] [<pathspec>...]"
 
 #: builtin/rm.c:209
 msgid ""
@@ -14325,12 +14302,6 @@ msgid "git rm: unable to remove %s"
 msgstr "git rm：不能刪除 %s"
 
 #: builtin/send-pack.c:20
-#, fuzzy
-#| msgid ""
-#| "git send-pack [--mirror] [--dry-run] [--force]\n"
-#| "              [--receive-pack=<git-receive-pack>]\n"
-#| "              [--verbose] [--thin] [--atomic]\n"
-#| "              [<host>:]<directory> (--all | <ref>...)"
 msgid ""
 "git send-pack [--mirror] [--dry-run] [--force]\n"
 "              [--receive-pack=<git-receive-pack>]\n"
@@ -14341,7 +14312,8 @@ msgstr ""
 "git send-pack [--mirror] [--dry-run] [--force]\n"
 "              [--receive-pack=<git-receive-pack>]\n"
 "              [--verbose] [--thin] [--atomic]\n"
-"              [<主機>:]<目錄> (--all | <引用>...)"
+"              [--[no-]signed | --signed=(true|false|if-asked)]\n"
+"              [<host>:]<directory> (--all | <ref>...)"
 
 #: builtin/send-pack.c:193
 msgid "remote name"
@@ -14372,10 +14344,9 @@ msgid "using multiple --group options with stdin is not supported"
 msgstr "不支援在標準輸入使用多個 --group 選項"
 
 #: builtin/shortlog.c:135 builtin/shortlog.c:137
-#, fuzzy, c-format
-#| msgid "writing to stdin is not supported"
+#, c-format
 msgid "using %s with stdin is not supported"
-msgstr "不支援寫到標準輸入"
+msgstr "不支援對 %s 使用 stdin"
 
 #: builtin/shortlog.c:342
 #, c-format
@@ -14419,13 +14390,6 @@ msgid "too many arguments given outside repository"
 msgstr "版本庫外執行提供了太多的參數"
 
 #: builtin/show-branch.c:14
-#, fuzzy
-#| msgid ""
-#| "git show-branch [-a | --all] [-r | --remotes] [--topo-order | --date-"
-#| "order]\n"
-#| "                [--current] [--color[=<when>] | --no-color] [--sparse]\n"
-#| "                [--more=<n> | --list | --independent | --merge-base]\n"
-#| "                [--no-name | --sha1-name] [--topics] [(<rev> | <glob>)...]"
 msgid ""
 "git show-branch [-a | --all] [-r | --remotes] [--topo-order | --date-order]\n"
 "                [--current] [--color[=<when>] | --no-color] [--sparse]\n"
@@ -14434,10 +14398,10 @@ msgid ""
 "                [(<rev> | <glob>)...]"
 msgstr ""
 "git show-branch [-a | --all] [-r | --remotes] [--topo-order | --date-order]\n"
-"                [--current] [--color[=<何時>] | --no-color] [--sparse]\n"
+"                [--current] [--color[=<when>] | --no-color] [--sparse]\n"
 "                [--more=<n> | --list | --independent | --merge-base]\n"
-"                [--no-name | --sha1-name] [--topics] [(<版本> | "
-"<萬用字元>)...]"
+"                [--no-name | --sha1-name] [--topics]\n"
+"                [(<rev> | <glob>)...]"
 
 #: builtin/show-branch.c:19
 msgid "git show-branch (-g | --reflog)[=<n>[,<base>]] [--list] [<ref>]"
@@ -14562,17 +14526,14 @@ msgid "Unknown hash algorithm"
 msgstr "未知的雜湊算法"
 
 #: builtin/show-ref.c:12
-#, fuzzy
-#| msgid ""
-#| "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference] [-s "
-#| "| --hash[=<n>]] [--abbrev[=<n>]] [--tags] [--heads] [--] [<pattern>...]"
 msgid ""
 "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
 "             [--heads] [--] [<pattern>...]"
 msgstr ""
-"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference] [-s | "
-"--hash[=<n>]] [--abbrev[=<n>]] [--tags] [--heads] [--] [<模式>...]"
+"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+"             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
+"             [--heads] [--] [<pattern>...]"
 
 #: builtin/show-ref.c:15
 msgid "git show-ref --exclude-existing[=<pattern>]"
@@ -14611,11 +14572,10 @@ msgid "show refs from stdin that aren't in local repository"
 msgstr "顯示從標準輸入中讀入的不在本機版本庫中的引用"
 
 #: builtin/sparse-checkout.c:23
-#, fuzzy
-#| msgid "git sparse-checkout (init|list|set|add|reapply|disable) <options>"
 msgid ""
 "git sparse-checkout (init | list | set | add | reapply | disable) [<options>]"
-msgstr "git sparse-checkout (init|list|set|add|reapply|disable) <選項>"
+msgstr ""
+"git sparse-checkout (init | list | set | add | reapply | disable) [<options>]"
 
 #: builtin/sparse-checkout.c:61
 msgid "this worktree is not sparse"
@@ -14759,53 +14719,38 @@ msgid "error while refreshing working directory"
 msgstr "重新整理工作目錄時發生錯誤"
 
 #: builtin/stash.c:25
-#, fuzzy
-#| msgid "git stash list [<options>]"
 msgid "git stash list [<log-options>]"
-msgstr "git stash list [<選項>]"
+msgstr "git stash list [<log-options>]"
 
 #: builtin/stash.c:27
 msgid ""
 "git stash show [-u | --include-untracked | --only-untracked] [<diff-"
 "options>] [<stash>]"
 msgstr ""
+"git stash show [-u | --include-untracked | --only-untracked] [<diff-options>]"
+" [<stash>]"
 
 #: builtin/stash.c:29
-#, fuzzy
-#| msgid "git stash drop [-q|--quiet] [<stash>]"
 msgid "git stash drop [-q | --quiet] [<stash>]"
-msgstr "git stash drop [-q|--quiet] [<stash>]"
+msgstr "git stash drop [-q | --quiet] [<stash>]"
 
 #: builtin/stash.c:31
-#, fuzzy
-#| msgid "git stash pop [--index] [-q|--quiet] [<stash>]"
 msgid "git stash pop [--index] [-q | --quiet] [<stash>]"
-msgstr "git stash pop [--index] [-q|--quiet] [<stash>]"
+msgstr "git stash pop [--index] [-q | --quiet] [<stash>]"
 
 #: builtin/stash.c:33
-#, fuzzy
-#| msgid "git stash apply [--index] [-q|--quiet] [<stash>]"
 msgid "git stash apply [--index] [-q | --quiet] [<stash>]"
-msgstr "git stash apply [--index] [-q|--quiet] [<stash>]"
+msgstr "git stash apply [--index] [-q | --quiet] [<stash>]"
 
 #: builtin/stash.c:35
 msgid "git stash branch <branchname> [<stash>]"
 msgstr "git stash branch <分支名> [<stash>]"
 
 #: builtin/stash.c:37
-#, fuzzy
-#| msgid "git stash store [-m|--message <message>] [-q|--quiet] <commit>"
 msgid "git stash store [(-m | --message) <message>] [-q | --quiet] <commit>"
-msgstr "git stash store [-m|--message <消息>] [-q|--quiet] <提交>"
+msgstr "git stash store [(-m | --message) <message>] [-q | --quiet] <commit>"
 
 #: builtin/stash.c:39
-#, fuzzy
-#| msgid ""
-#| "git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-#| "quiet]\n"
-#| "          [-u|--include-untracked] [-a|--all] [-m|--message <message>]\n"
-#| "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
-#| "          [--] [<pathspec>...]]"
 msgid ""
 "git stash [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q "
 "| --quiet]\n"
@@ -14814,32 +14759,26 @@ msgid ""
 "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
 "          [--] [<pathspec>...]]"
 msgstr ""
-"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] "
-"[-q|--quiet]\n"
-"          [-u|--include-untracked] [-a|--all] [-m|--message <訊息>]\n"
-"          [--pathspec-from-file=<檔案> [--pathspec-file-nul]]\n"
-"          [--] [<路徑規格>...]]"
+"git stash [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q |"
+" --quiet]\n"
+"          [-u | --include-untracked] [-a | --all] [(-m | --message) "
+"<message>]\n"
+"          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
+"          [--] [<pathspec>...]]"
 
 #: builtin/stash.c:44
-#, fuzzy
-#| msgid ""
-#| "git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-#| "quiet]\n"
-#| "          [-u|--include-untracked] [-a|--all] [<message>]"
 msgid ""
 "git stash save [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | "
 "--quiet]\n"
 "          [-u | --include-untracked] [-a | --all] [<message>]"
 msgstr ""
-"git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--quiet]"
-"\n"
-"          [-u|--include-untracked] [-a|--all] [<訊息>]"
+"git stash save [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | "
+"--quiet]\n"
+"          [-u | --include-untracked] [-a | --all] [<message>]"
 
 #: builtin/stash.c:47
-#, fuzzy
-#| msgid "stash message"
 msgid "git stash create [<message>]"
-msgstr "貯存說明"
+msgstr "git stash create [<message>]"
 
 #: builtin/stash.c:158
 #, c-format
@@ -15735,10 +15674,8 @@ msgid "'%s' is not a valid submodule name"
 msgstr "「%s」不是有效的子模組名稱"
 
 #: builtin/submodule--helper.c:3360
-#, fuzzy
-#| msgid "git submodule--helper config <name> [<value>]"
 msgid "git submodule--helper <command>"
-msgstr "git submodule--helper config <名稱> [<值>]"
+msgstr "git submodule--helper <command>"
 
 #: builtin/submodule--helper.c:3391 git.c:454 git.c:731
 #, c-format
@@ -15746,22 +15683,16 @@ msgid "%s doesn't support --super-prefix"
 msgstr "%s 不支援 --super-prefix"
 
 #: builtin/symbolic-ref.c:8
-#, fuzzy
-#| msgid "git symbolic-ref [<options>] <name> [<ref>]"
 msgid "git symbolic-ref [-m <reason>] <name> <ref>"
-msgstr "git symbolic-ref [<選項>] <名稱> [<引用>]"
+msgstr "git symbolic-ref [-m <reason>] <name> <ref>"
 
 #: builtin/symbolic-ref.c:9
-#, fuzzy
-#| msgid "git symbolic-ref -d [-q] <name>"
 msgid "git symbolic-ref [-q] [--short] [--no-recurse] <name>"
-msgstr "git symbolic-ref -d [-q] <名稱>"
+msgstr "git symbolic-ref [-q] [--short] [--no-recurse] <name>"
 
 #: builtin/symbolic-ref.c:10
-#, fuzzy
-#| msgid "git symbolic-ref -d [-q] <name>"
 msgid "git symbolic-ref --delete [-q] <name>"
-msgstr "git symbolic-ref -d [-q] <名稱>"
+msgstr "git symbolic-ref --delete [-q] <name>"
 
 #: builtin/symbolic-ref.c:46
 msgid "suppress error message for non-symbolic (detached) refs"
@@ -15776,10 +15707,8 @@ msgid "shorten ref output"
 msgstr "縮短引用輸出"
 
 #: builtin/symbolic-ref.c:49
-#, fuzzy
-#| msgid "use overlay mode (default)"
 msgid "recursively dereference (default)"
-msgstr "使用疊加模式（預設）"
+msgstr "遞迴反解引用（預設）"
 
 #: builtin/symbolic-ref.c:50 builtin/update-ref.c:505
 msgid "reason"
@@ -15790,37 +15719,28 @@ msgid "reason of the update"
 msgstr "更新的原因"
 
 #: builtin/tag.c:26
-#, fuzzy
-#| msgid ""
-#| "git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>]\n"
-#| "        <tagname> [<head>]"
 msgid ""
 "git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e]\n"
 "        <tagname> [<commit> | <object>]"
 msgstr ""
-"git tag [-a | -s | -u <key-id>] [-f] [-m <消息> | -F <檔案>]\n"
-"        <標籤名> [<head>]"
+"git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e]\n"
+"        <tagname> [<commit> | <object>]"
 
 #: builtin/tag.c:28
 msgid "git tag -d <tagname>..."
 msgstr "git tag -d <標籤名>..."
 
 #: builtin/tag.c:29
-#, fuzzy
-#| msgid ""
-#| "git tag -l [-n[<num>]] [--contains <commit>] [--no-contains <commit>] [--"
-#| "points-at <object>]\n"
-#| "        [--format=<format>] [--merged <commit>] [--no-merged <commit>] "
-#| "[<pattern>...]"
 msgid ""
 "git tag [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>]\n"
 "        [--points-at <object>] [--column[=<options>] | --no-column]\n"
 "        [--create-reflog] [--sort=<key>] [--format=<format>]\n"
 "        [--merged <commit>] [--no-merged <commit>] [<pattern>...]"
 msgstr ""
-"git tag -l [-n[<數字>]] [--contains <提交>] [--no-contains <提交>] [--points-"
-"at <物件>]\n"
-"        [--format=<格式>] [--merged <提交>] [--no-merged <提交>] [<模式>...]"
+"git tag [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>]\n"
+"        [--points-at <object>] [--column[=<options>] | --no-column]\n"
+"        [--create-reflog] [--sort=<key>] [--format=<format>]\n"
+"        [--merged <commit>] [--no-merged <commit>] [<pattern>...]"
 
 #: builtin/tag.c:33
 msgid "git tag -v [--format=<format>] <tagname>..."
@@ -16292,6 +16212,8 @@ msgid ""
 "git-upload-pack [--[no-]strict] [--timeout=<n>] [--stateless-rpc]\n"
 "                [--advertise-refs] <directory>"
 msgstr ""
+"git-upload-pack [--[no-]strict] [--timeout=<n>] [--stateless-rpc]\n"
+"                [--advertise-refs] <directory>"
 
 #: builtin/upload-pack.c:25 t/helper/test-serve-v2.c:17
 msgid "quit after a single request/response exchange"
@@ -16310,10 +16232,8 @@ msgid "interrupt transfer after <n> seconds of inactivity"
 msgstr "不活動 <n> 秒鐘後終止傳輸"
 
 #: builtin/verify-commit.c:19
-#, fuzzy
-#| msgid "git verify-commit [-v | --verbose] <commit>..."
 msgid "git verify-commit [-v | --verbose] [--raw] <commit>..."
-msgstr "git verify-commit [-v | --verbose] <提交>..."
+msgstr "git verify-commit [-v | --verbose] [--raw] <commit>..."
 
 #: builtin/verify-commit.c:68
 msgid "print commit contents"
@@ -16324,10 +16244,8 @@ msgid "print raw gpg status output"
 msgstr "列印原始 gpg 狀態輸出"
 
 #: builtin/verify-pack.c:59
-#, fuzzy
-#| msgid "git verify-pack [-v | --verbose] [-s | --stat-only] <pack>..."
 msgid "git verify-pack [-v | --verbose] [-s | --stat-only] [--] <pack>.idx..."
-msgstr "git verify-pack [-v | --verbose] [-s | --stat-only] <包>..."
+msgstr "git verify-pack [-v | --verbose] [-s | --stat-only] [--] <pack>.idx..."
 
 #: builtin/verify-pack.c:70
 msgid "verbose"
@@ -16338,10 +16256,8 @@ msgid "show statistics only"
 msgstr "只顯示統計"
 
 #: builtin/verify-tag.c:18
-#, fuzzy
-#| msgid "git verify-tag [-v | --verbose] [--format=<format>] <tag>..."
 msgid "git verify-tag [-v | --verbose] [--format=<format>] [--raw] <tag>..."
-msgstr "git verify-tag [-v | --verbose] [--format=<格式>] <標籤>..."
+msgstr "git verify-tag [-v | --verbose] [--format=<format>] [--raw] <tag>..."
 
 #: builtin/verify-tag.c:36
 msgid "print tag contents"
@@ -16352,44 +16268,36 @@ msgid ""
 "git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]]\n"
 "                 [-b <new-branch>] <path> [<commit-ish>]"
 msgstr ""
+"git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]]\n"
+"                 [-b <new-branch>] <path> [<commit-ish>]"
 
 #: builtin/worktree.c:22
-#, fuzzy
-#| msgid "git worktree list [<options>]"
 msgid "git worktree list [-v | --porcelain [-z]]"
-msgstr "git worktree list [<選項>]"
+msgstr "git worktree list [-v | --porcelain [-z]]"
 
 #: builtin/worktree.c:24
-#, fuzzy
-#| msgid "git worktree remove [<options>] <worktree>"
 msgid "git worktree lock [--reason <string>] <worktree>"
-msgstr "git worktree remove [<選項>] <工作區>"
+msgstr "git worktree lock [--reason <string>] <worktree>"
 
 #: builtin/worktree.c:26
 msgid "git worktree move <worktree> <new-path>"
 msgstr "git worktree move <工作區> <新路徑>"
 
 #: builtin/worktree.c:28
-#, fuzzy
-#| msgid "git worktree prune [<options>]"
 msgid "git worktree prune [-n] [-v] [--expire <expire>]"
-msgstr "git worktree prune [<選項>]"
+msgstr "git worktree prune [-n] [-v] [--expire <expire>]"
 
 #: builtin/worktree.c:30
-#, fuzzy
-#| msgid "git worktree remove [<options>] <worktree>"
 msgid "git worktree remove [-f] <worktree>"
-msgstr "git worktree remove [<選項>] <工作區>"
+msgstr "git worktree remove [-f] <worktree>"
 
 #: builtin/worktree.c:32
 msgid "git worktree repair [<path>...]"
 msgstr "git worktree repair [<路徑>...]"
 
 #: builtin/worktree.c:34
-#, fuzzy
-#| msgid "git worktree unlock <path>"
 msgid "git worktree unlock <worktree>"
-msgstr "git worktree unlock <路徑>"
+msgstr "git worktree unlock <worktree>"
 
 #: builtin/worktree.c:134
 #, c-format
@@ -16675,10 +16583,9 @@ msgid "core.fsyncMethod = batch is unsupported on this platform"
 msgstr "core.fsyncMethod = batch 不支援本平台"
 
 #: bundle-uri.c:198
-#, fuzzy, c-format
-#| msgid "unable to add '%s' to index"
+#, c-format
 msgid "bundle list at '%s' has no mode"
-msgstr "無法在索引中新增 '%s'"
+msgstr "位於 “%s” 的套件包清單沒有模式"
 
 #: bundle-uri.c:215
 msgid "failed to create temporary file"
@@ -16689,43 +16596,41 @@ msgid "insufficient capabilities"
 msgstr "功能不足"
 
 #: bundle-uri.c:423
-#, fuzzy, c-format
-#| msgid "failed to unbundle bundle from URI '%s'"
+#, c-format
 msgid "unrecognized bundle mode from URI '%s'"
-msgstr "無法解開源自 URI “%s” 的套件"
+msgstr "無法識別從 URI “%s” 取回的套件包模式"
 
 #: bundle-uri.c:459
 #, c-format
 msgid "exceeded bundle URI recursion limit (%d)"
-msgstr ""
+msgstr "超出套件包 URI 遞迴限制 (%d)"
 
 #: bundle-uri.c:471
 #, c-format
 msgid "failed to download bundle from URI '%s'"
-msgstr "無法從 “%s” URI 下載套件"
+msgstr "無法從 “%s” URI 下載套件包"
 
 #: bundle-uri.c:479
-#, fuzzy, c-format
-#| msgid "file at URI '%s' is not a bundle"
+#, c-format
 msgid "file at URI '%s' is not a bundle or bundle list"
-msgstr "位於 URI “%s” 的檔案不是套件"
+msgstr "位於 URI “%s” 的檔案不是套件包或套件包清單"
 
 #: bundle-uri.c:576
 msgid "bundle-uri: got an empty line"
-msgstr ""
+msgstr "bundle-uri: 收到空白列"
 
 #: bundle-uri.c:581
 msgid "bundle-uri: line is not of the form 'key=value'"
-msgstr ""
+msgstr "bundle-uri: 列的格式不是 “key=value”"
 
 #: bundle-uri.c:583
 msgid "bundle-uri: line has empty key or value"
-msgstr ""
+msgstr "bundle-uri: 列有空鍵或空值"
 
 #: bundle.c:45
 #, c-format
 msgid "unrecognized bundle hash algorithm: %s"
-msgstr "無法識別的套件雜湊演算法：%s"
+msgstr "無法識別的套件包雜湊演算法：%s"
 
 #: bundle.c:53
 #, c-format
@@ -16735,7 +16640,7 @@ msgstr "未知功能 '%s'"
 #: bundle.c:79
 #, c-format
 msgid "'%s' does not look like a v2 or v3 bundle file"
-msgstr "'%s' 不像是一個 v2 或 v3 版本的套件檔案"
+msgstr "“%s” 不像是一個 v2 或 v3 版本的套件包檔案"
 
 #: bundle.c:118
 #, c-format
@@ -16748,27 +16653,27 @@ msgstr "版本庫中缺少這些必備的提交："
 
 #: bundle.c:206
 msgid "need a repository to verify a bundle"
-msgstr "需要版本庫驗證套件"
+msgstr "需要版本庫驗證套件包"
 
 #: bundle.c:261
 #, c-format
 msgid "The bundle contains this ref:"
 msgid_plural "The bundle contains these %<PRIuMAX> refs:"
-msgstr[0] "這個套件含有這 %<PRIuMAX> 個引用："
+msgstr[0] "這個套件包，含有這 %<PRIuMAX> 個引用："
 
 #: bundle.c:269
 msgid "The bundle records a complete history."
-msgstr "這個套件記錄完整歷史紀錄。"
+msgstr "這個套件包記下了完整歷史紀錄。"
 
 #: bundle.c:271
 #, c-format
 msgid "The bundle requires this ref:"
 msgid_plural "The bundle requires these %<PRIuMAX> refs:"
-msgstr[0] "這個套件需要這 %<PRIuMAX> 個引用："
+msgstr[0] "這個套件包需要這 %<PRIuMAX> 個引用："
 
 #: bundle.c:357
 msgid "unable to dup bundle descriptor"
-msgstr "無法複製套件描述符"
+msgstr "無法複製套件包描述元"
 
 #: bundle.c:364
 msgid "Could not spawn pack-objects"
@@ -16786,16 +16691,16 @@ msgstr "引用 '%s' 被 rev-list 選項排除"
 #: bundle.c:555
 #, c-format
 msgid "unsupported bundle version %d"
-msgstr "不支援的套件版本 %d"
+msgstr "不支援的套件包版本 %d"
 
 #: bundle.c:557
 #, c-format
 msgid "cannot write bundle version %d with algorithm %s"
-msgstr "無法寫入 %2$s 演算法的套件版本 %1$d"
+msgstr "無法寫入使用 %2$s 演算法的套件包版本 %1$d"
 
 #: bundle.c:607
 msgid "Refusing to create empty bundle."
-msgstr "不能建立空套件。"
+msgstr "不能建立空套件包。"
 
 #: bundle.c:617
 #, c-format
@@ -17466,15 +17371,13 @@ msgstr "Git 使用的常見問題"
 
 #: command-list.h:211
 msgid "The bundle file format"
-msgstr "套件檔案格式"
+msgstr "套件包檔案格式"
 
 #: command-list.h:212
 msgid "Chunk-based file formats"
 msgstr "以區塊為基礎的檔案格式"
 
 #: command-list.h:213
-#, fuzzy
-#| msgid "Git commit graph format"
 msgid "Git commit-graph format"
 msgstr "Git 提交圖格式"
 
@@ -17902,10 +17805,9 @@ msgid "health thread wait failed [GLE %ld]"
 msgstr "健康監聽執行緒等待失敗 [GLE %ld]"
 
 #: compat/fsmonitor/fsm-ipc-darwin.c:48
-#, fuzzy, c-format
-#| msgid "invalid path '%s'"
+#, c-format
 msgid "Invalid path: %s"
-msgstr "無效路徑 '%s'"
+msgstr "無效路徑：%s"
 
 #: compat/fsmonitor/fsm-listen-darwin.c:451
 msgid "Unable to create FSEventStream."
@@ -17946,28 +17848,24 @@ msgid "could not read directory changes [GLE %ld]"
 msgstr "無法讀取目錄變化 [GLE %ld]"
 
 #: compat/fsmonitor/fsm-path-utils-darwin.c:76
-#, fuzzy, c-format
-#| msgid "read(%s) failed"
+#, c-format
 msgid "opendir('%s') failed"
-msgstr "讀取（%s）失敗"
+msgstr "opendir('%s') 失敗"
 
 #: compat/fsmonitor/fsm-path-utils-darwin.c:85
-#, fuzzy, c-format
-#| msgid "task '%s' failed"
+#, c-format
 msgid "lstat('%s') failed"
-msgstr "作業 '%s' 失敗"
+msgstr "lstat('%s') 失敗"
 
 #: compat/fsmonitor/fsm-path-utils-darwin.c:93
-#, fuzzy, c-format
-#| msgid "read(%s) failed"
+#, c-format
 msgid "strbuf_readlink('%s') failed"
-msgstr "讀取（%s）失敗"
+msgstr "strbuf_readlink('%s') 失敗"
 
 #: compat/fsmonitor/fsm-path-utils-darwin.c:114
-#, fuzzy, c-format
-#| msgid "read(%s) failed"
+#, c-format
 msgid "closedir('%s') failed"
-msgstr "讀取（%s）失敗"
+msgstr "closedir('%s') 失敗"
 
 #: compat/fsmonitor/fsm-path-utils-win32.c:19
 #, c-format
@@ -19930,13 +19828,11 @@ msgid "virtual repository '%s' is incompatible with fsmonitor"
 msgstr "虛擬版本庫 “%s” 與 fsmonitor 不相容"
 
 #: fsmonitor-settings.c:288
-#, fuzzy, c-format
-#| msgid ""
-#| "repository '%s' is incompatible with fsmonitor due to lack of Unix sockets"
+#, c-format
 msgid ""
 "socket directory '%s' is incompatible with fsmonitor due to lack of Unix "
 "sockets support"
-msgstr "版本庫 “%s” 因缺少 Unix 通訊端而與 fsmonitor 不相容"
+msgstr "通訊端 “%s” 因缺少 Unix 通訊端支援，而與 fsmonitor 不相容"
 
 #: git.c:28
 msgid ""
@@ -20320,10 +20216,8 @@ msgstr[0] ""
 "最類似的指令有"
 
 #: help.c:760
-#, fuzzy
-#| msgid "git version [<options>]"
 msgid "git version [--build-options]"
-msgstr "git version [<選項>]"
+msgstr "git version [--build-options]"
 
 #: help.c:816
 #, c-format
@@ -22387,10 +22281,9 @@ msgid "promisor remote name cannot begin with '/': %s"
 msgstr "promisor 遠端名稱不能以 '/' 開始：%s"
 
 #: promisor-remote.c:265
-#, fuzzy, c-format
-#| msgid "could not write '%s' promisor file"
+#, c-format
 msgid "could not fetch %s from promisor remote"
-msgstr "無法寫入「%s」promisor 檔案"
+msgstr "無法從承諾者遠端抓取 %s"
 
 #: protocol-caps.c:103
 msgid "object-info: expected flush after arguments"
@@ -23666,14 +23559,13 @@ msgid "failed to find tree of %s"
 msgstr "無法找到 %s 指向的樹"
 
 #: revision.c:1573
-#, fuzzy, c-format
-#| msgid "unsupported index version %s"
+#, c-format
 msgid "unsupported section for hidden refs: %s"
-msgstr "不支援的索引版本 %s"
+msgstr "不支援的隱藏引用區塊：%s"
 
 #: revision.c:1576
 msgid "--exclude-hidden= passed more than once"
-msgstr ""
+msgstr "--exclude-hidden= 傳入了不止一次"
 
 #: revision.c:1756
 #, c-format
@@ -23861,15 +23753,14 @@ msgid "--all or <enlistment>, but not both"
 msgstr "--all 或 <enlistment> 但不能傳入兩者"
 
 #: scalar.c:666
-#, fuzzy, c-format
-#| msgid "could not resolve ref '%s'"
+#, c-format
 msgid "could not remove stale scalar.repo '%s'"
-msgstr "無法解析引用 '%s'"
+msgstr "無法移除過時的 scalar.repo “%s”"
 
 #: scalar.c:669
 #, c-format
 msgid "removing stale scalar.repo '%s'"
-msgstr ""
+msgstr "正在移除過時的 scalar.repo “%s”"
 
 #: scalar.c:673
 #, c-format
@@ -25349,15 +25240,15 @@ msgstr "無法 lstat “%s”"
 
 #: t/helper/test-cache-tree.c:9
 msgid "test-tool cache-tree <options> (control|prime|update)"
-msgstr ""
+msgstr "test-tool cache-tree <options> (control|prime|update)"
 
 #: t/helper/test-cache-tree.c:23
 msgid "clear the cache tree before each iteration"
-msgstr ""
+msgstr "每次迭代前清除快取樹狀物件"
 
 #: t/helper/test-cache-tree.c:25
 msgid "number of entries in the cache tree to invalidate (default 0)"
-msgstr ""
+msgstr "在快取樹狀物件中，要使失效的項目數量（預設值為 0）"
 
 #: t/helper/test-fast-rebase.c:142
 msgid "unhandled options"
@@ -25701,7 +25592,7 @@ msgstr "將要設定 '%1$s' 的上游為 '%3$s' 的 '%2$s'\n"
 #: transport.c:138
 #, c-format
 msgid "could not read bundle '%s'"
-msgstr "無法讀取「%s」套件"
+msgstr "無法讀取「%s」套件包"
 
 #: transport.c:234
 #, c-format

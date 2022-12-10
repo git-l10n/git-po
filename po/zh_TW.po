@@ -25,18 +25,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-11 00:28+0800\n"
-"PO-Revision-Date: 2022-12-10 16:24+0000\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"PO-Revision-Date: 2022-12-10 16:41+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.14.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:382
 #, c-format
@@ -3744,8 +3744,7 @@ msgstr ""
 msgid ""
 "the '--set-upstream' option is no longer supported. Please use '--track' or "
 "'--set-upstream-to' instead."
-msgstr ""
-"不再支援選項 '--set-upstream'。請使用 '--track' 或 '--set-upstream-to'。"
+msgstr "不再支援選項 '--set-upstream'。請使用 '--track' 或 '--set-upstream-to'。"
 
 #: builtin/bugreport.c:17
 msgid "git version:\n"
@@ -4939,15 +4938,13 @@ msgstr "只刪除忽略的檔案"
 msgid ""
 "clean.requireForce set to true and neither -i, -n, nor -f given; refusing to "
 "clean"
-msgstr ""
-"clean.requireForce 設定為 true 且未提供 -i、-n 或 -f 選項，拒絕執行清理動作"
+msgstr "clean.requireForce 設定為 true 且未提供 -i、-n 或 -f 選項，拒絕執行清理動作"
 
 #: builtin/clean.c:954
 msgid ""
 "clean.requireForce defaults to true and neither -i, -n, nor -f given; "
 "refusing to clean"
-msgstr ""
-"clean.requireForce 預設為 true 且未提供 -i、-n 或 -f 選項，拒絕執行清理動作"
+msgstr "clean.requireForce 預設為 true 且未提供 -i、-n 或 -f 選項，拒絕執行清理動作"
 
 #: builtin/clean.c:966
 msgid "-x and -X cannot be used together"
@@ -5960,9 +5957,8 @@ msgstr "顯示未追蹤的檔案，「模式」的可選參數：all、normal、
 msgid ""
 "show ignored files, optional modes: traditional, matching, no. (Default: "
 "traditional)"
-msgstr ""
-"顯示已忽略的檔案，可選模式：traditional、matching、no。（預設值："
-"traditional）"
+msgstr "顯示已忽略的檔案，可選模式：traditional、matching、no。（預設值：traditional"
+"）"
 
 #: builtin/commit.c:1519 parse-options.h:209
 msgid "when"
@@ -5972,8 +5968,7 @@ msgstr "何時"
 msgid ""
 "ignore changes to submodules, optional when: all, dirty, untracked. "
 "(Default: all)"
-msgstr ""
-"忽略子模組的更改，「何時」的可選參數：all、dirty、untracked。（預設值：all）"
+msgstr "忽略子模組的更改，「何時」的可選參數：all、dirty、untracked。（預設值：all）"
 
 #: builtin/commit.c:1522
 msgid "list untracked files in columns"
@@ -6338,9 +6333,8 @@ msgstr "顯示設定的來源（檔案、標準輸入、資料物件，或命令
 
 #: builtin/config.c:166
 msgid "show scope of config (worktree, local, global, system, command)"
-msgstr ""
-"顯示設定檔的作用域 (工作區 worktree、本機 local、全域 global、系統 system、指"
-"令 command)"
+msgstr "顯示設定檔的作用域 (工作區 worktree、本機 local、全域 global、系統 system、"
+"指令 command)"
 
 #: builtin/config.c:167 builtin/env--helper.c:45
 msgid "value"
@@ -6514,8 +6508,8 @@ msgid ""
 "\n"
 "\tchmod 0700 %s"
 msgstr ""
-"您的 socket 目錄權限過於寬鬆，其他使用者可能會讀取您快取的認證訊息。考慮執"
-"行：\n"
+"您的 socket "
+"目錄權限過於寬鬆，其他使用者可能會讀取您快取的認證訊息。考慮執行：\n"
 "\n"
 "\tchmod 0700 %s"
 
@@ -8034,8 +8028,7 @@ msgstr "有太多無法取得的鬆散物件，執行「git prune」刪除它們
 #: builtin/gc.c:750
 msgid ""
 "git maintenance run [--auto] [--[no-]quiet] [--task=<task>] [--schedule]"
-msgstr ""
-"git maintenance run [--auto] [--[no-]quiet] [--task=<作業>] [--schedule]"
+msgstr "git maintenance run [--auto] [--[no-]quiet] [--task=<作業>] [--schedule]"
 
 #: builtin/gc.c:780
 msgid "--no-schedule is not allowed"
@@ -9740,8 +9733,7 @@ msgstr "在稀疏索引存在時顯示稀疏目錄"
 msgid ""
 "--format cannot be used with -s, -o, -k, -t, --resolve-undo, --deduplicate, "
 "--eol"
-msgstr ""
-"--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate、--eol 一起使用"
+msgstr "--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate、--eol 一起使用"
 
 #: builtin/ls-remote.c:9
 msgid ""
@@ -9956,8 +9948,8 @@ msgid ""
 "git merge-file [<options>] [-L <name1> [-L <orig> [-L <name2>]]] <file1> "
 "<orig-file> <file2>"
 msgstr ""
-"git merge-file [<選項>] [-L <檔案1> [-L <初始> [-L <名字2>]]] <檔案1> <初始文"
-"件> <檔案2>"
+"git merge-file [<選項>] [-L <檔案1> [-L <初始> [-L <名字2>]]] <檔案1> "
+"<初始文件> <檔案2>"
 
 #: builtin/merge-file.c:35
 msgid "send results to standard output"
@@ -11050,8 +11042,8 @@ msgid ""
 "'git notes merge --commit', or abort the merge with 'git notes merge --"
 "abort'.\n"
 msgstr ""
-"自動合併說明失敗。修改 %s 中的衝突並且使用指令 'git notes merge --commit' 提"
-"交結果，或者使用指令 'git notes merge --abort' 終止合併。\n"
+"自動合併說明失敗。修改 %s 中的衝突並且使用指令 'git notes merge --commit' "
+"提交結果，或者使用指令 'git notes merge --abort' 終止合併。\n"
 
 #: builtin/notes.c:899 builtin/tag.c:597
 #, c-format
@@ -11106,8 +11098,7 @@ msgstr "git pack-objects [<選項>] <前綴名稱> [< <引用列表> | < <物件
 msgid ""
 "write_reuse_object: could not locate %s, expected at offset %<PRIuMAX> in "
 "pack %s"
-msgstr ""
-"write_reuse_object：無法定位 %1$s，預期在 %3$s 包中的 %2$<PRIuMAX> 偏移量"
+msgstr "write_reuse_object：無法定位 %1$s，預期在 %3$s 包中的 %2$<PRIuMAX> 偏移量"
 
 #: builtin/pack-objects.c:581
 #, c-format
@@ -11233,8 +11224,8 @@ msgid ""
 "value of uploadpack.blobpackfileuri must be of the form '<object-hash> <pack-"
 "hash> <uri>' (got '%s')"
 msgstr ""
-"uploadpack.blobpackfileuri 的值格式必須為 '<object-hash> <pack-hash> "
-"<uri>' (收到 '%s')"
+"uploadpack.blobpackfileuri 的值格式必須為 '<object-hash> <pack-hash> <uri>' ("
+"收到 '%s')"
 
 #: builtin/pack-objects.c:3209
 #, c-format
@@ -11553,8 +11544,7 @@ msgstr "枚舉物件"
 msgid ""
 "Total %<PRIu32> (delta %<PRIu32>), reused %<PRIu32> (delta %<PRIu32>), pack-"
 "reused %<PRIu32>"
-msgstr ""
-"總共 %<PRIu32> (差異 %<PRIu32>)，復用 %<PRIu32> (差異 %<PRIu32>)，重用包 "
+msgstr "總共 %<PRIu32> (差異 %<PRIu32>)，復用 %<PRIu32> (差異 %<PRIu32>)，重用包 "
 "%<PRIu32>"
 
 #: builtin/pack-redundant.c:601
@@ -12281,14 +12271,13 @@ msgid ""
 "git rebase [-i] [options] [--exec <cmd>] [--onto <newbase> | --keep-base] "
 "[<upstream> [<branch>]]"
 msgstr ""
-"git rebase [-i] [options] [--exec <命令>] [--onto <新基礎> | --keep-base] [<"
-"上游> [<分支>]]"
+"git rebase [-i] [options] [--exec <命令>] [--onto <新基礎> | --keep-base] ["
+"<上游> [<分支>]]"
 
 #: builtin/rebase.c:36
 msgid ""
 "git rebase [-i] [options] [--exec <cmd>] [--onto <newbase>] --root [<branch>]"
-msgstr ""
-"git rebase [-i] [選項] [--exec <命令>] [--onto <新基礎>] --root [<分支>]"
+msgstr "git rebase [-i] [選項] [--exec <命令>] [--onto <新基礎>] --root [<分支>]"
 
 #: builtin/rebase.c:188 sequencer.c:2687
 #, c-format
@@ -12912,8 +12901,8 @@ msgid ""
 "git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--"
 "mirror=<fetch|push>] <name> <url>"
 msgstr ""
-"git remote add [-t <分支>] [-m <master>] [-f] [--tags | --no-tags] [--"
-"mirror=<fetch|push>] <名稱> <位址>"
+"git remote add [-t <分支>] [-m <master>] [-f] [--tags | --no-tags] "
+"[--mirror=<fetch|push>] <名稱> <位址>"
 
 #: builtin/remote.c:20 builtin/remote.c:40
 msgid "git remote rename [--[no-]progress] <old> <new>"
@@ -13889,8 +13878,7 @@ msgstr "git reset [-q] [<樹或提交>] [--] <路徑規格>..."
 #: builtin/reset.c:35
 msgid ""
 "git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]"
-msgstr ""
-"git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<樹或提交>]"
+msgstr "git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<樹或提交>]"
 
 #: builtin/reset.c:36
 msgid "git reset --patch [<tree-ish>] [--] [<pathspec>...]"
@@ -14263,8 +14251,8 @@ msgid ""
 "       [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
 "       [--] [<pathspec>...]"
 msgstr ""
-"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-"quiet]\n"
+"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] "
+"[-q|--quiet]\n"
 "          [-u|--include-untracked] [-a|--all] [-m|--message <訊息>]\n"
 "          [--pathspec-from-file=<檔案> [--pathspec-file-nul]]\n"
 "          [--] [<路徑規格>...]]"
@@ -14454,8 +14442,8 @@ msgstr ""
 "git show-branch [-a | --all] [-r | --remotes] [--topo-order | --date-order]\n"
 "                [--current] [--color[=<何時>] | --no-color] [--sparse]\n"
 "                [--more=<n> | --list | --independent | --merge-base]\n"
-"                [--no-name | --sha1-name] [--topics] [(<版本> | <萬用字元"
-">)...]"
+"                [--no-name | --sha1-name] [--topics] [(<版本> | "
+"<萬用字元>)...]"
 
 #: builtin/show-branch.c:19
 msgid "git show-branch (-g | --reflog)[=<n>[,<base>]] [--list] [<ref>]"
@@ -14589,8 +14577,8 @@ msgid ""
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
 "             [--heads] [--] [<pattern>...]"
 msgstr ""
-"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference] [-s | --"
-"hash[=<n>]] [--abbrev[=<n>]] [--tags] [--heads] [--] [<模式>...]"
+"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference] [-s | "
+"--hash[=<n>]] [--abbrev[=<n>]] [--tags] [--heads] [--] [<模式>...]"
 
 #: builtin/show-ref.c:15
 msgid "git show-ref --exclude-existing[=<pattern>]"
@@ -14833,8 +14821,8 @@ msgid ""
 "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
 "          [--] [<pathspec>...]]"
 msgstr ""
-"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-"quiet]\n"
+"git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] "
+"[-q|--quiet]\n"
 "          [-u|--include-untracked] [-a|--all] [-m|--message <訊息>]\n"
 "          [--pathspec-from-file=<檔案> [--pathspec-file-nul]]\n"
 "          [--] [<路徑規格>...]]"
@@ -14850,8 +14838,8 @@ msgid ""
 "--quiet]\n"
 "          [-u | --include-untracked] [-a | --all] [<message>]"
 msgstr ""
-"git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--"
-"quiet]\n"
+"git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--quiet]"
+"\n"
 "          [-u|--include-untracked] [-a|--all] [<訊息>]"
 
 #: builtin/stash.c:47
@@ -15312,8 +15300,7 @@ msgstr "取消註冊所有子模組"
 #: builtin/submodule--helper.c:1465
 msgid ""
 "git submodule deinit [--quiet] [-f | --force] [--all | [--] [<path>...]]"
-msgstr ""
-"git submodule deinit [--quiet] [-f | --force] [--all | [--] [<路徑>...]]"
+msgstr "git submodule deinit [--quiet] [-f | --force] [--all | [--] [<路徑>...]]"
 
 #: builtin/submodule--helper.c:1480
 msgid "Use '--all' if you really want to deinitialize all submodules"
@@ -15641,8 +15628,8 @@ msgid ""
 "git submodule--helper create-branch [-f|--force] [--create-reflog] [-q|--"
 "quiet] [-t|--track] [-n|--dry-run] <name> <start-oid> <start-name>"
 msgstr ""
-"git submodule--helper create-branch [-f|--force] [--create-reflog] [-q|--"
-"quiet] [-t|--track] [-n|--dry-run] <name> <start-oid> <start-name>"
+"git submodule--helper create-branch [-f|--force] [--create-reflog] "
+"[-q|--quiet] [-t|--track] [-n|--dry-run] <name> <start-oid> <start-name>"
 
 #: builtin/submodule--helper.c:2959
 #, c-format
@@ -16240,9 +16227,8 @@ msgstr "core.splitIndex 被設定為 true。如果您確定要停用索引分割
 msgid ""
 "core.untrackedCache is set to true; remove or change it, if you really want "
 "to disable the untracked cache"
-msgstr ""
-"core.untrackedCache 被設定為 true。如果您確定要停用未追蹤檔案的快取，請移除或"
-"修改"
+msgstr "core.untrackedCache 被設定為 "
+"true。如果您確定要停用未追蹤檔案的快取，請移除或修改"
 
 #: builtin/update-index.c:1241
 msgid "Untracked cache disabled"
@@ -16252,9 +16238,8 @@ msgstr "快取未追蹤檔案被停用"
 msgid ""
 "core.untrackedCache is set to false; remove or change it, if you really want "
 "to enable the untracked cache"
-msgstr ""
-"core.untrackedCache 被設定為 false。如果您確定要啟用未追蹤檔案快取，請移除或"
-"修改"
+msgstr "core.untrackedCache 被設定為 "
+"false。如果您確定要啟用未追蹤檔案快取，請移除或修改"
 
 #: builtin/update-index.c:1253
 #, c-format
@@ -18166,8 +18151,7 @@ msgstr "相對路徑的設定檔案條件引用必須來自於檔案"
 msgid ""
 "remote URLs cannot be configured in file directly or indirectly included by "
 "includeIf.hasconfig:remote.*.url"
-msgstr ""
-"無法在檔案設定遠端 URL，無論是直接或間接透過 includeIf.hasconfig:remote.*."
+msgstr "無法在檔案設定遠端 URL，無論是直接或間接透過 includeIf.hasconfig:remote.*."
 "url 引入"
 
 #: config.c:520
@@ -18726,9 +18710,8 @@ msgstr "如果編碼為 %2$s，需要在 '%1$s' 中使用 BOM"
 msgid ""
 "The file '%s' is missing a byte order mark (BOM). Please use UTF-%sBE or UTF-"
 "%sLE (depending on the byte order) as working-tree-encoding."
-msgstr ""
-"檔案 '%s' 缺少一個位元組順序標記（BOM）。請使用 UTF-%sBE or UTF-%sLE（取決於"
-"字節序）作為工作區編碼。"
+msgstr "檔案 '%s' 缺少一個位元組順序標記（BOM）。請使用 UTF-%sBE or "
+"UTF-%sLE（取決於字節序）作為工作區編碼。"
 
 #: convert.c:408 convert.c:479
 #, c-format
@@ -18984,8 +18967,7 @@ msgstr "  未知的 dirstat 參數 '%s'\n"
 msgid ""
 "color moved setting must be one of 'no', 'default', 'blocks', 'zebra', "
 "'dimmed-zebra', 'plain'"
-msgstr ""
-"移動的顏色設定必須是 'no'、'default'、'blocks'、'zebra'、'dimmed-"
+msgstr "移動的顏色設定必須是 'no'、'default'、'blocks'、'zebra'、'dimmed-"
 "zebra'、'plain'"
 
 #: diff.c:329
@@ -19101,8 +19083,7 @@ msgstr "--color-moved-ws 中的無效模式 '%s'"
 msgid ""
 "option diff-algorithm accepts \"myers\", \"minimal\", \"patience\" and "
 "\"histogram\""
-msgstr ""
-"diff-algorithm 選項有 \"myers\"、\"minimal\"、\"patience\" 和 \"histogram\""
+msgstr "diff-algorithm 選項有 \"myers\"、\"minimal\"、\"patience\" 和 \"histogram\""
 
 #: diff.c:5160 diff.c:5180
 #, c-format
@@ -19255,9 +19236,8 @@ msgstr "對於差異中的上下文、舊的和新的行，加亮顯示錯誤的
 msgid ""
 "do not munge pathnames and use NULs as output field terminators in --raw or "
 "--numstat"
-msgstr ""
-"在 --raw 或者 --numstat 中，不對路徑字元轉檔並使用 NUL 字元做為輸出欄位的分隔"
-"符"
+msgstr "在 --raw 或者 --numstat 中，不對路徑字元轉檔並使用 NUL "
+"字元做為輸出欄位的分隔符"
 
 #: diff.c:5513 diff.c:5516 diff.c:5519 diff.c:5628
 msgid "<prefix>"
@@ -19978,8 +19958,8 @@ msgid ""
 msgstr ""
 "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
-"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-"bare]\n"
+"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] "
+"[--bare]\n"
 "           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n"
 "           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n"
 "           <command> [<args>]"
@@ -20188,9 +20168,8 @@ msgstr "已忽略 log.graphColors 中無效的 “%.*s” 色彩"
 msgid ""
 "given pattern contains NULL byte (via -f <file>). This is only supported "
 "with -P under PCRE v2"
-msgstr ""
-"提供的模式包含 NULL 字元（通過 -f <檔案> 參數）。只有 PCRE v2 下的 -P 支援此"
-"功能"
+msgstr "提供的模式包含 NULL 字元（通過 -f <檔案> 參數）。只有 PCRE v2 下的 -P "
+"支援此功能"
 
 #: grep.c:1858
 #, c-format
@@ -20662,18 +20641,16 @@ msgstr "自動合併 %s"
 msgid ""
 "CONFLICT (implicit dir rename): Existing file/dir at %s in the way of "
 "implicit directory rename(s) putting the following path(s) there: %s."
-msgstr ""
-"衝突（隱式目錄重新命名）：處於隱式目錄重新命名的現存檔案/目錄 %s，將以下路徑"
-"放在：%s。"
+msgstr "衝突（隱式目錄重新命名）：處於隱式目錄重新命名的現存檔案/目錄 "
+"%s，將以下路徑放在：%s。"
 
 #: merge-ort.c:2279 merge-recursive.c:2146
 #, c-format
 msgid ""
 "CONFLICT (implicit dir rename): Cannot map more than one path to %s; "
 "implicit directory renames tried to put these paths there: %s"
-msgstr ""
-"衝突（隱式目錄重新命名）：無法映射一個以上路徑到 %s，隱式目錄重新命名嘗試將這"
-"些路徑放置於此：%s"
+msgstr "衝突（隱式目錄重新命名）：無法映射一個以上路徑到 "
+"%s，隱式目錄重新命名嘗試將這些路徑放置於此：%s"
 
 #: merge-ort.c:2338
 #, c-format
@@ -20697,41 +20674,36 @@ msgstr "警告：避免套用 %s -> %s 的重新命名到 %s，因為 %s 本身�
 msgid ""
 "Path updated: %s added in %s inside a directory that was renamed in %s; "
 "moving it to %s."
-msgstr ""
-"路徑已更新：%s 新增到 %s，位於一個被重新命名到 %s 的目錄中，將其移動到 %s。"
+msgstr "路徑已更新：%s 新增到 %s，位於一個被重新命名到 %s 的目錄中，將其移動到 %s。"
 
 #: merge-ort.c:2702 merge-recursive.c:3272
 #, c-format
 msgid ""
 "Path updated: %s renamed to %s in %s, inside a directory that was renamed in "
 "%s; moving it to %s."
-msgstr ""
-"路徑已更新：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s 中，將"
-"其移動到 %5$s。"
+msgstr "路徑已更新：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s 中，"
+"將其移動到 %5$s。"
 
 #: merge-ort.c:2716 merge-recursive.c:3268
 #, c-format
 msgid ""
 "CONFLICT (file location): %s added in %s inside a directory that was renamed "
 "in %s, suggesting it should perhaps be moved to %s."
-msgstr ""
-"衝突（檔案位置）：%s 新增到 %s，位於一個被重新命名為 %s 的目錄中，建議將其移"
-"動到 %s。"
+msgstr "衝突（檔案位置）：%s 新增到 %s，位於一個被重新命名為 %s 的目錄中，"
+"建議將其移動到 %s。"
 
 #: merge-ort.c:2725 merge-recursive.c:3275
 #, c-format
 msgid ""
 "CONFLICT (file location): %s renamed to %s in %s, inside a directory that "
 "was renamed in %s, suggesting it should perhaps be moved to %s."
-msgstr ""
-"衝突（檔案位置）：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s "
+msgstr "衝突（檔案位置）：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s "
 "中，建議將其移動到 %5$s。"
 
 #: merge-ort.c:2884
 #, c-format
 msgid "CONFLICT (rename/rename): %s renamed to %s in %s and to %s in %s."
-msgstr ""
-"衝突（重新命名/重新命名）：%1$s 已重新命名為 %3$s 中的 %2$s 和 %5$s 中的 "
+msgstr "衝突（重新命名/重新命名）：%1$s 已重新命名為 %3$s 中的 %2$s 和 %5$s 中的 "
 "%4$s。"
 
 #: merge-ort.c:2982
@@ -20740,15 +20712,13 @@ msgid ""
 "CONFLICT (rename involved in collision): rename of %s -> %s has content "
 "conflicts AND collides with another path; this may result in nested conflict "
 "markers."
-msgstr ""
-"衝突（重新命名陷入相撞）：%s -> %s 這個重新命名有內容衝突並與其他路徑相撞，可"
-"能會因此出現巢狀衝突標記。"
+msgstr "衝突（重新命名陷入相撞）：%s -> %s "
+"這個重新命名有內容衝突並與其他路徑相撞，可能會因此出現巢狀衝突標記。"
 
 #: merge-ort.c:3002 merge-ort.c:3027
 #, c-format
 msgid "CONFLICT (rename/delete): %s renamed to %s in %s, but deleted in %s."
-msgstr ""
-"衝突（重新命名/刪除）：%1$s 已重新命名為 %3$s 中的 %2$s 卻在 %4$s 中被刪除。"
+msgstr "衝突（重新命名/刪除）：%1$s 已重新命名為 %3$s 中的 %2$s 卻在 %4$s 中被刪除。"
 
 #: merge-ort.c:3510 merge-recursive.c:3026
 #, c-format
@@ -20807,9 +20777,8 @@ msgstr "衝突（%s）：合併衝突於 %s"
 msgid ""
 "CONFLICT (modify/delete): %s deleted in %s and modified in %s.  Version %s "
 "of %s left in tree."
-msgstr ""
-"衝突（修改/刪除）：%1$s 已在 %2$s 刪除和在 %3$s 修改。%5$s 的 %4$s 版本留在樹"
-"上。"
+msgstr "衝突（修改/刪除）：%1$s 已在 %2$s 刪除和在 %3$s 修改。%5$s 的 %4$s "
+"版本留在樹上。"
 
 #. TRANSLATORS: This is a line of advice to resolve a merge
 #. conflict in a submodule. The first argument is the submodule
@@ -20967,17 +20936,15 @@ msgstr "錯誤：拒絕遺失未追蹤檔案 '%s'，而是寫入 %s。"
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s in %s. Version %s of %s left "
 "in tree."
-msgstr ""
-"衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %5$s 中被 %4$s。%7$s 的 %6$s 版"
-"本被保留。"
+msgstr "衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %5$s 中被 %4$s。%7$s 的 %6$s "
+"版本被保留。"
 
 #: merge-recursive.c:1515
 #, c-format
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s to %s in %s. Version %s of %s "
 "left in tree."
-msgstr ""
-"衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %6$s 中的 %5$s 被 %4$s。%8$s 的 "
+msgstr "衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %6$s 中的 %5$s 被 %4$s。%8$s 的 "
 "%7$s 版本被保留。"
 
 #: merge-recursive.c:1522
@@ -20985,9 +20952,8 @@ msgstr ""
 msgid ""
 "CONFLICT (%s/delete): %s deleted in %s and %s in %s. Version %s of %s left "
 "in tree at %s."
-msgstr ""
-"衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %5$s 中被 %4$s。%7$s 的 %6$s 版"
-"本保留在 %8$s 中。"
+msgstr "衝突（%1$s/刪除）：%2$s 在 %3$s 中被刪除，在 %5$s 中被 %4$s。%7$s 的 %6$s "
+"版本保留在 %8$s 中。"
 
 #: merge-recursive.c:1527
 #, c-format
@@ -21019,8 +20985,7 @@ msgstr "拒絕在 '%s' 處失去未追蹤檔案，即使它存在於重新命名
 #: merge-recursive.c:1681
 #, c-format
 msgid "CONFLICT (rename/add): Rename %s->%s in %s.  Added %s in %s"
-msgstr ""
-"衝突（重新命名/新增）：在 %3$s 中重新命名 %1$s->%2$s。在 %5$s 中新增 %4$s"
+msgstr "衝突（重新命名/新增）：在 %3$s 中重新命名 %1$s->%2$s。在 %5$s 中新增 %4$s"
 
 #: merge-recursive.c:1712
 #, c-format
@@ -21038,8 +21003,8 @@ msgid ""
 "CONFLICT (rename/rename): Rename \"%s\"->\"%s\" in branch \"%s\" rename "
 "\"%s\"->\"%s\" in \"%s\"%s"
 msgstr ""
-"衝突（重新命名/重新命名）：在分支 \"%3$s\" 中重新命名 \"%1$s\"->\"%2$s\"，在"
-"分支 \"%6$s\" 中重新命名 \"%4$s\"->\"%5$s\"%7$s"
+"衝突（重新命名/重新命名）：在分支 \"%3$s\" 中重新命名 \"%1$s\"->\"%2$s\"，"
+"在分支 \"%6$s\" 中重新命名 \"%4$s\"->\"%5$s\"%7$s"
 
 #: merge-recursive.c:1749
 msgid " (left unresolved)"
@@ -21048,8 +21013,7 @@ msgstr " （留下未解決）"
 #: merge-recursive.c:1841
 #, c-format
 msgid "CONFLICT (rename/rename): Rename %s->%s in %s. Rename %s->%s in %s"
-msgstr ""
-"衝突（重新命名/重新命名）：在 %3$s 中重新命名 %1$s->%2$s，在 %6$s 中重新命名 "
+msgstr "衝突（重新命名/重新命名）：在 %3$s 中重新命名 %1$s->%2$s，在 %6$s 中重新命名 "
 "%4$s->%5$s"
 
 #: merge-recursive.c:2104
@@ -21058,18 +21022,16 @@ msgid ""
 "CONFLICT (directory rename split): Unclear where to place %s because "
 "directory %s was renamed to multiple other directories, with no destination "
 "getting a majority of the files."
-msgstr ""
-"衝突（分割的目錄重新命名）：不清楚 %s 應該放在哪裡，因為目錄 %s 被重新命名到"
-"多個其它目錄，沒有目錄包含大部分檔案。"
+msgstr "衝突（分割的目錄重新命名）：不清楚 %s 應該放在哪裡，因為目錄 %s "
+"被重新命名到多個其它目錄，沒有目錄包含大部分檔案。"
 
 #: merge-recursive.c:2238
 #, c-format
 msgid ""
 "CONFLICT (rename/rename): Rename directory %s->%s in %s. Rename directory %s-"
 ">%s in %s"
-msgstr ""
-"衝突（重新命名/重新命名）：在 %3$s 中重新命名目錄 %1$s->%2$s，在 %6$s 中重新"
-"命名目錄 %4$s->%5$s"
+msgstr "衝突（重新命名/重新命名）：在 %3$s 中重新命名目錄 %1$s->%2$s，在 %6$s "
+"中重新命名目錄 %4$s->%5$s"
 
 #: merge-recursive.c:3093
 msgid "modify"
@@ -27315,8 +27277,8 @@ msgid ""
 "    * Saying \"./%s\" if you mean a file; or\n"
 "    * Giving --format-patch option if you mean a range.\n"
 msgstr ""
-"存在檔案 '%s' 但是它也可能是一個用於產生修補檔列表的提交範圍。請用如下方法消"
-"除歧義：\n"
+"存在檔案 '%s' "
+"但是它也可能是一個用於產生修補檔列表的提交範圍。請用如下方法消除歧義：\n"
 "\n"
 "    * 如果含義為一個檔案，使用 \"./%s\"，或者\n"
 "    * 如果含義為一個範圍，使用 --format-patch 選項。\n"

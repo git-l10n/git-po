@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2022-12-11 00:28+0800\n"
-"PO-Revision-Date: 2022-12-10 17:10+0000\n"
+"PO-Revision-Date: 2022-12-10 17:11+0000\n"
 "Last-Translator: Kaiyang Wu <self@origincode.me>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -6701,7 +6701,7 @@ msgstr ""
 
 #: builtin/diagnose.c:23
 msgid "specify a destination for the diagnostics archive"
-msgstr "指定診斷封存檔的目的地"
+msgstr "請指定診斷歸檔的目的地"
 
 #: builtin/diagnose.c:25
 msgid "specify a strftime format suffix for the filename"

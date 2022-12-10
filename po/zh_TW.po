@@ -1,8 +1,10 @@
 # Chinese (traditional) translations for Git package
 # Git 套裝軟體的繁體中文翻譯。
 # Copyright (C) 2012-2021 Jiang Xin <worldhello.net AT gmail.com>
-# Copyright (C) 2019-2021 Yi-Jyun Pan <pan93412@gmail.com>
+# Copyright (C) 2019-2022 Yi-Jyun Pan <pan93412@gmail.com>
 # This file is distributed under the same license as the Git package.
+#
+# The glossary can be found on https://github.com/l10n-tw/git-glossary
 #
 # Contributors (CN):
 # - Fangyi Zhou <me AT fangyi.io>

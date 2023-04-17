@@ -17149,7 +17149,7 @@ msgstr "取得和設定版本庫或者全域選項"
 
 #: command-list.h:82
 msgid "Count unpacked number of objects and their disk consumption"
-msgstr "計算未打包物件的數量和磁碟空間占用"
+msgstr "計算未打包物件的數量和磁碟空間佔用"
 
 #: command-list.h:83
 msgid "Retrieve and store user credentials"
@@ -19356,7 +19356,7 @@ msgstr "<參數1,參數2>..."
 #: diff.c:5531
 msgid ""
 "output the distribution of relative amount of changes for each sub-directory"
-msgstr "輸出每個子目錄相對變更的分布"
+msgstr "輸出每個子目錄相對變更的分佈"
 
 #: diff.c:5535
 msgid "synonym for --dirstat=cumulative"

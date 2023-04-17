@@ -4562,7 +4562,7 @@ msgstr "更新忽略的檔案（預設）"
 
 #: builtin/checkout.c
 msgid "do not check if another worktree is holding the given ref"
-msgstr "不檢查指定的引用是否被其他工作區所占用"
+msgstr "不檢查指定的引用是否被其他工作區所佔用"
 
 #: builtin/checkout.c
 msgid "checkout our version for unmerged files"
@@ -16739,7 +16739,7 @@ msgstr "取得和設定版本庫或者全域選項"
 
 #: command-list.h
 msgid "Count unpacked number of objects and their disk consumption"
-msgstr "計算未打包物件的數量和磁碟空間占用"
+msgstr "計算未打包物件的數量和磁碟空間佔用"
 
 #: command-list.h
 msgid "Retrieve and store user credentials"
@@ -18926,7 +18926,7 @@ msgstr "<參數1,參數2>..."
 #: diff.c
 msgid ""
 "output the distribution of relative amount of changes for each sub-directory"
-msgstr "輸出每個子目錄相對變更的分布"
+msgstr "輸出每個子目錄相對變更的分佈"
 
 #: diff.c
 msgid "synonym for --dirstat=cumulative"

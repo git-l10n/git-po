@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-05-15 23:57+0000\n"
-"PO-Revision-Date: 2022-12-10 17:12+0000\n"
+"PO-Revision-Date: 2022-12-11 15:50+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
 "po/git-cli/zh_Hant/>\n"
@@ -1704,7 +1704,7 @@ msgstr "在 stderr 上回報封存的檔案"
 #: archive.c:657 builtin/clone.c:148 builtin/fetch.c:2172
 #: builtin/pack-objects.c:4240 builtin/pack-objects.c:4244 builtin/pull.c:220
 msgid "time"
-msgstr "時間"
+msgstr "time"
 
 #: archive.c:658
 msgid "set modification time of archive entries"
@@ -2689,7 +2689,7 @@ msgstr "在提交說明結尾處加入 Signed-off-by"
 
 #: builtin/am.c:2343
 msgid "recode into utf8 (default)"
-msgstr "使用 utf8 字元集（預設）"
+msgstr "使用 utf8 字元集（預設值）"
 
 #: builtin/am.c:2345
 msgid "pass -k flag to git-mailinfo"
@@ -3228,45 +3228,45 @@ msgstr "需要子命令"
 #: builtin/bisect.c:1439 builtin/cat-file.c:736
 #, c-format
 msgid "unknown command: '%s'"
-msgstr "未知命令：「%s」"
+msgstr "未知命令：“%s”"
 
 #: builtin/blame.c:40
 msgid "git blame [<options>] [<rev-opts>] [<rev>] [--] <file>"
-msgstr "git blame [<選項>] [<版本選項>] [<版本>] [--] <檔案>"
+msgstr "git blame [<options>] [<rev-opts>] [<rev>] [--] <file>"
 
 #: builtin/blame.c:41
 msgid "git annotate [<options>] [<rev-opts>] [<rev>] [--] <file>"
-msgstr "git annotate [<選項>] [<版本選項>] [<版本>] [--] <檔案>"
+msgstr "git annotate [<options>] [<rev-opts>] [<rev>] [--] <file>"
 
 #: builtin/blame.c:46 builtin/blame.c:53
 msgid "<rev-opts> are documented in git-rev-list(1)"
-msgstr "<版本選項> 的檔案記錄在 git-rev-list(1) 中"
+msgstr "<rev-opts> 的文件在 git-rev-list(1)"
 
 #: builtin/blame.c:422
 #, c-format
 msgid "expecting a color: %s"
-msgstr "期望一個顏色：%s"
+msgstr "預期是個顏色：%s"
 
 #: builtin/blame.c:429
 msgid "must end with a color"
-msgstr "必須以一個顏色結尾"
+msgstr "結尾必須是一個顏色"
 
 #: builtin/blame.c:859
 #, c-format
 msgid "cannot find revision %s to ignore"
-msgstr "不能找到要忽略的版本 %s"
+msgstr "不能找到要忽略的 %s 修訂版"
 
 #: builtin/blame.c:881
 msgid "show blame entries as we find them, incrementally"
-msgstr "增量式顯示發現的 blame 條目"
+msgstr "漸進式顯示發現的溯源項目"
 
 #: builtin/blame.c:882
 msgid "do not show object names of boundary commits (Default: off)"
-msgstr "不要顯示邊界提交的物件名稱（預設值: off）"
+msgstr "不要顯示邊界提交的物件名稱（預設值：off）"
 
 #: builtin/blame.c:883
 msgid "do not treat root commits as boundaries (Default: off)"
-msgstr "不將根提交看作邊界（預設值：off）"
+msgstr "不把根提交當作邊界（預設值：off）"
 
 #: builtin/blame.c:884
 msgid "show work cost statistics"
@@ -3283,7 +3283,7 @@ msgstr "強制顯示進度報告"
 
 #: builtin/blame.c:886
 msgid "show output score for blame entries"
-msgstr "顯示判斷 blame 條目位移的得分診斷訊息"
+msgstr "顯示溯源項目的輸出得分"
 
 #: builtin/blame.c:887
 msgid "show original filename (Default: auto)"
@@ -3291,7 +3291,7 @@ msgstr "顯示原始檔案名稱（預設值：auto）"
 
 #: builtin/blame.c:888
 msgid "show original linenumber (Default: off)"
-msgstr "顯示原始檔案名稱（預設值：off）"
+msgstr "顯示原始列碼（預設值：off）"
 
 #: builtin/blame.c:889
 msgid "show in a format designed for machine consumption"
@@ -3299,7 +3299,7 @@ msgstr "顯示成適合機器讀取的格式"
 
 #: builtin/blame.c:890
 msgid "show porcelain format with per-line commit information"
-msgstr "顯示每一列適合機器的提交說明"
+msgstr "顯示包含每一列提交資訊，適合機器讀取的格式"
 
 #: builtin/blame.c:891
 msgid "use the same output mode as git-annotate (Default: off)"
@@ -3327,15 +3327,15 @@ msgstr "忽略空白差異"
 
 #: builtin/blame.c:897 builtin/log.c:1988
 msgid "rev"
-msgstr "版本"
+msgstr "rev"
 
 #: builtin/blame.c:897
 msgid "ignore <rev> when blaming"
-msgstr "在執行 blame 動作時忽略 <修訂版>"
+msgstr "在執行溯源動作時忽略 <rev>"
 
 #: builtin/blame.c:898
 msgid "ignore revisions from <file>"
-msgstr "忽略 <檔案> 中的修訂版"
+msgstr "忽略 <file> 中的修訂版"
 
 #: builtin/blame.c:899
 msgid "color redundant metadata from previous line differently"
@@ -3343,31 +3343,31 @@ msgstr "使用顏色間隔輸出與前一行不同的重複中介資料"
 
 #: builtin/blame.c:900
 msgid "color lines by age"
-msgstr "依據時間著色"
+msgstr "根據時間著色"
 
 #: builtin/blame.c:901
 msgid "spend extra cycles to find better match"
-msgstr "循環更多次以找到更佳符合"
+msgstr "循環更多次來找到更佳符合項目"
 
 #: builtin/blame.c:902
 msgid "use revisions from <file> instead of calling git-rev-list"
-msgstr "使用來自 <檔案> 的修訂集而不是呼叫 git-rev-list"
+msgstr "使用來自 <file> 的修訂集而不是呼叫 git-rev-list"
 
 #: builtin/blame.c:903
 msgid "use <file>'s contents as the final image"
-msgstr "將 <檔案> 的內容當成是最終 image"
+msgstr "將 <file> 的內容當成是最終印象"
 
 #: builtin/blame.c:904 builtin/blame.c:905
 msgid "score"
-msgstr "得分"
+msgstr "score"
 
 #: builtin/blame.c:904
 msgid "find line copies within and across files"
-msgstr "找到檔案內及跨檔案的複製列"
+msgstr "找到檔案內及跨檔案的列拷貝動作"
 
 #: builtin/blame.c:905
 msgid "find line movements within and across files"
-msgstr "找到檔案內及跨檔案的移動列"
+msgstr "找到檔案內及跨檔案的列移動動作"
 
 #: builtin/blame.c:906
 msgid "range"
@@ -3397,45 +3397,47 @@ msgstr "4 年 11 個月前"
 #, c-format
 msgid "file %s has only %lu line"
 msgid_plural "file %s has only %lu lines"
-msgstr[0] "檔案 %s 只有 %lu 行"
+msgstr[0] "檔案 %s 只有 %lu 列"
 
 #: builtin/blame.c:1185
 msgid "Blaming lines"
-msgstr "追蹤程式碼行"
+msgstr "溯源文字列"
 
 #: builtin/branch.c:34
 msgid "git branch [<options>] [-r | -a] [--merged] [--no-merged]"
-msgstr "git branch [<選項>] [-r | -a] [--merged] [--no-merged]"
+msgstr "git branch [<options>] [-r | -a] [--merged] [--no-merged]"
 
 #: builtin/branch.c:35
 msgid ""
 "git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-"
 "point>]"
-msgstr "git branch [<選項>] [-f] [--recurse-submodules] <分支名> [<起始點>]"
+msgstr ""
+"git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-"
+"point>]"
 
 #: builtin/branch.c:36
 msgid "git branch [<options>] [-l] [<pattern>...]"
-msgstr "git branch [<選項>] [-l] [<模式>...]"
+msgstr "git branch [<options>] [-l] [<pattern>...]"
 
 #: builtin/branch.c:37
 msgid "git branch [<options>] [-r] (-d | -D) <branch-name>..."
-msgstr "git branch [<選項>] [-r] (-d | -D) <分支名>..."
+msgstr "git branch [<options>] [-r] (-d | -D) <branch-name>..."
 
 #: builtin/branch.c:38
 msgid "git branch [<options>] (-m | -M) [<old-branch>] <new-branch>"
-msgstr "git branch [<選項>] (-m | -M) [<舊分支>] <新分支>"
+msgstr "git branch [<options>] (-m | -M) [<old-branch>] <new-branch>"
 
 #: builtin/branch.c:39
 msgid "git branch [<options>] (-c | -C) [<old-branch>] <new-branch>"
-msgstr "git branch [<選項>] (-c | -C) [<老分支>] <新分支>"
+msgstr "git branch [<options>] (-c | -C) [<old-branch>] <new-branch>"
 
 #: builtin/branch.c:40
 msgid "git branch [<options>] [-r | -a] [--points-at]"
-msgstr "git branch [<選項>] [-r | -a] [--points-at]"
+msgstr "git branch [<options>] [-r | -a] [--points-at]"
 
 #: builtin/branch.c:41
 msgid "git branch [<options>] [-r | -a] [--format]"
-msgstr "git branch [<選項>] [-r | -a] [--format]"
+msgstr "git branch [<options>] [-r | -a] [--format]"
 
 #  譯者：保持原換行格式，在輸出時 %s 的替代內容會讓字串變長
 #: builtin/branch.c:172
@@ -3444,8 +3446,8 @@ msgid ""
 "deleting branch '%s' that has been merged to\n"
 "         '%s', but not yet merged to HEAD."
 msgstr ""
-"將要刪除的分支 '%s' 已經被合併到\n"
-"         '%s'，但未合併到 HEAD。"
+"將要刪除的 “%s” 分支已經被合併到\n"
+"         “%s”，但尚未合併到 HEAD。"
 
 #  譯者：保持原換行格式，在輸出時 %s 的替代內容會讓字串變長
 #: builtin/branch.c:176
@@ -3454,13 +3456,13 @@ msgid ""
 "not deleting branch '%s' that is not yet merged to\n"
 "         '%s', even though it is merged to HEAD."
 msgstr ""
-"並未刪除分支 '%s'， 雖然它已經合併到 HEAD，\n"
-"         然而卻尚未被合併到分支 '%s' 。"
+"並未刪除分支 “%s”， 雖然已經合併到 HEAD，\n"
+"         卻尚未被合併至 “%s” 分支。"
 
 #: builtin/branch.c:190
 #, c-format
 msgid "Couldn't look up commit object for '%s'"
-msgstr "無法查詢 '%s' 指向的提交物件"
+msgstr "無法查詢 “%s” 指向的提交物件"
 
 #: builtin/branch.c:194
 #, c-format
@@ -3468,12 +3470,12 @@ msgid ""
 "The branch '%s' is not fully merged.\n"
 "If you are sure you want to delete it, run 'git branch -D %s'."
 msgstr ""
-"分支 '%s' 沒有完全合併。\n"
-"如果您確認要刪除它，執行 'git branch -D %s'。"
+"分支 “%s” 沒有完全合併。\n"
+"如果確定要刪除它，請執行 “git branch -D %s”。"
 
 #: builtin/branch.c:207
 msgid "Update of config-file failed"
-msgstr "更新設定檔案失敗"
+msgstr "更新組態檔案失敗"
 
 #: builtin/branch.c:242
 msgid "cannot use -a with -d"
@@ -3482,12 +3484,12 @@ msgstr "不能將 -a 和 -d 同時使用"
 #: builtin/branch.c:260
 #, c-format
 msgid "Cannot delete branch '%s' checked out at '%s'"
-msgstr "無法刪除在「%2$s」簽出的「%1$s」分支"
+msgstr "無法刪除在 “%2$s” 簽出的 “%1$s” 分支"
 
 #: builtin/branch.c:275
 #, c-format
 msgid "remote-tracking branch '%s' not found."
-msgstr "未能找到遠端追蹤分支 '%s'。"
+msgstr "找不到 “%s” 遠端追蹤分支。"
 
 #: builtin/branch.c:286
 #, fuzzy, c-format
@@ -3495,12 +3497,12 @@ msgstr "未能找到遠端追蹤分支 '%s'。"
 msgid ""
 "branch '%s' not found.\n"
 "Did you forget --remote?"
-msgstr "分支 '%s' 未發現。"
+msgstr "找不到 “%s” 分支。"
 
 #: builtin/branch.c:290
 #, c-format
 msgid "branch '%s' not found."
-msgstr "分支 '%s' 未發現。"
+msgstr "找不到 “%s” 分支。"
 
 #: builtin/branch.c:323
 #, c-format
@@ -3514,26 +3516,26 @@ msgstr "已刪除分支 %s（曾為 %s）。\n"
 
 #: builtin/branch.c:473 builtin/tag.c:74
 msgid "unable to parse format string"
-msgstr "不能解析格式化字串"
+msgstr "無法解析格式化字串"
 
 #: builtin/branch.c:506
 msgid "could not resolve HEAD"
-msgstr "不能解析 HEAD 提交"
+msgstr "無法解析 HEAD 指針"
 
 #: builtin/branch.c:512
 #, c-format
 msgid "HEAD (%s) points outside of refs/heads/"
-msgstr "HEAD (%s) 指向 refs/heads/ 之外"
+msgstr "HEAD 指針 (%s) 指向 refs/heads/ 之外"
 
 #: builtin/branch.c:527
 #, c-format
 msgid "Branch %s is being rebased at %s"
-msgstr "分支 %s 正被重定基底到 %s"
+msgstr "%s 分支正在重定基底至 %s"
 
 #: builtin/branch.c:531
 #, c-format
 msgid "Branch %s is being bisected at %s"
-msgstr "分支 %s 正被二分搜尋於 %s"
+msgstr "%s 分支正於 %s 進行二分搜尋"
 
 #: builtin/branch.c:560
 #, c-format
@@ -3543,17 +3545,17 @@ msgstr "%s 工作區的 HEAD 指針未被更新"
 #: builtin/branch.c:587
 #, c-format
 msgid "Invalid branch name: '%s'"
-msgstr "無效的分支名：'%s'"
+msgstr "分支名稱無效：“%s”"
 
 #: builtin/branch.c:603 builtin/branch.c:883 builtin/branch.c:928
 #, c-format
 msgid "No commit on branch '%s' yet."
-msgstr "分支 '%s' 尚無提交。"
+msgstr "分支 “%s” 尚無提交。"
 
 #: builtin/branch.c:605 builtin/branch.c:884
 #, c-format
 msgid "No branch named '%s'."
-msgstr "沒有分支 '%s'。"
+msgstr "沒有名為 “%s” 的分支。"
 
 #: builtin/branch.c:633
 msgid "Branch rename failed"
@@ -3561,30 +3563,30 @@ msgstr "分支重新命名失敗"
 
 #: builtin/branch.c:635
 msgid "Branch copy failed"
-msgstr "分支複製失敗"
+msgstr "分支拷貝失敗"
 
 #: builtin/branch.c:639
 #, c-format
 msgid "Created a copy of a misnamed branch '%s'"
-msgstr "已為錯誤命名的分支 '%s' 建立了一個副本"
+msgstr "已為誤命名的 “%s” 分支建立拷貝"
 
 #: builtin/branch.c:642
 #, c-format
 msgid "Renamed a misnamed branch '%s' away"
-msgstr "已將錯誤命名的分支 '%s' 重新命名"
+msgstr "已更改誤命名的 “%s” 分支的名稱"
 
 #: builtin/branch.c:649
 #, c-format
 msgid "Branch renamed to %s, but HEAD is not updated!"
-msgstr "分支重新命名為 %s，但 HEAD 沒有更新！"
+msgstr "分支已重新命名為 %s，但 HEAD 指針尚未更新！"
 
 #: builtin/branch.c:656
 msgid "Branch is renamed, but update of config-file failed"
-msgstr "分支被重新命名，但更新設定檔案失敗"
+msgstr "分支已重新命名，但無法更新組態檔案"
 
 #: builtin/branch.c:658
 msgid "Branch is copied, but update of config-file failed"
-msgstr "分支已複製，但更新設定檔案失敗"
+msgstr "分支已拷貝，但無法更新組態檔案"
 
 #: builtin/branch.c:678
 #, c-format
@@ -3593,42 +3595,42 @@ msgid ""
 "  %s\n"
 "Lines starting with '%c' will be stripped.\n"
 msgstr ""
-"請編輯分支的描述\n"
+"請編輯下述分支的描述\n"
 "  %s\n"
-"以 '%c' 開頭的行將被過濾。\n"
+"開頭是 “%c” 的列將被刪除。\n"
 
 #: builtin/branch.c:716
 msgid "Generic options"
-msgstr "通用選項"
+msgstr "一般性選項"
 
 #: builtin/branch.c:718
 msgid "show hash and subject, give twice for upstream branch"
-msgstr "顯示雜湊值和主題，若參數出現兩次則顯示上游分支"
+msgstr "顯示雜湊值和主旨，若傳入兩次則顯示上游分支"
 
 #: builtin/branch.c:719
 msgid "suppress informational messages"
-msgstr "不顯示訊息"
+msgstr "不顯示資訊訊息"
 
 #: builtin/branch.c:721 builtin/checkout.c:1614
 #: builtin/submodule--helper.c:2968
 msgid "set branch tracking configuration"
-msgstr "設定分支追蹤設定"
+msgstr "設定分支追蹤組態"
 
 #: builtin/branch.c:724
 msgid "do not use"
-msgstr "不要使用"
+msgstr "請勿使用"
 
 #: builtin/branch.c:726
 msgid "upstream"
-msgstr "上游"
+msgstr "upstream"
 
 #: builtin/branch.c:726
 msgid "change the upstream info"
-msgstr "改變上游訊息"
+msgstr "變更上游資訊"
 
 #: builtin/branch.c:727
 msgid "unset the upstream info"
-msgstr "取消上游資訊設定"
+msgstr "取消設定上游資訊"
 
 #: builtin/branch.c:728
 msgid "use colored output"
@@ -3640,19 +3642,19 @@ msgstr "作用於遠端追蹤分支"
 
 #: builtin/branch.c:731 builtin/branch.c:733
 msgid "print only branches that contain the commit"
-msgstr "只列印包含該提交的分支"
+msgstr "只輸出包含此提交的分支"
 
 #: builtin/branch.c:732 builtin/branch.c:734
 msgid "print only branches that don't contain the commit"
-msgstr "只列印不包含該提交的分支"
+msgstr "只輸出不包含此提交的分支"
 
 #: builtin/branch.c:737
 msgid "Specific git-branch actions:"
-msgstr "具體的 git-branch 動作："
+msgstr "特定的 git-branch 動作："
 
 #: builtin/branch.c:738
 msgid "list both remote-tracking and local branches"
-msgstr "列出遠端追蹤及本機分支"
+msgstr "列出遠端追蹤和本機分支"
 
 #: builtin/branch.c:740
 msgid "delete fully merged branch"
@@ -3660,15 +3662,15 @@ msgstr "刪除完全合併的分支"
 
 #: builtin/branch.c:741
 msgid "delete branch (even if not merged)"
-msgstr "刪除分支（即使沒有合併）"
+msgstr "刪除分支（即使尚未合併）"
 
 #: builtin/branch.c:742
 msgid "move/rename a branch and its reflog"
-msgstr "移動/重新命名一個分支，以及它的引用日誌"
+msgstr "移動或重新命名分支及其引用日誌"
 
 #: builtin/branch.c:743
 msgid "move/rename a branch, even if target exists"
-msgstr "移動/重新命名一個分支，即使目標已存在"
+msgstr "即使目標已存在，仍移動或重新命名分支"
 
 #: builtin/branch.c:745 builtin/for-each-ref.c:44 builtin/tag.c:483
 msgid "do not output a newline after empty formatted refs"
@@ -3676,19 +3678,19 @@ msgstr ""
 
 #: builtin/branch.c:746
 msgid "copy a branch and its reflog"
-msgstr "複製分支及其引用日誌"
+msgstr "拷貝分支及其引用日誌"
 
 #: builtin/branch.c:747
 msgid "copy a branch, even if target exists"
-msgstr "複製一個分支，即使目標已存在"
+msgstr "即使目標已存在仍拷貝分支"
 
 #: builtin/branch.c:748
 msgid "list branch names"
-msgstr "列出分支名"
+msgstr "列出分支名稱"
 
 #: builtin/branch.c:749
 msgid "show current branch name"
-msgstr "顯示目前分支名"
+msgstr "顯示目前分支名稱"
 
 #: builtin/branch.c:750 builtin/submodule--helper.c:2966
 msgid "create the branch's reflog"
@@ -3696,7 +3698,7 @@ msgstr "建立分支的引用日誌"
 
 #: builtin/branch.c:752
 msgid "edit the description for the branch"
-msgstr "標記分支的描述"
+msgstr "編輯分支的描述"
 
 #: builtin/branch.c:753
 msgid "force creation, move/rename, deletion"
@@ -3704,29 +3706,29 @@ msgstr "強制建立、移動/重新命名、刪除"
 
 #: builtin/branch.c:754
 msgid "print only branches that are merged"
-msgstr "只列印已經合併的分支"
+msgstr "只輸出已經合併的分支"
 
 #: builtin/branch.c:755
 msgid "print only branches that are not merged"
-msgstr "只列印尚未合併的分支"
+msgstr "只輸出尚未合併的分支"
 
 #: builtin/branch.c:756
 msgid "list branches in columns"
-msgstr "以列的方式顯示分支"
+msgstr "以行的形式列出分支"
 
 #: builtin/branch.c:758 builtin/for-each-ref.c:52 builtin/notes.c:419
 #: builtin/notes.c:422 builtin/notes.c:585 builtin/notes.c:588
 #: builtin/tag.c:486
 msgid "object"
-msgstr "物件"
+msgstr "object"
 
 #: builtin/branch.c:759
 msgid "print only branches of the object"
-msgstr "只列印指向該物件的分支"
+msgstr "只輸出指向此物件的分支"
 
 #: builtin/branch.c:760 builtin/for-each-ref.c:58 builtin/tag.c:493
 msgid "sorting and filtering are case insensitive"
-msgstr "排序和過濾屬於大小寫不敏感"
+msgstr "排序和過濾不區分大小寫"
 
 #: builtin/branch.c:761 builtin/ls-files.c:760
 msgid "recurse through submodules"
@@ -3743,14 +3745,14 @@ msgstr "無法將 HEAD 解析為有效引用。"
 
 #: builtin/branch.c:785 builtin/clone.c:720
 msgid "HEAD not found below refs/heads!"
-msgstr "HEAD 沒有位於 /refs/heads 之下！"
+msgstr "HEAD 指針不在 /refs/heads 中！"
 
 #: builtin/branch.c:806
 msgid ""
 "branch with --recurse-submodules can only be used if submodule."
 "propagateBranches is enabled"
 msgstr ""
-"有 --recurse-submodules 的分支只能在啟用 submodule.propagateBranches 時使用"
+"有 --recurse-submodules 的分支，只能在啟用 submodule.propagateBranches 時使用"
 
 #: builtin/branch.c:808
 msgid "--recurse-submodules can only be used to create branches"
@@ -3758,79 +3760,79 @@ msgstr "--recurse-submodules 只能用來建立分支"
 
 #: builtin/branch.c:837 builtin/branch.c:895
 msgid "branch name required"
-msgstr "必須提供分支名"
+msgstr "必須提供分支名稱"
 
 #: builtin/branch.c:871
 msgid "Cannot give description to detached HEAD"
-msgstr "不能向分離開頭指標提供描述"
+msgstr "無法向分離 HEAD 指針提供描述"
 
 #: builtin/branch.c:877
 msgid "cannot edit description of more than one branch"
-msgstr "不能為一個以上的分支編輯描述"
+msgstr "無法編輯超過一個分支的描述"
 
 #: builtin/branch.c:897
 msgid "cannot copy the current branch while not on any."
-msgstr "無法複製目前分支因為不處於任何分支上。"
+msgstr "不在任何分支上，無法拷貝目前分支。"
 
 #: builtin/branch.c:898
 msgid "cannot rename the current branch while not on any."
-msgstr "無法重新命名目前分支因為不處於任何分支上。"
+msgstr "不在任何分支上，無法重新命名目前分支。"
 
 #: builtin/branch.c:904
 msgid "too many branches for a copy operation"
-msgstr "為複製動作提供了太多的分支名"
+msgstr "要進行拷貝動作的分支太多"
 
 #: builtin/branch.c:905
 msgid "too many arguments for a rename operation"
-msgstr "為重新命名動作提供了太多的參數"
+msgstr "傳入重新命名動作的引數太多"
 
 #: builtin/branch.c:916
 msgid "too many arguments to set new upstream"
-msgstr "為設定新上游提供了太多的參數"
+msgstr "要設定新上游的引數太多"
 
 #: builtin/branch.c:920
 #, c-format
 msgid ""
 "could not set upstream of HEAD to %s when it does not point to any branch."
-msgstr "無法設定 HEAD 的上游為 %s，因為 HEAD 沒有指向任何分支。"
+msgstr "無法將 HEAD 的上游設為 %s：其未指向任何分支。"
 
 #: builtin/branch.c:923 builtin/branch.c:952
 #, c-format
 msgid "no such branch '%s'"
-msgstr "沒有此分支 '%s'"
+msgstr "無 “%s” 分支"
 
 #: builtin/branch.c:929
 #, c-format
 msgid "branch '%s' does not exist"
-msgstr "分支 '%s' 不存在"
+msgstr "沒有 “%s” 分支"
 
 #: builtin/branch.c:946
 msgid "too many arguments to unset upstream"
-msgstr "為取消上游設定動作提供了太多的參數"
+msgstr "要取消設定上游的引數太多"
 
 #: builtin/branch.c:950
 msgid "could not unset upstream of HEAD when it does not point to any branch."
-msgstr "在 HEAD 的上游未指向任何分支時無法取消設定。"
+msgstr "無法取消設定 HEAD 的上游：其未指向任何分支。"
 
 #: builtin/branch.c:956
 #, c-format
 msgid "Branch '%s' has no upstream information"
-msgstr "分支 '%s' 沒有上游訊息"
+msgstr "分支 “%s” 沒有上游資訊"
 
 #: builtin/branch.c:970
 msgid ""
 "The -a, and -r, options to 'git branch' do not take a branch name.\n"
 "Did you mean to use: -a|-r --list <pattern>?"
 msgstr ""
-"'git branch' 的 -a 和 -r 選項不帶一個分支名。\n"
-"您是否想要使用：-a|-r --list <模式>？"
+"“git branch” 的 -a 和 -r 選項不取分支名稱。\n"
+"您是想使用：-a|-r --list <pattern> 嗎？"
 
 #: builtin/branch.c:974
 msgid ""
 "the '--set-upstream' option is no longer supported. Please use '--track' or "
 "'--set-upstream-to' instead."
 msgstr ""
-"不再支援選項 '--set-upstream'。請使用 '--track' 或 '--set-upstream-to'。"
+"不再支援選項 “--set-upstream”。請改用 “--track” 或 “--set-upstream-to”。"
 
 #: builtin/bugreport.c:22
 msgid "git version:\n"
@@ -3839,7 +3841,7 @@ msgstr "git 版本：\n"
 #: builtin/bugreport.c:28
 #, c-format
 msgid "uname() failed with error '%s' (%d)\n"
-msgstr "uname() 失敗，錯誤：「%s」(%d)\n"
+msgstr "uname() 失敗，錯誤：“%s” (%d)\n"
 
 #: builtin/bugreport.c:38
 msgid "compiler info: "
@@ -3851,7 +3853,7 @@ msgstr "libc 資訊： "
 
 #: builtin/bugreport.c:55
 msgid "not run from a git repository - no hooks to show\n"
-msgstr "不是從 git 版本庫執行 - 沒有可顯示的掛鉤\n"
+msgstr "不是在 git 版本庫執行 — 沒有可顯示的掛鉤\n"
 
 #: builtin/bugreport.c:68
 msgid ""
@@ -3880,15 +3882,15 @@ msgid ""
 "You can delete any lines you don't wish to share.\n"
 msgstr ""
 "感謝您填寫 Git 臭蟲報告！\n"
-"請回答下列問題，以讓我們能夠了解您的問題。\n"
+"請回答下列詢問，協助我們了解您的問題。\n"
 "\n"
 "臭蟲發生前，您做了什麼？（重現問題的步驟）\n"
 "\n"
-"你原本期望發生什麼？（期望行為）\n"
+"原本您預期發生什麼？（預期行為）\n"
 "\n"
 "那實際上發生了什麼？（實際行為）\n"
 "\n"
-"期望行為跟實際發生的行為有什麼不同？\n"
+"預期發生的行為，跟實際發生的行為有什麼不同？\n"
 "\n"
 "其他您想加入的：\n"
 "\n"
@@ -3899,25 +3901,25 @@ msgstr ""
 #: builtin/commit.c:1686 builtin/fast-export.c:1186 builtin/fast-export.c:1189
 #: builtin/fast-export.c:1192 builtin/rebase.c:1173 parse-options.h:579
 msgid "mode"
-msgstr "模式"
+msgstr "mode"
 
 #: builtin/bugreport.c:118
 msgid ""
 "create an additional zip archive of detailed diagnostics (default 'stats')"
-msgstr "建立詳細診斷資訊的額外 zip 封存檔案（預設值是 “stats”）"
+msgstr "另外建立有詳細診斷資訊的 ZIP 封存檔（預設值 “stats”）"
 
 #: builtin/bugreport.c:121
 msgid "specify a destination for the bugreport file(s)"
-msgstr "請指定臭蟲報告檔案的目的地"
+msgstr "指定臭蟲報告檔案的目的地"
 
 #: builtin/bugreport.c:123
 msgid "specify a strftime format suffix for the filename(s)"
-msgstr "指定檔名，strftime 格式的後綴"
+msgstr "指定用於檔名的 strftime 格式後綴"
 
 #: builtin/bugreport.c:146 builtin/diagnose.c:53
 #, c-format
 msgid "could not create leading directories for '%s'"
-msgstr "無法建立 '%s' 的前置目錄"
+msgstr "無法建立 “%s” 的前置目錄"
 
 #: builtin/bugreport.c:159 builtin/diagnose.c:59
 #, c-format
@@ -3940,7 +3942,7 @@ msgstr "無法寫入 %s"
 #: builtin/bugreport.c:187
 #, c-format
 msgid "Created new report at '%s'.\n"
-msgstr "已在「%s」建立新報告。\n"
+msgstr "已在 “%s” 建立新報告。\n"
 
 #: builtin/bundle.c:20
 #, fuzzy
@@ -3962,7 +3964,7 @@ msgstr "git bundle verify [-q | --quiet] <file>"
 
 #: builtin/bundle.c:25
 msgid "git bundle list-heads <file> [<refname>...]"
-msgstr "git bundle list-heads <檔案> [<引用名稱>...]"
+msgstr "git bundle list-heads <file> [<refname>...]"
 
 #: builtin/bundle.c:27
 msgid "git bundle unbundle [--progress] <file> [<refname>...]"
@@ -3976,11 +3978,11 @@ msgstr "-d 需要至少一個參數"
 
 #: builtin/bundle.c:79 builtin/pack-objects.c:4183
 msgid "do not show progress meter"
-msgstr "不顯示進度表"
+msgstr "不顯示進度列"
 
 #: builtin/bundle.c:81 builtin/bundle.c:202 builtin/pack-objects.c:4185
 msgid "show progress meter"
-msgstr "顯示進度表"
+msgstr "顯示進度列"
 
 #: builtin/bundle.c:83
 msgid "historical; same as --progress"
@@ -4015,12 +4017,12 @@ msgstr "需要版本庫才能拆分套件包。"
 
 #: builtin/bundle.c:220
 msgid "Unbundling objects"
-msgstr "正在解包物件"
+msgstr "正在拆分物件"
 
 #: builtin/cat-file.c:75 merge-recursive.c:964
 #, c-format
 msgid "cannot read object %s '%s'"
-msgstr "不能讀取物件 %s '%s'"
+msgstr "無法讀取物件 %s “%s”"
 
 #: builtin/cat-file.c:660
 msgid "flush is only for --buffer mode"
@@ -4033,7 +4035,7 @@ msgstr "輸入中沒有命令"
 #: builtin/cat-file.c:714
 #, c-format
 msgid "whitespace before command: '%s'"
-msgstr "命令前空格：「%s」"
+msgstr "命令前有空格：“%s”"
 
 #: builtin/cat-file.c:723
 #, c-format
@@ -4095,7 +4097,7 @@ msgstr "美化輸出 <object> 的內容"
 
 #: builtin/cat-file.c:951
 msgid "Emit [broken] object attributes"
-msgstr "輸出 [損壞的] 物件屬性"
+msgstr "輸出 [損壞的] ([broken]) 物件屬性"
 
 #: builtin/cat-file.c:952
 msgid "show object type (one of 'blob', 'tree', 'commit', 'tag', ...)"
@@ -4127,15 +4129,15 @@ msgstr "類似 --batch 但不輸出 <contents>"
 
 #: builtin/cat-file.c:968
 msgid "stdin is NUL-terminated"
-msgstr "標準輸入以 NUL 字元終止"
+msgstr "stdin 以 NUL 字元終止"
 
 #: builtin/cat-file.c:970
 msgid "read commands from stdin"
-msgstr "從標準輸入讀取命令"
+msgstr "從 stdin 讀取命令"
 
 #: builtin/cat-file.c:974
 msgid "with --batch[-check]: ignores stdin, batches all known objects"
-msgstr "傳入 --batch[-check]：忽略標準輸入，批次處理所有已知物件"
+msgstr "傳入 --batch[-check]：忽略 stdin，批次處理所有已知物件"
 
 #: builtin/cat-file.c:976
 msgid "Change or optimize batch output"
@@ -4147,21 +4149,21 @@ msgstr "緩衝 --batch 的輸出"
 
 #: builtin/cat-file.c:979
 msgid "follow in-tree symlinks"
-msgstr "追蹤樹中的符號連結"
+msgstr "追蹤樹狀物件中的符號連結"
 
 #: builtin/cat-file.c:981
 msgid "do not order objects before emitting them"
-msgstr "不要在輸出物件前排序"
+msgstr "不要在輸出前排序物件"
 
 #: builtin/cat-file.c:983
 msgid ""
 "Emit object (blob or tree) with conversion or filter (stand-alone, or with "
 "batch)"
-msgstr "轉換或過濾後輸出物件（blob 或樹）（單獨或批次處理）"
+msgstr "轉換或過濾後輸出物件 (blob 或 tree)（單獨或批次處理）"
 
 #: builtin/cat-file.c:985
 msgid "run textconv on object's content"
-msgstr "在物件內容執行 textconv"
+msgstr "對物件內容進行文字轉換 (textconv)"
 
 #: builtin/cat-file.c:987
 msgid "run filters on object's content"
@@ -4178,7 +4180,7 @@ msgstr "請在 (--textconv | --filters) 使用 <path>，而非 “batch”"
 #: builtin/cat-file.c:1010
 #, c-format
 msgid "'%s=<%s>' needs '%s' or '%s'"
-msgstr "「%s=<%s>」需要「%s」或「%s」"
+msgstr "“%s=<%s>” 需要 “%s” 或 “%s”"
 
 #: builtin/cat-file.c:1012
 msgid "path|tree-ish"
@@ -4188,12 +4190,12 @@ msgstr "path|tree-ish"
 #: builtin/cat-file.c:1028
 #, c-format
 msgid "'%s' requires a batch mode"
-msgstr "「%s」需要批次處理模式"
+msgstr "“%s” 需要批次處理模式"
 
 #: builtin/cat-file.c:1040
 #, c-format
 msgid "'-%c' is incompatible with batch mode"
-msgstr "「-%c」與批次處理模式不相容"
+msgstr "“-%c” 與批次處理模式不相容"
 
 #: builtin/cat-file.c:1043
 msgid "batch modes take no arguments"
@@ -4202,12 +4204,12 @@ msgstr "批次處理模式不取引數"
 #: builtin/cat-file.c:1051 builtin/cat-file.c:1054
 #, c-format
 msgid "<rev> required with '%s'"
-msgstr "<rev> 需要搭配「%s」"
+msgstr "“%s” 需要 <rev>"
 
 #: builtin/cat-file.c:1057
 #, c-format
 msgid "<object> required with '-%c'"
-msgstr "<object> 需要搭配「-%c」"
+msgstr "“-%c” 需要 <object>"
 
 #: builtin/cat-file.c:1066
 #, c-format
@@ -4220,18 +4222,18 @@ msgstr "只允許在 <type> <object> 模式傳入兩個引數，但傳了 %d 個
 msgid ""
 "git check-attr [--source <tree-ish>] [-a | --all | <attr>...] [--] "
 "<pathname>..."
-msgstr "git check-attr [-a | --all | <屬性>...] [--] <路徑名>..."
+msgstr "git check-attr [-a | --all | <attr>...] [--] <pathname>..."
 
 #: builtin/check-attr.c:21
 #, fuzzy
 #| msgid "git check-attr --stdin [-z] [-a | --all | <attr>...]"
 msgid ""
 "git check-attr --stdin [-z] [--source <tree-ish>] [-a | --all | <attr>...]"
-msgstr "git check-attr --stdin [-z] [-a | --all | <屬性>...]"
+msgstr "git check-attr --stdin [-z] [-a | --all | <attr>...]"
 
 #: builtin/check-attr.c:28
 msgid "report all attributes set on file"
-msgstr "報告設定在檔案上的所有屬性"
+msgstr "回報設定在檔案上的所有屬性"
 
 #: builtin/check-attr.c:29
 msgid "use .gitattributes only from the index"
@@ -4239,11 +4241,11 @@ msgstr "只使用索引中的 .gitattributes"
 
 #: builtin/check-attr.c:30 builtin/check-ignore.c:28 builtin/hash-object.c:109
 msgid "read file names from stdin"
-msgstr "從標準輸入讀出檔案名"
+msgstr "從 stdin 讀出檔案名稱"
 
 #: builtin/check-attr.c:32 builtin/check-ignore.c:30
 msgid "terminate input and output records by a NUL character"
-msgstr "輸入和輸出的紀錄使用 NUL 字元終結"
+msgstr "輸入和輸出的紀錄使用 NUL 字元終止"
 
 #: builtin/check-attr.c:33
 #, fuzzy
@@ -4255,7 +4257,7 @@ msgstr "樹或提交"
 #, fuzzy
 #| msgid "which tree-ish to checkout from"
 msgid "which tree-ish to check attributes at"
-msgstr "要簽出哪一個樹"
+msgstr "要自哪一個樹狀物件指示元簽出"
 
 #: builtin/check-ignore.c:24 builtin/checkout.c:1593 builtin/gc.c:573
 #: builtin/worktree.c:632
@@ -4264,7 +4266,7 @@ msgstr "不顯示進度報告"
 
 #: builtin/check-ignore.c:32
 msgid "show non-matching input paths"
-msgstr "顯示未符合的輸入路徑"
+msgstr "顯示不符合的輸入路徑"
 
 #: builtin/check-ignore.c:34
 msgid "ignore index when checking"
@@ -4272,11 +4274,11 @@ msgstr "檢查時忽略索引"
 
 #: builtin/check-ignore.c:168
 msgid "cannot specify pathnames with --stdin"
-msgstr "不能同時指定路徑及 --stdin 參數"
+msgstr "無法同時指定路徑名稱及 --stdin"
 
 #: builtin/check-ignore.c:171
 msgid "-z only makes sense with --stdin"
-msgstr "-z 需要和 --stdin 參數共用才有意義"
+msgstr "-z 需要和 --stdin 同時使用才有意義"
 
 #: builtin/check-ignore.c:173
 msgid "no path specified"
@@ -4284,11 +4286,11 @@ msgstr "未指定路徑"
 
 #: builtin/check-ignore.c:177
 msgid "--quiet is only valid with a single pathname"
-msgstr "參數 --quiet 只在提供一個路徑名時有效"
+msgstr "引數 --quiet 只在提供一個路徑名稱時有效"
 
 #: builtin/check-ignore.c:179
 msgid "cannot have both --quiet and --verbose"
-msgstr "不能同時提供 --quiet 和 --verbose 參數"
+msgstr "無法同時傳入 --quiet 和 --verbose"
 
 #: builtin/check-ignore.c:182
 msgid "--non-matching is only valid with --verbose"
@@ -4296,43 +4298,43 @@ msgstr "--non-matching 選項只在使用 --verbose 時有效"
 
 #: builtin/check-mailmap.c:12
 msgid "git check-mailmap [<options>] <contact>..."
-msgstr "git check-mailmap [<選項>] <聯繫位址>..."
+msgstr "git check-mailmap [<options>] <contact>..."
 
 #: builtin/check-mailmap.c:17
 msgid "also read contacts from stdin"
-msgstr "還從標準輸入讀取聯繫位址"
+msgstr "亦從 stdin 讀取聯絡地址"
 
 #: builtin/check-mailmap.c:28
 #, c-format
 msgid "unable to parse contact: %s"
-msgstr "不能解析聯繫位址：%s"
+msgstr "無法解析聯絡地址：%s"
 
 #: builtin/check-mailmap.c:51
 msgid "no contacts specified"
-msgstr "未指定聯繫位址"
+msgstr "未指定聯絡地址"
 
 #: builtin/checkout--worker.c:112
 msgid "git checkout--worker [<options>]"
-msgstr "git checkout--worker [<選項>]"
+msgstr "git checkout--worker [<options>]"
 
 #: builtin/checkout--worker.c:120 builtin/checkout-index.c:238
 #: builtin/column.c:32 builtin/column.c:33 builtin/submodule--helper.c:1782
 #: builtin/submodule--helper.c:1785 builtin/submodule--helper.c:1793
 #: builtin/worktree.c:630 builtin/worktree.c:876
 msgid "string"
-msgstr "字串"
+msgstr "string"
 
 #: builtin/checkout--worker.c:121 builtin/checkout-index.c:239
 msgid "when creating files, prepend <string>"
-msgstr "在建立檔案時，在前面加上 <字串>"
+msgstr "建立檔案時，在前面加上 <string>"
 
 #: builtin/checkout-index.c:187
 msgid "git checkout-index [<options>] [--] [<file>...]"
-msgstr "git checkout-index [<選項>] [--] [<檔案>...]"
+msgstr "git checkout-index [<options>] [--] [<file>...]"
 
 #: builtin/checkout-index.c:204
 msgid "stage should be between 1 and 3 or all"
-msgstr "索引值應該取值 1 到 3 或者 all"
+msgstr "stage 應該是 1 到 3 的值，或者是 all"
 
 #: builtin/checkout-index.c:222
 msgid "check out all files in the index"
@@ -4356,11 +4358,11 @@ msgstr "不簽出新檔案"
 
 #: builtin/checkout-index.c:231
 msgid "update stat information in the index file"
-msgstr "更新索引中檔案的狀態訊息"
+msgstr "更新索引檔案的狀態訊息"
 
 #: builtin/checkout-index.c:235
 msgid "read list of paths from the standard input"
-msgstr "從標準輸入讀取路徑列表"
+msgstr "從標準輸入讀取路徑清單"
 
 #: builtin/checkout-index.c:237
 msgid "write the content to temporary files"
@@ -4372,49 +4374,49 @@ msgstr "從指定暫存區中拷出檔案"
 
 #: builtin/checkout.c:43
 msgid "git checkout [<options>] <branch>"
-msgstr "git checkout [<選項>] <分支>"
+msgstr "git checkout [<options>] <branch>"
 
 #: builtin/checkout.c:44
 msgid "git checkout [<options>] [<branch>] -- <file>..."
-msgstr "git checkout [<選項>] [<分支>] -- <檔案>..."
+msgstr "git checkout [<options>] [<branch>] -- <file>..."
 
 #: builtin/checkout.c:49
 msgid "git switch [<options>] [<branch>]"
-msgstr "git switch [<選項>] [<分支>]"
+msgstr "git switch [<options>] [<branch>]"
 
 #: builtin/checkout.c:54
 msgid "git restore [<options>] [--source=<branch>] <file>..."
-msgstr "git restore [<選項>] [--source=<分支>] <檔案>..."
+msgstr "git restore [<options>] [--source=<branch>] <file>..."
 
 #: builtin/checkout.c:209 builtin/checkout.c:248
 #, c-format
 msgid "path '%s' does not have our version"
-msgstr "路徑 '%s' 沒有我們的版本"
+msgstr "“%s” 路徑沒有我們的版本"
 
 #: builtin/checkout.c:211 builtin/checkout.c:250
 #, c-format
 msgid "path '%s' does not have their version"
-msgstr "路徑 '%s' 沒有他們的版本"
+msgstr "“%s” 路徑沒有他們的版本"
 
 #: builtin/checkout.c:227
 #, c-format
 msgid "path '%s' does not have all necessary versions"
-msgstr "路徑 '%s' 沒有全部必需的版本"
+msgstr "“%s” 路徑沒有所有必須的版本"
 
 #: builtin/checkout.c:281
 #, c-format
 msgid "path '%s' does not have necessary versions"
-msgstr "路徑 '%s' 沒有必需的版本"
+msgstr "“%s” 路徑沒有必須的版本"
 
 #: builtin/checkout.c:301
 #, c-format
 msgid "path '%s': cannot merge"
-msgstr "path '%s'：無法合併"
+msgstr "path “%s”：無法合併"
 
 #: builtin/checkout.c:317
 #, c-format
 msgid "Unable to add merge result for '%s'"
-msgstr "無法為 '%s' 新增合併結果"
+msgstr "無法為 “%s” 加上合併結果"
 
 #: builtin/checkout.c:434
 #, c-format
@@ -4432,42 +4434,42 @@ msgstr[0] "從 %2$s 更新了 %1$d 個路徑"
 #, c-format
 msgid "Updated %d path from the index"
 msgid_plural "Updated %d paths from the index"
-msgstr[0] "從索引區更新了 %d 個路徑"
+msgstr[0] "已從索引區更新 %d 個路徑"
 
 #: builtin/checkout.c:469 builtin/checkout.c:472 builtin/checkout.c:475
 #: builtin/checkout.c:479
 #, c-format
 msgid "'%s' cannot be used with updating paths"
-msgstr "'%s' 不能在更新路徑時使用"
+msgstr "無法在更新路徑時使用 “%s”"
 
 #: builtin/checkout.c:489
 #, c-format
 msgid "Cannot update paths and switch to branch '%s' at the same time."
-msgstr "不能同時更新路徑並切換到分支'%s'。"
+msgstr "無法同時更新路徑和切換至 “%s” 分支。"
 
 #: builtin/checkout.c:493
 #, c-format
 msgid "neither '%s' or '%s' is specified"
-msgstr "'%s' 或 '%s' 都沒有指定"
+msgstr "“%s” 或 “%s” 皆未指定"
 
 #: builtin/checkout.c:497
 #, c-format
 msgid "'%s' must be used when '%s' is not specified"
-msgstr "未指定 '%2$s' 時，必須使用 '%1$s'"
+msgstr "未指定 “%2$s” 時，必須使用 “%1$s”"
 
 #: builtin/checkout.c:515 builtin/checkout.c:519
 #, c-format
 msgid "'%s' or '%s' cannot be used with %s"
-msgstr "'%s' 或 '%s' 不能和 %s 一起使用"
+msgstr "“%s” 或 “%s” 無法與 %s 一起使用"
 
 #: builtin/checkout.c:595 builtin/checkout.c:602
 #, c-format
 msgid "path '%s' is unmerged"
-msgstr "路徑 '%s' 未合併"
+msgstr "路徑 “%s” 未合併"
 
 #: builtin/checkout.c:795
 msgid "you need to resolve your current index first"
-msgstr "您需要先解決目前索引的衝突"
+msgstr "您需要先解決目前索引區的衝突"
 
 #: builtin/checkout.c:847
 #, c-format
@@ -4475,13 +4477,13 @@ msgid ""
 "cannot continue with staged changes in the following files:\n"
 "%s"
 msgstr ""
-"不能繼續，下列檔案有暫存的修改：\n"
+"無法繼續，下列檔案有暫存的更動：\n"
 "%s"
 
 #: builtin/checkout.c:940
 #, c-format
 msgid "Can not do reflog for '%s': %s\n"
-msgstr "不能對 '%s' 執行 reflog 動作：%s\n"
+msgstr "無法對 “%s” 執行 reflog 動作：%s\n"
 
 #: builtin/checkout.c:985
 msgid "HEAD is now at"
@@ -4490,38 +4492,38 @@ msgstr "HEAD 目前位於"
 #: builtin/checkout.c:989 builtin/clone.c:642 builtin/clone.c:668
 #: t/helper/test-fast-rebase.c:214
 msgid "unable to update HEAD"
-msgstr "不能更新 HEAD"
+msgstr "無法更新 HEAD"
 
 #: builtin/checkout.c:993
 #, c-format
 msgid "Reset branch '%s'\n"
-msgstr "重設分支 '%s'\n"
+msgstr "重設分支 “%s”\n"
 
 #: builtin/checkout.c:996
 #, c-format
 msgid "Already on '%s'\n"
-msgstr "已經位於 '%s'\n"
+msgstr "已經位於 “%s”\n"
 
 #: builtin/checkout.c:1000
 #, c-format
 msgid "Switched to and reset branch '%s'\n"
-msgstr "切換並重設分支 '%s'\n"
+msgstr "已切換並重設分支 “%s”\n"
 
 #: builtin/checkout.c:1002 builtin/checkout.c:1438
 #, c-format
 msgid "Switched to a new branch '%s'\n"
-msgstr "切換到一個新分支 '%s'\n"
+msgstr "已切換至新分支 “%s”\n"
 
 #: builtin/checkout.c:1004
 #, c-format
 msgid "Switched to branch '%s'\n"
-msgstr "切換到分支 '%s'\n"
+msgstr "已切換至分支 “%s”\n"
 
 #  譯者：請維持前導空格
 #: builtin/checkout.c:1055
 #, c-format
 msgid " ... and %d more.\n"
-msgstr " ... 及其它 %d 個。\n"
+msgstr " …… 及其它 %d 個。\n"
 
 #: builtin/checkout.c:1061
 #, c-format
@@ -4536,7 +4538,8 @@ msgid_plural ""
 "\n"
 "%s\n"
 msgstr[0] ""
-"警告：您正丟下 %d 個提交，未和任何分支關聯：\n"
+"警告：您正丟下 %d 個\n"
+"未和任何分支關聯的提交：\n"
 "\n"
 "%s\n"
 
@@ -4555,23 +4558,23 @@ msgid_plural ""
 " git branch <new-branch-name> %s\n"
 "\n"
 msgstr[0] ""
-"如果您想要透過建立新分支儲存它，這可能是一個好時候。\n"
-"如下動作：\n"
+"如果您想要透過建立新分支留下這些提交，\n"
+"現在很適合執行：\n"
 "\n"
-" git branch <新分支名> %s\n"
+" git branch <新分支名稱> %s\n"
 "\n"
 
 #: builtin/checkout.c:1115
 msgid "internal error in revision walk"
-msgstr "在版本遍歷時遇到內部錯誤"
+msgstr "在修訂版遍歷時遇到內部錯誤"
 
 #: builtin/checkout.c:1119
 msgid "Previous HEAD position was"
-msgstr "之前的 HEAD 位置是"
+msgstr "之前的 HEAD 指針位置在"
 
 #: builtin/checkout.c:1163 builtin/checkout.c:1433
 msgid "You are on a branch yet to be born"
-msgstr "您位於一個尚未初始化的分支"
+msgstr "您正位於一個尚未初始化的分支"
 
 #: builtin/checkout.c:1246
 #, c-format
@@ -4579,7 +4582,7 @@ msgid ""
 "'%s' could be both a local file and a tracking branch.\n"
 "Please use -- (and optionally --no-guess) to disambiguate"
 msgstr ""
-"'%s' 既可以是一個本機檔案，也可以是一個追蹤分支。\n"
+"“%s” 既可以是本機檔案，也可以是追蹤分支。\n"
 "請使用 --（和可選的 --no-guess）來消除歧義"
 
 #: builtin/checkout.c:1253
@@ -4593,18 +4596,19 @@ msgid ""
 "one remote, e.g. the 'origin' remote, consider setting\n"
 "checkout.defaultRemote=origin in your config."
 msgstr ""
-"如果您想要簽出一個遠端追蹤分支，例如 'origin'，您可以\n"
-"使用 --track 選項寫出全名：\n"
+"如果您想要簽出遠端追蹤分支，例如 “origin”，\n"
+"您可以使用 --track 選項寫出全名：\n"
 "\n"
 "    git checkout --track origin/<name>\n"
 "\n"
-"如果您總是喜歡使用模糊的簡短分支名 <name>，而不喜歡如 'origin' 的遠端\n"
-"版本庫名，可以在設定中設定 checkout.defaultRemote=origin。"
+"如果您平時比較想要使用模糊的簡短分支名稱 <name>，\n"
+"而不太想寫如 “origin” 的遠端版本庫名稱，\n"
+"可以在組態中設定 checkout.defaultRemote=origin。"
 
 #: builtin/checkout.c:1263
 #, c-format
 msgid "'%s' matched multiple (%d) remote tracking branches"
-msgstr "'%s' 符合多個 (%d) 遠端追蹤分支"
+msgstr "“%s” 符合多個 (%d) 遠端追蹤分支"
 
 #: builtin/checkout.c:1329
 msgid "only one reference expected"
@@ -4613,7 +4617,7 @@ msgstr "預期只有一個引用"
 #: builtin/checkout.c:1346
 #, c-format
 msgid "only one reference expected, %d given."
-msgstr "應只有一個引用，卻提供了 %d 個。"
+msgstr "預期只有一個引用，卻提供了 %d 個。"
 
 #: builtin/checkout.c:1392 builtin/worktree.c:405 builtin/worktree.c:575
 #, c-format
@@ -4623,113 +4627,113 @@ msgstr "無效引用：%s"
 #: builtin/checkout.c:1405 builtin/checkout.c:1787
 #, c-format
 msgid "reference is not a tree: %s"
-msgstr "引用不是一個樹：%s"
+msgstr "引用不是樹狀物件：%s"
 
 #: builtin/checkout.c:1454
 #, c-format
 msgid "a branch is expected, got tag '%s'"
-msgstr "期望一個分支，得到標籤 '%s'"
+msgstr "預期收到分支，卻收到標籤 “%s”"
 
 #: builtin/checkout.c:1456
 #, c-format
 msgid "a branch is expected, got remote branch '%s'"
-msgstr "期望一個分支，得到遠端分支 '%s'"
+msgstr "預期收到分支，卻收到遠端分支 “%s”"
 
 #: builtin/checkout.c:1458 builtin/checkout.c:1467
 #, c-format
 msgid "a branch is expected, got '%s'"
-msgstr "期望一個分支，得到 '%s'"
+msgstr "預期收到分支，卻收到 “%s”"
 
 #: builtin/checkout.c:1461
 #, c-format
 msgid "a branch is expected, got commit '%s'"
-msgstr "期望一個分支，得到提交 '%s'"
+msgstr "預期收到分支，卻收到提交 “%s”"
 
 #: builtin/checkout.c:1470
 msgid ""
 "If you want to detach HEAD at the commit, try again with the --detach option."
-msgstr "若您想要分離提交的 HEAD，請傳入 --detach 選項重試。"
+msgstr "若您想要在此提交分離 HEAD 指針，請傳入 --detach 選項重試。"
 
 #: builtin/checkout.c:1483
 msgid ""
 "cannot switch branch while merging\n"
 "Consider \"git merge --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在合併時切換分支\n"
-"考慮使用 \"git merge --quit\" 或 \"git worktree add\"。"
+"無法在合併時切換分支\n"
+"請試試 “git merge --quit” 或 “git worktree add”。"
 
 #: builtin/checkout.c:1487
 msgid ""
 "cannot switch branch in the middle of an am session\n"
 "Consider \"git am --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在 am 工作階段期間切換分支\n"
-"考慮使用 \"git am --quit\" 或 \"git worktree add\"。"
+"無法在 am 工作階段期間時切換分支\n"
+"請試試 “git am --quit” 或 “git worktree add”。"
 
 #: builtin/checkout.c:1491
 msgid ""
 "cannot switch branch while rebasing\n"
 "Consider \"git rebase --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在重定基底時切換分支\n"
-"考慮使用 \"git rebase --quit\" 或 \"git worktree add\"。"
+"無法在重定基底時切換分支\n"
+"請試試 “git rebase --quit” 或 “git worktree add”。"
 
 #: builtin/checkout.c:1495
 msgid ""
 "cannot switch branch while cherry-picking\n"
 "Consider \"git cherry-pick --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在揀選時切換分支\n"
-"考慮使用 \"git cherry-pick --quit\" 或 \"git worktree add\"。"
+"無法在揀選時切換分支\n"
+"請試試 “git cherry-pick --quit” 或 “git worktree add”。"
 
 #: builtin/checkout.c:1499
 msgid ""
 "cannot switch branch while reverting\n"
 "Consider \"git revert --quit\" or \"git worktree add\"."
 msgstr ""
-"不能在還原時切換分支\n"
-"考慮使用 \"git revert --quit\" 或 \"git worktree add\"。"
+"無法在還原時切換分支\n"
+"請試試 “git revert --quit” 或 “git worktree add”。"
 
 #: builtin/checkout.c:1503
 msgid "you are switching branch while bisecting"
-msgstr "您在執行二分搜尋時切換分支"
+msgstr "您在進行二分搜尋時切換分支"
 
 #: builtin/checkout.c:1512
 msgid "paths cannot be used with switching branches"
-msgstr "路徑不能和切換分支同時使用"
+msgstr "路徑不能與切換分支同時使用"
 
 #: builtin/checkout.c:1515 builtin/checkout.c:1519 builtin/checkout.c:1523
 #, c-format
 msgid "'%s' cannot be used with switching branches"
-msgstr "'%s' 不能和切換分支同時使用"
+msgstr "“%s” 不能與切換分支同時使用"
 
 #: builtin/checkout.c:1527 builtin/checkout.c:1530 builtin/checkout.c:1533
 #: builtin/checkout.c:1538 builtin/checkout.c:1543
 #, c-format
 msgid "'%s' cannot be used with '%s'"
-msgstr "'%s' 不能和 '%s' 同時使用"
+msgstr "“%s” 不能與 “%s” 同時使用"
 
 #: builtin/checkout.c:1540
 #, c-format
 msgid "'%s' cannot take <start-point>"
-msgstr "'%s' 不帶 <起始點>"
+msgstr "“%s” 不取 <start-point>"
 
 #: builtin/checkout.c:1548
 #, c-format
 msgid "Cannot switch branch to a non-commit '%s'"
-msgstr "不能切換分支到一個非提交 '%s'"
+msgstr "無法將分支切換至非提交項目 “%s”"
 
 #: builtin/checkout.c:1555
 msgid "missing branch or commit argument"
-msgstr "缺少分支或提交參數"
+msgstr "缺少分支或提交引數"
 
 #: builtin/checkout.c:1598
 msgid "perform a 3-way merge with the new branch"
-msgstr "和新的分支執行三方合併"
+msgstr "和新分支進行三方合併"
 
 #: builtin/checkout.c:1599 builtin/log.c:1975 parse-options.h:540
 msgid "style"
-msgstr "風格"
+msgstr "style"
 
 #: builtin/checkout.c:1600
 msgid "conflict style (merge, diff3, or zdiff3)"
@@ -4737,7 +4741,7 @@ msgstr "衝突輸出風格（merge、diff3 或 zdiff3）"
 
 #: builtin/checkout.c:1612 builtin/worktree.c:627
 msgid "detach HEAD at named commit"
-msgstr "HEAD 從指定的提交分離"
+msgstr "自指定提交分離 HEAD 指針"
 
 #: builtin/checkout.c:1617
 msgid "force checkout (throw away local modifications)"
@@ -4745,19 +4749,19 @@ msgstr "強制簽出（捨棄本機修改）"
 
 #: builtin/checkout.c:1619
 msgid "new-branch"
-msgstr "新分支"
+msgstr "new-branch"
 
 #: builtin/checkout.c:1619
 msgid "new unparented branch"
-msgstr "新的沒有父提交的分支"
+msgstr "新的，沒有父提交的分支"
 
 #: builtin/checkout.c:1621 builtin/merge.c:314
 msgid "update ignored files (default)"
-msgstr "更新忽略的檔案（預設）"
+msgstr "更新忽略的檔案（預設值）"
 
 #: builtin/checkout.c:1624
 msgid "do not check if another worktree is holding the given ref"
-msgstr "不檢查指定的引用是否被其他工作區所占用"
+msgstr "不檢查其他工作區是否正在佔用指定的引用"
 
 #: builtin/checkout.c:1637
 msgid "checkout our version for unmerged files"
@@ -4769,16 +4773,16 @@ msgstr "對尚未合併的檔案簽出他們的版本"
 
 #: builtin/checkout.c:1644
 msgid "do not limit pathspecs to sparse entries only"
-msgstr "對路徑不做稀疏簽出的限制"
+msgstr "對路徑規格不做稀疏簽出的限制"
 
 #: builtin/checkout.c:1702
 #, c-format
 msgid "options '-%c', '-%c', and '%s' cannot be used together"
-msgstr "「-%c」、「-%c」和「%s」選項不得同時使用"
+msgstr "“-%c”、“-%c” 和 “%s” 選項不得同時使用"
 
 #: builtin/checkout.c:1743
 msgid "--track needs a branch name"
-msgstr "--track 需要一個分支名"
+msgstr "--track 需要分支名稱"
 
 #: builtin/checkout.c:1748
 #, c-format
@@ -4797,23 +4801,24 @@ msgstr "無效的路徑規格"
 #: builtin/checkout.c:1803
 #, c-format
 msgid "'%s' is not a commit and a branch '%s' cannot be created from it"
-msgstr "'%s' 不是一個提交，不能基於它建立分支 '%s'"
+msgstr "“%s” 不是提交，因此不能以這為基礎建立 “%s” 分支"
 
 #: builtin/checkout.c:1807
 #, c-format
 msgid "git checkout: --detach does not take a path argument '%s'"
-msgstr "git checkout：--detach 不能接收路徑參數 '%s'"
+msgstr "git checkout：--detach 不取路徑引數 “%s”"
 
 #: builtin/checkout.c:1832
 msgid ""
 "git checkout: --ours/--theirs, --force and --merge are incompatible when\n"
 "checking out of the index."
 msgstr ""
-"git checkout：在從索引簽出時，--ours/--theirs、--force 和 --merge 不相容。"
+"git checkout：在從索引簽出時，--ours/--theirs、--force\n"
+"和 --merge 不相容。"
 
 #: builtin/checkout.c:1837
 msgid "you must specify path(s) to restore"
-msgstr "您必須指定一個要復原的路徑"
+msgstr "您必須指定要還原的路徑"
 
 #: builtin/checkout.c:1862 builtin/checkout.c:1864 builtin/checkout.c:1917
 #: builtin/checkout.c:1919 builtin/clone.c:142 builtin/remote.c:174
@@ -4821,39 +4826,39 @@ msgstr "您必須指定一個要復原的路徑"
 #: builtin/submodule--helper.c:3269 builtin/worktree.c:623
 #: builtin/worktree.c:625
 msgid "branch"
-msgstr "分支"
+msgstr "branch"
 
 #: builtin/checkout.c:1863
 msgid "create and checkout a new branch"
-msgstr "建立並簽出一個新的分支"
+msgstr "建立並簽出新分支"
 
 #: builtin/checkout.c:1865
 msgid "create/reset and checkout a branch"
-msgstr "建立/重設並簽出一個分支"
+msgstr "建立/重設並簽出分支"
 
 #: builtin/checkout.c:1866
 msgid "create reflog for new branch"
-msgstr "為新的分支建立引用日誌"
+msgstr "為新分支建立引用日誌"
 
 #: builtin/checkout.c:1868
 msgid "second guess 'git checkout <no-such-branch>' (default)"
-msgstr "二次猜測 'git checkout <無此分支>'（預設）"
+msgstr "二次猜測 “git checkout <無此分支>”（預設值）"
 
 #: builtin/checkout.c:1869
 msgid "use overlay mode (default)"
-msgstr "使用疊加模式（預設）"
+msgstr "使用疊加模式（預設值）"
 
 #: builtin/checkout.c:1918
 msgid "create and switch to a new branch"
-msgstr "建立並切換一個新分支"
+msgstr "建立並切換至新分支"
 
 #: builtin/checkout.c:1920
 msgid "create/reset and switch to a branch"
-msgstr "建立/重設並切換一個分支"
+msgstr "建立/重設並切換至指定分支"
 
 #: builtin/checkout.c:1922
 msgid "second guess 'git switch <no-such-branch>'"
-msgstr "二次猜測 'git switch <無此分支>'"
+msgstr "二次猜測 “git switch <無此分支>”"
 
 #: builtin/checkout.c:1924
 msgid "throw away local modifications"
@@ -4861,19 +4866,19 @@ msgstr "捨棄本機修改"
 
 #: builtin/checkout.c:1960
 msgid "which tree-ish to checkout from"
-msgstr "要簽出哪一個樹"
+msgstr "要自哪一個樹狀物件指示元簽出"
 
 #: builtin/checkout.c:1962
 msgid "restore the index"
-msgstr "復原索引"
+msgstr "還原索引"
 
 #: builtin/checkout.c:1964
 msgid "restore the working tree (default)"
-msgstr "復原工作區（預設）"
+msgstr "還原工作區（預設值）"
 
 #: builtin/checkout.c:1966
 msgid "ignore unmerged entries"
-msgstr "忽略未合併條目"
+msgstr "忽略未合併項目"
 
 #: builtin/checkout.c:1967
 msgid "use overlay mode"
@@ -4884,17 +4889,18 @@ msgid ""
 "git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] "
 "[<pathspec>...]"
 msgstr ""
-"git clean [-d] [-f] [-i] [-n] [-q] [-e <模式>] [-x | -X] [--] [<路徑規格>...]"
+"git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] "
+"[<pathspec>...]"
 
 #: builtin/clean.c:37
 #, c-format
 msgid "Removing %s\n"
-msgstr "正刪除 %s\n"
+msgstr "正在刪除 %s\n"
 
 #: builtin/clean.c:38
 #, c-format
 msgid "Would remove %s\n"
-msgstr "將刪除 %s\n"
+msgstr "將會刪除 %s\n"
 
 #: builtin/clean.c:39
 #, c-format
@@ -4909,12 +4915,12 @@ msgstr "將忽略版本庫 %s\n"
 #: builtin/clean.c:41 midx.c:1627
 #, c-format
 msgid "failed to remove %s"
-msgstr "刪除 %s 失敗"
+msgstr "無法移除 %s"
 
 #: builtin/clean.c:42
 #, c-format
 msgid "could not lstat %s\n"
-msgstr "不能對 %s 呼叫 lstat\n"
+msgstr "不能對 %s 進行 lstat\n"
 
 #: builtin/clean.c:43
 msgid "Refusing to remove current working directory\n"
@@ -4932,9 +4938,9 @@ msgid ""
 "foo        - select item based on unique prefix\n"
 "           - (empty) select nothing\n"
 msgstr ""
-"協助：\n"
-"1          - 透過編號選擇一個選項\n"
-"foo        - 透過唯一前綴選擇一個選項\n"
+"提示說明：\n"
+"1          - 透過編號選擇項目\n"
+"foo        - 根據獨特前綴選擇項目\n"
 "           - （空）什麼也不選擇\n"
 
 #: builtin/clean.c:334
@@ -4949,39 +4955,39 @@ msgid ""
 "*          - choose all items\n"
 "           - (empty) finish selecting\n"
 msgstr ""
-"協助：\n"
-"1          - 選擇一個選項\n"
-"3-5        - 選擇一個範圍內的所有選項\n"
-"2-3,6-9    - 選擇多個範圍內的所有選項\n"
-"foo        - 透過唯一前綴選擇一個選項\n"
-"-...       - 反選特定的選項\n"
-"*          - 選擇所有選項\n"
-"           - （空）結束選擇\n"
+"提示說明：\n"
+"1          - 選擇一個項目\n"
+"3-5        - 選擇一個項目範圍\n"
+"2-3,6-9    - 選擇多個項目範圍\n"
+"foo        - 根據獨特前綴選擇項目\n"
+"-...       - 取消選取指定項目\n"
+"*          - 選擇所有項目\n"
+"           - （空）完成選擇\n"
 
 #: builtin/clean.c:549
 #, c-format
 msgid "Huh (%s)?\n"
-msgstr "嗯（%s）？\n"
+msgstr "嗯（%s）?\n"
 
 #: builtin/clean.c:689
 #, c-format
 msgid "Input ignore patterns>> "
-msgstr "輸入範本以排除條目>> "
+msgstr "輸入要忽略的模式項目>> "
 
 #: builtin/clean.c:723
 #, c-format
 msgid "WARNING: Cannot find items matched by: %s"
-msgstr "警告：無法找到和 %s 符合的條目"
+msgstr "警告：無法找到和 %s 符合的項目"
 
 #: builtin/clean.c:744
 msgid "Select items to delete"
-msgstr "選擇要刪除的條目"
+msgstr "選擇要刪除的項目"
 
 #. TRANSLATORS: Make sure to keep [y/N] as is
 #: builtin/clean.c:785
 #, c-format
 msgid "Remove %s [y/N]? "
-msgstr "移除 %s [y/N]？ "
+msgstr "移除 %s [y/N]? "
 
 #: builtin/clean.c:816
 msgid ""
@@ -4996,15 +5002,15 @@ msgstr ""
 "clean               - 開始清理\n"
 "filter by pattern   - 透過範本排除要刪除的條目\n"
 "select by numbers   - 透過數字選擇要刪除的條目\n"
-"ask each            - 針對刪除逐一詢問（就像 \"rm -i\"）\n"
+"ask each            - 針對刪除逐一詢問（就像 “rm -i”）\n"
 "quit                - 停止刪除並離開\n"
-"help                - 顯示本協助\n"
-"?                   - 顯示如何在提示符下選擇的協助"
+"help                - 顯示本輔助說明\n"
+"?                   - 顯示如何在提示下選擇的協助"
 
 #: builtin/clean.c:852
 msgid "Would remove the following item:"
 msgid_plural "Would remove the following items:"
-msgstr[0] "將刪除如下條目："
+msgstr[0] "將移除以下項目："
 
 #: builtin/clean.c:868
 msgid "No more files to clean, exiting."
@@ -5012,11 +5018,11 @@ msgstr "沒有要清理的檔案，離開。"
 
 #: builtin/clean.c:930
 msgid "do not print names of files removed"
-msgstr "不列印刪除檔案的名稱"
+msgstr "不輸出移除的檔案的名稱"
 
 #: builtin/clean.c:932
 msgid "force"
-msgstr "強制"
+msgstr "force"
 
 #: builtin/clean.c:933
 msgid "interactive cleaning"
@@ -5024,26 +5030,26 @@ msgstr "互動式清除"
 
 #: builtin/clean.c:935
 msgid "remove whole directories"
-msgstr "刪除整個目錄"
+msgstr "移除整個目錄"
 
 #: builtin/clean.c:936 builtin/describe.c:574 builtin/describe.c:576
 #: builtin/grep.c:984 builtin/log.c:259 builtin/log.c:261
 #: builtin/ls-files.c:744 builtin/name-rev.c:570 builtin/name-rev.c:572
 #: builtin/show-ref.c:177
 msgid "pattern"
-msgstr "模式"
+msgstr "pattern"
 
 #: builtin/clean.c:937
 msgid "add <pattern> to ignore rules"
-msgstr "新增 <模式> 到忽略規則"
+msgstr "將 <pattern> 加到忽略規則"
 
 #: builtin/clean.c:938
 msgid "remove ignored files, too"
-msgstr "也刪除忽略的檔案"
+msgstr "亦移除忽略的檔案"
 
 #: builtin/clean.c:940
 msgid "remove only ignored files"
-msgstr "只刪除忽略的檔案"
+msgstr "只移除忽略的檔案"
 
 #: builtin/clean.c:955
 msgid ""
@@ -5065,23 +5071,23 @@ msgstr "-x 和 -X 不能同時使用"
 
 #: builtin/clone.c:58
 msgid "git clone [<options>] [--] <repo> [<dir>]"
-msgstr "git clone [<選項>] [--] <版本庫> [<路徑>]"
+msgstr "git clone [<options>] [--] <repo> [<dir>]"
 
 #: builtin/clone.c:112
 msgid "don't clone shallow repository"
-msgstr "不要複製淺版本庫"
+msgstr "不要複製淺層版本庫"
 
 #: builtin/clone.c:114
 msgid "don't create a checkout"
-msgstr "不建立一個簽出"
+msgstr "不要建立簽出"
 
 #: builtin/clone.c:115 builtin/clone.c:117 builtin/init-db.c:553
 msgid "create a bare repository"
-msgstr "建立一個純版本庫"
+msgstr "建立裸版本庫"
 
 #: builtin/clone.c:119
 msgid "create a mirror repository (implies bare)"
-msgstr "建立一個鏡像版本庫（也是純版本庫）"
+msgstr "建立鏡像版本庫（亦即裸版本庫）"
 
 #: builtin/clone.c:121
 msgid "to clone from a local repository"
@@ -5089,7 +5095,7 @@ msgstr "從本機版本庫複製"
 
 #: builtin/clone.c:123
 msgid "don't use local hardlinks, always copy"
-msgstr "不使用本機硬連結，始終複製"
+msgstr "不使用本機硬連結，始終拷貝"
 
 #: builtin/clone.c:125
 msgid "setup as shared repository"
@@ -5105,15 +5111,15 @@ msgstr "在複製時初始化子模組"
 
 #: builtin/clone.c:131
 msgid "number of submodules cloned in parallel"
-msgstr "並行複製的子模組數"
+msgstr "平行複製的子模組數量"
 
 #: builtin/clone.c:132 builtin/init-db.c:550
 msgid "template-directory"
-msgstr "範本目錄"
+msgstr "模板目錄"
 
 #: builtin/clone.c:133 builtin/init-db.c:551
 msgid "directory from which templates will be used"
-msgstr "範本目錄將被使用"
+msgstr "將被使用的模板目錄"
 
 #: builtin/clone.c:135 builtin/clone.c:137 builtin/submodule--helper.c:1789
 #: builtin/submodule--helper.c:2681 builtin/submodule--helper.c:3276
@@ -5123,7 +5129,7 @@ msgstr "引用版本庫"
 #: builtin/clone.c:139 builtin/submodule--helper.c:1791
 #: builtin/submodule--helper.c:2683
 msgid "use --reference only while cloning"
-msgstr "僅在複製時參考 --reference 指向的本機版本庫"
+msgstr "僅在複製時使用 --reference"
 
 #: builtin/clone.c:140 builtin/column.c:28 builtin/fmt-merge-msg.c:29
 #: builtin/init-db.c:561 builtin/merge-file.c:51 builtin/merge.c:299
@@ -5131,15 +5137,15 @@ msgstr "僅在複製時參考 --reference 指向的本機版本庫"
 #: builtin/submodule--helper.c:3278 t/helper/test-simple-ipc.c:596
 #: t/helper/test-simple-ipc.c:598
 msgid "name"
-msgstr "名稱"
+msgstr "name"
 
 #: builtin/clone.c:141
 msgid "use <name> instead of 'origin' to track upstream"
-msgstr "使用 <名稱> 而不是 'origin' 去追蹤上游"
+msgstr "使用 <name> 而不是 “origin” 追蹤上游"
 
 #: builtin/clone.c:143
 msgid "checkout <branch> instead of the remote's HEAD"
-msgstr "簽出 <分支> 而不是遠端 HEAD"
+msgstr "簽出 <branch> 而不是遠端 HEAD"
 
 #: builtin/clone.c:145
 msgid "path to git-upload-pack on the remote"
@@ -5148,24 +5154,24 @@ msgstr "遠端 git-upload-pack 路徑"
 #: builtin/clone.c:146 builtin/fetch.c:2170 builtin/grep.c:923
 #: builtin/pull.c:217
 msgid "depth"
-msgstr "深度"
+msgstr "depth"
 
 #: builtin/clone.c:147
 msgid "create a shallow clone of that depth"
-msgstr "建立一個指定深度的淺複製"
+msgstr "建立指定深度的淺層複製"
 
 #: builtin/clone.c:149
 msgid "create a shallow clone since a specific time"
-msgstr "建立從指定時間到現在的淺複製"
+msgstr "建立從指定時間到現在的淺層複製"
 
 #: builtin/clone.c:150 builtin/fetch.c:2174 builtin/fetch.c:2200
 #: builtin/pull.c:223 builtin/pull.c:248 builtin/rebase.c:1082
 msgid "revision"
-msgstr "修訂版"
+msgstr "revision"
 
 #: builtin/clone.c:151 builtin/fetch.c:2175 builtin/pull.c:224
 msgid "deepen history of shallow clone, excluding rev"
-msgstr "取得更多淺複製的過去歷史記錄，除了特定版本"
+msgstr "取得更多淺層複製的過去歷史記錄，除了特定修訂版"
 
 #: builtin/clone.c:153 builtin/submodule--helper.c:1801
 #: builtin/submodule--helper.c:2697
@@ -5182,11 +5188,11 @@ msgstr "子模組將以淺下載模式複製"
 
 #: builtin/clone.c:158 builtin/init-db.c:559
 msgid "gitdir"
-msgstr "git目錄"
+msgstr "gitdir"
 
 #: builtin/clone.c:159 builtin/init-db.c:560
 msgid "separate git dir from working tree"
-msgstr "git目錄和工作區分離"
+msgstr "git 目錄和工作區分離"
 
 #: builtin/clone.c:160
 msgid "key=value"
@@ -6064,7 +6070,7 @@ msgstr "機器可讀的輸出"
 
 #: builtin/commit.c:1518 builtin/commit.c:1680
 msgid "show status in long format (default)"
-msgstr "以長格式顯示狀態（預設）"
+msgstr "以長格式顯示狀態（預設值）"
 
 #: builtin/commit.c:1521 builtin/commit.c:1683
 msgid "terminate entries with NUL"
@@ -6392,7 +6398,7 @@ msgstr "開啟一個編輯器"
 
 #: builtin/config.c:159
 msgid "find the color configured: slot [default]"
-msgstr "獲得設定的顏色：設定 [預設]"
+msgstr "獲得設定的顏色：設定 [預設值]"
 
 #: builtin/config.c:160
 msgid "find the color setting: slot [stdout-is-tty]"
@@ -7638,7 +7644,7 @@ msgstr "從標準輸入讀取樣式"
 #, fuzzy
 #| msgid "-z only makes sense with --stdin"
 msgid "unknown arguments supplied with --stdin"
-msgstr "-z 需要和 --stdin 參數共用才有意義"
+msgstr "-z 需要和 --stdin 同時使用才有意義"
 
 #: builtin/for-each-repo.c:12
 msgid "git for-each-repo --config=<config> [--] <arguments>"
@@ -7915,7 +7921,7 @@ msgstr "將索引亦作為檢查的頭節點"
 
 #: builtin/fsck.c:912
 msgid "make reflogs head nodes (default)"
-msgstr "將引用日誌作為檢查的 HEAD 節點（預設）"
+msgstr "將引用日誌作為檢查的 HEAD 節點（預設值）"
 
 #: builtin/fsck.c:913
 msgid "also consider packs and alternate objects"
@@ -8471,7 +8477,7 @@ msgstr "用 textconv 過濾器處理二進位檔案"
 
 #: builtin/grep.c:922
 msgid "search in subdirectories (default)"
-msgstr "在子目錄中尋找（預設）"
+msgstr "在子目錄中尋找（預設值）"
 
 #: builtin/grep.c:924
 msgid "descend at most <depth> levels"
@@ -8483,7 +8489,7 @@ msgstr "使用延伸的 POSIX 常規表示式"
 
 #: builtin/grep.c:931
 msgid "use basic POSIX regular expressions (default)"
-msgstr "使用基本的 POSIX 常規表示式（預設）"
+msgstr "使用基本的 POSIX 常規表示式（預設值）"
 
 #: builtin/grep.c:934
 msgid "interpret patterns as fixed strings"
@@ -9575,7 +9581,7 @@ msgstr "不包含已在上游提交中的修補檔"
 
 #: builtin/log.c:1956
 msgid "show patch format instead of default (patch + stat)"
-msgstr "顯示純修補檔格式而非預設的（修補檔+狀態）"
+msgstr "顯示純修補檔格式而非預設值（修補檔+狀態）"
 
 #: builtin/log.c:1958
 msgid "Messaging"
@@ -9591,7 +9597,7 @@ msgstr "新增信件頭"
 
 #: builtin/log.c:1961 builtin/log.c:1962
 msgid "email"
-msgstr "信件位址"
+msgstr "信箱"
 
 #: builtin/log.c:1961
 msgid "add To: header"
@@ -9790,7 +9796,7 @@ msgstr "使用小寫字母表示 'fsmonitor clean' 檔案"
 
 #: builtin/ls-files.c:719
 msgid "show cached files in the output (default)"
-msgstr "顯示快取的檔案（預設）"
+msgstr "顯示快取的檔案（預設值）"
 
 #: builtin/ls-files.c:721
 msgid "show deleted files in the output"
@@ -10294,7 +10300,7 @@ msgstr "建立一個單獨的提交而不是做一次合併"
 
 #: builtin/merge.c:278 builtin/pull.c:157
 msgid "perform a commit if the merge succeeds (default)"
-msgstr "如果合併成功，執行一次提交（預設）"
+msgstr "如果合併成功，執行一次提交（預設值）"
 
 #: builtin/merge.c:280 builtin/pull.c:160
 msgid "edit message before committing"
@@ -10302,7 +10308,7 @@ msgstr "在提交前編輯提交說明"
 
 #: builtin/merge.c:282
 msgid "allow fast-forward (default)"
-msgstr "允許快轉（預設）"
+msgstr "允許快轉（預設值）"
 
 #: builtin/merge.c:284 builtin/pull.c:167
 msgid "abort if fast-forward is not possible"
@@ -10865,7 +10871,7 @@ msgstr "註解從標準輸入收到的文字"
 
 #: builtin/name-rev.c:582
 msgid "allow to print `undefined` names (default)"
-msgstr "允許列印 `未定義` 的名稱（預設）"
+msgstr "允許列印 `未定義` 的名稱（預設值）"
 
 #: builtin/name-rev.c:588
 msgid "dereference tags in the input (internal use)"
@@ -11491,11 +11497,11 @@ msgstr "壞的索引版本 '%s'"
 
 #: builtin/pack-objects.c:4187
 msgid "show progress meter during object writing phase"
-msgstr "在物件寫入階段顯示進度表"
+msgstr "在物件寫入階段顯示進度列"
 
 #: builtin/pack-objects.c:4190
 msgid "similar to --all-progress when progress meter is shown"
-msgstr "當進度表顯示時類似於 --all-progress"
+msgstr "顯示進度列時類似 --all-progress"
 
 #: builtin/pack-objects.c:4191
 msgid "<version>[,<offset>]"
@@ -11753,7 +11759,7 @@ msgstr "打包一切"
 
 #: builtin/pack-refs.c:18
 msgid "prune loose refs (default)"
-msgstr "剪除鬆散引用（預設）"
+msgstr "剪除鬆散引用（預設值）"
 
 #: builtin/patch-id.c:191
 msgid "git patch-id [--stable | --unstable | --verbatim]"
@@ -14961,7 +14967,7 @@ msgstr "git sparse-checkout add [--skip-checks] (--stdin | <patterns>)"
 #, fuzzy
 #| msgid "terminate input and output records by a NUL character"
 msgid "terminate input and output files by a NUL character"
-msgstr "輸入和輸出的紀錄使用 NUL 字元終結"
+msgstr "輸入和輸出的紀錄使用 NUL 字元終止"
 
 #: builtin/sparse-checkout.c:986
 msgid "when used with --rules-file interpret patterns as cone mode patterns"
@@ -21208,7 +21214,7 @@ msgstr "重新命名"
 
 #: merge-recursive.c:1570
 msgid "renamed"
-msgstr "重新命名"
+msgstr "已重新命名"
 
 #: merge-recursive.c:1621 merge-recursive.c:2527 merge-recursive.c:3190
 #, c-format

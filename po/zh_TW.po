@@ -19,25 +19,25 @@
 # - Yichao Yu <yyc1992 AT gmail.com>
 # - Zhuang Ya <zhuangya AT me.com>
 #
-# Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022.
+# Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022, 2023.
 # Kaiyang Wu <self@origincode.me>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-05-15 23:57+0000\n"
-"PO-Revision-Date: 2022-12-11 15:50+0000\n"
+"PO-Revision-Date: 2023-05-17 12:29+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.14.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:385
 #, c-format
@@ -814,6 +814,13 @@ msgid ""
 "\n"
 "\tgit rebase\n"
 msgstr ""
+"岔開的分支不能快轉，您得執行：\n"
+"\n"
+"\tgit merge --no-ff\n"
+"\n"
+"或者：\n"
+"\n"
+"\tgit rebase\n"
 
 #: advice.c:231
 msgid "Not possible to fast-forward, aborting."
@@ -1608,7 +1615,7 @@ msgstr "無法讀取 “%s”"
 #: archive.c:470
 #, c-format
 msgid "pathspec '%s' matches files outside the current directory"
-msgstr ""
+msgstr "符合路徑規格「%s」的檔案在目前目錄之外"
 
 #: archive.c:493 builtin/add.c:227 builtin/add.c:622 builtin/rm.c:344
 #, c-format
@@ -1708,7 +1715,7 @@ msgstr "time"
 
 #: archive.c:658
 msgid "set modification time of archive entries"
-msgstr ""
+msgstr "設定封存項目的修改時間"
 
 #: archive.c:661
 msgid "set compression level"
@@ -1770,15 +1777,13 @@ msgid "%.*s is not a valid attribute name"
 msgstr "%.*s 不是有效的屬性名稱"
 
 #: attr.c:233
-#, fuzzy
-#| msgid "Unable to add %s to database"
 msgid "unable to add additional attribute"
-msgstr "不能新增 %s 至物件庫"
+msgstr "無法加入其他屬性"
 
 #: attr.c:355
 #, c-format
 msgid "ignoring overly long attributes line %d"
-msgstr ""
+msgstr "忽略過長的屬性列 (第 %d 列)"
 
 #: attr.c:370
 #, c-format
@@ -1794,21 +1799,19 @@ msgstr ""
 "當字串確定要以驚嘆號開始時，請使用 “\\!”。"
 
 #: attr.c:732
-#, fuzzy, c-format
-#| msgid "cannot write %s file '%s'"
+#, c-format
 msgid "cannot fstat gitattributes file '%s'"
-msgstr "無法寫入 %s 檔案 '%s'"
+msgstr "無法 fstat gitattributes 檔案 “%s”"
 
 #: attr.c:737
-#, fuzzy, c-format
-#| msgid "ignoring extra bitmap file: '%s'"
+#, c-format
 msgid "ignoring overly large gitattributes file '%s'"
-msgstr "忽略多出來的位圖檔案：「%s」"
+msgstr "忽略過大的 gitattributes 檔案 “%s”"
 
 #: attr.c:832
 #, c-format
 msgid "ignoring overly large gitattributes blob '%s'"
-msgstr ""
+msgstr "忽略過大的 gitattributes 資料物件 “%s”"
 
 #: bisect.c:490
 #, c-format
@@ -2120,16 +2123,13 @@ msgid "submodule '%s': unable to find submodule"
 msgstr "“%s” 子模組：找不到子模組"
 
 #: branch.c:765
-#, fuzzy, c-format
-#| msgid ""
-#| "You may try updating the submodules using 'git checkout %s && git "
-#| "submodule update --init'"
+#, c-format
 msgid ""
 "You may try updating the submodules using 'git checkout --no-recurse-"
 "submodules %s && git submodule update --init'"
 msgstr ""
-"您可以嘗試使用 “git checkout %s && git submodule update --init” 命令，更新子"
-"模組"
+"您可以使用 “git checkout --no-recurse-submodules %s && git submodule update "
+"--init” 命令嘗試更新子模組"
 
 #: branch.c:776 branch.c:802
 #, c-format
@@ -2173,6 +2173,8 @@ msgid ""
 "the add.interactive.useBuiltin setting has been removed!\n"
 "See its entry in 'git help config' for details."
 msgstr ""
+"add.interactive.useBuiltin 設定已被移除！\n"
+"深入了解請參閱 “git help config” 中的對應條目。"
 
 #: builtin/add.c:276 builtin/rev-parse.c:1023
 msgid "Could not read the index"
@@ -2665,10 +2667,8 @@ msgid "run interactively"
 msgstr "互動式執行"
 
 #: builtin/am.c:2333
-#, fuzzy
-#| msgid "bypass pre-commit and commit-msg hooks"
 msgid "bypass pre-applypatch and applypatch-msg hooks"
-msgstr "繞過 pre-commit 和 commit-msg 掛鉤"
+msgstr "繞過 pre-applypatch 和 applypatch-msg 掛鉤"
 
 #: builtin/am.c:2335
 msgid "historical option -- no-op"
@@ -2869,48 +2869,32 @@ msgid "git archive: expected a flush"
 msgstr "git archive：預期收到 flush 封包"
 
 #: builtin/bisect.c:30
-#, fuzzy
-#| msgid ""
-#| "git bisect--helper --bisect-start [--term-{new,bad}=<term> --term-{old,"
-#| "good}=<term>] [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
-#| "[<paths>...]"
 msgid ""
 "git bisect start [--term-{new,bad}=<term> --term-{old,good}=<term>]    [--no-"
 "checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]"
 msgstr ""
-"git bisect--helper --bisect-start [--term-{new,bad}=<term> --term-{old,good}"
-"=<term>] [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
-"[<paths>...]"
+"git bisect start [--term-{new,bad}=<term> --term-{old,good}=<term>]    [--no-"
+"checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]"
 
 #: builtin/bisect.c:34
-#, fuzzy
-#| msgid "git bisect--helper --bisect-state (good|old) [<rev>...]"
 msgid "git bisect (good|bad) [<rev>...]"
-msgstr "git bisect--helper --bisect-state (good|old) [<rev>...]"
+msgstr "git bisect (good|bad) [<rev>...]"
 
 #: builtin/bisect.c:38
-#, fuzzy
-#| msgid "git bisect--helper --bisect-skip [(<rev>|<range>)...]"
 msgid "git bisect skip [(<rev>|<range>)...]"
-msgstr "git bisect--helper --bisect-skip [(<rev>|<range>)...]"
+msgstr "git bisect skip [(<rev>|<range>)...]"
 
 #: builtin/bisect.c:42
-#, fuzzy
-#| msgid "git bisect--helper --bisect-reset [<commit>]"
 msgid "git bisect reset [<commit>]"
-msgstr "git bisect--helper --bisect-reset [<commit>]"
+msgstr "git bisect reset [<commit>]"
 
 #: builtin/bisect.c:46
-#, fuzzy
-#| msgid "git bisect--helper --bisect-replay <filename>"
 msgid "git bisect replay <logfile>"
-msgstr "git bisect--helper --bisect-replay <filename>"
+msgstr "git bisect replay <logfile>"
 
 #: builtin/bisect.c:50
-#, fuzzy
-#| msgid "git bisect--helper --bisect-run <cmd>..."
 msgid "git bisect run <cmd>..."
-msgstr "git bisect--helper --bisect-run <cmd>..."
+msgstr "git bisect run <cmd>..."
 
 #: builtin/bisect.c:137
 #, c-format
@@ -3149,10 +3133,9 @@ msgid "bisect run failed: no command provided."
 msgstr "二分搜尋執行失敗：沒有提供命令。"
 
 #: builtin/bisect.c:1243
-#, fuzzy, c-format
-#| msgid "unable to verify '%s' on good revision"
+#, c-format
 msgid "unable to verify %s on good revision"
-msgstr "無法在好的修訂版上驗證 “%s”"
+msgstr "無法在好的修訂版上驗證 %s"
 
 #: builtin/bisect.c:1249
 #, c-format
@@ -3160,10 +3143,9 @@ msgid "bogus exit code %d for good revision"
 msgstr "好的修訂版回傳偽造的錯誤碼 %d"
 
 #: builtin/bisect.c:1257
-#, fuzzy, c-format
-#| msgid "bisect run failed: exit code %d from '%s' is < 0 or >= 128"
+#, c-format
 msgid "bisect run failed: exit code %d from %s is < 0 or >= 128"
-msgstr "二分搜尋執行失敗：“%2$s” 回傳的離開碼 %1$d 小於 0 或 >= 128"
+msgstr "二分搜尋執行失敗：%2$s 回傳的離開碼 %1$d 小於 0 或大於 128"
 
 #: builtin/bisect.c:1272
 #, c-format
@@ -3183,47 +3165,37 @@ msgid "bisect found first bad commit"
 msgstr "二分搜尋發現到第一個有問題的提交"
 
 #: builtin/bisect.c:1298
-#, fuzzy, c-format
-#| msgid ""
-#| "bisect run failed: 'git bisect--helper --bisect-state %s' exited with "
-#| "error code %d"
+#, c-format
 msgid "bisect run failed: 'git bisect %s' exited with error code %d"
-msgstr ""
-"二分搜尋執行失敗：“git bisect--helper --bisect-state %s” 以錯誤碼 %d 離開"
+msgstr "二分搜尋執行失敗：“git bisect %s” 以錯誤碼 %d 離開"
 
 #: builtin/bisect.c:1313
-#, fuzzy, c-format
-#| msgid "--bisect-reset requires either no argument or a commit"
+#, c-format
 msgid "'%s' requires either no argument or a commit"
-msgstr "--bisect-reset 可以不需要引數，或者得傳入一個提交"
+msgstr "“%s” 不需要引數，或者得傳入一個提交"
 
 #: builtin/bisect.c:1324
-#, fuzzy, c-format
-#| msgid "%s requires arguments"
+#, c-format
 msgid "'%s' requires 0 or 1 argument"
-msgstr "%s 需要引數"
+msgstr "“%s” 需要 0 或 1 個引數"
 
 #: builtin/bisect.c:1348
-#, fuzzy, c-format
-#| msgid "%s requires arguments"
+#, c-format
 msgid "'%s' requires 0 arguments"
-msgstr "%s 需要引數"
+msgstr "“%s” 不需引數"
 
 #: builtin/bisect.c:1367
 msgid "no logfile given"
 msgstr "未提供日誌檔案"
 
 #: builtin/bisect.c:1403
-#, fuzzy, c-format
-#| msgid "bisect run failed: no command provided."
+#, c-format
 msgid "'%s' failed: no command provided."
-msgstr "二分搜尋執行失敗：沒有提供命令。"
+msgstr "“%s” 失敗：沒有提供命令。"
 
 #: builtin/bisect.c:1434
-#, fuzzy
-#| msgid "need a subcommand"
 msgid "need a command"
-msgstr "需要子命令"
+msgstr "需要提供命令"
 
 #: builtin/bisect.c:1439 builtin/cat-file.c:736
 #, c-format
@@ -3492,12 +3464,13 @@ msgid "remote-tracking branch '%s' not found."
 msgstr "找不到 “%s” 遠端追蹤分支。"
 
 #: builtin/branch.c:286
-#, fuzzy, c-format
-#| msgid "branch '%s' not found."
+#, c-format
 msgid ""
 "branch '%s' not found.\n"
 "Did you forget --remote?"
-msgstr "找不到 “%s” 分支。"
+msgstr ""
+"找不到 “%s” 分支。\n"
+"您可能要加上 --remote？"
 
 #: builtin/branch.c:290
 #, c-format
@@ -3673,8 +3646,9 @@ msgid "move/rename a branch, even if target exists"
 msgstr "即使目標已存在，仍移動或重新命名分支"
 
 #: builtin/branch.c:745 builtin/for-each-ref.c:44 builtin/tag.c:483
+#, fuzzy
 msgid "do not output a newline after empty formatted refs"
-msgstr ""
+msgstr "不要在無格式化 (empty formatted) 的引用後輸出換列字元"
 
 #: builtin/branch.c:746
 msgid "copy a branch and its reflog"
@@ -3945,17 +3919,11 @@ msgid "Created new report at '%s'.\n"
 msgstr "已在 “%s” 建立新報告。\n"
 
 #: builtin/bundle.c:20
-#, fuzzy
-#| msgid ""
-#| "git bundle create [-q | --quiet | --progress | --all-progress] [--all-"
-#| "progress-implied]\n"
-#| "                  [--version=<version>] <file> <git-rev-list-args>"
 msgid ""
 "git bundle create [-q | --quiet | --progress]\n"
 "                  [--version=<version>] <file> <git-rev-list-args>"
 msgstr ""
-"git bundle create [-q | --quiet | --progress | --all-progress] [--all-"
-"progress-implied]\n"
+"git bundle create [-q | --quiet | --progress]\n"
 "                  [--version=<version>] <file> <git-rev-list-args>"
 
 #: builtin/bundle.c:23
@@ -3971,10 +3939,8 @@ msgid "git bundle unbundle [--progress] <file> [<refname>...]"
 msgstr "git bundle unbundle [--progress] <file> [<refname>...]"
 
 #: builtin/bundle.c:66
-#, fuzzy
-#| msgid "-d needs at least one argument"
 msgid "need a <file> argument"
-msgstr "-d 需要至少一個參數"
+msgstr "需要提供 <file> 引數"
 
 #: builtin/bundle.c:79 builtin/pack-objects.c:4183
 msgid "do not show progress meter"
@@ -3986,13 +3952,11 @@ msgstr "顯示進度列"
 
 #: builtin/bundle.c:83
 msgid "historical; same as --progress"
-msgstr ""
+msgstr "歷史遺留選項；和 --progress 相同"
 
 #: builtin/bundle.c:87
-#, fuzzy
-#| msgid "historical option -- no-op"
 msgid "historical; does nothing"
-msgstr "歷史遺留選項——無作用"
+msgstr "歷史遺留選項；沒有作用"
 
 #: builtin/bundle.c:89
 msgid "specify bundle format version"
@@ -4217,19 +4181,18 @@ msgid "only two arguments allowed in <type> <object> mode, not %d"
 msgstr "只允許在 <type> <object> 模式傳入兩個引數，但傳了 %d 個"
 
 #: builtin/check-attr.c:20
-#, fuzzy
-#| msgid "git check-attr [-a | --all | <attr>...] [--] <pathname>..."
 msgid ""
 "git check-attr [--source <tree-ish>] [-a | --all | <attr>...] [--] "
 "<pathname>..."
-msgstr "git check-attr [-a | --all | <attr>...] [--] <pathname>..."
+msgstr ""
+"git check-attr [--source <tree-ish>] [-a | --all | <attr>...] [--] "
+"<pathname>..."
 
 #: builtin/check-attr.c:21
-#, fuzzy
-#| msgid "git check-attr --stdin [-z] [-a | --all | <attr>...]"
 msgid ""
 "git check-attr --stdin [-z] [--source <tree-ish>] [-a | --all | <attr>...]"
-msgstr "git check-attr --stdin [-z] [-a | --all | <attr>...]"
+msgstr ""
+"git check-attr --stdin [-z] [--source <tree-ish>] [-a | --all | <attr>...]"
 
 #: builtin/check-attr.c:28
 msgid "report all attributes set on file"
@@ -4248,16 +4211,12 @@ msgid "terminate input and output records by a NUL character"
 msgstr "輸入和輸出的紀錄使用 NUL 字元終止"
 
 #: builtin/check-attr.c:33
-#, fuzzy
-#| msgid "tree-ish"
 msgid "<tree-ish>"
-msgstr "樹或提交"
+msgstr "<tree-ish>"
 
 #: builtin/check-attr.c:33
-#, fuzzy
-#| msgid "which tree-ish to checkout from"
 msgid "which tree-ish to check attributes at"
-msgstr "要自哪一個樹狀物件指示元簽出"
+msgstr "要用哪一個樹狀物件檢查屬性"
 
 #: builtin/check-ignore.c:24 builtin/checkout.c:1593 builtin/gc.c:573
 #: builtin/worktree.c:632
@@ -5259,10 +5218,9 @@ msgid "%s exists and is not a directory"
 msgstr "%s 存在且不是一個目錄"
 
 #: builtin/clone.c:345
-#, fuzzy, c-format
-#| msgid "symlink '%s' exists, refusing to clone with --local"
+#, c-format
 msgid "'%s' is a symlink, refusing to clone with --local"
-msgstr "「%s」符號連結已存在，拒絕使用 --local 複製"
+msgstr "“%s” 是個符號連結，故不能使用 --local 複製"
 
 #: builtin/clone.c:349
 #, c-format
@@ -5460,10 +5418,8 @@ msgid "failed to fetch objects from bundle URI '%s'"
 msgstr "無法從套件包 URL “%s” 抓取物件"
 
 #: builtin/clone.c:1314
-#, fuzzy
-#| msgid "failed to fetch objects from bundle URI '%s'"
 msgid "failed to fetch advertised bundles"
-msgstr "無法從套件包 URL “%s” 抓取物件"
+msgstr "無法抓取公佈的套件包"
 
 #: builtin/clone.c:1348 builtin/clone.c:1405
 msgid "remote transport reported error"
@@ -7501,10 +7457,9 @@ msgid "--unshallow on a complete repository does not make sense"
 msgstr "對於一個完整的版本庫，參數 --unshallow 沒有意義"
 
 #: builtin/fetch.c:2323
-#, fuzzy, c-format
-#| msgid "failed to fetch objects from bundle URI '%s'"
+#, c-format
 msgid "failed to fetch bundles from '%s'"
-msgstr "無法從套件包 URL “%s” 抓取物件"
+msgstr "無法自「%s」抓取套件包"
 
 #: builtin/fetch.c:2327
 msgid "fetch --all does not take a repository argument"
@@ -7635,16 +7590,14 @@ msgid "print only refs which don't contain the commit"
 msgstr "只列印不包含該提交的引用"
 
 #: builtin/for-each-ref.c:59
-#, fuzzy
-#| msgid "read patterns from standard in"
 msgid "read reference patterns from stdin"
-msgstr "從標準輸入讀取樣式"
+msgstr "從 stdin 讀取引用模式"
 
 #: builtin/for-each-ref.c:90
 #, fuzzy
 #| msgid "-z only makes sense with --stdin"
 msgid "unknown arguments supplied with --stdin"
-msgstr "-z 需要和 --stdin 同時使用才有意義"
+msgstr "和 --stdin 一起提供的引數未知"
 
 #: builtin/for-each-repo.c:12
 msgid "git for-each-repo --config=<config> [--] <arguments>"
@@ -7663,10 +7616,9 @@ msgid "missing --config=<config>"
 msgstr "缺少 --config=<設定>"
 
 #: builtin/for-each-repo.c:54
-#, fuzzy, c-format
-#| msgid "bad config line %d in %s"
+#, c-format
 msgid "got bad config --config=%s"
-msgstr "在 %2$s 中錯誤的設定行 %1$d"
+msgstr "收到無效的組態 --config=%s"
 
 #: builtin/fsck.c:78 builtin/fsck.c:137 builtin/fsck.c:138
 msgid "unknown"
@@ -7854,38 +7806,33 @@ msgid "notice: %s points to an unborn branch (%s)"
 msgstr "注意：%s 指向一個尚未誕生的分支（%s）"
 
 #: builtin/fsck.c:750
-#, fuzzy, c-format
-#| msgid "Checking cache tree"
+#, c-format
 msgid "Checking cache tree of %s"
-msgstr "正在檢查快取樹"
+msgstr "正在檢查 %s 的快取樹"
 
 #: builtin/fsck.c:755
-#, fuzzy, c-format
-#| msgid "%s: invalid sha1 pointer in cache-tree"
+#, c-format
 msgid "%s: invalid sha1 pointer in cache-tree of %s"
-msgstr "%s：cache-tree 中無效的 sha1 指標"
+msgstr "%s：%s 的 cache-tree 中的 sha1 指標無效"
 
 #: builtin/fsck.c:764
 msgid "non-tree in cache-tree"
 msgstr "cache-tree 中非樹狀物件"
 
 #: builtin/fsck.c:795
-#, fuzzy, c-format
-#| msgid "%s: invalid sha1 pointer in resolve-undo"
+#, c-format
 msgid "%s: invalid sha1 pointer in resolve-undo of %s"
-msgstr "%s：resolve-undo 的 sha1 指針無效"
+msgstr "%s：%s 的 resolve-undo 中的 sha1 指標無效"
 
 #: builtin/fsck.c:882
-#, fuzzy, c-format
-#| msgid "failed to load pack-index for packfile %s"
+#, c-format
 msgid "unable to load rev-index for pack '%s'"
-msgstr "為 packfile %s 載入包索引失敗"
+msgstr "無法讀取 “%s” 封裝的修訂版索引 (rev-index)"
 
 #: builtin/fsck.c:887
-#, fuzzy, c-format
-#| msgid "invalid value for '%s'"
+#, c-format
 msgid "invalid rev-index for pack '%s'"
-msgstr "「%s」的值無效"
+msgstr "“%s” 封裝的修訂版索引 (rev-index) 無效"
 
 #: builtin/fsck.c:898
 msgid ""
@@ -8834,22 +8781,20 @@ msgid "'git help config' for more information"
 msgstr "'git help config' 取得更多訊息"
 
 #: builtin/hook.c:11
-#, fuzzy
-#| msgid "git hook run [--ignore-missing] <hook-name> [-- <hook-args>]"
 msgid ""
 "git hook run [--ignore-missing] [--to-stdin=<path>] <hook-name> [-- <hook-"
 "args>]"
-msgstr "git hook run [--ignore-missing] <hook-name> [-- <hook-args>]"
+msgstr ""
+"git hook run [--ignore-missing] [--to-stdin=<path>] <hook-name> [-- <hook-"
+"args>]"
 
 #: builtin/hook.c:31
 msgid "silently ignore missing requested <hook-name>"
 msgstr "靜默忽略不存在而請求的 <hook-name>"
 
 #: builtin/hook.c:33
-#, fuzzy
-#| msgid "failed to read the index"
 msgid "file to read into hooks' stdin"
-msgstr "讀取索引失敗"
+msgstr "要讀進掛鉤 stdin 的檔案"
 
 #: builtin/index-pack.c:231
 #, c-format
@@ -9894,11 +9839,6 @@ msgstr ""
 "--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate、--eol 一起使用"
 
 #: builtin/ls-remote.c:13
-#, fuzzy
-#| msgid ""
-#| "git ls-remote [--heads] [--tags] [--refs] [--upload-pack=<exec>]\n"
-#| "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
-#| "              [--symref] [<repository> [<refs>...]]"
 msgid ""
 "git ls-remote [--heads] [--tags] [--refs] [--upload-pack=<exec>]\n"
 "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
@@ -9906,7 +9846,7 @@ msgid ""
 msgstr ""
 "git ls-remote [--heads] [--tags] [--refs] [--upload-pack=<exec>]\n"
 "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
-"              [--symref] [<repository> [<refs>...]]"
+"              [--symref] [<repository> [<patterns>...]]"
 
 #: builtin/ls-remote.c:64
 msgid "do not print remote URL"
@@ -10225,20 +10165,16 @@ msgid "perform multiple merges, one per line of input"
 msgstr "執行多次合併，一次執行輸入一列"
 
 #: builtin/merge-tree.c:548
-#, fuzzy
-#| msgid "must specify a notes ref to merge"
 msgid "specify a merge-base for the merge"
-msgstr "必須指定一個註解引用來合併"
+msgstr "指定用來合併的合併基底"
 
 #: builtin/merge-tree.c:562 builtin/merge-tree.c:627
 msgid "--trivial-merge is incompatible with all other options"
 msgstr "--trivial-merge 和其他所有選項都不相容"
 
 #: builtin/merge-tree.c:564
-#, fuzzy
-#| msgid "%s is incompatible with %s"
 msgid "--merge-base is incompatible with --stdin"
-msgstr "%s 與 %s 不相容"
+msgstr "--merge-base 與 --stdin 不相容"
 
 #: builtin/merge-tree.c:573 builtin/merge-tree.c:589 builtin/notes.c:313
 #, c-format
@@ -11747,7 +11683,7 @@ msgstr ""
 
 #: builtin/pack-redundant.c:608
 msgid "refusing to run without --i-still-use-this"
-msgstr ""
+msgstr "傳入 --i-still-use-this 前拒絕執行"
 
 #: builtin/pack-refs.c:9
 msgid "git pack-refs [--all] [--no-prune]"
@@ -12204,10 +12140,8 @@ msgid "repository"
 msgstr "版本庫"
 
 #: builtin/push.c:598
-#, fuzzy
-#| msgid "push all refs"
 msgid "push all branches"
-msgstr "推送所有引用"
+msgstr "推送所有分支"
 
 #: builtin/push.c:600 builtin/send-pack.c:197
 msgid "mirror all refs"
@@ -12218,10 +12152,8 @@ msgid "delete refs"
 msgstr "刪除引用"
 
 #: builtin/push.c:603
-#, fuzzy
-#| msgid "push tags (can't be used with --all or --mirror)"
 msgid "push tags (can't be used with --all or --branches or --mirror)"
-msgstr "推送標籤（不能使用 --all or --mirror）"
+msgstr "推送標籤（不能和 --all、--branches 或 --mirror 一起使用）"
 
 #: builtin/push.c:606 builtin/send-pack.c:198
 msgid "force updates"
@@ -12547,10 +12479,9 @@ msgstr ""
 "因此 git 無法對其重定基底。"
 
 #: builtin/rebase.c:772
-#, fuzzy, c-format
-#| msgid "Unknown rebase backend: %s"
+#, c-format
 msgid "Unknown rebase-merges mode: %s"
-msgstr "未知 rebase 後端：%s"
+msgstr "未知的 rebase-merges 模式：%s"
 
 #: builtin/rebase.c:852
 #, c-format
@@ -12570,11 +12501,14 @@ msgid ""
 msgstr "無法識別的 '%s' 空類型；有效的數值有 \"drop\"、\"keep\" 跟 \"ask\"。"
 
 #: builtin/rebase.c:1005
+#, fuzzy
 msgid ""
 "--rebase-merges with an empty string argument is deprecated and will stop "
 "working in a future version of Git. Use --rebase-merges without an argument "
 "instead, which does the same thing."
 msgstr ""
+"有字串引數的 --rebase-merges 已被棄用，而且會在未來的 Git "
+"版本停止運作。請改用無引數的--rebase-merges，功能相同。"
 
 #: builtin/rebase.c:1022
 #, c-format
@@ -12847,19 +12781,19 @@ msgstr "--strategy 需要 --merge 或 --interactive"
 msgid ""
 "apply options are incompatible with rebase.autoSquash.  Consider adding --no-"
 "autosquash"
-msgstr ""
+msgstr "apply 選項與 rebase.autoSquash 不相容。請考慮加上 --no-autosquash"
 
 #: builtin/rebase.c:1529
 msgid ""
 "apply options are incompatible with rebase.rebaseMerges.  Consider adding --"
 "no-rebase-merges"
-msgstr ""
+msgstr "apply 選項與 rebase.rebaseMerges 不相容。請考慮加上 --no-rebase-merges"
 
 #: builtin/rebase.c:1531
 msgid ""
 "apply options are incompatible with rebase.updateRefs.  Consider adding --no-"
 "update-refs"
-msgstr ""
+msgstr "apply 選項與 rebase.updateRefs 不相容。請考慮加上 --no-update-refs"
 
 #: builtin/rebase.c:1558
 #, c-format
@@ -13709,10 +13643,8 @@ msgid "approxidate"
 msgstr "近似日期"
 
 #: builtin/repack.c:814
-#, fuzzy
-#| msgid "with -C, expire objects older than this"
 msgid "with --cruft, expire objects older than this"
-msgstr "搭配 -C 會將早於此的物件設為過期"
+msgstr "搭配 --cruft 會將早於此的物件標為過期"
 
 #: builtin/repack.c:816
 msgid "remove redundant packs, and run git-prune-packed"
@@ -14802,15 +14734,12 @@ msgid "show refs from stdin that aren't in local repository"
 msgstr "顯示從標準輸入中讀入的不在本機版本庫中的引用"
 
 #: builtin/sparse-checkout.c:28
-#, fuzzy
-#| msgid ""
-#| "git sparse-checkout (init | list | set | add | reapply | disable) "
-#| "[<options>]"
 msgid ""
 "git sparse-checkout (init | list | set | add | reapply | disable | check-"
 "rules) [<options>]"
 msgstr ""
-"git sparse-checkout (init | list | set | add | reapply | disable) [<options>]"
+"git sparse-checkout (init | list | set | add | reapply | disable | check-"
+"rules) [<options>]"
 
 #: builtin/sparse-checkout.c:67
 msgid "this worktree is not sparse"
@@ -14956,28 +14885,24 @@ msgid "error while refreshing working directory"
 msgstr "重新整理工作目錄時發生錯誤"
 
 #: builtin/sparse-checkout.c:941
-#, fuzzy
-#| msgid "git sparse-checkout add [--skip-checks] (--stdin | <patterns>)"
 msgid ""
 "git sparse-checkout check-rules [-z] [--skip-checks][--[no-]cone] [--rules-"
 "file <file>]"
-msgstr "git sparse-checkout add [--skip-checks] (--stdin | <patterns>)"
+msgstr ""
+"git sparse-checkout check-rules [-z] [--skip-checks][--[no-]cone] [--rules-"
+"file <file>]"
 
 #: builtin/sparse-checkout.c:984
-#, fuzzy
-#| msgid "terminate input and output records by a NUL character"
 msgid "terminate input and output files by a NUL character"
-msgstr "輸入和輸出的紀錄使用 NUL 字元終止"
+msgstr "使用 NUL 字元終止輸入和輸出檔案"
 
 #: builtin/sparse-checkout.c:986
 msgid "when used with --rules-file interpret patterns as cone mode patterns"
-msgstr ""
+msgstr "與 --rules-file 搭配使用時，將 patterns (模式) 解釋為 cone 模式的 patterns"
 
 #: builtin/sparse-checkout.c:988
-#, fuzzy
-#| msgid "search in index instead of in the work tree"
 msgid "use patterns in <file> instead of the current ones."
-msgstr "在索引區搜尋而不是在工作區"
+msgstr "使用 <file> 中的（而非目前使用的）模式。"
 
 #: builtin/stash.c:32
 msgid "git stash list [<log-options>]"
@@ -16843,10 +16768,9 @@ msgid "core.fsyncMethod = batch is unsupported on this platform"
 msgstr "core.fsyncMethod = batch 不支援本平台"
 
 #: bundle-uri.c:214
-#, fuzzy, c-format
-#| msgid "could not parse conflict hunks in '%s'"
+#, c-format
 msgid "could not parse bundle list key %s with value '%s'"
-msgstr "不能解析 '%s' 中的衝突區塊"
+msgstr "無法解析套件包清單鍵 %s 的值 “%s”"
 
 #: bundle-uri.c:259
 #, c-format
@@ -16862,16 +16786,13 @@ msgid "insufficient capabilities"
 msgstr "功能不足"
 
 #: bundle-uri.c:571
-#, fuzzy, c-format
-#| msgid "file at URI '%s' is not a bundle or bundle list"
+#, c-format
 msgid "file downloaded from '%s' is not a bundle"
-msgstr "位於 URI “%s” 的檔案不是套件包或套件包清單"
+msgstr "從 “%s” 下載的檔案不是套件包"
 
 #: bundle-uri.c:621
-#, fuzzy
-#| msgid "failed to start iterator over '%s'"
 msgid "failed to store maximum creation token"
-msgstr "無法在 '%s' 上啟動疊代器"
+msgstr "無法儲存最大的建立權杖"
 
 #: bundle-uri.c:661
 #, c-format
@@ -16894,16 +16815,13 @@ msgid "file at URI '%s' is not a bundle or bundle list"
 msgstr "位於 URI “%s” 的檔案不是套件包或套件包清單"
 
 #: bundle-uri.c:891
-#, fuzzy, c-format
-#| msgid "unrecognized argument: %s"
+#, c-format
 msgid "bundle-uri: unexpected argument: '%s'"
-msgstr "無法識別的參數：%s"
+msgstr "bundle-uri: 非預期的引數：“%s”"
 
 #: bundle-uri.c:893
-#, fuzzy
-#| msgid "object-info: expected flush after arguments"
 msgid "bundle-uri: expected flush after arguments"
-msgstr "object-info：引數後預期要有 flush"
+msgstr "bundle-uri: 引數後應該有一個 flush 包"
 
 #: bundle-uri.c:916
 msgid "bundle-uri: got an empty line"
@@ -16949,7 +16867,7 @@ msgstr "需要版本庫驗證套件包"
 msgid ""
 "some prerequisite commits exist in the object store, but are not connected "
 "to the repository's history"
-msgstr ""
+msgstr "一些前提提交存在於物件儲存區，但未連接到版本庫的歷史記錄"
 
 #: bundle.c:257
 #, c-format
@@ -18519,10 +18437,8 @@ msgid "bad zlib compression level %d"
 msgstr "錯誤的 zlib 壓縮級別 %d"
 
 #: config.c:1757
-#, fuzzy
-#| msgid "core.commentChar should only be one character"
 msgid "core.commentChar should only be one ASCII character"
-msgstr "core.commentChar 應該是一個字元"
+msgstr "core.commentChar 應該是一個 ASCII 字元"
 
 #: config.c:1791
 #, c-format
@@ -18663,7 +18579,7 @@ msgstr "無效的小節名稱：%s"
 #: config.c:3779
 #, c-format
 msgid "refusing to work with overly long line in '%s' on line %<PRIuMAX>"
-msgstr ""
+msgstr "因為第 %2$<PRIuMAX> 列中 “%1$s” 的文字列太長，故拒絕運作"
 
 #: config.c:3916
 #, c-format
@@ -18734,13 +18650,11 @@ msgstr "伺服器指定的「%s」物件格式無效"
 #: connect.c:527
 #, c-format
 msgid "error on bundle-uri response line %d: %s"
-msgstr ""
+msgstr "在 bundle-uri 回應的第 %d 列發現錯誤：%s"
 
 #: connect.c:532
-#, fuzzy
-#| msgid "expected flush after ref listing"
 msgid "expected flush after bundle-uri listing"
-msgstr "在引用列表之後應該有一個 flush 包"
+msgstr "在 bundle-uri 清單後應該有一個 flush 包"
 
 #: connect.c:540 connect.c:594
 msgid "expected response end packet after ref listing"
@@ -19469,10 +19383,8 @@ msgid "do not show any source or destination prefix"
 msgstr "不顯示任何來源和目的地前綴"
 
 #: diff.c:5599
-#, fuzzy
-#| msgid "--default requires an argument"
 msgid "use default prefixes a/ and b/"
-msgstr "--default 需要 1 個引數"
+msgstr "使用預設的前置名稱 a/ 和 b/"
 
 #: diff.c:5602
 msgid "show context between diff hunks up to the specified number of lines"
@@ -20171,16 +20083,6 @@ msgid ""
 msgstr "通訊端 “%s” 因缺少 Unix 通訊端支援，而與 fsmonitor 不相容"
 
 #: git.c:34
-#, fuzzy
-#| msgid ""
-#| "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
-#| "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-"
-#| "path]\n"
-#| "           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-#| "bare]\n"
-#| "           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n"
-#| "           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n"
-#| "           <command> [<args>]"
 msgid ""
 "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
@@ -20191,11 +20093,10 @@ msgid ""
 msgstr ""
 "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
-"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-"bare]\n"
+"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] "
+"[--bare]\n"
 "           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n"
-"           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n"
-"           <command> [<args>]"
+"           [--config-env=<name>=<envvar>] <command> [<args>]"
 
 #: git.c:41
 msgid ""
@@ -20359,12 +20260,13 @@ msgid "gpg.ssh.defaultKeyCommand failed: %s %s"
 msgstr "gpg.ssh.defaultKeyCommand 執行失敗：%s %s"
 
 #: gpg-interface.c:1008
-#, fuzzy, c-format
-#| msgid "gpg failed to sign the data"
+#, c-format
 msgid ""
 "gpg failed to sign the data:\n"
 "%s"
-msgstr "gpg 無法為資料簽名"
+msgstr ""
+"gpg 無法簽名資料：\n"
+"%s"
 
 #: gpg-interface.c:1036
 msgid "user.signingKey needs to be set for ssh signing"
@@ -21708,10 +21610,9 @@ msgid "garbage at end of loose object '%s'"
 msgstr "鬆散物件 '%s' 後面有垃圾資料"
 
 #: object-file.c:1478
-#, fuzzy, c-format
-#| msgid "unable to force loose object"
+#, c-format
 msgid "unable to open loose object %s"
-msgstr "無法強制鬆散物件"
+msgstr "無法打開鬆散物件 %s"
 
 #: object-file.c:1497
 #, c-format
@@ -21815,16 +21716,13 @@ msgid "cannot read object for %s"
 msgstr "不能讀取物件 %s"
 
 #: object-file.c:2317
-#, fuzzy, c-format
-#| msgid "object file %s is empty"
+#, c-format
 msgid "object fails fsck: %s"
-msgstr "物件檔案 %s 為空"
+msgstr "物件 fsck 失敗：%s"
 
 #: object-file.c:2350
-#, fuzzy
-#| msgid "Refusing to create empty bundle."
 msgid "refusing to create malformed object"
-msgstr "不能建立空套件包。"
+msgstr "拒絕建立格式錯誤的物件"
 
 #: object-file.c:2419
 #, c-format
@@ -22221,7 +22119,7 @@ msgstr "無法取得「%s」的磁碟用量"
 #: pack-bitmap.c:2367
 #, c-format
 msgid "bitmap file '%s' has invalid checksum"
-msgstr ""
+msgstr "“%s” 位圖檔案的總和檢查碼無效"
 
 #: pack-mtimes.c:48
 #, c-format
@@ -22274,15 +22172,13 @@ msgid "reverse-index file %s has unsupported hash id %<PRIu32>"
 msgstr "倒排索引檔案 %s 有不支援的雜湊 ID %<PRIu32>"
 
 #: pack-revindex.c:323
-#, fuzzy
-#| msgid "invalid %s"
 msgid "invalid checksum"
-msgstr "無效的 %s"
+msgstr "無效的總和檢查碼"
 
 #: pack-revindex.c:336
 #, c-format
 msgid "invalid rev-index position at %<PRIu64>: %<PRIu32> != %<PRIu32>"
-msgstr ""
+msgstr "%<PRIu64> 位置的修訂版索引 (rev-index) 無效：%<PRIu32> != %<PRIu32>"
 
 #: pack-write.c:248
 msgid "cannot both write and verify reverse index"
@@ -22478,10 +22374,8 @@ msgid "use <n> digits to display object names"
 msgstr "用 <n> 位數字顯示物件名稱"
 
 #: parse-options.h:531
-#, fuzzy
-#| msgid "failed to initialize sparse-checkout"
 msgid "prefixed path to initial superproject"
-msgstr "無法初始化稀疏簽出"
+msgstr "初始父專案的前綴路徑"
 
 #: parse-options.h:579
 msgid "how to strip spaces and #comments from message"
@@ -23065,16 +22959,14 @@ msgid "ahead %d, behind %d"
 msgstr "領先 %d，落後 %d"
 
 #: ref-filter.c:241
-#, fuzzy, c-format
-#| msgid "%%(rest) does not take arguments"
+#, c-format
 msgid "%%(%.*s) does not take arguments"
-msgstr "%%(rest) 未取引數"
+msgstr "%%(%.*s) 不取引數"
 
 #: ref-filter.c:249
-#, fuzzy, c-format
-#| msgid "unrecognized %%(%s) argument: %s"
+#, c-format
 msgid "unrecognized %%(%.*s) argument: %s"
-msgstr "無法識別的 %%(%s) 參數：%s"
+msgstr "無法識別的 %%(%.*s) 引數：%s"
 
 #: ref-filter.c:258
 #, c-format
@@ -23142,10 +23034,9 @@ msgid "positive width expected with the %%(align) atom"
 msgstr "元素 %%(align) 需要一個正數的寬度"
 
 #: ref-filter.c:615
-#, fuzzy, c-format
-#| msgid "expected format: %%(align:<width>,<position>)"
+#, c-format
 msgid "expected format: %%(ahead-behind:<committish>)"
-msgstr "期望的格式：%%(align:<寬度>,<位置>)"
+msgstr "預期格式：%%(ahead-behind:<committish>)"
 
 #: ref-filter.c:736
 #, c-format
@@ -24646,27 +24537,24 @@ msgid "git %s: failed to refresh the index"
 msgstr "git %s：無法重新整理索引"
 
 #: sequencer.c:2511
-#, fuzzy, c-format
-#| msgid "'%s' is not a valid term"
+#, c-format
 msgid "'%s' is not a valid label"
-msgstr "“%s” 不是有效術語"
+msgstr "“%s” 不是有效的標籤"
 
 #: sequencer.c:2516
-#, fuzzy, c-format
-#| msgid "'%s' is not a valid ref name"
+#, c-format
 msgid "'%s' is not a valid refname"
-msgstr "'%s' 不是一個有效的引用名"
+msgstr "“%s” 不是有效的引用名稱"
 
 #: sequencer.c:2518
 #, c-format
 msgid "update-ref requires a fully qualified refname e.g. refs/heads/%s"
-msgstr ""
+msgstr "update-ref 需要完全限定的引用名稱，比如：refs/heads/%s"
 
 #: sequencer.c:2555
-#, fuzzy, c-format
-#| msgid "invalid commit %s"
+#, c-format
 msgid "invalid command '%.*s'"
-msgstr "無效提交 %s"
+msgstr "無效的命令 “%.*s”"
 
 #: sequencer.c:2564
 #, c-format
@@ -24873,20 +24761,11 @@ msgstr ""
 "\n"
 
 #: sequencer.c:3629
-#, fuzzy
-#| msgid "and made changes to the index and/or the working tree\n"
 msgid "and made changes to the index and/or the working tree.\n"
-msgstr "並且修改索引和/或工作區\n"
+msgstr "並且更改索引和（或）工作區。\n"
 
 #: sequencer.c:3635
-#, fuzzy, c-format
-#| msgid ""
-#| "execution succeeded: %s\n"
-#| "but left changes to the index and/or the working tree\n"
-#| "Commit or stash your changes, and then run\n"
-#| "\n"
-#| "  git rebase --continue\n"
-#| "\n"
+#, c-format
 msgid ""
 "execution succeeded: %s\n"
 "but left changes to the index and/or the working tree.\n"
@@ -24896,8 +24775,8 @@ msgid ""
 "\n"
 msgstr ""
 "執行成功：%s\n"
-"但是在索引和/或工作區中存在變更\n"
-"提交或貯存修改，然後執行\n"
+"但是在索引和（或）工作區中存在變更。\n"
+"請提交或貯存修改，然後執行\n"
 "\n"
 "  git rebase --continue\n"
 "\n"
@@ -25626,18 +25505,16 @@ msgstr "無法 lstat “%s”"
 
 #: t/helper/test-bundle-uri.c:91
 msgid "no remote configured to get bundle URIs from"
-msgstr ""
+msgstr "沒有設定可以用來取得套件包 URIs 的遠端"
 
 #: t/helper/test-bundle-uri.c:94
 #, c-format
 msgid "remote '%s' has no configured URL"
-msgstr ""
+msgstr "“%s” 遠端未設定 URL"
 
 #: t/helper/test-bundle-uri.c:98
-#, fuzzy
-#| msgid "could not generate todo list"
 msgid "could not get the bundle-uri list"
-msgstr "無法生成待辦列表"
+msgstr "無法取得 bundle-uri 清單"
 
 #: t/helper/test-cache-tree.c:13
 msgid "test-tool cache-tree <options> (control|prime|update)"
@@ -26077,14 +25954,12 @@ msgid "failed to push all needed submodules"
 msgstr "不能推送全部需要的子模組"
 
 #: transport.c:1559
-#, fuzzy
-#| msgid "operation not supported by protocol"
 msgid "bundle-uri operation not supported by protocol"
-msgstr "協定不支援該動作"
+msgstr "通訊協定不支援 bundle-uri 動作"
 
 #: transport.c:1562
 msgid "could not retrieve server-advertised bundle-uri list"
-msgstr ""
+msgstr "無法取得伺服器公佈的 bundle-uri 清單"
 
 #: tree-walk.c:38
 msgid "too-short tree object"
@@ -27003,15 +26878,17 @@ msgid ""
 "It took %.2f seconds to enumerate untracked files,\n"
 "but the results were cached, and subsequent runs may be faster."
 msgstr ""
+"列舉未追蹤檔案花費 %.2f 秒，\n"
+"不過已經快取結果，之後執行的速度或許能比較快。"
 
 #: wt-status.c:1902
 #, c-format
 msgid "It took %.2f seconds to enumerate untracked files."
-msgstr ""
+msgstr "列舉未追蹤檔案花費 %.2f 秒。"
 
 #: wt-status.c:1906
 msgid "See 'git help status' for information on how to improve this."
-msgstr ""
+msgstr "請參閱 “git help status” 深入了解如何改善。"
 
 #: wt-status.c:1910
 #, c-format
@@ -27507,10 +27384,9 @@ msgid "(%s) Could not execute '%s'"
 msgstr "(%s) 不能執行 '%s'"
 
 #: git-send-email.perl:2051
-#, fuzzy, perl-format
-#| msgid "Malformed input line: '%s'."
+#, perl-format
 msgid "(%s) Malformed output from '%s'"
-msgstr "格式錯誤的輸入列：“%s”。"
+msgstr "(%s) 從 “%s” 讀到格式錯誤的輸出"
 
 #: git-send-email.perl:2060
 #, perl-format

@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-05-15 23:57+0000\n"
-"PO-Revision-Date: 2023-05-17 12:29+0000\n"
+"PO-Revision-Date: 2023-05-19 15:38+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -1372,7 +1372,7 @@ msgstr "無法開啟 %s"
 #: apply.c:4639 rerere.c:1070
 #, c-format
 msgid "cannot unlink '%s'"
-msgstr "不能刪除 '%s'"
+msgstr "無法刪除 “%s”"
 
 #: apply.c:4660
 #, c-format
@@ -5235,7 +5235,7 @@ msgstr "「%s」符號連結已存在，拒絕使用 --local 複製"
 #: builtin/clone.c:379 compat/precompose_utf8.c:61
 #, c-format
 msgid "failed to unlink '%s'"
-msgstr "刪除 '%s' 失敗"
+msgstr "無法刪除 “%s”"
 
 #: builtin/clone.c:385
 #, c-format
@@ -5303,7 +5303,7 @@ msgstr "無法執行 repack 來清理"
 
 #: builtin/clone.c:899
 msgid "cannot unlink temporary alternates file"
-msgstr "無法刪除暫時的 alternates 檔案"
+msgstr "無法刪除暫存 alternates 檔案"
 
 #: builtin/clone.c:945
 msgid "Too many arguments."
@@ -13752,7 +13752,7 @@ msgstr "pack-objects 沒有為 %2$s-%3$s 套件包寫入 “%1$s” 檔案"
 #: builtin/repack.c:1130 sequencer.c:4202
 #, c-format
 msgid "could not unlink: %s"
-msgstr "無法取消連結：%s"
+msgstr "無法刪除：%s"
 
 #: builtin/replace.c:29
 msgid "git replace [-f] <object> <replacement>"
@@ -23775,7 +23775,7 @@ msgstr "使用之前的解決方案解決 '%s'。"
 #: rerere.c:795
 #, c-format
 msgid "cannot unlink stray '%s'"
-msgstr "不能刪除 stray '%s'"
+msgstr "無法刪除失散檔案 “%s”"
 
 #: rerere.c:799
 #, c-format

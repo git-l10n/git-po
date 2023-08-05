@@ -26,18 +26,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-08-05 23:37+0800\n"
-"PO-Revision-Date: 2023-05-31 23:41+0800\n"
+"PO-Revision-Date: 2023-08-05 16:08+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-Generator: Weblate 4.18.2\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -966,16 +966,12 @@ msgid "'%s' outside a repository"
 msgstr "“%s” 在版本庫之外"
 
 #: apply.c:416
-#, fuzzy
-#| msgid "failed to read the cache"
 msgid "failed to read patch"
-msgstr "讀取快取失敗"
+msgstr "無法讀取修補檔"
 
 #: apply.c:418
-#, fuzzy
-#| msgid "pack %s too large to roll up"
 msgid "patch too large"
-msgstr "%s 包太大，以致不能縮合"
+msgstr "修補檔過大"
 
 #: apply.c:832
 #, c-format
@@ -2084,10 +2080,9 @@ msgid "a branch named '%s' already exists"
 msgstr "已有同名 “%s” 分支"
 
 #: branch.c:473
-#, fuzzy, c-format
-#| msgid "cannot force update the branch '%s' checked out at '%s'"
+#, c-format
 msgid "cannot force update the branch '%s' used by worktree at '%s'"
-msgstr "無法強制更新在 “%2$s” 簽出的 “%1$s” 分支"
+msgstr "無法強制更新位於 “%2$s” 的工作區使用的 “%1$s” 分支"
 
 #: branch.c:498
 #, c-format
@@ -4026,12 +4021,6 @@ msgid "git cat-file (-t | -s) [--allow-unknown-type] <object>"
 msgstr "git cat-file (-t | -s) [--allow-unknown-type] <object>"
 
 #: builtin/cat-file.c:925
-#, fuzzy
-#| msgid ""
-#| "git cat-file (--batch | --batch-check | --batch-command) [--batch-all-"
-#| "objects]\n"
-#| "             [--buffer] [--follow-symlinks] [--unordered]\n"
-#| "             [--textconv | --filters] [-z]"
 msgid ""
 "git cat-file (--batch | --batch-check | --batch-command) [--batch-all-"
 "objects]\n"
@@ -4041,7 +4030,7 @@ msgstr ""
 "git cat-file (--batch | --batch-check | --batch-command) [--batch-all-"
 "objects]\n"
 "             [--buffer] [--follow-symlinks] [--unordered]\n"
-"             [--textconv | --filters] [-z]"
+"             [--textconv | --filters] [-Z]"
 
 #: builtin/cat-file.c:928
 msgid ""
@@ -4100,10 +4089,8 @@ msgid "stdin is NUL-terminated"
 msgstr "stdin 以 NUL 字元終止"
 
 #: builtin/cat-file.c:958
-#, fuzzy
-#| msgid "stdin is NUL-terminated"
 msgid "stdin and stdout is NUL-terminated"
-msgstr "stdin 以 NUL 字元終止"
+msgstr "stdin 和 stdout 以 NUL 字元終止"
 
 #: builtin/cat-file.c:960
 msgid "read commands from stdin"
@@ -5799,10 +5786,9 @@ msgstr "無法選擇一個未被目前提交說明使用的備註字元"
 
 #: builtin/commit.c:770 builtin/commit.c:805 builtin/commit.c:1194
 #: builtin/merge-tree.c:453
-#, fuzzy, c-format
-#| msgid "could not lookup commit %s"
+#, c-format
 msgid "could not lookup commit '%s'"
-msgstr "不能查詢提交 %s"
+msgstr "無法查詢提交 “%s”"
 
 #: builtin/commit.c:783 builtin/shortlog.c:458
 #, c-format
@@ -10733,34 +10719,28 @@ msgid "git notes [--ref <notes-ref>] [list [<object>]]"
 msgstr "git notes [--ref <註解引用>] [list [<物件>]]"
 
 #: builtin/notes.c:37
-#, fuzzy
-#| msgid ""
-#| "git notes [--ref <notes-ref>] add [-f] [--allow-empty] [-m <msg> | -F "
-#| "<file> | (-c | -C) <object>] [<object>]"
 msgid ""
 "git notes [--ref <notes-ref>] add [-f] [--allow-empty] [--[no-]separator|--"
 "separator=<paragraph-break>] [--[no-]stripspace] [-m <msg> | -F <file> | (-c "
 "| -C) <object>] [<object>]"
 msgstr ""
-"git notes [--ref <註解引用>] add [-f] [--allow-empty] [-m <說明> | -F <檔案> "
-"| (-c | -C) <物件>] [<物件>]"
+"git notes [--ref <notes-ref>] add [-f] [--allow-empty] "
+"[--[no-]separator|--separator=<paragraph-break>] [--[no-]stripspace] [-m "
+"<msg> | -F <file> | (-c | -C) <object>] [<object>]"
 
 #: builtin/notes.c:38
 msgid "git notes [--ref <notes-ref>] copy [-f] <from-object> <to-object>"
 msgstr "git notes [--ref <註解引用>] copy [-f] <來源物件> <目標物件>"
 
 #: builtin/notes.c:39
-#, fuzzy
-#| msgid ""
-#| "git notes [--ref <notes-ref>] append [--allow-empty] [-m <msg> | -F "
-#| "<file> | (-c | -C) <object>] [<object>]"
 msgid ""
 "git notes [--ref <notes-ref>] append [--allow-empty] [--[no-]separator|--"
 "separator=<paragraph-break>] [--[no-]stripspace] [-m <msg> | -F <file> | (-c "
 "| -C) <object>] [<object>]"
 msgstr ""
-"git notes [--ref <註解引用>] append [--allow-empty] [-m <說明> | -F <檔案> | "
-"(-c | -C) <物件>] [<物件>]"
+"git notes [--ref <notes-ref>] append [--allow-empty] "
+"[--[no-]separator|--separator=<paragraph-break>] [--[no-]stripspace] [-m "
+"<msg> | -F <file> | (-c | -C) <object>] [<object>]"
 
 #: builtin/notes.c:40
 msgid "git notes [--ref <notes-ref>] edit [--allow-empty] [<object>]"
@@ -10932,17 +10912,15 @@ msgstr "取代已存在的註解"
 
 #: builtin/notes.c:502 builtin/notes.c:677
 msgid "<paragraph-break>"
-msgstr ""
+msgstr "<paragraph-break>"
 
 #: builtin/notes.c:503 builtin/notes.c:678
 msgid "insert <paragraph-break> between paragraphs"
-msgstr ""
+msgstr "在段落間插入 <paragraph-break>"
 
 #: builtin/notes.c:506 builtin/notes.c:681
-#, fuzzy
-#| msgid "Remove unnecessary whitespace"
 msgid "remove unnecessary whitespace"
-msgstr "刪除不必要的空白字元"
+msgstr "移除不必要的空白字元"
 
 #: builtin/notes.c:535
 #, c-format
@@ -11625,12 +11603,12 @@ msgid "refusing to run without --i-still-use-this"
 msgstr "傳入 --i-still-use-this 前拒絕執行"
 
 #: builtin/pack-refs.c:10
-#, fuzzy
-#| msgid "git pack-refs [--all] [--no-prune]"
 msgid ""
 "git pack-refs [--all] [--no-prune] [--include <pattern>] [--exclude "
 "<pattern>]"
-msgstr "git pack-refs [--all] [--no-prune]"
+msgstr ""
+"git pack-refs [--all] [--no-prune] [--include <pattern>] [--exclude "
+"<pattern>]"
 
 #: builtin/pack-refs.c:26
 msgid "pack everything"
@@ -11642,13 +11620,11 @@ msgstr "剪除鬆散引用（預設值）"
 
 #: builtin/pack-refs.c:29
 msgid "references to include"
-msgstr ""
+msgstr "要包含的引用"
 
 #: builtin/pack-refs.c:31
-#, fuzzy
-#| msgid "reference is not a tree: %s"
 msgid "references to exclude"
-msgstr "引用不是樹狀物件：%s"
+msgstr "要排除的引用"
 
 #: builtin/patch-id.c:191
 msgid "git patch-id [--stable | --unstable | --verbatim]"
@@ -12017,12 +11993,6 @@ msgstr ""
 "而沒有告訴我要推送什麼、更新哪個遠端分支。"
 
 #: builtin/push.c:303
-#, fuzzy
-#| msgid ""
-#| "Updates were rejected because the tip of your current branch is behind\n"
-#| "its remote counterpart. Integrate the remote changes (e.g.\n"
-#| "'git pull ...') before pushing again.\n"
-#| "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgid ""
 "Updates were rejected because the tip of your current branch is behind\n"
 "its remote counterpart. If you want to integrate the remote changes,\n"
@@ -12030,34 +12000,21 @@ msgid ""
 "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgstr ""
 "更新被拒絕，因為您目前分支的最新提交落後於其對應的遠端分支。\n"
-"再次推送前，先與遠端變更合併（如 'git pull ...'）。詳見\n"
-"'git push --help' 中的 'Note about fast-forwards' 小節。"
+"如果您想要整合遠端更動，請在再次推送前使用 “git pull”。詳見\n"
+"“git push --help” 中的〈Note about fast-forwards〉小節。"
 
 #: builtin/push.c:309
-#, fuzzy
-#| msgid ""
-#| "Updates were rejected because a pushed branch tip is behind its remote\n"
-#| "counterpart. Check out this branch and integrate the remote changes\n"
-#| "(e.g. 'git pull ...') before pushing again.\n"
-#| "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgid ""
 "Updates were rejected because a pushed branch tip is behind its remote\n"
 "counterpart. If you want to integrate the remote changes, use 'git pull'\n"
 "before pushing again.\n"
 "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgstr ""
-"更新被拒絕，因為推送的一個分支的最新提交落後於其對應的遠端分支。\n"
-"簽出該分支並整合遠端變更（如 'git pull ...'），然後再推送。詳見\n"
-"'git push --help' 中的 'Note about fast-forwards' 小節。"
+"更新被拒絕，因為推送的某分支的最新提交落後於其對應的遠端分支。\n"
+"如果您想要整合遠端更動，請在再次推送前使用 “git pull”。詳見\n"
+"“git push --help” 中的〈Note about fast-forwards〉小節。"
 
 #: builtin/push.c:315
-#, fuzzy
-#| msgid ""
-#| "Updates were rejected because the remote contains work that you do\n"
-#| "not have locally. This is usually caused by another repository pushing\n"
-#| "to the same ref. You may want to first integrate the remote changes\n"
-#| "(e.g., 'git pull ...') before pushing again.\n"
-#| "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgid ""
 "Updates were rejected because the remote contains work that you do not\n"
 "have locally. This is usually caused by another repository pushing to\n"
@@ -12065,10 +12022,10 @@ msgid ""
 "'git pull' before pushing again.\n"
 "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgstr ""
-"因為遠端版本庫包含您本機尚不存在的提交，而導致更新被拒絕。這通常是因為另外\n"
-"一個版本庫已向該引用進行了推送。再次推送前，您可能需要先整合遠端變更\n"
-"（如 'git pull ...'）。\n"
-"詳見 'git push --help' 中的 'Note about fast-forwards' 小節。"
+"更新被拒絕，因為遠端包含您本機沒有的提交。這通常是因為\n"
+"另一個版本庫有推送更動到同個引用。如果您想要整合遠端更動，\n"
+"請在再次推送前使用 “git pull”。詳見 “git push --help” 中的\n"
+"〈Note about fast-forwards〉小節。"
 
 #: builtin/push.c:322
 msgid "Updates were rejected because the tag already exists in the remote."
@@ -12084,21 +12041,15 @@ msgstr ""
 "也不能更新遠端引用讓其指向一個非提交物件。\n"
 
 #: builtin/push.c:330
-#, fuzzy
-#| msgid ""
-#| "Updates were rejected because the tip of your current branch is behind\n"
-#| "its remote counterpart. Integrate the remote changes (e.g.\n"
-#| "'git pull ...') before pushing again.\n"
-#| "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgid ""
 "Updates were rejected because the tip of the remote-tracking branch has\n"
 "been updated since the last checkout. If you want to integrate the\n"
 "remote changes, use 'git pull' before pushing again.\n"
 "See the 'Note about fast-forwards' in 'git push --help' for details."
 msgstr ""
-"更新被拒絕，因為您目前分支的最新提交落後於其對應的遠端分支。\n"
-"再次推送前，先與遠端變更合併（如 'git pull ...'）。詳見\n"
-"'git push --help' 中的 'Note about fast-forwards' 小節。"
+"更新被拒絕，因為遠端追蹤分支的最新提交自上次簽出後有改變。\n"
+"如果您想要整合遠端更動，請在再次推送前使用 “git pull”。\n"
+"詳見 “git push --help” 中的〈Note about fast-forwards〉小節。"
 
 #: builtin/push.c:400
 #, c-format
@@ -13131,12 +13082,12 @@ msgid "fetch the remote branches"
 msgstr "抓取遠端的分支"
 
 #: builtin/remote.c:171
-#, fuzzy
-#| msgid "import all tags and associated objects when fetching"
 msgid ""
 "import all tags and associated objects when fetching\n"
 "or do not fetch any tag at all (--no-tags)"
-msgstr "抓取時匯入所有的標籤和關聯物件"
+msgstr ""
+"抓取時匯入所有的標籤和關聯物件\n"
+"或者是完全不抓取所有標籤 (--no-tags)"
 
 #: builtin/remote.c:175
 msgid "branch(es) to track"
@@ -15527,10 +15478,9 @@ msgid "Skipping submodule '%s'"
 msgstr "略過子模組 '%s'"
 
 #: builtin/submodule--helper.c:2038
-#, fuzzy, c-format
-#| msgid "any cloned submodules will be shallow"
+#, c-format
 msgid "cannot clone submodule '%s' without a URL"
-msgstr "子模組將以淺下載模式複製"
+msgstr "無法在沒有網址的情況下複製 “%s” 子模組"
 
 #: builtin/submodule--helper.c:2175
 #, c-format
@@ -16441,17 +16391,12 @@ msgid "print tag contents"
 msgstr "列印標籤內容"
 
 #: builtin/worktree.c:30
-#, fuzzy
-#| msgid ""
-#| "git worktree add [-f] [--detach] [--checkout] [--lock [--reason "
-#| "<string>]]\n"
-#| "                 [-b <new-branch>] <path> [<commit-ish>]"
 msgid ""
 "git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]]\n"
 "                 [--orphan] [(-b | -B) <new-branch>] <path> [<commit-ish>]"
 msgstr ""
 "git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]]\n"
-"                 [-b <new-branch>] <path> [<commit-ish>]"
+"                 [--orphan] [(-b | -B) <new-branch>] <path> [<commit-ish>]"
 
 #: builtin/worktree.c:34
 msgid "git worktree list [-v | --porcelain [-z]]"
@@ -16483,7 +16428,7 @@ msgstr "git worktree unlock <worktree>"
 
 #: builtin/worktree.c:49
 msgid "No possible source branch, inferring '--orphan'"
-msgstr ""
+msgstr "沒有可能的來源分支，推測為 “--orphan”"
 
 #: builtin/worktree.c:52
 #, c-format
@@ -16494,6 +16439,11 @@ msgid ""
 "\n"
 "    git worktree add --orphan -b %s %s\n"
 msgstr ""
+"如果您是想要在這個版本庫建立一個工作區，裡面包含一個\n"
+"孤立分支（即沒有提交的分支），可以使用 --orphan 達到\n"
+"這個效果：\n"
+"\n"
+"    git worktree add --orphan -b %s %s\n"
 
 #: builtin/worktree.c:59
 #, c-format
@@ -16504,6 +16454,11 @@ msgid ""
 "\n"
 "    git worktree add --orphan %s\n"
 msgstr ""
+"如果您是想要在這個版本庫建立一個工作區，裡面包含一個\n"
+"孤立分支（即沒有提交的分支），可以使用 --orphan 達到\n"
+"這個效果：\n"
+"\n"
+"    git worktree add --orphan %s\n"
 
 #: builtin/worktree.c:165
 #, c-format
@@ -16586,10 +16541,9 @@ msgid "Preparing worktree (checking out '%s')"
 msgstr "準備工作區（簽出 '%s'）"
 
 #: builtin/worktree.c:617
-#, fuzzy, c-format
-#| msgid "invalid reference: %s"
+#, c-format
 msgid "unreachable: invalid reference: %s"
-msgstr "無效引用：%s"
+msgstr "不可達：無效引用：%s"
 
 #: builtin/worktree.c:618
 #, c-format
@@ -16603,19 +16557,23 @@ msgid ""
 "HEAD path: '%s'\n"
 "HEAD contents: '%s'"
 msgstr ""
+"HEAD 指向無效（或孤立）引用。\n"
+"HEAD 路徑：“%s”\n"
+"HEAD 內容：“%s”"
 
 #: builtin/worktree.c:698
 msgid ""
 "No local or remote refs exist despite at least one remote\n"
 "present, stopping; use 'add -f' to overide or fetch a remote first"
 msgstr ""
+"即使有提供一個遠端，卻不存在本機或遠端引用，\n"
+"故停止。使用 “add -f” 先覆蓋或抓取遠端"
 
 #: builtin/worktree.c:733 builtin/worktree.c:736 builtin/worktree.c:812
 #: builtin/worktree.c:814 builtin/worktree.c:817
-#, fuzzy, c-format
-#| msgid "options '%s' and '%s' cannot be used together"
+#, c-format
 msgid "'%s' and '%s' cannot be used together"
-msgstr "無法同時使用 “%s” 和 “%s” 選項"
+msgstr "無法同時使用 “%s” 和 “%s”"
 
 #: builtin/worktree.c:781
 msgid "checkout <branch> even if already checked out in other worktree"
@@ -16630,10 +16588,8 @@ msgid "create or reset a branch"
 msgstr "建立或重設一個分支"
 
 #: builtin/worktree.c:787
-#, fuzzy
-#| msgid "create a new branch"
 msgid "create unborn/orphaned branch"
-msgstr "建立一個新分支"
+msgstr "建立尚無內容（孤立）的分支"
 
 #: builtin/worktree.c:789
 msgid "populate the new working tree"
@@ -16661,16 +16617,13 @@ msgid "options '%s', '%s', and '%s' cannot be used together"
 msgstr "「%s」、「%s」和「%s」選項不得同時使用"
 
 #: builtin/worktree.c:809
-#, fuzzy, c-format
-#| msgid "options '%s' and '%s' cannot be used together"
+#, c-format
 msgid "options '%s', and '%s' cannot be used together"
 msgstr "無法同時使用 “%s” 和 “%s” 選項"
 
 #: builtin/worktree.c:818
-#, fuzzy
-#| msgid "commit"
 msgid "<commit-ish>"
-msgstr "提交"
+msgstr "<提交指示元>"
 
 #: builtin/worktree.c:824
 msgid "added with --lock"
@@ -16952,17 +16905,14 @@ msgid_plural "The bundle requires these %<PRIuMAX> refs:"
 msgstr[0] "這個套件包需要這 %<PRIuMAX> 個引用："
 
 #: bundle.c:274
-#, fuzzy, c-format
-#| msgid "unrecognized bundle hash algorithm: %s"
+#, c-format
 msgid "The bundle uses this hash algorithm: %s"
-msgstr "無法識別的套件包雜湊演算法：%s"
+msgstr "本套件包採用此雜湊演算法：%s"
 
 #: bundle.c:277
-#, fuzzy, c-format
-#| msgid "The bundle requires this ref:"
-#| msgid_plural "The bundle requires these %<PRIuMAX> refs:"
+#, c-format
 msgid "The bundle uses this filter: %s"
-msgstr "這個套件包需要這 %<PRIuMAX> 個引用："
+msgstr "本套件包使用此過濾器：%s"
 
 #: bundle.c:344
 msgid "unable to dup bundle descriptor"
@@ -17261,10 +17211,8 @@ msgid "A portable graphical interface to Git"
 msgstr "一個便攜的 Git 圖形用戶端"
 
 #: command-list.h:111
-#, fuzzy
-#| msgid "Compute object ID and optionally creates a blob from a file"
 msgid "Compute object ID and optionally create an object from a file"
-msgstr "從一個檔案計算物件 ID，並可以建立 blob 資料物件"
+msgstr "從一個檔案計算物件 ID，也能順帶建立一個物件"
 
 #: command-list.h:112
 msgid "Display help information about Git"
@@ -17807,7 +17755,7 @@ msgstr "提交圖形鏈不符合"
 #: commit-graph.c:496
 #, c-format
 msgid "commit count in base graph too high: %<PRIuMAX>"
-msgstr ""
+msgstr "基礎圖 (base graph) 中的提交數過多：%<PRIuMAX>"
 
 #: commit-graph.c:542
 #, c-format
@@ -17917,12 +17865,12 @@ msgstr "無法重新命名暫時提交圖形檔案"
 #: commit-graph.c:2119
 #, c-format
 msgid "cannot merge graphs with %<PRIuMAX>, %<PRIuMAX> commits"
-msgstr ""
+msgstr "無法將圖與 %<PRIuMAX>, %<PRIuMAX> 個提交進行合併"
 
 #: commit-graph.c:2181
 #, c-format
 msgid "cannot merge graph %s, too many commits: %<PRIuMAX>"
-msgstr ""
+msgstr "無法合併 %s 圖，太多提交：%<PRIuMAX>"
 
 #: commit-graph.c:2218
 msgid "Scanning merged commits"
@@ -19158,14 +19106,12 @@ msgid "multiple merge bases found"
 msgstr "找到多個合併基底"
 
 #: diff-no-index.c:279
-#, fuzzy
-#| msgid "not in a git directory"
 msgid "cannot compare stdin to a directory"
-msgstr "不在 git 版本庫中"
+msgstr "無法比對 stdin 和目錄"
 
 #: diff-no-index.c:282
 msgid "cannot compare a named pipe to a directory"
-msgstr ""
+msgstr "無法比對命名管線 (pipe) 和目錄"
 
 #: diff-no-index.c:296
 msgid "git diff --no-index [<options>] <path> <path>"
@@ -19236,10 +19182,9 @@ msgid "--follow requires exactly one pathspec"
 msgstr "--follow 明確要求只跟一個路徑規格"
 
 #: diff.c:4772
-#, fuzzy, c-format
-#| msgid "%s: pathspec magic not supported by this command: %s"
+#, c-format
 msgid "pathspec magic not supported by --follow: %s"
-msgstr "%s：路徑規格神奇前綴不被此指令支援：%s"
+msgstr "--follow 不支援路徑規格魔法：%s"
 
 #: diff.c:4797 parse-options.c:1228
 #, c-format
@@ -22725,13 +22670,13 @@ msgstr "不能解析 '%s' 的日誌"
 #, fuzzy, c-format
 #| msgid "invalid ref: '%s'"
 msgid "invalid extra cruft tip: '%s'"
-msgstr "引用無效：“%s”"
+msgstr "無效、多出來、不必要的頂層提交：“%s”"
 
 #: reachable.c:128
 #, fuzzy
 #| msgid "unable to add recent objects"
 msgid "unable to enumerate additional recent objects"
-msgstr "無法新增最近的物件"
+msgstr "無法列舉附加的近期物件"
 
 #: read-cache.c:647
 #, c-format
@@ -23143,28 +23088,25 @@ msgid "positive value expected contents:lines=%s"
 msgstr "期望一個正數 contents:lines=%s"
 
 #: ref-filter.c:626
-#, fuzzy, c-format
-#| msgid "blob expected for %s '%s'"
+#, c-format
 msgid "argument expected for %s"
-msgstr "%s '%s' 應為資料物件"
+msgstr "引數預期 %s"
 
 #: ref-filter.c:630
 #, fuzzy, c-format
 #| msgid "positive value expected '%s' in %%(%s)"
 msgid "positive value expected %s=%s"
-msgstr "%%(%2$s) 中的 '%1$s' 預期是正數值"
+msgstr "正整數預期 %s=%s"
 
 #: ref-filter.c:634
-#, fuzzy, c-format
-#| msgid "cannot parse color '%s'"
+#, c-format
 msgid "cannot fully parse %s=%s"
-msgstr "無法解析顏色 '%s'"
+msgstr "無法完全解析 %s=%s"
 
 #: ref-filter.c:644 ref-filter.c:654
-#, fuzzy, c-format
-#| msgid "expected '%s'"
+#, c-format
 msgid "value expected %s="
-msgstr "預期 “%s”"
+msgstr "數值預期 %s="
 
 #: ref-filter.c:712
 #, c-format
@@ -23258,10 +23200,8 @@ msgid "--format=%.*s cannot be used with --python, --shell, --tcl"
 msgstr "--format=%.*s 不能和 --python、--shell、--tcl 一起使用"
 
 #: ref-filter.c:1823
-#, fuzzy
-#| msgid "failed to run '%s'"
 msgid "failed to run 'describe'"
-msgstr "無法執行 “%s”"
+msgstr "無法執行 “describe”"
 
 #: ref-filter.c:2120
 #, c-format
@@ -23341,10 +23281,8 @@ msgid "field name to sort on"
 msgstr "排序的欄位名"
 
 #: ref-filter.h:120
-#, fuzzy
-#| msgid "only use refs matching <pattern>"
 msgid "exclude refs which match pattern"
-msgstr "只使用和 <模式> 相符合的引用"
+msgstr "排除符合模式的引用"
 
 #: reflog.c:410
 #, c-format
@@ -23876,11 +23814,9 @@ msgstr[0] ""
 
 #  譯者：請維持前導空格
 #: remote.c:2329
-#, fuzzy
-#| msgid "  (use \"git pull\" to merge the remote branch into yours)\n"
 msgid ""
 "  (use \"git pull\" if you want to integrate the remote branch with yours)\n"
-msgstr "  （使用 \"git pull\" 來合併遠端分支）\n"
+msgstr "  （使用 “git pull” 來將遠端分支整合進您的分支）\n"
 
 #: remote.c:2522
 #, c-format
@@ -24021,10 +23957,9 @@ msgid "--unpacked=<packfile> no longer supported"
 msgstr "--unpacked=<packfile> 已不受支援"
 
 #: revision.c:2823
-#, fuzzy, c-format
-#| msgid "invalid option: %s"
+#, c-format
 msgid "invalid option '%s' in --stdin mode"
-msgstr "無效選項：%s"
+msgstr "在 --stdin 模式下，“%s” 選項無效"
 
 #: revision.c:2844
 msgid "your current branch appears to be broken"

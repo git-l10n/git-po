@@ -26,19 +26,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2023-11-05 18:22+0800\n"
+"POT-Creation-Date: 2023-11-19 22:29+0800\n"
 "PO-Revision-Date: 2023-11-05 13:11+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
-"git-po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
+"po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.1.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
-"https://zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
+"zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -226,8 +226,8 @@ msgstr "已暫存"
 msgid "unstaged"
 msgstr "未暫存"
 
-#: add-interactive.c:1163 apply.c:5067 apply.c:5070 builtin/am.c:2371
-#: builtin/am.c:2374 builtin/bugreport.c:119 builtin/clone.c:144
+#: add-interactive.c:1163 apply.c:5067 apply.c:5070 builtin/am.c:2346
+#: builtin/am.c:2349 builtin/bugreport.c:119 builtin/clone.c:144
 #: builtin/diagnose.c:25 builtin/fetch.c:2155 builtin/hook.c:31
 #: builtin/merge.c:274 builtin/pull.c:201 builtin/submodule--helper.c:1777
 #: builtin/submodule--helper.c:1780
@@ -949,14 +949,14 @@ msgstr "空白字元忽略選項 “%s” 無法識別"
 #: builtin/push.c:687 builtin/push.c:692 builtin/rebase.c:1255
 #: builtin/rebase.c:1257 builtin/rebase.c:1266 builtin/repack.c:1208
 #: builtin/repack.c:1214 builtin/repack.c:1216 builtin/repack.c:1266
-#: builtin/reset.c:376 builtin/reset.c:413 builtin/rev-list.c:557
+#: builtin/reset.c:376 builtin/reset.c:413 builtin/rev-list.c:562
 #: builtin/show-branch.c:722 builtin/show-branch.c:727 builtin/stash.c:1774
 #: builtin/stash.c:1777 builtin/submodule--helper.c:1205
 #: builtin/submodule--helper.c:2961 builtin/tag.c:539 builtin/tag.c:585
-#: builtin/worktree.c:1055 parse-options.c:1272 range-diff.c:572
-#: revision.c:2383 revision.c:2387 revision.c:2396 revision.c:2401
-#: revision.c:2632 revision.c:3031 revision.c:3035 revision.c:3043
-#: revision.c:3046 revision.c:3048
+#: builtin/worktree.c:1055 parse-options.c:1312 range-diff.c:572
+#: revision.c:2392 revision.c:2396 revision.c:2405 revision.c:2410
+#: revision.c:2641 revision.c:3040 revision.c:3044 revision.c:3052
+#: revision.c:3055 revision.c:3057
 #, c-format
 msgid "options '%s' and '%s' cannot be used together"
 msgstr "無法同時使用 “%s” 和 “%s” 選項"
@@ -1441,7 +1441,7 @@ msgstr "不要套用符合提供路徑的更動"
 msgid "apply changes matching the given path"
 msgstr "套用符合提供路徑的更動"
 
-#: apply.c:5073 builtin/am.c:2380
+#: apply.c:5073 builtin/am.c:2355
 msgid "num"
 msgstr "數字"
 
@@ -1505,7 +1505,7 @@ msgstr "路徑以 NUL 字元分隔"
 msgid "ensure at least <n> lines of context match"
 msgstr "確保至少符合 <n> 列上下文"
 
-#: apply.c:5108 builtin/am.c:2356 builtin/am.c:2359
+#: apply.c:5108 builtin/am.c:2331 builtin/am.c:2334
 #: builtin/interpret-trailers.c:105 builtin/interpret-trailers.c:107
 #: builtin/pack-objects.c:4285 builtin/rebase.c:1110
 msgid "action"
@@ -1543,7 +1543,7 @@ msgstr "允許不正確的檔案末尾換列符號"
 msgid "do not trust the line counts in the hunk headers"
 msgstr "不信任區塊標頭中的列號"
 
-#: apply.c:5132 builtin/am.c:2368
+#: apply.c:5132 builtin/am.c:2343
 msgid "root"
 msgstr "根目錄"
 
@@ -1678,7 +1678,7 @@ msgstr "fmt"
 msgid "archive format"
 msgstr "封存格式"
 
-#: archive.c:644 builtin/log.c:1935 parse-options.h:529
+#: archive.c:644 builtin/log.c:1935 parse-options.h:532
 msgid "prefix"
 msgstr "前綴"
 
@@ -1690,7 +1690,7 @@ msgstr "為封存中的每個路徑名稱加上前綴"
 #: builtin/blame.c:903 builtin/commit-tree.c:110 builtin/config.c:143
 #: builtin/fast-export.c:1200 builtin/fast-export.c:1202
 #: builtin/fast-export.c:1206 builtin/gc.c:1513 builtin/gc.c:1579
-#: builtin/grep.c:985 builtin/hash-object.c:113 builtin/ls-files.c:622
+#: builtin/grep.c:994 builtin/hash-object.c:113 builtin/ls-files.c:622
 #: builtin/ls-files.c:625 builtin/notes.c:489 builtin/notes.c:665
 #: builtin/read-tree.c:124 parse-options.h:330
 msgid "file"
@@ -1760,7 +1760,7 @@ msgstr "非預期選項 --remote"
 #: builtin/fast-export.c:1249 builtin/index-pack.c:1872 builtin/log.c:2273
 #: builtin/reset.c:385 builtin/reset.c:446 builtin/rm.c:289
 #: builtin/stash.c:1786 builtin/worktree.c:820 builtin/worktree.c:1057
-#: fetch-pack.c:344 http-fetch.c:150 http-fetch.c:159 revision.c:3050
+#: fetch-pack.c:344 http-fetch.c:150 http-fetch.c:159 revision.c:3059
 #, c-format
 msgid "the option '%s' requires '%s'"
 msgstr "“%s” 選項需要 “%s”"
@@ -1954,7 +1954,7 @@ msgstr "--reverse 和 --first-parent 共用，需要指定最新的提交"
 #: builtin/log.c:1785 builtin/log.c:2229 builtin/log.c:2527 builtin/merge.c:418
 #: builtin/pack-objects.c:3422 builtin/pack-objects.c:3580
 #: builtin/pack-objects.c:4063 builtin/pack-objects.c:4078
-#: builtin/shortlog.c:273 midx.c:1159 pack-bitmap.c:1067 pack-bitmap.c:2188
+#: builtin/shortlog.c:273 midx.c:1159 pack-bitmap.c:1067 pack-bitmap.c:2215
 #: remote.c:2200 sequencer.c:2468 sequencer.c:5271 submodule.c:919
 msgid "revision walk setup failed"
 msgstr "修訂版遍歷設定失敗"
@@ -2350,26 +2350,26 @@ msgstr ""
 
 #: builtin/add.c:465 builtin/check-ignore.c:185 builtin/checkout.c:568
 #: builtin/checkout.c:782 builtin/clean.c:1024 builtin/commit.c:394
-#: builtin/diff-tree.c:132 builtin/grep.c:559 builtin/mv.c:203
+#: builtin/diff-tree.c:132 builtin/grep.c:560 builtin/mv.c:203
 #: builtin/reset.c:452 builtin/rm.c:303 builtin/submodule--helper.c:209
 #: builtin/submodule--helper.c:3240 read-cache.c:2035 read-cache.c:2353
 #: rerere.c:556 rerere.c:590 rerere.c:1104 submodule.c:1858
 msgid "index file corrupt"
 msgstr "索引檔案損壞"
 
-#: builtin/add.c:571 builtin/am.c:2003 builtin/am.c:2037 builtin/checkout.c:637
+#: builtin/add.c:571 builtin/am.c:2010 builtin/am.c:2044 builtin/checkout.c:637
 #: builtin/checkout.c:913 builtin/clone.c:747 builtin/commit.c:458
 #: builtin/commit.c:482 builtin/commit.c:530 builtin/stash.c:304 merge.c:108
 #: rerere.c:712
 msgid "unable to write new index file"
 msgstr "無法寫入新的索引檔案"
 
-#: builtin/am.c:195 builtin/mailinfo.c:48 mailinfo.c:1257
+#: builtin/am.c:202 builtin/mailinfo.c:48 mailinfo.c:1257
 #, c-format
 msgid "bad action '%s' for '%s'"
 msgstr "“%s” 動作對 “%s” 無效"
 
-#: builtin/am.c:213 builtin/am.c:2255 builtin/am.c:2299 builtin/blame.c:741
+#: builtin/am.c:220 builtin/am.c:2262 builtin/am.c:2284 builtin/blame.c:741
 #: builtin/blame.c:759 builtin/fetch.c:164 builtin/pack-objects.c:3767
 #: builtin/pull.c:51 builtin/pull.c:53 builtin/pull.c:328 diff-merges.c:94
 #: gpg-interface.c:745 gpg-interface.c:760 ls-refs.c:37 parallel-checkout.c:47
@@ -2378,136 +2378,136 @@ msgstr "“%s” 動作對 “%s” 無效"
 msgid "invalid value for '%s': '%s'"
 msgstr "“%s” 的值無效：“%s”"
 
-#: builtin/am.c:300 builtin/commit.c:859 builtin/merge.c:1149 sequencer.c:544
+#: builtin/am.c:307 builtin/commit.c:859 builtin/merge.c:1149 sequencer.c:544
 #: sequencer.c:2011 sequencer.c:3262 sequencer.c:3697
 #, c-format
 msgid "could not read '%s'"
 msgstr "無法讀取 “%s”"
 
-#: builtin/am.c:403
+#: builtin/am.c:410
 msgid "could not parse author script"
 msgstr "無法解析作者文稿"
 
-#: builtin/am.c:410 builtin/am.c:455 builtin/am.c:460 builtin/am.c:1452
-#: builtin/am.c:2138 builtin/replace.c:467 commit.c:60 sequencer.c:3255
+#: builtin/am.c:417 builtin/am.c:462 builtin/am.c:467 builtin/am.c:1459
+#: builtin/am.c:2145 builtin/replace.c:467 commit.c:61 sequencer.c:3255
 #, c-format
 msgid "could not parse %s"
 msgstr "無法解析 %s"
 
-#: builtin/am.c:495
+#: builtin/am.c:502
 #, c-format
 msgid "'%s' was deleted by the applypatch-msg hook"
 msgstr "“%s” 被 applypatch-msg 掛鉤刪除"
 
-#: builtin/am.c:525
+#: builtin/am.c:532
 #, c-format
 msgid "Malformed input line: '%s'."
 msgstr "格式錯誤的輸入列：“%s”。"
 
-#: builtin/am.c:563
+#: builtin/am.c:570
 #, c-format
 msgid "Failed to copy notes from '%s' to '%s'"
 msgstr "從 “%s” 拷貝註解到 “%s” 失敗"
 
-#: builtin/am.c:589
+#: builtin/am.c:596
 msgid "fseek failed"
 msgstr "fseek 失敗"
 
-#: builtin/am.c:757 builtin/am.c:849 builtin/rebase.c:676 sequencer.c:913
+#: builtin/am.c:764 builtin/am.c:856 builtin/rebase.c:676 sequencer.c:913
 #: wrapper.c:199 wrapper.c:369
 #, c-format
 msgid "could not open '%s' for reading"
 msgstr "無法開啟 “%s” 進行讀取"
 
-#: builtin/am.c:766 builtin/rebase.c:630 editor.c:148 sequencer.c:4259
+#: builtin/am.c:773 builtin/rebase.c:630 editor.c:148 sequencer.c:4259
 #: wrapper.c:197 wrapper.c:367
 #, c-format
 msgid "could not open '%s' for writing"
 msgstr "無法開啟 “%s” 進行寫入"
 
-#: builtin/am.c:777
+#: builtin/am.c:784
 #, c-format
 msgid "could not parse patch '%s'"
 msgstr "無法解析修補檔 “%s”"
 
-#: builtin/am.c:842
+#: builtin/am.c:849
 msgid "Only one StGIT patch series can be applied at once"
 msgstr "一次只能套用一個 StGIT 修補檔序列"
 
-#: builtin/am.c:890
+#: builtin/am.c:897
 msgid "invalid timestamp"
 msgstr "無效的時間戳"
 
-#: builtin/am.c:895 builtin/am.c:907
+#: builtin/am.c:902 builtin/am.c:914
 msgid "invalid Date line"
 msgstr "無效的 Date 列"
 
-#: builtin/am.c:902
+#: builtin/am.c:909
 msgid "invalid timezone offset"
 msgstr "無效的時區偏移"
 
-#: builtin/am.c:995
+#: builtin/am.c:1002
 msgid "Patch format detection failed."
 msgstr "修補檔格式偵測失敗。"
 
-#: builtin/am.c:1000 builtin/clone.c:317
+#: builtin/am.c:1007 builtin/clone.c:317
 #, c-format
 msgid "failed to create directory '%s'"
 msgstr "無法建立目錄 “%s”"
 
-#: builtin/am.c:1005
+#: builtin/am.c:1012
 msgid "Failed to split patches."
 msgstr "無法切割修補檔。"
 
-#: builtin/am.c:1154
+#: builtin/am.c:1161
 #, c-format
 msgid "When you have resolved this problem, run \"%s --continue\"."
 msgstr "解決此問題後，請執行 “%s --continue”。"
 
-#: builtin/am.c:1155
+#: builtin/am.c:1162
 #, c-format
 msgid "If you prefer to skip this patch, run \"%s --skip\" instead."
 msgstr "若要略過此修補，請改執行 “%s --skip”。"
 
-#: builtin/am.c:1160
+#: builtin/am.c:1167
 #, c-format
 msgid "To record the empty patch as an empty commit, run \"%s --allow-empty\"."
 msgstr "若要將空白修補檔錄入為空白提交，請執行 “%s --allow-empty”。"
 
-#: builtin/am.c:1162
+#: builtin/am.c:1169
 #, c-format
 msgid "To restore the original branch and stop patching, run \"%s --abort\"."
 msgstr "若要還原至原始分支，並停止修補動作，請執行 “%s --abort”。"
 
-#: builtin/am.c:1257
+#: builtin/am.c:1264
 msgid "Patch sent with format=flowed; space at the end of lines might be lost."
 msgstr "修補檔使用 format=flowed 格式傳送：列尾的空格可能會遺失。"
 
-#: builtin/am.c:1346
+#: builtin/am.c:1353
 #, c-format
 msgid "missing author line in commit %s"
 msgstr "在提交 %s 中缺少作者列"
 
-#: builtin/am.c:1349
+#: builtin/am.c:1356
 #, c-format
 msgid "invalid ident line: %.*s"
 msgstr "ident 列無效：%.*s"
 
-#: builtin/am.c:1371 builtin/checkout.c:822 builtin/clone.c:738
-#: commit-graph.c:1233
+#: builtin/am.c:1378 builtin/checkout.c:822 builtin/clone.c:738
+#: commit-graph.c:1237
 #, c-format
 msgid "unable to parse commit %s"
 msgstr "無法解析 %s 提交"
 
-#: builtin/am.c:1579
+#: builtin/am.c:1586
 msgid "Repository lacks necessary blobs to fall back on 3-way merge."
 msgstr "版本庫缺少必要的資料物件，無法進行三方合併。"
 
-#: builtin/am.c:1581
+#: builtin/am.c:1588
 msgid "Using index info to reconstruct a base tree..."
 msgstr "正在使用索引資訊重建基礎樹……"
 
-#: builtin/am.c:1601
+#: builtin/am.c:1608
 msgid ""
 "Did you hand edit your patch?\n"
 "It does not apply to blobs recorded in its index."
@@ -2515,33 +2515,33 @@ msgstr ""
 "您是否曾自行編輯過您的修補檔？\n"
 "未能套用至索引錄入的資料物件。"
 
-#: builtin/am.c:1607
+#: builtin/am.c:1614
 msgid "Falling back to patching base and 3-way merge..."
 msgstr "正在回復到修補基礎處，並進行三方合併……"
 
-#: builtin/am.c:1633
+#: builtin/am.c:1640
 msgid "Failed to merge in the changes."
 msgstr "無法合併更動。"
 
-#: builtin/am.c:1657 builtin/merge.c:695 sequencer.c:1515
+#: builtin/am.c:1664 builtin/merge.c:695 sequencer.c:1515
 msgid "git write-tree failed to write a tree"
 msgstr "git write-tree 無法寫入樹狀物件"
 
-#: builtin/am.c:1665
+#: builtin/am.c:1672
 msgid "applying to an empty history"
 msgstr "正在套用至空白歷史記錄上"
 
-#: builtin/am.c:1684 builtin/commit.c:1847 builtin/merge.c:915
+#: builtin/am.c:1691 builtin/commit.c:1847 builtin/merge.c:915
 #: builtin/merge.c:940 sequencer.c:1625 t/helper/test-fast-rebase.c:87
 msgid "failed to write commit object"
 msgstr "無法寫入提交物件"
 
-#: builtin/am.c:1717 builtin/am.c:1721
+#: builtin/am.c:1724 builtin/am.c:1728
 #, c-format
 msgid "cannot resume: %s does not exist."
 msgstr "無法繼續：%s 不存在。"
 
-#: builtin/am.c:1739
+#: builtin/am.c:1746
 msgid "Commit Body is:"
 msgstr "提交內文為："
 
@@ -2550,57 +2550,57 @@ msgstr "提交內文為："
 #. in your translation. The program will only accept English
 #. input at this point.
 #.
-#: builtin/am.c:1749
+#: builtin/am.c:1756
 #, c-format
 msgid "Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all: "
 msgstr "是否套用？是[y]/否[n]/編輯[e]/檢視修補檔[v]/全部接受[a]: "
 
-#: builtin/am.c:1796 builtin/commit.c:427
+#: builtin/am.c:1803 builtin/commit.c:427
 msgid "unable to write index file"
 msgstr "無法寫入索引檔案"
 
-#: builtin/am.c:1800
+#: builtin/am.c:1807
 #, c-format
 msgid "Dirty index: cannot apply patches (dirty: %s)"
 msgstr "有異動索引：無法套用修補檔（異動處：%s）"
 
-#: builtin/am.c:1842
+#: builtin/am.c:1849
 #, c-format
 msgid "Skipping: %.*s"
 msgstr "略過：%.*s"
 
-#: builtin/am.c:1847
+#: builtin/am.c:1854
 #, c-format
 msgid "Creating an empty commit: %.*s"
 msgstr "建立空白提交：%.*s"
 
-#: builtin/am.c:1851
+#: builtin/am.c:1858
 msgid "Patch is empty."
 msgstr "修補檔空白。"
 
-#: builtin/am.c:1862 builtin/am.c:1931
+#: builtin/am.c:1869 builtin/am.c:1938
 #, c-format
 msgid "Applying: %.*s"
 msgstr "套用：%.*s"
 
-#: builtin/am.c:1879
+#: builtin/am.c:1886
 msgid "No changes -- Patch already applied."
 msgstr "沒有變更——修補檔已套用過。"
 
-#: builtin/am.c:1885
+#: builtin/am.c:1892
 #, c-format
 msgid "Patch failed at %s %.*s"
 msgstr "在 %s %.*s 處修補失敗"
 
-#: builtin/am.c:1889
+#: builtin/am.c:1896
 msgid "Use 'git am --show-current-patch=diff' to see the failed patch"
 msgstr "使用 “git am --show-current-patch=diff” 命令檢視失敗的修補檔"
 
-#: builtin/am.c:1935
+#: builtin/am.c:1942
 msgid "No changes - recorded it as an empty commit."
 msgstr "沒有變更：將其錄入為空白提交。"
 
-#: builtin/am.c:1937
+#: builtin/am.c:1944
 msgid ""
 "No changes - did you forget to use 'git add'?\n"
 "If there is nothing left to stage, chances are that something else\n"
@@ -2610,7 +2610,7 @@ msgstr ""
 "如果沒有其他要新增到暫存區的，則很可能是其它提交\n"
 "已經引入了相同的變更。您也許想要略過這個修補檔。"
 
-#: builtin/am.c:1945
+#: builtin/am.c:1952
 msgid ""
 "You still have unmerged paths in your index.\n"
 "You should 'git add' each file with resolved conflicts to mark them as "
@@ -2621,17 +2621,17 @@ msgstr ""
 "您應該對已經解決衝突的每一個檔案執行 `git add`，標記為已經完成。\n"
 "你可以對「由他們刪除」的檔案，執行 `git rm` 指令。"
 
-#: builtin/am.c:2053 builtin/am.c:2057 builtin/am.c:2069 builtin/reset.c:399
+#: builtin/am.c:2060 builtin/am.c:2064 builtin/am.c:2076 builtin/reset.c:399
 #: builtin/reset.c:407
 #, c-format
 msgid "Could not parse object '%s'."
 msgstr "無法解析 “%s” 物件。"
 
-#: builtin/am.c:2105 builtin/am.c:2181
+#: builtin/am.c:2112 builtin/am.c:2188
 msgid "failed to clean index"
 msgstr "無法清除索引"
 
-#: builtin/am.c:2149
+#: builtin/am.c:2156
 msgid ""
 "You seem to have moved HEAD since the last 'am' failure.\n"
 "Not rewinding to ORIG_HEAD"
@@ -2639,94 +2639,89 @@ msgstr ""
 "您似乎在上一次 “am” 失敗後移動了 HEAD。\n"
 "未倒轉回 ORIG_HEAD"
 
-#: builtin/am.c:2222 builtin/bisect.c:183 worktree.c:242
+#: builtin/am.c:2229 builtin/bisect.c:183 worktree.c:242
 #, c-format
 msgid "failed to read '%s'"
 msgstr "無法讀取 “%s”"
 
-#: builtin/am.c:2304
-#, c-format
-msgid "options '%s=%s' and '%s=%s' cannot be used together"
-msgstr "“%s=%s” 和 “%s=%s” 選項不得同時使用"
-
-#: builtin/am.c:2325
+#: builtin/am.c:2300
 msgid "git am [<options>] [(<mbox> | <Maildir>)...]"
 msgstr "git am [<options>] [(<mbox> | <Maildir>)...]"
 
-#: builtin/am.c:2326
+#: builtin/am.c:2301
 msgid "git am [<options>] (--continue | --skip | --abort)"
 msgstr "git am [<options>] (--continue | --skip | --abort)"
 
-#: builtin/am.c:2332
+#: builtin/am.c:2307
 msgid "run interactively"
 msgstr "互動式執行"
 
-#: builtin/am.c:2334
+#: builtin/am.c:2309
 msgid "bypass pre-applypatch and applypatch-msg hooks"
 msgstr "繞過 pre-applypatch 和 applypatch-msg 掛鉤"
 
-#: builtin/am.c:2336
+#: builtin/am.c:2311
 msgid "historical option -- no-op"
 msgstr "歷史遺留選項——無作用"
 
-#: builtin/am.c:2338
+#: builtin/am.c:2313
 msgid "allow fall back on 3way merging if needed"
 msgstr "必要時允許回復至三方合併"
 
-#: builtin/am.c:2339 builtin/init-db.c:91 builtin/prune-packed.c:17
+#: builtin/am.c:2314 builtin/init-db.c:91 builtin/prune-packed.c:17
 #: builtin/repack.c:1159 builtin/stash.c:1022
 msgid "be quiet"
 msgstr "靜默模式"
 
-#: builtin/am.c:2341
+#: builtin/am.c:2316
 msgid "add a Signed-off-by trailer to the commit message"
 msgstr "在提交說明結尾處加入 Signed-off-by"
 
-#: builtin/am.c:2344
+#: builtin/am.c:2319
 msgid "recode into utf8 (default)"
 msgstr "使用 utf8 字元集（預設值）"
 
-#: builtin/am.c:2346
+#: builtin/am.c:2321
 msgid "pass -k flag to git-mailinfo"
 msgstr "向 git-mailinfo 傳入 -k 參數"
 
-#: builtin/am.c:2348
+#: builtin/am.c:2323
 msgid "pass -b flag to git-mailinfo"
 msgstr "向 git-mailinfo 傳入 -b 參數"
 
-#: builtin/am.c:2350
+#: builtin/am.c:2325
 msgid "pass -m flag to git-mailinfo"
 msgstr "向 git-mailinfo 傳入 -m 參數"
 
-#: builtin/am.c:2352
+#: builtin/am.c:2327
 msgid "pass --keep-cr flag to git-mailsplit for mbox format"
 msgstr "若為 mbox 格式，向 git-mailsplit 傳入 --keep-cr 標記"
 
-#: builtin/am.c:2355
+#: builtin/am.c:2330
 msgid "strip everything before a scissors line"
 msgstr "截掉裁切線前的所有內容"
 
-#: builtin/am.c:2357
+#: builtin/am.c:2332
 msgid "pass it through git-mailinfo"
 msgstr "透過 git-mailinfo 傳入"
 
-#: builtin/am.c:2360 builtin/am.c:2363 builtin/am.c:2366 builtin/am.c:2369
-#: builtin/am.c:2372 builtin/am.c:2375 builtin/am.c:2378 builtin/am.c:2381
-#: builtin/am.c:2387
+#: builtin/am.c:2335 builtin/am.c:2338 builtin/am.c:2341 builtin/am.c:2344
+#: builtin/am.c:2347 builtin/am.c:2350 builtin/am.c:2353 builtin/am.c:2356
+#: builtin/am.c:2362
 msgid "pass it through git-apply"
 msgstr "透過 git-apply 傳入"
 
-#: builtin/am.c:2377 builtin/commit.c:1540 builtin/fmt-merge-msg.c:19
-#: builtin/fmt-merge-msg.c:22 builtin/grep.c:969 builtin/merge.c:250
+#: builtin/am.c:2352 builtin/commit.c:1540 builtin/fmt-merge-msg.c:19
+#: builtin/fmt-merge-msg.c:22 builtin/grep.c:978 builtin/merge.c:250
 #: builtin/pull.c:149 builtin/pull.c:211 builtin/pull.c:228
 #: builtin/rebase.c:1105 builtin/repack.c:1170 builtin/repack.c:1174
-#: builtin/repack.c:1176 builtin/show-branch.c:661 builtin/show-ref.c:169
+#: builtin/repack.c:1176 builtin/show-branch.c:661 builtin/show-ref.c:301
 #: builtin/tag.c:456 parse-options.h:215 parse-options.h:276
-#: parse-options.h:523
+#: parse-options.h:526
 msgid "n"
 msgstr "n"
 
-#: builtin/am.c:2383 builtin/branch.c:758 builtin/bugreport.c:121
+#: builtin/am.c:2358 builtin/branch.c:758 builtin/bugreport.c:121
 #: builtin/cat-file.c:948 builtin/cat-file.c:952 builtin/cat-file.c:959
 #: builtin/diagnose.c:27 builtin/for-each-ref.c:48 builtin/ls-files.c:646
 #: builtin/ls-tree.c:373 builtin/replace.c:566 builtin/tag.c:492
@@ -2734,69 +2729,69 @@ msgstr "n"
 msgid "format"
 msgstr "format"
 
-#: builtin/am.c:2384
+#: builtin/am.c:2359
 msgid "format the patch(es) are in"
 msgstr "修補檔的格式"
 
-#: builtin/am.c:2390
+#: builtin/am.c:2365
 msgid "override error message when patch failure occurs"
 msgstr "覆蓋修補失敗時顯示的錯誤訊息"
 
-#: builtin/am.c:2392
+#: builtin/am.c:2367
 msgid "continue applying patches after resolving a conflict"
 msgstr "衝突解決後繼續套用修補檔"
 
-#: builtin/am.c:2395
+#: builtin/am.c:2370
 msgid "synonyms for --continue"
 msgstr "和 --continue 同義"
 
-#: builtin/am.c:2398
+#: builtin/am.c:2373
 msgid "skip the current patch"
 msgstr "略過目前修補檔"
 
-#: builtin/am.c:2401
+#: builtin/am.c:2376
 msgid "restore the original branch and abort the patching operation"
 msgstr "還原原始分支並中止修補動作"
 
-#: builtin/am.c:2404
+#: builtin/am.c:2379
 msgid "abort the patching operation but keep HEAD where it is"
 msgstr "中止修補動作但保持 HEAD 不變"
 
-#: builtin/am.c:2408
+#: builtin/am.c:2383
 msgid "show the patch being applied"
 msgstr "顯示正在套用的修補檔"
 
-#: builtin/am.c:2412
+#: builtin/am.c:2387
 msgid "record the empty patch as an empty commit"
 msgstr "將空白修補檔錄入為空白提交"
 
-#: builtin/am.c:2416
+#: builtin/am.c:2391
 msgid "lie about committer date"
 msgstr "將作者日期當作提交日期"
 
-#: builtin/am.c:2418
+#: builtin/am.c:2393
 msgid "use current timestamp for author date"
 msgstr "把目前時間戳當作是作者日期"
 
-#: builtin/am.c:2420 builtin/commit-tree.c:113 builtin/commit.c:1666
+#: builtin/am.c:2395 builtin/commit-tree.c:113 builtin/commit.c:1666
 #: builtin/merge.c:289 builtin/pull.c:186 builtin/rebase.c:1161
 #: builtin/revert.c:107 builtin/tag.c:471
 msgid "key-id"
 msgstr "key-id"
 
-#: builtin/am.c:2421 builtin/rebase.c:1162
+#: builtin/am.c:2396 builtin/rebase.c:1162
 msgid "GPG-sign commits"
 msgstr "使用 GPG 簽名提交"
 
-#: builtin/am.c:2424
+#: builtin/am.c:2399
 msgid "how to handle empty patches"
 msgstr "空白修補檔的處理方式"
 
-#: builtin/am.c:2427
+#: builtin/am.c:2402
 msgid "(internal use for git-rebase)"
 msgstr "（內部使用，用於 git-rebase）"
 
-#: builtin/am.c:2445
+#: builtin/am.c:2420
 msgid ""
 "The -b/--binary option has been a no-op for long time, and\n"
 "it will be removed. Please do not use it anymore."
@@ -2804,16 +2799,16 @@ msgstr ""
 "-b/--binary 選項已經有很長時間不做任何實質動作了，\n"
 "並且將被移除。請不要再使用它了。"
 
-#: builtin/am.c:2452
+#: builtin/am.c:2427
 msgid "failed to read the index"
 msgstr "讀取索引失敗"
 
-#: builtin/am.c:2467
+#: builtin/am.c:2442
 #, c-format
 msgid "previous rebase directory %s still exists but mbox given."
 msgstr "之前的重定基底目錄 %s 仍然存在，但卻提供了 mbox。"
 
-#: builtin/am.c:2491
+#: builtin/am.c:2466
 #, c-format
 msgid ""
 "Stray %s directory found.\n"
@@ -2822,11 +2817,11 @@ msgstr ""
 "發現失散的 %s 目錄。\n"
 "使用 “git am --abort” 移除。"
 
-#: builtin/am.c:2497
+#: builtin/am.c:2472
 msgid "Resolve operation not in progress, we are not resuming."
 msgstr "未在進行解決動作，不會繼續。"
 
-#: builtin/am.c:2507
+#: builtin/am.c:2482
 msgid "interactive mode requires patches on the command line"
 msgstr "互動模式需要命令列上提供修補檔"
 
@@ -3862,7 +3857,7 @@ msgstr ""
 
 #: builtin/bugreport.c:116 builtin/commit.c:1527 builtin/commit.c:1531
 #: builtin/commit.c:1692 builtin/fast-export.c:1191 builtin/fast-export.c:1194
-#: builtin/fast-export.c:1197 builtin/rebase.c:1172 parse-options.h:578
+#: builtin/fast-export.c:1197 builtin/rebase.c:1172 parse-options.h:581
 msgid "mode"
 msgstr "mode"
 
@@ -3879,30 +3874,36 @@ msgstr "指定臭蟲報告檔案的目的地"
 msgid "specify a strftime format suffix for the filename(s)"
 msgstr "指定用於檔名的 strftime 格式後綴"
 
-#: builtin/bugreport.c:145 builtin/diagnose.c:53
+#: builtin/bugreport.c:130
+#, fuzzy, c-format
+#| msgid "unknown mirror argument: %s"
+msgid "unknown argument `%s'"
+msgstr "未知的鏡像參數：%s"
+
+#: builtin/bugreport.c:150 builtin/diagnose.c:53
 #, c-format
 msgid "could not create leading directories for '%s'"
 msgstr "無法建立 “%s” 的前置目錄"
 
-#: builtin/bugreport.c:158 builtin/diagnose.c:59
+#: builtin/bugreport.c:163 builtin/diagnose.c:59
 #, c-format
 msgid "unable to create diagnostics archive %s"
 msgstr "無法建立 %s 診斷封存檔"
 
-#: builtin/bugreport.c:166
+#: builtin/bugreport.c:171
 msgid "System Info"
 msgstr "系統資訊"
 
-#: builtin/bugreport.c:169
+#: builtin/bugreport.c:174
 msgid "Enabled Hooks"
 msgstr "啟用的掛鉤"
 
-#: builtin/bugreport.c:176
+#: builtin/bugreport.c:181
 #, c-format
 msgid "unable to write to %s"
 msgstr "無法寫入 %s"
 
-#: builtin/bugreport.c:186
+#: builtin/bugreport.c:191
 #, c-format
 msgid "Created new report at '%s'.\n"
 msgstr "已在 “%s” 建立新報告。\n"
@@ -4688,7 +4689,7 @@ msgstr "缺少分支或提交引數"
 msgid "perform a 3-way merge with the new branch"
 msgstr "和新分支進行三方合併"
 
-#: builtin/checkout.c:1610 builtin/log.c:1970 parse-options.h:539
+#: builtin/checkout.c:1610 builtin/log.c:1970 parse-options.h:542
 msgid "style"
 msgstr "style"
 
@@ -4990,9 +4991,9 @@ msgid "remove whole directories"
 msgstr "移除整個目錄"
 
 #: builtin/clean.c:940 builtin/describe.c:588 builtin/describe.c:590
-#: builtin/grep.c:987 builtin/log.c:260 builtin/log.c:262
+#: builtin/grep.c:996 builtin/log.c:260 builtin/log.c:262
 #: builtin/ls-files.c:619 builtin/name-rev.c:570 builtin/name-rev.c:572
-#: builtin/pack-refs.c:28 builtin/pack-refs.c:30 builtin/show-ref.c:176
+#: builtin/pack-refs.c:28 builtin/pack-refs.c:30 builtin/show-ref.c:308
 #: ref-filter.h:120
 msgid "pattern"
 msgstr "pattern"
@@ -5090,7 +5091,7 @@ msgid "use --reference only while cloning"
 msgstr "僅在複製時使用 --reference"
 
 #: builtin/clone.c:140 builtin/column.c:28 builtin/fmt-merge-msg.c:28
-#: builtin/init-db.c:94 builtin/merge-file.c:50 builtin/merge.c:277
+#: builtin/init-db.c:94 builtin/merge-file.c:54 builtin/merge.c:277
 #: builtin/pack-objects.c:4269 builtin/repack.c:1183
 #: builtin/submodule--helper.c:3299 t/helper/test-simple-ipc.c:597
 #: t/helper/test-simple-ipc.c:599
@@ -6097,7 +6098,7 @@ msgid "override date for commit"
 msgstr "提交時覆蓋日期"
 
 #: builtin/commit.c:1651 builtin/commit.c:1652 builtin/commit.c:1658
-#: builtin/merge-tree.c:552 parse-options.h:568 ref-filter.h:108
+#: builtin/merge-tree.c:552 parse-options.h:571 ref-filter.h:108
 msgid "commit"
 msgstr "提交"
 
@@ -6821,7 +6822,7 @@ msgstr "%s...%s: 無合併基底"
 msgid "Not a git repository"
 msgstr "不是一個 git 版本庫"
 
-#: builtin/diff.c:547 builtin/grep.c:750
+#: builtin/diff.c:547 builtin/grep.c:751
 #, c-format
 msgid "invalid object '%s' given."
 msgstr "提供了無效物件 '%s'。"
@@ -7151,7 +7152,7 @@ msgstr "強制更新"
 msgid "non-fast-forward"
 msgstr "非快轉"
 
-#: builtin/fetch.c:1046 builtin/fetch.c:1431 builtin/grep.c:824
+#: builtin/fetch.c:1046 builtin/fetch.c:1431 builtin/grep.c:831
 #: sequencer.c:3323
 #, c-format
 msgid "cannot open '%s'"
@@ -8030,7 +8031,7 @@ msgstr "對 %s 呼叫 fstat 失敗：%s"
 msgid "failed to parse '%s' value '%s'"
 msgstr "無法解析 '%s' 值 '%s'"
 
-#: builtin/gc.c:519 setup.c:1745
+#: builtin/gc.c:519 setup.c:1755
 #, c-format
 msgid "cannot stat '%s'"
 msgstr "不能對 '%s' 呼叫 stat"
@@ -8336,16 +8337,16 @@ msgstr "無法將版本庫加至全域設定"
 msgid "git maintenance <subcommand> [<options>]"
 msgstr "git maintenance <子命令> [<選項>]"
 
-#: builtin/grep.c:39
+#: builtin/grep.c:40
 msgid "git grep [<options>] [-e] <pattern> [<rev>...] [[--] <path>...]"
 msgstr "git grep [<選項>] [-e] <模式> [<版本>...] [[--] <路徑>...]"
 
-#: builtin/grep.c:248
+#: builtin/grep.c:249
 #, c-format
 msgid "grep: failed to create thread: %s"
 msgstr "grep：無法建立執行緒：%s"
 
-#: builtin/grep.c:306
+#: builtin/grep.c:307
 #, c-format
 msgid "invalid number of threads specified (%d) for %s"
 msgstr "為 %2$s 設定的執行緒數 (%1$d) 無效"
@@ -8355,255 +8356,255 @@ msgstr "為 %2$s 設定的執行緒數 (%1$d) 無效"
 #. variable for tweaking threads, currently
 #. grep.threads
 #.
-#: builtin/grep.c:314 builtin/index-pack.c:1604 builtin/index-pack.c:1809
+#: builtin/grep.c:315 builtin/index-pack.c:1604 builtin/index-pack.c:1809
 #: builtin/pack-objects.c:3187
 #, c-format
 msgid "no threads support, ignoring %s"
 msgstr "沒有執行緒支援，忽略 %s"
 
-#: builtin/grep.c:528 builtin/grep.c:669 builtin/grep.c:709
+#: builtin/grep.c:529 builtin/grep.c:670 builtin/grep.c:710
 #, c-format
 msgid "unable to read tree (%s)"
 msgstr "無法讀取樹（%s）"
 
-#: builtin/grep.c:724
+#: builtin/grep.c:725
 #, c-format
 msgid "unable to grep from object of type %s"
 msgstr "無法抓取來自於 %s 類型的物件"
 
-#: builtin/grep.c:804
+#: builtin/grep.c:805
 #, c-format
 msgid "switch `%c' expects a numerical value"
 msgstr "開關 `%c' 期望一個數字值"
 
-#: builtin/grep.c:902
+#: builtin/grep.c:911
 msgid "search in index instead of in the work tree"
 msgstr "在索引區搜尋而不是在工作區"
 
-#: builtin/grep.c:904
+#: builtin/grep.c:913
 msgid "find in contents not managed by git"
 msgstr "在未被 git 管理的內容中尋找"
 
 #  譯者：中文字串拼接，可刪除前導空格
-#: builtin/grep.c:906
+#: builtin/grep.c:915
 msgid "search in both tracked and untracked files"
 msgstr "在追蹤和未追蹤的檔案中搜尋"
 
-#: builtin/grep.c:908
+#: builtin/grep.c:917
 msgid "ignore files specified via '.gitignore'"
 msgstr "忽略 '.gitignore' 包含的檔案"
 
-#: builtin/grep.c:910
+#: builtin/grep.c:919
 msgid "recursively search in each submodule"
 msgstr "在每一個子模組中遞迴搜尋"
 
-#: builtin/grep.c:913
+#: builtin/grep.c:922
 msgid "show non-matching lines"
 msgstr "顯示未符合的行"
 
-#: builtin/grep.c:915
+#: builtin/grep.c:924
 msgid "case insensitive matching"
 msgstr "不區分大小寫符合"
 
-#: builtin/grep.c:917
+#: builtin/grep.c:926
 msgid "match patterns only at word boundaries"
 msgstr "只在單詞邊界符合模式"
 
-#: builtin/grep.c:919
+#: builtin/grep.c:928
 msgid "process binary files as text"
 msgstr "把二進位檔案當做文字處理"
 
-#: builtin/grep.c:921
+#: builtin/grep.c:930
 msgid "don't match patterns in binary files"
 msgstr "不在二進位檔案中符合模式"
 
-#: builtin/grep.c:924
+#: builtin/grep.c:933
 msgid "process binary files with textconv filters"
 msgstr "用 textconv 過濾器處理二進位檔案"
 
-#: builtin/grep.c:926
+#: builtin/grep.c:935
 msgid "search in subdirectories (default)"
 msgstr "在子目錄中尋找（預設值）"
 
-#: builtin/grep.c:928
+#: builtin/grep.c:937
 msgid "descend at most <n> levels"
 msgstr "最多向下尋找 <n> 層"
 
-#: builtin/grep.c:931
+#: builtin/grep.c:940
 msgid "use extended POSIX regular expressions"
 msgstr "使用延伸的 POSIX 常規表示式"
 
-#: builtin/grep.c:934
+#: builtin/grep.c:943
 msgid "use basic POSIX regular expressions (default)"
 msgstr "使用基本的 POSIX 常規表示式（預設值）"
 
-#: builtin/grep.c:937
+#: builtin/grep.c:946
 msgid "interpret patterns as fixed strings"
 msgstr "把模式解析為固定的字串"
 
-#: builtin/grep.c:940
+#: builtin/grep.c:949
 msgid "use Perl-compatible regular expressions"
 msgstr "使用 Perl 相容的常規表示式"
 
-#: builtin/grep.c:943
+#: builtin/grep.c:952
 msgid "show line numbers"
 msgstr "顯示行號"
 
-#: builtin/grep.c:944
+#: builtin/grep.c:953
 msgid "show column number of first match"
 msgstr "顯示第一個符合的列號"
 
-#: builtin/grep.c:945
+#: builtin/grep.c:954
 msgid "don't show filenames"
 msgstr "不顯示檔案名"
 
-#: builtin/grep.c:946
+#: builtin/grep.c:955
 msgid "show filenames"
 msgstr "顯示檔案名"
 
-#: builtin/grep.c:948
+#: builtin/grep.c:957
 msgid "show filenames relative to top directory"
 msgstr "顯示相對於頂級目錄的檔案名"
 
-#: builtin/grep.c:950
+#: builtin/grep.c:959
 msgid "show only filenames instead of matching lines"
 msgstr "只顯示檔案名而不顯示符合的行"
 
-#: builtin/grep.c:952
+#: builtin/grep.c:961
 msgid "synonym for --files-with-matches"
 msgstr "和 --files-with-matches 同義"
 
-#: builtin/grep.c:955
+#: builtin/grep.c:964
 msgid "show only the names of files without match"
 msgstr "只顯示未符合的檔案名"
 
-#: builtin/grep.c:957
+#: builtin/grep.c:966
 msgid "print NUL after filenames"
 msgstr "在檔案名後輸出 NUL 字元"
 
-#: builtin/grep.c:960
+#: builtin/grep.c:969
 msgid "show only matching parts of a line"
 msgstr "只顯示行中的符合的部分"
 
-#: builtin/grep.c:962
+#: builtin/grep.c:971
 msgid "show the number of matches instead of matching lines"
 msgstr "顯示總符合行數，而不顯示符合的行"
 
-#: builtin/grep.c:963
+#: builtin/grep.c:972
 msgid "highlight matches"
 msgstr "高亮顯示符合項"
 
-#: builtin/grep.c:965
+#: builtin/grep.c:974
 msgid "print empty line between matches from different files"
 msgstr "在不同檔案的符合項之間列印空行"
 
-#: builtin/grep.c:967
+#: builtin/grep.c:976
 msgid "show filename only once above matches from same file"
 msgstr "只在同一檔案的符合項的上面顯示一次檔案名"
 
-#: builtin/grep.c:970
+#: builtin/grep.c:979
 msgid "show <n> context lines before and after matches"
 msgstr "顯示符合項前後的 <n> 行上下文"
 
-#: builtin/grep.c:973
+#: builtin/grep.c:982
 msgid "show <n> context lines before matches"
 msgstr "顯示符合項前 <n> 行上下文"
 
-#: builtin/grep.c:975
+#: builtin/grep.c:984
 msgid "show <n> context lines after matches"
 msgstr "顯示符合項後 <n> 行上下文"
 
-#: builtin/grep.c:977
+#: builtin/grep.c:986
 msgid "use <n> worker threads"
 msgstr "使用 <n> 個工作執行緒"
 
-#: builtin/grep.c:978
+#: builtin/grep.c:987
 msgid "shortcut for -C NUM"
 msgstr "快捷鍵 -C 數字"
 
-#: builtin/grep.c:981
+#: builtin/grep.c:990
 msgid "show a line with the function name before matches"
 msgstr "在符合的前面顯示一行函數名"
 
-#: builtin/grep.c:983
+#: builtin/grep.c:992
 msgid "show the surrounding function"
 msgstr "顯示所在函數的前後內容"
 
-#: builtin/grep.c:986
+#: builtin/grep.c:995
 msgid "read patterns from file"
 msgstr "從檔案讀取模式"
 
-#: builtin/grep.c:988
+#: builtin/grep.c:997
 msgid "match <pattern>"
 msgstr "符合 <模式>"
 
-#: builtin/grep.c:990
+#: builtin/grep.c:999
 msgid "combine patterns specified with -e"
 msgstr "組合用 -e 參數設定的模式"
 
-#: builtin/grep.c:1002
+#: builtin/grep.c:1011
 msgid "indicate hit with exit status without output"
 msgstr "不輸出，而用離開碼標記命中狀態"
 
-#: builtin/grep.c:1004
+#: builtin/grep.c:1013
 msgid "show only matches from files that match all patterns"
 msgstr "只顯示符合所有模式的檔案中的符合"
 
-#: builtin/grep.c:1007
+#: builtin/grep.c:1016
 msgid "pager"
 msgstr "分頁"
 
-#: builtin/grep.c:1007
+#: builtin/grep.c:1016
 msgid "show matching files in the pager"
 msgstr "分頁顯示符合的檔案"
 
-#: builtin/grep.c:1011
+#: builtin/grep.c:1020
 msgid "allow calling of grep(1) (ignored by this build)"
 msgstr "允許呼叫 grep(1)（本次組建忽略）"
 
-#: builtin/grep.c:1014
+#: builtin/grep.c:1023
 msgid "maximum number of results per file"
 msgstr "每個檔案的最多結果數"
 
-#: builtin/grep.c:1084
+#: builtin/grep.c:1093
 msgid "no pattern given"
 msgstr "未提供符合模式"
 
-#: builtin/grep.c:1120
+#: builtin/grep.c:1129
 msgid "--no-index or --untracked cannot be used with revs"
 msgstr "--no-index 或 --untracked 不能和版本同時使用"
 
-#: builtin/grep.c:1128
+#: builtin/grep.c:1137
 #, c-format
 msgid "unable to resolve revision: %s"
 msgstr "不能解析版本：%s"
 
-#: builtin/grep.c:1158
+#: builtin/grep.c:1167
 msgid "--untracked not supported with --recurse-submodules"
 msgstr "--untracked 不支援與 --recurse-submodules 一起使用"
 
-#: builtin/grep.c:1169
+#: builtin/grep.c:1178
 msgid "invalid option combination, ignoring --threads"
 msgstr "無效的選項組合，忽略 --threads"
 
-#: builtin/grep.c:1172 builtin/pack-objects.c:4387
+#: builtin/grep.c:1181 builtin/pack-objects.c:4387
 msgid "no threads support, ignoring --threads"
 msgstr "沒有執行緒支援，忽略 --threads"
 
-#: builtin/grep.c:1175 builtin/index-pack.c:1601 builtin/pack-objects.c:3184
+#: builtin/grep.c:1184 builtin/index-pack.c:1601 builtin/pack-objects.c:3184
 #, c-format
 msgid "invalid number of threads specified (%d)"
 msgstr "指定的執行緒數無效（%d）"
 
-#: builtin/grep.c:1209
+#: builtin/grep.c:1218
 msgid "--open-files-in-pager only works on the worktree"
 msgstr "--open-files-in-pager 僅用於工作區"
 
-#: builtin/grep.c:1242
+#: builtin/grep.c:1251
 msgid "--[no-]exclude-standard cannot be used for tracked contents"
 msgstr "--[no-]exclude-standard 不能用於已追蹤內容"
 
-#: builtin/grep.c:1250
+#: builtin/grep.c:1259
 msgid "both --cached and trees are given"
 msgstr "同時給出了 --cached 和樹狀物件"
 
@@ -9048,7 +9049,7 @@ msgstr "無法返回目前工作目錄"
 msgid "bad %s"
 msgstr "錯誤選項 %s"
 
-#: builtin/index-pack.c:1853 builtin/init-db.c:158 setup.c:2096
+#: builtin/index-pack.c:1853 builtin/init-db.c:158 setup.c:2106
 #, c-format
 msgid "unknown hash algorithm '%s'"
 msgstr "未知的「%s」雜湊算法"
@@ -9970,7 +9971,7 @@ msgstr "第一個是其他的祖先提交嗎？"
 msgid "find where <commit> forked from reflog of <ref>"
 msgstr "根據 <引用> 的引用日誌尋找 <提交> 的衍生處"
 
-#: builtin/merge-file.c:11
+#: builtin/merge-file.c:14
 msgid ""
 "git merge-file [<options>] [-L <name1> [-L <orig> [-L <name2>]]] <file1> "
 "<orig-file> <file2>"
@@ -9978,41 +9979,57 @@ msgstr ""
 "git merge-file [<選項>] [-L <檔案1> [-L <初始> [-L <名字2>]]] <檔案1> <初始文"
 "件> <檔案2>"
 
-#: builtin/merge-file.c:37
+#: builtin/merge-file.c:40
 msgid "send results to standard output"
 msgstr "將結果傳送到標準輸出"
 
-#: builtin/merge-file.c:38
+#: builtin/merge-file.c:41
+msgid "use object IDs instead of filenames"
+msgstr ""
+
+#: builtin/merge-file.c:42
 msgid "use a diff3 based merge"
 msgstr "使用基於 diff3 的合併"
 
-#: builtin/merge-file.c:39
+#: builtin/merge-file.c:43
 msgid "use a zealous diff3 based merge"
 msgstr "使用基於 zealous diff3 的合併"
 
-#: builtin/merge-file.c:41
+#: builtin/merge-file.c:45
 msgid "for conflicts, use our version"
 msgstr "如果衝突，使用我們的版本"
 
-#: builtin/merge-file.c:43
+#: builtin/merge-file.c:47
 msgid "for conflicts, use their version"
 msgstr "如果衝突，使用他們的版本"
 
-#: builtin/merge-file.c:45
+#: builtin/merge-file.c:49
 msgid "for conflicts, use a union version"
 msgstr "如果衝突，使用聯合版本"
 
-#: builtin/merge-file.c:48
+#: builtin/merge-file.c:52
 msgid "for conflicts, use this marker size"
 msgstr "如果衝突，使用指定長度的標記"
 
-#: builtin/merge-file.c:49
+#: builtin/merge-file.c:53
 msgid "do not warn about conflicts"
 msgstr "不要警告衝突"
 
-#: builtin/merge-file.c:51
+#: builtin/merge-file.c:55
 msgid "set labels for file1/orig-file/file2"
 msgstr "為 檔案1/初始檔案/檔案2 設定標籤"
+
+#: builtin/merge-file.c:93
+#, fuzzy, c-format
+#| msgid "the object %s does not exist"
+msgid "object '%s' does not exist"
+msgstr "%s 物件不存在"
+
+#: builtin/merge-file.c:124
+#, fuzzy
+#| msgid "could not write to file '%s'"
+msgid "Could not write object file"
+msgstr "無法寫入 “%s” 檔案"
 
 #: builtin/merge-recursive.c:51
 #, c-format
@@ -11129,7 +11146,7 @@ msgstr "註解引用"
 msgid "use notes from <notes-ref>"
 msgstr "從 <註解引用> 使用註解"
 
-#: builtin/notes.c:1123 builtin/remote.c:1783 parse-options.c:823
+#: builtin/notes.c:1123 builtin/remote.c:1783 parse-options.c:858
 #, c-format
 msgid "unknown subcommand: `%s'"
 msgstr "未知子指令：「%s」"
@@ -11256,7 +11273,7 @@ msgstr "使用 %d 個執行緒進行壓縮"
 msgid "unable to pack objects reachable from tag %s"
 msgstr "無法為標籤 %s 壓縮物件"
 
-#: builtin/pack-objects.c:3106 commit-graph.c:1495
+#: builtin/pack-objects.c:3106 commit-graph.c:1499
 #, c-format
 msgid "unable to get type of object %s"
 msgstr "無法獲得物件 %s 類型"
@@ -11701,7 +11718,7 @@ msgstr "允許快轉式"
 msgid "control use of pre-merge-commit and commit-msg hooks"
 msgstr "控制 pre-merge-commit 和 commit-msg 掛鉤的使用"
 
-#: builtin/pull.c:178 parse-options.h:581
+#: builtin/pull.c:178 parse-options.h:584
 msgid "automatically stash/stash pop before and after"
 msgstr "在動作前後執行自動貯存和彈出貯存"
 
@@ -11717,11 +11734,11 @@ msgstr "強制覆蓋本機分支"
 msgid "number of submodules pulled in parallel"
 msgstr "並行拉取的子模組數量"
 
-#: builtin/pull.c:245 parse-options.h:584
+#: builtin/pull.c:245 parse-options.h:587
 msgid "use IPv4 addresses only"
 msgstr "只使用 IPv4 位址"
 
-#: builtin/pull.c:248 parse-options.h:586
+#: builtin/pull.c:248 parse-options.h:589
 msgid "use IPv6 addresses only"
 msgstr "只使用 IPv6 位址"
 
@@ -14110,16 +14127,16 @@ msgstr "不能寫入新的索引檔案。"
 msgid "unable to get disk usage of %s"
 msgstr "無法取得 %s 的磁碟用量"
 
-#: builtin/rev-list.c:653
+#: builtin/rev-list.c:658
 #, c-format
 msgid "invalid value for '%s': '%s', the only allowed format is '%s'"
 msgstr "「%s」的數值無效：「%s」，唯一允許的格式是「%s」"
 
-#: builtin/rev-list.c:693
+#: builtin/rev-list.c:698
 msgid "rev-list does not support display of notes"
 msgstr "rev-list 不支援顯示註解"
 
-#: builtin/rev-list.c:698
+#: builtin/rev-list.c:703
 #, c-format
 msgid "marked counting and '%s' cannot be used together"
 msgstr "標記計數 (marked counting) 與「%s」不得同時使用"
@@ -14209,15 +14226,15 @@ msgstr "--prefix 需要 1 個引數"
 msgid "unknown mode for --abbrev-ref: %s"
 msgstr "--abbrev-ref 的模式未知：%s"
 
-#: builtin/rev-parse.c:896 revision.c:2703 revision.c:2737
+#: builtin/rev-parse.c:896 revision.c:2712 revision.c:2746
 msgid "--exclude-hidden cannot be used together with --branches"
 msgstr "--exclude-hidden 無法與 --branches 同時使用"
 
-#: builtin/rev-parse.c:902 revision.c:2714 revision.c:2744
+#: builtin/rev-parse.c:902 revision.c:2723 revision.c:2753
 msgid "--exclude-hidden cannot be used together with --tags"
 msgstr "--exclude-hidden 無法與 --tags 同時使用"
 
-#: builtin/rev-parse.c:912 revision.c:2719 revision.c:2751
+#: builtin/rev-parse.c:912 revision.c:2728 revision.c:2760
 msgid "--exclude-hidden cannot be used together with --remotes"
 msgstr "--exclude-hidden 無法與 --remotes 同時使用"
 
@@ -14648,8 +14665,13 @@ msgid "Unknown hash algorithm"
 msgstr "未知的雜湊算法"
 
 #: builtin/show-ref.c:14
+#, fuzzy
+#| msgid ""
+#| "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+#| "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
+#| "             [--heads] [--] [<pattern>...]"
 msgid ""
-"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+"git show-ref [--head] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
 "             [--heads] [--] [<pattern>...]"
 msgstr ""
@@ -14658,40 +14680,83 @@ msgstr ""
 "             [--heads] [--] [<pattern>...]"
 
 #: builtin/show-ref.c:17
+#, fuzzy
+#| msgid ""
+#| "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+#| "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
+#| "             [--heads] [--] [<pattern>...]"
+msgid ""
+"git show-ref --verify [-q | --quiet] [-d | --dereference]\n"
+"             [-s | --hash[=<n>]] [--abbrev[=<n>]]\n"
+"             [--] [<ref>...]"
+msgstr ""
+"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+"             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
+"             [--heads] [--] [<pattern>...]"
+
+#: builtin/show-ref.c:20
 msgid "git show-ref --exclude-existing[=<pattern>]"
 msgstr "git show-ref --exclude-existing[=<模式>]"
 
-#: builtin/show-ref.c:159
+#: builtin/show-ref.c:21
+#, fuzzy
+#| msgid "git reflog exists <ref>"
+msgid "git show-ref --exists <ref>"
+msgstr "git reflog exists <引用>"
+
+#: builtin/show-ref.c:243
+#, fuzzy
+#| msgid "gitdir file does not exist"
+msgid "reference does not exist"
+msgstr "找不到 gitdir 檔案"
+
+#: builtin/show-ref.c:247
+#, fuzzy
+#| msgid "failed to parse tree"
+msgid "failed to look up reference"
+msgstr "無法解析樹"
+
+#: builtin/show-ref.c:290
 msgid "only show tags (can be combined with heads)"
 msgstr "只顯示標籤（可以和頭共用）"
 
-#: builtin/show-ref.c:160
+#: builtin/show-ref.c:291
 msgid "only show heads (can be combined with tags)"
 msgstr "只顯示頭（可以和標籤共用）"
 
-#: builtin/show-ref.c:161
+#: builtin/show-ref.c:292
+msgid "check for reference existence without resolving"
+msgstr ""
+
+#: builtin/show-ref.c:293
 msgid "stricter reference checking, requires exact ref path"
 msgstr "更嚴格的引用檢測，需要精確的引用路徑"
 
-#: builtin/show-ref.c:164 builtin/show-ref.c:166
+#: builtin/show-ref.c:296 builtin/show-ref.c:298
 msgid "show the HEAD reference, even if it would be filtered out"
 msgstr "顯示 HEAD 引用，即使被過濾掉"
 
-#: builtin/show-ref.c:168
+#: builtin/show-ref.c:300
 msgid "dereference tags into object IDs"
 msgstr "轉換標籤到物件 ID"
 
-#: builtin/show-ref.c:170
+#: builtin/show-ref.c:302
 msgid "only show SHA1 hash using <n> digits"
 msgstr "只顯示使用 <n> 個數字的 SHA1 雜湊"
 
-#: builtin/show-ref.c:174
+#: builtin/show-ref.c:306
 msgid "do not print results to stdout (useful with --verify)"
 msgstr "不列印結果到標準輸出（例如與 --verify 參數共用）"
 
-#: builtin/show-ref.c:176
+#: builtin/show-ref.c:308
 msgid "show refs from stdin that aren't in local repository"
 msgstr "顯示從標準輸入中讀入的不在本機版本庫中的引用"
+
+#: builtin/show-ref.c:319
+#, fuzzy, c-format
+#| msgid "options '%s', '%s', and '%s' cannot be used together"
+msgid "only one of '%s', '%s' or '%s' can be given"
+msgstr "「%s」、「%s」和「%s」選項不得同時使用"
 
 #: builtin/sparse-checkout.c:27
 msgid ""
@@ -14743,7 +14808,7 @@ msgstr "以 cone 模式初始化稀疏簽出"
 msgid "toggle the use of a sparse index"
 msgstr "切換是否使用稀疏索引"
 
-#: builtin/sparse-checkout.c:486 commit-graph.c:2043 midx.c:1287
+#: builtin/sparse-checkout.c:486 commit-graph.c:2047 midx.c:1287
 #: sequencer.c:4245
 #, c-format
 msgid "unable to create leading directories of %s"
@@ -16654,7 +16719,7 @@ msgstr "設定追蹤模式（參見 git-branch(1)）"
 msgid "try to match the new branch name with a remote-tracking branch"
 msgstr "嘗試為新分支名符合一個遠端追蹤分支"
 
-#: builtin/worktree.c:807 diff.c:4811 parse-options.c:1268
+#: builtin/worktree.c:807 diff.c:4811 parse-options.c:1308
 #, c-format
 msgid "options '%s', '%s', and '%s' cannot be used together"
 msgstr "「%s」、「%s」和「%s」選項不得同時使用"
@@ -17837,186 +17902,186 @@ msgstr "提交圖需要比目前更多的世代資料，但沒有相關資料"
 msgid "commit-graph overflow generation data is too small"
 msgstr "提交圖形的溢出世代資料過小"
 
-#: commit-graph.c:1526
+#: commit-graph.c:1530
 msgid "Loading known commits in commit graph"
 msgstr "正在載入提交圖中的已知提交"
 
-#: commit-graph.c:1543
+#: commit-graph.c:1547
 msgid "Expanding reachable commits in commit graph"
 msgstr "正在展開提交圖中的可以取得的提交"
 
-#: commit-graph.c:1563
+#: commit-graph.c:1567
 msgid "Clearing commit marks in commit graph"
 msgstr "正在清除提交圖中的提交標記"
 
-#: commit-graph.c:1680
+#: commit-graph.c:1684
 msgid "Computing commit graph topological levels"
 msgstr "正在計算提交圖拓樸級別"
 
-#: commit-graph.c:1714
+#: commit-graph.c:1718
 msgid "Computing commit graph generation numbers"
 msgstr "正在計算提交圖世代數字"
 
-#: commit-graph.c:1788
+#: commit-graph.c:1792
 msgid "Computing commit changed paths Bloom filters"
 msgstr "正在計算提交變更路徑的布隆過濾器"
 
-#: commit-graph.c:1864
+#: commit-graph.c:1868
 msgid "Collecting referenced commits"
 msgstr "正在收集引用提交"
 
-#: commit-graph.c:1890
+#: commit-graph.c:1894
 #, c-format
 msgid "Finding commits for commit graph in %<PRIuMAX> pack"
 msgid_plural "Finding commits for commit graph in %<PRIuMAX> packs"
 msgstr[0] "正在從 %<PRIuMAX> 個包中尋找提交圖的提交"
 
-#: commit-graph.c:1903
+#: commit-graph.c:1907
 #, c-format
 msgid "error adding pack %s"
 msgstr "新增包 %s 發生錯誤"
 
-#: commit-graph.c:1907
+#: commit-graph.c:1911
 #, c-format
 msgid "error opening index for %s"
 msgstr "為 %s 開啟索引發生錯誤"
 
-#: commit-graph.c:1945
+#: commit-graph.c:1949
 msgid "Finding commits for commit graph among packed objects"
 msgstr "正在打包物件中尋找提交圖的提交"
 
-#: commit-graph.c:1963
+#: commit-graph.c:1967
 msgid "Finding extra edges in commit graph"
 msgstr "正在尋找提交圖中額外的邊"
 
-#: commit-graph.c:2012
+#: commit-graph.c:2016
 msgid "failed to write correct number of base graph ids"
 msgstr "無法寫入正確數量的基礎圖形 ID"
 
-#: commit-graph.c:2057
+#: commit-graph.c:2061
 msgid "unable to create temporary graph layer"
 msgstr "無法建立暫時的圖形層"
 
-#: commit-graph.c:2062
+#: commit-graph.c:2066
 #, c-format
 msgid "unable to adjust shared permissions for '%s'"
 msgstr "無法調整「%s」的共用權限"
 
-#: commit-graph.c:2119
+#: commit-graph.c:2123
 #, c-format
 msgid "Writing out commit graph in %d pass"
 msgid_plural "Writing out commit graph in %d passes"
 msgstr[0] "正在用 %d 步寫出提交圖"
 
-#: commit-graph.c:2156
+#: commit-graph.c:2160
 msgid "unable to open commit-graph chain file"
 msgstr "無法開啟提交圖形鏈檔案"
 
-#: commit-graph.c:2172
+#: commit-graph.c:2176
 msgid "failed to rename base commit-graph file"
 msgstr "無法重新命名基礎提交圖形檔案"
 
-#: commit-graph.c:2195
+#: commit-graph.c:2199
 msgid "failed to rename temporary commit-graph file"
 msgstr "無法重新命名暫時提交圖形檔案"
 
-#: commit-graph.c:2239
+#: commit-graph.c:2243
 #, c-format
 msgid "cannot merge graphs with %<PRIuMAX>, %<PRIuMAX> commits"
 msgstr "無法將圖與 %<PRIuMAX>, %<PRIuMAX> 個提交進行合併"
 
-#: commit-graph.c:2301
+#: commit-graph.c:2305
 #, c-format
 msgid "cannot merge graph %s, too many commits: %<PRIuMAX>"
 msgstr "無法合併 %s 圖，太多提交：%<PRIuMAX>"
 
-#: commit-graph.c:2338
+#: commit-graph.c:2342
 msgid "Scanning merged commits"
 msgstr "正在掃描合併提交"
 
-#: commit-graph.c:2382
+#: commit-graph.c:2386
 msgid "Merging commit-graph"
 msgstr "正在合併提交圖形"
 
-#: commit-graph.c:2494
+#: commit-graph.c:2498
 msgid "attempting to write a commit-graph, but 'core.commitGraph' is disabled"
 msgstr "嘗試寫入提交圖形，但 “core.commitGraph” 已被停用"
 
-#: commit-graph.c:2601
+#: commit-graph.c:2605
 msgid "too many commits to write graph"
 msgstr "提交太多不能畫圖"
 
-#: commit-graph.c:2694
+#: commit-graph.c:2698
 msgid "the commit-graph file has incorrect checksum and is likely corrupt"
 msgstr "提交圖檔案的總和檢查碼錯誤，可能已經損壞"
 
-#: commit-graph.c:2704
+#: commit-graph.c:2708
 #, c-format
 msgid "commit-graph has incorrect OID order: %s then %s"
 msgstr "提交圖形的物件 ID 順序不正確：%s 然後 %s"
 
-#: commit-graph.c:2714 commit-graph.c:2729
+#: commit-graph.c:2718 commit-graph.c:2733
 #, c-format
 msgid "commit-graph has incorrect fanout value: fanout[%d] = %u != %u"
 msgstr "提交圖形有不正確的扇出值：fanout[%d] = %u != %u"
 
-#: commit-graph.c:2721
+#: commit-graph.c:2725
 #, c-format
 msgid "failed to parse commit %s from commit-graph"
 msgstr "無法從提交圖形中解析提交 %s"
 
-#: commit-graph.c:2750
+#: commit-graph.c:2754
 #, c-format
 msgid "failed to parse commit %s from object database for commit-graph"
 msgstr "無法從提交圖形的物件庫中解析提交 %s"
 
-#: commit-graph.c:2757
+#: commit-graph.c:2761
 #, c-format
 msgid "root tree OID for commit %s in commit-graph is %s != %s"
 msgstr "提交圖形中的提交 %s 的根樹狀物件 ID 是 %s != %s"
 
-#: commit-graph.c:2767
+#: commit-graph.c:2771
 #, c-format
 msgid "commit-graph parent list for commit %s is too long"
 msgstr "提交 %s 的提交圖形父提交列表太長了"
 
-#: commit-graph.c:2776
+#: commit-graph.c:2780
 #, c-format
 msgid "commit-graph parent for %s is %s != %s"
 msgstr "%s 的提交圖形父提交是 %s != %s"
 
-#: commit-graph.c:2790
+#: commit-graph.c:2794
 #, c-format
 msgid "commit-graph parent list for commit %s terminates early"
 msgstr "提交 %s 的提交圖形父提交列表過早終止"
 
-#: commit-graph.c:2812
+#: commit-graph.c:2816
 #, c-format
 msgid "commit-graph generation for commit %s is %<PRIuMAX> < %<PRIuMAX>"
 msgstr "提交 %s 的提交圖形處於 %<PRIuMAX> < %<PRIuMAX> 世代"
 
-#: commit-graph.c:2818
+#: commit-graph.c:2822
 #, c-format
 msgid "commit date for commit %s in commit-graph is %<PRIuMAX> != %<PRIuMAX>"
 msgstr "提交圖形中提交 %s 的提交日期是 %<PRIuMAX> != %<PRIuMAX>"
 
-#: commit-graph.c:2825
+#: commit-graph.c:2829
 #, c-format
 msgid ""
 "commit-graph has both zero and non-zero generations (e.g., commits '%s' and "
 "'%s')"
 msgstr "提交圖形中包含 0 和非 0 兩個世代號（例如 “%s” 和 “%s” 提交）"
 
-#: commit-graph.c:2849
+#: commit-graph.c:2853
 msgid "Verifying commits in commit graph"
 msgstr "正在驗證提交圖中的提交"
 
-#: commit.c:62
+#: commit.c:63
 #, c-format
 msgid "%s %s is not a commit!"
 msgstr "%s %s 不是一個提交！"
 
-#: commit.c:264
+#: commit.c:265
 msgid ""
 "Support for <GIT_DIR>/info/grafts is deprecated\n"
 "and will be removed in a future Git version.\n"
@@ -18036,27 +18101,33 @@ msgstr ""
 "設定 \"git config advice.graftFileDeprecated false\"\n"
 "可關閉本消息"
 
-#: commit.c:1333
+#: commit.c:585
+#, fuzzy, c-format
+#| msgid "cannot create an empty blob in the object database"
+msgid "commit %s exists in commit-graph but not in the object database"
+msgstr "不能在物件資料庫中建立空的資料物件"
+
+#: commit.c:1347
 #, c-format
 msgid "Commit %s has an untrusted GPG signature, allegedly by %s."
 msgstr "提交 %s 有一個非可信的聲稱來自 %s 的 GPG 簽名。"
 
-#: commit.c:1337
+#: commit.c:1351
 #, c-format
 msgid "Commit %s has a bad GPG signature allegedly by %s."
 msgstr "提交 %s 有一個錯誤的聲稱來自 %s 的 GPG 簽名。"
 
-#: commit.c:1340
+#: commit.c:1354
 #, c-format
 msgid "Commit %s does not have a GPG signature."
 msgstr "提交 %s 沒有 GPG 簽名。"
 
-#: commit.c:1343
+#: commit.c:1357
 #, c-format
 msgid "Commit %s has a good GPG signature by %s\n"
 msgstr "提交 %s 有一個來自 %s 的好的 GPG 簽名。\n"
 
-#: commit.c:1598
+#: commit.c:1612
 msgid ""
 "Warning: commit message did not conform to UTF-8.\n"
 "You may want to amend it after fixing the message, or set the config\n"
@@ -19230,7 +19301,7 @@ msgstr "--follow 明確要求只跟一個路徑規格"
 msgid "pathspec magic not supported by --follow: %s"
 msgstr "--follow 不支援路徑規格魔法：%s"
 
-#: diff.c:4807 parse-options.c:1264
+#: diff.c:4807 parse-options.c:1304
 #, c-format
 msgid "options '%s', '%s', '%s', and '%s' cannot be used together"
 msgstr "「%s」、「%s」、「%s」和「%s」選項不得同時使用"
@@ -19252,7 +19323,7 @@ msgid "invalid --stat value: %s"
 msgstr "無效的 --stat 值：%s"
 
 #: diff.c:4960 diff.c:4965 diff.c:4970 diff.c:4975 diff.c:5480
-#: parse-options.c:220 parse-options.c:224
+#: parse-options.c:182 parse-options.c:186
 #, c-format
 msgid "%s expects a numerical value"
 msgstr "%s 期望一個數字值"
@@ -19876,7 +19947,7 @@ msgstr "過濾內容"
 msgid "could not stat file '%s'"
 msgstr "不能對檔案 '%s' 呼叫 stat"
 
-#: environment.c:149
+#: environment.c:162
 #, c-format
 msgid "bad git namespace path \"%s\""
 msgstr "錯誤的 git 名字空間路徑 \"%s\""
@@ -20764,17 +20835,17 @@ msgstr "不能存取 '%s' 中的稀疏資料物件"
 msgid "unable to parse sparse filter data in %s"
 msgstr "無法解析 %s 中的稀疏過濾器資料"
 
-#: list-objects.c:118
+#: list-objects.c:121
 #, c-format
 msgid "entry '%s' in tree %s has tree mode, but is not a tree"
 msgstr "樹 %2$s 中的條目 '%1$s' 具有樹的屬性，但不是一個樹狀物件"
 
-#: list-objects.c:132
+#: list-objects.c:135
 #, c-format
 msgid "entry '%s' in tree %s has blob mode, but is not a blob"
 msgstr "樹 %2$s 中的條目 '%1$s' 具有資料物件的屬性，但不是一個資料物件"
 
-#: list-objects.c:398
+#: list-objects.c:404
 #, c-format
 msgid "unable to load root tree for commit %s"
 msgstr "無法為提交 %s 載入根樹"
@@ -22191,54 +22262,54 @@ msgstr "位圖查詢表損壞：提交索引 %u 超出範圍"
 msgid "corrupt ewah bitmap: truncated header for bitmap of commit \"%s\""
 msgstr "ewah 位圖損壞：提交 “%s” 之位圖的標頭遭截斷"
 
-#: pack-bitmap.c:2103
+#: pack-bitmap.c:2130
 #, c-format
 msgid "object '%s' not found in type bitmaps"
 msgstr "在類型位圖中，找不到「%s」物件"
 
-#: pack-bitmap.c:2107
+#: pack-bitmap.c:2134
 #, c-format
 msgid "object '%s' does not have a unique type"
 msgstr "「%s」物件的類型不唯一"
 
-#: pack-bitmap.c:2111
+#: pack-bitmap.c:2138
 #, c-format
 msgid "object '%s': real type '%s', expected: '%s'"
 msgstr "「%s」物件：實際類型是「%s」，但預期是「%s」"
 
-#: pack-bitmap.c:2126 pack-bitmap.c:2141
+#: pack-bitmap.c:2153 pack-bitmap.c:2168
 #, c-format
 msgid "object not in bitmap: '%s'"
 msgstr "物件不在位圖中：「%s」"
 
-#: pack-bitmap.c:2158 pack-bitmap.c:2224 pack-bitmap.c:2232
+#: pack-bitmap.c:2185 pack-bitmap.c:2251 pack-bitmap.c:2259
 msgid "failed to load bitmap indexes"
 msgstr "無法載入位圖索引"
 
-#: pack-bitmap.c:2161
+#: pack-bitmap.c:2188
 msgid "you must specify exactly one commit to test"
 msgstr "您必須指定剛好一個要測試的提交"
 
-#: pack-bitmap.c:2179
+#: pack-bitmap.c:2206
 #, c-format
 msgid "commit '%s' doesn't have an indexed bitmap"
 msgstr "提交「%s」無索引過的位圖"
 
-#: pack-bitmap.c:2206
+#: pack-bitmap.c:2233
 msgid "mismatch in bitmap results"
 msgstr "位圖結果中有不符項目"
 
-#: pack-bitmap.c:2424
+#: pack-bitmap.c:2451
 #, c-format
 msgid "could not find '%s' in pack '%s' at offset %<PRIuMAX>"
 msgstr "在「%2$s」封包，位移 %3$<PRIuMAX> 的地方找不到「%1$s」"
 
-#: pack-bitmap.c:2461
+#: pack-bitmap.c:2488
 #, c-format
 msgid "unable to get disk usage of '%s'"
 msgstr "無法取得「%s」的磁碟用量"
 
-#: pack-bitmap.c:2534
+#: pack-bitmap.c:2561
 #, c-format
 msgid "bitmap file '%s' has invalid checksum"
 msgstr "“%s” 位圖檔案的總和檢查碼無效"
@@ -22369,70 +22440,65 @@ msgstr "選項「%s」期望「%s」或「%s」"
 msgid "%s requires a value"
 msgstr "%s 需要一個值"
 
-#: parse-options.c:96
-#, c-format
-msgid "%s is incompatible with %s"
-msgstr "%s 與 %s 不相容"
-
-#: parse-options.c:101
-#, c-format
-msgid "%s : incompatible with something else"
-msgstr "%s：和其它的不相容"
-
-#: parse-options.c:115 parse-options.c:119
+#: parse-options.c:83 parse-options.c:87
 #, c-format
 msgid "%s takes no value"
 msgstr "%s 不取值"
 
-#: parse-options.c:117
+#: parse-options.c:85
 #, c-format
 msgid "%s isn't available"
 msgstr "%s 不可用"
 
-#: parse-options.c:240
+#: parse-options.c:202
 #, c-format
 msgid "%s expects a non-negative integer value with an optional k/m/g suffix"
 msgstr "%s 期望一個非負整數和一個可選的 k/m/g 後綴"
 
-#: parse-options.c:398
+#: parse-options.c:282
+#, c-format
+msgid "%s is incompatible with %s"
+msgstr "%s 與 %s 不相容"
+
+#: parse-options.c:434
 #, c-format
 msgid "ambiguous option: %s (could be --%s%s or --%s%s)"
 msgstr "有歧義的選項：%s（可以是 --%s%s 或 --%s%s）"
 
-#: parse-options.c:446 parse-options.c:454
+#: parse-options.c:480 parse-options.c:488
 #, c-format
 msgid "did you mean `--%s` (with two dashes)?"
 msgstr "你的意思是 `--%s`（有兩個短線）嗎？"
 
-#: parse-options.c:732 parse-options.c:1185
+#: parse-options.c:767 parse-options.c:1225
 #, c-format
 msgid "alias of --%s"
 msgstr "--%s 的別名"
 
-#: parse-options.c:990
+#: parse-options.c:1025
 msgid "need a subcommand"
 msgstr "需要子命令"
 
-#: parse-options.c:996
+#: parse-options.c:1031
 #, c-format
 msgid "unknown option `%s'"
 msgstr "未知選項 `%s'"
 
-#: parse-options.c:998
+#: parse-options.c:1033
 #, c-format
 msgid "unknown switch `%c'"
 msgstr "未知開關 `%c'"
 
-#: parse-options.c:1000
+#: parse-options.c:1035
 #, c-format
 msgid "unknown non-ascii option in string: `%s'"
 msgstr "字串中未知的非 ascii 字元選項：`%s'"
 
-#: parse-options.c:1024
+#: parse-options.c:1064
 msgid "..."
 msgstr "..."
 
-#: parse-options.c:1061
+#: parse-options.c:1101
 #, c-format
 msgid "usage: %s"
 msgstr "用法：%s"
@@ -22440,7 +22506,7 @@ msgstr "用法：%s"
 #. TRANSLATORS: the colon here should align with the
 #. one in "usage: %s" translation.
 #.
-#: parse-options.c:1076
+#: parse-options.c:1116
 #, c-format
 msgid "   or: %s"
 msgstr "   或：%s"
@@ -22464,22 +22530,22 @@ msgstr "   或：%s"
 #. translated) N_() usage string, which contained embedded
 #. newlines before we split it up.
 #.
-#: parse-options.c:1097
+#: parse-options.c:1137
 #, c-format
 msgid "%*s%s"
 msgstr "%*s%s"
 
 #  譯者：為保證在輸出中對齊，注意調整句中空格！
-#: parse-options.c:1120
+#: parse-options.c:1160
 #, c-format
 msgid "    %s"
 msgstr "    %s"
 
-#: parse-options.c:1177
+#: parse-options.c:1217
 msgid "-NUM"
 msgstr "-數字"
 
-#: parse-options.c:1206
+#: parse-options.c:1246
 #, c-format
 msgid "opposite of --no-%s"
 msgstr "--no-%s 的相反行為"
@@ -22492,31 +22558,31 @@ msgstr "到期時間"
 msgid "no-op (backward compatibility)"
 msgstr "空動作（向後相容）"
 
-#: parse-options.h:505
+#: parse-options.h:508
 msgid "be more verbose"
 msgstr "更加詳細"
 
-#: parse-options.h:513
+#: parse-options.h:516
 msgid "be more quiet"
 msgstr "更加安靜"
 
-#: parse-options.h:524
+#: parse-options.h:527
 msgid "use <n> digits to display object names"
 msgstr "用 <n> 位數字顯示物件名稱"
 
-#: parse-options.h:530
+#: parse-options.h:533
 msgid "prefixed path to initial superproject"
 msgstr "初始父專案的前綴路徑"
 
-#: parse-options.h:578
+#: parse-options.h:581
 msgid "how to strip spaces and #comments from message"
 msgstr "設定如何刪除提交說明裡的空格和 #備註"
 
-#: parse-options.h:579
+#: parse-options.h:582
 msgid "read pathspec from file"
 msgstr "從檔案讀取 <路徑規格>"
 
-#: parse-options.h:580
+#: parse-options.h:583
 msgid ""
 "with --pathspec-from-file, pathspec elements are separated with NUL character"
 msgstr "如使用 --pathspec-from-file，則 <路徑規格> 元件會使用 NUL 字元分隔"
@@ -24008,48 +24074,48 @@ msgstr "不能確定 HEAD 版本"
 msgid "failed to find tree of %s"
 msgstr "無法找到 %s 指向的樹"
 
-#: revision.c:1593
+#: revision.c:1602
 #, c-format
 msgid "unsupported section for hidden refs: %s"
 msgstr "不支援的隱藏引用區塊：%s"
 
-#: revision.c:1596
+#: revision.c:1605
 msgid "--exclude-hidden= passed more than once"
 msgstr "--exclude-hidden= 傳入了不止一次"
 
-#: revision.c:1776
+#: revision.c:1785
 #, c-format
 msgid "resolve-undo records `%s` which is missing"
 msgstr "resolve-undo 不存在的「%s」記錄"
 
-#: revision.c:2297
+#: revision.c:2306
 #, c-format
 msgid "could not get commit for ancestry-path argument %s"
 msgstr "無法取得 ancestry-path 引數 %s 的提交"
 
-#: revision.c:2428
+#: revision.c:2437
 msgid "--unpacked=<packfile> no longer supported"
 msgstr "--unpacked=<packfile> 已不受支援"
 
-#: revision.c:2825
+#: revision.c:2834
 #, c-format
 msgid "invalid option '%s' in --stdin mode"
 msgstr "在 --stdin 模式下，“%s” 選項無效"
 
-#: revision.c:2846
+#: revision.c:2855
 msgid "your current branch appears to be broken"
 msgstr "您的目前分支好像被損壞"
 
-#: revision.c:2849
+#: revision.c:2858
 #, c-format
 msgid "your current branch '%s' does not have any commits yet"
 msgstr "您的目前分支 '%s' 尚無任何提交"
 
-#: revision.c:3037
+#: revision.c:3046
 msgid "object filtering requires --objects"
 msgstr "物件過濾需要 --objects"
 
-#: revision.c:3054
+#: revision.c:3063
 msgid "-L does not yet support diff formats besides -p and -s"
 msgstr "-L 尚不支援 -p 和 -s 之外的差異格式"
 
@@ -25323,90 +25389,90 @@ msgstr ""
 msgid "unable to set up work tree using invalid config"
 msgstr "無法使用無效設定來建立工作區"
 
-#: setup.c:750
+#: setup.c:760
 #, c-format
 msgid "Expected git repo version <= %d, found %d"
 msgstr "期望 git 版本庫版本 <= %d，卻得到 %d"
 
-#: setup.c:758
+#: setup.c:768
 msgid "unknown repository extension found:"
 msgid_plural "unknown repository extensions found:"
 msgstr[0] "找到未知的儲存庫擴充元件："
 
-#: setup.c:772
+#: setup.c:782
 msgid "repo version is 0, but v1-only extension found:"
 msgid_plural "repo version is 0, but v1-only extensions found:"
 msgstr[0] "repo 版本是 0 (v0)，但找到只支援 v1 的擴充元件："
 
-#: setup.c:793
+#: setup.c:803
 #, c-format
 msgid "error opening '%s'"
 msgstr "開啟 '%s' 發生錯誤"
 
-#: setup.c:795
+#: setup.c:805
 #, c-format
 msgid "too large to be a .git file: '%s'"
 msgstr "檔案太大，無法作為 .git 檔案：'%s'"
 
-#: setup.c:797
+#: setup.c:807
 #, c-format
 msgid "error reading %s"
 msgstr "讀取 %s 發生錯誤"
 
-#: setup.c:799
+#: setup.c:809
 #, c-format
 msgid "invalid gitfile format: %s"
 msgstr "無效的 gitfile 格式：%s"
 
-#: setup.c:801
+#: setup.c:811
 #, c-format
 msgid "no path in gitfile: %s"
 msgstr "在 gitfile 中沒有路徑：%s"
 
-#: setup.c:803
+#: setup.c:813
 #, c-format
 msgid "not a git repository: %s"
 msgstr "不是一個 git 版本庫：%s"
 
-#: setup.c:905
+#: setup.c:915
 #, c-format
 msgid "'$%s' too big"
 msgstr "'$%s' 太大"
 
-#: setup.c:919
+#: setup.c:929
 #, c-format
 msgid "not a git repository: '%s'"
 msgstr "不是一個 git 版本庫：'%s'"
 
-#: setup.c:948 setup.c:950 setup.c:981
+#: setup.c:958 setup.c:960 setup.c:991
 #, c-format
 msgid "cannot chdir to '%s'"
 msgstr "不能切換目錄到 '%s'"
 
-#: setup.c:953 setup.c:1009 setup.c:1019 setup.c:1058 setup.c:1066
+#: setup.c:963 setup.c:1019 setup.c:1029 setup.c:1068 setup.c:1076
 msgid "cannot come back to cwd"
 msgstr "無法返回目前工作目錄"
 
-#: setup.c:1080
+#: setup.c:1090
 #, c-format
 msgid "failed to stat '%*s%s%s'"
 msgstr "取得 '%*s%s%s' 狀態（stat）失敗"
 
-#: setup.c:1453
+#: setup.c:1463
 msgid "Unable to read current working directory"
 msgstr "不能讀取目前工作目錄"
 
-#: setup.c:1462 setup.c:1468
+#: setup.c:1472 setup.c:1478
 #, c-format
 msgid "cannot change to '%s'"
 msgstr "不能切換到 '%s'"
 
-#: setup.c:1473
+#: setup.c:1483
 #, c-format
 msgid "not a git repository (or any of the parent directories): %s"
 msgstr "不是一個 git 版本庫（或者任何父目錄）：%s"
 
-#: setup.c:1479
+#: setup.c:1489
 #, c-format
 msgid ""
 "not a git repository (or any parent up to mount point %s)\n"
@@ -25415,7 +25481,7 @@ msgstr ""
 "不是一個 git 版本庫（或者直至掛載點 %s 的任何父目錄）\n"
 "停止在檔案系統邊界（未設定 GIT_DISCOVERY_ACROSS_FILESYSTEM）。"
 
-#: setup.c:1490
+#: setup.c:1500
 #, c-format
 msgid ""
 "detected dubious ownership in repository at '%s'\n"
@@ -25428,12 +25494,12 @@ msgstr ""
 "\n"
 "\tgit config --global --add safe.directory %s"
 
-#: setup.c:1501
+#: setup.c:1511
 #, c-format
 msgid "cannot use bare repository '%s' (safe.bareRepository is '%s')"
 msgstr "無法使用 “%s” 純版本庫（safe.bareRepository 是 “%s”）"
 
-#: setup.c:1631
+#: setup.c:1641
 #, c-format
 msgid ""
 "problem with core.sharedRepository filemode value (0%.3o).\n"
@@ -25442,99 +25508,99 @@ msgstr ""
 "參數 core.sharedRepository 的檔案屬性值有問題（0%.3o）。\n"
 "檔案所有者必須始終擁有讀寫權限。"
 
-#: setup.c:1695
+#: setup.c:1705
 msgid "fork failed"
 msgstr "fork 失敗"
 
-#: setup.c:1700
+#: setup.c:1710
 msgid "setsid failed"
 msgstr "setsid 失敗"
 
-#: setup.c:1751
+#: setup.c:1761
 #, c-format
 msgid "cannot stat template '%s'"
 msgstr "不能對範本 '%s' 呼叫 stat"
 
-#: setup.c:1756
+#: setup.c:1766
 #, c-format
 msgid "cannot opendir '%s'"
 msgstr "不能開啟目錄 '%s'"
 
-#: setup.c:1768
+#: setup.c:1778
 #, c-format
 msgid "cannot readlink '%s'"
 msgstr "不能讀取連結 '%s'"
 
-#: setup.c:1770
+#: setup.c:1780
 #, c-format
 msgid "cannot symlink '%s' '%s'"
 msgstr "不能自 '%s' 到 '%s' 建立符號連結"
 
-#: setup.c:1776
+#: setup.c:1786
 #, c-format
 msgid "cannot copy '%s' to '%s'"
 msgstr "不能複製 '%s' 至 '%s'"
 
-#: setup.c:1780
+#: setup.c:1790
 #, c-format
 msgid "ignoring template %s"
 msgstr "忽略範本 %s"
 
-#: setup.c:1811
+#: setup.c:1821
 #, c-format
 msgid "templates not found in %s"
 msgstr "沒有在 %s 中找到範本"
 
-#: setup.c:1826
+#: setup.c:1836
 #, c-format
 msgid "not copying templates from '%s': %s"
 msgstr "沒有從 '%s' 複製範本：%s"
 
-#: setup.c:1980
+#: setup.c:1990
 #, c-format
 msgid "invalid initial branch name: '%s'"
 msgstr "無效的初始分支名稱：'%s'"
 
-#: setup.c:2071
+#: setup.c:2081
 #, c-format
 msgid "unable to handle file type %d"
 msgstr "不能處理 %d 類型的檔案"
 
-#: setup.c:2074
+#: setup.c:2084
 #, c-format
 msgid "unable to move %s to %s"
 msgstr "不能移動 %s 至 %s"
 
-#: setup.c:2090
+#: setup.c:2100
 msgid "attempt to reinitialize repository with different hash"
 msgstr "嘗試以不同的雜湊值重新初始化版本庫"
 
-#: setup.c:2115 setup.c:2118
+#: setup.c:2125 setup.c:2128
 #, c-format
 msgid "%s already exists"
 msgstr "%s 已經存在"
 
-#: setup.c:2152
+#: setup.c:2162
 #, c-format
 msgid "re-init: ignored --initial-branch=%s"
 msgstr "re-init: 忽略 --initial-branch=%s"
 
-#: setup.c:2183
+#: setup.c:2193
 #, c-format
 msgid "Reinitialized existing shared Git repository in %s%s\n"
 msgstr "重新初始化已存在的共享 Git 版本庫於 %s%s\n"
 
-#: setup.c:2184
+#: setup.c:2194
 #, c-format
 msgid "Reinitialized existing Git repository in %s%s\n"
 msgstr "重新初始化已存在的 Git 版本庫於 %s%s\n"
 
-#: setup.c:2188
+#: setup.c:2198
 #, c-format
 msgid "Initialized empty shared Git repository in %s%s\n"
 msgstr "已初始化空的共享 Git 版本庫於 %s%s\n"
 
-#: setup.c:2189
+#: setup.c:2199
 #, c-format
 msgid "Initialized empty Git repository in %s%s\n"
 msgstr "已初始化空的 Git 版本庫於 %s%s\n"
@@ -26541,7 +26607,7 @@ msgstr "正在更新索引旗標"
 msgid "worktree and untracked commit have duplicate entries: %s"
 msgstr "工作區和未追蹤提交有重複項目：%s"
 
-#: upload-pack.c:1642
+#: upload-pack.c:1667
 msgid "expected flush after fetch arguments"
 msgstr "在 fetch 引數應為一個 flush 包"
 
@@ -27475,7 +27541,7 @@ msgstr ""
 msgid "Failed to opendir %s: %s"
 msgstr "無法開啟目錄 %s: %s"
 
-#: git-send-email.perl:833
+#: git-send-email.perl:809
 msgid ""
 "\n"
 "No patch files specified!\n"
@@ -27485,17 +27551,17 @@ msgstr ""
 "未指定修補檔案！\n"
 "\n"
 
-#: git-send-email.perl:846
+#: git-send-email.perl:822
 #, perl-format
 msgid "No subject line in %s?"
 msgstr "在 %s 中沒有標題行？"
 
-#: git-send-email.perl:857
+#: git-send-email.perl:833
 #, perl-format
 msgid "Failed to open for writing %s: %s"
 msgstr "為寫入開啟 %s 失敗: %s"
 
-#: git-send-email.perl:871
+#: git-send-email.perl:847
 msgid ""
 "Lines beginning in \"GIT:\" will be removed.\n"
 "Consider including an overall diffstat or table of contents\n"
@@ -27508,37 +27574,37 @@ msgstr ""
 "\n"
 "如果您不想傳送摘要，清除內容。\n"
 
-#: git-send-email.perl:898
+#: git-send-email.perl:874
 #, perl-format
 msgid "Failed to open %s.final: %s"
 msgstr "無法開啟 %s.final: %s"
 
-#: git-send-email.perl:901
+#: git-send-email.perl:877
 #, perl-format
 msgid "Failed to open %s: %s"
 msgstr "無法開啟 %s: %s"
 
-#: git-send-email.perl:953
+#: git-send-email.perl:929
 msgid "Summary email is empty, skipping it\n"
 msgstr "摘要信件為空，略過\n"
 
 #. TRANSLATORS: please keep [y/N] as is.
-#: git-send-email.perl:1001
+#: git-send-email.perl:977
 #, perl-format
 msgid "Are you sure you want to use <%s> [y/N]? "
 msgstr "您是否要使用 <%s> [y/N]？ "
 
-#: git-send-email.perl:1030
+#: git-send-email.perl:1006
 msgid ""
 "The following files are 8bit, but do not declare a Content-Transfer-"
 "Encoding.\n"
 msgstr "如下檔案含 8bit 內容，但沒有聲明一個 Content-Transfer-Encoding。\n"
 
-#: git-send-email.perl:1035
+#: git-send-email.perl:1011
 msgid "Which 8bit encoding should I declare [UTF-8]? "
 msgstr "要宣告 8bit 為什麼樣的編碼格式 [UTF-8]？ "
 
-#: git-send-email.perl:1043
+#: git-send-email.perl:1019
 #, perl-format
 msgid ""
 "Refusing to send because the patch\n"
@@ -27550,20 +27616,20 @@ msgstr ""
 "\t%s\n"
 "包含範本標題 '*** SUBJECT HERE ***'。如果確定想要傳送，使用參數 --force。\n"
 
-#: git-send-email.perl:1050
+#: git-send-email.perl:1026
 msgid "To whom should the emails be sent (if anyone)?"
 msgstr "信件將要傳送給誰？"
 
-#: git-send-email.perl:1068
+#: git-send-email.perl:1044
 #, perl-format
 msgid "fatal: alias '%s' expands to itself\n"
 msgstr "致命錯誤：別名 '%s' 展開後還是自己\n"
 
-#: git-send-email.perl:1080
+#: git-send-email.perl:1056
 msgid "Message-ID to be used as In-Reply-To for the first email (if any)? "
 msgstr "（如果有）Message-ID 是否要被用作第一封信件的 In-Reply-To ？ "
 
-#: git-send-email.perl:1142 git-send-email.perl:1150
+#: git-send-email.perl:1118 git-send-email.perl:1126
 #, perl-format
 msgid "error: unable to extract a valid address from: %s\n"
 msgstr "錯誤：不能從 %s 中擷取一個有效的信件位址\n"
@@ -27571,16 +27637,16 @@ msgstr "錯誤：不能從 %s 中擷取一個有效的信件位址\n"
 #. TRANSLATORS: Make sure to include [q] [d] [e] in your
 #. translation. The program will only accept English input
 #. at this point.
-#: git-send-email.perl:1154
+#: git-send-email.perl:1130
 msgid "What to do with this address? ([q]uit|[d]rop|[e]dit): "
 msgstr "如何處理這個位址？([q]uit|[d]rop|[e]dit)： "
 
-#: git-send-email.perl:1470
+#: git-send-email.perl:1446
 #, perl-format
 msgid "CA path \"%s\" does not exist"
 msgstr "CA 路徑 \"%s\" 不存在"
 
-#: git-send-email.perl:1560
+#: git-send-email.perl:1536
 msgid ""
 "    The Cc list above has been expanded by additional\n"
 "    addresses found in the patch commit message. By default\n"
@@ -27605,117 +27671,117 @@ msgstr ""
 #. TRANSLATORS: Make sure to include [y] [n] [e] [q] [a] in your
 #. translation. The program will only accept English input
 #. at this point.
-#: git-send-email.perl:1575
+#: git-send-email.perl:1551
 msgid "Send this email? ([y]es|[n]o|[e]dit|[q]uit|[a]ll): "
 msgstr "傳送這封信件？([y]es|[n]o|[e]dit|[q]uit|[a]ll): "
 
-#: git-send-email.perl:1578
+#: git-send-email.perl:1554
 msgid "Send this email reply required"
 msgstr "傳送要求的信件回復"
 
-#: git-send-email.perl:1612
+#: git-send-email.perl:1588
 msgid "The required SMTP server is not properly defined."
 msgstr "要求的 SMTP 伺服器未被正確定義。"
 
-#: git-send-email.perl:1659
+#: git-send-email.perl:1635
 #, perl-format
 msgid "Server does not support STARTTLS! %s"
 msgstr "伺服器不支援 STARTTLS！%s"
 
-#: git-send-email.perl:1664 git-send-email.perl:1668
+#: git-send-email.perl:1640 git-send-email.perl:1644
 #, perl-format
 msgid "STARTTLS failed! %s"
 msgstr "STARTTLS 失敗！%s"
 
-#: git-send-email.perl:1677
+#: git-send-email.perl:1653
 msgid "Unable to initialize SMTP properly. Check config and use --smtp-debug."
 msgstr "無法正確地初始化 SMTP。檢查設定並使用 --smtp-debug。"
 
-#: git-send-email.perl:1695
+#: git-send-email.perl:1671
 #, perl-format
 msgid "Failed to send %s\n"
 msgstr "無法傳送 %s\n"
 
-#: git-send-email.perl:1698
+#: git-send-email.perl:1674
 #, perl-format
 msgid "Dry-Sent %s\n"
 msgstr "測試執行傳送 %s\n"
 
-#: git-send-email.perl:1698
+#: git-send-email.perl:1674
 #, perl-format
 msgid "Sent %s\n"
 msgstr "正傳送 %s\n"
 
-#: git-send-email.perl:1700
+#: git-send-email.perl:1676
 msgid "Dry-OK. Log says:\n"
 msgstr "測試執行成功。日誌說：\n"
 
-#: git-send-email.perl:1700
+#: git-send-email.perl:1676
 msgid "OK. Log says:\n"
 msgstr "OK。日誌說：\n"
 
-#: git-send-email.perl:1719
+#: git-send-email.perl:1695
 msgid "Result: "
 msgstr "結果： "
 
-#: git-send-email.perl:1722
+#: git-send-email.perl:1698
 msgid "Result: OK\n"
 msgstr "結果：OK\n"
 
-#: git-send-email.perl:1736
+#: git-send-email.perl:1708
 #, perl-format
 msgid "can't open file %s"
 msgstr "無法開啟檔案 %s"
 
-#: git-send-email.perl:1785 git-send-email.perl:1805
+#: git-send-email.perl:1757 git-send-email.perl:1777
 #, perl-format
 msgid "(mbox) Adding cc: %s from line '%s'\n"
 msgstr "(mbox) 新增 cc：%s 自行 '%s'\n"
 
-#: git-send-email.perl:1791
+#: git-send-email.perl:1763
 #, perl-format
 msgid "(mbox) Adding to: %s from line '%s'\n"
 msgstr "(mbox) 新增 to：%s 自行 '%s'\n"
 
-#: git-send-email.perl:1848
+#: git-send-email.perl:1820
 #, perl-format
 msgid "(non-mbox) Adding cc: %s from line '%s'\n"
 msgstr "(non-mbox) 新增 cc：%s 自行 '%s'\n"
 
-#: git-send-email.perl:1883
+#: git-send-email.perl:1855
 #, perl-format
 msgid "(body) Adding cc: %s from line '%s'\n"
 msgstr "(body) 新增 cc: %s 自行 '%s'\n"
 
-#: git-send-email.perl:2012
+#: git-send-email.perl:2016
 #, perl-format
 msgid "(%s) Could not execute '%s'"
 msgstr "(%s) 不能執行 '%s'"
 
-#: git-send-email.perl:2014
+#: git-send-email.perl:2018
 #, perl-format
 msgid "(%s) Malformed output from '%s'"
 msgstr "(%s) 從 “%s” 讀到格式錯誤的輸出"
 
-#: git-send-email.perl:2023
+#: git-send-email.perl:2027
 #, perl-format
 msgid "(%s) failed to close pipe to '%s'"
 msgstr "(%s) 無法關閉管道至 '%s'"
 
-#: git-send-email.perl:2067
+#: git-send-email.perl:2071
 #, perl-format
 msgid "(%s) Adding %s: %s from: '%s'\n"
 msgstr "(%s) 新增 %s: %s 自：'%s'\n"
 
-#: git-send-email.perl:2099
+#: git-send-email.perl:2103
 msgid "cannot send message as 7bit"
 msgstr "不能以 7bit 形式傳送訊息"
 
-#: git-send-email.perl:2107
+#: git-send-email.perl:2111
 msgid "invalid transfer encoding"
 msgstr "無效的傳送編碼"
 
-#: git-send-email.perl:2160
+#: git-send-email.perl:2164
 #, perl-format
 msgid ""
 "fatal: %s: rejected by %s hook\n"
@@ -27726,12 +27792,12 @@ msgstr ""
 "%s\n"
 "警告：修補檔未能傳送\n"
 
-#: git-send-email.perl:2170 git-send-email.perl:2223 git-send-email.perl:2233
+#: git-send-email.perl:2174 git-send-email.perl:2227 git-send-email.perl:2237
 #, perl-format
 msgid "unable to open %s: %s\n"
 msgstr "不能開啟 %s：%s\n"
 
-#: git-send-email.perl:2173
+#: git-send-email.perl:2177
 #, perl-format
 msgid ""
 "fatal: %s:%d is longer than 998 characters\n"
@@ -27740,16 +27806,24 @@ msgstr ""
 "致命錯誤：%s:%d 的字元數超過 998\n"
 "警告：修補檔未能傳送\n"
 
-#: git-send-email.perl:2191
+#: git-send-email.perl:2195
 #, perl-format
 msgid "Skipping %s with backup suffix '%s'.\n"
 msgstr "略過 %s 含備份後綴 '%s'。\n"
 
 #. TRANSLATORS: please keep "[y|N]" as is.
-#: git-send-email.perl:2195
+#: git-send-email.perl:2199
 #, perl-format
 msgid "Do you really want to send %s? [y|N]: "
 msgstr "您真的要傳送 %s？[y|N]： "
+
+#, c-format
+#~ msgid "options '%s=%s' and '%s=%s' cannot be used together"
+#~ msgstr "“%s=%s” 和 “%s=%s” 選項不得同時使用"
+
+#, c-format
+#~ msgid "%s : incompatible with something else"
+#~ msgstr "%s：和其它的不相容"
 
 #~ msgid "Could not write patch"
 #~ msgstr "無法寫入修補檔"

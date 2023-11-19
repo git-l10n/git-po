@@ -27,18 +27,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-11-05 18:22+0800\n"
-"PO-Revision-Date: 2023-08-20 21:58+0800\n"
+"PO-Revision-Date: 2023-11-05 13:11+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-Generator: Weblate 5.1.1\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -2149,10 +2149,9 @@ msgid "submodule '%s': cannot create branch '%s'"
 msgstr "“%s” 子模組：無法建立 “%s” 分支"
 
 #: branch.c:841
-#, fuzzy, c-format
-#| msgid "'%s' is already checked out at '%s'"
+#, c-format
 msgid "'%s' is already used by worktree at '%s'"
-msgstr "“%s” 已在 “%s” 點簽出"
+msgstr "“%s” 已被位於 “%s” 的工作區使用"
 
 #: builtin/add.c:32
 msgid "git add [<options>] [--] <pathspec>..."
@@ -2176,8 +2175,6 @@ msgstr ""
 "深入了解請參閱 “git help config” 中的對應條目。"
 
 #: builtin/add.c:185
-#, fuzzy
-#| msgid "Could not read the index"
 msgid "could not read the index"
 msgstr "無法讀取索引"
 
@@ -2191,14 +2188,11 @@ msgid "could not stat '%s'"
 msgstr "不能對 '%s' 呼叫 stat"
 
 #: builtin/add.c:205
-#, fuzzy
-#| msgid "Empty patch. Aborted."
 msgid "empty patch. aborted"
-msgstr "修補檔空白。中止。"
+msgstr "修補檔空白。中止"
 
 #: builtin/add.c:211
-#, fuzzy, c-format
-#| msgid "Could not apply '%s'"
+#, c-format
 msgid "could not apply '%s'"
 msgstr "無法套用 “%s”"
 
@@ -2866,15 +2860,11 @@ msgid "git archive: expected a flush"
 msgstr "git archive：預期收到 flush 封包"
 
 #: builtin/bisect.c:29
-#, fuzzy
-#| msgid ""
-#| "git bisect start [--term-{new,bad}=<term> --term-{old,good}=<term>]    [--"
-#| "no-checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]"
 msgid ""
 "git bisect start [--term-(new|bad)=<term> --term-(old|good)=<term>]    [--no-"
 "checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]"
 msgstr ""
-"git bisect start [--term-{new,bad}=<term> --term-{old,good}=<term>]    [--no-"
+"git bisect start [--term-(new|bad)=<term> --term-(old|good)=<term>]    [--no-"
 "checkout] [--first-parent] [<bad> [<good>...]] [--]    [<pathspec>...]"
 
 #: builtin/bisect.c:33
@@ -2894,10 +2884,8 @@ msgid "git bisect replay <logfile>"
 msgstr "git bisect replay <logfile>"
 
 #: builtin/bisect.c:49
-#, fuzzy
-#| msgid "git bisect run <cmd>..."
 msgid "git bisect run <cmd> [<arg>...]"
-msgstr "git bisect run <cmd>..."
+msgstr "git bisect run <cmd> [<arg>...]"
 
 #: builtin/bisect.c:136
 #, c-format
@@ -3416,51 +3404,39 @@ msgstr "git branch [<options>] [-r | -a] [--format]"
 
 #  譯者：保持原換行格式，在輸出時 %s 的替代內容會讓字串變長
 #: builtin/branch.c:175
-#, fuzzy, c-format
-#| msgid ""
-#| "deleting branch '%s' that has been merged to\n"
-#| "         '%s', but not yet merged to HEAD."
+#, c-format
 msgid ""
 "deleting branch '%s' that has been merged to\n"
 "         '%s', but not yet merged to HEAD"
 msgstr ""
 "將要刪除的 “%s” 分支已經被合併到\n"
-"         “%s”，但尚未合併到 HEAD。"
+"         “%s”，但尚未合併到 HEAD"
 
 #  譯者：保持原換行格式，在輸出時 %s 的替代內容會讓字串變長
 #: builtin/branch.c:179
-#, fuzzy, c-format
-#| msgid ""
-#| "not deleting branch '%s' that is not yet merged to\n"
-#| "         '%s', even though it is merged to HEAD."
+#, c-format
 msgid ""
 "not deleting branch '%s' that is not yet merged to\n"
 "         '%s', even though it is merged to HEAD"
 msgstr ""
 "並未刪除分支 “%s”， 雖然已經合併到 HEAD，\n"
-"         卻尚未被合併至 “%s” 分支。"
+"         卻尚未被合併至 “%s” 分支"
 
 #: builtin/branch.c:193
-#, fuzzy, c-format
-#| msgid "Couldn't look up commit object for '%s'"
+#, c-format
 msgid "couldn't look up commit object for '%s'"
 msgstr "無法查詢 “%s” 指向的提交物件"
 
 #: builtin/branch.c:197
-#, fuzzy, c-format
-#| msgid ""
-#| "The branch '%s' is not fully merged.\n"
-#| "If you are sure you want to delete it, run 'git branch -D %s'."
+#, c-format
 msgid ""
 "the branch '%s' is not fully merged.\n"
 "If you are sure you want to delete it, run 'git branch -D %s'"
 msgstr ""
 "分支 “%s” 沒有完全合併。\n"
-"如果確定要刪除它，請執行 “git branch -D %s”。"
+"如果確定要刪除它，請執行 “git branch -D %s”"
 
 #: builtin/branch.c:210
-#, fuzzy
-#| msgid "Update of config-file failed"
 msgid "update of config-file failed"
 msgstr "更新組態檔案失敗"
 
@@ -3469,16 +3445,14 @@ msgid "cannot use -a with -d"
 msgstr "不能將 -a 和 -d 同時使用"
 
 #: builtin/branch.c:263
-#, fuzzy, c-format
-#| msgid "cannot force update the branch '%s' used by worktree at '%s'"
+#, c-format
 msgid "cannot delete branch '%s' used by worktree at '%s'"
-msgstr "無法強制更新被位於 “%2$s” 的工作區使用的 “%1$s” 分支"
+msgstr "無法刪除被位於 “%2$s” 的工作區使用的 “%1$s” 分支"
 
 #: builtin/branch.c:278
-#, fuzzy, c-format
-#| msgid "remote-tracking branch '%s' not found."
+#, c-format
 msgid "remote-tracking branch '%s' not found"
-msgstr "找不到 “%s” 遠端追蹤分支。"
+msgstr "找不到 “%s” 遠端追蹤分支"
 
 #: builtin/branch.c:289
 #, c-format
@@ -3490,10 +3464,9 @@ msgstr ""
 "您可能要加上 --remote？"
 
 #: builtin/branch.c:293
-#, fuzzy, c-format
-#| msgid "branch '%s' not found."
+#, c-format
 msgid "branch '%s' not found"
-msgstr "找不到 “%s” 分支。"
+msgstr "找不到 “%s” 分支"
 
 #: builtin/branch.c:326
 #, c-format
@@ -3519,14 +3492,12 @@ msgid "HEAD (%s) points outside of refs/heads/"
 msgstr "HEAD 指針 (%s) 指向 refs/heads/ 之外"
 
 #: builtin/branch.c:521
-#, fuzzy, c-format
-#| msgid "Branch %s is being rebased at %s"
+#, c-format
 msgid "branch %s is being rebased at %s"
 msgstr "%s 分支正在重定基底至 %s"
 
 #: builtin/branch.c:525
-#, fuzzy, c-format
-#| msgid "Branch %s is being bisected at %s"
+#, c-format
 msgid "branch %s is being bisected at %s"
 msgstr "%s 分支正於 %s 進行二分搜尋"
 
@@ -3536,62 +3507,48 @@ msgid "HEAD of working tree %s is not updated"
 msgstr "%s 工作區的 HEAD 指針未被更新"
 
 #: builtin/branch.c:581
-#, fuzzy, c-format
-#| msgid "Invalid branch name: '%s'"
+#, c-format
 msgid "invalid branch name: '%s'"
 msgstr "分支名稱無效：“%s”"
 
 #: builtin/branch.c:597 builtin/branch.c:881 builtin/branch.c:926
-#, fuzzy, c-format
-#| msgid "No commit on branch '%s' yet."
+#, c-format
 msgid "no commit on branch '%s' yet"
-msgstr "分支 “%s” 尚無提交。"
+msgstr "分支 “%s” 尚無提交"
 
 #: builtin/branch.c:599 builtin/branch.c:882
-#, fuzzy, c-format
-#| msgid "No branch named '%s'."
+#, c-format
 msgid "no branch named '%s'"
-msgstr "沒有名為 “%s” 的分支。"
+msgstr "沒有名為 “%s” 的分支"
 
 #: builtin/branch.c:627
-#, fuzzy
-#| msgid "Branch rename failed"
 msgid "branch rename failed"
 msgstr "分支重新命名失敗"
 
 #: builtin/branch.c:629
-#, fuzzy
-#| msgid "Branch copy failed"
 msgid "branch copy failed"
 msgstr "分支拷貝失敗"
 
 #: builtin/branch.c:633
-#, fuzzy, c-format
-#| msgid "Created a copy of a misnamed branch '%s'"
+#, c-format
 msgid "created a copy of a misnamed branch '%s'"
 msgstr "已為誤命名的 “%s” 分支建立拷貝"
 
 #: builtin/branch.c:636
-#, fuzzy, c-format
-#| msgid "Renamed a misnamed branch '%s' away"
+#, c-format
 msgid "renamed a misnamed branch '%s' away"
 msgstr "已更改誤命名的 “%s” 分支的名稱"
 
 #: builtin/branch.c:643
-#, fuzzy, c-format
-#| msgid "Branch renamed to %s, but HEAD is not updated!"
+#, c-format
 msgid "branch renamed to %s, but HEAD is not updated"
-msgstr "分支已重新命名為 %s，但 HEAD 指針尚未更新！"
+msgstr "分支已重新命名為 %s，但 HEAD 指針尚未更新"
 
 #: builtin/branch.c:650
-#, fuzzy
-#| msgid "Branch is renamed, but update of config-file failed"
 msgid "branch is renamed, but update of config-file failed"
 msgstr "分支已重新命名，但無法更新組態檔案"
 
 #: builtin/branch.c:652
-#, fuzzy
-#| msgid "Branch is copied, but update of config-file failed"
 msgid "branch is copied, but update of config-file failed"
 msgstr "分支已拷貝，但無法更新組態檔案"
 
@@ -3747,10 +3704,8 @@ msgid "format to use for the output"
 msgstr "輸出格式"
 
 #: builtin/branch.c:776
-#, fuzzy
-#| msgid "Failed to resolve HEAD as a valid ref."
 msgid "failed to resolve HEAD as a valid ref"
-msgstr "無法將 HEAD 解析為有效引用。"
+msgstr "無法將 HEAD 解析為有效引用"
 
 #: builtin/branch.c:780 builtin/clone.c:717
 msgid "HEAD not found below refs/heads!"
@@ -3772,8 +3727,6 @@ msgid "branch name required"
 msgstr "必須提供分支名稱"
 
 #: builtin/branch.c:869
-#, fuzzy
-#| msgid "Cannot give description to detached HEAD"
 msgid "cannot give description to detached HEAD"
 msgstr "無法向分離 HEAD 指針提供描述"
 
@@ -3782,16 +3735,12 @@ msgid "cannot edit description of more than one branch"
 msgstr "無法編輯超過一個分支的描述"
 
 #: builtin/branch.c:895
-#, fuzzy
-#| msgid "cannot copy the current branch while not on any."
 msgid "cannot copy the current branch while not on any"
-msgstr "不在任何分支上，無法拷貝目前分支。"
+msgstr "不在任何分支上，無法拷貝目前分支"
 
 #: builtin/branch.c:896
-#, fuzzy
-#| msgid "cannot rename the current branch while not on any."
 msgid "cannot rename the current branch while not on any"
-msgstr "不在任何分支上，無法重新命名目前分支。"
+msgstr "不在任何分支上，無法重新命名目前分支"
 
 #: builtin/branch.c:902
 msgid "too many branches for a copy operation"
@@ -3806,12 +3755,10 @@ msgid "too many arguments to set new upstream"
 msgstr "要設定新上游的引數太多"
 
 #: builtin/branch.c:918
-#, fuzzy, c-format
-#| msgid ""
-#| "could not set upstream of HEAD to %s when it does not point to any branch."
+#, c-format
 msgid ""
 "could not set upstream of HEAD to %s when it does not point to any branch"
-msgstr "無法將 HEAD 的上游設為 %s：其未指向任何分支。"
+msgstr "無法將 HEAD 的上游設為 %s：其未指向任何分支"
 
 #: builtin/branch.c:921 builtin/branch.c:950
 #, c-format
@@ -3828,23 +3775,15 @@ msgid "too many arguments to unset upstream"
 msgstr "要取消設定上游的引數太多"
 
 #: builtin/branch.c:948
-#, fuzzy
-#| msgid ""
-#| "could not unset upstream of HEAD when it does not point to any branch."
 msgid "could not unset upstream of HEAD when it does not point to any branch"
-msgstr "無法取消設定 HEAD 的上游：其未指向任何分支。"
+msgstr "無法取消設定 HEAD 的上游：其未指向任何分支"
 
 #: builtin/branch.c:954
-#, fuzzy, c-format
-#| msgid "Branch '%s' has no upstream information"
+#, c-format
 msgid "branch '%s' has no upstream information"
 msgstr "分支 “%s” 沒有上游資訊"
 
 #: builtin/branch.c:968
-#, fuzzy
-#| msgid ""
-#| "The -a, and -r, options to 'git branch' do not take a branch name.\n"
-#| "Did you mean to use: -a|-r --list <pattern>?"
 msgid ""
 "the -a, and -r, options to 'git branch' do not take a branch name.\n"
 "Did you mean to use: -a|-r --list <pattern>?"
@@ -3853,15 +3792,10 @@ msgstr ""
 "您是想使用：-a|-r --list <pattern> 嗎？"
 
 #: builtin/branch.c:972
-#, fuzzy
-#| msgid ""
-#| "the '--set-upstream' option is no longer supported. Please use '--track' "
-#| "or '--set-upstream-to' instead."
 msgid ""
 "the '--set-upstream' option is no longer supported. Please use '--track' or "
 "'--set-upstream-to' instead"
-msgstr ""
-"不再支援選項 “--set-upstream”。請改用 “--track” 或 “--set-upstream-to”。"
+msgstr "不再支援選項 “--set-upstream”。請改用 “--track” 或 “--set-upstream-to”"
 
 #: builtin/bugreport.c:21
 msgid "git version:\n"
@@ -4481,10 +4415,9 @@ msgid "'%s' or '%s' cannot be used with %s"
 msgstr "“%s” 或 “%s” 無法與 %s 一起使用"
 
 #: builtin/checkout.c:532
-#, fuzzy, c-format
-#| msgid "'%s' or '%s' cannot be used with %s"
+#, c-format
 msgid "'%s', '%s', or '%s' cannot be used when checking out of a tree"
-msgstr "“%s” 或 “%s” 無法與 %s 一起使用"
+msgstr "“%s”、“%s” 或 “%s” 無法在簽出樹狀物件時使用"
 
 #: builtin/checkout.c:605 builtin/checkout.c:612
 #, c-format
@@ -5562,10 +5495,9 @@ msgid "Could not open commit-graph '%s'"
 msgstr "無法開啟提交圖形 '%s'"
 
 #: builtin/commit-graph.c:115
-#, fuzzy, c-format
-#| msgid "Could not open commit-graph '%s'"
+#, c-format
 msgid "could not open commit-graph chain '%s'"
-msgstr "無法開啟提交圖形 '%s'"
+msgstr "無法開啟提交圖鏈 “%s”"
 
 #: builtin/commit-graph.c:162
 #, c-format
@@ -6304,18 +6236,13 @@ msgid "Aborting commit due to empty commit message body.\n"
 msgstr "提交說明內文空白，中止提交作業。\n"
 
 #: builtin/commit.c:1864
-#, fuzzy
-#| msgid ""
-#| "repository has been updated, but unable to write\n"
-#| "new_index file. Check that disk is not full and quota is\n"
-#| "not exceeded, and then \"git restore --staged :/\" to recover."
 msgid ""
 "repository has been updated, but unable to write\n"
 "new index file. Check that disk is not full and quota is\n"
 "not exceeded, and then \"git restore --staged :/\" to recover."
 msgstr ""
-"版本庫已更新，但無法寫 new_index 檔案。檢查是否磁碟已滿或\n"
-"磁碟配額已耗盡，然後執行 \"git restore --staged :/\" 復原。"
+"版本庫已更新，但無法寫入新的索引檔案。請檢查磁碟是否\n"
+"已滿或磁碟配額已耗盡，然後執行 “git restore --staged :/” 復原。"
 
 #: builtin/config.c:19
 msgid "git config [<options>]"
@@ -8132,7 +8059,7 @@ msgstr "獨立封裝無引用物件"
 
 #: builtin/gc.c:594 builtin/repack.c:1150
 msgid "with --cruft, limit the size of new cruft packs"
-msgstr ""
+msgstr "搭配 --cruft，限制新廢棄封裝的大小"
 
 #: builtin/gc.c:595
 msgid "be more thorough (increased runtime)"
@@ -8398,10 +8325,8 @@ msgid "scheduler to trigger git maintenance run"
 msgstr "要觸發 git maintenance run 的排程器"
 
 #: builtin/gc.c:2749
-#, fuzzy
-#| msgid "Failed to update main cache tree"
 msgid "failed to set up maintenance schedule"
-msgstr "不能更新樹的主快取"
+msgstr "無法設定維護排程"
 
 #: builtin/gc.c:2752
 msgid "failed to add repo to global config"
@@ -8501,10 +8426,8 @@ msgid "search in subdirectories (default)"
 msgstr "在子目錄中尋找（預設值）"
 
 #: builtin/grep.c:928
-#, fuzzy
-#| msgid "descend at most <depth> levels"
 msgid "descend at most <n> levels"
-msgstr "最多以指定的深度向下尋找"
+msgstr "最多向下尋找 <n> 層"
 
 #: builtin/grep.c:931
 msgid "use extended POSIX regular expressions"
@@ -9201,18 +9124,13 @@ msgid "--separate-git-dir incompatible with bare repository"
 msgstr "--separate-git-dir 與純版本庫不相容"
 
 #: builtin/interpret-trailers.c:16
-#, fuzzy
-#| msgid ""
-#| "git interpret-trailers [--in-place] [--trim-empty]\n"
-#| "                       [(--trailer <token>[(=|:)<value>])...]\n"
-#| "                       [--parse] [<file>...]"
 msgid ""
 "git interpret-trailers [--in-place] [--trim-empty]\n"
 "                       [(--trailer (<key>|<keyAlias>)[(=|:)<value>])...]\n"
 "                       [--parse] [<file>...]"
 msgstr ""
 "git interpret-trailers [--in-place] [--trim-empty]\n"
-"                       [(--trailer <token>[(=|:)<value>])...]\n"
+"                       [(--trailer (<key>|<keyAlias>)[(=|:)<value>])...]\n"
 "                       [--parse] [<file>...]"
 
 #: builtin/interpret-trailers.c:100
@@ -9225,7 +9143,7 @@ msgstr "刪除空的尾部署名"
 
 #: builtin/interpret-trailers.c:103
 msgid "placement"
-msgstr ""
+msgstr "placement"
 
 #: builtin/interpret-trailers.c:104
 msgid "where to place the new trailer"
@@ -9244,24 +9162,21 @@ msgid "output only the trailers"
 msgstr "只輸出尾部署名"
 
 #: builtin/interpret-trailers.c:111
-#, fuzzy
-#| msgid "print all configuration variable names"
 msgid "do not apply trailer.* configuration variables"
-msgstr "列印所有設定變數名稱"
+msgstr "不套用 trailer.* 組態變數"
 
 #: builtin/interpret-trailers.c:112
+#, fuzzy
 msgid "reformat multiline trailer values as single-line values"
-msgstr ""
+msgstr "將多列尾值 (trailer values) 重新格式化為單列數值"
 
 #: builtin/interpret-trailers.c:113
 msgid "alias for --only-trailers --only-input --unfold"
-msgstr ""
+msgstr "--only-trailers --only-input --unfold 的別名"
 
 #: builtin/interpret-trailers.c:115
-#, fuzzy
-#| msgid "do not treat --- specially"
 msgid "do not treat \"---\" as the end of input"
-msgstr "不要對 --- 特殊處理"
+msgstr "不要把 “---” 當作輸入結尾"
 
 #: builtin/interpret-trailers.c:117
 msgid "trailer(s) to add"
@@ -9374,10 +9289,9 @@ msgid "not a range"
 msgstr "不是一個範圍"
 
 #: builtin/log.c:1261
-#, fuzzy, c-format
-#| msgid "unable to read config file '%s'"
+#, c-format
 msgid "unable to read branch description file '%s'"
-msgstr "無法讀取設定檔案 '%s'"
+msgstr "無法讀取分支描述檔 “%s”"
 
 #: builtin/log.c:1342
 msgid "cover letter needs email format"
@@ -9507,10 +9421,8 @@ msgid "generate parts of a cover letter based on a branch's description"
 msgstr "基於分支描述產生部分附函"
 
 #: builtin/log.c:1934
-#, fuzzy
-#| msgid "ignore revisions from <file>"
 msgid "use branch description from file"
-msgstr "忽略 <file> 中的修訂版"
+msgstr "從檔案讀取分支描述並使用"
 
 #: builtin/log.c:1936
 msgid "use [<prefix>] instead of [PATCH]"
@@ -10726,8 +10638,6 @@ msgid "can not move directory into itself"
 msgstr "不能將目錄移動到自身"
 
 #: builtin/mv.c:308
-#, fuzzy
-#| msgid "destination exists"
 msgid "destination already exists"
 msgstr "目的地已存在"
 
@@ -13769,20 +13679,17 @@ msgid "pack prefix to store a pack containing pruned objects"
 msgstr "封裝前綴，儲存為包含過時物件的套件包"
 
 #: builtin/repack.c:1192
-#, fuzzy
-#| msgid "pack prefix to store a pack containing pruned objects"
 msgid "pack prefix to store a pack containing filtered out objects"
-msgstr "封裝前綴，儲存為包含過時物件的套件包"
+msgstr "將前綴進行包裝，儲存為包含已過濾物件的封裝"
 
 #: builtin/repack.c:1204
 msgid "cannot delete packs in a precious-objects repo"
 msgstr "不能刪除珍品版本庫中的封包"
 
 #: builtin/repack.c:1342
-#, fuzzy, c-format
-#| msgid "'%s' cannot be used with '%s'"
+#, c-format
 msgid "option '%s' can only be used along with '%s'"
-msgstr "“%s” 不能與 “%s” 同時使用"
+msgstr "“%s” 選項只能與 “%s” 一起使用"
 
 #: builtin/repack.c:1372
 msgid "Nothing new to pack."
@@ -16339,10 +16246,8 @@ msgid "write index in this format"
 msgstr "以這種格式寫入索引區"
 
 #: builtin/update-index.c:1020
-#, fuzzy
-#| msgid "specify bundle format version"
 msgid "report on-disk index format version"
-msgstr "指定套件包的格式版本"
+msgstr "回報磁碟上索引格式的版本"
 
 #: builtin/update-index.c:1022
 msgid "enable or disable split index"
@@ -16379,12 +16284,12 @@ msgstr "清除 fsmonitor 有效位"
 #: builtin/update-index.c:1114
 #, c-format
 msgid "%d\n"
-msgstr ""
+msgstr "%d\n"
 
 #: builtin/update-index.c:1123
 #, c-format
 msgid "index-version: was %d, set to %d"
-msgstr ""
+msgstr "index-version：曾是 %d，已設為 %d"
 
 #: builtin/update-index.c:1159
 msgid ""
@@ -16700,10 +16605,6 @@ msgstr ""
 "HEAD 內容：“%s”"
 
 #: builtin/worktree.c:698
-#, fuzzy
-#| msgid ""
-#| "No local or remote refs exist despite at least one remote\n"
-#| "present, stopping; use 'add -f' to overide or fetch a remote first"
 msgid ""
 "No local or remote refs exist despite at least one remote\n"
 "present, stopping; use 'add -f' to override or fetch a remote first"
@@ -17103,7 +17004,7 @@ msgstr "終止區塊 id 出現的時間早於預期"
 #: chunk-format.c:125
 #, c-format
 msgid "chunk id %<PRIx32> not %d-byte aligned"
-msgstr ""
+msgstr "區塊 ID %<PRIx32> 沒有以 %d 位元組為單位對齊"
 
 #: chunk-format.c:135
 #, c-format
@@ -17174,10 +17075,8 @@ msgid "Move objects and refs by archive"
 msgstr "透過歸檔移動物件和引用"
 
 #: command-list.h:65
-#, fuzzy
-#| msgid "Provide content or type and size information for repository objects"
 msgid "Provide contents or details of repository objects"
-msgstr "提供版本庫物件的內容、類型或大小"
+msgstr "提供版本庫物件的內容或詳細資訊"
 
 #: command-list.h:66
 msgid "Display gitattributes information"
@@ -17718,8 +17617,6 @@ msgid "Display version information about Git"
 msgstr "顯示 Git 的版本資訊"
 
 #: command-list.h:200
-#, fuzzy
-#| msgid "Show logs with difference each commit introduces"
 msgid "Show logs with differences each commit introduces"
 msgstr "顯示每一個提交引入的差異日誌"
 
@@ -17900,10 +17797,8 @@ msgid "commit-graph has no base graphs chunk"
 msgstr "提交圖形沒有基礎圖形區塊"
 
 #: commit-graph.c:584
-#, fuzzy
-#| msgid "commit-graph has no base graphs chunk"
 msgid "commit-graph base graphs chunk is too small"
-msgstr "提交圖形沒有基礎圖形區塊"
+msgstr "提交圖形的基礎圖形區塊過小"
 
 #: commit-graph.c:594
 msgid "commit-graph chain does not match"
@@ -17940,7 +17835,7 @@ msgstr "提交圖需要比目前更多的世代資料，但沒有相關資料"
 #, fuzzy
 #| msgid "commit-graph requires overflow generation data but has none"
 msgid "commit-graph overflow generation data is too small"
-msgstr "提交圖需要比目前更多的世代資料，但沒有相關資料"
+msgstr "提交圖形的溢出世代資料過小"
 
 #: commit-graph.c:1526
 msgid "Loading known commits in commit graph"
@@ -18106,14 +18001,11 @@ msgid "commit date for commit %s in commit-graph is %<PRIuMAX> != %<PRIuMAX>"
 msgstr "提交圖形中提交 %s 的提交日期是 %<PRIuMAX> != %<PRIuMAX>"
 
 #: commit-graph.c:2825
-#, fuzzy, c-format
-#| msgid ""
-#| "commit-graph has non-zero generation number for commit %s, but zero "
-#| "elsewhere"
+#, c-format
 msgid ""
 "commit-graph has both zero and non-zero generations (e.g., commits '%s' and "
 "'%s')"
-msgstr "提交圖形中提交 %s 的世代號非零，但其它地方是零"
+msgstr "提交圖形中包含 0 和非 0 兩個世代號（例如 “%s” 和 “%s” 提交）"
 
 #: commit-graph.c:2849
 msgid "Verifying commits in commit graph"
@@ -20970,16 +20862,13 @@ msgstr ""
 "%s"
 
 #: merge-ort.c:2109 merge-recursive.c:1386
-#, fuzzy
-#| msgid "Failed to execute internal merge"
 msgid "failed to execute internal merge"
 msgstr "無法執行內部合併"
 
 #: merge-ort.c:2114 merge-recursive.c:1391
-#, fuzzy, c-format
-#| msgid "Unable to add %s to database"
+#, c-format
 msgid "unable to add %s to database"
-msgstr "不能新增 %s 至物件庫"
+msgstr "無法將 %s 加進資料庫"
 
 #: merge-ort.c:2121 merge-recursive.c:1424
 #, c-format
@@ -21479,16 +21368,12 @@ msgid "multi-pack-index OID fanout is of the wrong size"
 msgstr "多包索引的物件 ID fanout 大小錯誤"
 
 #: midx.c:85
-#, fuzzy
-#| msgid "multi-pack-index OID fanout is of the wrong size"
 msgid "multi-pack-index OID lookup chunk is the wrong size"
-msgstr "多包索引的物件 ID fanout 大小錯誤"
+msgstr "多包索引 OID 查詢區塊的大小有誤"
 
 #: midx.c:98
-#, fuzzy
-#| msgid "multi-pack-index OID fanout is of the wrong size"
 msgid "multi-pack-index object offset chunk is the wrong size"
-msgstr "多包索引的物件 ID fanout 大小錯誤"
+msgstr "多包索引的物件偏移區塊大小有誤"
 
 #: midx.c:131
 #, c-format
@@ -21511,34 +21396,24 @@ msgid "multi-pack-index hash version %u does not match version %u"
 msgstr "multi-pack-index 雜湊版本 %u 與版本 %u 不符合"
 
 #: midx.c:175
-#, fuzzy
-#| msgid "multi-pack-index missing required pack-name chunk"
 msgid "multi-pack-index required pack-name chunk missing or corrupted"
-msgstr "多包索引缺少必需的包名區塊"
+msgstr "多包索引所需的封裝名稱區塊不存在或損壞"
 
 #: midx.c:177
-#, fuzzy
-#| msgid "multi-pack-index missing required OID fanout chunk"
 msgid "multi-pack-index required OID fanout chunk missing or corrupted"
-msgstr "多包索引缺少必需的物件 ID fanout 區塊"
+msgstr "多包索引所需的 OID fanout 區塊不存在或損壞"
 
 #: midx.c:179
-#, fuzzy
-#| msgid "multi-pack-index missing required OID lookup chunk"
 msgid "multi-pack-index required OID lookup chunk missing or corrupted"
-msgstr "多包索引缺少必需的物件 ID 查詢區塊"
+msgstr "多包索引所需的 OID 查詢區塊不存在或損壞"
 
 #: midx.c:181
-#, fuzzy
-#| msgid "multi-pack-index missing required object offsets chunk"
 msgid "multi-pack-index required object offsets chunk missing or corrupted"
-msgstr "多包索引缺少必需的物件位移區塊"
+msgstr "多包索引所需的物件偏移區塊不存在或損壞"
 
 #: midx.c:203
-#, fuzzy
-#| msgid "multi-pack-index file %s is too small"
 msgid "multi-pack-index pack-name chunk is too short"
-msgstr "多包索引檔案 %s 太小"
+msgstr "多包索引的封裝名稱區塊過短"
 
 #: midx.c:207
 #, c-format
@@ -21555,10 +21430,8 @@ msgid "multi-pack-index stores a 64-bit offset, but off_t is too small"
 msgstr "多包索引儲存一個64位位移，但是 off_t 太小"
 
 #: midx.c:309
-#, fuzzy
-#| msgid "delta base offset is out of bound"
 msgid "multi-pack-index large offset out of bounds"
-msgstr "delta 基準位移越界"
+msgstr "多包索引的最大偏移超出邊界"
 
 #: midx.c:538
 #, c-format
@@ -22430,10 +22303,8 @@ msgid "invalid rev-index position at %<PRIu64>: %<PRIu32> != %<PRIu32>"
 msgstr "%<PRIu64> 位置的修訂版索引 (rev-index) 無效：%<PRIu32> != %<PRIu32>"
 
 #: pack-revindex.c:351
-#, fuzzy
-#| msgid "multi-pack-index OID fanout is of the wrong size"
 msgid "multi-pack-index reverse-index chunk is the wrong size"
-msgstr "多包索引的物件 ID fanout 大小錯誤"
+msgstr "多包索引的反向索引區塊大小有誤"
 
 #: pack-write.c:249
 msgid "cannot both write and verify reverse index"
@@ -22611,7 +22482,7 @@ msgstr "-數字"
 #: parse-options.c:1206
 #, c-format
 msgid "opposite of --no-%s"
-msgstr ""
+msgstr "--no-%s 的相反行為"
 
 #: parse-options.h:313
 msgid "expiry-date"
@@ -22651,10 +22522,9 @@ msgid ""
 msgstr "如使用 --pathspec-from-file，則 <路徑規格> 元件會使用 NUL 字元分隔"
 
 #: parse.c:167
-#, fuzzy, c-format
-#| msgid "bad boolean config value '%s' for '%s'"
+#, c-format
 msgid "bad boolean environment value '%s' for '%s'"
-msgstr "「%2$s」的「%1$s」布林設定值無效"
+msgstr "「%2$s」的「%1$s」布林環境值無效"
 
 #: parse.c:180
 #, c-format
@@ -22718,10 +22588,9 @@ msgid "%s: 'literal' and 'glob' are incompatible"
 msgstr "%s：'literal' 和 'glob' 不相容"
 
 #: pathspec.c:473
-#, fuzzy, c-format
-#| msgid "'%s' is outside repository at '%s'"
+#, c-format
 msgid "'%s' is outside the directory tree"
-msgstr "'%s' 在位於 '%s' 的版本庫之外"
+msgstr "“%s” 在目錄樹之外"
 
 #: pathspec.c:478
 #, c-format
@@ -24278,16 +24147,16 @@ msgid "only download metadata for the branch that will be checked out"
 msgstr "只下載會簽出的分支中介資料"
 
 #: scalar.c:422
-#, fuzzy
-#| msgid "Clone a repository into a new directory"
 msgid "create repository within 'src' directory"
-msgstr "複製版本庫至新目錄"
+msgstr "在 “src” 目錄建立版本庫"
 
 #: scalar.c:426
 msgid ""
 "scalar clone [--single-branch] [--branch <main-branch>] [--full-clone]\n"
 "\t[--[no-]src] <url> [<enlistment>]"
 msgstr ""
+"scalar clone [--single-branch] [--branch <main-branch>] [--full-clone]\n"
+"\t[--[no-]src] <url> [<enlistment>]"
 
 #: scalar.c:452
 #, c-format
@@ -24352,28 +24221,24 @@ msgid "could not remove stale scalar.repo '%s'"
 msgstr "無法移除過時的 scalar.repo “%s”"
 
 #: scalar.c:686
-#, fuzzy, c-format
-#| msgid "removing stale scalar.repo '%s'"
+#, c-format
 msgid "removed stale scalar.repo '%s'"
-msgstr "正在移除過時的 scalar.repo “%s”"
+msgstr "已移除過時的 scalar.repo “%s”"
 
 #: scalar.c:696
-#, fuzzy, c-format
-#| msgid "repository '%s' not found"
+#, c-format
 msgid "repository at '%s' has different owner"
-msgstr "版本庫 '%s' 未找到"
+msgstr "位於 “%s” 的版本庫有不同的擁有者"
 
 #: scalar.c:701
-#, fuzzy, c-format
-#| msgid "repository '%s' does not exist"
+#, c-format
 msgid "repository at '%s' has a format issue"
-msgstr "版本庫 '%s' 不存在"
+msgstr "位於 “%s” 的版本庫有格式問題"
 
 #: scalar.c:709
-#, fuzzy, c-format
-#| msgid "git repository gone in '%s'"
+#, c-format
 msgid "repository not found in '%s'"
-msgstr "git 版本庫在「%s」遺失"
+msgstr "版本庫不在 “%s”"
 
 #: scalar.c:725
 #, c-format
@@ -24381,6 +24246,8 @@ msgid ""
 "to unregister this repository from Scalar, run\n"
 "\tgit config --global --unset --fixed-value scalar.repo \"%s\""
 msgstr ""
+"如果要從 Scalar 解除這個版本庫的註冊，請執行\n"
+"\tgit config --global --unset --fixed-value scalar.repo \"%s\""
 
 #: scalar.c:757
 msgid ""
@@ -26852,10 +26719,8 @@ msgid "unable to get current working directory"
 msgstr "不能取得目前工作目錄"
 
 #: wrapper.c:822
-#, fuzzy
-#| msgid "unable to read %s"
 msgid "unable to get random bytes"
-msgstr "不能讀 %s"
+msgstr "無法取得隨機位元組"
 
 #: wt-status.c:172
 msgid "Unmerged paths:"

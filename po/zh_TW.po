@@ -27,18 +27,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2023-11-19 22:29+0800\n"
-"PO-Revision-Date: 2023-11-05 13:11+0000\n"
+"PO-Revision-Date: 2023-11-19 14:40+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.1.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -3875,10 +3875,9 @@ msgid "specify a strftime format suffix for the filename(s)"
 msgstr "指定用於檔名的 strftime 格式後綴"
 
 #: builtin/bugreport.c:130
-#, fuzzy, c-format
-#| msgid "unknown mirror argument: %s"
+#, c-format
 msgid "unknown argument `%s'"
-msgstr "未知的鏡像參數：%s"
+msgstr "未知引數 “%s”"
 
 #: builtin/bugreport.c:150 builtin/diagnose.c:53
 #, c-format
@@ -9169,7 +9168,7 @@ msgstr "不套用 trailer.* 組態變數"
 #: builtin/interpret-trailers.c:112
 #, fuzzy
 msgid "reformat multiline trailer values as single-line values"
-msgstr "將多列尾值 (trailer values) 重新格式化為單列數值"
+msgstr "將多列尾值 (trailer values) 重新格式化為單列值"
 
 #: builtin/interpret-trailers.c:113
 msgid "alias for --only-trailers --only-input --unfold"
@@ -9985,7 +9984,7 @@ msgstr "將結果傳送到標準輸出"
 
 #: builtin/merge-file.c:41
 msgid "use object IDs instead of filenames"
-msgstr ""
+msgstr "使用物件 ID 取代檔名"
 
 #: builtin/merge-file.c:42
 msgid "use a diff3 based merge"
@@ -10020,16 +10019,13 @@ msgid "set labels for file1/orig-file/file2"
 msgstr "為 檔案1/初始檔案/檔案2 設定標籤"
 
 #: builtin/merge-file.c:93
-#, fuzzy, c-format
-#| msgid "the object %s does not exist"
+#, c-format
 msgid "object '%s' does not exist"
-msgstr "%s 物件不存在"
+msgstr "物件 “%s” 不存在"
 
 #: builtin/merge-file.c:124
-#, fuzzy
-#| msgid "could not write to file '%s'"
 msgid "Could not write object file"
-msgstr "無法寫入 “%s” 檔案"
+msgstr "無法寫入物件檔案"
 
 #: builtin/merge-recursive.c:51
 #, c-format
@@ -14665,56 +14661,40 @@ msgid "Unknown hash algorithm"
 msgstr "未知的雜湊算法"
 
 #: builtin/show-ref.c:14
-#, fuzzy
-#| msgid ""
-#| "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
-#| "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
-#| "             [--heads] [--] [<pattern>...]"
 msgid ""
 "git show-ref [--head] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
 "             [--heads] [--] [<pattern>...]"
 msgstr ""
-"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
+"git show-ref [--head] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
 "             [--heads] [--] [<pattern>...]"
 
 #: builtin/show-ref.c:17
-#, fuzzy
-#| msgid ""
-#| "git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
-#| "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
-#| "             [--heads] [--] [<pattern>...]"
 msgid ""
 "git show-ref --verify [-q | --quiet] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]]\n"
 "             [--] [<ref>...]"
 msgstr ""
-"git show-ref [-q | --quiet] [--verify] [--head] [-d | --dereference]\n"
-"             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
-"             [--heads] [--] [<pattern>...]"
+"git show-ref --verify [-q | --quiet] [-d | --dereference]\n"
+"             [-s | --hash[=<n>]] [--abbrev[=<n>]]\n"
+"             [--] [<ref>...]"
 
 #: builtin/show-ref.c:20
 msgid "git show-ref --exclude-existing[=<pattern>]"
 msgstr "git show-ref --exclude-existing[=<模式>]"
 
 #: builtin/show-ref.c:21
-#, fuzzy
-#| msgid "git reflog exists <ref>"
 msgid "git show-ref --exists <ref>"
-msgstr "git reflog exists <引用>"
+msgstr "git show-ref --exists <ref>"
 
 #: builtin/show-ref.c:243
-#, fuzzy
-#| msgid "gitdir file does not exist"
 msgid "reference does not exist"
-msgstr "找不到 gitdir 檔案"
+msgstr "引用不存在"
 
 #: builtin/show-ref.c:247
-#, fuzzy
-#| msgid "failed to parse tree"
 msgid "failed to look up reference"
-msgstr "無法解析樹"
+msgstr "無法查詢引用"
 
 #: builtin/show-ref.c:290
 msgid "only show tags (can be combined with heads)"
@@ -14726,7 +14706,7 @@ msgstr "只顯示頭（可以和標籤共用）"
 
 #: builtin/show-ref.c:292
 msgid "check for reference existence without resolving"
-msgstr ""
+msgstr "檢查引用是否存在但不解析"
 
 #: builtin/show-ref.c:293
 msgid "stricter reference checking, requires exact ref path"
@@ -14753,10 +14733,9 @@ msgid "show refs from stdin that aren't in local repository"
 msgstr "顯示從標準輸入中讀入的不在本機版本庫中的引用"
 
 #: builtin/show-ref.c:319
-#, fuzzy, c-format
-#| msgid "options '%s', '%s', and '%s' cannot be used together"
+#, c-format
 msgid "only one of '%s', '%s' or '%s' can be given"
-msgstr "「%s」、「%s」和「%s」選項不得同時使用"
+msgstr "只能傳入 “%s”、“%s” 或 “%s”"
 
 #: builtin/sparse-checkout.c:27
 msgid ""
@@ -17897,8 +17876,6 @@ msgid "commit-graph requires overflow generation data but has none"
 msgstr "提交圖需要比目前更多的世代資料，但沒有相關資料"
 
 #: commit-graph.c:916
-#, fuzzy
-#| msgid "commit-graph requires overflow generation data but has none"
 msgid "commit-graph overflow generation data is too small"
 msgstr "提交圖形的溢出世代資料過小"
 
@@ -18102,10 +18079,9 @@ msgstr ""
 "可關閉本消息"
 
 #: commit.c:585
-#, fuzzy, c-format
-#| msgid "cannot create an empty blob in the object database"
+#, c-format
 msgid "commit %s exists in commit-graph but not in the object database"
-msgstr "不能在物件資料庫中建立空的資料物件"
+msgstr "%s 提交在提交圖形中，但不在物件資料庫中"
 
 #: commit.c:1347
 #, c-format

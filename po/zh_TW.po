@@ -19,7 +19,7 @@
 # - Yichao Yu <yyc1992 AT gmail.com>
 # - Zhuang Ya <zhuangya AT me.com>
 #
-# Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022, 2023.
+# Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022, 2023, 2024.
 # Kaiyang Wu <self@origincode.me>, 2022.
 # lumynou5 <lumynou5.tw@gmail.com>, 2023.
 msgid ""
@@ -27,18 +27,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-02-14 11:31+0800\n"
-"PO-Revision-Date: 2023-11-19 23:34+0800\n"
+"PO-Revision-Date: 2024-02-14 04:46+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-Generator: Weblate 5.1.1\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -1773,10 +1773,9 @@ msgid "Unexpected option --output"
 msgstr "非預期選項 --output"
 
 #: archive.c:689
-#, fuzzy, c-format
-#| msgid "bogus config parameter: %s"
+#, c-format
 msgid "extra command line parameter '%s'"
-msgstr "偽設定參數：%s"
+msgstr "多出命令列參數 “%s”"
 
 #: archive.c:706
 #, c-format
@@ -3437,20 +3436,14 @@ msgid "couldn't look up commit object for '%s'"
 msgstr "無法查詢 “%s” 指向的提交物件"
 
 #: builtin/branch.c:194
-#, fuzzy, c-format
-#| msgid "branch '%s' not found"
+#, c-format
 msgid "the branch '%s' is not fully merged"
-msgstr "找不到 “%s” 分支"
+msgstr "分支 “%s” 沒有完全合併"
 
 #: builtin/branch.c:196
-#, fuzzy, c-format
-#| msgid ""
-#| "the branch '%s' is not fully merged.\n"
-#| "If you are sure you want to delete it, run 'git branch -D %s'"
+#, c-format
 msgid "If you are sure you want to delete it, run 'git branch -D %s'"
-msgstr ""
-"分支 “%s” 沒有完全合併。\n"
-"如果確定要刪除它，請執行 “git branch -D %s”"
+msgstr "如果確定要刪除它，請執行 “git branch -D %s”"
 
 #: builtin/branch.c:208
 msgid "update of config-file failed"
@@ -4729,10 +4722,8 @@ msgid "new-branch"
 msgstr "new-branch"
 
 #: builtin/checkout.c:1650
-#, fuzzy
-#| msgid "new unparented branch"
 msgid "new unborn branch"
-msgstr "新的，沒有父提交的分支"
+msgstr "新的未誕生分支"
 
 #: builtin/checkout.c:1652 builtin/merge.c:288
 msgid "update ignored files (default)"
@@ -5171,10 +5162,8 @@ msgid "separate git dir from working tree"
 msgstr "git 目錄和工作區分離"
 
 #: builtin/clone.c:161 builtin/init-db.c:103
-#, fuzzy
-#| msgid "use the 'reference' format to refer to commits"
 msgid "specify the reference format to use"
-msgstr "請使用 “reference” 格式參考提交"
+msgstr "指定要使用的引用格式"
 
 #: builtin/clone.c:162
 msgid "key=value"
@@ -5327,10 +5316,9 @@ msgid "You must specify a repository to clone."
 msgstr "您必須指定要複製的版本庫。"
 
 #: builtin/clone.c:966 builtin/init-db.c:170 setup.c:2163
-#, fuzzy, c-format
-#| msgid "Unknown archive format '%s'"
+#, c-format
 msgid "unknown ref storage format '%s'"
-msgstr "封存格式 “%s” 未知"
+msgstr "未知的引用儲存格式 “%s”"
 
 #: builtin/clone.c:993
 #, c-format
@@ -5486,14 +5474,6 @@ msgstr ""
 "git commit-graph verify [--object-dir <目錄>] [--shallow] [--[no-]progress]"
 
 #: builtin/commit-graph.c:21
-#, fuzzy
-#| msgid ""
-#| "git commit-graph write [--object-dir <dir>] [--append]\n"
-#| "                       [--split[=<strategy>]] [--reachable | --stdin-"
-#| "packs | --stdin-commits]\n"
-#| "                       [--changed-paths] [--[no-]max-new-filters <n>] [--"
-#| "[no-]progress]\n"
-#| "                       <split options>"
 msgid ""
 "git commit-graph write [--object-dir <dir>] [--append]\n"
 "                       [--split[=<strategy>]] [--reachable | --stdin-packs | "
@@ -5505,9 +5485,9 @@ msgstr ""
 "git commit-graph write [--object-dir <dir>] [--append]\n"
 "                       [--split[=<strategy>]] [--reachable | --stdin-packs | "
 "--stdin-commits]\n"
-"                       [--changed-paths] [--[no-]max-new-filters <n>] [--"
-"[no-]progress]\n"
-"                       <split options>"
+"                       [--changed-paths] [--[no-]max-new-filters <n>] "
+"[--[no-]progress]\n"
+"                       <split-options>"
 
 #: builtin/commit-graph.c:56 builtin/fetch.c:2206 builtin/log.c:1941
 #: builtin/repack.c:1188 builtin/repack.c:1190
@@ -9099,12 +9079,6 @@ msgid "fsck error in pack objects"
 msgstr "在打包物件中 fsck 檢查發生錯誤"
 
 #: builtin/init-db.c:59
-#, fuzzy
-#| msgid ""
-#| "git init [-q | --quiet] [--bare] [--template=<template-directory>]\n"
-#| "         [--separate-git-dir <git-dir>] [--object-format=<format>]\n"
-#| "         [-b <branch-name> | --initial-branch=<branch-name>]\n"
-#| "         [--shared[=<permissions>]] [<directory>]"
 msgid ""
 "git init [-q | --quiet] [--bare] [--template=<template-directory>]\n"
 "         [--separate-git-dir <git-dir>] [--object-format=<format>]\n"
@@ -9114,6 +9088,7 @@ msgid ""
 msgstr ""
 "git init [-q | --quiet] [--bare] [--template=<template-directory>]\n"
 "         [--separate-git-dir <git-dir>] [--object-format=<format>]\n"
+"         [--ref-format=<format>]\n"
 "         [-b <branch-name> | --initial-branch=<branch-name>]\n"
 "         [--shared[=<permissions>]] [<directory>]"
 
@@ -11334,10 +11309,9 @@ msgid "inconsistency with delta count"
 msgstr "不一致的差異計數"
 
 #: builtin/pack-objects.c:3255
-#, fuzzy, c-format
-#| msgid "invalid color value: %.*s"
+#, c-format
 msgid "invalid pack.allowPackReuse value: '%s'"
-msgstr "無效的顏色值：%.*s"
+msgstr "無效的 pack.allowPackReuse 值：“%s”"
 
 #: builtin/pack-objects.c:3305
 #, c-format
@@ -11661,16 +11635,13 @@ msgid "Enumerating objects"
 msgstr "枚舉物件"
 
 #: builtin/pack-objects.c:4609
-#, fuzzy, c-format
-#| msgid ""
-#| "Total %<PRIu32> (delta %<PRIu32>), reused %<PRIu32> (delta %<PRIu32>), "
-#| "pack-reused %<PRIu32>"
+#, c-format
 msgid ""
 "Total %<PRIu32> (delta %<PRIu32>), reused %<PRIu32> (delta %<PRIu32>), pack-"
 "reused %<PRIu32> (from %<PRIuMAX>)"
 msgstr ""
 "總共 %<PRIu32> (差異 %<PRIu32>)，復用 %<PRIu32> (差異 %<PRIu32>)，重用包 "
-"%<PRIu32>"
+"%<PRIu32> (總共 %<PRIuMAX>)"
 
 #: builtin/pack-redundant.c:603
 msgid ""
@@ -14014,65 +13985,66 @@ msgid "only one pattern can be given with -l"
 msgstr "只能為 -l 提供一個模式"
 
 #: builtin/replay.c:159
-#, fuzzy
-#| msgid "need two commit ranges"
 msgid "need some commits to replay"
-msgstr "需要兩個提交範圍"
+msgstr "需要一些提交才能重放"
 
 #: builtin/replay.c:161
 msgid "--onto and --advance are incompatible"
-msgstr ""
+msgstr "--onto 和 --advance 不相容"
 
 #: builtin/replay.c:166 builtin/replay.c:199
+#, fuzzy
 msgid "all positive revisions given must be references"
-msgstr ""
+msgstr "給定的所有正向修訂集必須為引用"
 
 #: builtin/replay.c:176
 msgid "argument to --advance must be a reference"
-msgstr ""
+msgstr "傳入 --advance 的引數必須為引用"
 
 #: builtin/replay.c:179
 msgid ""
 "cannot advance target with multiple sources because ordering would be ill-"
 "defined"
-msgstr ""
+msgstr "無法用多個來源演進目的地，以免無法確定排序"
 
 #: builtin/replay.c:193 builtin/replay.c:201
 msgid ""
 "cannot implicitly determine whether this is an --advance or --onto operation"
-msgstr ""
+msgstr "無法假設這是 --advance 還是 --onto 動作"
 
 #: builtin/replay.c:203
 msgid ""
 "cannot advance target with multiple source branches because ordering would "
 "be ill-defined"
-msgstr ""
+msgstr "無法由多個來源分支演進目的地，以免無法確定排序"
 
 #: builtin/replay.c:212
 msgid "cannot implicitly determine correct base for --onto"
-msgstr ""
+msgstr "無法假設 --onto 的正確基底"
 
 #: builtin/replay.c:286
 msgid ""
 "(EXPERIMENTAL!) git replay ([--contained] --onto <newbase> | --advance "
 "<branch>) <revision-range>..."
 msgstr ""
+"（實驗性功能！）git replay ([--contained] --onto <newbase> | --advance "
+"<branch>) <revision-range>..."
 
 #: builtin/replay.c:294
 msgid "make replay advance given branch"
-msgstr ""
+msgstr "在指定分支上進行重放演進"
 
 #: builtin/replay.c:297
 msgid "replay onto given commit"
-msgstr ""
+msgstr "重放到指定提交"
 
 #: builtin/replay.c:299
 msgid "advance all branches contained in revision-range"
-msgstr ""
+msgstr "演進所有包含在 revision-range 中的分支"
 
 #: builtin/replay.c:307
 msgid "option --onto or --advance is mandatory"
-msgstr ""
+msgstr "必須傳入 --onto 或 --advance 選項"
 
 #: builtin/replay.c:342 builtin/replay.c:348 builtin/replay.c:354
 #: builtin/replay.c:360
@@ -14080,23 +14052,19 @@ msgstr ""
 msgid ""
 "some rev walking options will be overridden as '%s' bit in 'struct rev_info' "
 "will be forced"
-msgstr ""
+msgstr "將覆寫部分修訂版遍歷選項，強制使用 “struct rev_info” 的 “%s” 位元"
 
 #: builtin/replay.c:373
 msgid "error preparing revisions"
-msgstr "準備修訂版本時發生錯誤"
+msgstr "無法準備修訂集"
 
 #: builtin/replay.c:388
-#, fuzzy
-#| msgid "writing to stdin is not supported"
 msgid "replaying down to root commit is not supported yet!"
-msgstr "不支援寫到標準輸入"
+msgstr "尚不支援重放到根提交！"
 
 #: builtin/replay.c:390
-#, fuzzy
-#| msgid "editing blobs is not supported"
 msgid "replaying merge commits is not supported yet!"
-msgstr "不支援編輯資料物件"
+msgstr "尚不支援重放合併提交！"
 
 #: builtin/rerere.c:13
 msgid ""
@@ -16640,13 +16608,7 @@ msgid "No possible source branch, inferring '--orphan'"
 msgstr "沒有可能的來源分支，推測為 “--orphan”"
 
 #: builtin/worktree.c:52
-#, fuzzy, c-format
-#| msgid ""
-#| "If you meant to create a worktree containing a new orphan branch\n"
-#| "(branch with no commits) for this repository, you can do so\n"
-#| "using the --orphan flag:\n"
-#| "\n"
-#| "    git worktree add --orphan -b %s %s\n"
+#, c-format
 msgid ""
 "If you meant to create a worktree containing a new unborn branch\n"
 "(branch with no commits) for this repository, you can do so\n"
@@ -16655,19 +16617,13 @@ msgid ""
 "    git worktree add --orphan -b %s %s\n"
 msgstr ""
 "如果您是想要在這個版本庫建立一個工作區，裡面包含一個\n"
-"孤立分支（即沒有提交的分支），可以使用 --orphan 達到\n"
+"未誕生分支（即沒有提交的分支），可以使用 --orphan 達到\n"
 "這個效果：\n"
 "\n"
 "    git worktree add --orphan -b %s %s\n"
 
 #: builtin/worktree.c:59
-#, fuzzy, c-format
-#| msgid ""
-#| "If you meant to create a worktree containing a new orphan branch\n"
-#| "(branch with no commits) for this repository, you can do so\n"
-#| "using the --orphan flag:\n"
-#| "\n"
-#| "    git worktree add --orphan %s\n"
+#, c-format
 msgid ""
 "If you meant to create a worktree containing a new unborn branch\n"
 "(branch with no commits) for this repository, you can do so\n"
@@ -16676,7 +16632,7 @@ msgid ""
 "    git worktree add --orphan %s\n"
 msgstr ""
 "如果您是想要在這個版本庫建立一個工作區，裡面包含一個\n"
-"孤立分支（即沒有提交的分支），可以使用 --orphan 達到\n"
+"未誕生分支（即沒有提交的分支），可以使用 --orphan 達到\n"
 "這個效果：\n"
 "\n"
 "    git worktree add --orphan %s\n"
@@ -16747,10 +16703,9 @@ msgid "initializing"
 msgstr "正在初始化"
 
 #: builtin/worktree.c:507
-#, fuzzy, c-format
-#| msgid "could not create work tree dir '%s'"
+#, c-format
 msgid "could not find created worktree '%s'"
-msgstr "不能建立工作區目錄 '%s'"
+msgstr "找不到建立的工作區「%s」"
 
 #: builtin/worktree.c:598 builtin/worktree.c:604
 #, c-format
@@ -16809,10 +16764,8 @@ msgid "create or reset a branch"
 msgstr "建立或重設一個分支"
 
 #: builtin/worktree.c:784
-#, fuzzy
-#| msgid "create unborn/orphaned branch"
 msgid "create unborn branch"
-msgstr "建立尚無內容（孤立）的分支"
+msgstr "建立未誕生分支"
 
 #: builtin/worktree.c:786
 msgid "populate the new working tree"
@@ -16840,10 +16793,9 @@ msgid "options '%s', '%s', and '%s' cannot be used together"
 msgstr "「%s」、「%s」和「%s」選項不得同時使用"
 
 #: builtin/worktree.c:815
-#, fuzzy, c-format
-#| msgid "option '%s' and commit-ishes cannot be used together"
+#, c-format
 msgid "option '%s' and commit-ish cannot be used together"
-msgstr "「%s」選項和提交號不得同時使用"
+msgstr "“%s” 選項和提交號不得同時使用"
 
 #: builtin/worktree.c:822
 msgid "added with --lock"
@@ -17634,7 +17586,7 @@ msgstr "建立、列出、刪除物件取代引用"
 
 #: command-list.h:160
 msgid "EXPERIMENTAL: Replay commits on a new base, works with bare repos too"
-msgstr ""
+msgstr "實驗性功能：在新的基底重放提交，亦支援裸版本庫"
 
 #: command-list.h:161
 msgid "Generates a summary of pending changes"
@@ -17954,47 +17906,35 @@ msgid "commit-graph file is too small"
 msgstr "提交圖形檔案太小"
 
 #: commit-graph.c:284
-#, fuzzy
-#| msgid "commit-graph base graphs chunk is too small"
 msgid "commit-graph oid fanout chunk is wrong size"
-msgstr "提交圖形的基礎圖形區塊過小"
+msgstr "提交圖形 OID 扇出區塊大小有誤"
 
 #: commit-graph.c:293
-#, fuzzy
-#| msgid "commit-graph has incorrect fanout value: fanout[%d] = %u != %u"
 msgid "commit-graph fanout values out of order"
-msgstr "提交圖形有不正確的扇出值：fanout[%d] = %u != %u"
+msgstr "提交圖形扇出的數值失序"
 
 #: commit-graph.c:307
-#, fuzzy
-#| msgid "multi-pack-index OID lookup chunk is the wrong size"
 msgid "commit-graph OID lookup chunk is the wrong size"
-msgstr "多包索引 OID 查詢區塊的大小有誤"
+msgstr "提交圖形 OID 查詢區塊的大小有誤"
 
 #: commit-graph.c:316
-#, fuzzy
-#| msgid "commit-graph base graphs chunk is too small"
 msgid "commit-graph commit data chunk is wrong size"
-msgstr "提交圖形的基礎圖形區塊過小"
+msgstr "提交圖形的提交資料區塊大小有誤"
 
 #: commit-graph.c:326
-#, fuzzy
-#| msgid "commit-graph base graphs chunk is too small"
 msgid "commit-graph generations chunk is wrong size"
-msgstr "提交圖形的基礎圖形區塊過小"
+msgstr "提交圖形的世代區塊大小有誤"
 
 #: commit-graph.c:336
-#, fuzzy
-#| msgid "commit-graph base graphs chunk is too small"
 msgid "commit-graph changed-path index chunk is too small"
-msgstr "提交圖形的基礎圖形區塊過小"
+msgstr "提交圖形的更動路徑索引區塊過小"
 
 #: commit-graph.c:350
 #, c-format
 msgid ""
 "ignoring too-small changed-path chunk (%<PRIuMAX> < %<PRIuMAX>) in commit-"
 "graph file"
-msgstr ""
+msgstr "忽略提交圖形檔案中過小的更動路徑區塊 (%<PRIuMAX> < %<PRIuMAX>)"
 
 #: commit-graph.c:392
 #, c-format
@@ -18014,25 +17954,19 @@ msgstr "提交圖形雜湊版本 %X 和版本 %X 不符合"
 #: commit-graph.c:421
 #, c-format
 msgid "commit-graph file is too small to hold %u chunks"
-msgstr "commit-graph 檔案不夠放置 %u 個區塊"
+msgstr "提交圖形檔案不夠放置 %u 個區塊"
 
 #: commit-graph.c:434
-#, fuzzy
-#| msgid "multi-pack-index required OID fanout chunk missing or corrupted"
 msgid "commit-graph required OID fanout chunk missing or corrupted"
-msgstr "多包索引所需的 OID fanout 區塊不存在或損壞"
+msgstr "提交圖形需要的 OID 扇出區塊遺失或損壞"
 
 #: commit-graph.c:438
-#, fuzzy
-#| msgid "multi-pack-index required OID lookup chunk missing or corrupted"
 msgid "commit-graph required OID lookup chunk missing or corrupted"
-msgstr "多包索引所需的 OID 查詢區塊不存在或損壞"
+msgstr "提交圖形需要的 OID 查詢區塊遺失或損壞"
 
 #: commit-graph.c:442
-#, fuzzy
-#| msgid "multi-pack-index required OID fanout chunk missing or corrupted"
 msgid "commit-graph required commit data chunk missing or corrupted"
-msgstr "多包索引所需的 OID fanout 區塊不存在或損壞"
+msgstr "提交圖形需要的提交資料區塊遺失或損壞"
 
 #: commit-graph.c:554
 msgid "commit-graph has no base graphs chunk"
@@ -18052,15 +17986,13 @@ msgid "commit count in base graph too high: %<PRIuMAX>"
 msgstr "基礎圖 (base graph) 中的提交數過多：%<PRIuMAX>"
 
 #: commit-graph.c:607
-#, fuzzy
-#| msgid "commit-graph file is too small"
 msgid "commit-graph chain file too small"
-msgstr "提交圖形檔案太小"
+msgstr "提交圖形鏈檔案過小"
 
 #: commit-graph.c:637
 #, c-format
 msgid "invalid commit-graph chain: line '%s' not a hash"
-msgstr "無效的提交圖形鏈：行 '%s' 不是一個雜湊值"
+msgstr "無效的提交圖形鏈：「%s」列不是雜湊值"
 
 #: commit-graph.c:663
 msgid "unable to find all commit-graph files"
@@ -18085,7 +18017,7 @@ msgstr "提交圖形的溢出世代資料過小"
 
 #: commit-graph.c:951
 msgid "commit-graph extra-edges pointer out of bounds"
-msgstr ""
+msgstr "提交圖形的延伸邊界指針超出範圍"
 
 #: commit-graph.c:1508
 msgid "Loading known commits in commit graph"
@@ -21677,16 +21609,13 @@ msgid "bad pack-int-id: %u (%u total packs)"
 msgstr "錯的 pack-int-id：%u（共有 %u 個包）"
 
 #: midx.c:301
-#, fuzzy
-#| msgid "key does not contain a section: %s"
 msgid "MIDX does not contain the BTMP chunk"
-msgstr "鍵名沒有包含一個小節名稱：%s"
+msgstr "MIDX 未包含 BTMP 區塊"
 
 #: midx.c:304
-#, fuzzy, c-format
-#| msgid "could not open pack %s"
+#, c-format
 msgid "could not load bitmapped pack %<PRIu32>"
-msgstr "無法開啟封包 %s"
+msgstr "無法載入位圖化 (bitmapped) 的封裝 %<PRIu32>"
 
 #: midx.c:344
 msgid "multi-pack-index stores a 64-bit offset, but off_t is too small"
@@ -22426,10 +22355,8 @@ msgid "could not open pack %s"
 msgstr "無法開啟封包 %s"
 
 #: pack-bitmap.c:390 t/helper/test-read-midx.c:92
-#, fuzzy
-#| msgid "could not determine HEAD revision"
 msgid "could not determine MIDX preferred pack"
-msgstr "不能確定 HEAD 版本"
+msgstr "無法確定 MIDX 偏好的封裝"
 
 #: pack-bitmap.c:396
 #, c-format
@@ -22457,7 +22384,7 @@ msgstr "ewah 位圖損壞：提交 “%s” 之位圖的標頭遭截斷"
 #: pack-bitmap.c:2056
 #, c-format
 msgid "unable to load pack: '%s', disabling pack-reuse"
-msgstr ""
+msgstr "無法載入「%s」封裝，停用 pack-reuse"
 
 #: pack-bitmap.c:2232
 #, c-format
@@ -22575,10 +22502,8 @@ msgid "multi-pack-index reverse-index chunk is the wrong size"
 msgstr "多包索引的反向索引區塊大小有誤"
 
 #: pack-revindex.c:539
-#, fuzzy
-#| msgid "could not delete references: %s"
 msgid "could not determine preferred pack"
-msgstr "無法刪除引用：%s"
+msgstr "無法確定偏好封裝"
 
 #: pack-write.c:248
 msgid "cannot both write and verify reverse index"
@@ -25377,7 +25302,7 @@ msgstr "已有自動貯存；建立新貯存項目。"
 
 #: sequencer.c:4624
 msgid "autostash reference is a symref"
-msgstr ""
+msgstr "autostash 引用是符號引用"
 
 #: sequencer.c:4661
 msgid "could not detach HEAD"
@@ -25771,11 +25696,9 @@ msgid "attempt to reinitialize repository with different hash"
 msgstr "嘗試以不同的雜湊值重新初始化版本庫"
 
 #: setup.c:2157
-#, fuzzy
-#| msgid "attempt to reinitialize repository with different hash"
 msgid ""
 "attempt to reinitialize repository with different reference storage format"
-msgstr "嘗試以不同的雜湊值重新初始化版本庫"
+msgstr "嘗試以不同的引用儲存格式重新初始化版本庫"
 
 #: setup.c:2184 setup.c:2187
 #, c-format
@@ -27545,10 +27468,9 @@ msgid "cannot %s: Your index contains uncommitted changes."
 msgstr "不能%s：您的索引中包含未提交的變更。"
 
 #: xdiff-interface.c:327
-#, fuzzy, c-format
-#| msgid "unknown value '%s' for key '%s'"
+#, c-format
 msgid "unknown style '%s' given for '%s'"
-msgstr "鍵 '%2$s' 的未知取值 '%1$s'"
+msgstr "給予「%2$s」的「%1$s」樣式未知"
 
 #: git-merge-octopus.sh:46 git-merge-resolve.sh:13
 msgid ""

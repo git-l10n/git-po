@@ -152,8 +152,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2024-02-12 20:22+0800\n"
-"PO-Revision-Date: 2024-02-13 23:32+0800\n"
+"POT-Creation-Date: 2024-02-16 14:27+0800\n"
+"PO-Revision-Date: 2024-02-16 14:32+0800\n"
 "Last-Translator: Teng Long <dyroneteng@gmail.com>\n"
 "Language-Team: GitHub <https://github.com/dyrone/git/>\n"
 "Language: zh_CN\n"
@@ -1926,6 +1926,12 @@ msgstr "错误的 --attr-source 或 GIT_ATTR_SOURCE"
 #, c-format
 msgid "unable to stat '%s'"
 msgstr "无法对 %s 执行 stat"
+
+#: bisect.c builtin/cat-file.c builtin/index-pack.c builtin/notes.c
+#: builtin/pack-objects.c combine-diff.c rerere.c
+#, c-format
+msgid "unable to read %s"
+msgstr "不能读 %s"
 
 #: bisect.c
 #, c-format
@@ -5519,8 +5525,10 @@ msgid ""
 "                       <split-options>"
 msgstr ""
 "git commit-graph write [--object-dir <目录>] [--append]\n"
-"                       [--split[=<策略>]] [--reachable | --stdin-packs | --stdin-commits] \n"
-"                       [--changed-paths] [--[no-]max-new-filters <n>] [--[no-]progress]\n"
+"                       [--split[=<策略>]] [--reachable | --stdin-packs | --"
+"stdin-commits] \n"
+"                       [--changed-paths] [--[no-]max-new-filters <n>] [--"
+"[no-]progress]\n"
 "                       <切分选项>"
 
 #: builtin/commit-graph.c builtin/fetch.c builtin/log.c builtin/repack.c
@@ -8393,6 +8401,11 @@ msgstr "无法读取树（%s）"
 
 #: builtin/grep.c
 #, c-format
+msgid "unable to read tree %s"
+msgstr "无法读取树 %s"
+
+#: builtin/grep.c
+#, c-format
 msgid "unable to grep from object of type %s"
 msgstr "无法抓取来自于 %s 类型的对象"
 
@@ -8913,11 +8926,6 @@ msgstr "解压缩严重的不一致"
 #, c-format
 msgid "SHA1 COLLISION FOUND WITH %s !"
 msgstr "发现 %s 出现 SHA1 冲突！"
-
-#: builtin/index-pack.c builtin/pack-objects.c
-#, c-format
-msgid "unable to read %s"
-msgstr "不能读 %s"
 
 #: builtin/index-pack.c
 #, c-format
@@ -10322,7 +10330,7 @@ msgstr "'%s' 没有指向一个提交"
 msgid "Bad branch.%s.mergeoptions string: %s"
 msgstr "坏的 branch.%s.mergeoptions 字符串：%s"
 
-#: builtin/merge.c builtin/stash.c merge-recursive.c
+#: builtin/merge.c merge-recursive.c
 msgid "Unable to write index."
 msgstr "不能写入索引。"
 
@@ -11646,7 +11654,9 @@ msgstr "枚举对象中"
 msgid ""
 "Total %<PRIu32> (delta %<PRIu32>), reused %<PRIu32> (delta %<PRIu32>), pack-"
 "reused %<PRIu32> (from %<PRIuMAX>)"
-msgstr "总共 %<PRIu32>（差异 %<PRIu32>），复用 %<PRIu32>（差异 %<PRIu32>），包复用 %<PRIu32>（来自  %<PRIuMAX> 个包）"
+msgstr ""
+"总共 %<PRIu32>（差异 %<PRIu32>），复用 %<PRIu32>（差异 %<PRIu32>），包复用 "
+"%<PRIu32>（来自  %<PRIuMAX> 个包）"
 
 #: builtin/pack-redundant.c
 msgid ""
@@ -14020,7 +14030,9 @@ msgstr "不能隐式地确定 --onto 正确的基线"
 msgid ""
 "(EXPERIMENTAL!) git replay ([--contained] --onto <newbase> | --advance "
 "<branch>) <revision-range>..."
-msgstr "（还处于试验中的特性！）git replay ([--contained] --onto <新基线> | --advance <分支>) <版本范围>..."
+msgstr ""
+"（还处于试验中的特性！）git replay ([--contained] --onto <新基线> | --"
+"advance <分支>) <版本范围>..."
 
 #: builtin/replay.c
 msgid "make replay advance given branch"
@@ -19545,8 +19557,8 @@ msgid "output only the last line of --stat"
 msgstr "只输出 --stat 的最后一行"
 
 #: diff.c
-msgid "<param1,param2>..."
-msgstr "<参数1,参数2>..."
+msgid "<param1>,<param2>..."
+msgstr "<参数1>,<参数2>..."
 
 #: diff.c
 msgid ""
@@ -19558,8 +19570,8 @@ msgid "synonym for --dirstat=cumulative"
 msgstr "和 --dirstat=cumulative 同义"
 
 #: diff.c
-msgid "synonym for --dirstat=files,param1,param2..."
-msgstr "是 --dirstat=files,param1,param2... 的同义词"
+msgid "synonym for --dirstat=files,<param1>,<param2>..."
+msgstr "是 --dirstat=files,<参数1>,<参数2>... 的同义词"
 
 #: diff.c
 msgid "warn if changes introduce conflict markers or whitespace errors"

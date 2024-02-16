@@ -1,6 +1,6 @@
 name: git-l10n
 
-on: [push, pull_request_target]
+on: [push, pull_request]
 
 # Avoid unnecessary builds. Unlike the main CI jobs, these are not
 # ci-configurable (but could be).
@@ -21,7 +21,7 @@ jobs:
       - name: Setup base and head objects
         id: setup-tips
         run: |
-          if test "${{ github.event_name }}" = "pull_request_target"
+          if test "${{ github.event_name }}" = "pull_request"
           then
             base=${{ github.event.pull_request.base.sha }}
             head=${{ github.event.pull_request.head.sha }}
@@ -95,7 +95,7 @@ jobs:
         uses: mshick/add-pr-comment@v2
         if: >-
           always() &&
-          github.event_name == 'pull_request_target' &&
+          github.event_name == 'pull_request' &&
           env.COMMENT_BODY != ''
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}

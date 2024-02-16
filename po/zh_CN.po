@@ -8173,7 +8173,7 @@ msgstr "'git multi-pack-index repack' 失败"
 #: builtin/gc.c
 msgid ""
 "skipping incremental-repack task because core.multiPackIndex is disabled"
-msgstr "跳过增量重新打包任务，因为 core.multiPackIndex 被禁用"
+msgstr "跳过增量重新打包任务，因为 core.index 被禁用"
 
 #: builtin/gc.c
 #, c-format

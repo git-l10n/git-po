@@ -27,18 +27,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-04-20 11:01+0800\n"
-"PO-Revision-Date: 2024-02-18 20:50+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"PO-Revision-Date: 2024-04-21 14:39+0000\n"
+"Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-Generator: Weblate 5.1.1\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -2117,7 +2117,7 @@ msgstr "“%s” 不是有效的分支名稱"
 
 #: branch.c:376 builtin/branch.c:588
 msgid "See `man git check-ref-format`"
-msgstr ""
+msgstr "參閱 `man git check-ref-format`"
 
 #: branch.c:473
 #, c-format
@@ -5518,7 +5518,7 @@ msgstr "兩直行之間的填充空間"
 #: builtin/column.c:49
 #, c-format
 msgid "%s must be non-negative"
-msgstr ""
+msgstr "%s 不得為負數"
 
 #: builtin/column.c:54
 msgid "--command must be the first argument"
@@ -6507,7 +6507,7 @@ msgstr "使用 --get 但未指定參數時所使用的預設值"
 
 #: builtin/config.c:177
 msgid "human-readable comment string (# will be prepended as needed)"
-msgstr ""
+msgstr "人類可讀的備註字串（將按需插入 # 至前方）"
 
 #: builtin/config.c:191
 #, c-format
@@ -7681,7 +7681,7 @@ msgstr "從 stdin 讀取引用模式"
 
 #: builtin/for-each-ref.c:56
 msgid "also include HEAD ref and pseudorefs"
-msgstr ""
+msgstr "包含 HEAD 引用和偽引用"
 
 #: builtin/for-each-ref.c:87
 msgid "unknown arguments supplied with --stdin"
@@ -11773,7 +11773,7 @@ msgstr "剪除鬆散引用（預設值）"
 
 #: builtin/pack-refs.c:31
 msgid "auto-pack refs as needed"
-msgstr ""
+msgstr "按需自動封裝引用"
 
 #: builtin/pack-refs.c:33
 msgid "references to include"
@@ -23898,7 +23898,7 @@ msgstr "遠端錯誤：%s"
 #: refs/reftable-backend.c:789
 #, c-format
 msgid "trying to write ref '%s' with nonexistent object %s"
-msgstr ""
+msgstr "嘗試以不存在的物件 %s 寫入引用 %s"
 
 #: refs/reftable-backend.c:796
 #, fuzzy, c-format
@@ -23975,7 +23975,7 @@ msgstr "未發現取代引用 '%s'"
 #: refs/reftable-backend.c:1347
 #, c-format
 msgid "refname %s is a symbolic ref, copying it is not supported"
-msgstr ""
+msgstr "引用名稱 %s 是符號引用，不支援複製"
 
 #: refspec.c:174
 #, c-format
@@ -24537,7 +24537,8 @@ msgstr "%s 存在且不是一個目錄"
 msgid ""
 "--merge requires one of the pseudorefs MERGE_HEAD, CHERRY_PICK_HEAD, "
 "REVERT_HEAD or REBASE_HEAD"
-msgstr ""
+msgstr "--merge 需要偽引用 MERGE_HEAD、CHERRY_PICK_HEAD、REVERT_HEAD 或 REBASE_HEAD "
+"之一"
 
 #: revision.c:2361
 #, fuzzy, c-format

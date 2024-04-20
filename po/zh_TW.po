@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-04-20 11:01+0800\n"
 "PO-Revision-Date: 2024-04-21 14:39+0000\n"
-"Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -603,12 +603,7 @@ msgid "Manual hunk edit mode -- see bottom for a quick guide.\n"
 msgstr "手動區塊編輯模式——檢視底部的快速指引。\n"
 
 #: add-patch.c:1113
-#, fuzzy, c-format
-#| msgid ""
-#| "---\n"
-#| "To remove '%c' lines, make them ' ' lines (context).\n"
-#| "To remove '%c' lines, delete them.\n"
-#| "Lines starting with %c will be removed.\n"
+#, c-format
 msgid ""
 "---\n"
 "To remove '%c' lines, make them ' ' lines (context).\n"
@@ -618,7 +613,7 @@ msgstr ""
 "---\n"
 "要刪除 “%c” 開頭的列，請將列首（上下文）改成空白。\n"
 "要刪除 “%c” 開頭的列，請直接刪除。\n"
-"開頭是 %c 的列將會被移除。\n"
+"開頭是 %s 的列將會被移除。\n"
 
 #: add-patch.c:1128
 msgid ""

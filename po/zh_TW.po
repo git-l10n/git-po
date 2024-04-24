@@ -22,13 +22,14 @@
 # Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022, 2023, 2024.
 # Kaiyang Wu <self@origincode.me>, 2022.
 # lumynou5 <lumynou5.tw@gmail.com>, 2023, 2024.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-04-20 11:01+0800\n"
-"PO-Revision-Date: 2024-04-21 14:39+0000\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"PO-Revision-Date: 2024-04-25 02:39+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -765,10 +766,9 @@ msgstr ""
 "請使用 “git config advice.%s false” 停用此訊息"
 
 #: advice.c:108
-#, fuzzy, c-format
-#| msgid "%shint: %.*s%s\n"
+#, c-format
 msgid "%shint:%s%.*s%s\n"
-msgstr "%s提示：%.*s%s\n"
+msgstr "%s提示：%s%.*s%s\n"
 
 #: advice.c:196
 msgid "Cherry-picking is not possible because you have unmerged files."
@@ -2349,10 +2349,8 @@ msgid "adding embedded git repository: %s"
 msgstr "正在加入嵌入式 git 版本庫：%s"
 
 #: builtin/add.c:332
-#, fuzzy
-#| msgid "Use '--all' if you really want to deinitialize all submodules"
 msgid "Use -f if you really want to add them."
-msgstr "如果您確定想要對所有子模組執行取消初始化，請使用 '--all'"
+msgstr "如果您確定想要加入他們，請使用 '-f'。"
 
 #: builtin/add.c:345
 msgid "adding files failed"
@@ -2375,10 +2373,8 @@ msgid "Nothing specified, nothing added.\n"
 msgstr "沒有指定，亦未加入檔案。\n"
 
 #: builtin/add.c:443
-#, fuzzy
-#| msgid "Maybe you want to use 'update --init'?"
 msgid "Maybe you wanted to say 'git add .'?"
-msgstr "也許您想要執行 'update --init'？"
+msgstr "也許您想要執行的是 'git add .'？"
 
 #: builtin/add.c:459 builtin/check-ignore.c:185 builtin/checkout.c:569
 #: builtin/checkout.c:784 builtin/clean.c:1014 builtin/commit.c:387
@@ -2493,24 +2489,20 @@ msgid "Failed to split patches."
 msgstr "無法切割修補檔。"
 
 #: builtin/am.c:1158
-#, fuzzy, c-format
-#| msgid "When you have resolved this problem, run \"%s --continue\"."
+#, c-format
 msgid "When you have resolved this problem, run \"%s --continue\".\n"
-msgstr "解決此問題後，請執行 “%s --continue”。"
+msgstr "解決此問題後，請執行 “%s --continue”。\n"
 
 #: builtin/am.c:1159
-#, fuzzy, c-format
-#| msgid "If you prefer to skip this patch, run \"%s --skip\" instead."
+#, c-format
 msgid "If you prefer to skip this patch, run \"%s --skip\" instead.\n"
-msgstr "若要略過此修補，請改執行 “%s --skip”。"
+msgstr "若要略過此修補，請改執行 “%s --skip”。\n"
 
 #: builtin/am.c:1164
-#, fuzzy, c-format
-#| msgid ""
-#| "To record the empty patch as an empty commit, run \"%s --allow-empty\"."
+#, c-format
 msgid ""
 "To record the empty patch as an empty commit, run \"%s --allow-empty\".\n"
-msgstr "若要將空白修補檔錄入為空白提交，請執行 “%s --allow-empty”。"
+msgstr "若要將空白修補檔錄入為空白提交，請執行 “%s --allow-empty”。\n"
 
 #: builtin/am.c:1166
 #, c-format
@@ -3587,11 +3579,7 @@ msgid "branch is copied, but update of config-file failed"
 msgstr "分支已拷貝，但無法更新組態檔案"
 
 #: builtin/branch.c:681
-#, fuzzy, c-format
-#| msgid ""
-#| "Please edit the description for the branch\n"
-#| "  %s\n"
-#| "Lines starting with '%c' will be stripped.\n"
+#, c-format
 msgid ""
 "Please edit the description for the branch\n"
 "  %s\n"
@@ -3599,7 +3587,7 @@ msgid ""
 msgstr ""
 "請編輯下述分支的描述\n"
 "  %s\n"
-"開頭是 “%c” 的列將被刪除。\n"
+"開頭是 “%s” 的列將被刪除。\n"
 
 #: builtin/branch.c:719
 msgid "Generic options"
@@ -7192,7 +7180,7 @@ msgstr "來自 %.*s\n"
 #: builtin/fetch.c:906
 #, c-format
 msgid "object %s not found"
-msgstr "物件 %s 未發現"
+msgstr "找不到物件 %s"
 
 #: builtin/fetch.c:910
 msgid "[up to date]"
@@ -12807,10 +12795,8 @@ msgstr ""
 "請改用 “merges”"
 
 #: builtin/rebase.c:1255
-#, fuzzy
-#| msgid "No rebase in progress?"
 msgid "no rebase in progress"
-msgstr "沒有正在進行的重定基底？"
+msgstr "沒有進行中的重定基底流程"
 
 #: builtin/rebase.c:1258
 msgid "The --edit-todo action can only be used during interactive rebase."
@@ -14434,16 +14420,13 @@ msgid "--prefix requires an argument"
 msgstr "--prefix 需要 1 個引數"
 
 #: builtin/rev-parse.c:843
-#, fuzzy
-#| msgid "no contacts specified"
 msgid "no object format specified"
-msgstr "未指定聯絡地址"
+msgstr "未指定物件格式"
 
 #: builtin/rev-parse.c:855
-#, fuzzy, c-format
-#| msgid "unsupported object format '%s'"
+#, c-format
 msgid "unsupported object format: %s"
-msgstr "不支援的物件格式「%s」"
+msgstr "不支援的物件格式：%s"
 
 #: builtin/rev-parse.c:895
 #, c-format
@@ -14550,10 +14533,8 @@ msgid "allow commits with empty messages"
 msgstr "允許提交說明為空"
 
 #: builtin/revert.c:143
-#, fuzzy
-#| msgid "deprecated: use --annotate-stdin instead"
 msgid "deprecated: use --empty=keep instead"
-msgstr "已廢棄：請改用 --annotate-stdin"
+msgstr "已廢棄：請改用 --empty=keep"
 
 #: builtin/revert.c:153
 msgid "use the 'reference' format to refer to commits"
@@ -16168,12 +16149,7 @@ msgid "Deleted tag '%s' (was %s)\n"
 msgstr "已刪除標籤 '%s'（曾為 %s）\n"
 
 #: builtin/tag.c:195
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Write a message for tag:\n"
-#| "  %s\n"
-#| "Lines starting with '%c' will be ignored.\n"
+#, c-format
 msgid ""
 "\n"
 "Write a message for tag:\n"
@@ -16181,18 +16157,12 @@ msgid ""
 "Lines starting with '%s' will be ignored.\n"
 msgstr ""
 "\n"
-"輸入一個標籤說明：\n"
+"為標籤輸入說明訊息：\n"
 "  %s\n"
-"以 '%c' 開頭的行將被忽略。\n"
+"以 '%s' 開頭的行將被忽略。\n"
 
 #: builtin/tag.c:199
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Write a message for tag:\n"
-#| "  %s\n"
-#| "Lines starting with '%c' will be kept; you may remove them yourself if "
-#| "you want to.\n"
+#, c-format
 msgid ""
 "\n"
 "Write a message for tag:\n"
@@ -16201,9 +16171,9 @@ msgid ""
 "want to.\n"
 msgstr ""
 "\n"
-"輸入一個標籤說明：\n"
+"為標籤輸入說明訊息：\n"
 "  %s\n"
-"以 '%c' 開頭的行將被保留，如果您願意也可以刪除它們。\n"
+"以 '%s' 開頭的行將被保留；需要的話您可以自己刪除。\n"
 
 #: builtin/tag.c:266
 msgid "unable to sign the tag"
@@ -16620,16 +16590,12 @@ msgid "fsmonitor disabled"
 msgstr "fsmonitor 被停用"
 
 #: builtin/update-ref.c:12
-#, fuzzy
-#| msgid "git update-ref [<options>] -d <refname> [<old-val>]"
 msgid "git update-ref [<options>] -d <refname> [<old-oid>]"
-msgstr "git update-ref [<選項>] -d <引用名> [<舊值>]"
+msgstr "git update-ref [<選項>] -d <引用名> [<舊物件ID>]"
 
 #: builtin/update-ref.c:13
-#, fuzzy
-#| msgid "git update-ref [<options>]    <refname> <new-val> [<old-val>]"
 msgid "git update-ref [<options>]    <refname> <new-oid> [<old-oid>]"
-msgstr "git update-ref [<選項>]    <引用名> <新值> [<舊值>]"
+msgstr "git update-ref [<選項>]    <引用名> <新物件ID> [<舊物件ID>]"
 
 #: builtin/update-ref.c:14
 msgid "git update-ref [<options>] --stdin [-z]"
@@ -18871,10 +18837,9 @@ msgid "bad zlib compression level %d"
 msgstr "錯誤的 zlib 壓縮級別 %d"
 
 #: config.c:1576
-#, fuzzy, c-format
-#| msgid "exec commands cannot contain newlines"
+#, c-format
 msgid "%s cannot contain newline"
-msgstr "exec 指令不能包含換行符號"
+msgstr "%s 不能包含換行符號"
 
 #: config.c:1580
 #, fuzzy, c-format
@@ -21151,10 +21116,9 @@ msgid "could not write loose object index %s"
 msgstr "無法寫入物件檔案"
 
 #: loose.c:163 loose.c:198
-#, fuzzy, c-format
-#| msgid "unable to write loose object file"
+#, c-format
 msgid "failed to write loose object index %s\n"
-msgstr "不能寫鬆散物件檔案"
+msgstr "寫入鬆散物件索引 %s 失敗\n"
 
 #: ls-refs.c:177
 #, c-format
@@ -21504,7 +21468,7 @@ msgstr "快轉子模組 %s"
 #: merge-recursive.c:1326
 #, c-format
 msgid "Failed to merge submodule %s (merge following commits not found)"
-msgstr "無法合併子模組 %s （沒發現合併跟隨的提交）"
+msgstr "無法合併子模組 %s （找不到合併跟隨的提交）"
 
 #: merge-recursive.c:1330
 #, c-format
@@ -22029,10 +21993,9 @@ msgstr "無法為 %s 加入快取項目"
 #: object-file-convert.c:156 object-file-convert.c:163
 #: object-file-convert.c:175 object-file-convert.c:195
 #: object-file-convert.c:231
-#, fuzzy, c-format
-#| msgid "GPG sign commit"
+#, c-format
 msgid "bad %s in commit"
-msgstr "GPG 提交簽名"
+msgstr "提交中有無效的 %s"
 
 #: object-file-convert.c:166 object-file-convert.c:178
 #, fuzzy, c-format
@@ -23885,10 +23848,9 @@ msgid "could not delete references: %s"
 msgstr "無法刪除引用：%s"
 
 #: refs/reftable-backend.c:396
-#, fuzzy, c-format
-#| msgid "remote error: %s"
+#, c-format
 msgid "refname is dangerous: %s"
-msgstr "遠端錯誤：%s"
+msgstr "此引用名稱是危險的：%s"
 
 #: refs/reftable-backend.c:789
 #, c-format
@@ -23910,16 +23872,14 @@ msgid ""
 msgstr "不允許對引用 '%s' 多次更新"
 
 #: refs/reftable-backend.c:870
-#, fuzzy, c-format
-#| msgid "could not remove reference %s"
+#, c-format
 msgid "cannot lock ref '%s': unable to resolve reference '%s'"
-msgstr "無法刪除引用 %s"
+msgstr "無法鎖定引用「%s」：無法解析引用「%s」"
 
 #: refs/reftable-backend.c:888
-#, fuzzy, c-format
-#| msgid "cannot open file '%s' for reading"
+#, c-format
 msgid "cannot lock ref '%s': error reading reference"
-msgstr "無法開啟 “%s” 檔案進行讀取"
+msgstr "無法鎖定引用「%s」：無法讀取引用"
 
 #: refs/reftable-backend.c:924
 #, fuzzy, c-format
@@ -23929,31 +23889,29 @@ msgid ""
 msgstr "不允許對引用 '%s' 多次更新"
 
 #: refs/reftable-backend.c:943
-#, fuzzy, c-format
-#| msgid "replace ref '%s' already exists"
+#, c-format
 msgid "cannot lock ref '%s': reference already exists"
-msgstr "取代引用 '%s' 已經存在"
+msgstr "無法鎖定引用「%s」：引用已經存在"
 
 #: refs/reftable-backend.c:947
 #, c-format
 msgid "cannot lock ref '%s': reference is missing but expected %s"
-msgstr ""
+msgstr "無法鎖定引用「%s」：缺乏引用但預期的是 %s"
 
 #: refs/reftable-backend.c:952
 #, c-format
 msgid "cannot lock ref '%s': is at %s but expected %s"
-msgstr ""
+msgstr "無法鎖定引用「%s」：位於 %s 但預期的是 %s"
 
 #: refs/reftable-backend.c:991
 #, c-format
 msgid "reftable: transaction prepare: %s"
-msgstr ""
+msgstr "引用表：準備事務：%s"
 
 #: refs/reftable-backend.c:1180
-#, fuzzy, c-format
-#| msgid "remote unpack failed: %s"
+#, c-format
 msgid "reftable: transaction failure: %s"
-msgstr "遠端解包失敗：%s"
+msgstr "引用表：事務失敗：%s"
 
 #: refs/reftable-backend.c:1214
 #, fuzzy, c-format
@@ -23962,10 +23920,9 @@ msgid "unable to compact stack: %s"
 msgstr "不能建立執行緒：%s"
 
 #: refs/reftable-backend.c:1343
-#, fuzzy, c-format
-#| msgid "replace ref '%s' not found"
+#, c-format
 msgid "refname %s not found"
-msgstr "未發現取代引用 '%s'"
+msgstr "找不到引用名稱 %s"
 
 #: refs/reftable-backend.c:1347
 #, c-format
@@ -23983,10 +23940,9 @@ msgid "invalid quoting in push-option value: '%s'"
 msgstr "在 push-option 取值中無效的引號：'%s'"
 
 #: remote-curl.c:217
-#, fuzzy, c-format
-#| msgid "unknown mode for --show-object-format: %s"
+#, c-format
 msgid "unknown value for object-format: %s"
-msgstr "--show-object-format 的模式未知：%s"
+msgstr "未知的 object-format 值：%s"
 
 #: remote-curl.c:309
 #, c-format

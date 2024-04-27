@@ -27,19 +27,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2024-04-20 11:01+0800\n"
+"POT-Creation-Date: 2024-04-27 20:54+0800\n"
 "PO-Revision-Date: 2024-04-26 13:39+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
-"git-po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
+"po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.1.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
-"https://zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
+"zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -68,12 +68,12 @@ msgstr "未變更"
 msgid "Update"
 msgstr "更新"
 
-#: add-interactive.c:713 add-interactive.c:717 add-interactive.c:905
+#: add-interactive.c:713 add-interactive.c:717 add-interactive.c:906
 #, c-format
 msgid "could not stage '%s'"
 msgstr "無法暫存 “%s”"
 
-#: add-interactive.c:723 add-interactive.c:912 builtin/stash.c:523
+#: add-interactive.c:723 add-interactive.c:913 builtin/stash.c:523
 #: builtin/stash.c:540 builtin/stash.c:610 builtin/stash.c:1368
 #: builtin/stash.c:1559 reset.c:168 sequencer.c:3919
 msgid "could not write index"
@@ -90,7 +90,7 @@ msgstr[0] "已更新 %d 個路徑\n"
 msgid "note: %s is untracked now.\n"
 msgstr "註：現已不再追蹤 %s。\n"
 
-#: add-interactive.c:749 apply.c:4178 builtin/checkout.c:324
+#: add-interactive.c:749 apply.c:4180 builtin/checkout.c:324
 #: builtin/reset.c:183
 #, c-format
 msgid "make_cache_entry failed for path '%s'"
@@ -110,125 +110,125 @@ msgid "reverted %d path\n"
 msgid_plural "reverted %d paths\n"
 msgstr[0] "已還原 %d 個路徑\n"
 
-#: add-interactive.c:884
+#: add-interactive.c:885
 #, c-format
 msgid "No untracked files.\n"
 msgstr "沒有未追蹤的檔案。\n"
 
-#: add-interactive.c:888
+#: add-interactive.c:889
 msgid "Add untracked"
 msgstr "加入未追蹤項目"
 
-#: add-interactive.c:915
+#: add-interactive.c:916
 #, c-format
 msgid "added %d path\n"
 msgid_plural "added %d paths\n"
 msgstr[0] "已加入 %d 個路徑\n"
 
-#: add-interactive.c:945
+#: add-interactive.c:946
 #, c-format
 msgid "ignoring unmerged: %s"
 msgstr "忽略未合併項目：%s"
 
-#: add-interactive.c:957 add-patch.c:1782
+#: add-interactive.c:958 add-patch.c:1783
 #, c-format
 msgid "Only binary files changed.\n"
 msgstr "只有二進位檔案更動了。\n"
 
-#: add-interactive.c:959 add-patch.c:1780
+#: add-interactive.c:960 add-patch.c:1781
 #, c-format
 msgid "No changes.\n"
 msgstr "沒有更動。\n"
 
-#: add-interactive.c:963
+#: add-interactive.c:964
 msgid "Patch update"
 msgstr "修補檔更新"
 
-#: add-interactive.c:1002
+#: add-interactive.c:1003
 msgid "Review diff"
 msgstr "檢閱差異"
 
-#: add-interactive.c:1029
+#: add-interactive.c:1030
 msgid "show paths with changes"
 msgstr "顯示有更動的路徑"
 
-#: add-interactive.c:1031
+#: add-interactive.c:1032
 msgid "add working tree state to the staged set of changes"
 msgstr "將工作區狀態加入至暫存更動集"
 
-#: add-interactive.c:1033
+#: add-interactive.c:1034
 msgid "revert staged set of changes back to the HEAD version"
 msgstr "將暫存的更動集還原回 HEAD 版本"
 
-#: add-interactive.c:1035
+#: add-interactive.c:1036
 msgid "pick hunks and update selectively"
 msgstr "挑選區塊並選擇性更新"
 
-#: add-interactive.c:1037
+#: add-interactive.c:1038
 msgid "view diff between HEAD and index"
 msgstr "檢視 HEAD 及索引之間的差異"
 
-#: add-interactive.c:1039
+#: add-interactive.c:1040
 msgid "add contents of untracked files to the staged set of changes"
 msgstr "將未追蹤檔案的內容加入至更動暫存集"
 
-#: add-interactive.c:1047 add-interactive.c:1096
+#: add-interactive.c:1048 add-interactive.c:1097
 msgid "Prompt help:"
 msgstr "提示說明："
 
-#: add-interactive.c:1049
+#: add-interactive.c:1050
 msgid "select a single item"
 msgstr "選取一個項目"
 
-#: add-interactive.c:1051
+#: add-interactive.c:1052
 msgid "select a range of items"
 msgstr "選取範圍中項目"
 
-#: add-interactive.c:1053
+#: add-interactive.c:1054
 msgid "select multiple ranges"
 msgstr "選取多個範圍"
 
-#: add-interactive.c:1055 add-interactive.c:1100
+#: add-interactive.c:1056 add-interactive.c:1101
 msgid "select item based on unique prefix"
 msgstr "根據獨特前綴選取項目"
 
-#: add-interactive.c:1057
+#: add-interactive.c:1058
 msgid "unselect specified items"
 msgstr "取消選取指定項目"
 
-#: add-interactive.c:1059
+#: add-interactive.c:1060
 msgid "choose all items"
 msgstr "選擇所有項目"
 
-#: add-interactive.c:1061
+#: add-interactive.c:1062
 msgid "(empty) finish selecting"
 msgstr "（空）完成選取"
 
-#: add-interactive.c:1098
+#: add-interactive.c:1099
 msgid "select a numbered item"
 msgstr "選取編號過的項目"
 
-#: add-interactive.c:1102
+#: add-interactive.c:1103
 msgid "(empty) select nothing"
 msgstr "（空）全部不選取"
 
-#: add-interactive.c:1110 builtin/clean.c:847
+#: add-interactive.c:1111 builtin/clean.c:847
 msgid "*** Commands ***"
 msgstr "*** 命令 ***"
 
-#: add-interactive.c:1111 builtin/clean.c:848
+#: add-interactive.c:1112 builtin/clean.c:848
 msgid "What now"
 msgstr "請選擇"
 
-#: add-interactive.c:1163
+#: add-interactive.c:1164
 msgid "staged"
 msgstr "已暫存"
 
-#: add-interactive.c:1163
+#: add-interactive.c:1164
 msgid "unstaged"
 msgstr "未暫存"
 
-#: add-interactive.c:1163 apply.c:5090 apply.c:5093 builtin/am.c:2346
+#: add-interactive.c:1164 apply.c:5093 apply.c:5096 builtin/am.c:2346
 #: builtin/am.c:2349 builtin/bugreport.c:120 builtin/clone.c:144
 #: builtin/diagnose.c:25 builtin/fetch.c:2165 builtin/hook.c:30
 #: builtin/merge.c:269 builtin/pull.c:196 builtin/submodule--helper.c:1776
@@ -236,11 +236,11 @@ msgstr "未暫存"
 msgid "path"
 msgstr "路徑"
 
-#: add-interactive.c:1170
+#: add-interactive.c:1171
 msgid "could not refresh index"
 msgstr "無法重新整理索引"
 
-#: add-interactive.c:1184 builtin/clean.c:812
+#: add-interactive.c:1185 builtin/clean.c:812
 #, c-format
 msgid "Bye.\n"
 msgstr "再見。\n"
@@ -729,20 +729,20 @@ msgstr "格式錯誤的常規表示式 %s：%s"
 msgid "No hunk matches the given pattern"
 msgstr "沒有符合提供模式的區塊"
 
-#: add-patch.c:1653
+#: add-patch.c:1654
 msgid "Sorry, cannot split this hunk"
 msgstr "對不起，不能分割這個區塊"
 
-#: add-patch.c:1657
+#: add-patch.c:1658
 #, c-format
 msgid "Split into %d hunks."
 msgstr "分割為 %d 個區塊。"
 
-#: add-patch.c:1663
+#: add-patch.c:1664
 msgid "Sorry, cannot edit this hunk"
 msgstr "對不起，無法編輯這個區塊"
 
-#: add-patch.c:1717
+#: add-patch.c:1718
 msgid "'git apply' failed"
 msgstr "“git apply” 失敗"
 
@@ -937,8 +937,8 @@ msgstr "空白字元選項 “%s” 無法識別"
 msgid "unrecognized whitespace ignore option '%s'"
 msgstr "空白字元忽略選項 “%s” 無法識別"
 
-#: apply.c:152 archive.c:683 builtin/add.c:382 builtin/add.c:384
-#: builtin/add.c:390 builtin/add.c:402 builtin/branch.c:832
+#: apply.c:152 archive.c:683 builtin/add.c:385 builtin/add.c:387
+#: builtin/add.c:393 builtin/add.c:405 builtin/branch.c:832
 #: builtin/checkout-index.c:275 builtin/checkout.c:486 builtin/checkout.c:489
 #: builtin/checkout.c:1781 builtin/checkout.c:1891 builtin/checkout.c:1894
 #: builtin/clean.c:964 builtin/clone.c:976 builtin/clone.c:981
@@ -1191,17 +1191,17 @@ msgstr "無法讀取 %s"
 msgid "reading from '%s' beyond a symbolic link"
 msgstr "讀取符號連結背後的 “%s”"
 
-#: apply.c:3484 apply.c:3757
+#: apply.c:3484 apply.c:3759
 #, c-format
 msgid "path %s has been renamed/deleted"
 msgstr "路徑 %s 已被重新命名或刪除"
 
-#: apply.c:3595 apply.c:3772
+#: apply.c:3595 apply.c:3774
 #, c-format
 msgid "%s: does not exist in index"
 msgstr "%s：不在索引中"
 
-#: apply.c:3604 apply.c:3780 apply.c:4005
+#: apply.c:3604 apply.c:3782 apply.c:4007
 #, c-format
 msgid "%s: does not match index"
 msgstr "%s：與索引不符"
@@ -1240,325 +1240,320 @@ msgstr "已完全套用對 “%s” 的修補檔。\n"
 msgid "Falling back to direct application...\n"
 msgstr "回復至直接套用模式⋯⋯\n"
 
-#: apply.c:3724
+#: apply.c:3726
 msgid "removal patch leaves file contents"
 msgstr "移除性的修補檔仍有留下檔案內容"
 
-#: apply.c:3806
+#: apply.c:3808
 #, c-format
 msgid "%s: wrong type"
 msgstr "%s：錯誤類型"
 
-#: apply.c:3808
+#: apply.c:3810
 #, c-format
 msgid "%s has type %o, expected %o"
 msgstr "%s 的類型是 %o，預期是 %o"
 
-#: apply.c:3945 apply.c:3947 read-cache.c:838 read-cache.c:867
+#: apply.c:3947 apply.c:3949 read-cache.c:838 read-cache.c:867
 #: read-cache.c:1334
 #, c-format
 msgid "invalid path '%s'"
 msgstr "路徑 “%s” 無效"
 
-#: apply.c:4003
+#: apply.c:4005
 #, c-format
 msgid "%s: already exists in index"
 msgstr "%s：已存在於索引中"
 
-#: apply.c:4007
+#: apply.c:4009
 #, c-format
 msgid "%s: already exists in working directory"
 msgstr "%s：已存在於工作區中"
 
-#: apply.c:4027
+#: apply.c:4029
 #, c-format
 msgid "new mode (%o) of %s does not match old mode (%o)"
 msgstr "%2$s 的新模式（%1$o）和舊模式（%3$o）不符"
 
-#: apply.c:4032
+#: apply.c:4034
 #, c-format
 msgid "new mode (%o) of %s does not match old mode (%o) of %s"
 msgstr "%2$s 的新模式（%1$o）和 %4$s 的舊模式（%3$o）不符"
 
-#: apply.c:4052 apply.c:4482
+#: apply.c:4054 apply.c:4484
 #, c-format
 msgid "affected file '%s' is beyond a symbolic link"
 msgstr "受影響的檔案 “%s” 在符號連結後"
 
-#: apply.c:4056
+#: apply.c:4058
 #, c-format
 msgid "%s: patch does not apply"
 msgstr "%s：未套用修補檔"
 
-#: apply.c:4071
+#: apply.c:4073
 #, c-format
 msgid "Checking patch %s..."
 msgstr "正在檢查修補檔 %s……"
 
-#: apply.c:4163
+#: apply.c:4165
 #, c-format
 msgid "sha1 information is lacking or useless for submodule %s"
 msgstr "%s 子模組缺少 sha1 資訊或沒有幫助"
 
-#: apply.c:4170
+#: apply.c:4172
 #, c-format
 msgid "mode change for %s, which is not in current HEAD"
 msgstr "%s 的模式有更動，但其不在目前 HEAD 中"
 
-#: apply.c:4173
+#: apply.c:4175
 #, c-format
 msgid "sha1 information is lacking or useless (%s)."
 msgstr "缺少 sha1 資訊或沒有幫助 (%s)。"
 
-#: apply.c:4182
+#: apply.c:4184
 #, c-format
 msgid "could not add %s to temporary index"
 msgstr "無法將 %s 加進暫存索引"
 
-#: apply.c:4192
+#: apply.c:4194
 #, c-format
 msgid "could not write temporary index to %s"
 msgstr "無法將暫存索引寫入 %s"
 
-#: apply.c:4330
+#: apply.c:4332
 #, c-format
 msgid "unable to remove %s from index"
 msgstr "無法從索引移除 %s"
 
-#: apply.c:4364
+#: apply.c:4366
 #, c-format
 msgid "corrupt patch for submodule %s"
 msgstr "修補 %s 子模組的修補檔損壞"
 
-#: apply.c:4370
+#: apply.c:4372
 #, c-format
 msgid "unable to stat newly created file '%s'"
 msgstr "無法對剛建立的檔案 “%s” 執行 stat"
 
-#: apply.c:4378
+#: apply.c:4380
 #, c-format
 msgid "unable to create backing store for newly created file %s"
 msgstr "無法對剛建立的檔案 %s 建立後端儲存"
 
-#: apply.c:4384 apply.c:4559
+#: apply.c:4386 apply.c:4561
 #, c-format
 msgid "unable to add cache entry for %s"
 msgstr "無法為 %s 加入快取項目"
 
-#: apply.c:4427 builtin/bisect.c:607 builtin/gc.c:2410 builtin/gc.c:2472
+#: apply.c:4429 builtin/bisect.c:607 builtin/gc.c:2410 builtin/gc.c:2472
 #, c-format
 msgid "failed to write to '%s'"
 msgstr "無法寫入 “%s”"
 
-#: apply.c:4431
+#: apply.c:4433
 #, c-format
 msgid "closing file '%s'"
 msgstr "關閉檔案 “%s”"
 
-#: apply.c:4529
+#: apply.c:4531
 #, c-format
 msgid "unable to write file '%s' mode %o"
 msgstr "無法以模式 %2$o 寫入 “%1$s” 檔案"
 
-#: apply.c:4629
+#: apply.c:4631
 #, c-format
 msgid "Applied patch %s cleanly."
 msgstr "已完全套用 %s 修補檔。"
 
-#: apply.c:4637
+#: apply.c:4639
 msgid "internal error"
 msgstr "內部錯誤"
 
-#: apply.c:4640
+#: apply.c:4642
 #, c-format
 msgid "Applying patch %%s with %d reject..."
 msgid_plural "Applying patch %%s with %d rejects..."
 msgstr[0] "套用 %%s 個修補檔，其中 %d 個被拒絕……"
 
-#: apply.c:4651
-#, c-format
-msgid "truncating .rej filename to %.*s.rej"
-msgstr "正在將 .rej 檔案名稱截短為 %.*s.rej"
-
-#: apply.c:4660 apply.c:4665 apply.c:4669
+#: apply.c:4655 apply.c:4664 apply.c:4670
 #, c-format
 msgid "cannot open %s"
 msgstr "無法開啟 %s"
 
-#: apply.c:4662 rerere.c:1071
+#: apply.c:4659 rerere.c:1076
 #, c-format
 msgid "cannot unlink '%s'"
 msgstr "無法刪除 “%s”"
 
-#: apply.c:4686
+#: apply.c:4687
 #, c-format
 msgid "Hunk #%d applied cleanly."
 msgstr "成功完全套用第 #%d 個區塊。"
 
-#: apply.c:4690
+#: apply.c:4691
 #, c-format
 msgid "Rejected hunk #%d."
 msgstr "拒絕第 #%d 個區塊。"
 
-#: apply.c:4819
+#: apply.c:4822
 #, c-format
 msgid "Skipped patch '%s'."
 msgstr "略過修補檔 “%s”。"
 
-#: apply.c:4828
+#: apply.c:4831
 msgid "No valid patches in input (allow with \"--allow-empty\")"
 msgstr "輸入沒有有效的修補檔內容（傳入 “--allow-empty” 允許此行為）"
 
-#: apply.c:4849 t/helper/test-cache-tree.c:39
+#: apply.c:4852 t/helper/test-cache-tree.c:39
 msgid "unable to read index file"
 msgstr "無法讀取索引檔案"
 
-#: apply.c:5006
+#: apply.c:5009
 #, c-format
 msgid "can't open patch '%s': %s"
 msgstr "無法開啟修補檔 “%s”：%s"
 
-#: apply.c:5033
+#: apply.c:5036
 #, c-format
 msgid "squelched %d whitespace error"
 msgid_plural "squelched %d whitespace errors"
 msgstr[0] "抑制下仍有 %d 個空白字元誤用"
 
-#: apply.c:5039 apply.c:5054
+#: apply.c:5042 apply.c:5057
 #, c-format
 msgid "%d line adds whitespace errors."
 msgid_plural "%d lines add whitespace errors."
 msgstr[0] "%d 列加入了空白字元誤用。"
 
-#: apply.c:5047
+#: apply.c:5050
 #, c-format
 msgid "%d line applied after fixing whitespace errors."
 msgid_plural "%d lines applied after fixing whitespace errors."
 msgstr[0] "修正空白誤用後，套用了 %d 列。"
 
-#: apply.c:5063 builtin/mv.c:566 builtin/rm.c:440
+#: apply.c:5066 builtin/mv.c:566 builtin/rm.c:440
 msgid "Unable to write new index file"
 msgstr "無法寫入新索引檔案"
 
-#: apply.c:5091
+#: apply.c:5094
 msgid "don't apply changes matching the given path"
 msgstr "不要套用符合提供路徑的更動"
 
-#: apply.c:5094
+#: apply.c:5097
 msgid "apply changes matching the given path"
 msgstr "套用符合提供路徑的更動"
 
-#: apply.c:5096 builtin/am.c:2355
+#: apply.c:5099 builtin/am.c:2355
 msgid "num"
 msgstr "數字"
 
-#: apply.c:5097
+#: apply.c:5100
 msgid "remove <num> leading slashes from traditional diff paths"
 msgstr "從傳統的 diff 路徑中移除 <num> 個前導斜線"
 
-#: apply.c:5100
+#: apply.c:5103
 msgid "ignore additions made by the patch"
 msgstr "忽略修補檔中的加入內容"
 
-#: apply.c:5102
+#: apply.c:5105
 msgid "instead of applying the patch, output diffstat for the input"
 msgstr "不套用修補檔，而是顯示輸入的差異統計 (diffstat)"
 
-#: apply.c:5106
+#: apply.c:5109
 msgid "show number of added and deleted lines in decimal notation"
 msgstr "以十進位數字，顯示加入和刪除的列數"
 
-#: apply.c:5108
+#: apply.c:5111
 msgid "instead of applying the patch, output a summary for the input"
 msgstr "不套用修補檔，而是顯示輸入的概要"
 
-#: apply.c:5110
+#: apply.c:5113
 msgid "instead of applying the patch, see if the patch is applicable"
 msgstr "不套用修補檔，而是檢視修補檔是否可套用"
 
-#: apply.c:5112
+#: apply.c:5115
 msgid "make sure the patch is applicable to the current index"
 msgstr "確認修補檔可以套用到目前索引"
 
-#: apply.c:5114
+#: apply.c:5117
 msgid "mark new files with `git add --intent-to-add`"
 msgstr "使用 `git add --intent-to-add` 命令標記新檔案"
 
-#: apply.c:5116
+#: apply.c:5119
 msgid "apply a patch without touching the working tree"
 msgstr "套用修補檔而不修改工作區"
 
-#: apply.c:5118
+#: apply.c:5121
 msgid "accept a patch that touches outside the working area"
 msgstr "接受修改工作區之外檔案的修補檔"
 
-#: apply.c:5121
+#: apply.c:5124
 msgid "also apply the patch (use with --stat/--summary/--check)"
 msgstr "亦套用修補檔（與 --stat/--summary/--check 選項同時使用）"
 
-#: apply.c:5123
+#: apply.c:5126
 msgid "attempt three-way merge, fall back on normal patch if that fails"
 msgstr "嘗試三方合併，若失敗則回到正常修補模式"
 
-#: apply.c:5125
+#: apply.c:5128
 msgid "build a temporary index based on embedded index information"
 msgstr "組建以嵌入索引資訊為基礎的暫存索引"
 
-#: apply.c:5128 builtin/checkout-index.c:235
+#: apply.c:5131 builtin/checkout-index.c:235
 msgid "paths are separated with NUL character"
 msgstr "路徑以 NUL 字元分隔"
 
-#: apply.c:5130
+#: apply.c:5133
 msgid "ensure at least <n> lines of context match"
 msgstr "確保至少符合 <n> 列上下文"
 
-#: apply.c:5131 builtin/am.c:2331 builtin/am.c:2334
+#: apply.c:5134 builtin/am.c:2331 builtin/am.c:2334
 #: builtin/interpret-trailers.c:202 builtin/interpret-trailers.c:204
 #: builtin/pack-objects.c:4378 builtin/rebase.c:1096
 msgid "action"
 msgstr "動作"
 
-#: apply.c:5132
+#: apply.c:5135
 msgid "detect new or modified lines that have whitespace errors"
 msgstr "檢查新增和修改的列中間，是否有空白字元誤用"
 
-#: apply.c:5135 apply.c:5138
+#: apply.c:5138 apply.c:5141
 msgid "ignore changes in whitespace when finding context"
 msgstr "尋找上下文時忽略空白字元更動"
 
-#: apply.c:5141
+#: apply.c:5144
 msgid "apply the patch in reverse"
 msgstr "反向套用修補檔"
 
-#: apply.c:5143
+#: apply.c:5146
 msgid "don't expect at least one line of context"
 msgstr "無需至少一列上下文"
 
-#: apply.c:5145
+#: apply.c:5148
 msgid "leave the rejected hunks in corresponding *.rej files"
 msgstr "將拒絕的修補檔區塊，留在對應的 *.rej 檔案中"
 
-#: apply.c:5147
+#: apply.c:5150
 msgid "allow overlapping hunks"
 msgstr "允許重疊區塊"
 
-#: apply.c:5150
+#: apply.c:5153
 msgid "tolerate incorrectly detected missing new-line at the end of file"
 msgstr "允許不正確的檔案末尾換列符號"
 
-#: apply.c:5153
+#: apply.c:5156
 msgid "do not trust the line counts in the hunk headers"
 msgstr "不信任區塊標頭中的列號"
 
-#: apply.c:5155 builtin/am.c:2343
+#: apply.c:5158 builtin/am.c:2343
 msgid "root"
 msgstr "根目錄"
 
-#: apply.c:5156
+#: apply.c:5159
 msgid "prepend <root> to all filenames"
 msgstr "在所有檔案名稱前加上 <root>"
 
-#: apply.c:5159
+#: apply.c:5162
 msgid "don't return error for empty patches"
 msgstr "遇到空白修補檔時，不回傳錯誤"
 
@@ -1632,7 +1627,7 @@ msgstr "無法讀取 “%s”"
 msgid "pathspec '%s' matches files outside the current directory"
 msgstr "符合路徑規格 “%s” 的檔案在目前目錄之外"
 
-#: archive.c:494 builtin/add.c:133 builtin/add.c:531 builtin/rm.c:344
+#: archive.c:494 builtin/add.c:133 builtin/add.c:534 builtin/rm.c:344
 #, c-format
 msgid "pathspec '%s' did not match any files"
 msgstr "路徑規格 “%s” 未符合任何檔案"
@@ -1762,7 +1757,7 @@ msgstr "遠端 git-upload-archive 命令的路徑"
 msgid "Unexpected option --remote"
 msgstr "非預期選項 --remote"
 
-#: archive.c:679 builtin/add.c:405 builtin/add.c:437 builtin/checkout.c:1900
+#: archive.c:679 builtin/add.c:408 builtin/add.c:440 builtin/checkout.c:1900
 #: builtin/clone.c:1210 builtin/clone.c:1213 builtin/commit.c:379
 #: builtin/fast-export.c:1247 builtin/index-pack.c:1862 builtin/log.c:2279
 #: builtin/reset.c:388 builtin/reset.c:449 builtin/rm.c:288
@@ -1845,7 +1840,7 @@ msgstr "無法對 %s 執行 stat"
 #: bisect.c:162 builtin/cat-file.c:229 builtin/cat-file.c:493
 #: builtin/index-pack.c:765 builtin/notes.c:720 builtin/pack-objects.c:302
 #: builtin/pack-objects.c:363 builtin/pack-objects.c:471 combine-diff.c:341
-#: rerere.c:977
+#: rerere.c:982
 #, c-format
 msgid "unable to read %s"
 msgstr "不能讀 %s"
@@ -1929,21 +1924,26 @@ msgstr "需要一個 %s 修訂版"
 msgid "could not create file '%s'"
 msgstr "無法建立 “%s” 檔案"
 
-#: bisect.c:985 builtin/merge.c:158
+#: bisect.c:973 builtin/notes.c:177
+#, c-format
+msgid "unable to start 'show' for object '%s'"
+msgstr "不能為物件 '%s' 開始 'show'"
+
+#: bisect.c:994 builtin/merge.c:158
 #, c-format
 msgid "could not read file '%s'"
 msgstr "無法讀取 “%s” 檔案"
 
-#: bisect.c:1026
+#: bisect.c:1035
 msgid "reading bisect refs failed"
 msgstr "無法讀取二分搜尋的引用"
 
-#: bisect.c:1056
+#: bisect.c:1065
 #, c-format
 msgid "%s was both %s and %s\n"
 msgstr "%s 同時為 %s 和 %s\n"
 
-#: bisect.c:1066
+#: bisect.c:1075
 #, c-format
 msgid ""
 "No testable commit found.\n"
@@ -1952,7 +1952,7 @@ msgstr ""
 "沒找到能夠測試的提交。\n"
 "可能是傳入的路徑引數有誤？\n"
 
-#: bisect.c:1097
+#: bisect.c:1106
 #, c-format
 msgid "(roughly %d step)"
 msgid_plural "(roughly %d steps)"
@@ -1961,7 +1961,7 @@ msgstr[0] "（大約 %d 步）"
 #. TRANSLATORS: the last %s will be replaced with "(roughly %d
 #. steps)" translation.
 #.
-#: bisect.c:1103
+#: bisect.c:1112
 #, c-format
 msgid "Bisecting: %d revision left to test after this %s\n"
 msgid_plural "Bisecting: %d revisions left to test after this %s\n"
@@ -1980,7 +1980,7 @@ msgstr "--reverse 和 --first-parent 共用，需要指定最新的提交"
 #: builtin/pack-objects.c:3510 builtin/pack-objects.c:3668
 #: builtin/pack-objects.c:4156 builtin/pack-objects.c:4171
 #: builtin/shortlog.c:272 midx-write.c:777 pack-bitmap.c:1065
-#: pack-bitmap.c:2317 remote.c:2204 sequencer.c:2484 sequencer.c:5360
+#: pack-bitmap.c:2318 remote.c:2204 sequencer.c:2484 sequencer.c:5360
 #: submodule.c:921
 msgid "revision walk setup failed"
 msgstr "修訂版遍歷設定失敗"
@@ -2204,105 +2204,105 @@ msgstr ""
 "add.interactive.useBuiltin 設定已被移除！\n"
 "深入了解請參閱 “git help config” 中的對應條目。"
 
-#: builtin/add.c:182
+#: builtin/add.c:185
 msgid "could not read the index"
 msgstr "無法讀取索引"
 
-#: builtin/add.c:197
+#: builtin/add.c:200
 msgid "editing patch failed"
 msgstr "編輯修補檔失敗"
 
-#: builtin/add.c:200 read-cache.c:3234
+#: builtin/add.c:203 read-cache.c:3234
 #, c-format
 msgid "could not stat '%s'"
 msgstr "不能對 '%s' 呼叫 stat"
 
-#: builtin/add.c:202
+#: builtin/add.c:205
 msgid "empty patch. aborted"
 msgstr "修補檔空白。中止"
 
-#: builtin/add.c:208
+#: builtin/add.c:211
 #, c-format
 msgid "could not apply '%s'"
 msgstr "無法套用 “%s”"
 
-#: builtin/add.c:217
+#: builtin/add.c:220
 msgid "The following paths are ignored by one of your .gitignore files:\n"
 msgstr "下列路徑根據其中一個 .gitignore 檔案而被忽略：\n"
 
-#: builtin/add.c:239 builtin/clean.c:935 builtin/fetch.c:2186 builtin/mv.c:173
+#: builtin/add.c:242 builtin/clean.c:935 builtin/fetch.c:2186 builtin/mv.c:173
 #: builtin/prune-packed.c:15 builtin/pull.c:210 builtin/push.c:598
 #: builtin/remote.c:1484 builtin/rm.c:251 builtin/send-pack.c:189
 msgid "dry run"
 msgstr "測試執行"
 
-#: builtin/add.c:240 builtin/check-ignore.c:24 builtin/commit.c:1525
+#: builtin/add.c:243 builtin/check-ignore.c:24 builtin/commit.c:1525
 #: builtin/count-objects.c:102 builtin/fsck.c:903 builtin/log.c:2484
 #: builtin/mv.c:172 builtin/read-tree.c:127
 msgid "be verbose"
 msgstr "詳細輸出"
 
-#: builtin/add.c:242
+#: builtin/add.c:245
 msgid "interactive picking"
 msgstr "互動式挑選"
 
-#: builtin/add.c:243 builtin/checkout.c:1716 builtin/reset.c:363
+#: builtin/add.c:246 builtin/checkout.c:1716 builtin/reset.c:363
 msgid "select hunks interactively"
 msgstr "互動式選取區塊"
 
-#: builtin/add.c:244
+#: builtin/add.c:247
 msgid "edit current diff and apply"
 msgstr "編輯目前差異並套用"
 
-#: builtin/add.c:245
+#: builtin/add.c:248
 msgid "allow adding otherwise ignored files"
 msgstr "允許加入原先被忽略的檔案"
 
-#: builtin/add.c:246
+#: builtin/add.c:249
 msgid "update tracked files"
 msgstr "更新已追蹤的檔案"
 
-#: builtin/add.c:247
+#: builtin/add.c:250
 msgid "renormalize EOL of tracked files (implies -u)"
 msgstr "對已追蹤檔案（隱含 -u）重新標準化 EOL"
 
-#: builtin/add.c:248
+#: builtin/add.c:251
 msgid "record only the fact that the path will be added later"
 msgstr "只記錄「路徑稍後會再加入」"
 
-#: builtin/add.c:249
+#: builtin/add.c:252
 msgid "add changes from all tracked and untracked files"
 msgstr "從所有已追蹤和未追蹤檔案加入更動"
 
-#: builtin/add.c:252
+#: builtin/add.c:255
 msgid "ignore paths removed in the working tree (same as --no-all)"
 msgstr "忽略工作區中移除的路徑（和 --no-all 相同）"
 
-#: builtin/add.c:254
+#: builtin/add.c:257
 msgid "don't add, only refresh the index"
 msgstr "不新增，只重新整理索引"
 
-#: builtin/add.c:255
+#: builtin/add.c:258
 msgid "just skip files which cannot be added because of errors"
 msgstr "略過因發生錯誤不能新增的檔案"
 
-#: builtin/add.c:256
+#: builtin/add.c:259
 msgid "check if - even missing - files are ignored in dry run"
 msgstr "檢查（即使不存在的）檔案是否在測試執行模式中被忽略"
 
-#: builtin/add.c:257 builtin/mv.c:177 builtin/rm.c:258
+#: builtin/add.c:260 builtin/mv.c:177 builtin/rm.c:258
 msgid "allow updating entries outside of the sparse-checkout cone"
 msgstr "允許更新稀疏簽出 cone 外的項目"
 
-#: builtin/add.c:259 builtin/update-index.c:969
+#: builtin/add.c:262 builtin/update-index.c:969
 msgid "override the executable bit of the listed files"
 msgstr "覆寫列出檔案中的可執行位元"
 
-#: builtin/add.c:261
+#: builtin/add.c:264
 msgid "warn when adding an embedded repository"
 msgstr "嵌入版本庫時發出警告"
 
-#: builtin/add.c:283
+#: builtin/add.c:286
 #, c-format
 msgid ""
 "You've added another git repository inside your current repository.\n"
@@ -2333,52 +2333,52 @@ msgstr ""
 "\n"
 "參見 “git help submodule” 深入了解。"
 
-#: builtin/add.c:312
+#: builtin/add.c:315
 #, c-format
 msgid "adding embedded git repository: %s"
 msgstr "正在加入嵌入式 git 版本庫：%s"
 
-#: builtin/add.c:332
+#: builtin/add.c:335
 msgid "Use -f if you really want to add them."
 msgstr "如果您確定想要加入他們，請使用 '-f'。"
 
-#: builtin/add.c:345
+#: builtin/add.c:348
 msgid "adding files failed"
 msgstr "加入檔案失敗"
 
-#: builtin/add.c:409
+#: builtin/add.c:412
 #, c-format
 msgid "--chmod param '%s' must be either -x or +x"
 msgstr "--chmod 的參數 “%s” 必須是 -x 或 +x"
 
-#: builtin/add.c:430 builtin/checkout.c:1888 builtin/commit.c:373
+#: builtin/add.c:433 builtin/checkout.c:1888 builtin/commit.c:373
 #: builtin/reset.c:382 builtin/rm.c:282 builtin/stash.c:1780
 #, c-format
 msgid "'%s' and pathspec arguments cannot be used together"
 msgstr "“%s” 和路徑規格引數不得同時使用"
 
-#: builtin/add.c:441
+#: builtin/add.c:444
 #, c-format
 msgid "Nothing specified, nothing added.\n"
 msgstr "沒有指定，亦未加入檔案。\n"
 
-#: builtin/add.c:443
+#: builtin/add.c:446
 msgid "Maybe you wanted to say 'git add .'?"
 msgstr "也許您想要執行的是 'git add .'？"
 
-#: builtin/add.c:459 builtin/check-ignore.c:185 builtin/checkout.c:569
+#: builtin/add.c:462 builtin/check-ignore.c:185 builtin/checkout.c:569
 #: builtin/checkout.c:784 builtin/clean.c:1014 builtin/commit.c:387
 #: builtin/diff-tree.c:131 builtin/grep.c:556 builtin/mv.c:202
 #: builtin/reset.c:455 builtin/rm.c:302 builtin/submodule--helper.c:208
 #: builtin/submodule--helper.c:3239 read-cache.c:2060 read-cache.c:2378
-#: rerere.c:554 rerere.c:588 rerere.c:1105 submodule.c:1849
+#: rerere.c:559 rerere.c:593 rerere.c:1110 submodule.c:1849
 msgid "index file corrupt"
 msgstr "索引檔案損壞"
 
-#: builtin/add.c:571 builtin/am.c:2010 builtin/am.c:2044 builtin/checkout.c:638
+#: builtin/add.c:574 builtin/am.c:2010 builtin/am.c:2044 builtin/checkout.c:638
 #: builtin/checkout.c:926 builtin/clone.c:750 builtin/commit.c:455
 #: builtin/commit.c:480 builtin/commit.c:528 builtin/stash.c:303 merge.c:109
-#: rerere.c:710
+#: rerere.c:715
 msgid "unable to write new index file"
 msgstr "無法寫入新的索引檔案"
 
@@ -2438,7 +2438,7 @@ msgstr "fseek 失敗"
 msgid "could not open '%s' for reading"
 msgstr "無法開啟 “%s” 進行讀取"
 
-#: builtin/am.c:769 builtin/rebase.c:610 editor.c:148 sequencer.c:4289
+#: builtin/am.c:769 builtin/rebase.c:610 editor.c:147 sequencer.c:4289
 #: wrapper.c:196 wrapper.c:366
 #, c-format
 msgid "could not open '%s' for writing"
@@ -4905,7 +4905,7 @@ msgstr "忽略版本庫 %s\n"
 msgid "Would skip repository %s\n"
 msgstr "將忽略版本庫 %s\n"
 
-#: builtin/clean.c:42 midx.c:507
+#: builtin/clean.c:42 midx.c:508
 #, c-format
 msgid "failed to remove %s"
 msgstr "無法移除 %s"
@@ -5848,7 +5848,7 @@ msgstr "不能讀取 SQUASH_MSG"
 msgid "could not read MERGE_MSG"
 msgstr "不能讀取 MERGE_MSG"
 
-#: builtin/commit.c:885 bundle.c:150 rerere.c:469 rerere.c:680 sequencer.c:2789
+#: builtin/commit.c:885 bundle.c:150 rerere.c:474 rerere.c:685 sequencer.c:2789
 #: sequencer.c:3571
 #, c-format
 msgid "could not open '%s'"
@@ -7077,31 +7077,31 @@ msgstr "顯示資料物件及提交的原始物件 ID"
 msgid "label tags with mark ids"
 msgstr "為包含標記 ID 的標籤打上標記"
 
-#: builtin/fast-import.c:3095
+#: builtin/fast-import.c:3108
 #, c-format
 msgid "Missing from marks for submodule '%s'"
 msgstr "「%s」子模組缺少 from 標記"
 
-#: builtin/fast-import.c:3097
+#: builtin/fast-import.c:3110
 #, c-format
 msgid "Missing to marks for submodule '%s'"
 msgstr "「%s」子模組缺少 to 標記"
 
-#: builtin/fast-import.c:3232
+#: builtin/fast-import.c:3238
 #, c-format
 msgid "Expected 'mark' command, got %s"
 msgstr "預期 'mark' 指令，得到 %s"
 
-#: builtin/fast-import.c:3237
+#: builtin/fast-import.c:3243
 #, c-format
 msgid "Expected 'to' command, got %s"
 msgstr "預期 'to' 指令，得到 %s"
 
-#: builtin/fast-import.c:3331
+#: builtin/fast-import.c:3337
 msgid "Expected format name:filename for submodule rewrite option"
 msgstr "期望子模組 rewrite 選項的格式是 name:filename"
 
-#: builtin/fast-import.c:3388
+#: builtin/fast-import.c:3394
 #, c-format
 msgid "feature '%s' forbidden in input without --allow-unsafe-features"
 msgstr "沒有 --allow-unsafe-features 時，禁止在輸入中使用 '%s' 功能"
@@ -7712,7 +7712,7 @@ msgid "could not create lost-found"
 msgstr "不能建立 lost-found"
 
 #: builtin/fsck.c:338 builtin/gc.c:1941 builtin/rebase.c:211
-#: rebase-interactive.c:122 rerere.c:474 rerere.c:682 sequencer.c:4070
+#: rebase-interactive.c:122 rerere.c:479 rerere.c:687 sequencer.c:4070
 #: sequencer.c:4096 sequencer.c:6337
 #, c-format
 msgid "could not write '%s'"
@@ -8324,7 +8324,7 @@ msgstr "“crontab” 結束運作"
 msgid "failed to delete '%s'"
 msgstr "刪除 '%s' 失敗"
 
-#: builtin/gc.c:2415 builtin/gc.c:2477 rerere.c:487
+#: builtin/gc.c:2415 builtin/gc.c:2477 rerere.c:492
 #, c-format
 msgid "failed to flush '%s'"
 msgstr "排清 '%s' 失敗"
@@ -9196,7 +9196,7 @@ msgstr "不能開啟暫存檔"
 msgid "could not read input file '%s'"
 msgstr "不能讀取輸入檔案 '%s'"
 
-#: builtin/interpret-trailers.c:133 builtin/mktag.c:92 imap-send.c:1552
+#: builtin/interpret-trailers.c:133 builtin/mktag.c:92 imap-send.c:1541
 msgid "could not read from stdin"
 msgstr "不能自標準輸入讀取"
 
@@ -9646,7 +9646,7 @@ msgid "--remerge-diff does not make sense"
 msgstr "--remerge-diff 無意義"
 
 #: builtin/log.c:2181 builtin/submodule--helper.c:1685
-#: builtin/submodule--helper.c:1735 rerere.c:871 submodule.c:2295
+#: builtin/submodule--helper.c:1735 rerere.c:876 submodule.c:2295
 #, c-format
 msgid "could not create directory '%s'"
 msgstr "不能建立目錄 '%s'"
@@ -10422,7 +10422,7 @@ msgstr "對於 %s 沒有來自 %s 的遠端追蹤分支"
 msgid "Bad value '%s' in environment '%s'"
 msgstr "環境 '%2$s' 中存在壞的取值 '%1$s'"
 
-#: builtin/merge.c:1147 editor.c:153 read-cache.c:3118 wrapper.c:685
+#: builtin/merge.c:1147 editor.c:152 read-cache.c:3118 wrapper.c:685
 #, c-format
 msgid "could not close '%s'"
 msgstr "不能關閉 '%s'"
@@ -10907,11 +10907,6 @@ msgstr "git notes prune [<選項>]"
 #: builtin/notes.c:103
 msgid "Write/edit the notes for the following object:"
 msgstr "為下面的物件寫/編輯說明："
-
-#: builtin/notes.c:177
-#, c-format
-msgid "unable to start 'show' for object '%s'"
-msgstr "不能為物件 '%s' 開始 'show'"
 
 #: builtin/notes.c:181
 msgid "could not read 'show' output"
@@ -13199,8 +13194,8 @@ msgstr "遠端 %s 已經存在。"
 msgid "Could not setup master '%s'"
 msgstr "無法設定 master '%s'"
 
-#: builtin/remote.c:305 builtin/remote.c:333 trailer.c:555 trailer.c:562
-#: trailer.c:569
+#: builtin/remote.c:305 builtin/remote.c:333 trailer.c:523 trailer.c:530
+#: trailer.c:537
 #, c-format
 msgid "more than one %s"
 msgstr "多於一個 %s"
@@ -20097,13 +20092,13 @@ msgstr "不能從 '%s' 遷移 git 目錄到 '%s'"
 msgid "hint: Waiting for your editor to close the file...%c"
 msgstr "提示：等待您的編輯器關閉檔案...%c"
 
-#: editor.c:150 sequencer.c:528 sequencer.c:3460 sequencer.c:3474
+#: editor.c:149 sequencer.c:528 sequencer.c:3460 sequencer.c:3474
 #: sequencer.c:3731 sequencer.c:6117 wrapper.c:683
 #, c-format
 msgid "could not write to '%s'"
 msgstr "不能寫入 '%s'"
 
-#: editor.c:157
+#: editor.c:156
 #, c-format
 msgid "could not edit '%s'"
 msgstr "無法編輯 '%s'"
@@ -21067,6 +21062,12 @@ msgstr "在 ls-refs 引數之後應該有一個 flush 包"
 msgid "quoted CRLF detected"
 msgstr "偵測到由可列印字元 (quoted) 所組成的 CRLF"
 
+#: mem-pool.c:126 strbuf.c:280 strbuf.c:407 wrapper.c:673
+#, fuzzy, c-format
+#| msgid "error: unable to format message: %s\n"
+msgid "unable to format message: %s"
+msgstr "錯誤：無法格式化訊息：%s\n"
+
 #: merge-ort.c:1792 merge-recursive.c:1236
 #, c-format
 msgid "Failed to merge submodule %s (not checked out)"
@@ -21773,86 +21774,86 @@ msgstr "多包索引所需的 OID 查詢區塊不存在或損壞"
 msgid "multi-pack-index required object offsets chunk missing or corrupted"
 msgstr "多包索引所需的物件偏移區塊不存在或損壞"
 
-#: midx.c:194
+#: midx.c:195
 msgid "multi-pack-index pack-name chunk is too short"
 msgstr "多包索引的封裝名稱區塊過短"
 
-#: midx.c:198
+#: midx.c:199
 #, c-format
 msgid "multi-pack-index pack names out of order: '%s' before '%s'"
 msgstr "多包索引包名無序：'%s' 在 '%s' 之前"
 
-#: midx.c:246
+#: midx.c:247
 #, c-format
 msgid "bad pack-int-id: %u (%u total packs)"
 msgstr "錯的 pack-int-id：%u（共有 %u 個包）"
 
-#: midx.c:275
+#: midx.c:276
 msgid "MIDX does not contain the BTMP chunk"
 msgstr "MIDX 未包含 BTMP 區塊"
 
-#: midx.c:278
+#: midx.c:279
 #, c-format
 msgid "could not load bitmapped pack %<PRIu32>"
 msgstr "無法載入位圖化 (bitmapped) 的封裝 %<PRIu32>"
 
-#: midx.c:318
+#: midx.c:319
 msgid "multi-pack-index stores a 64-bit offset, but off_t is too small"
 msgstr "多包索引儲存一個64位位移，但是 off_t 太小"
 
-#: midx.c:322
+#: midx.c:323
 msgid "multi-pack-index large offset out of bounds"
 msgstr "多包索引的最大偏移超出邊界"
 
-#: midx.c:540
+#: midx.c:541
 #, c-format
 msgid "failed to clear multi-pack-index at %s"
 msgstr "清理位於 %s 的多包索引失敗"
 
-#: midx.c:603
+#: midx.c:604
 msgid "multi-pack-index file exists, but failed to parse"
 msgstr "有 multi-pack-index 檔案，但無法解析"
 
-#: midx.c:611
+#: midx.c:612
 msgid "incorrect checksum"
 msgstr "總和檢查碼不正確"
 
-#: midx.c:614
+#: midx.c:615
 msgid "Looking for referenced packfiles"
 msgstr "正在尋找引用的 packfile"
 
-#: midx.c:625
+#: midx.c:626
 msgid "the midx contains no oid"
 msgstr "midx 沒有 oid"
 
-#: midx.c:634
+#: midx.c:635
 msgid "Verifying OID order in multi-pack-index"
 msgstr "正在驗證多包索引中的物件 ID 順序"
 
-#: midx.c:643
+#: midx.c:644
 #, c-format
 msgid "oid lookup out of order: oid[%d] = %s >= %s = oid[%d]"
 msgstr "物件 ID 查詢無序：oid[%d] = %s >= %s = oid[%d]"
 
-#: midx.c:663
+#: midx.c:664
 msgid "Sorting objects by packfile"
 msgstr "透過 packfile 為物件排序"
 
-#: midx.c:670
+#: midx.c:671
 msgid "Verifying object offsets"
 msgstr "正在驗證物件位移"
 
-#: midx.c:686
+#: midx.c:687
 #, c-format
 msgid "failed to load pack entry for oid[%d] = %s"
 msgstr "為 oid[%d] = %s 載入包條目失敗"
 
-#: midx.c:692
+#: midx.c:693
 #, c-format
 msgid "failed to load pack-index for packfile %s"
 msgstr "為 packfile %s 載入包索引失敗"
 
-#: midx.c:701
+#: midx.c:702
 #, c-format
 msgid "incorrect object offset for oid[%d] = %s: %<PRIx64> != %<PRIx64>"
 msgstr "oid[%d] = %s 錯誤的物件位移：%<PRIx64> != %<PRIx64>"
@@ -22498,59 +22499,65 @@ msgstr "位圖查詢表損壞：提交索引 %u 超出範圍"
 msgid "corrupt ewah bitmap: truncated header for bitmap of commit \"%s\""
 msgstr "ewah 位圖損壞：提交 “%s” 之位圖的標頭遭截斷"
 
-#: pack-bitmap.c:2056
+#: pack-bitmap.c:2059
 #, c-format
 msgid "unable to load pack: '%s', disabling pack-reuse"
 msgstr "無法載入「%s」封裝，停用 pack-reuse"
 
-#: pack-bitmap.c:2232
+#: pack-bitmap.c:2082
+#, fuzzy
+#| msgid "unable to load pack: '%s', disabling pack-reuse"
+msgid "unable to compute preferred pack, disabling pack-reuse"
+msgstr "無法載入「%s」封裝，停用 pack-reuse"
+
+#: pack-bitmap.c:2233
 #, c-format
 msgid "object '%s' not found in type bitmaps"
 msgstr "在類型位圖中，找不到「%s」物件"
 
-#: pack-bitmap.c:2236
+#: pack-bitmap.c:2237
 #, c-format
 msgid "object '%s' does not have a unique type"
 msgstr "「%s」物件的類型不唯一"
 
-#: pack-bitmap.c:2240
+#: pack-bitmap.c:2241
 #, c-format
 msgid "object '%s': real type '%s', expected: '%s'"
 msgstr "「%s」物件：實際類型是「%s」，但預期是「%s」"
 
-#: pack-bitmap.c:2255 pack-bitmap.c:2270
+#: pack-bitmap.c:2256 pack-bitmap.c:2271
 #, c-format
 msgid "object not in bitmap: '%s'"
 msgstr "物件不在位圖中：「%s」"
 
-#: pack-bitmap.c:2287 pack-bitmap.c:2353 pack-bitmap.c:2361
+#: pack-bitmap.c:2288 pack-bitmap.c:2354 pack-bitmap.c:2362
 msgid "failed to load bitmap indexes"
 msgstr "無法載入位圖索引"
 
-#: pack-bitmap.c:2290
+#: pack-bitmap.c:2291
 msgid "you must specify exactly one commit to test"
 msgstr "您必須指定剛好一個要測試的提交"
 
-#: pack-bitmap.c:2308
+#: pack-bitmap.c:2309
 #, c-format
 msgid "commit '%s' doesn't have an indexed bitmap"
 msgstr "提交「%s」無索引過的位圖"
 
-#: pack-bitmap.c:2335
+#: pack-bitmap.c:2336
 msgid "mismatch in bitmap results"
 msgstr "位圖結果中有不符項目"
 
-#: pack-bitmap.c:2553
+#: pack-bitmap.c:2554
 #, c-format
 msgid "could not find '%s' in pack '%s' at offset %<PRIuMAX>"
 msgstr "在「%2$s」封包，位移 %3$<PRIuMAX> 的地方找不到「%1$s」"
 
-#: pack-bitmap.c:2590
+#: pack-bitmap.c:2591
 #, c-format
 msgid "unable to get disk usage of '%s'"
 msgstr "無法取得「%s」的磁碟用量"
 
-#: pack-bitmap.c:2663
+#: pack-bitmap.c:2664
 #, c-format
 msgid "bitmap file '%s' has invalid checksum"
 msgstr "“%s” 位圖檔案的總和檢查碼無效"
@@ -24300,76 +24307,76 @@ msgstr "物件 %s 的取代層級太深"
 msgid "corrupt MERGE_RR"
 msgstr "損壞的 MERGE_RR"
 
-#: rerere.c:253 rerere.c:258
+#: rerere.c:258 rerere.c:263
 msgid "unable to write rerere record"
 msgstr "無法寫入 rerere 記錄"
 
-#: rerere.c:484
+#: rerere.c:489
 #, c-format
 msgid "there were errors while writing '%s' (%s)"
 msgstr "寫入 '%s' (%s) 時發生錯誤"
 
-#: rerere.c:492 rerere.c:1033
+#: rerere.c:497 rerere.c:1038
 #, c-format
 msgid "could not parse conflict hunks in '%s'"
 msgstr "不能解析 '%s' 中的衝突區塊"
 
-#: rerere.c:674
+#: rerere.c:679
 #, c-format
 msgid "failed utime() on '%s'"
 msgstr "在 '%s' 上呼叫 utime() 失敗"
 
-#: rerere.c:684
+#: rerere.c:689
 #, c-format
 msgid "writing '%s' failed"
 msgstr "寫入 '%s' 失敗"
 
-#: rerere.c:704
+#: rerere.c:709
 #, c-format
 msgid "Staged '%s' using previous resolution."
 msgstr "使用之前的解決方案暫存 '%s'。"
 
-#: rerere.c:743
+#: rerere.c:748
 #, c-format
 msgid "Recorded resolution for '%s'."
 msgstr "已記錄 '%s' 的解決方案。"
 
-#: rerere.c:778
+#: rerere.c:783
 #, c-format
 msgid "Resolved '%s' using previous resolution."
 msgstr "使用之前的解決方案解決 '%s'。"
 
-#: rerere.c:793
+#: rerere.c:798
 #, c-format
 msgid "cannot unlink stray '%s'"
 msgstr "無法刪除失散檔案 “%s”"
 
-#: rerere.c:797
+#: rerere.c:802
 #, c-format
 msgid "Recorded preimage for '%s'"
 msgstr "為 '%s' 記錄 preimage"
 
-#: rerere.c:1051
+#: rerere.c:1056
 #, c-format
 msgid "failed to update conflicted state in '%s'"
 msgstr "更新 '%s' 中的衝突狀態失敗"
 
-#: rerere.c:1062 rerere.c:1069
+#: rerere.c:1067 rerere.c:1074
 #, c-format
 msgid "no remembered resolution for '%s'"
 msgstr "沒有為 '%s' 記憶的解決方案"
 
-#: rerere.c:1081
+#: rerere.c:1086
 #, c-format
 msgid "Updated preimage for '%s'"
 msgstr "已為 '%s' 更新 preimage"
 
-#: rerere.c:1090
+#: rerere.c:1095
 #, c-format
 msgid "Forgot resolution for '%s'\n"
 msgstr "忘記 '%s' 的解決方案\n"
 
-#: rerere.c:1201
+#: rerere.c:1206
 msgid "unable to open rr-cache directory"
 msgstr "不能開啟 rr-cache 目錄"
 
@@ -24409,7 +24416,8 @@ msgstr "%s 存在但屬於符號連結"
 msgid ""
 "--merge requires one of the pseudorefs MERGE_HEAD, CHERRY_PICK_HEAD, "
 "REVERT_HEAD or REBASE_HEAD"
-msgstr "--merge 需要偽引用 MERGE_HEAD、CHERRY_PICK_HEAD、REVERT_HEAD 或 REBASE_HEAD "
+msgstr ""
+"--merge 需要偽引用 MERGE_HEAD、CHERRY_PICK_HEAD、REVERT_HEAD 或 REBASE_HEAD "
 "之一"
 
 #: revision.c:2361
@@ -26346,18 +26354,18 @@ msgstr "代符"
 msgid "command token to send to the server"
 msgstr "要傳送至伺服器的命令代符"
 
-#: trailer.c:246
+#: trailer.c:214
 #, c-format
 msgid "running trailer command '%s' failed"
 msgstr "執行 trailer 指令 '%s' 失敗"
 
-#: trailer.c:497 trailer.c:502 trailer.c:507 trailer.c:576 trailer.c:580
-#: trailer.c:584
+#: trailer.c:465 trailer.c:470 trailer.c:475 trailer.c:544 trailer.c:548
+#: trailer.c:552
 #, c-format
 msgid "unknown value '%s' for key '%s'"
 msgstr "鍵 '%2$s' 的未知取值 '%1$s'"
 
-#: trailer.c:762
+#: trailer.c:730
 #, c-format
 msgid "empty trailer token in trailer '%.*s'"
 msgstr "簽名 '%.*s' 的鍵為空"
@@ -28142,6 +28150,10 @@ msgstr "略過 %s 含備份後綴 '%s'。\n"
 #, perl-format
 msgid "Do you really want to send %s? [y|N]: "
 msgstr "您真的要傳送 %s？[y|N]： "
+
+#, c-format
+#~ msgid "truncating .rej filename to %.*s.rej"
+#~ msgstr "正在將 .rej 檔案名稱截短為 %.*s.rej"
 
 #~ msgid ""
 #~ "Use -f if you really want to add them.\n"

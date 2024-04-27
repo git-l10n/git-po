@@ -28,18 +28,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-04-27 20:54+0800\n"
-"PO-Revision-Date: 2024-04-26 13:39+0000\n"
+"PO-Revision-Date: 2024-04-27 12:56+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.1.1\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:389
 #, c-format
@@ -21063,10 +21063,9 @@ msgid "quoted CRLF detected"
 msgstr "偵測到由可列印字元 (quoted) 所組成的 CRLF"
 
 #: mem-pool.c:126 strbuf.c:280 strbuf.c:407 wrapper.c:673
-#, fuzzy, c-format
-#| msgid "error: unable to format message: %s\n"
+#, c-format
 msgid "unable to format message: %s"
-msgstr "錯誤：無法格式化訊息：%s\n"
+msgstr "無法格式化訊息：%s"
 
 #: merge-ort.c:1792 merge-recursive.c:1236
 #, c-format
@@ -22505,10 +22504,8 @@ msgid "unable to load pack: '%s', disabling pack-reuse"
 msgstr "無法載入「%s」封裝，停用 pack-reuse"
 
 #: pack-bitmap.c:2082
-#, fuzzy
-#| msgid "unable to load pack: '%s', disabling pack-reuse"
 msgid "unable to compute preferred pack, disabling pack-reuse"
-msgstr "無法載入「%s」封裝，停用 pack-reuse"
+msgstr "無法計算偏好封裝，停用 pack-reuse"
 
 #: pack-bitmap.c:2233
 #, c-format

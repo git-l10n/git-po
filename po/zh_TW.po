@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-04-27 20:54+0800\n"
-"PO-Revision-Date: 2024-04-27 12:56+0000\n"
+"PO-Revision-Date: 2024-04-27 13:23+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -612,8 +612,8 @@ msgid ""
 "Lines starting with %s will be removed.\n"
 msgstr ""
 "---\n"
-"要刪除 “%c” 開頭的列，請將列首（上下文）改成空白。\n"
-"要刪除 “%c” 開頭的列，請直接刪除。\n"
+"要刪除「%c」開頭的列，請將列首（上下文）改成空白。\n"
+"要刪除「%c」開頭的列，請直接刪除。\n"
 "開頭是 %s 的列將會被移除。\n"
 
 #: add-patch.c:1128
@@ -670,10 +670,10 @@ msgid ""
 "p - print the current hunk\n"
 "? - print help\n"
 msgstr ""
-"j - 維持此區塊未決狀態，檢視下一個未決定區塊\n"
-"J - 維持此區塊未決狀態，檢視下一個區塊\n"
-"k - 維持此區塊未決狀態，檢視上一個未決定區塊\n"
-"K - 維持此區塊未決狀態，檢視上一個區塊\n"
+"j - 維持此區塊未決定狀態，檢視下一個未決定區塊\n"
+"J - 維持此區塊未決定狀態，檢視下一個區塊\n"
+"k - 維持此區塊未決定狀態，檢視上一個未決定區塊\n"
+"K - 維持此區塊未決定狀態，檢視上一個區塊\n"
 "g - 選擇要跳轉至的區塊\n"
 "/ - 尋找符合提供之常規表示式的區塊\n"
 "s - 分割目前區塊為更小的區塊\n"
@@ -2102,7 +2102,7 @@ msgstr "“%s” 不是有效的分支名稱"
 
 #: branch.c:376 builtin/branch.c:588
 msgid "See `man git check-ref-format`"
-msgstr "參閱 `man git check-ref-format`"
+msgstr "請參閱「man git check-ref-format」"
 
 #: branch.c:473
 #, c-format
@@ -2340,7 +2340,7 @@ msgstr "正在加入嵌入式 git 版本庫：%s"
 
 #: builtin/add.c:335
 msgid "Use -f if you really want to add them."
-msgstr "如果您確定想要加入他們，請使用 '-f'。"
+msgstr "如果您確定想要加入他們，請使用「-f」。"
 
 #: builtin/add.c:348
 msgid "adding files failed"
@@ -2364,7 +2364,7 @@ msgstr "沒有指定，亦未加入檔案。\n"
 
 #: builtin/add.c:446
 msgid "Maybe you wanted to say 'git add .'?"
-msgstr "也許您想要執行的是 'git add .'？"
+msgstr "也許您想要執行的是「git add .」？"
 
 #: builtin/add.c:462 builtin/check-ignore.c:185 builtin/checkout.c:569
 #: builtin/checkout.c:784 builtin/clean.c:1014 builtin/commit.c:387
@@ -2481,18 +2481,18 @@ msgstr "無法切割修補檔。"
 #: builtin/am.c:1158
 #, c-format
 msgid "When you have resolved this problem, run \"%s --continue\".\n"
-msgstr "解決此問題後，請執行 “%s --continue”。\n"
+msgstr "解決此問題後，請執行「%s --continue」。\n"
 
 #: builtin/am.c:1159
 #, c-format
 msgid "If you prefer to skip this patch, run \"%s --skip\" instead.\n"
-msgstr "若要略過此修補，請改執行 “%s --skip”。\n"
+msgstr "若要略過此修補，請改執行「%s --skip」。\n"
 
 #: builtin/am.c:1164
 #, c-format
 msgid ""
 "To record the empty patch as an empty commit, run \"%s --allow-empty\".\n"
-msgstr "若要將空白修補檔錄入為空白提交，請執行 “%s --allow-empty”。\n"
+msgstr "若要將空白修補檔錄入為空白提交，請執行「%s --allow-empty」。\n"
 
 #: builtin/am.c:1166
 #, c-format
@@ -3577,7 +3577,7 @@ msgid ""
 msgstr ""
 "請編輯下述分支的描述\n"
 "  %s\n"
-"開頭是 “%s” 的列將被刪除。\n"
+"開頭是「%s」的列將被刪除。\n"
 
 #: builtin/branch.c:719
 msgid "Generic options"
@@ -4718,7 +4718,7 @@ msgstr "缺少分支或提交引數"
 #: builtin/checkout.c:1654
 #, c-format
 msgid "unknown conflict style '%s'"
-msgstr "未知的衝突輸出風格 “%s”"
+msgstr "未知的衝突輸出風格「%s」"
 
 #: builtin/checkout.c:1671
 msgid "perform a 3-way merge with the new branch"
@@ -5852,7 +5852,7 @@ msgstr "不能讀取 MERGE_MSG"
 #: sequencer.c:3571
 #, c-format
 msgid "could not open '%s'"
-msgstr "不能開啟 '%s'"
+msgstr "無法開啟「%s」"
 
 #: builtin/commit.c:904
 msgid "could not write commit template"
@@ -5865,7 +5865,7 @@ msgid ""
 "with '%s' will be ignored.\n"
 msgstr ""
 "請輸入描述您變更的提交訊息。\n"
-"開頭是「%s」的行皆會忽略。\n"
+"開頭是「%s」的列皆會忽略。\n"
 
 #: builtin/commit.c:919
 #, c-format
@@ -5873,8 +5873,8 @@ msgid ""
 "Please enter the commit message for your changes. Lines starting\n"
 "with '%s' will be ignored, and an empty message aborts the commit.\n"
 msgstr ""
-"請輸入描述您變更的提交訊息。開頭是「%s」\n"
-"的行皆會忽略。提交訊息空白則取消本次提交作業。\n"
+"請輸入描述您變更的提交訊息。開頭是「%s」的列\n"
+"皆會忽略。提交訊息空白則取消本次提交作業。\n"
 
 #: builtin/commit.c:923
 #, c-format
@@ -5883,7 +5883,7 @@ msgid ""
 "with '%s' will be kept; you may remove them yourself if you want to.\n"
 msgstr ""
 "請輸入描述您變更的提交訊息。會保留開頭是「%s」\n"
-"的行，但也可以自己移除掉這些行。\n"
+"的列，但也可以自己移除掉這些列。\n"
 
 #: builtin/commit.c:927
 #, c-format
@@ -5893,7 +5893,7 @@ msgid ""
 "An empty message aborts the commit.\n"
 msgstr ""
 "請輸入描述您變更的提交訊息。會保留開頭是\n"
-"「%s」的行，但也可以自己移除掉這些行。\n"
+"「%s」的列，但也可以自己移除掉這些列。\n"
 "提交訊息空白則取消本次提交作業。\n"
 
 #: builtin/commit.c:938
@@ -9308,7 +9308,7 @@ msgstr "追蹤 <開始>,<結束> 範圍中橫列或 <檔案> 中> :<函數名稱
 #: builtin/shortlog.c:439 bundle.c:528
 #, c-format
 msgid "unrecognized argument: %s"
-msgstr "無法識別的參數：%s"
+msgstr "無法識別的引數：%s"
 
 #: builtin/log.c:287
 msgid "-L<range>:<file> cannot be used with pathspec"
@@ -10117,7 +10117,7 @@ msgstr "合併 %s 和 %s\n"
 #: builtin/merge-tree.c:447 builtin/merge-tree.c:452 builtin/merge-tree.c:457
 #, c-format
 msgid "could not parse as tree '%s'"
-msgstr "無法解析為樹狀物件 “%s”"
+msgstr "無法解析為樹狀物件「%s」"
 
 #: builtin/merge-tree.c:468 builtin/merge-tree.c:473 builtin/merge.c:1208
 msgid "not something we can merge"
@@ -10384,7 +10384,7 @@ msgstr "空的提交說明會終止提交。\n"
 msgid ""
 "Lines starting with '%s' will be ignored, and an empty message aborts\n"
 "the commit.\n"
-msgstr "以「%s」開始的行將被忽略，提交說明留空則會終止提交。\n"
+msgstr "以「%s」開始的列將被忽略，提交說明留空則會終止提交。\n"
 
 #: builtin/merge.c:888
 msgid "Empty commit message."
@@ -10789,7 +10789,7 @@ msgstr "列出可以從所有引用存取的提交"
 
 #: builtin/name-rev.c:578
 msgid "deprecated: use --annotate-stdin instead"
-msgstr "已廢棄：請改用 --annotate-stdin"
+msgstr "已棄用：請改用 --annotate-stdin"
 
 #: builtin/name-rev.c:580
 msgid "annotate text from stdin"
@@ -11053,8 +11053,8 @@ msgid ""
 "The -m/-F/-c/-C options have been deprecated for the 'edit' subcommand.\n"
 "Please use 'git notes add -f -m/-F/-c/-C' instead.\n"
 msgstr ""
-"子指令 'edit' 的選項 -m/-F/-c/-C 已棄用。\n"
-"請換用 'git notes add -f -m/-F/-c/-C'。\n"
+"子指令「edit」的選項 -m/-F/-c/-C 已棄用。\n"
+"請換用「git notes add -f -m/-F/-c/-C」。\n"
 
 #: builtin/notes.c:798
 msgid "failed to delete ref NOTES_MERGE_PARTIAL"
@@ -12504,14 +12504,14 @@ msgstr "套用選項與合併選項不得同時使用"
 
 #: builtin/rebase.c:951
 msgid "--empty=ask is deprecated; use '--empty=stop' instead."
-msgstr "--empty=ask 已棄用。請改用 “--empty=stop”"
+msgstr "--empty=ask 已棄用。請改用「--empty=stop」。"
 
 #: builtin/rebase.c:955
 #, c-format
 msgid ""
 "unrecognized empty type '%s'; valid values are \"drop\", \"keep\", and "
 "\"stop\"."
-msgstr "無法識別空類型 “%s”；有效的數值有 “drop”、“keep” 跟 “stop”。"
+msgstr "無法識別空類型「%s」；有效的數值有「drop」、「keep」跟「stop」。"
 
 #: builtin/rebase.c:990
 msgid ""
@@ -13144,7 +13144,7 @@ msgid ""
 "--mirror is dangerous and deprecated; please\n"
 "\t use --mirror=fetch or --mirror=push instead"
 msgstr ""
-"--mirror 選項危險且過時，請使用 --mirror=fetch\n"
+"--mirror 選項危險且已棄用，請使用 --mirror=fetch\n"
 "\t 或 --mirror=push"
 
 #: builtin/remote.c:153
@@ -14107,7 +14107,7 @@ msgstr "在索引中註冊乾淨的解決方案"
 
 #: builtin/rerere.c:77
 msgid "'git rerere forget' without paths is deprecated"
-msgstr "沒有路徑的 'git rerere forget' 已經過時"
+msgstr "沒有路徑的「git rerere forget」已經棄用"
 
 #: builtin/rerere.c:111
 #, c-format
@@ -14218,7 +14218,7 @@ msgstr "無法將 '%s' 解析為一個有效的樹狀物件。"
 
 #: builtin/reset.c:428
 msgid "--mixed with paths is deprecated; use 'git reset -- <paths>' instead."
-msgstr "--mixed 帶路徑已棄用，而是用 'git reset -- <路徑>'。"
+msgstr "--mixed 帶路徑已棄用，請改用「git reset -- <路徑>」。"
 
 #  譯者：漢字之間無空格，故刪除%s前後空格
 #: builtin/reset.c:430
@@ -14468,7 +14468,7 @@ msgstr "允許提交說明為空"
 
 #: builtin/revert.c:143
 msgid "deprecated: use --empty=keep instead"
-msgstr "已廢棄：請改用 --empty=keep"
+msgstr "已棄用：請改用 --empty=keep"
 
 #: builtin/revert.c:153
 msgid "use the 'reference' format to refer to commits"
@@ -16093,7 +16093,7 @@ msgstr ""
 "\n"
 "為標籤輸入說明訊息：\n"
 "  %s\n"
-"以 '%s' 開頭的行將被忽略。\n"
+"以「%s」開頭的列將被忽略。\n"
 
 #: builtin/tag.c:199
 #, c-format
@@ -16107,7 +16107,7 @@ msgstr ""
 "\n"
 "為標籤輸入說明訊息：\n"
 "  %s\n"
-"以 '%s' 開頭的行將被保留；需要的話您可以自己刪除。\n"
+"以「%s」開頭的列將被保留；需要的話您可以自己刪除。\n"
 
 #: builtin/tag.c:266
 msgid "unable to sign the tag"
@@ -16523,11 +16523,11 @@ msgstr "fsmonitor 被停用"
 
 #: builtin/update-ref.c:12
 msgid "git update-ref [<options>] -d <refname> [<old-oid>]"
-msgstr "git update-ref [<選項>] -d <引用名> [<舊物件ID>]"
+msgstr "git update-ref [<options>] -d <refname> [<old-oid>]"
 
 #: builtin/update-ref.c:13
 msgid "git update-ref [<options>]    <refname> <new-oid> [<old-oid>]"
-msgstr "git update-ref [<選項>]    <引用名> <新物件ID> [<舊物件ID>]"
+msgstr "git update-ref [<options>]    <refname> <new-oid> [<old-oid>]"
 
 #: builtin/update-ref.c:14
 msgid "git update-ref [<options>] --stdin [-z]"
@@ -16837,7 +16837,7 @@ msgstr "「%s」、「%s」和「%s」選項不得同時使用"
 #: builtin/worktree.c:815
 #, c-format
 msgid "option '%s' and commit-ish cannot be used together"
-msgstr "“%s” 選項和提交號不得同時使用"
+msgstr "「%s」選項和提交編號不得同時使用"
 
 #: builtin/worktree.c:822
 msgid "added with --lock"
@@ -17076,7 +17076,7 @@ msgstr "無法識別的套件包雜湊演算法：%s"
 #: bundle.c:58
 #, c-format
 msgid "unknown capability '%s'"
-msgstr "未知功能 '%s'"
+msgstr "未知功能「%s」"
 
 #: bundle.c:84
 #, c-format
@@ -17086,7 +17086,7 @@ msgstr "“%s” 不像是一個 v2 或 v3 版本的套件包檔案"
 #: bundle.c:123
 #, c-format
 msgid "unrecognized header: %s%s (%d)"
-msgstr "無法識別的包頭：%s%s (%d)"
+msgstr "無法識別的標頭：%s%s (%d)"
 
 #: bundle.c:220
 msgid "Repository lacks these prerequisite commits:"
@@ -17134,7 +17134,7 @@ msgstr "無法複製套件包描述元"
 
 #: bundle.c:351
 msgid "Could not spawn pack-objects"
-msgstr "不能生成 pack-objects 進程"
+msgstr "無法 spawn pack-objects 處理程序"
 
 #: bundle.c:362
 msgid "pack-objects died"
@@ -17143,7 +17143,7 @@ msgstr "pack-objects 終止"
 #: bundle.c:412
 #, c-format
 msgid "ref '%s' is excluded by the rev-list options"
-msgstr "引用 '%s' 被 rev-list 選項排除"
+msgstr "引用「%s」被 rev-list 選項排除"
 
 #: bundle.c:543
 #, c-format
@@ -17162,7 +17162,7 @@ msgstr "不能建立空套件包。"
 #: bundle.c:605
 #, c-format
 msgid "cannot create '%s'"
-msgstr "不能建立 '%s'"
+msgstr "無法建立「%s」"
 
 #: bundle.c:637
 msgid "index-pack died"
@@ -17170,7 +17170,7 @@ msgstr "index-pack 終止"
 
 #: chunk-format.c:121
 msgid "terminating chunk id appears earlier than expected"
-msgstr "終止區塊 id 出現的時間早於預期"
+msgstr "終止區塊 ID 比預期還早出現"
 
 #: chunk-format.c:125
 #, c-format
@@ -18257,14 +18257,14 @@ msgid ""
 "Turn this message off by running\n"
 "\"git config advice.graftFileDeprecated false\""
 msgstr ""
-"對 <GIT_DIR>/info/grafts 的支援已被棄用，並將在\n"
-"未來的Git版本中被移除。\n"
+"對 <GIT_DIR>/info/grafts 的支援已棄用，並將在\n"
+"未來的 Git 版本中被移除。\n"
 "\n"
-"請使用 \"git replace --convert-graft-file\" 將\n"
+"請使用「git replace --convert-graft-file」將\n"
 "grafts 轉換為取代引用。\n"
 "\n"
-"設定 \"git config advice.graftFileDeprecated false\"\n"
-"可關閉本消息"
+"設定「git config advice.graftFileDeprecated false」\n"
+"可以將本訊息關閉"
 
 #: commit.c:584
 #, c-format
@@ -18785,7 +18785,7 @@ msgstr "忽略未知的 core.fsyncMethod 值「%s」"
 
 #: config.c:1622
 msgid "core.fsyncObjectFiles is deprecated; use core.fsync instead"
-msgstr "core.fsyncObjectFiles 已被取代。請改用 core.fsync"
+msgstr "core.fsyncObjectFiles 已棄用。請改用 core.fsync"
 
 #: config.c:1640
 #, c-format
@@ -21930,7 +21930,7 @@ msgstr "提交中有無效的 %s"
 #: object-file-convert.c:166 object-file-convert.c:178
 #, c-format
 msgid "unable to map %s %s in commit object"
-msgstr "無法在提交物件映射 %s %s"
+msgstr "無法在提交物件中映射 %s %s"
 
 #: object-file-convert.c:275
 #, c-format
@@ -23785,7 +23785,7 @@ msgstr "此引用名稱是危險的：%s"
 #: refs/reftable-backend.c:789
 #, c-format
 msgid "trying to write ref '%s' with nonexistent object %s"
-msgstr "嘗試以不存在的物件 %s 寫入引用 %s"
+msgstr "嘗試以不存在的物件 %s 寫入引用「%s」"
 
 #: refs/reftable-backend.c:796
 #, c-format
@@ -23797,7 +23797,7 @@ msgstr "嘗試將非提交物件 %s 寫入分支「%s」"
 msgid ""
 "multiple updates for 'HEAD' (including one via its referent '%s') are not "
 "allowed"
-msgstr "不允許對 “HEAD” 進行多次更新（包含透過其 “%s” 引用進行的更新）"
+msgstr "不允許對「HEAD」進行多次更新（包含透過其「%s」引用進行的更新）"
 
 #: refs/reftable-backend.c:870
 #, c-format
@@ -23813,7 +23813,7 @@ msgstr "無法鎖定引用「%s」：無法讀取引用"
 #, c-format
 msgid ""
 "multiple updates for '%s' (including one via symref '%s') are not allowed"
-msgstr "不允許對 “HEAD” 進行多次更新（包含透過 “%s” 符號引用進行的更新）"
+msgstr "不允許對「HEAD」進行多次更新（包含透過「%s」符號引用進行的更新）"
 
 #: refs/reftable-backend.c:943
 #, c-format
@@ -23823,7 +23823,7 @@ msgstr "無法鎖定引用「%s」：引用已經存在"
 #: refs/reftable-backend.c:947
 #, c-format
 msgid "cannot lock ref '%s': reference is missing but expected %s"
-msgstr "無法鎖定引用「%s」：缺乏引用但預期的是 %s"
+msgstr "無法鎖定引用「%s」：缺少引用但預期的是 %s"
 
 #: refs/reftable-backend.c:952
 #, c-format
@@ -24413,9 +24413,8 @@ msgstr "%s 存在但屬於符號連結"
 msgid ""
 "--merge requires one of the pseudorefs MERGE_HEAD, CHERRY_PICK_HEAD, "
 "REVERT_HEAD or REBASE_HEAD"
-msgstr ""
-"--merge 需要偽引用 MERGE_HEAD、CHERRY_PICK_HEAD、REVERT_HEAD 或 REBASE_HEAD "
-"之一"
+msgstr "--merge 需要其中一種偽引用 MERGE_HEAD、CHERRY_PICK_HEAD、REVERT_HEAD 或 "
+"REBASE_HEAD"
 
 #: revision.c:2361
 #, c-format
@@ -26487,7 +26486,7 @@ msgstr "remote-heper 不支援 push，需要引用規格"
 #: transport-helper.c:1081
 #, c-format
 msgid "helper %s does not support '--force'"
-msgstr "協助工具 %s 不支援 “--force”"
+msgstr "協助工具 %s 不支援「--force」"
 
 #: transport-helper.c:1128
 msgid "couldn't run fast-export"

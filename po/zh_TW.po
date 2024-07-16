@@ -5549,11 +5549,12 @@ msgid "the object directory to store the graph"
 msgstr "儲存圖形的物件目錄"
 
 #: builtin/commit-graph.c:81
+#, fuzzy
 msgid "if the commit-graph is split, only verify the tip file"
 msgstr "如果提交圖形被分割，只驗證頭一個檔案"
 
 #: builtin/commit-graph.c:110
-#, c-format
+#, c-format, fuzzy
 msgid "Could not open commit-graph '%s'"
 msgstr "無法開啟提交圖形 '%s'"
 

@@ -28,18 +28,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
-"PO-Revision-Date: 2024-04-28 18:44+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"PO-Revision-Date: 2024-07-16 13:25+0000\n"
+"Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-Generator: Weblate 5.6.2\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:391
 #, c-format
@@ -682,10 +682,9 @@ msgstr ""
 "? - 顯示說明\n"
 
 #: add-patch.c:1520
-#, fuzzy, c-format
-#| msgid "a branch is expected, got '%s'"
+#, c-format
 msgid "Only one letter is expected, got '%s'"
-msgstr "預期收到分支，卻收到 “%s”"
+msgstr "預期收到一個字母，卻收到 “%s”"
 
 #: add-patch.c:1559 add-patch.c:1569
 msgid "No previous hunk"
@@ -749,26 +748,21 @@ msgid "Sorry, cannot edit this hunk"
 msgstr "對不起，無法編輯這個區塊"
 
 #: add-patch.c:1705
-#, fuzzy, c-format
-#| msgid "unknown command: '%s'"
+#, c-format
 msgid "Unknown command '%s' (use '?' for help)"
-msgstr "未知命令：“%s”"
+msgstr "未知命令 “%s” (使用 “?” 獲取幫助)"
 
 #: add-patch.c:1730
 msgid "'git apply' failed"
 msgstr "“git apply” 失敗"
 
 #: add-patch.c:1793
-#, fuzzy
-#| msgid "No changes.\n"
 msgid "No changes."
-msgstr "沒有更動。\n"
+msgstr "沒有更動。"
 
 #: add-patch.c:1795
-#, fuzzy
-#| msgid "Only binary files changed.\n"
 msgid "Only binary files changed."
-msgstr "只有二進位檔案更動了。\n"
+msgstr "只有二進位檔案更動了。"
 
 #: advice.c:94
 #, c-format
@@ -1853,10 +1847,8 @@ msgid "ignoring overly large gitattributes blob '%s'"
 msgstr "忽略過大的 gitattributes 資料物件 “%s”"
 
 #: attr.c:1234
-#, fuzzy
-#| msgid "bad --attr-source or GIT_ATTR_SOURCE"
 msgid "cannot use --attr-source or GIT_ATTR_SOURCE without repo"
-msgstr "無效的 --attr-source 或 GIT_ATTR_SOURCE"
+msgstr "沒有版本庫無法使用 --attr-source 或 GIT_ATTR_SOURCE"
 
 #: attr.c:1242
 msgid "bad --attr-source or GIT_ATTR_SOURCE"
@@ -2805,10 +2797,8 @@ msgid "show the patch being applied"
 msgstr "顯示正在套用的修補檔"
 
 #: builtin/am.c:2398
-#, fuzzy
-#| msgid "skip current patch and continue"
 msgid "try to apply current patch again"
-msgstr "略過目前修補檔並繼續"
+msgstr "再次嘗試套用目前修補檔"
 
 #: builtin/am.c:2401
 msgid "record the empty patch as an empty commit"
@@ -5291,7 +5281,7 @@ msgstr "“%s” 不能與 “%s” 同時使用"
 #: builtin/clone.c:409
 #, c-format
 msgid "hardlink different from source at '%s'"
-msgstr ""
+msgstr "硬連結與位於 '%s' 的來源不同"
 
 #: builtin/clone.c:414
 #, c-format
@@ -5530,7 +5520,7 @@ msgstr "--command 必須是第一個參數"
 msgid ""
 "git commit-graph verify [--object-dir <dir>] [--shallow] [--[no-]progress]"
 msgstr ""
-"git commit-graph verify [--object-dir <目錄>] [--shallow] [--[no-]progress]"
+"git commit-graph verify [--object-dir <dir>] [--shallow] [--[no-]progress]"
 
 #: builtin/commit-graph.c:21
 msgid ""
@@ -5554,6 +5544,7 @@ msgid "dir"
 msgstr "目錄"
 
 #: builtin/commit-graph.c:57
+#, fuzzy
 msgid "the object directory to store the graph"
 msgstr "儲存圖形的物件目錄"
 
@@ -6317,7 +6308,7 @@ msgstr ""
 
 #: builtin/config.c:19 builtin/config.c:31
 msgid "git config list [<file-option>] [<display-option>] [--includes]"
-msgstr ""
+msgstr "git config list [<檔案選項>] [<顯示選項>] [--includes]"
 
 #: builtin/config.c:20 builtin/config.c:36
 msgid ""
@@ -6325,46 +6316,50 @@ msgid ""
 "regexp=<regexp>] [--value=<value>] [--fixed-value] [--default=<default>] "
 "<name>"
 msgstr ""
+"git config get [<檔案選項>] [<顯示選項>] [--includes] [--all] "
+"[--regexp=<常規表示式>] [--value=<值>] [--fixed-value] [--default=<預設值>] "
+"<名稱>"
 
 #: builtin/config.c:21
 msgid ""
 "git config set [<file-option>] [--type=<type>] [--all] [--value=<value>] [--"
 "fixed-value] <name> <value>"
 msgstr ""
+"git config set [<檔案選項>] [--type=<類型>] [--all] [--value=<值>] [--fixed-"
+"value] <名稱> <值>"
 
 #: builtin/config.c:22 builtin/config.c:46
 msgid ""
 "git config unset [<file-option>] [--all] [--value=<value>] [--fixed-value] "
 "<name> <value>"
 msgstr ""
+"git config unset [<檔案選項>] [--all] [--value=<值>] [--fixed-value] <名稱> "
+"<值>"
 
 #: builtin/config.c:23 builtin/config.c:51
-#, fuzzy
-#| msgid "rename section: old-name new-name"
 msgid "git config rename-section [<file-option>] <old-name> <new-name>"
-msgstr "重新命名小節：old-name new-name"
+msgstr "git config rename-section [<檔案選項>] <舊名稱> <新名稱>"
 
 #: builtin/config.c:24 builtin/config.c:56
-#, fuzzy
-#| msgid "git remote show [<options>] <name>"
 msgid "git config remove-section [<file-option>] <name>"
-msgstr "git remote show [<選項>] <名稱>"
+msgstr "git config remove-section [<檔案選項>] <名稱>"
 
 #: builtin/config.c:25 builtin/config.c:61
-#, fuzzy
-#| msgid "git config [<options>]"
 msgid "git config edit [<file-option>]"
-msgstr "git config [<選項>]"
+msgstr "git config edit [<檔案選項>]"
 
 #: builtin/config.c:26
+#, fuzzy
 msgid "git config [<file-option>] --get-colorbool <name> [<stdout-is-tty>]"
-msgstr ""
+msgstr "git config [<file-option>] --get-colorbool <name> [<stdout-is-tty>]"
 
 #: builtin/config.c:41
 msgid ""
 "git config set [<file-option>] [--type=<type>] [--comment=<message>] [--all] "
 "[--value=<value>] [--fixed-value] <name> <value>"
 msgstr ""
+"git config set [<檔案選項>] [--type=<類型>] [--comment=<備註>] [--all] "
+"[--value=<值>] [--fixed-value] <名稱> <值>"
 
 #: builtin/config.c:66
 msgid "Config file location"
@@ -6435,10 +6430,8 @@ msgid "value is an expiry date"
 msgstr "值是一個到期日期"
 
 #: builtin/config.c:99
-#, fuzzy
-#| msgid "Display data in columns"
 msgid "Display options"
-msgstr "以列的方式顯示資料"
+msgstr "顯示選項"
 
 #: builtin/config.c:100
 msgid "terminate values with NUL byte"
@@ -6459,10 +6452,8 @@ msgstr ""
 "令 command)"
 
 #: builtin/config.c:104
-#, fuzzy
-#| msgid "show underlying ref in addition to the object pointed by it"
 msgid "show config keys in addition to their values"
-msgstr "除了顯示指向的物件外，顯示指向的引用名"
+msgstr "除了顯示組態值，額外顯示其鍵名"
 
 #: builtin/config.c:169
 #, c-format
@@ -6582,45 +6573,33 @@ msgid "error processing config file(s)"
 msgstr "處理設定檔案發生錯誤"
 
 #: builtin/config.c:873
-#, fuzzy
-#| msgid "Merge options"
 msgid "Filter options"
-msgstr "合併選項"
+msgstr "過濾選項"
 
 #: builtin/config.c:874
 msgid "return all values for multi-valued config options"
-msgstr ""
+msgstr "回傳有多項值之組態選項的所有值"
 
 #: builtin/config.c:875
-#, fuzzy
-#| msgid "Premature end of regular expression"
 msgid "interpret the name as a regular expression"
-msgstr "常規表示式太早結束"
+msgstr "將名稱當作常規表示式解讀"
 
 #: builtin/config.c:876 builtin/config.c:929 builtin/config.c:985
-#, fuzzy
-#| msgid "skip files matching pattern"
 msgid "show config with values matching the pattern"
-msgstr "符合排除檔案的模式"
+msgstr "顯示值符合模式的組態"
 
 #: builtin/config.c:877 builtin/config.c:930 builtin/config.c:986
 #: builtin/config.c:1169
-#, fuzzy
-#| msgid "use string equality when comparing values to 'value-pattern'"
 msgid "use string equality when comparing values to value pattern"
-msgstr "比較「value-pattern」的值時，使用字串相等比較"
+msgstr "使用字串相等比較值和模式"
 
 #: builtin/config.c:878
-#, fuzzy
-#| msgid "URL: %s"
 msgid "URL"
-msgstr "URL：%s"
+msgstr "URL"
 
 #: builtin/config.c:878
-#, fuzzy
-#| msgid "apply changes matching the given path"
 msgid "show config matching the given URL"
-msgstr "套用符合提供路徑的更動"
+msgstr "顯示符合提供 URL 的組態"
 
 #: builtin/config.c:884 builtin/config.c:932 builtin/config.c:1167
 #: builtin/config.c:1168
@@ -6628,26 +6607,20 @@ msgid "value"
 msgstr "取值"
 
 #: builtin/config.c:884
-#, fuzzy
-#| msgid "with --get, use default value when missing entry"
 msgid "use default value when missing entry"
-msgstr "使用 --get 但未指定參數時所使用的預設值"
+msgstr "未指定參數時所使用的預設值"
 
 #: builtin/config.c:894 builtin/config.c:996 builtin/config.c:1252
 msgid "--fixed-value only applies with 'value-pattern'"
 msgstr "--fixed-value 僅套用至 'value-pattern'"
 
 #: builtin/config.c:897
-#, fuzzy
-#| msgid "--format=%.*s cannot be used with --python, --shell, --tcl"
 msgid "--default= cannot be used with --all or --url="
-msgstr "--format=%.*s 不能和 --python、--shell、--tcl 一起使用"
+msgstr "--default= 無法和 --all 或 --url= 一起使用"
 
 #: builtin/config.c:901
-#, fuzzy
-#| msgid "--format=%.*s cannot be used with --python, --shell, --tcl"
 msgid "--url= cannot be used with --all, --regexp or --value"
-msgstr "--format=%.*s 不能和 --python、--shell、--tcl 一起使用"
+msgstr "--url= 無法和 --all、--regexp、--value 一起使用"
 
 #: builtin/config.c:927 builtin/config.c:983
 msgid "Filter"
@@ -6655,7 +6628,7 @@ msgstr ""
 
 #: builtin/config.c:928 builtin/config.c:984
 msgid "replace multi-valued config option with new value"
-msgstr ""
+msgstr "以新值取代有多項值的組態選項"
 
 #: builtin/config.c:932 builtin/config.c:1168
 msgid "human-readable comment string (# will be prepended as needed)"
@@ -6666,16 +6639,12 @@ msgid "add a new line without altering any existing values"
 msgstr ""
 
 #: builtin/config.c:945
-#, fuzzy
-#| msgid "--fixed-value only applies with 'value-pattern'"
 msgid "--fixed-value only applies with --value=<pattern>"
-msgstr "--fixed-value 僅套用至 'value-pattern'"
+msgstr "--fixed-value 僅套用至 --value=<模式>"
 
 #: builtin/config.c:947
-#, fuzzy
-#| msgid "-x and -X cannot be used together"
 msgid "--append cannot be used with --value=<pattern>"
-msgstr "-x 和 -X 不能同時使用"
+msgstr "--append 無法和 --value=<模式> 一起使用"
 
 #: builtin/config.c:966 builtin/config.c:1287
 #, c-format
@@ -6710,48 +6679,36 @@ msgid "Action"
 msgstr "動作"
 
 #: builtin/config.c:1150
-#, fuzzy
-#| msgid "get value: name [value-pattern]"
 msgid "get value: name [<value-pattern>]"
-msgstr "取得值：name [value-pattern]"
+msgstr "取得值：name [<value-pattern>]"
 
 #: builtin/config.c:1151
-#, fuzzy
-#| msgid "get all values: key [value-pattern]"
 msgid "get all values: key [<value-pattern>]"
-msgstr "取得所有值：key [value-pattern]"
+msgstr "取得所有值：key [<value-pattern>]"
 
 #: builtin/config.c:1152
-#, fuzzy
-#| msgid "get values for regexp: name-regex [value-pattern]"
 msgid "get values for regexp: name-regex [<value-pattern>]"
-msgstr "根據常規表示式取得值：name-regex [value-pattern]"
+msgstr "根據常規表示式取得值：name-regex [<value-pattern>]"
 
 #: builtin/config.c:1153
 msgid "get value specific for the URL: section[.var] URL"
 msgstr "獲得 URL 取值：section[.var] URL"
 
 #: builtin/config.c:1154
-#, fuzzy
-#| msgid "replace all matching variables: name value [value-pattern]"
 msgid "replace all matching variables: name value [<value-pattern>]"
-msgstr "取代所有符合的變數：name value [value-pattern]"
+msgstr "取代所有符合的變數：name value [<value-pattern>]"
 
 #: builtin/config.c:1155
 msgid "add a new variable: name value"
 msgstr "新增一個新的變數：name value"
 
 #: builtin/config.c:1156
-#, fuzzy
-#| msgid "remove a variable: name [value-pattern]"
 msgid "remove a variable: name [<value-pattern>]"
-msgstr "移除一個變數：name [value-pattern]"
+msgstr "移除一個變數：name [<value-pattern>]"
 
 #: builtin/config.c:1157
-#, fuzzy
-#| msgid "remove all matches: name [value-pattern]"
 msgid "remove all matches: name [<value-pattern>]"
-msgstr "移除所有符合項目：name [value-pattern]"
+msgstr "移除所有符合項目：name [<value-pattern>]"
 
 #: builtin/config.c:1158
 msgid "rename section: old-name new-name"
@@ -6770,16 +6727,12 @@ msgid "open an editor"
 msgstr "開啟一個編輯器"
 
 #: builtin/config.c:1162
-#, fuzzy
-#| msgid "find the color configured: slot [default]"
 msgid "find the color configured: slot [<default>]"
-msgstr "獲得設定的顏色：設定 [預設值]"
+msgstr "獲得設定的顏色：設定 [<預設值>]"
 
 #: builtin/config.c:1163
-#, fuzzy
-#| msgid "find the color setting: slot [stdout-is-tty]"
 msgid "find the color setting: slot [<stdout-is-tty>]"
-msgstr "獲得顏色設定：設定 [stdout-is-tty]"
+msgstr "獲得顏色設定：設定 [<stdout-is-tty>]"
 
 #: builtin/config.c:1167
 msgid "with --get, use default value when missing entry"
@@ -6790,10 +6743,8 @@ msgid "--get-color and variable type are incoherent"
 msgstr "--get-color 和變數類型不相容"
 
 #: builtin/config.c:1196
-#, fuzzy
-#| msgid "no path specified"
 msgid "no action specified"
-msgstr "未指定路徑"
+msgstr "未指定動作"
 
 #: builtin/config.c:1201
 msgid "--name-only is only applicable to --list or --get-regexp"
@@ -7847,7 +7798,7 @@ msgstr "儲存版本庫路徑清單的設定鍵"
 
 #: builtin/for-each-repo.c:44
 msgid "keep going even if command fails in a repository"
-msgstr ""
+msgstr "命令在版本庫中失敗時仍繼續執行"
 
 #: builtin/for-each-repo.c:52
 msgid "missing --config=<config>"
@@ -10035,17 +9986,12 @@ msgstr ""
 "--format 不能和 -s、-o、-k、-t、--resolve-undo、--deduplicate、--eol 一起使用"
 
 #: builtin/ls-remote.c:12
-#, fuzzy
-#| msgid ""
-#| "git ls-remote [--heads] [--tags] [--refs] [--upload-pack=<exec>]\n"
-#| "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
-#| "              [--symref] [<repository> [<patterns>...]]"
 msgid ""
 "git ls-remote [--branches] [--tags] [--refs] [--upload-pack=<exec>]\n"
 "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
 "              [--symref] [<repository> [<patterns>...]]"
 msgstr ""
-"git ls-remote [--heads] [--tags] [--refs] [--upload-pack=<exec>]\n"
+"git ls-remote [--branches] [--tags] [--refs] [--upload-pack=<exec>]\n"
 "              [-q | --quiet] [--exit-code] [--get-url] [--sort=<key>]\n"
 "              [--symref] [<repository> [<patterns>...]]"
 
@@ -10066,16 +10012,12 @@ msgid "limit to tags"
 msgstr "僅限於標籤"
 
 #: builtin/ls-remote.c:71
-#, fuzzy
-#| msgid "limit to heads"
 msgid "limit to branches"
 msgstr "僅限於分支"
 
 #: builtin/ls-remote.c:73 builtin/show-ref.c:299
-#, fuzzy
-#| msgid "create unborn branch"
 msgid "deprecated synonym for --branches"
-msgstr "建立未誕生分支"
+msgstr "--branches 已棄用的同義詞"
 
 #: builtin/ls-remote.c:75
 msgid "do not show peeled tags"
@@ -13276,30 +13218,25 @@ msgid "invalid ref format: %s"
 msgstr "無效的引用格式：%s"
 
 #: builtin/refs.c:8
-#, fuzzy
-#| msgid "git replace [--format=<format>] [-l [<pattern>]]"
 msgid "git refs migrate --ref-format=<format> [--dry-run]"
-msgstr "git replace [--format=<格式>] [-l [<模式>]]"
+msgstr "git refs migrate --ref-format=<格式> [--dry-run]"
 
 #: builtin/refs.c:21
-#, fuzzy
-#| msgid "specify the reference format to use"
 msgid "specify the reference format to convert to"
-msgstr "指定要使用的引用格式"
+msgstr "指定要轉換成的引用格式"
 
 #: builtin/refs.c:24
 msgid "perform a non-destructive dry-run"
-msgstr ""
+msgstr "進行非破壞性的試執行"
 
 #: builtin/refs.c:35
 msgid "missing --ref-format=<format>"
-msgstr ""
+msgstr "缺少 --ref-format=<格式>"
 
 #: builtin/refs.c:44
-#, fuzzy, c-format
-#| msgid "repository at '%s' has a format issue"
+#, c-format
 msgid "repository already uses '%s' format"
-msgstr "位於 “%s” 的版本庫有格式問題"
+msgstr "版本庫已經使用 '%s' 格式"
 
 #: builtin/remote.c:21
 msgid ""
@@ -15038,19 +14975,14 @@ msgid "Unknown hash algorithm"
 msgstr "未知的雜湊算法"
 
 #: builtin/show-ref.c:13
-#, fuzzy
-#| msgid ""
-#| "git show-ref [--head] [-d | --dereference]\n"
-#| "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
-#| "             [--heads] [--] [<pattern>...]"
 msgid ""
 "git show-ref [--head] [-d | --dereference]\n"
 "             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--branches] [--tags]\n"
 "             [--] [<pattern>...]"
 msgstr ""
 "git show-ref [--head] [-d | --dereference]\n"
-"             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--tags]\n"
-"             [--heads] [--] [<pattern>...]"
+"             [-s | --hash[=<n>]] [--abbrev[=<n>]] [--branches] [--tags]\n"
+"             [--] [<pattern>...]"
 
 #: builtin/show-ref.c:16
 msgid ""
@@ -15079,16 +15011,12 @@ msgid "failed to look up reference"
 msgstr "無法查詢引用"
 
 #: builtin/show-ref.c:296
-#, fuzzy
-#| msgid "only show tags (can be combined with heads)"
 msgid "only show tags (can be combined with branches)"
-msgstr "只顯示標籤（可以和頭共用）"
+msgstr "只顯示標籤（可以和分支共用）"
 
 #: builtin/show-ref.c:297
-#, fuzzy
-#| msgid "only show heads (can be combined with tags)"
 msgid "only show branches (can be combined with tags)"
-msgstr "只顯示頭（可以和標籤共用）"
+msgstr "只顯示分支（可以和標籤共用）"
 
 #: builtin/show-ref.c:300
 msgid "check for reference existence without resolving"
@@ -16300,16 +16228,13 @@ msgid "reason of the update"
 msgstr "更新的原因"
 
 #: builtin/tag.c:34
-#, fuzzy
-#| msgid ""
-#| "git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e]\n"
-#| "        <tagname> [<commit> | <object>]"
 msgid ""
 "git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e]\n"
 "        [(--trailer <token>[(=|:)<value>])...]\n"
 "        <tagname> [<commit> | <object>]"
 msgstr ""
 "git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e]\n"
+"        [(--trailer <token>[(=|:)<value>])...]\n"
 "        <tagname> [<commit> | <object>]"
 
 #: builtin/tag.c:37
@@ -17872,7 +17797,7 @@ msgstr "管理 reflog 訊息"
 
 #: command-list.h:157
 msgid "Low-level access to refs"
-msgstr ""
+msgstr "對引用的低階存取"
 
 #: command-list.h:158
 msgid "Manage set of tracked repositories"
@@ -18275,7 +18200,7 @@ msgstr "提交圖形需要的提交資料區塊遺失或損壞"
 msgid ""
 "disabling Bloom filters for commit-graph layer '%s' due to incompatible "
 "settings"
-msgstr ""
+msgstr "由於不相容的設定，停用提交圖層 '%s' 的布隆過濾器"
 
 #: commit-graph.c:577
 msgid "commit-graph has no base graphs chunk"

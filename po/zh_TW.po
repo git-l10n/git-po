@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
-"PO-Revision-Date: 2024-07-16 13:25+0000\n"
+"PO-Revision-Date: 2024-07-17 07:47+0000\n"
 "Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -926,7 +926,7 @@ msgid ""
 "* Use \"git sparse-checkout reapply\" to apply the sparsity rules"
 msgstr ""
 "若要更正這些路徑的稀疏狀態，請：\n"
-"* 使用 “git add --sparse <路徑” 更新索引\n"
+"* 使用 “git add --sparse <路徑>” 更新索引\n"
 "* 使用 “git sparse-checkout reapply” 套用稀疏規則"
 
 #: alias.c:73
@@ -5559,7 +5559,7 @@ msgid "Could not open commit-graph '%s'"
 msgstr "無法開啟提交圖形 '%s'"
 
 #: builtin/commit-graph.c:114
-#, c-format
+#, c-format, fuzzy
 msgid "could not open commit-graph chain '%s'"
 msgstr "無法開啟提交圖鏈 “%s”"
 
@@ -5596,6 +5596,7 @@ msgid "start walk at commits listed by stdin"
 msgstr "從標準輸入中的提交開始掃描"
 
 #: builtin/commit-graph.c:236
+#, fuzzy
 msgid "include all commits already in the commit-graph file"
 msgstr "包含 commit-graph 檔案中已有所有提交"
 
@@ -5604,14 +5605,17 @@ msgid "enable computation for changed paths"
 msgstr "啟用已變更路徑的計算"
 
 #: builtin/commit-graph.c:240
+#, fuzzy
 msgid "allow writing an incremental commit-graph file"
 msgstr "允許寫一個增量提交圖形檔案"
 
 #: builtin/commit-graph.c:244
+#, fuzzy
 msgid "maximum number of commits in a non-base split commit-graph"
 msgstr "在非基本分割提交圖形中的最大提交數"
 
 #: builtin/commit-graph.c:246
+#, fuzzy
 msgid "maximum ratio between two levels of a split commit-graph"
 msgstr "一個分割提交圖形的兩個級別之間的最大比率"
 
@@ -7621,6 +7625,7 @@ msgid "check for forced-updates on all updated branches"
 msgstr "在所有更新分支上檢查強制更新"
 
 #: builtin/fetch.c:2247
+#, fuzzy
 msgid "write the commit-graph after fetching"
 msgstr "抓取後寫入分支圖"
 
@@ -8328,6 +8333,7 @@ msgid "unrecognized --schedule argument '%s'"
 msgstr "無法識別的 --schedule 引數 '%s'"
 
 #: builtin/gc.c:939
+#, fuzzy
 msgid "failed to write commit-graph"
 msgstr "無法寫入提交圖形"
 
@@ -17484,6 +17490,7 @@ msgid "Record changes to the repository"
 msgstr "記錄變更到版本庫"
 
 #: command-list.h:79
+#, fuzzy
 msgid "Write and verify Git commit-graph files"
 msgstr "寫入和驗證 Git 提交圖檔案"
 
@@ -18030,6 +18037,7 @@ msgid "Chunk-based file formats"
 msgstr "以區塊為基礎的檔案格式"
 
 #: command-list.h:215
+#, fuzzy
 msgid "Git commit-graph format"
 msgstr "Git 提交圖格式"
 
@@ -18130,110 +18138,126 @@ msgid "A tool for managing large Git repositories"
 msgstr "用來管理大型 Git 版本庫的工具"
 
 #: commit-graph.c:263
+#, fuzzy
 msgid "commit-graph file is too small"
 msgstr "提交圖形檔案太小"
 
 #: commit-graph.c:286
+#, fuzzy
 msgid "commit-graph oid fanout chunk is wrong size"
 msgstr "提交圖形 OID 扇出區塊大小有誤"
 
 #: commit-graph.c:295
+#, fuzzy
 msgid "commit-graph fanout values out of order"
 msgstr "提交圖形扇出的數值失序"
 
 #: commit-graph.c:309
+#, fuzzy
 msgid "commit-graph OID lookup chunk is the wrong size"
 msgstr "提交圖形 OID 查詢區塊的大小有誤"
 
 #: commit-graph.c:318
+#, fuzzy
 msgid "commit-graph commit data chunk is wrong size"
 msgstr "提交圖形的提交資料區塊大小有誤"
 
 #: commit-graph.c:328
+#, fuzzy
 msgid "commit-graph generations chunk is wrong size"
 msgstr "提交圖形的世代區塊大小有誤"
 
 #: commit-graph.c:338
+#, fuzzy
 msgid "commit-graph changed-path index chunk is too small"
 msgstr "提交圖形的更動路徑索引區塊過小"
 
 #: commit-graph.c:351
-#, c-format
+#, c-format, fuzzy
 msgid ""
 "ignoring too-small changed-path chunk (%<PRIuMAX> < %<PRIuMAX>) in commit-"
 "graph file"
 msgstr "忽略提交圖形檔案中過小的更動路徑區塊 (%<PRIuMAX> < %<PRIuMAX>)"
 
 #: commit-graph.c:389
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph signature %X does not match signature %X"
 msgstr "提交圖形簽名 %X 和簽名 %X 不符合"
 
 #: commit-graph.c:396
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph version %X does not match version %X"
 msgstr "提交圖形版本 %X 和版本 %X 不符合"
 
 #: commit-graph.c:403
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph hash version %X does not match version %X"
 msgstr "提交圖形雜湊版本 %X 和版本 %X 不符合"
 
 #: commit-graph.c:418
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph file is too small to hold %u chunks"
 msgstr "提交圖形檔案不夠放置 %u 個區塊"
 
 #: commit-graph.c:431
+#, fuzzy
 msgid "commit-graph required OID fanout chunk missing or corrupted"
 msgstr "提交圖形需要的 OID 扇出區塊遺失或損壞"
 
 #: commit-graph.c:435
+#, fuzzy
 msgid "commit-graph required OID lookup chunk missing or corrupted"
 msgstr "提交圖形需要的 OID 查詢區塊遺失或損壞"
 
 #: commit-graph.c:439
+#, fuzzy
 msgid "commit-graph required commit data chunk missing or corrupted"
 msgstr "提交圖形需要的提交資料區塊遺失或損壞"
 
 #: commit-graph.c:562
-#, c-format
+#, c-format, fuzzy
 msgid ""
 "disabling Bloom filters for commit-graph layer '%s' due to incompatible "
 "settings"
 msgstr "由於不相容的設定，停用提交圖層 '%s' 的布隆過濾器"
 
 #: commit-graph.c:577
+#, fuzzy
 msgid "commit-graph has no base graphs chunk"
 msgstr "提交圖形沒有基礎圖形區塊"
 
 #: commit-graph.c:582
+#, fuzzy
 msgid "commit-graph base graphs chunk is too small"
 msgstr "提交圖形的基礎圖形區塊過小"
 
 #: commit-graph.c:593
+#, fuzzy
 msgid "commit-graph chain does not match"
 msgstr "提交圖形鏈不符合"
 
 #: commit-graph.c:603
-#, c-format
+#, c-format, fuzzy
 msgid "commit count in base graph too high: %<PRIuMAX>"
 msgstr "基礎圖 (base graph) 中的提交數過多：%<PRIuMAX>"
 
 #: commit-graph.c:631
+#, fuzzy
 msgid "commit-graph chain file too small"
 msgstr "提交圖形鏈檔案過小"
 
 #: commit-graph.c:661
-#, c-format
+#, c-format, fuzzy
 msgid "invalid commit-graph chain: line '%s' not a hash"
 msgstr "無效的提交圖形鏈：「%s」列不是雜湊值"
 
 #: commit-graph.c:687
+#, fuzzy
 msgid "unable to find all commit-graph files"
 msgstr "無法找到所有提交圖形檔案"
 
 #: commit-graph.c:862 commit-graph.c:900
+#, fuzzy
 msgid "invalid commit position. commit-graph is likely corrupt"
 msgstr "無效的提交位置。提交圖形可能已損壞"
 
@@ -18243,34 +18267,42 @@ msgid "could not find commit %s"
 msgstr "無法找到提交 %s"
 
 #: commit-graph.c:917
+#, fuzzy
 msgid "commit-graph requires overflow generation data but has none"
 msgstr "提交圖需要比目前更多的世代資料，但沒有相關資料"
 
 #: commit-graph.c:921
+#, fuzzy
 msgid "commit-graph overflow generation data is too small"
 msgstr "提交圖形的溢出世代資料過小"
 
 #: commit-graph.c:978
+#, fuzzy
 msgid "commit-graph extra-edges pointer out of bounds"
 msgstr "提交圖形的延伸邊界指針超出範圍"
 
 #: commit-graph.c:1536
+#, fuzzy
 msgid "Loading known commits in commit graph"
 msgstr "正在載入提交圖中的已知提交"
 
 #: commit-graph.c:1553
+#, fuzzy
 msgid "Expanding reachable commits in commit graph"
 msgstr "正在展開提交圖中的可以取得的提交"
 
 #: commit-graph.c:1573
+#, fuzzy
 msgid "Clearing commit marks in commit graph"
 msgstr "正在清除提交圖中的提交標記"
 
 #: commit-graph.c:1690
+#, fuzzy
 msgid "Computing commit graph topological levels"
 msgstr "正在計算提交圖拓樸級別"
 
 #: commit-graph.c:1724
+#, fuzzy
 msgid "Computing commit graph generation numbers"
 msgstr "正在計算提交圖世代數字"
 
@@ -18283,7 +18315,7 @@ msgid "Collecting referenced commits"
 msgstr "正在收集引用提交"
 
 #: commit-graph.c:1905
-#, c-format
+#, c-format, fuzzy
 msgid "Finding commits for commit graph in %<PRIuMAX> pack"
 msgid_plural "Finding commits for commit graph in %<PRIuMAX> packs"
 msgstr[0] "正在從 %<PRIuMAX> 個包中尋找提交圖的提交"
@@ -18299,18 +18331,22 @@ msgid "error opening index for %s"
 msgstr "為 %s 開啟索引發生錯誤"
 
 #: commit-graph.c:1960
+#, fuzzy
 msgid "Finding commits for commit graph among packed objects"
 msgstr "正在打包物件中尋找提交圖的提交"
 
 #: commit-graph.c:1978
+#, fuzzy
 msgid "Finding extra edges in commit graph"
 msgstr "正在尋找提交圖中額外的邊"
 
 #: commit-graph.c:2027
+#, fuzzy
 msgid "failed to write correct number of base graph ids"
 msgstr "無法寫入正確數量的基礎圖形 ID"
 
 #: commit-graph.c:2072
+#, fuzzy
 msgid "unable to create temporary graph layer"
 msgstr "無法建立暫時的圖形層"
 
@@ -18320,30 +18356,33 @@ msgid "unable to adjust shared permissions for '%s'"
 msgstr "無法調整「%s」的共用權限"
 
 #: commit-graph.c:2133
-#, c-format
+#, c-format, fuzzy
 msgid "Writing out commit graph in %d pass"
 msgid_plural "Writing out commit graph in %d passes"
 msgstr[0] "正在用 %d 步寫出提交圖"
 
 #: commit-graph.c:2168
+#, fuzzy
 msgid "unable to open commit-graph chain file"
 msgstr "無法開啟提交圖形鏈檔案"
 
 #: commit-graph.c:2184
+#, fuzzy
 msgid "failed to rename base commit-graph file"
 msgstr "無法重新命名基礎提交圖形檔案"
 
 #: commit-graph.c:2207
+#, fuzzy
 msgid "failed to rename temporary commit-graph file"
 msgstr "無法重新命名暫時提交圖形檔案"
 
 #: commit-graph.c:2251
-#, c-format
+#, c-format, fuzzy
 msgid "cannot merge graphs with %<PRIuMAX>, %<PRIuMAX> commits"
 msgstr "無法將圖與 %<PRIuMAX>, %<PRIuMAX> 個提交進行合併"
 
 #: commit-graph.c:2313
-#, c-format
+#, c-format, fuzzy
 msgid "cannot merge graph %s, too many commits: %<PRIuMAX>"
 msgstr "無法合併 %s 圖，太多提交：%<PRIuMAX>"
 
@@ -18352,10 +18391,12 @@ msgid "Scanning merged commits"
 msgstr "正在掃描合併提交"
 
 #: commit-graph.c:2394
+#, fuzzy
 msgid "Merging commit-graph"
 msgstr "正在合併提交圖形"
 
 #: commit-graph.c:2506
+#, fuzzy
 msgid "attempting to write a commit-graph, but 'core.commitGraph' is disabled"
 msgstr "嘗試寫入提交圖形，但 “core.commitGraph” 已被停用"
 
@@ -18366,74 +18407,77 @@ msgstr "嘗試寫入提交圖形，但 “core.commitGraph” 已被停用"
 msgid ""
 "attempting to write a commit-graph, but 'commitGraph."
 "changedPathsVersion' (%d) is not supported"
-msgstr "嘗試寫入提交圖形，但 “core.commitGraph” 已被停用"
+msgstr "嘗試寫入提交圖形，但不支援「commitGraph.changedPathsVersion」（%d）"
 
 #: commit-graph.c:2630
+#, fuzzy
 msgid "too many commits to write graph"
 msgstr "提交太多不能畫圖"
 
 #: commit-graph.c:2719
+#, fuzzy
 msgid "the commit-graph file has incorrect checksum and is likely corrupt"
 msgstr "提交圖檔案的總和檢查碼錯誤，可能已經損壞"
 
 #: commit-graph.c:2730
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph has incorrect OID order: %s then %s"
 msgstr "提交圖形的物件 ID 順序不正確：%s 然後 %s"
 
 #: commit-graph.c:2740 commit-graph.c:2755
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph has incorrect fanout value: fanout[%d] = %u != %u"
 msgstr "提交圖形有不正確的扇出值：fanout[%d] = %u != %u"
 
 #: commit-graph.c:2747
-#, c-format
+#, c-format, fuzzy
 msgid "failed to parse commit %s from commit-graph"
 msgstr "無法從提交圖形中解析提交 %s"
 
 #: commit-graph.c:2777
-#, c-format
+#, c-format, fuzzy
 msgid "failed to parse commit %s from object database for commit-graph"
 msgstr "無法從提交圖形的物件庫中解析提交 %s"
 
 #: commit-graph.c:2784
-#, c-format
+#, c-format, fuzzy
 msgid "root tree OID for commit %s in commit-graph is %s != %s"
 msgstr "提交圖形中的提交 %s 的根樹狀物件 ID 是 %s != %s"
 
 #: commit-graph.c:2794
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph parent list for commit %s is too long"
 msgstr "提交 %s 的提交圖形父提交列表太長了"
 
 #: commit-graph.c:2803
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph parent for %s is %s != %s"
 msgstr "%s 的提交圖形父提交是 %s != %s"
 
 #: commit-graph.c:2817
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph parent list for commit %s terminates early"
 msgstr "提交 %s 的提交圖形父提交列表過早終止"
 
 #: commit-graph.c:2839
-#, c-format
+#, c-format, fuzzy
 msgid "commit-graph generation for commit %s is %<PRIuMAX> < %<PRIuMAX>"
 msgstr "提交 %s 的提交圖形處於 %<PRIuMAX> < %<PRIuMAX> 世代"
 
 #: commit-graph.c:2845
-#, c-format
+#, c-format, fuzzy
 msgid "commit date for commit %s in commit-graph is %<PRIuMAX> != %<PRIuMAX>"
 msgstr "提交圖形中提交 %s 的提交日期是 %<PRIuMAX> != %<PRIuMAX>"
 
 #: commit-graph.c:2852
-#, c-format
+#, c-format, fuzzy
 msgid ""
 "commit-graph has both zero and non-zero generations (e.g., commits '%s' and "
 "'%s')"
 msgstr "提交圖形中包含 0 和非 0 兩個世代號（例如 “%s” 和 “%s” 提交）"
 
 #: commit-graph.c:2876
+#, fuzzy
 msgid "Verifying commits in commit graph"
 msgstr "正在驗證提交圖中的提交"
 
@@ -18469,7 +18513,7 @@ msgstr ""
 "可以將本訊息關閉"
 
 #: commit.c:586
-#, c-format
+#, c-format, fuzzy
 msgid "commit %s exists in commit-graph but not in the object database"
 msgstr "%s 提交在提交圖形中，但不在物件資料庫中"
 
@@ -19864,6 +19908,7 @@ msgid "generate diffstat with a given name width"
 msgstr "使用提供的檔案名長度生成差異統計"
 
 #: diff.c:5680
+#, fuzzy
 msgid "generate diffstat with a given graph width"
 msgstr "使用提供的圖形長度生成差異統計"
 
@@ -20622,15 +20667,6 @@ msgid ""
 msgstr "通訊端 “%s” 因缺少 Unix 通訊端支援，而與 fsmonitor 不相容"
 
 #: git.c:39
-#, fuzzy
-#| msgid ""
-#| "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
-#| "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-"
-#| "path]\n"
-#| "           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-#| "bare]\n"
-#| "           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n"
-#| "           [--config-env=<name>=<envvar>] <command> [<args>]"
 msgid ""
 "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
@@ -20643,10 +20679,12 @@ msgid ""
 msgstr ""
 "git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n"
 "           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n"
-"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--"
-"bare]\n"
-"           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n"
-"           [--config-env=<name>=<envvar>] <command> [<args>]"
+"           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-"
+"lazy-fetch]\n"
+"           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n"
+"           [--work-tree=<path>] [--namespace=<name>] [--config-"
+"env=<name>=<envvar>]\n"
+"           <command> [<args>]"
 
 #: git.c:47
 msgid ""
@@ -20851,7 +20889,7 @@ msgstr "無法從「%s」讀取 SSH 簽名資料緩衝區"
 #: graph.c:99
 #, c-format
 msgid "ignored invalid color '%.*s' in log.graphColors"
-msgstr "已忽略 log.graphColors 中無效的 “%.*s” 色彩"
+msgstr "已忽略 log.graphColors 中無效的「%.*s」色彩"
 
 #: grep.c:506
 msgid ""
@@ -22616,10 +22654,9 @@ msgid "hash mismatch %s"
 msgstr "雜湊值與 %s 不符合"
 
 #: pack-bitmap-write.c:184
-#, fuzzy, c-format
-#| msgid "duplicate entry in bitmap index: '%s'"
+#, c-format
 msgid "duplicate entry when writing bitmap index: %s"
-msgstr "位圖索引中有重複項目：「%s」"
+msgstr "寫入位圖索引中時發現重複項目：%s"
 
 #: pack-bitmap-write.c:566
 #, c-format
@@ -22627,10 +22664,8 @@ msgid "attempted to store non-selected commit: '%s'"
 msgstr ""
 
 #: pack-bitmap-write.c:866
-#, fuzzy
-#| msgid "too many arguments"
 msgid "too many pseudo-merges"
-msgstr "引數過多"
+msgstr "偽合併過多"
 
 #: pack-bitmap-write.c:1045
 msgid "trying to write commit not in index"
@@ -22662,23 +22697,17 @@ msgid "corrupted bitmap index file (too short to fit lookup table)"
 msgstr "位圖索引檔案損壞（不夠長，無法置入查詢表）"
 
 #: pack-bitmap.c:228
-#, fuzzy
-#| msgid "corrupted bitmap index file (too short to fit lookup table)"
 msgid ""
 "corrupted bitmap index file (too short to fit pseudo-merge table header)"
-msgstr "位圖索引檔案損壞（不夠長，無法置入查詢表）"
+msgstr "位圖索引檔案損壞（不夠長，無法置入偽合併表標頭）"
 
 #: pack-bitmap.c:232
-#, fuzzy
-#| msgid "corrupted bitmap index file (too short to fit lookup table)"
 msgid "corrupted bitmap index file (too short to fit pseudo-merge table)"
-msgstr "位圖索引檔案損壞（不夠長，無法置入查詢表）"
+msgstr "位圖索引檔案損壞（不夠長，無法置入偽合併表）"
 
 #: pack-bitmap.c:246
-#, fuzzy
-#| msgid "corrupted bitmap index file (wrong header)"
 msgid "corrupted bitmap index file, pseudo-merge table too short"
-msgstr "位圖索引檔案損壞（標頭錯誤）"
+msgstr "位圖索引檔案損壞，偽合併表太短"
 
 #: pack-bitmap.c:293
 #, c-format
@@ -28447,38 +28476,30 @@ msgid "Failed to send %s\n"
 msgstr "無法傳送 %s\n"
 
 #: git-send-email.perl:1667
-#, fuzzy, perl-format
-#| msgid "Dry-Sent %s\n"
+#, perl-format
 msgid "Dry-Sent %s"
-msgstr "測試執行傳送 %s\n"
+msgstr "試執行傳送 %s"
 
 #: git-send-email.perl:1667
-#, fuzzy, perl-format
-#| msgid "Sent %s\n"
+#, perl-format
 msgid "Sent %s"
-msgstr "正傳送 %s\n"
+msgstr "正傳送 %s"
 
 #: git-send-email.perl:1670
-#, fuzzy
-#| msgid "Dry-OK. Log says:\n"
 msgid "Dry-OK. Log says:"
-msgstr "測試執行成功。日誌說：\n"
+msgstr "試執行成功。日誌說："
 
 #: git-send-email.perl:1670
-#, fuzzy
-#| msgid "OK. Log says:\n"
 msgid "OK. Log says:"
-msgstr "OK。日誌說：\n"
+msgstr "OK。日誌說："
 
 #: git-send-email.perl:1690
 msgid "Result: "
 msgstr "結果： "
 
 #: git-send-email.perl:1693
-#, fuzzy
-#| msgid "Result: OK\n"
 msgid "Result: OK"
-msgstr "結果：OK\n"
+msgstr "結果：OK"
 
 #: git-send-email.perl:1704
 #, perl-format

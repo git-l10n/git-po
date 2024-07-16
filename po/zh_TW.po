@@ -24,13 +24,14 @@
 # lumynou5 <lumynou5.tw@gmail.com>, 2023, 2024.
 # Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024.
 # Ngoo Ka-iu <willy04wu69@gmail.com>, 2024.
+# Nightfeather Chen <slat@nightfeather.me>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
 "PO-Revision-Date: 2024-07-17 07:47+0000\n"
-"Last-Translator: Ngoo Ka-iu <willy04wu69@gmail.com>\n"
+"Last-Translator: Nightfeather Chen <slat@nightfeather.me>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -9649,8 +9650,9 @@ msgid "rfc"
 msgstr "引用規格"
 
 #: builtin/log.c:2054
+#, fuzzy
 msgid "add <rfc> (default 'RFC') before 'PATCH'"
-msgstr ""
+msgstr "在 'PATCH' 前冠上 <rfc> (預設為 'RFC')"
 
 #: builtin/log.c:2057
 msgid "cover-from-description-mode"
@@ -22661,7 +22663,7 @@ msgstr "寫入位圖索引中時發現重複項目：%s"
 #: pack-bitmap-write.c:566
 #, c-format
 msgid "attempted to store non-selected commit: '%s'"
-msgstr ""
+msgstr "嘗試儲存未選取的提交: '%s'"
 
 #: pack-bitmap-write.c:866
 msgid "too many pseudo-merges"
@@ -22823,9 +22825,9 @@ msgid "mismatch in bitmap results"
 msgstr "位圖結果中有不符項目"
 
 #: pack-bitmap.c:2713 pack-bitmap.c:2739
-#, c-format
+#, c-format, fuzzy
 msgid "pseudo-merge index out of range (%<PRIu32> >= %<PRIuMAX>)"
-msgstr ""
+msgstr "假合併索引超出範圍 (%<PRIu32> >= %<PRIuMAX>)"
 
 #: pack-bitmap.c:2911
 #, c-format
@@ -23335,9 +23337,9 @@ msgid "%s must be positive, using default"
 msgstr "%s 須為正數，將採用預設值"
 
 #: pseudo-merge.c:195
-#, c-format
+#, c-format, fuzzy
 msgid "pseudo-merge group '%s' missing required pattern"
-msgstr ""
+msgstr "假合併群組 '%s' 缺少必須的模式"
 
 #: pseudo-merge.c:198
 #, c-format
@@ -24150,7 +24152,7 @@ msgstr "無法刪除引用：%s"
 #: refs.c:2840
 #, c-format
 msgid "Finished dry-run migration of refs, the result can be found at '%s'\n"
-msgstr ""
+msgstr "完成引用移轉的測試執行，可以在 '%s' 找到結果\n"
 
 #: refs.c:2867
 #, fuzzy, c-format
@@ -24161,13 +24163,13 @@ msgstr "不能重新命名暫存檔為 %s"
 #: refs.c:2887
 #, c-format
 msgid "migrated refs can be found at '%s'"
-msgstr ""
+msgstr "可以在 '%s' 找到已遷移的引用"
 
 #: refs/files-backend.c:2544 refs/reftable-backend.c:1049
 #, c-format
 msgid ""
 "cannot lock ref '%s': expected symref with target '%s': but is a regular ref"
-msgstr ""
+msgstr "無法鎖定引用 '%s': 預期是指向 '%s' 的符號引用: 但是這個是一般引用"
 
 #: refs/reftable-backend.c:510
 #, c-format
@@ -25575,6 +25577,8 @@ msgid ""
 "'pick' does not take a merge commit. If you wanted to\n"
 "replay the merge, use 'merge -C' on the commit."
 msgstr ""
+"不能使用 'pick' 選擇一個合併提交。\n"
+"如果你想要重放這個合併，請對這個提交使用 'merge -C'。"
 
 #. TRANSLATORS: 'reword' and 'merge -c' should not be
 #. translated.
@@ -25585,6 +25589,9 @@ msgid ""
 "replay the merge and reword the commit message, use\n"
 "'merge -c' on the commit"
 msgstr ""
+"'reword' 並無法使用合併提交作為參數。\n"
+"如果你希望合併並改寫提交訊息，\n"
+"請對這個提交使用 'merge -c'"
 
 #. TRANSLATORS: 'edit', 'merge -C' and 'break' should
 #. not be translated.
@@ -25596,10 +25603,14 @@ msgid ""
 "'break' to give the control back to you so that you can\n"
 "do 'git commit --amend && git rebase --continue'."
 msgstr ""
+"'edit' 並無法使用合併提交作為參數。\n"
+"如果你希望重放這個合併，請對這個提交使用 'merge -C'，\n"
+"並使用 'break' 取回控制權，\n"
+"這樣才能執行 'git commit --amend && git rebase --continue'。"
 
 #: sequencer.c:2676
 msgid "cannot squash merge commit into another commit"
-msgstr ""
+msgstr "無法將一個合併提交壓扁進其他提交"
 
 #: sequencer.c:2713
 #, c-format

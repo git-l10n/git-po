@@ -23,13 +23,14 @@
 # Kaiyang Wu <self@origincode.me>, 2022.
 # lumynou5 <lumynou5.tw@gmail.com>, 2023, 2024.
 # Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024.
+# Ngoo Ka-iu <willy04wu69@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
 "PO-Revision-Date: 2024-07-17 07:47+0000\n"
-"Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
+"Last-Translator: Ngoo Ka-iu <willy04wu69@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -6354,7 +6355,6 @@ msgid "git config edit [<file-option>]"
 msgstr "git config edit [<檔案選項>]"
 
 #: builtin/config.c:26
-#, fuzzy
 msgid "git config [<file-option>] --get-colorbool <name> [<stdout-is-tty>]"
 msgstr "git config [<file-option>] --get-colorbool <name> [<stdout-is-tty>]"
 
@@ -6629,7 +6629,7 @@ msgstr "--url= 無法和 --all、--regexp、--value 一起使用"
 
 #: builtin/config.c:927 builtin/config.c:983
 msgid "Filter"
-msgstr ""
+msgstr "過濾器"
 
 #: builtin/config.c:928 builtin/config.c:984
 msgid "replace multi-valued config option with new value"
@@ -6641,7 +6641,7 @@ msgstr "人類可讀的備註字串（將按需插入 # 至前方）"
 
 #: builtin/config.c:933
 msgid "add a new line without altering any existing values"
-msgstr ""
+msgstr "在不更動任何現有值的情況下新增一行"
 
 #: builtin/config.c:945
 msgid "--fixed-value only applies with --value=<pattern>"
@@ -23281,7 +23281,7 @@ msgstr "不能解析 --pretty 格式"
 
 #: promisor-remote.c:34
 msgid "lazy fetching disabled; some objects may not be available"
-msgstr ""
+msgstr "延後抓取已被停用；某些物件可能無法使用"
 
 #: promisor-remote.c:50
 msgid "promisor-remote: unable to fork off fetch subprocess"
@@ -23320,21 +23320,19 @@ msgid "failed to load pseudo-merge regex for %s: '%s'"
 msgstr "未能載入 '%s' 的資料島常規表示式：%s"
 
 #: pseudo-merge.c:147 pseudo-merge.c:164
-#, fuzzy, c-format
-#| msgid "%s must be non-negative"
+#, c-format
 msgid "%s must be non-negative, using default"
-msgstr "%s 不得為負數"
+msgstr "%s 須為非負數，將採用預設值"
 
 #: pseudo-merge.c:153
-#, fuzzy, c-format
-#| msgid "stage should be between 1 and 3 or all"
+#, c-format
 msgid "%s must be between 0 and 1, using default"
-msgstr "stage 應該是 1 到 3 的值，或者是 all"
+msgstr "%s 須介於 0 到 1 之間，將採用預設值"
 
 #: pseudo-merge.c:175
 #, c-format
 msgid "%s must be positive, using default"
-msgstr ""
+msgstr "%s 須為正數，將採用預設值"
 
 #: pseudo-merge.c:195
 #, c-format

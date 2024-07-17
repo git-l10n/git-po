@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
-"PO-Revision-Date: 2024-07-17 07:47+0000\n"
-"Last-Translator: Nightfeather Chen <slat@nightfeather.me>\n"
+"PO-Revision-Date: 2024-07-17 08:06+0000\n"
+"Last-Translator: lumynou5 <lumynou5.tw@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -5546,24 +5546,22 @@ msgid "dir"
 msgstr "目錄"
 
 #: builtin/commit-graph.c:57
-#, fuzzy
 msgid "the object directory to store the graph"
-msgstr "儲存圖形的物件目錄"
+msgstr "儲存圖的物件目錄"
 
 #: builtin/commit-graph.c:81
-#, fuzzy
 msgid "if the commit-graph is split, only verify the tip file"
-msgstr "如果提交圖形被分割，只驗證頭一個檔案"
+msgstr "如果提交圖被分割，只驗證頭一個檔案"
 
 #: builtin/commit-graph.c:110
-#, c-format, fuzzy
+#, c-format
 msgid "Could not open commit-graph '%s'"
-msgstr "無法開啟提交圖形 '%s'"
+msgstr "無法開啟提交圖「%s」"
 
 #: builtin/commit-graph.c:114
-#, c-format, fuzzy
+#, c-format
 msgid "could not open commit-graph chain '%s'"
-msgstr "無法開啟提交圖鏈 “%s”"
+msgstr "無法開啟提交圖鏈「%s」"
 
 #: builtin/commit-graph.c:161
 #, c-format
@@ -5598,28 +5596,24 @@ msgid "start walk at commits listed by stdin"
 msgstr "從標準輸入中的提交開始掃描"
 
 #: builtin/commit-graph.c:236
-#, fuzzy
 msgid "include all commits already in the commit-graph file"
-msgstr "包含 commit-graph 檔案中已有所有提交"
+msgstr "包含提交圖檔案中所有已有的提交"
 
 #: builtin/commit-graph.c:238
 msgid "enable computation for changed paths"
 msgstr "啟用已變更路徑的計算"
 
 #: builtin/commit-graph.c:240
-#, fuzzy
 msgid "allow writing an incremental commit-graph file"
-msgstr "允許寫一個增量提交圖形檔案"
+msgstr "允許寫一個增量提交圖檔案"
 
 #: builtin/commit-graph.c:244
-#, fuzzy
 msgid "maximum number of commits in a non-base split commit-graph"
-msgstr "在非基本分割提交圖形中的最大提交數"
+msgstr "在非基礎分割提交圖中的最大提交數"
 
 #: builtin/commit-graph.c:246
-#, fuzzy
 msgid "maximum ratio between two levels of a split commit-graph"
-msgstr "一個分割提交圖形的兩個級別之間的最大比率"
+msgstr "一個分割提交圖的兩個級別之間的最大比率"
 
 #: builtin/commit-graph.c:248
 msgid "only expire files older than a given date-time"
@@ -22825,9 +22819,9 @@ msgid "mismatch in bitmap results"
 msgstr "位圖結果中有不符項目"
 
 #: pack-bitmap.c:2713 pack-bitmap.c:2739
-#, c-format, fuzzy
+#, c-format
 msgid "pseudo-merge index out of range (%<PRIu32> >= %<PRIuMAX>)"
-msgstr "假合併索引超出範圍 (%<PRIu32> >= %<PRIuMAX>)"
+msgstr "偽合併索引超出範圍（%<PRIu32> >= %<PRIuMAX>）"
 
 #: pack-bitmap.c:2911
 #, c-format
@@ -23316,10 +23310,9 @@ msgid "Removing duplicate objects"
 msgstr "正在刪除重複物件"
 
 #: pseudo-merge.c:140
-#, fuzzy, c-format
-#| msgid "failed to load island regex for '%s': %s"
+#, c-format
 msgid "failed to load pseudo-merge regex for %s: '%s'"
-msgstr "未能載入 '%s' 的資料島常規表示式：%s"
+msgstr "未能載入 %s 的偽合併常規表示式：%s"
 
 #: pseudo-merge.c:147 pseudo-merge.c:164
 #, c-format
@@ -23337,21 +23330,20 @@ msgid "%s must be positive, using default"
 msgstr "%s 須為正數，將採用預設值"
 
 #: pseudo-merge.c:195
-#, c-format, fuzzy
+#, c-format
 msgid "pseudo-merge group '%s' missing required pattern"
-msgstr "假合併群組 '%s' 缺少必須的模式"
+msgstr "偽合併群組「%s」缺少必須的模式"
 
 #: pseudo-merge.c:198
 #, c-format
 msgid "pseudo-merge group '%s' has unstable threshold before stable one"
-msgstr ""
+msgstr "偽合併群組「%s」的非穩定閾值位於穩定者之前"
 
 #: pseudo-merge.c:236
-#, fuzzy, c-format
-#| msgid "island regex from config has too many capture groups (max=%d)"
+#, c-format
 msgid ""
 "pseudo-merge regex from config has too many capture groups (max=%<PRIuMAX>)"
-msgstr "來自 config 的資料島常規表示式有太多的擷取群組（最多 %d 個）"
+msgstr "來自組態的偽合併常規表示式包含太多的擷取群組（最多 %<PRIuMAX> 個）"
 
 #: pseudo-merge.c:481
 #, c-format

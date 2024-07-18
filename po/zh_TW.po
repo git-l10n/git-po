@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
-"PO-Revision-Date: 2024-07-18 11:16+0000\n"
+"PO-Revision-Date: 2024-07-18 11:22+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -22612,7 +22612,7 @@ msgstr "寫入位圖索引中時發現重複項目：%s"
 #: pack-bitmap-write.c:566
 #, c-format
 msgid "attempted to store non-selected commit: '%s'"
-msgstr "嘗試儲存未選取的提交: '%s'"
+msgstr "嘗試儲存未選取的提交：「%s」"
 
 #: pack-bitmap-write.c:866
 msgid "too many pseudo-merges"
@@ -24093,7 +24093,7 @@ msgstr "無法刪除引用：%s"
 #: refs.c:2840
 #, c-format
 msgid "Finished dry-run migration of refs, the result can be found at '%s'\n"
-msgstr "完成引用移轉的測試執行，可以在 '%s' 找到結果\n"
+msgstr "完成引用移轉的測試執行，可以在「%s」找到結果\n"
 
 #: refs.c:2867
 #, c-format
@@ -24103,13 +24103,13 @@ msgstr "無法移除暫時性遷移目錄「%s」"
 #: refs.c:2887
 #, c-format
 msgid "migrated refs can be found at '%s'"
-msgstr "可以在 '%s' 找到已遷移的引用"
+msgstr "可以在「%s」找到已遷移的引用"
 
 #: refs/files-backend.c:2544 refs/reftable-backend.c:1049
 #, c-format
 msgid ""
 "cannot lock ref '%s': expected symref with target '%s': but is a regular ref"
-msgstr "無法鎖定引用 '%s': 預期是指向 '%s' 的符號引用: 但是這個是一般引用"
+msgstr "無法鎖定引用「%s」：預期是指向「%s」的符號引用，但這個是一般引用"
 
 #: refs/reftable-backend.c:510
 #, c-format
@@ -25516,8 +25516,8 @@ msgid ""
 "'pick' does not take a merge commit. If you wanted to\n"
 "replay the merge, use 'merge -C' on the commit."
 msgstr ""
-"不能使用 'pick' 選擇一個合併提交。\n"
-"如果你想要重放這個合併，請對這個提交使用 'merge -C'。"
+"不能使用「pick」選擇一個合併提交。\n"
+"如果你想要重放這個合併，請對這個提交使用「merge -C」。"
 
 #. TRANSLATORS: 'reword' and 'merge -c' should not be
 #. translated.
@@ -25528,9 +25528,9 @@ msgid ""
 "replay the merge and reword the commit message, use\n"
 "'merge -c' on the commit"
 msgstr ""
-"'reword' 並無法使用合併提交作為參數。\n"
+"「reword」並無法使用合併提交作為參數。\n"
 "如果你希望合併並改寫提交訊息，\n"
-"請對這個提交使用 'merge -c'"
+"請對這個提交使用「merge -c」"
 
 #. TRANSLATORS: 'edit', 'merge -C' and 'break' should
 #. not be translated.
@@ -25542,10 +25542,10 @@ msgid ""
 "'break' to give the control back to you so that you can\n"
 "do 'git commit --amend && git rebase --continue'."
 msgstr ""
-"'edit' 並無法使用合併提交作為參數。\n"
-"如果你希望重放這個合併，請對這個提交使用 'merge -C'，\n"
-"並使用 'break' 取回控制權，\n"
-"這樣才能執行 'git commit --amend && git rebase --continue'。"
+"「edit」並無法使用合併提交作為參數。\n"
+"如果你希望重放這個合併，請對這個提交使用「merge -C」，\n"
+"並使用「break」取回控制權，\n"
+"這樣才能執行「git commit --amend && git rebase --continue」。"
 
 #: sequencer.c:2676
 msgid "cannot squash merge commit into another commit"

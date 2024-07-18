@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-16 13:16+0800\n"
-"PO-Revision-Date: 2024-07-18 08:44+0000\n"
+"PO-Revision-Date: 2024-07-18 11:16+0000\n"
 "Last-Translator: Lumynous <lumynou5.tw@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -3518,12 +3518,12 @@ msgstr "無法解析格式化字串"
 
 #: builtin/branch.c:509
 msgid "could not resolve HEAD"
-msgstr "無法解析 HEAD 指針"
+msgstr "無法解析 HEAD 指標"
 
 #: builtin/branch.c:515
 #, c-format
 msgid "HEAD (%s) points outside of refs/heads/"
-msgstr "HEAD 指針 (%s) 指向 refs/heads/ 之外"
+msgstr "HEAD 指標 (%s) 指向 refs/heads/ 之外"
 
 #: builtin/branch.c:530
 #, c-format
@@ -3538,7 +3538,7 @@ msgstr "分支 %s 正於 %s 進行二分搜尋"
 #: builtin/branch.c:563
 #, c-format
 msgid "HEAD of working tree %s is not updated"
-msgstr "%s 工作區的 HEAD 指針未被更新"
+msgstr "%s 工作區的 HEAD 指標未被更新"
 
 #: builtin/branch.c:590
 #, c-format
@@ -3576,7 +3576,7 @@ msgstr "已更改誤命名的分支「%s」的名稱"
 #: builtin/branch.c:656
 #, c-format
 msgid "branch renamed to %s, but HEAD is not updated"
-msgstr "分支已重新命名為 %s，但 HEAD 指針尚未更新"
+msgstr "分支已重新命名為 %s，但 HEAD 指標尚未更新"
 
 #: builtin/branch.c:663
 msgid "branch is renamed, but update of config-file failed"
@@ -3743,7 +3743,7 @@ msgstr "無法將 HEAD 解析為有效引用"
 
 #: builtin/branch.c:800 builtin/clone.c:758
 msgid "HEAD not found below refs/heads!"
-msgstr "HEAD 指針不在 /refs/heads 中！"
+msgstr "HEAD 指標不在 /refs/heads 中！"
 
 #: builtin/branch.c:821
 msgid ""
@@ -3762,7 +3762,7 @@ msgstr "必須提供分支名稱"
 
 #: builtin/branch.c:889
 msgid "cannot give description to detached HEAD"
-msgstr "無法向分離 HEAD 指針提供描述"
+msgstr "無法向分離 HEAD 指標提供描述"
 
 #: builtin/branch.c:895
 msgid "cannot edit description of more than one branch"
@@ -4580,7 +4580,7 @@ msgstr "在修訂版遍歷時遇到內部錯誤"
 
 #: builtin/checkout.c:1148
 msgid "Previous HEAD position was"
-msgstr "之前的 HEAD 指針位置在"
+msgstr "之前的 HEAD 指標位置在"
 
 #: builtin/checkout.c:1193 builtin/checkout.c:1475
 msgid "You are on a branch yet to be born"
@@ -4662,7 +4662,7 @@ msgstr "預期收到分支，卻收到提交「%s」"
 #: builtin/checkout.c:1513
 msgid ""
 "If you want to detach HEAD at the commit, try again with the --detach option."
-msgstr "若您想要在此提交分離 HEAD 指針，請傳入 --detach 選項重試。"
+msgstr "若您想要在此提交分離 HEAD 指標，請傳入 --detach 選項重試。"
 
 #: builtin/checkout.c:1526
 msgid ""
@@ -4756,7 +4756,7 @@ msgstr "衝突輸出風格（merge、diff3 或 zdiff3）"
 
 #: builtin/checkout.c:1696 builtin/worktree.c:785
 msgid "detach HEAD at named commit"
-msgstr "自指定提交分離 HEAD 指針"
+msgstr "自指定提交分離 HEAD 指標"
 
 #: builtin/checkout.c:1701
 msgid "force checkout (throw away local modifications)"

@@ -30,19 +30,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2024-07-16 13:16+0800\n"
+"POT-Creation-Date: 2024-07-19 15:00+0800\n"
 "PO-Revision-Date: 2024-07-18 11:22+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
-"git-po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
+"po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.6.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
-"https://zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
+"zhconvert.org\n"
 
 #: add-interactive.c:391
 #, c-format
@@ -767,7 +767,7 @@ msgstr "沒有更動。"
 msgid "Only binary files changed."
 msgstr "只有二進位檔案更動了。"
 
-#: advice.c:94
+#: advice.c:95
 #, c-format
 msgid ""
 "\n"
@@ -776,36 +776,36 @@ msgstr ""
 "\n"
 "請使用「git config advice.%s false」停用此訊息"
 
-#: advice.c:110
+#: advice.c:111
 #, c-format
 msgid "%shint:%s%.*s%s\n"
 msgstr "%s提示：%s%.*s%s\n"
 
-#: advice.c:204
+#: advice.c:205
 msgid "Cherry-picking is not possible because you have unmerged files."
 msgstr "無法揀選，有未合併的檔案。"
 
-#: advice.c:206
+#: advice.c:207
 msgid "Committing is not possible because you have unmerged files."
 msgstr "無法提交，有未合併的檔案。"
 
-#: advice.c:208
+#: advice.c:209
 msgid "Merging is not possible because you have unmerged files."
 msgstr "無法合併，有未合併的檔案。"
 
-#: advice.c:210
+#: advice.c:211
 msgid "Pulling is not possible because you have unmerged files."
 msgstr "無法拉取，有未合併的檔案。"
 
-#: advice.c:212
+#: advice.c:213
 msgid "Reverting is not possible because you have unmerged files."
 msgstr "無法還原提交，有未合併的檔案。"
 
-#: advice.c:214
+#: advice.c:215
 msgid "Rebasing is not possible because you have unmerged files."
 msgstr "無法重定基底，有未合併的檔案。"
 
-#: advice.c:223
+#: advice.c:224
 msgid ""
 "Fix them up in the work tree, and then use 'git add/rm <file>'\n"
 "as appropriate to mark resolution and make a commit."
@@ -813,23 +813,23 @@ msgstr ""
 "請在工作區修正檔案，然後視情況使用「git add/rm <file>」\n"
 "命令標記解決方案並提交。"
 
-#: advice.c:231
+#: advice.c:232
 msgid "Exiting because of an unresolved conflict."
 msgstr "存在未解決的衝突，離開。"
 
-#: advice.c:236 builtin/merge.c:1398
+#: advice.c:237 builtin/merge.c:1398
 msgid "You have not concluded your merge (MERGE_HEAD exists)."
 msgstr "合併尚未結束（有 MERGE_HEAD）。"
 
-#: advice.c:238
+#: advice.c:239
 msgid "Please, commit your changes before merging."
 msgstr "請在合併前先提交您的更動。"
 
-#: advice.c:239
+#: advice.c:240
 msgid "Exiting because of unfinished merge."
 msgstr "存在未完成的合併，離開。"
 
-#: advice.c:245
+#: advice.c:246
 msgid ""
 "Diverging branches can't be fast-forwarded, you need to either:\n"
 "\n"
@@ -847,11 +847,11 @@ msgstr ""
 "\n"
 "\tgit rebase\n"
 
-#: advice.c:252
+#: advice.c:253
 msgid "Not possible to fast-forward, aborting."
 msgstr "無法快轉，中止。"
 
-#: advice.c:262
+#: advice.c:263
 #, c-format
 msgid ""
 "The following paths and/or pathspecs matched paths that exist\n"
@@ -862,7 +862,7 @@ msgstr ""
 "符合稀疏簽出定義外且存在的路徑，\n"
 "所以不會在索引中更新：\n"
 
-#: advice.c:269
+#: advice.c:270
 msgid ""
 "If you intend to update such entries, try one of the following:\n"
 "* Use the --sparse option.\n"
@@ -872,7 +872,7 @@ msgstr ""
 "* 使用 --sparse 選項。\n"
 "* 停用或修改稀疏規則。"
 
-#: advice.c:277
+#: advice.c:278
 #, c-format
 msgid ""
 "Note: switching to '%s'.\n"
@@ -912,7 +912,7 @@ msgstr ""
 "將組態變數 advice.detachedHead 設定為 false，即可關閉本建議\n"
 "\n"
 
-#: advice.c:304
+#: advice.c:305
 #, c-format
 msgid ""
 "The following paths have been moved outside the\n"
@@ -922,7 +922,7 @@ msgstr ""
 "以下路徑已經移到稀疏簽出定義之外的地方，\n"
 "但因為有本機更動，因此路徑不是稀疏的。\n"
 
-#: advice.c:311
+#: advice.c:312
 msgid ""
 "To correct the sparsity of these paths, do the following:\n"
 "* Use \"git add --sparse <paths>\" to update the index\n"
@@ -964,7 +964,7 @@ msgstr "空白字元忽略選項「%s」無法識別"
 #: builtin/checkout.c:1791 builtin/checkout.c:1901 builtin/checkout.c:1904
 #: builtin/clean.c:963 builtin/clone.c:1015 builtin/clone.c:1020
 #: builtin/commit.c:360 builtin/commit.c:363 builtin/commit.c:1230
-#: builtin/commit.c:1286 builtin/commit.c:1303 builtin/describe.c:613
+#: builtin/commit.c:1286 builtin/commit.c:1303 builtin/describe.c:617
 #: builtin/diff-tree.c:163 builtin/difftool.c:743 builtin/fast-export.c:1262
 #: builtin/fetch.c:2290 builtin/fetch.c:2317 builtin/fetch.c:2331
 #: builtin/fetch.c:2336 builtin/help.c:618 builtin/index-pack.c:1867
@@ -2248,7 +2248,7 @@ msgid "The following paths are ignored by one of your .gitignore files:\n"
 msgstr "下列路徑根據其中一個 .gitignore 檔案而被忽略：\n"
 
 #: builtin/add.c:238 builtin/clean.c:934 builtin/fetch.c:2200 builtin/mv.c:187
-#: builtin/prune-packed.c:15 builtin/pull.c:210 builtin/push.c:578
+#: builtin/prune-packed.c:15 builtin/pull.c:210 builtin/push.c:570
 #: builtin/remote.c:1474 builtin/rm.c:251 builtin/send-pack.c:189
 msgid "dry run"
 msgstr "測試執行"
@@ -3272,7 +3272,7 @@ msgstr "顯示工作量統計"
 #: builtin/commit-graph.c:83 builtin/commit-graph.c:253 builtin/fetch.c:2207
 #: builtin/merge.c:286 builtin/multi-pack-index.c:131
 #: builtin/multi-pack-index.c:188 builtin/multi-pack-index.c:215
-#: builtin/multi-pack-index.c:244 builtin/pull.c:122 builtin/push.c:594
+#: builtin/multi-pack-index.c:244 builtin/pull.c:122 builtin/push.c:586
 #: builtin/remote.c:697 builtin/send-pack.c:197
 msgid "force progress reporting"
 msgstr "強制顯示進度報告"
@@ -3829,7 +3829,8 @@ msgstr ""
 msgid ""
 "the '--set-upstream' option is no longer supported. Please use '--track' or "
 "'--set-upstream-to' instead"
-msgstr "不再支援選項「--set-upstream」。請改用「--track」或「--set-upstream-to」"
+msgstr ""
+"不再支援選項「--set-upstream」。請改用「--track」或「--set-upstream-to」"
 
 #: builtin/bugreport.c:21
 msgid "git version:\n"
@@ -4099,7 +4100,8 @@ msgstr "輸出 [損壞的] ([broken]) 物件屬性"
 
 #: builtin/cat-file.c:956
 msgid "show object type (one of 'blob', 'tree', 'commit', 'tag', ...)"
-msgstr "顯示物件類型（可以是「blob」、「tree」、「commit」、「tag」等其中一個）"
+msgstr ""
+"顯示物件類型（可以是「blob」、「tree」、「commit」、「tag」等其中一個）"
 
 #: builtin/cat-file.c:957
 msgid "show object size"
@@ -4472,7 +4474,7 @@ msgstr "路徑「%s」未合併"
 #: builtin/checkout.c:797 builtin/checkout.c:1267 builtin/checkout.c:1273
 #: builtin/grep.c:525 builtin/grep.c:668 builtin/grep.c:708
 #: builtin/merge-tree.c:449 builtin/merge-tree.c:454 builtin/merge-tree.c:459
-#: builtin/reset.c:120 merge-ort.c:5060 reset.c:168 sequencer.c:775
+#: builtin/reset.c:120 merge-ort.c:5142 reset.c:168 sequencer.c:775
 #: sequencer.c:4047 tree-walk.c:95
 #, c-format
 msgid "unable to read tree (%s)"
@@ -5048,7 +5050,7 @@ msgid "remove whole directories"
 msgstr "移除整個目錄"
 
 #: builtin/clean.c:939 builtin/config.c:876 builtin/config.c:929
-#: builtin/config.c:985 builtin/describe.c:585 builtin/describe.c:587
+#: builtin/config.c:985 builtin/describe.c:589 builtin/describe.c:591
 #: builtin/grep.c:994 builtin/log.c:274 builtin/log.c:276
 #: builtin/ls-files.c:607 builtin/name-rev.c:570 builtin/name-rev.c:572
 #: builtin/pack-refs.c:32 builtin/pack-refs.c:34 builtin/show-ref.c:316
@@ -5210,12 +5212,12 @@ msgid "set config inside the new repository"
 msgstr "在新版本庫中設定設定訊息"
 
 #: builtin/clone.c:164 builtin/fetch.c:2233 builtin/ls-remote.c:84
-#: builtin/pull.c:236 builtin/push.c:603 builtin/send-pack.c:195
+#: builtin/pull.c:236 builtin/push.c:595 builtin/send-pack.c:195
 msgid "server-specific"
 msgstr "server-specific"
 
 #: builtin/clone.c:164 builtin/fetch.c:2233 builtin/ls-remote.c:84
-#: builtin/pull.c:237 builtin/push.c:603 builtin/send-pack.c:196
+#: builtin/pull.c:237 builtin/push.c:595 builtin/send-pack.c:196
 msgid "option to transmit"
 msgstr "傳輸選項"
 
@@ -6076,7 +6078,7 @@ msgid "version"
 msgstr "版本"
 
 #: builtin/commit.c:1521 builtin/commit.c:1686 builtin/fetch.c:2201
-#: builtin/push.c:579 builtin/worktree.c:1044
+#: builtin/push.c:571 builtin/worktree.c:1044
 msgid "machine-readable output"
 msgstr "機器可讀的輸出"
 
@@ -6317,9 +6319,8 @@ msgid ""
 "regexp=<regexp>] [--value=<value>] [--fixed-value] [--default=<default>] "
 "<name>"
 msgstr ""
-"git config get [<檔案選項>] [<顯示選項>] [--includes] [--all] "
-"[--regexp=<常規表示式>] [--value=<值>] [--fixed-value] [--default=<預設值>] "
-"<名稱>"
+"git config get [<檔案選項>] [<顯示選項>] [--includes] [--all] [--regexp=<常規"
+"表示式>] [--value=<值>] [--fixed-value] [--default=<預設值>] <名稱>"
 
 #: builtin/config.c:21
 msgid ""
@@ -6334,8 +6335,8 @@ msgid ""
 "git config unset [<file-option>] [--all] [--value=<value>] [--fixed-value] "
 "<name> <value>"
 msgstr ""
-"git config unset [<檔案選項>] [--all] [--value=<值>] [--fixed-value] <名稱> "
-"<值>"
+"git config unset [<檔案選項>] [--all] [--value=<值>] [--fixed-value] <名稱> <"
+"值>"
 
 #: builtin/config.c:23 builtin/config.c:51
 msgid "git config rename-section [<file-option>] <old-name> <new-name>"
@@ -6358,8 +6359,8 @@ msgid ""
 "git config set [<file-option>] [--type=<type>] [--comment=<message>] [--all] "
 "[--value=<value>] [--fixed-value] <name> <value>"
 msgstr ""
-"git config set [<檔案選項>] [--type=<類型>] [--comment=<備註>] [--all] "
-"[--value=<值>] [--fixed-value] <名稱> <值>"
+"git config set [<檔案選項>] [--type=<類型>] [--comment=<備註>] [--all] [--"
+"value=<值>] [--fixed-value] <名稱> <值>"
 
 #: builtin/config.c:66
 msgid "Config file location"
@@ -6815,44 +6816,44 @@ msgstr ""
 msgid "git describe <blob>"
 msgstr "git describe <blob>"
 
-#: builtin/describe.c:68
+#: builtin/describe.c:72
 msgid "head"
 msgstr "HEAD"
 
-#: builtin/describe.c:68
+#: builtin/describe.c:72
 msgid "lightweight"
 msgstr "輕量級的"
 
-#: builtin/describe.c:68
+#: builtin/describe.c:72
 msgid "annotated"
 msgstr "附註的"
 
-#: builtin/describe.c:283
+#: builtin/describe.c:287
 #, c-format
 msgid "annotated tag %s not available"
 msgstr "附註標籤 %s 無效"
 
-#: builtin/describe.c:287
+#: builtin/describe.c:291
 #, c-format
 msgid "tag '%s' is externally known as '%s'"
 msgstr "「%s」標籤在外部被認為是「%s」"
 
-#: builtin/describe.c:335
+#: builtin/describe.c:339
 #, c-format
 msgid "no tag exactly matches '%s'"
 msgstr "沒有標籤準確符合 '%s'"
 
-#: builtin/describe.c:337
+#: builtin/describe.c:341
 #, c-format
 msgid "No exact match on refs or tags, searching to describe\n"
 msgstr "沒有精確符合到引用或標籤，繼續搜尋進行描述\n"
 
-#: builtin/describe.c:404
+#: builtin/describe.c:408
 #, c-format
 msgid "finished search at %s\n"
 msgstr "完成搜尋 %s\n"
 
-#: builtin/describe.c:431
+#: builtin/describe.c:435
 #, c-format
 msgid ""
 "No annotated tags can describe '%s'.\n"
@@ -6861,7 +6862,7 @@ msgstr ""
 "沒有附註標籤能描述 '%s'。\n"
 "然而，存在未附註標籤：嘗試 --tags。"
 
-#: builtin/describe.c:435
+#: builtin/describe.c:439
 #, c-format
 msgid ""
 "No tags can describe '%s'.\n"
@@ -6870,12 +6871,12 @@ msgstr ""
 "沒有標籤能描述 '%s'。\n"
 "嘗試 --always，或者建立一些標籤。"
 
-#: builtin/describe.c:465
+#: builtin/describe.c:469
 #, c-format
 msgid "traversed %lu commits\n"
 msgstr "已遍歷 %lu 個提交\n"
 
-#: builtin/describe.c:468
+#: builtin/describe.c:472
 #, c-format
 msgid ""
 "more than %i tags found; listed %i most recent\n"
@@ -6884,82 +6885,82 @@ msgstr ""
 "發現多於 %i 個標籤，列出最近的 %i 個\n"
 "在 %s 放棄搜尋\n"
 
-#: builtin/describe.c:537
+#: builtin/describe.c:541
 #, c-format
 msgid "describe %s\n"
 msgstr "描述 %s\n"
 
-#: builtin/describe.c:540
+#: builtin/describe.c:544
 #, c-format
 msgid "Not a valid object name %s"
 msgstr "不是一個有效的物件名 %s"
 
-#: builtin/describe.c:548
+#: builtin/describe.c:552
 #, c-format
 msgid "%s is neither a commit nor blob"
 msgstr "%s 既不是提交也不是資料物件"
 
-#: builtin/describe.c:573
+#: builtin/describe.c:577
 msgid "find the tag that comes after the commit"
 msgstr "尋找該提交之後的標籤"
 
-#: builtin/describe.c:574
+#: builtin/describe.c:578
 msgid "debug search strategy on stderr"
 msgstr "在標準錯誤上除錯搜尋策略"
 
-#: builtin/describe.c:575
+#: builtin/describe.c:579
 msgid "use any ref"
 msgstr "使用任意引用"
 
-#: builtin/describe.c:576
+#: builtin/describe.c:580
 msgid "use any tag, even unannotated"
 msgstr "使用任意標籤，即使未附帶備註"
 
-#: builtin/describe.c:577
+#: builtin/describe.c:581
 msgid "always use long format"
 msgstr "始終使用長提交號格式"
 
-#: builtin/describe.c:578
+#: builtin/describe.c:582
 msgid "only follow first parent"
 msgstr "只跟隨第一個父提交"
 
-#: builtin/describe.c:581
+#: builtin/describe.c:585
 msgid "only output exact matches"
 msgstr "只輸出精確符合"
 
-#: builtin/describe.c:584
+#: builtin/describe.c:588
 msgid "consider <n> most recent tags (default: 10)"
 msgstr "考慮最近 <n> 個標籤（預設值：10）"
 
-#: builtin/describe.c:586
+#: builtin/describe.c:590
 msgid "only consider tags matching <pattern>"
 msgstr "只考慮符合 <模式> 的標籤"
 
-#: builtin/describe.c:588
+#: builtin/describe.c:592
 msgid "do not consider tags matching <pattern>"
 msgstr "不考慮符合 <模式> 的標籤"
 
-#: builtin/describe.c:590 builtin/name-rev.c:584
+#: builtin/describe.c:594 builtin/name-rev.c:584
 msgid "show abbreviated commit object as fallback"
 msgstr "顯示簡寫的提交號作為後備"
 
-#: builtin/describe.c:591 builtin/describe.c:594
+#: builtin/describe.c:595 builtin/describe.c:598
 msgid "mark"
 msgstr "標記"
 
-#: builtin/describe.c:592
+#: builtin/describe.c:596
 msgid "append <mark> on dirty working tree (default: \"-dirty\")"
 msgstr "對於髒工作區，追加 <標記>（預設值：」-dirty\"）"
 
-#: builtin/describe.c:595
+#: builtin/describe.c:599
 msgid "append <mark> on broken working tree (default: \"-broken\")"
 msgstr "對於損壞的工作區，追加 <標記>（預設值：」-broken\"）"
 
-#: builtin/describe.c:643
+#: builtin/describe.c:647
 msgid "No names found, cannot describe anything."
 msgstr "沒有發現名稱，無法描述任何東西。"
 
-#: builtin/describe.c:698 builtin/describe.c:700
+#: builtin/describe.c:710 builtin/describe.c:712
 #, c-format
 msgid "option '%s' and commit-ishes cannot be used together"
 msgstr "「%s」選項和提交號不得同時使用"
@@ -12129,15 +12130,15 @@ msgstr "本機子模組中有修改，無法重定基底"
 msgid "git push [<options>] [<repository> [<refspec>...]]"
 msgstr "git push [<選項>] [<版本庫> [<引用規格>...]]"
 
-#: builtin/push.c:109
+#: builtin/push.c:108
 msgid "tag shorthand without <tag>"
 msgstr "標籤後面未提供 <標籤> 參數"
 
-#: builtin/push.c:117
+#: builtin/push.c:116
 msgid "--delete only accepts plain target ref names"
 msgstr "--delete 只接受簡單的目標引用名"
 
-#: builtin/push.c:166
+#: builtin/push.c:158
 msgid ""
 "\n"
 "To choose either option permanently, see push.default in 'git help config'.\n"
@@ -12145,7 +12146,7 @@ msgstr ""
 "\n"
 "若要永久選擇某個選項，請參閱「git help config」中的 push.default。\n"
 
-#: builtin/push.c:170
+#: builtin/push.c:162
 msgid ""
 "\n"
 "To avoid automatically configuring an upstream branch when its name\n"
@@ -12157,7 +12158,7 @@ msgstr ""
 "請參閱「git help config」中 branch.autoSetupMerge 的\n"
 "「simple」選項。\n"
 
-#: builtin/push.c:176
+#: builtin/push.c:168
 #, c-format
 msgid ""
 "The upstream branch of your current branch does not match\n"
@@ -12181,7 +12182,7 @@ msgstr ""
 "    git push %s HEAD\n"
 "%s%s"
 
-#: builtin/push.c:192
+#: builtin/push.c:184
 #, c-format
 msgid ""
 "You are not currently on a branch.\n"
@@ -12195,7 +12196,7 @@ msgstr ""
 "\n"
 "    git push %s HEAD:<遠端分支名字>\n"
 
-#: builtin/push.c:208
+#: builtin/push.c:200
 msgid ""
 "\n"
 "To have this happen automatically for branches without a tracking\n"
@@ -12205,7 +12206,7 @@ msgstr ""
 "若要使沒有追蹤上游的分支自動配置，請參閱「git help config」中的\n"
 "「push.autoSetupRemote」。\n"
 
-#: builtin/push.c:214
+#: builtin/push.c:206
 #, c-format
 msgid ""
 "The current branch %s has no upstream branch.\n"
@@ -12220,17 +12221,17 @@ msgstr ""
 "    git push --set-upstream %s %s\n"
 "%s"
 
-#: builtin/push.c:225
+#: builtin/push.c:217
 #, c-format
 msgid "The current branch %s has multiple upstream branches, refusing to push."
 msgstr "目前分支 %s 有多個上游分支，拒絕推送。"
 
-#: builtin/push.c:243
+#: builtin/push.c:235
 msgid ""
 "You didn't specify any refspecs to push, and push.default is \"nothing\"."
 msgstr "您沒有為推送指定任何引用規格，並且 push.default 為 \"nothing\"。"
 
-#: builtin/push.c:269
+#: builtin/push.c:261
 #, c-format
 msgid ""
 "You are pushing to remote '%s', which is not the upstream of\n"
@@ -12240,7 +12241,7 @@ msgstr ""
 "您正推送至遠端 '%s'（其並非目前分支 '%s' 的上游），\n"
 "而沒有告訴我要推送什麼、更新哪個遠端分支。"
 
-#: builtin/push.c:292
+#: builtin/push.c:284
 msgid ""
 "Updates were rejected because the tip of your current branch is behind\n"
 "its remote counterpart. If you want to integrate the remote changes,\n"
@@ -12251,7 +12252,7 @@ msgstr ""
 "如果您想要整合遠端更動，請在再次推送前使用「git pull」。詳見\n"
 "「git push --help」中的〈Note about fast-forwards〉小節。"
 
-#: builtin/push.c:298
+#: builtin/push.c:290
 msgid ""
 "Updates were rejected because a pushed branch tip is behind its remote\n"
 "counterpart. If you want to integrate the remote changes, use 'git pull'\n"
@@ -12262,7 +12263,7 @@ msgstr ""
 "如果您想要整合遠端更動，請在再次推送前使用「git pull」。詳見\n"
 "「git push --help」中的〈Note about fast-forwards〉小節。"
 
-#: builtin/push.c:304
+#: builtin/push.c:296
 msgid ""
 "Updates were rejected because the remote contains work that you do not\n"
 "have locally. This is usually caused by another repository pushing to\n"
@@ -12275,11 +12276,11 @@ msgstr ""
 "請在再次推送前使用「git pull」。詳見「git push --help」中的\n"
 "〈Note about fast-forwards〉小節。"
 
-#: builtin/push.c:311
+#: builtin/push.c:303
 msgid "Updates were rejected because the tag already exists in the remote."
 msgstr "更新被拒絕，因為該標籤在遠端已經存在。"
 
-#: builtin/push.c:314
+#: builtin/push.c:306
 msgid ""
 "You cannot update a remote ref that points at a non-commit object,\n"
 "or update a remote ref to make it point at a non-commit object,\n"
@@ -12288,7 +12289,7 @@ msgstr ""
 "如果不使用 '--force' 參數，您不能更新一個指向非提交物件的遠端引用，\n"
 "也不能更新遠端引用讓其指向一個非提交物件。\n"
 
-#: builtin/push.c:319
+#: builtin/push.c:311
 msgid ""
 "Updates were rejected because the tip of the remote-tracking branch has\n"
 "been updated since the last checkout. If you want to integrate the\n"
@@ -12299,110 +12300,110 @@ msgstr ""
 "如果您想要整合遠端更動，請在再次推送前使用「git pull」。\n"
 "詳見「git push --help」中的〈Note about fast-forwards〉小節。"
 
-#: builtin/push.c:389
+#: builtin/push.c:381
 #, c-format
 msgid "Pushing to %s\n"
 msgstr "推送到 %s\n"
 
-#: builtin/push.c:396
+#: builtin/push.c:388
 #, c-format
 msgid "failed to push some refs to '%s'"
 msgstr "推送一些引用到 '%s' 失敗"
 
-#: builtin/push.c:462
+#: builtin/push.c:454
 msgid ""
 "recursing into submodule with push.recurseSubmodules=only; using on-demand "
 "instead"
 msgstr "在有 push.recurseSubmodules=only; 的情況嘗試遞迴子模組；改用 on-demand"
 
-#: builtin/push.c:519 builtin/send-pack.c:144 submodule-config.c:654
+#: builtin/push.c:511 builtin/send-pack.c:144 submodule-config.c:654
 #, c-format
 msgid "invalid value for '%s'"
 msgstr "「%s」的值無效"
 
-#: builtin/push.c:571 builtin/submodule--helper.c:3373
+#: builtin/push.c:563 builtin/submodule--helper.c:3373
 msgid "repository"
 msgstr "版本庫"
 
-#: builtin/push.c:572
+#: builtin/push.c:564
 msgid "push all branches"
 msgstr "推送所有分支"
 
-#: builtin/push.c:574 builtin/send-pack.c:190
+#: builtin/push.c:566 builtin/send-pack.c:190
 msgid "mirror all refs"
 msgstr "鏡像所有引用"
 
-#: builtin/push.c:576
+#: builtin/push.c:568
 msgid "delete refs"
 msgstr "刪除引用"
 
-#: builtin/push.c:577
+#: builtin/push.c:569
 msgid "push tags (can't be used with --all or --branches or --mirror)"
 msgstr "推送標籤（不能和 --all、--branches 或 --mirror 一起使用）"
 
-#: builtin/push.c:580 builtin/send-pack.c:191
+#: builtin/push.c:572 builtin/send-pack.c:191
 msgid "force updates"
 msgstr "強制更新"
 
-#: builtin/push.c:581 builtin/send-pack.c:203
+#: builtin/push.c:573 builtin/send-pack.c:203
 msgid "<refname>:<expect>"
 msgstr "<引用名>:<期望值>"
 
-#: builtin/push.c:582 builtin/send-pack.c:204
+#: builtin/push.c:574 builtin/send-pack.c:204
 msgid "require old value of ref to be at this value"
 msgstr "要求引用舊的取值為設定值"
 
-#: builtin/push.c:585 builtin/send-pack.c:207
+#: builtin/push.c:577 builtin/send-pack.c:207
 msgid "require remote updates to be integrated locally"
 msgstr "需要將遠端更新整合進本地"
 
-#: builtin/push.c:588
+#: builtin/push.c:580
 msgid "control recursive pushing of submodules"
 msgstr "控制子模組的遞迴推送"
 
-#: builtin/push.c:589 builtin/send-pack.c:198
+#: builtin/push.c:581 builtin/send-pack.c:198
 msgid "use thin pack"
 msgstr "使用精簡打包"
 
-#: builtin/push.c:590 builtin/push.c:591 builtin/send-pack.c:185
+#: builtin/push.c:582 builtin/push.c:583 builtin/send-pack.c:185
 #: builtin/send-pack.c:186
 msgid "receive pack program"
 msgstr "接收包程式"
 
-#: builtin/push.c:592
+#: builtin/push.c:584
 msgid "set upstream for git pull/status"
 msgstr "設定 git pull/status 的上游"
 
-#: builtin/push.c:595
+#: builtin/push.c:587
 msgid "prune locally removed refs"
 msgstr "剪除本機刪除的引用"
 
-#: builtin/push.c:597
+#: builtin/push.c:589
 msgid "bypass pre-push hook"
 msgstr "繞過 pre-push 掛鉤"
 
-#: builtin/push.c:598
+#: builtin/push.c:590
 msgid "push missing but relevant tags"
 msgstr "推送缺少但有關的標籤"
 
-#: builtin/push.c:600 builtin/send-pack.c:192
+#: builtin/push.c:592 builtin/send-pack.c:192
 msgid "GPG sign the push"
 msgstr "用 GPG 為推送簽名"
 
-#: builtin/push.c:602 builtin/send-pack.c:199
+#: builtin/push.c:594 builtin/send-pack.c:199
 msgid "request atomic transaction on remote side"
 msgstr "需要遠端支援 atomic 事務"
 
-#: builtin/push.c:621
+#: builtin/push.c:613
 msgid "--delete doesn't make sense without any refs"
 msgstr "--delete 未接任何引用沒有意義"
 
-#: builtin/push.c:641 t/helper/test-bundle-uri.c:88
+#: builtin/push.c:631 t/helper/test-bundle-uri.c:88
 #, c-format
 msgid "bad repository '%s'"
 msgstr "壞的版本庫 '%s'"
 
-#: builtin/push.c:642
+#: builtin/push.c:632
 msgid ""
 "No configured push destination.\n"
 "Either specify the URL from the command-line or configure a remote "
@@ -12423,15 +12424,15 @@ msgstr ""
 "\n"
 "    git push <名稱>\n"
 
-#: builtin/push.c:657
+#: builtin/push.c:650
 msgid "--all can't be combined with refspecs"
 msgstr "--all 不能和引用規格同時使用"
 
-#: builtin/push.c:661
+#: builtin/push.c:654
 msgid "--mirror can't be combined with refspecs"
 msgstr "--mirror 不能和引用規格同時使用"
 
-#: builtin/push.c:669
+#: builtin/push.c:662
 msgid "push options must not have new line characters"
 msgstr "推送選項不能有換行符號"
 
@@ -18335,7 +18336,7 @@ msgid "failed to rename temporary commit-graph file"
 msgstr "無法重新命名暫時性提交圖檔案"
 
 #: commit-graph.c:2251
-#, c-format, fuzzy
+#, fuzzy, c-format
 msgid "cannot merge graphs with %<PRIuMAX>, %<PRIuMAX> commits"
 msgstr "無法將圖與 %<PRIuMAX>、%<PRIuMAX> 個提交合併"
 
@@ -21044,39 +21045,53 @@ msgstr "不是一個 git 版本庫"
 msgid "argument to --packfile must be a valid hash (got '%s')"
 msgstr "傳入 --packfile 的參數必須是有效的雜湊 (收到 '%s')"
 
-#: http.c:474
+#: http.c:487
 #, c-format
 msgid "negative value for http.postBuffer; defaulting to %d"
 msgstr "http.postBuffer 為負值，預設為 %d"
 
-#: http.c:495
+#: http.c:508
 msgid "Delegation control is not supported with cURL < 7.22.0"
 msgstr "不支援委託控制，因為 cURL < 7.22.0"
 
-#: http.c:504
+#: http.c:517
 msgid "Public key pinning not supported with cURL < 7.39.0"
 msgstr "不支援公鑰檔案鎖定，因為 cURL < 7.39.0"
 
-#: http.c:1049
+#: http.c:565
+#, fuzzy
+#| msgid "unknown value for object-format: %s"
+msgid "Unknown value for http.proactiveauth"
+msgstr "未知的 object-format 值：%s"
+
+#: http.c:1091
 msgid "CURLSSLOPT_NO_REVOKE not supported with cURL < 7.44.0"
 msgstr "不支援 CURLSSLOPT_NO_REVOKE，因為 cURL < 7.44.0"
 
-#: http.c:1275
+#: http.c:1317
 #, c-format
 msgid "Unsupported SSL backend '%s'. Supported SSL backends:"
 msgstr "不支援的 SSL 後端 '%s'。支援的 SSL 後端："
 
-#: http.c:1282
+#: http.c:1324
 #, c-format
 msgid "Could not set SSL backend to '%s': cURL was built without SSL backends"
 msgstr "無法將 SSL 後端設定為 '%s'：組建 cURL 時未加入 SSL 後端"
 
-#: http.c:1286
+#: http.c:1328
 #, c-format
 msgid "Could not set SSL backend to '%s': already set"
 msgstr "無法將 SSL 後端設定為 '%s'：已經設定"
 
-#: http.c:2173
+#: http.c:1514
+msgid "refusing to read cookies from http.cookiefile '-'"
+msgstr ""
+
+#: http.c:1520
+msgid "ignoring http.savecookies for empty http.cookiefile"
+msgstr ""
+
+#: http.c:2227
 #, c-format
 msgid ""
 "unable to update url base from redirection:\n"
@@ -21269,50 +21284,50 @@ msgstr "偵測到由可列印字元 (quoted) 所組成的 CRLF"
 msgid "unable to format message: %s"
 msgstr "無法格式化訊息：%s"
 
-#: merge-ort.c:1794 merge-recursive.c:1241
+#: merge-ort.c:1823 merge-recursive.c:1241
 #, c-format
 msgid "Failed to merge submodule %s (not checked out)"
 msgstr "無法合併子模組 %s （沒有簽出）"
 
-#: merge-ort.c:1803
+#: merge-ort.c:1832
 #, c-format
 msgid "Failed to merge submodule %s (no merge base)"
 msgstr "無法合併 %s 子模組（沒有合併基底）"
 
-#: merge-ort.c:1813 merge-recursive.c:1248
+#: merge-ort.c:1842 merge-recursive.c:1248
 #, c-format
 msgid "Failed to merge submodule %s (commits not present)"
 msgstr "無法合併子模組 %s（提交不存在）"
 
-#: merge-ort.c:1824 merge-ort.c:1835 merge-ort.c:1855 merge-ort.c:1874
-#: merge-ort.c:1908 merge-recursive.c:1255 merge-recursive.c:1262
-#: merge-recursive.c:1274 merge-recursive.c:1293 merge-recursive.c:1327
-#, c-format
-msgid "Failed to merge submodule %s (repository corrupt)"
+#: merge-ort.c:1853 merge-ort.c:1864 merge-ort.c:1884 merge-ort.c:1903
+#: merge-ort.c:1937
+#, fuzzy, c-format
+#| msgid "Failed to merge submodule %s (repository corrupt)"
+msgid "error: failed to merge submodule %s (repository corrupt)"
 msgstr "無法合併子模組 %s （版本庫損壞）"
 
-#: merge-ort.c:1844 merge-recursive.c:1267
+#: merge-ort.c:1873 merge-recursive.c:1267
 #, c-format
 msgid "Failed to merge submodule %s (commits don't follow merge-base)"
 msgstr "無法合併子模組 %s （提交未跟隨合併基礎）"
 
-#: merge-ort.c:1865 merge-ort.c:1884
+#: merge-ort.c:1894 merge-ort.c:1913
 #, c-format
 msgid "Note: Fast-forwarding submodule %s to %s"
 msgstr "注意：正在將 %s 子模組快轉到 %s"
 
-#: merge-ort.c:1916
+#: merge-ort.c:1945
 #, c-format
 msgid "Failed to merge submodule %s"
 msgstr "無法合併 %s 子模組"
 
-#: merge-ort.c:1924
+#: merge-ort.c:1953
 #, c-format
 msgid ""
 "Failed to merge submodule %s, but a possible merge resolution exists: %s"
 msgstr "無法合併 %s 子模組，但存在合併可行方案：%s"
 
-#: merge-ort.c:1935
+#: merge-ort.c:1964
 #, c-format
 msgid ""
 "Failed to merge submodule %s, but multiple possible merges exist:\n"
@@ -21321,21 +21336,24 @@ msgstr ""
 "無法合併 %s 子模組，但有找到幾個可行的合併方案：\n"
 "%s"
 
-#: merge-ort.c:2179 merge-recursive.c:1430
-msgid "failed to execute internal merge"
+#: merge-ort.c:2210
+#, fuzzy, c-format
+#| msgid "failed to execute internal merge"
+msgid "error: failed to execute internal merge for %s"
 msgstr "無法執行內部合併"
 
-#: merge-ort.c:2184 merge-recursive.c:1435
-#, c-format
-msgid "unable to add %s to database"
+#: merge-ort.c:2220
+#, fuzzy, c-format
+#| msgid "unable to add %s to database"
+msgid "error: unable to add %s to database"
 msgstr "無法將 %s 加進資料庫"
 
-#: merge-ort.c:2191 merge-recursive.c:1471
+#: merge-ort.c:2230 merge-recursive.c:1471
 #, c-format
 msgid "Auto-merging %s"
 msgstr "自動合併 %s"
 
-#: merge-ort.c:2331 merge-recursive.c:2193
+#: merge-ort.c:2372 merge-recursive.c:2193
 #, c-format
 msgid ""
 "CONFLICT (implicit dir rename): Existing file/dir at %s in the way of "
@@ -21344,7 +21362,7 @@ msgstr ""
 "衝突（隱式目錄重新命名）：處於隱式目錄重新命名的現存檔案/目錄 %s，將以下路徑"
 "放在：%s。"
 
-#: merge-ort.c:2343 merge-recursive.c:2203
+#: merge-ort.c:2384 merge-recursive.c:2203
 #, c-format
 msgid ""
 "CONFLICT (implicit dir rename): Cannot map more than one path to %s; "
@@ -21353,7 +21371,7 @@ msgstr ""
 "衝突（隱式目錄重新命名）：無法映射一個以上路徑到 %s，隱式目錄重新命名嘗試將這"
 "些路徑放置於此：%s"
 
-#: merge-ort.c:2402
+#: merge-ort.c:2443
 #, c-format
 msgid ""
 "CONFLICT (directory rename split): Unclear where to rename %s to; it was "
@@ -21363,14 +21381,14 @@ msgstr ""
 "衝突（分割的目錄重新命名）：未知 %s 重新命名的位置。它被重新命名為多個其他目"
 "錄，但沒有目的地取得過半檔案。"
 
-#: merge-ort.c:2584 merge-recursive.c:2539
+#: merge-ort.c:2625 merge-recursive.c:2539
 #, c-format
 msgid ""
 "WARNING: Avoiding applying %s -> %s rename to %s, because %s itself was "
 "renamed."
 msgstr "警告：避免套用 %s -> %s 的重新命名到 %s，因為 %s 本身已被重新命名。"
 
-#: merge-ort.c:2758 merge-recursive.c:3326
+#: merge-ort.c:2799 merge-recursive.c:3326
 #, c-format
 msgid ""
 "Path updated: %s added in %s inside a directory that was renamed in %s; "
@@ -21378,7 +21396,7 @@ msgid ""
 msgstr ""
 "路徑已更新：%s 新增到 %s，位於一個被重新命名到 %s 的目錄中，將其移動到 %s。"
 
-#: merge-ort.c:2766 merge-recursive.c:3333
+#: merge-ort.c:2807 merge-recursive.c:3333
 #, c-format
 msgid ""
 "Path updated: %s renamed to %s in %s, inside a directory that was renamed in "
@@ -21387,7 +21405,7 @@ msgstr ""
 "路徑已更新：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s 中，將"
 "其移動到 %5$s。"
 
-#: merge-ort.c:2780 merge-recursive.c:3329
+#: merge-ort.c:2821 merge-recursive.c:3329
 #, c-format
 msgid ""
 "CONFLICT (file location): %s added in %s inside a directory that was renamed "
@@ -21396,7 +21414,7 @@ msgstr ""
 "衝突（檔案位置）：%s 新增到 %s，位於一個被重新命名為 %s 的目錄中，建議將其移"
 "動到 %s。"
 
-#: merge-ort.c:2789 merge-recursive.c:3336
+#: merge-ort.c:2830 merge-recursive.c:3336
 #, c-format
 msgid ""
 "CONFLICT (file location): %s renamed to %s in %s, inside a directory that "
@@ -21405,14 +21423,14 @@ msgstr ""
 "衝突（檔案位置）：%1$s 重新命名為 %3$s 中的 %2$s，而該目錄被重新命名到 %4$s "
 "中，建議將其移動到 %5$s。"
 
-#: merge-ort.c:2948
+#: merge-ort.c:2989
 #, c-format
 msgid "CONFLICT (rename/rename): %s renamed to %s in %s and to %s in %s."
 msgstr ""
 "衝突（重新命名/重新命名）：%1$s 已重新命名為 %3$s 中的 %2$s 和 %5$s 中的 "
 "%4$s。"
 
-#: merge-ort.c:3046
+#: merge-ort.c:3087
 #, c-format
 msgid ""
 "CONFLICT (rename involved in collision): rename of %s -> %s has content "
@@ -21422,30 +21440,32 @@ msgstr ""
 "衝突（重新命名陷入相撞）：%s -> %s 這個重新命名有內容衝突並與其他路徑相撞，可"
 "能會因此出現巢狀衝突標記。"
 
-#: merge-ort.c:3066 merge-ort.c:3091
+#: merge-ort.c:3107 merge-ort.c:3132
 #, c-format
 msgid "CONFLICT (rename/delete): %s renamed to %s in %s, but deleted in %s."
 msgstr ""
 "衝突（重新命名/刪除）：%1$s 已重新命名為 %3$s 中的 %2$s 卻在 %4$s 中被刪除。"
 
-#: merge-ort.c:3570 merge-recursive.c:3087
-#, c-format
-msgid "cannot read object %s"
+#: merge-ort.c:3615
+#, fuzzy, c-format
+#| msgid "cannot read object %s"
+msgid "error: cannot read object %s"
 msgstr "不能讀取物件 %s"
 
-#: merge-ort.c:3573 merge-recursive.c:3090
-#, c-format
-msgid "object %s is not a blob"
+#: merge-ort.c:3622
+#, fuzzy, c-format
+#| msgid "object %s is not a blob"
+msgid "error: object %s is not a blob"
 msgstr "物件 %s 不是一個資料物件"
 
-#: merge-ort.c:4008
+#: merge-ort.c:4058
 #, c-format
 msgid ""
 "CONFLICT (file/directory): directory in the way of %s from %s; moving it to "
 "%s instead."
 msgstr "衝突（檔案/目錄）：目錄佔住 %2$s 中 %1$s 的位置。改移動到 %3$s。"
 
-#: merge-ort.c:4091
+#: merge-ort.c:4141
 #, c-format
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed both "
@@ -21454,7 +21474,7 @@ msgstr ""
 "衝突（類型有異）：兩方的 %s 類型皆不同。已經重新命名這兩個來源，這樣就可以分"
 "別記錄這兩方檔案。"
 
-#: merge-ort.c:4100
+#: merge-ort.c:4150
 #, c-format
 msgid ""
 "CONFLICT (distinct types): %s had different types on each side; renamed one "
@@ -21463,24 +21483,24 @@ msgstr ""
 "衝突（類型有異）：兩方的 %s 類型皆不同。已經重新命名其中一個來源，這樣就可以"
 "分別記錄這兩方檔案。"
 
-#: merge-ort.c:4187 merge-recursive.c:3166
+#: merge-ort.c:4237 merge-recursive.c:3166
 msgid "content"
 msgstr "內容"
 
-#: merge-ort.c:4189 merge-recursive.c:3170
+#: merge-ort.c:4239 merge-recursive.c:3170
 msgid "add/add"
 msgstr "新增/新增"
 
-#: merge-ort.c:4191 merge-recursive.c:3215
+#: merge-ort.c:4241 merge-recursive.c:3215
 msgid "submodule"
 msgstr "子模組"
 
-#: merge-ort.c:4194 merge-recursive.c:3216
+#: merge-ort.c:4244 merge-recursive.c:3216
 #, c-format
 msgid "CONFLICT (%s): Merge conflict in %s"
 msgstr "衝突（%s）：合併衝突於 %s"
 
-#: merge-ort.c:4239
+#: merge-ort.c:4289
 #, c-format
 msgid ""
 "CONFLICT (modify/delete): %s deleted in %s and modified in %s.  Version %s "
@@ -21495,7 +21515,7 @@ msgstr ""
 #. commit that needs to be merged.  For example:
 #.  - go to submodule (mysubmodule), and either merge commit abc1234"
 #.
-#: merge-ort.c:4611
+#: merge-ort.c:4661
 #, c-format
 msgid ""
 " - go to submodule (%s), and either merge commit %s\n"
@@ -21504,7 +21524,7 @@ msgstr ""
 " - 前往子模組 (%s)，並合併 %s 提交或\n"
 "   更新至已經合併這些更改的提交\n"
 
-#: merge-ort.c:4622
+#: merge-ort.c:4672
 #, c-format
 msgid ""
 "Recursive merging with submodules currently only supports trivial cases.\n"
@@ -21532,7 +21552,7 @@ msgstr ""
 #. TRANSLATORS: The %s arguments are: 1) tree hash of a merge
 #. base, and 2-3) the trees for the two trees we're merging.
 #.
-#: merge-ort.c:5030
+#: merge-ort.c:5111
 #, c-format
 msgid "collecting merge info failed for trees %s, %s, %s"
 msgstr "%s, %s, %s 樹的合併資訊收集失敗"
@@ -21590,6 +21610,12 @@ msgstr "建立符號連結 '%s' 失敗：%s"
 msgid "do not know what to do with %06o %s '%s'"
 msgstr "不知道如何處理 %06o %s '%s'"
 
+#: merge-recursive.c:1255 merge-recursive.c:1262 merge-recursive.c:1274
+#: merge-recursive.c:1293 merge-recursive.c:1327
+#, c-format
+msgid "Failed to merge submodule %s (repository corrupt)"
+msgstr "無法合併子模組 %s （版本庫損壞）"
+
 #: merge-recursive.c:1281 merge-recursive.c:1300
 #, c-format
 msgid "Fast-forwarding submodule %s to the following commit:"
@@ -21634,6 +21660,15 @@ msgstr ""
 #, c-format
 msgid "Failed to merge submodule %s (multiple merges found)"
 msgstr "無法合併子模組 %s （發現多個合併）"
+
+#: merge-recursive.c:1430
+msgid "failed to execute internal merge"
+msgstr "無法執行內部合併"
+
+#: merge-recursive.c:1435
+#, c-format
+msgid "unable to add %s to database"
+msgstr "無法將 %s 加進資料庫"
 
 #: merge-recursive.c:1495
 #, c-format
@@ -21748,6 +21783,16 @@ msgid ""
 msgstr ""
 "衝突（重新命名/重新命名）：在 %3$s 中重新命名目錄 %1$s->%2$s，在 %6$s 中重新"
 "命名目錄 %4$s->%5$s"
+
+#: merge-recursive.c:3087
+#, c-format
+msgid "cannot read object %s"
+msgstr "不能讀取物件 %s"
+
+#: merge-recursive.c:3090
+#, c-format
+msgid "object %s is not a blob"
+msgstr "物件 %s 不是一個資料物件"
 
 #: merge-recursive.c:3154
 msgid "modify"
@@ -24782,7 +24827,7 @@ msgstr "物件過濾需要 --objects"
 msgid "-L does not yet support diff formats besides -p and -s"
 msgstr "-L 尚不支援 -p 和 -s 之外的差異格式"
 
-#: run-command.c:1233
+#: run-command.c:1240
 #, c-format
 msgid "cannot create async thread: %s"
 msgstr "不能建立 async 執行緒：%s"
@@ -25056,33 +25101,33 @@ msgstr "遠端解包失敗：%s"
 msgid "failed to sign the push certificate"
 msgstr "為推送證書籤名失敗"
 
-#: send-pack.c:442
+#: send-pack.c:451
 msgid "send-pack: unable to fork off fetch subprocess"
 msgstr "send-pack：無法 fork 一個 fetch 子處理程序"
 
-#: send-pack.c:464
+#: send-pack.c:473
 msgid "push negotiation failed; proceeding anyway with push"
 msgstr "push 協商失敗。繼續使用 push 處理"
 
-#: send-pack.c:539
+#: send-pack.c:548
 msgid "the receiving end does not support this repository's hash algorithm"
 msgstr "接收端不支援此版本庫的雜湊算法"
 
-#: send-pack.c:548
+#: send-pack.c:557
 msgid "the receiving end does not support --signed push"
 msgstr "接收端不支援 --signed 推送"
 
-#: send-pack.c:550
+#: send-pack.c:559
 msgid ""
 "not sending a push certificate since the receiving end does not support --"
 "signed push"
 msgstr "未傳送推送證書，因為接收端不支援 --signed 推送"
 
-#: send-pack.c:557
+#: send-pack.c:566
 msgid "the receiving end does not support --atomic push"
 msgstr "接收端不支援 --atomic 推送"
 
-#: send-pack.c:562
+#: send-pack.c:571
 msgid "the receiving end does not support push options"
 msgstr "接收端不支援推送選項"
 
@@ -26331,7 +26376,7 @@ msgstr "已初始化空的共享 Git 版本庫於 %s%s\n"
 msgid "Initialized empty Git repository in %s%s\n"
 msgstr "已初始化空的 Git 版本庫於 %s%s\n"
 
-#: sparse-index.c:380
+#: sparse-index.c:408
 #, c-format
 msgid "index entry is a directory, but not sparse (%08x)"
 msgstr "索引項目是資料夾，但不是稀疏資料夾（%08x）"

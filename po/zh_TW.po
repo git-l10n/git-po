@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-19 15:00+0800\n"
-"PO-Revision-Date: 2024-07-19 07:04+0000\n"
+"PO-Revision-Date: 2024-07-19 07:06+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -21059,10 +21059,8 @@ msgid "Public key pinning not supported with cURL < 7.39.0"
 msgstr "不支援公鑰檔案鎖定，因為 cURL < 7.39.0"
 
 #: http.c:565
-#, fuzzy
-#| msgid "unknown value for object-format: %s"
 msgid "Unknown value for http.proactiveauth"
-msgstr "未知的 object-format 值：%s"
+msgstr "http.proactiveauth 的值未知"
 
 #: http.c:1091
 msgid "CURLSSLOPT_NO_REVOKE not supported with cURL < 7.44.0"
@@ -21085,11 +21083,11 @@ msgstr "無法將 SSL 後端設定為 '%s'：已經設定"
 
 #: http.c:1514
 msgid "refusing to read cookies from http.cookiefile '-'"
-msgstr ""
+msgstr "不允許從 http.cookiefile '-' 讀取 Cookies"
 
 #: http.c:1520
 msgid "ignoring http.savecookies for empty http.cookiefile"
-msgstr ""
+msgstr "http.savecookies 是空白的，忽略 http.savecookies"
 
 #: http.c:2227
 #, c-format
@@ -21301,10 +21299,9 @@ msgstr "無法合併子模組 %s（提交不存在）"
 
 #: merge-ort.c:1853 merge-ort.c:1864 merge-ort.c:1884 merge-ort.c:1903
 #: merge-ort.c:1937
-#, fuzzy, c-format
-#| msgid "Failed to merge submodule %s (repository corrupt)"
+#, c-format
 msgid "error: failed to merge submodule %s (repository corrupt)"
-msgstr "無法合併子模組 %s （版本庫損壞）"
+msgstr "錯誤：無法合併子模組 %s （版本庫損壞）"
 
 #: merge-ort.c:1873 merge-recursive.c:1267
 #, c-format
@@ -21337,16 +21334,14 @@ msgstr ""
 "%s"
 
 #: merge-ort.c:2210
-#, fuzzy, c-format
-#| msgid "failed to execute internal merge"
+#, c-format
 msgid "error: failed to execute internal merge for %s"
-msgstr "無法執行內部合併"
+msgstr "錯誤：無法對 %s 執行內部合併"
 
 #: merge-ort.c:2220
-#, fuzzy, c-format
-#| msgid "unable to add %s to database"
+#, c-format
 msgid "error: unable to add %s to database"
-msgstr "無法將 %s 加進資料庫"
+msgstr "錯誤：無法將 %s 加進資料庫"
 
 #: merge-ort.c:2230 merge-recursive.c:1471
 #, c-format
@@ -21447,16 +21442,14 @@ msgstr ""
 "衝突（重新命名/刪除）：%1$s 已重新命名為 %3$s 中的 %2$s 卻在 %4$s 中被刪除。"
 
 #: merge-ort.c:3615
-#, fuzzy, c-format
-#| msgid "cannot read object %s"
+#, c-format
 msgid "error: cannot read object %s"
-msgstr "不能讀取物件 %s"
+msgstr "錯誤：無法讀取物件 %s"
 
 #: merge-ort.c:3622
-#, fuzzy, c-format
-#| msgid "object %s is not a blob"
+#, c-format
 msgid "error: object %s is not a blob"
-msgstr "物件 %s 不是一個資料物件"
+msgstr "錯誤：物件 %s 不是一個資料物件"
 
 #: merge-ort.c:4058
 #, c-format

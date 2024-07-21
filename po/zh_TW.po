@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-19 15:00+0800\n"
-"PO-Revision-Date: 2024-07-21 05:16+0000\n"
+"PO-Revision-Date: 2024-07-22 08:44+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
@@ -18040,9 +18040,8 @@ msgid "Git pack format"
 msgstr "Git 封包格式"
 
 #: command-list.h:218
-#, fuzzy
 msgid "Git cryptographic signature formats"
-msgstr "Git 加密簽章格式"
+msgstr "Git 數位簽章格式"
 
 #: command-list.h:219
 msgid "A Git Glossary"

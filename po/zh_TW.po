@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-19 15:00+0800\n"
-"PO-Revision-Date: 2024-07-23 04:00+0000\n"
-"Last-Translator: Lumynous <lumynou5.tw@gmail.com>\n"
+"PO-Revision-Date: 2024-07-24 04:44+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -17893,7 +17893,7 @@ msgstr "將工作區限縮至只包含追蹤檔案的子集"
 
 #: command-list.h:181
 msgid "Add file contents to the staging area"
-msgstr "將檔案內容新增到索引"
+msgstr "將檔案內容新增到暫存區"
 
 #: command-list.h:182
 msgid "Stash the changes in a dirty working directory away"

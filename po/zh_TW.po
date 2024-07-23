@@ -26,13 +26,14 @@
 # Ngoo Ka-iu <willy04wu69@gmail.com>, 2024.
 # Nightfeather Chen <slat@nightfeather.me>, 2024.
 # Lumynous <lumynou5.tw@gmail.com>, 2024.
+# hms5232 <hms5232@hhming.moe>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-07-19 15:00+0800\n"
 "PO-Revision-Date: 2024-07-24 04:44+0000\n"
-"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Last-Translator: hms5232 <hms5232@hhming.moe>\n"
 "Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
 "git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -18939,7 +18940,7 @@ msgstr "%s 變數的值無效"
 #: config.c:1322
 #, c-format
 msgid "ignoring unknown core.fsync component '%s'"
-msgstr "忽略未知的 core.fsync 組件「%s」"
+msgstr "忽略未知的 core.fsync 元件「%s」"
 
 #: config.c:1349
 #, c-format

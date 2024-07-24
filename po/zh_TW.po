@@ -21,11 +21,10 @@
 #
 # Yi-Jyun Pan <pan93412@gmail.com>, 2021, 2022, 2023, 2024.
 # Kaiyang Wu <self@origincode.me>, 2022.
-# lumynou5 <lumynou5.tw@gmail.com>, 2023, 2024.
+# Lumynous <lumynou5.tw@gmail.com>, 2023, 2024.
 # Kisaragi Hiu <mail@kisaragi-hiu.com>, 2024.
 # Ngoo Ka-iu <willy04wu69@gmail.com>, 2024.
 # Nightfeather Chen <slat@nightfeather.me>, 2024.
-# Lumynous <lumynou5.tw@gmail.com>, 2024.
 # hms5232 <hms5232@hhming.moe>, 2024.
 msgid ""
 msgstr ""

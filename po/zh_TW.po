@@ -31,18 +31,18 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2024-09-28 13:29+0800\n"
-"PO-Revision-Date: 2024-07-24 08:21+0000\n"
+"PO-Revision-Date: 2024-09-28 05:53+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/git-"
-"po/git-cli/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <http://weblate.slat.org/projects/"
+"git-po/git-cli/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.6.2\n"
-"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | https://"
-"zhconvert.org\n"
+"X-ZhConverter: 繁化姬 dict-f4bc617e-r910 @ 2019/11/16 20:23:12 | "
+"https://zhconvert.org\n"
 
 #: add-interactive.c:391
 #, c-format
@@ -661,18 +661,6 @@ msgid "Nothing was applied.\n"
 msgstr "未套用。\n"
 
 #: add-patch.c:1396
-#, fuzzy
-#| msgid ""
-#| "j - leave this hunk undecided, see next undecided hunk\n"
-#| "J - leave this hunk undecided, see next hunk\n"
-#| "k - leave this hunk undecided, see previous undecided hunk\n"
-#| "K - leave this hunk undecided, see previous hunk\n"
-#| "g - select a hunk to go to\n"
-#| "/ - search for a hunk matching the given regex\n"
-#| "s - split the current hunk into smaller hunks\n"
-#| "e - manually edit the current hunk\n"
-#| "p - print the current hunk\n"
-#| "? - print help\n"
 msgid ""
 "j - leave this hunk undecided, see next undecided hunk\n"
 "J - leave this hunk undecided, see next hunk\n"
@@ -693,7 +681,7 @@ msgstr ""
 "/ - 尋找符合提供之常規表示式的區塊\n"
 "s - 分割目前區塊為更小的區塊\n"
 "e - 手動編輯目前區塊\n"
-"p - 輸出目前區塊\n"
+"p - 輸出目前區塊，「P」分頁顯示\n"
 "? - 顯示說明\n"
 
 #: add-patch.c:1539
@@ -1604,7 +1592,7 @@ msgstr "遇到空白修補檔時，不回傳錯誤"
 
 #: apply.c:5207
 msgid "--ours, --theirs, and --union require --3way"
-msgstr ""
+msgstr "--ours、--theirs 和 --union 需要 --3way"
 
 #: archive-tar.c:140 archive-zip.c:354
 #, c-format
@@ -4330,20 +4318,16 @@ msgid "also read contacts from stdin"
 msgstr "亦從 stdin 讀取聯絡地址"
 
 #: builtin/check-mailmap.c:20
-#, fuzzy
-#| msgid "read patterns from file"
 msgid "read additional mailmap entries from file"
-msgstr "從檔案讀取模式"
+msgstr "從檔案讀取其他 mailmap 項目"
 
 #: builtin/check-mailmap.c:21
-#, fuzzy
-#| msgid "blob-id"
 msgid "blob"
-msgstr "資料物件 ID"
+msgstr "資料物件"
 
 #: builtin/check-mailmap.c:21
 msgid "read additional mailmap entries from blob"
-msgstr ""
+msgstr "從 blob 讀取其他 mailmap 項目"
 
 #: builtin/check-mailmap.c:59
 msgid "no contacts specified"
@@ -4757,10 +4741,9 @@ msgid "'%s' cannot be used with switching branches"
 msgstr "「%s」不能與切換分支同時使用"
 
 #: builtin/checkout.c:1593
-#, fuzzy, c-format
-#| msgid "'%s' does not have a commit checked out"
+#, c-format
 msgid "'%s' needs the paths to check out"
-msgstr "'%s' 沒有簽出一個提交"
+msgstr "「%s」需要指定要簽出的路徑"
 
 #: builtin/checkout.c:1600 builtin/checkout.c:1603 builtin/checkout.c:1606
 #: builtin/checkout.c:1611 builtin/checkout.c:1616
@@ -5747,18 +5730,6 @@ msgid "git commit-tree: failed to read"
 msgstr "git commit-tree：讀取失敗"
 
 #: builtin/commit.c:43
-#, fuzzy
-#| msgid ""
-#| "git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]\n"
-#| "           [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|"
-#| "reword):]<commit>)]\n"
-#| "           [-F <file> | -m <msg>] [--reset-author] [--allow-empty]\n"
-#| "           [--allow-empty-message] [--no-verify] [-e] [--"
-#| "author=<author>]\n"
-#| "           [--date=<date>] [--cleanup=<mode>] [--[no-]status]\n"
-#| "           [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
-#| "           [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]\n"
-#| "           [--] [<pathspec>...]"
 msgid ""
 "git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]\n"
 "           [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|"
@@ -5771,8 +5742,8 @@ msgid ""
 "           [--] [<pathspec>...]"
 msgstr ""
 "git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]\n"
-"           [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|"
-"reword):]<commit>)]\n"
+"           [--dry-run] [(-c | -C | --squash) <commit> | --fixup "
+"[(amend|reword):]<commit>]\n"
 "           [-F <file> | -m <msg>] [--reset-author] [--allow-empty]\n"
 "           [--allow-empty-message] [--no-verify] [-e] [--author=<author>]\n"
 "           [--date=<date>] [--cleanup=<mode>] [--[no-]status]\n"
@@ -6372,17 +6343,12 @@ msgid "git config list [<file-option>] [<display-option>] [--includes]"
 msgstr "git config list [<檔案選項>] [<顯示選項>] [--includes]"
 
 #: builtin/config.c:20
-#, fuzzy
-#| msgid ""
-#| "git config get [<file-option>] [<display-option>] [--includes] [--all] [--"
-#| "regexp=<regexp>] [--value=<value>] [--fixed-value] [--default=<default>] "
-#| "<name>"
 msgid ""
 "git config get [<file-option>] [<display-option>] [--includes] [--all] [--"
 "regexp] [--value=<value>] [--fixed-value] [--default=<default>] <name>"
 msgstr ""
-"git config get [<檔案選項>] [<顯示選項>] [--includes] [--all] [--regexp=<常規"
-"表示式>] [--value=<值>] [--fixed-value] [--default=<預設值>] <名稱>"
+"git config get [<檔案選項>] [<顯示選項>] [--includes] [--all] [--regexp] "
+"[--value=<值>] [--fixed-value] [--default=<預設值>] <名稱>"
 
 #: builtin/config.c:21
 msgid ""
@@ -7441,10 +7407,9 @@ msgstr ""
 "或執行「git config fetch.showForcedUpdates false」避免此項檢查\n"
 
 #: builtin/fetch.c:1164
-#, fuzzy, c-format
-#| msgid "%s did not send all necessary objects\n"
+#, c-format
 msgid "%s did not send all necessary objects"
-msgstr "%s 未傳送所有必需的物件\n"
+msgstr "%s 未傳送所有必需的物件"
 
 #: builtin/fetch.c:1183
 #, c-format
@@ -7491,10 +7456,9 @@ msgid "option \"%s\" value \"%s\" is not valid for %s"
 msgstr "選項「%s」的值「%s」對 %s 無效"
 
 #: builtin/fetch.c:1461
-#, fuzzy, c-format
-#| msgid "option \"%s\" is ignored for %s\n"
+#, c-format
 msgid "option \"%s\" is ignored for %s"
-msgstr "選項「%s」被 %s 忽略\n"
+msgstr "選項「%s」被 %s 忽略"
 
 #: builtin/fetch.c:1488 object-file.c:2696
 #, c-format
@@ -8343,7 +8307,7 @@ msgstr "啟用自動垃圾回收模式"
 
 #: builtin/gc.c:689
 msgid "perform garbage collection in the background"
-msgstr ""
+msgstr "在背景執行垃圾回收"
 
 #: builtin/gc.c:691
 msgid "force running gc even if there may be another gc running"
@@ -8463,7 +8427,7 @@ msgstr "基於版本庫狀態執行作業"
 
 #: builtin/gc.c:1571
 msgid "perform maintenance in the background"
-msgstr ""
+msgstr "在背景執行維護"
 
 #: builtin/gc.c:1572
 msgid "frequency"
@@ -10872,7 +10836,7 @@ msgstr "寫入多包位圖"
 
 #: builtin/multi-pack-index.c:133
 msgid "write a new incremental MIDX"
-msgstr ""
+msgstr "寫入新的增量 MIDX"
 
 #: builtin/multi-pack-index.c:135
 msgid "write multi-pack index containing only given indexes"
@@ -13291,7 +13255,7 @@ msgstr "git refs migrate --ref-format=<格式> [--dry-run]"
 
 #: builtin/refs.c:13
 msgid "git refs verify [--strict] [--verbose]"
-msgstr ""
+msgstr "git refs verify [--strict] [--verbose]"
 
 #: builtin/refs.c:26
 msgid "specify the reference format to convert to"
@@ -13311,16 +13275,12 @@ msgid "repository already uses '%s' format"
 msgstr "版本庫已經使用 '%s' 格式"
 
 #: builtin/refs.c:75
-#, fuzzy
-#| msgid "enable more strict checking"
 msgid "enable strict checking"
-msgstr "啟用更嚴格的檢查"
+msgstr "啟用嚴格檢查"
 
 #: builtin/refs.c:82
-#, fuzzy
-#| msgid "%s takes no arguments"
 msgid "'git refs verify' takes no arguments"
-msgstr "%s 不取引數"
+msgstr "「git refs verify」不接受引數"
 
 #: builtin/remote.c:21
 msgid ""
@@ -15095,16 +15055,12 @@ msgid "failed to look up reference"
 msgstr "無法查詢引用"
 
 #: builtin/show-ref.c:297
-#, fuzzy
-#| msgid "only show tags (can be combined with branches)"
 msgid "only show tags (can be combined with --branches)"
-msgstr "只顯示標籤（可以和分支共用）"
+msgstr "只顯示標籤（可以和 --branches 共用）"
 
 #: builtin/show-ref.c:298
-#, fuzzy
-#| msgid "only show branches (can be combined with tags)"
 msgid "only show branches (can be combined with --tags)"
-msgstr "只顯示分支（可以和標籤共用）"
+msgstr "只顯示分支（可以和 --tags 共用）"
 
 #: builtin/show-ref.c:301
 msgid "check for reference existence without resolving"
@@ -15167,10 +15123,9 @@ msgid "failed to create directory for sparse-checkout file"
 msgstr "無法建立稀疏簽出檔案的目錄"
 
 #: builtin/sparse-checkout.c:349
-#, fuzzy, c-format
-#| msgid "unable to open %s"
+#, c-format
 msgid "unable to fdopen %s"
-msgstr "不能開啟 %s"
+msgstr "無法 fdopen %s"
 
 #: builtin/sparse-checkout.c:375
 msgid "failed to initialize worktree config"
@@ -15730,10 +15685,9 @@ msgid "couldn't hash object from '%s'"
 msgstr "無法雜湊來自 '%s' 的物件"
 
 #: builtin/submodule--helper.c:920
-#, fuzzy, c-format
-#| msgid "unexpected mode %o\n"
+#, c-format
 msgid "unexpected mode %o"
-msgstr "非預期的模式 %o\n"
+msgstr "非預期的模式 %o"
 
 #: builtin/submodule--helper.c:1169
 msgid "use the commit stored in the index instead of the submodule HEAD"
@@ -21359,10 +21313,9 @@ msgid "could not write loose object index %s"
 msgstr "無法寫入鬆散物件索引 %s"
 
 #: loose.c:165 loose.c:200
-#, fuzzy, c-format
-#| msgid "failed to write loose object index %s\n"
+#, c-format
 msgid "failed to write loose object index %s"
-msgstr "寫入鬆散物件索引 %s 失敗\n"
+msgstr "寫入鬆散物件索引 %s 失敗"
 
 #: ls-refs.c:181
 #, c-format
@@ -22000,10 +21953,9 @@ msgid "could not open index for %s"
 msgstr "無法開啟 %s 的索引"
 
 #: midx-write.c:999
-#, fuzzy, c-format
-#| msgid "unable to copy '%s' to '%s'"
+#, c-format
 msgid "unable to link '%s' to '%s'"
-msgstr "無法複製 '%s' 至 '%s'"
+msgstr "無法將「%s」link 至「%s」"
 
 #: midx-write.c:1046 midx.c:812
 #, c-format
@@ -22011,10 +21963,8 @@ msgid "failed to clear multi-pack-index at %s"
 msgstr "清理位於 %s 的多包索引失敗"
 
 #: midx-write.c:1076
-#, fuzzy
-#| msgid "cannot write bundle version %d with algorithm %s"
 msgid "cannot write incremental MIDX with bitmap"
-msgstr "無法寫入使用 %2$s 演算法的套件包版本 %1$d"
+msgstr "無法寫入有位圖的增量 MIDX"
 
 #: midx-write.c:1092
 msgid "ignoring existing multi-pack-index; checksum mismatch"
@@ -22053,26 +22003,20 @@ msgid "refusing to write multi-pack .bitmap without any objects"
 msgstr "拒絕寫入無任何物件的多包 .bitmap"
 
 #: midx-write.c:1330
-#, fuzzy
-#| msgid "unable to create temporary graph layer"
 msgid "unable to create temporary MIDX layer"
-msgstr "無法建立暫時性圖層"
+msgstr "無法建立暫時的 MIDX 層"
 
 #: midx-write.c:1410
 msgid "could not write multi-pack bitmap"
 msgstr "無法寫入多包位圖"
 
 #: midx-write.c:1433
-#, fuzzy
-#| msgid "unable to open commit-graph chain file"
 msgid "unable to open multi-pack-index chain file"
-msgstr "無法開啟提交圖鏈檔案"
+msgstr "無法開啟多封裝索引鏈檔案"
 
 #: midx-write.c:1444
-#, fuzzy
-#| msgid "failed to write multi-pack-index"
 msgid "unable to rename new multi-pack-index layer"
-msgstr "無法寫入多包索引"
+msgstr "無法更改新多封裝索引層的名稱"
 
 #: midx-write.c:1469
 msgid "could not write multi-pack-index"
@@ -22080,7 +22024,7 @@ msgstr "無法寫入多包索引"
 
 #: midx-write.c:1530
 msgid "cannot expire packs from an incremental multi-pack-index"
-msgstr ""
+msgstr "無法將一個增量多封裝索引的套件設為過期"
 
 #: midx-write.c:1535
 msgid "Counting referenced objects"
@@ -22091,10 +22035,8 @@ msgid "Finding and deleting unreferenced packfiles"
 msgstr "正在尋找並刪除沒有引用的 packfile"
 
 #: midx-write.c:1707
-#, fuzzy
-#| msgid "could not write multi-pack-index"
 msgid "cannot repack an incremental multi-pack-index"
-msgstr "無法寫入多包索引"
+msgstr "無法重新封裝增量的多封裝索引"
 
 #: midx-write.c:1744
 msgid "could not start pack-objects"
@@ -22168,40 +22110,31 @@ msgid "multi-pack-index pack names out of order: '%s' before '%s'"
 msgstr "多包索引包名無序：'%s' 在 '%s' 之前"
 
 #: midx.c:258
-#, fuzzy
-#| msgid "multi-pack-index file %s is too small"
 msgid "multi-pack-index chain file too small"
-msgstr "多包索引檔案 %s 太小"
+msgstr "多封裝索引鏈檔案過小"
 
 #: midx.c:272
-#, fuzzy, c-format
-#| msgid "commit count in base graph too high: %<PRIuMAX>"
+#, c-format
 msgid "pack count in base MIDX too high: %<PRIuMAX>"
-msgstr "基礎圖中的提交數過多：%<PRIuMAX>"
+msgstr "基礎 MIDX 的封裝計數太高：%<PRIuMAX>"
 
 #: midx.c:278
-#, fuzzy, c-format
-#| msgid "commit count in base graph too high: %<PRIuMAX>"
+#, c-format
 msgid "object count in base MIDX too high: %<PRIuMAX>"
-msgstr "基礎圖中的提交數過多：%<PRIuMAX>"
+msgstr "基礎 MIDX 的物件計數太高：%<PRIuMAX>"
 
 #: midx.c:315
-#, fuzzy, c-format
-#| msgid "invalid commit-graph chain: line '%s' not a hash"
+#, c-format
 msgid "invalid multi-pack-index chain: line '%s' not a hash"
-msgstr "無效的提交圖鏈：「%s」列不是雜湊值"
+msgstr "無法的多封裝索引鏈：「%s」列不是雜湊值"
 
 #: midx.c:338
-#, fuzzy
-#| msgid "unable to find all commit-graph files"
 msgid "unable to find all multi-pack index files"
-msgstr "無法找到所有提交圖檔案"
+msgstr "找不到所有的多封裝索引檔案"
 
 #: midx.c:418
-#, fuzzy
-#| msgid "invalid commit position. commit-graph is likely corrupt"
 msgid "invalid MIDX object position, MIDX is likely corrupt"
-msgstr "無效的提交位置。提交圖可能已損壞"
+msgstr "無效的 MIDX 物件位置，MIDX 大概有問題"
 
 #: midx.c:436
 #, c-format
@@ -24042,10 +23975,9 @@ msgid "expected format: %%(ahead-behind:<committish>)"
 msgstr "預期格式：%%(ahead-behind:<committish>)"
 
 #: ref-filter.c:916
-#, fuzzy, c-format
-#| msgid "expected format: %%(ahead-behind:<committish>)"
+#, c-format
 msgid "expected format: %%(is-base:<committish>)"
-msgstr "預期格式：%%(ahead-behind:<committish>)"
+msgstr "預期格式：%%(is-base:<committish>)"
 
 #: ref-filter.c:1043
 #, c-format
@@ -24332,16 +24264,13 @@ msgid ""
 msgstr "無法鎖定引用「%s」：預期是指向「%s」的符號引用，但這個是一般引用"
 
 #: refs/files-backend.c:3543
-#, fuzzy, c-format
-#| msgid "could not open directory '%s'"
+#, c-format
 msgid "cannot open directory %s"
-msgstr "不能開啟目錄 '%s'"
+msgstr "無法開啟 %s 目錄"
 
 #: refs/files-backend.c:3585
-#, fuzzy
-#| msgid "Collecting referenced commits"
 msgid "Checking references consistency"
-msgstr "正在收集引用提交"
+msgstr "正在檢查引用一致性"
 
 #: refs/reftable-backend.c:515
 #, c-format
@@ -25113,19 +25042,15 @@ msgstr "在「src」目錄建立版本庫"
 
 #: scalar.c:425
 msgid "specify if tags should be fetched during clone"
-msgstr ""
+msgstr "指定是否要在複製階段抓取標籤"
 
 #: scalar.c:429
-#, fuzzy
-#| msgid ""
-#| "scalar clone [--single-branch] [--branch <main-branch>] [--full-clone]\n"
-#| "\t[--[no-]src] <url> [<enlistment>]"
 msgid ""
 "scalar clone [--single-branch] [--branch <main-branch>] [--full-clone]\n"
 "\t[--[no-]src] [--[no-]tags] <url> [<enlistment>]"
 msgstr ""
 "scalar clone [--single-branch] [--branch <main-branch>] [--full-clone]\n"
-"\t[--[no-]src] <url> [<enlistment>]"
+"\t[--[no-]src] [--[no-]tags] <url> [<enlistment>]"
 
 #: scalar.c:455
 #, c-format
@@ -25148,10 +25073,9 @@ msgid "could not configure remote in '%s'"
 msgstr "無法設定「%s」中的遠端"
 
 #: scalar.c:510
-#, fuzzy, c-format
-#| msgid "could not stage '%s'"
+#, c-format
 msgid "could not disable tags in '%s'"
-msgstr "無法暫存「%s」"
+msgstr "無法停用「%s」的標籤"
 
 #: scalar.c:519
 #, c-format
@@ -26426,10 +26350,9 @@ msgid "failed to stat '%*s%s%s'"
 msgstr "取得 '%*s%s%s' 狀態（stat）失敗"
 
 #: setup.c:1249
-#, fuzzy, c-format
-#| msgid "directory '%s' exists already"
+#, c-format
 msgid "safe.directory '%s' not absolute"
-msgstr "「%s」目錄已經存在"
+msgstr "safe.directory「%s」不是絕對路徑"
 
 #: setup.c:1335 setup.c:1678
 #, c-format
@@ -26990,32 +26913,28 @@ msgid "command token to send to the server"
 msgstr "要傳送至伺服器的命令代符"
 
 #: t/unit-tests/unit-test.c:7
-#, fuzzy
-#| msgid "git gc [<options>]"
 msgid "unit-test [<options>]"
-msgstr "git gc [<選項>]"
+msgstr "unit-test [<options>]"
 
 #: t/unit-tests/unit-test.c:18
 msgid "immediately exit upon the first failed test"
-msgstr ""
+msgstr "一旦有測試失敗就立刻退出"
 
 #: t/unit-tests/unit-test.c:19
 msgid "suite[::test]"
-msgstr ""
+msgstr "suite[::test]"
 
 #: t/unit-tests/unit-test.c:20
 msgid "run only test suite or individual test <suite[::test]>"
-msgstr ""
+msgstr "只執行測試套件或單獨的測試 <suite[::test]>"
 
 #: t/unit-tests/unit-test.c:21
 msgid "suite"
-msgstr ""
+msgstr "suite"
 
 #: t/unit-tests/unit-test.c:22
-#, fuzzy
-#| msgid "exclude guides"
 msgid "exclude test suite <suite>"
-msgstr "排除嚮導"
+msgstr "排除測試套件 <suite>"
 
 #: trailer.c:237
 #, c-format
@@ -28470,7 +28389,7 @@ msgstr "--dump-aliases 和其它選項不相容\n"
 
 #: git-send-email.perl:498
 msgid "--dump-aliases and --translate-aliases are mutually exclusive\n"
-msgstr ""
+msgstr "--dump-aliases 和 --translate-aliases 互斥\n"
 
 #: git-send-email.perl:570
 msgid ""

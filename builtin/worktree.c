@@ -1,3 +1,4 @@
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "abspath.h"
 #include "advice.h"
@@ -17,7 +18,6 @@
 #include "read-cache-ll.h"
 #include "refs.h"
 #include "remote.h"
-#include "repository.h"
 #include "run-command.h"
 #include "hook.h"
 #include "sigchain.h"
@@ -219,7 +219,7 @@ static void prune_worktrees(void)
 	}
 	closedir(dir);
 
-	strbuf_add_absolute_path(&main_path, get_git_common_dir());
+	strbuf_add_absolute_path(&main_path, repo_get_common_dir(the_repository));
 	/* massage main worktree absolute path to match 'gitdir' content */
 	strbuf_strip_suffix(&main_path, "/.");
 	string_list_append_nodup(&kept, strbuf_detach(&main_path, NULL));
@@ -492,7 +492,7 @@ static int add_worktree(const char *path, const char *refname,
 	strbuf_addf(&sb, "%s/gitdir", sb_repo.buf);
 	strbuf_realpath(&realpath, sb_git.buf, 1);
 	write_file(sb.buf, "%s", realpath.buf);
-	strbuf_realpath(&realpath, get_git_common_dir(), 1);
+	strbuf_realpath(&realpath, repo_get_common_dir(the_repository), 1);
 	write_file(sb_git.buf, "gitdir: %s/worktrees/%s",
 		   realpath.buf, name);
 	strbuf_reset(&sb);
@@ -1392,7 +1392,10 @@ static int repair(int ac, const char **av, const char *prefix)
 	return rc;
 }
 
-int cmd_worktree(int ac, const char **av, const char *prefix)
+int cmd_worktree(int ac,
+		 const char **av,
+		 const char *prefix,
+		 struct repository *repo UNUSED)
 {
 	parse_opt_subcommand_fn *fn = NULL;
 	struct option options[] = {

@@ -1,8 +1,8 @@
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "environment.h"
 #include "gettext.h"
 #include "hex.h"
-#include "repository.h"
 #include "config.h"
 #include "commit.h"
 #include "tag.h"
@@ -65,7 +65,7 @@ static void set_commit_cutoff(struct commit *commit)
 static void adjust_cutoff_timestamp_for_slop(void)
 {
 	if (cutoff) {
-		/* check for undeflow */
+		/* check for underflow */
 		if (cutoff > TIME_MIN + CUTOFF_DATE_SLOP)
 			cutoff = cutoff - CUTOFF_DATE_SLOP;
 		else
@@ -558,7 +558,10 @@ static void name_rev_line(char *p, struct name_ref_data *data)
 	strbuf_release(&buf);
 }
 
-int cmd_name_rev(int argc, const char **argv, const char *prefix)
+int cmd_name_rev(int argc,
+		 const char **argv,
+		 const char *prefix,
+		 struct repository *repo UNUSED)
 {
 	struct mem_pool string_pool;
 	struct object_array revs = OBJECT_ARRAY_INIT;

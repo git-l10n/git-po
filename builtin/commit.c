@@ -4,7 +4,7 @@
  * Copyright (c) 2007 Kristian Høgsberg <krh@redhat.com>
  * Based on git-commit.sh by Junio C Hamano and Linus Torvalds
  */
-
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "advice.h"
 #include "config.h"
@@ -26,6 +26,7 @@
 #include "path.h"
 #include "preload-index.h"
 #include "read-cache.h"
+#include "repository.h"
 #include "string-list.h"
 #include "rerere.h"
 #include "unpack-trees.h"
@@ -395,7 +396,7 @@ static const char *prepare_index(const char **argv, const char *prefix,
 		old_index_env = xstrdup_or_null(getenv(INDEX_ENVIRONMENT));
 		setenv(INDEX_ENVIRONMENT, the_repository->index_file, 1);
 
-		if (interactive_add(argv, prefix, patch_interactive) != 0)
+		if (interactive_add(the_repository, argv, prefix, patch_interactive) != 0)
 			die(_("interactive add failed"));
 
 		the_repository->index_file = old_repo_index_file;
@@ -407,7 +408,7 @@ static const char *prepare_index(const char **argv, const char *prefix,
 
 		discard_index(the_repository->index);
 		read_index_from(the_repository->index, get_lock_file_path(&index_lock),
-				get_git_dir());
+				repo_get_git_dir(the_repository));
 		if (cache_tree_update(the_repository->index, WRITE_TREE_SILENT) == 0) {
 			if (reopen_lock_file(&index_lock) < 0)
 				die(_("unable to write index file"));
@@ -472,7 +473,7 @@ static const char *prepare_index(const char **argv, const char *prefix,
 				       COMMIT_LOCK | SKIP_IF_UNCHANGED))
 			die(_("unable to write new index file"));
 		commit_style = COMMIT_AS_IS;
-		ret = get_index_file();
+		ret = repo_get_index_file(the_repository);
 		goto out;
 	}
 
@@ -534,7 +535,7 @@ static const char *prepare_index(const char **argv, const char *prefix,
 
 	discard_index(the_repository->index);
 	ret = get_lock_file_path(&false_lock);
-	read_index_from(the_repository->index, ret, get_git_dir());
+	read_index_from(the_repository->index, ret, repo_get_git_dir(the_repository));
 out:
 	string_list_clear(&partial, 0);
 	clear_pathspec(&pathspec);
@@ -1072,7 +1073,7 @@ static int prepare_to_commit(const char *index_file, const char *prefix,
 		 */
 		discard_index(the_repository->index);
 	}
-	read_index_from(the_repository->index, index_file, get_git_dir());
+	read_index_from(the_repository->index, index_file, repo_get_git_dir(the_repository));
 
 	if (cache_tree_update(the_repository->index, 0)) {
 		error(_("Error building trees"));
@@ -1502,7 +1503,10 @@ static int git_status_config(const char *k, const char *v,
 	return git_diff_ui_config(k, v, ctx, NULL);
 }
 
-int cmd_status(int argc, const char **argv, const char *prefix)
+int cmd_status(int argc,
+const char **argv,
+const char *prefix,
+struct repository *repo UNUSED)
 {
 	static int no_renames = -1;
 	static const char *rename_score_arg = (const char *)-1;
@@ -1641,7 +1645,10 @@ static int git_commit_config(const char *k, const char *v,
 	return git_status_config(k, v, ctx, s);
 }
 
-int cmd_commit(int argc, const char **argv, const char *prefix)
+int cmd_commit(int argc,
+	       const char **argv,
+	       const char *prefix,
+	       struct repository *repo UNUSED)
 {
 	static struct wt_status s;
 	static struct option builtin_commit_options[] = {
@@ -1873,8 +1880,8 @@ int cmd_commit(int argc, const char **argv, const char *prefix)
 
 	repo_rerere(the_repository, 0);
 	run_auto_maintenance(quiet);
-	run_commit_hook(use_editor, get_index_file(), NULL, "post-commit",
-			NULL);
+	run_commit_hook(use_editor, repo_get_index_file(the_repository),
+			NULL, "post-commit", NULL);
 	if (amend && !no_post_rewrite) {
 		commit_post_rewrite(the_repository, current_head, &oid);
 	}

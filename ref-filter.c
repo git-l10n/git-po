@@ -13,6 +13,7 @@
 #include "object-name.h"
 #include "object-store-ll.h"
 #include "oid-array.h"
+#include "repo-settings.h"
 #include "repository.h"
 #include "commit.h"
 #include "mailmap.h"
@@ -2180,7 +2181,7 @@ static const char *show_ref(struct refname_atom *atom, const char *refname)
 	if (atom->option == R_SHORT)
 		return refs_shorten_unambiguous_ref(get_main_ref_store(the_repository),
 						    refname,
-						    warn_ambiguous_refs);
+						    repo_settings_get_warn_ambiguous_refs(the_repository));
 	else if (atom->option == R_LSTRIP)
 		return lstrip_ref_components(refname, atom->lstrip);
 	else if (atom->option == R_RSTRIP)
@@ -2384,7 +2385,7 @@ static int populate_value(struct ref_array_item *ref, struct strbuf *err)
 	CALLOC_ARRAY(ref->value, used_atom_cnt);
 
 	/**
-	 * NEEDSWORK: The following code might be unncessary if all codepaths
+	 * NEEDSWORK: The following code might be unnecessary if all codepaths
 	 * that call populate_value() populates the symref member of ref_array_item
 	 * like in apply_ref_filter(). Currently pretty_print_ref() is the only codepath
 	 * that calls populate_value() without first populating symref.

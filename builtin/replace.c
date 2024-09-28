@@ -7,11 +7,10 @@
  * and Carlos Rica <jasampler@gmail.com> that was itself based on
  * git-tag.sh and mktag.c by Linus Torvalds.
  */
-
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "config.h"
 #include "editor.h"
-#include "environment.h"
 #include "gettext.h"
 #include "hex.h"
 #include "refs.h"
@@ -22,7 +21,6 @@
 #include "object-name.h"
 #include "object-store-ll.h"
 #include "replace-object.h"
-#include "repository.h"
 #include "tag.h"
 #include "wildmatch.h"
 
@@ -514,7 +512,7 @@ static int create_graft(int argc, const char **argv, int force, int gentle)
 
 static int convert_graft_file(int force)
 {
-	const char *graft_file = get_graft_file(the_repository);
+	const char *graft_file = repo_get_graft_file(the_repository);
 	FILE *fp = fopen_or_warn(graft_file, "r");
 	struct strbuf buf = STRBUF_INIT, err = STRBUF_INIT;
 	struct strvec args = STRVEC_INIT;
@@ -545,7 +543,10 @@ static int convert_graft_file(int force)
 	return -1;
 }
 
-int cmd_replace(int argc, const char **argv, const char *prefix)
+int cmd_replace(int argc,
+		const char **argv,
+		const char *prefix,
+		struct repository *repo UNUSED)
 {
 	int force = 0;
 	int raw = 0;

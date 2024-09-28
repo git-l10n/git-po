@@ -1,8 +1,8 @@
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "environment.h"
 #include "gettext.h"
 #include "hex.h"
-#include "repository.h"
 #include "config.h"
 #include "attr.h"
 #include "object.h"
@@ -3968,7 +3968,7 @@ static int add_loose_object(const struct object_id *oid, const char *path,
  */
 static void add_unreachable_loose_objects(void)
 {
-	for_each_loose_file_in_objdir(get_object_directory(),
+	for_each_loose_file_in_objdir(repo_get_object_directory(the_repository),
 				      add_loose_object,
 				      NULL, NULL, NULL);
 }
@@ -4312,7 +4312,10 @@ static int option_parse_cruft_expiration(const struct option *opt UNUSED,
 	return 0;
 }
 
-int cmd_pack_objects(int argc, const char **argv, const char *prefix)
+int cmd_pack_objects(int argc,
+		     const char **argv,
+		     const char *prefix,
+		     struct repository *repo UNUSED)
 {
 	int use_internal_rev_list = 0;
 	int shallow = 0;

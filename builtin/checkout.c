@@ -1,3 +1,4 @@
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "advice.h"
 #include "branch.h"
@@ -23,6 +24,7 @@
 #include "read-cache.h"
 #include "refs.h"
 #include "remote.h"
+#include "repo-settings.h"
 #include "resolve-undo.h"
 #include "revision.h"
 #include "setup.h"
@@ -950,11 +952,13 @@ static void update_refs_for_switch(const struct checkout_opts *opts,
 	const char *old_desc, *reflog_msg;
 	if (opts->new_branch) {
 		if (opts->new_orphan_branch) {
+			enum log_refs_config log_all_ref_updates =
+				repo_settings_get_log_all_ref_updates(the_repository);
 			char *refname;
 
 			refname = mkpathdup("refs/heads/%s", opts->new_orphan_branch);
 			if (opts->new_branch_log &&
-			    !should_autocreate_reflog(refname)) {
+			    !should_autocreate_reflog(log_all_ref_updates, refname)) {
 				int ret;
 				struct strbuf err = STRBUF_INIT;
 
@@ -1953,7 +1957,10 @@ static int checkout_main(int argc, const char **argv, const char *prefix,
 	return ret;
 }
 
-int cmd_checkout(int argc, const char **argv, const char *prefix)
+int cmd_checkout(int argc,
+		 const char **argv,
+		 const char *prefix,
+		 struct repository *repo UNUSED)
 {
 	struct checkout_opts opts = CHECKOUT_OPTS_INIT;
 	struct option *options;
@@ -2000,7 +2007,10 @@ int cmd_checkout(int argc, const char **argv, const char *prefix)
 			     checkout_usage);
 }
 
-int cmd_switch(int argc, const char **argv, const char *prefix)
+int cmd_switch(int argc,
+	       const char **argv,
+	       const char *prefix,
+	       struct repository *repo UNUSED)
 {
 	struct checkout_opts opts = CHECKOUT_OPTS_INIT;
 	struct option *options = NULL;
@@ -2036,7 +2046,10 @@ int cmd_switch(int argc, const char **argv, const char *prefix)
 			     switch_branch_usage);
 }
 
-int cmd_restore(int argc, const char **argv, const char *prefix)
+int cmd_restore(int argc,
+		const char **argv,
+		const char *prefix,
+		struct repository *repo UNUSED)
 {
 	struct checkout_opts opts = CHECKOUT_OPTS_INIT;
 	struct option *options;

@@ -3,6 +3,7 @@
 
 #include "commit.h"
 #include "repository.h"
+#include "repo-settings.h"
 
 struct fsck_options;
 struct object_id;
@@ -16,7 +17,7 @@ enum ref_storage_format ref_storage_format_by_name(const char *name);
 const char *ref_storage_format_to_name(enum ref_storage_format ref_storage_format);
 
 /*
- * Resolve a reference, recursively following symbolic refererences.
+ * Resolve a reference, recursively following symbolic references.
  *
  * Return the name of the non-symbolic reference that ultimately pointed
  * at the resolved object name.  The return value, if not NULL, is a
@@ -111,7 +112,8 @@ int refs_verify_refname_available(struct ref_store *refs,
 
 int refs_ref_exists(struct ref_store *refs, const char *refname);
 
-int should_autocreate_reflog(const char *refname);
+int should_autocreate_reflog(enum log_refs_config log_all_ref_updates,
+			     const char *refname);
 
 int is_branch(const char *refname);
 
@@ -488,7 +490,7 @@ int refs_delete_reflog(struct ref_store *refs, const char *refname);
  * from UTC.  Its absolute value is formed by multiplying the hour
  * part by 100 and adding the minute part.  For example, 1 hour ahead
  * of UTC, CET == "+0100", is represented as positive one hundred (not
- * postiive sixty).
+ * positive sixty).
  *
  * The msg parameter is a single complete line; a reflog message given
  * to refs_delete_ref, refs_update_ref, etc. is returned to the
@@ -859,6 +861,15 @@ int ref_is_hidden(const char *, const char *, const struct strvec *);
  */
 const char **hidden_refs_to_excludes(const struct strvec *hide_refs);
 
+/*
+ * Prefix all exclude patterns with the namespace, if any. This is required
+ * because exclude patterns apply to the stripped reference name, not the full
+ * reference name with the namespace.
+ */
+const char **get_namespaced_exclude_patterns(const char **exclude_patterns,
+					     const char *namespace,
+					     struct strvec *out);
+
 /* Is this a per-worktree ref living in the refs/ namespace? */
 int is_per_worktree_ref(const char *refname);
 
@@ -986,7 +997,7 @@ struct ref_store *get_worktree_ref_store(const struct worktree *wt);
 
 /*
  * Some of the names specified by refs have special meaning to Git.
- * Organize these namespaces in a comon 'ref_namespace' array for
+ * Organize these namespaces in a common 'ref_namespace' array for
  * reference from multiple places in the codebase.
  */
 

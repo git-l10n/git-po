@@ -145,6 +145,20 @@ Performance, Internal Implementation, Development Support etc.
 
  * The error messages from the test script checker have been improved.
 
+ * The convention to calling into built-in command implementation has
+   been updated to pass the repository, if known, together with the
+   prefix value.
+
+ * "git apply" had custom buffer management code that predated before
+   use of strbuf got widespread, which has been updated to use strbuf,
+   which also plugged some memory leaks.
+
+ * The reftable backend learned to more efficiently handle exclude
+   patterns while enumerating the refs.
+
+ * CI updates.  FreeBSD image has been updated to 13.4.
+   (merge 2eeb29702e cb/ci-freebsd-13-4 later to maint).
+
 
 Fixes since v2.46
 -----------------
@@ -267,6 +281,22 @@ Fixes since v2.46
    been corrected.
    (merge d3edb0bdde jk/git-pm-bare-repo-fix later to maint).
 
+ * When a remote-helper dies before Git writes to it, SIGPIPE killed
+   Git silently.  We now explain the situation a bit better to the end
+   user in our error message.
+   (merge 6e7fac9bca jk/diag-unexpected-remote-helper-death later to maint).
+
+ * A few usability fixes to "git jump" (in contrib/).
+   (merge 083b82544d jk/jump-quickfix-fixes later to maint).
+
+ * "git diff --exit-code" ignored modified binary files, which has
+   been corrected.
+   (merge 9a41735af6 rs/diff-exit-code-binary later to maint).
+
  * Other code cleanup, docfix, build fix, etc.
    (merge be10ac7037 jc/mailinfo-header-cleanup later to maint).
    (merge 4460e052e0 jc/range-diff-lazy-setup later to maint).
+   (merge 0627c58e7a ak/typofixes later to maint).
+   (merge 83799f1500 jk/t9001-deflake later to maint).
+   (merge e02cc08a88 ak/typofix-2.46-maint later to maint).
+   (merge 5c5d29e1c4 ps/ci-gitlab-upgrade later to maint).

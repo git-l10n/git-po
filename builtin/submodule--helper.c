@@ -1,9 +1,10 @@
+#define USE_THE_REPOSITORY_VARIABLE
 #include "builtin.h"
 #include "abspath.h"
 #include "environment.h"
 #include "gettext.h"
 #include "hex.h"
-#include "repository.h"
+
 #include "config.h"
 #include "parse-options.h"
 #include "quote.h"
@@ -1709,7 +1710,7 @@ static int clone_submodule(const struct module_clone_data *clone_data,
 		exit(128);
 
 	if (!is_absolute_path(clone_data->path))
-		clone_data_path = to_free = xstrfmt("%s/%s", get_git_work_tree(),
+		clone_data_path = to_free = xstrfmt("%s/%s", repo_get_work_tree(the_repository),
 						    clone_data->path);
 
 	if (validate_submodule_git_dir(sm_gitdir, clone_data->name) < 0)
@@ -3530,7 +3531,10 @@ cleanup:
 	return ret;
 }
 
-int cmd_submodule__helper(int argc, const char **argv, const char *prefix)
+int cmd_submodule__helper(int argc,
+			  const char **argv,
+			  const char *prefix,
+			  struct repository *repo UNUSED)
 {
 	parse_opt_subcommand_fn *fn = NULL;
 	const char *const usage[] = {

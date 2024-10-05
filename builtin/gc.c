@@ -1478,9 +1478,9 @@ static int maintenance_run_tasks(struct maintenance_run_opts *opts,
 
 static void initialize_maintenance_strategy(void)
 {
-	char *config_str;
+	const char *config_str;
 
-	if (git_config_get_string("maintenance.strategy", &config_str))
+	if (git_config_get_string_tmp("maintenance.strategy", &config_str))
 		return;
 
 	if (!strcasecmp(config_str, "incremental")) {
@@ -1768,6 +1768,42 @@ static const char *get_frequency(enum schedule_priority schedule)
 	}
 }
 
+static const char *extraconfig[] = {
+	"credential.interactive=false",
+	"core.askPass=true", /* 'true' returns success, but no output. */
+	NULL
+};
+
+static const char *get_extra_config_parameters(void) {
+	static const char *result = NULL;
+	struct strbuf builder = STRBUF_INIT;
+
+	if (result)
+		return result;
+
+	for (const char **s = extraconfig; s && *s; s++)
+		strbuf_addf(&builder, "-c %s ", *s);
+
+	result = strbuf_detach(&builder, NULL);
+	return result;
+}
+
+static const char *get_extra_launchctl_strings(void) {
+	static const char *result = NULL;
+	struct strbuf builder = STRBUF_INIT;
+
+	if (result)
+		return result;
+
+	for (const char **s = extraconfig; s && *s; s++) {
+		strbuf_addstr(&builder, "<string>-c</string>\n");
+		strbuf_addf(&builder, "<string>%s</string>\n", *s);
+	}
+
+	result = strbuf_detach(&builder, NULL);
+	return result;
+}
+
 /*
  * get_schedule_cmd` reads the GIT_TEST_MAINT_SCHEDULER environment variable
  * to mock the schedulers that `git maintenance start` rely on.
@@ -1782,32 +1818,33 @@ static const char *get_frequency(enum schedule_priority schedule)
  * * If $GIT_TEST_MAINT_SCHEDULER is set, return true.
  *   In this case, the *cmd value is read as input.
  *
- *   * if the input value *cmd is the key of one of the comma-separated list
- *     item, then *is_available is set to true and *cmd is modified and becomes
+ *   * if the input value cmd is the key of one of the comma-separated list
+ *     item, then *is_available is set to true and *out is set to
  *     the mock command.
  *
  *   * if the input value *cmd isn’t the key of any of the comma-separated list
- *     item, then *is_available is set to false.
+ *     item, then *is_available is set to false and *out is set to the original
+ *     command.
  *
  * Ex.:
  *   GIT_TEST_MAINT_SCHEDULER not set
  *     +-------+-------------------------------------------------+
  *     | Input |                     Output                      |
- *     | *cmd  | return code |       *cmd        | *is_available |
+ *     | *cmd  | return code |       *out        | *is_available |
  *     +-------+-------------+-------------------+---------------+
- *     | "foo" |    false    | "foo" (unchanged) |  (unchanged)  |
+ *     | "foo" |    false    | NULL              |  (unchanged)  |
  *     +-------+-------------+-------------------+---------------+
  *
  *   GIT_TEST_MAINT_SCHEDULER set to “foo:./mock_foo.sh,bar:./mock_bar.sh”
  *     +-------+-------------------------------------------------+
  *     | Input |                     Output                      |
- *     | *cmd  | return code |       *cmd        | *is_available |
+ *     | *cmd  | return code |       *out        | *is_available |
  *     +-------+-------------+-------------------+---------------+
  *     | "foo" |    true     |  "./mock.foo.sh"  |     true      |
- *     | "qux" |    true     | "qux" (unchanged) |     false     |
+ *     | "qux" |    true     | "qux" (allocated) |     false     |
  *     +-------+-------------+-------------------+---------------+
  */
-static int get_schedule_cmd(const char **cmd, int *is_available)
+static int get_schedule_cmd(const char *cmd, int *is_available, char **out)
 {
 	char *testing = xstrdup_or_null(getenv("GIT_TEST_MAINT_SCHEDULER"));
 	struct string_list_item *item;
@@ -1826,16 +1863,22 @@ static int get_schedule_cmd(const char **cmd, int *is_available)
 		if (string_list_split_in_place(&pair, item->string, ":", 2) != 2)
 			continue;
 
-		if (!strcmp(*cmd, pair.items[0].string)) {
-			*cmd = pair.items[1].string;
+		if (!strcmp(cmd, pair.items[0].string)) {
+			if (out)
+				*out = xstrdup(pair.items[1].string);
 			if (is_available)
 				*is_available = 1;
-			string_list_clear(&list, 0);
-			UNLEAK(testing);
-			return 1;
+			string_list_clear(&pair, 0);
+			goto out;
 		}
+
+		string_list_clear(&pair, 0);
 	}
 
+	if (out)
+		*out = xstrdup(cmd);
+
+out:
 	string_list_clear(&list, 0);
 	free(testing);
 	return 1;
@@ -1852,9 +1895,8 @@ static int get_random_minute(void)
 
 static int is_launchctl_available(void)
 {
-	const char *cmd = "launchctl";
 	int is_available;
-	if (get_schedule_cmd(&cmd, &is_available))
+	if (get_schedule_cmd("launchctl", &is_available, NULL))
 		return is_available;
 
 #ifdef __APPLE__
@@ -1892,12 +1934,12 @@ static char *launchctl_get_uid(void)
 
 static int launchctl_boot_plist(int enable, const char *filename)
 {
-	const char *cmd = "launchctl";
+	char *cmd;
 	int result;
 	struct child_process child = CHILD_PROCESS_INIT;
 	char *uid = launchctl_get_uid();
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("launchctl", NULL, &cmd);
 	strvec_split(&child.args, cmd);
 	strvec_pushl(&child.args, enable ? "bootstrap" : "bootout", uid,
 		     filename, NULL);
@@ -1910,6 +1952,7 @@ static int launchctl_boot_plist(int enable, const char *filename)
 
 	result = finish_command(&child);
 
+	free(cmd);
 	free(uid);
 	return result;
 }
@@ -1961,10 +2004,10 @@ static int launchctl_schedule_plist(const char *exec_path, enum schedule_priorit
 	static unsigned long lock_file_timeout_ms = ULONG_MAX;
 	struct strbuf plist = STRBUF_INIT, plist2 = STRBUF_INIT;
 	struct stat st;
-	const char *cmd = "launchctl";
+	char *cmd;
 	int minute = get_random_minute();
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("launchctl", NULL, &cmd);
 	preamble = "<?xml version=\"1.0\"?>\n"
 		   "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n"
 		   "<plist version=\"1.0\">"
@@ -1974,6 +2017,7 @@ static int launchctl_schedule_plist(const char *exec_path, enum schedule_priorit
 		   "<array>\n"
 		   "<string>%s/git</string>\n"
 		   "<string>--exec-path=%s</string>\n"
+		   "%s" /* For extra config parameters. */
 		   "<string>for-each-repo</string>\n"
 		   "<string>--keep-going</string>\n"
 		   "<string>--config=maintenance.repo</string>\n"
@@ -1983,7 +2027,8 @@ static int launchctl_schedule_plist(const char *exec_path, enum schedule_priorit
 		   "</array>\n"
 		   "<key>StartCalendarInterval</key>\n"
 		   "<array>\n";
-	strbuf_addf(&plist, preamble, name, exec_path, exec_path, frequency);
+	strbuf_addf(&plist, preamble, name, exec_path, exec_path,
+		    get_extra_launchctl_strings(), frequency);
 
 	switch (schedule) {
 	case SCHEDULE_HOURLY:
@@ -2054,6 +2099,7 @@ static int launchctl_schedule_plist(const char *exec_path, enum schedule_priorit
 
 	free(filename);
 	free(name);
+	free(cmd);
 	strbuf_release(&plist);
 	strbuf_release(&plist2);
 	return 0;
@@ -2078,9 +2124,8 @@ static int launchctl_update_schedule(int run_maintenance, int fd UNUSED)
 
 static int is_schtasks_available(void)
 {
-	const char *cmd = "schtasks";
 	int is_available;
-	if (get_schedule_cmd(&cmd, &is_available))
+	if (get_schedule_cmd("schtasks", &is_available, NULL))
 		return is_available;
 
 #ifdef GIT_WINDOWS_NATIVE
@@ -2099,15 +2144,16 @@ static char *schtasks_task_name(const char *frequency)
 
 static int schtasks_remove_task(enum schedule_priority schedule)
 {
-	const char *cmd = "schtasks";
+	char *cmd;
 	struct child_process child = CHILD_PROCESS_INIT;
 	const char *frequency = get_frequency(schedule);
 	char *name = schtasks_task_name(frequency);
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("schtasks", NULL, &cmd);
 	strvec_split(&child.args, cmd);
 	strvec_pushl(&child.args, "/delete", "/tn", name, "/f", NULL);
 	free(name);
+	free(cmd);
 
 	return run_command(&child);
 }
@@ -2121,7 +2167,7 @@ static int schtasks_remove_tasks(void)
 
 static int schtasks_schedule_task(const char *exec_path, enum schedule_priority schedule)
 {
-	const char *cmd = "schtasks";
+	char *cmd;
 	int result;
 	struct child_process child = CHILD_PROCESS_INIT;
 	const char *xml;
@@ -2131,7 +2177,7 @@ static int schtasks_schedule_task(const char *exec_path, enum schedule_priority 
 	struct strbuf tfilename = STRBUF_INIT;
 	int minute = get_random_minute();
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("schtasks", NULL, &cmd);
 
 	strbuf_addf(&tfilename, "%s/schedule_%s_XXXXXX",
 		    repo_get_common_dir(the_repository), frequency);
@@ -2218,11 +2264,12 @@ static int schtasks_schedule_task(const char *exec_path, enum schedule_priority 
 	      "<Actions Context=\"Author\">\n"
 	      "<Exec>\n"
 	      "<Command>\"%s\\headless-git.exe\"</Command>\n"
-	      "<Arguments>--exec-path=\"%s\" for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%s</Arguments>\n"
+	      "<Arguments>--exec-path=\"%s\" %s for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%s</Arguments>\n"
 	      "</Exec>\n"
 	      "</Actions>\n"
 	      "</Task>\n";
-	fprintf(tfile->fp, xml, exec_path, exec_path, frequency);
+	fprintf(tfile->fp, xml, exec_path, exec_path,
+		get_extra_config_parameters(), frequency);
 	strvec_split(&child.args, cmd);
 	strvec_pushl(&child.args, "/create", "/tn", name, "/f", "/xml",
 				  get_tempfile_path(tfile), NULL);
@@ -2237,6 +2284,7 @@ static int schtasks_schedule_task(const char *exec_path, enum schedule_priority 
 
 	delete_tempfile(&tfile);
 	free(name);
+	free(cmd);
 	return result;
 }
 
@@ -2278,21 +2326,28 @@ static int check_crontab_process(const char *cmd)
 
 static int is_crontab_available(void)
 {
-	const char *cmd = "crontab";
+	char *cmd;
 	int is_available;
+	int ret;
 
-	if (get_schedule_cmd(&cmd, &is_available))
-		return is_available;
+	if (get_schedule_cmd("crontab", &is_available, &cmd)) {
+		ret = is_available;
+		goto out;
+	}
 
 #ifdef __APPLE__
 	/*
 	 * macOS has cron, but it requires special permissions and will
 	 * create a UI alert when attempting to run this command.
 	 */
-	return 0;
+	ret = 0;
 #else
-	return check_crontab_process(cmd);
+	ret = check_crontab_process(cmd);
 #endif
+
+out:
+	free(cmd);
+	return ret;
 }
 
 #define BEGIN_LINE "# BEGIN GIT MAINTENANCE SCHEDULE"
@@ -2300,7 +2355,7 @@ static int is_crontab_available(void)
 
 static int crontab_update_schedule(int run_maintenance, int fd)
 {
-	const char *cmd = "crontab";
+	char *cmd;
 	int result = 0;
 	int in_old_region = 0;
 	struct child_process crontab_list = CHILD_PROCESS_INIT;
@@ -2310,15 +2365,17 @@ static int crontab_update_schedule(int run_maintenance, int fd)
 	struct tempfile *tmpedit = NULL;
 	int minute = get_random_minute();
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("crontab", NULL, &cmd);
 	strvec_split(&crontab_list.args, cmd);
 	strvec_push(&crontab_list.args, "-l");
 	crontab_list.in = -1;
 	crontab_list.out = dup(fd);
 	crontab_list.git_cmd = 0;
 
-	if (start_command(&crontab_list))
-		return error(_("failed to run 'crontab -l'; your system might not support 'cron'"));
+	if (start_command(&crontab_list)) {
+		result = error(_("failed to run 'crontab -l'; your system might not support 'cron'"));
+		goto out;
+	}
 
 	/* Ignore exit code, as an empty crontab will return error. */
 	finish_command(&crontab_list);
@@ -2363,8 +2420,8 @@ static int crontab_update_schedule(int run_maintenance, int fd)
 			"# replaced in the future by a Git command.\n\n");
 
 		strbuf_addf(&line_format,
-			    "%%d %%s * * %%s \"%s/git\" --exec-path=\"%s\" for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%%s\n",
-			    exec_path, exec_path);
+			    "%%d %%s * * %%s \"%s/git\" --exec-path=\"%s\" %s for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%%s\n",
+			    exec_path, exec_path, get_extra_config_parameters());
 		fprintf(cron_in, line_format.buf, minute, "1-23", "*", "hourly");
 		fprintf(cron_in, line_format.buf, minute, "0", "1-6", "daily");
 		fprintf(cron_in, line_format.buf, minute, "0", "0", "weekly");
@@ -2388,8 +2445,10 @@ static int crontab_update_schedule(int run_maintenance, int fd)
 		result = error(_("'crontab' died"));
 	else
 		fclose(cron_list);
+
 out:
 	delete_tempfile(&tmpedit);
+	free(cmd);
 	return result;
 }
 
@@ -2412,10 +2471,9 @@ static int real_is_systemd_timer_available(void)
 
 static int is_systemd_timer_available(void)
 {
-	const char *cmd = "systemctl";
 	int is_available;
 
-	if (get_schedule_cmd(&cmd, &is_available))
+	if (get_schedule_cmd("systemctl", &is_available, NULL))
 		return is_available;
 
 	return real_is_systemd_timer_available();
@@ -2564,7 +2622,7 @@ static int systemd_timer_write_service_template(const char *exec_path)
 	       "\n"
 	       "[Service]\n"
 	       "Type=oneshot\n"
-	       "ExecStart=\"%s/git\" --exec-path=\"%s\" for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%%i\n"
+	       "ExecStart=\"%s/git\" --exec-path=\"%s\" %s for-each-repo --keep-going --config=maintenance.repo maintenance run --schedule=%%i\n"
 	       "LockPersonality=yes\n"
 	       "MemoryDenyWriteExecute=yes\n"
 	       "NoNewPrivileges=yes\n"
@@ -2574,7 +2632,7 @@ static int systemd_timer_write_service_template(const char *exec_path)
 	       "RestrictSUIDSGID=yes\n"
 	       "SystemCallArchitectures=native\n"
 	       "SystemCallFilter=@system-service\n";
-	if (fprintf(file, unit, exec_path, exec_path) < 0) {
+	if (fprintf(file, unit, exec_path, exec_path, get_extra_config_parameters()) < 0) {
 		error(_("failed to write to '%s'"), filename);
 		fclose(file);
 		goto error;
@@ -2596,9 +2654,10 @@ static int systemd_timer_enable_unit(int enable,
 				     enum schedule_priority schedule,
 				     int minute)
 {
-	const char *cmd = "systemctl";
+	char *cmd = NULL;
 	struct child_process child = CHILD_PROCESS_INIT;
 	const char *frequency = get_frequency(schedule);
+	int ret;
 
 	/*
 	 * Disabling the systemd unit while it is already disabled makes
@@ -2609,20 +2668,25 @@ static int systemd_timer_enable_unit(int enable,
 	 * On the other hand, enabling a systemd unit which is already enabled
 	 * produces no error.
 	 */
-	if (!enable)
+	if (!enable) {
 		child.no_stderr = 1;
-	else if (systemd_timer_write_timer_file(schedule, minute))
-		return -1;
+	} else if (systemd_timer_write_timer_file(schedule, minute)) {
+		ret = -1;
+		goto out;
+	}
 
-	get_schedule_cmd(&cmd, NULL);
+	get_schedule_cmd("systemctl", NULL, &cmd);
 	strvec_split(&child.args, cmd);
 	strvec_pushl(&child.args, "--user", enable ? "enable" : "disable",
 		     "--now", NULL);
 	strvec_pushf(&child.args, SYSTEMD_UNIT_FORMAT, frequency, "timer");
 
-	if (start_command(&child))
-		return error(_("failed to start systemctl"));
-	if (finish_command(&child))
+	if (start_command(&child)) {
+		ret = error(_("failed to start systemctl"));
+		goto out;
+	}
+
+	if (finish_command(&child)) {
 		/*
 		 * Disabling an already disabled systemd unit makes
 		 * systemctl fail.
@@ -2630,9 +2694,17 @@ static int systemd_timer_enable_unit(int enable,
 		 *
 		 * Enabling an enabled systemd unit doesn't fail.
 		 */
-		if (enable)
-			return error(_("failed to run systemctl"));
-	return 0;
+		if (enable) {
+			ret = error(_("failed to run systemctl"));
+			goto out;
+		}
+	}
+
+	ret = 0;
+
+out:
+	free(cmd);
+	return ret;
 }
 
 /*

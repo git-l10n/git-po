@@ -2,6 +2,7 @@
 
 test_description='git maintenance builtin'
 
+TEST_PASSES_SANITIZE_LEAK=true
 . ./test-lib.sh
 
 GIT_TEST_COMMIT_GRAPH=0
@@ -824,6 +825,9 @@ test_expect_success 'start and stop Linux/systemd maintenance' '
 	test_systemd_analyze_verify "systemd/user/git-maintenance@hourly.service" &&
 	test_systemd_analyze_verify "systemd/user/git-maintenance@daily.service" &&
 	test_systemd_analyze_verify "systemd/user/git-maintenance@weekly.service" &&
+
+	grep "core.askPass=true" "systemd/user/git-maintenance@.service" &&
+	grep "credential.interactive=false" "systemd/user/git-maintenance@.service" &&
 
 	printf -- "--user enable --now git-maintenance@%s.timer\n" hourly daily weekly >expect &&
 	test_cmp expect args &&

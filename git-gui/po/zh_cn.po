@@ -5,7 +5,7 @@
 #
 # Please use the following translation throughout the file for consistence:
 #
-# 	repository	版本库
+# 	repository	仓库
 # 	commit		提交
 # 	revision	版本
 # 	branch		分支
@@ -163,7 +163,7 @@ msgstr ""
 
 #: git-gui.sh:1860 lib/choose_repository.tcl:36
 msgid "Repository"
-msgstr "版本库(repository)"
+msgstr "仓库(repository)"
 
 #: git-gui.sh:1861
 msgid "Edit"
@@ -640,7 +640,7 @@ msgstr "请选择某个跟踪分支."
 #: lib/branch_create.tcl:140
 #, tcl-format
 msgid "Tracking branch %s is not a branch in the remote repository."
-msgstr "跟踪分支 %s 并不是远端版本库中的一个分支"
+msgstr "跟踪分支 %s 并不是远端仓库中的一个分支"
 
 #: lib/branch_create.tcl:153 lib/branch_rename.tcl:86
 msgid "Please supply a branch name."
@@ -797,9 +797,9 @@ msgid ""
 "\n"
 "The rescan will be automatically started now.\n"
 msgstr ""
-"最后一次扫描的状态和当前版本库状态不符.\n"
+"最后一次扫描的状态和当前仓库状态不符.\n"
 "\n"
-"另一 Git 程序自上次扫描后修改了本版本库. 在修改当前分支之前需要重新做一次扫"
+"另一 Git 程序自上次扫描后修改了本仓库. 在修改当前分支之前需要重新做一次扫"
 "描.\n"
 "\n"
 "重新扫描将自动开始.\n"
@@ -908,7 +908,7 @@ msgstr "Git Gui"
 
 #: lib/choose_repository.tcl:81 lib/choose_repository.tcl:376
 msgid "Create New Repository"
-msgstr "创建新的版本库"
+msgstr "创建新的仓库"
 
 #: lib/choose_repository.tcl:87
 msgid "New..."
@@ -916,7 +916,7 @@ msgstr "新建..."
 
 #: lib/choose_repository.tcl:94 lib/choose_repository.tcl:460
 msgid "Clone Existing Repository"
-msgstr "克隆已有版本库"
+msgstr "克隆已有仓库"
 
 #: lib/choose_repository.tcl:100
 msgid "Clone..."
@@ -924,7 +924,7 @@ msgstr "克隆..."
 
 #: lib/choose_repository.tcl:107 lib/choose_repository.tcl:976
 msgid "Open Existing Repository"
-msgstr "打开已有版本库"
+msgstr "打开已有仓库"
 
 #: lib/choose_repository.tcl:113
 msgid "Open..."
@@ -932,17 +932,17 @@ msgstr "打开..."
 
 #: lib/choose_repository.tcl:126
 msgid "Recent Repositories"
-msgstr "最近版本库"
+msgstr "最近仓库"
 
 #: lib/choose_repository.tcl:132
 msgid "Open Recent Repository:"
-msgstr "打开最近版本库"
+msgstr "打开最近仓库"
 
 #: lib/choose_repository.tcl:296 lib/choose_repository.tcl:303
 #: lib/choose_repository.tcl:310
 #, tcl-format
 msgid "Failed to create repository %s:"
-msgstr "无法创建版本库 %s:"
+msgstr "无法创建仓库 %s:"
 
 #: lib/choose_repository.tcl:381 lib/choose_repository.tcl:478
 msgid "Directory:"
@@ -951,7 +951,7 @@ msgstr "目录:"
 #: lib/choose_repository.tcl:412 lib/choose_repository.tcl:537
 #: lib/choose_repository.tcl:1011
 msgid "Git Repository"
-msgstr "Git 版本库"
+msgstr "Git 仓库"
 
 #: lib/choose_repository.tcl:437
 #, tcl-format
@@ -992,15 +992,15 @@ msgstr "共享方式 (最快, 不推荐, 不做备份)"
 #: lib/choose_repository.tcl:1017 lib/choose_repository.tcl:1025
 #, tcl-format
 msgid "Not a Git repository: %s"
-msgstr "不是一个 Git 版本库: %s"
+msgstr "不是一个 Git 仓库: %s"
 
 #: lib/choose_repository.tcl:579
 msgid "Standard only available for local repository."
-msgstr "标准方式仅当是本地版本库时有效."
+msgstr "标准方式仅当是本地仓库时有效."
 
 #: lib/choose_repository.tcl:583
 msgid "Shared only available for local repository."
-msgstr "共享方式仅当是本地版本库时有效."
+msgstr "共享方式仅当是本地仓库时有效."
 
 #: lib/choose_repository.tcl:604
 #, tcl-format
@@ -1119,12 +1119,12 @@ msgstr "打开"
 
 #: lib/choose_repository.tcl:981
 msgid "Repository:"
-msgstr "版本库"
+msgstr "仓库"
 
 #: lib/choose_repository.tcl:1031
 #, tcl-format
 msgid "Failed to open repository %s:"
-msgstr "无法打开版本库 %s:"
+msgstr "无法打开仓库 %s:"
 
 #: lib/choose_rev.tcl:53
 msgid "This Detached Checkout"
@@ -1212,9 +1212,9 @@ msgid ""
 "\n"
 "The rescan will be automatically started now.\n"
 msgstr ""
-"最后一次扫描的状态和当前版本库状态不符.\n"
+"最后一次扫描的状态和当前仓库状态不符.\n"
 "\n"
-"另一 Git 程序自上次扫描后修改了本版本库. 在修改当前分支之前需要重新做一次扫"
+"另一 Git 程序自上次扫描后修改了本仓库. 在修改当前分支之前需要重新做一次扫"
 "描.\n"
 "\n"
 "重新扫描将自动开始.\n"
@@ -1398,7 +1398,7 @@ msgid ""
 "\n"
 "Compress the database now?"
 msgstr ""
-"该版本库当前约有 %i 个松散对象.\n"
+"该仓库当前约有 %i 个松散对象.\n"
 "\n"
 "为达到较优的性能，强烈建议你在松散对象多于 %i 时压缩数据库.\n"
 "\n"
@@ -1444,7 +1444,7 @@ msgstr "装载文件出错:"
 
 #: lib/diff.tcl:122
 msgid "Git Repository (subproject)"
-msgstr "Git 版本库 (子项目)"
+msgstr "Git 仓库 (子项目)"
 
 #: lib/diff.tcl:134
 msgid "* Binary file (not showing content)."
@@ -1548,9 +1548,9 @@ msgid ""
 "\n"
 "The rescan will be automatically started now.\n"
 msgstr ""
-"最后一次扫描的状态和当前版本库状态不符.\n"
+"最后一次扫描的状态和当前仓库状态不符.\n"
 "\n"
-"另一 Git 程序自上次扫描后修改了本版本库. 在修改当前分支之前需要重新做一次扫"
+"另一 Git 程序自上次扫描后修改了本仓库. 在修改当前分支之前需要重新做一次扫"
 "描.\n"
 "\n"
 "重新扫描将自动开始.\n"
@@ -1682,11 +1682,11 @@ msgstr "保存"
 #: lib/option.tcl:109
 #, tcl-format
 msgid "%s Repository"
-msgstr "%s 版本库"
+msgstr "%s 仓库"
 
 #: lib/option.tcl:110
 msgid "Global (All Repositories)"
-msgstr "全局 (所有版本库)"
+msgstr "全局 (所有仓库)"
 
 #: lib/option.tcl:116
 msgid "User Name"
@@ -1764,7 +1764,7 @@ msgstr "删除远端分支"
 
 #: lib/remote_branch_delete.tcl:47
 msgid "From Repository"
-msgstr "从版本库"
+msgstr "从仓库"
 
 #: lib/remote_branch_delete.tcl:50 lib/transport.tcl:123
 msgid "Remote:"
@@ -1834,7 +1834,7 @@ msgstr "从 %s 中删除分支"
 
 #: lib/remote_branch_delete.tcl:286
 msgid "No repository selected."
-msgstr "没有选择版本库"
+msgstr "没有选择仓库"
 
 #: lib/remote_branch_delete.tcl:291
 #, tcl-format
@@ -1948,7 +1948,7 @@ msgstr "源端分支:"
 
 #: lib/transport.tcl:120
 msgid "Destination Repository"
-msgstr "目标版本库"
+msgstr "目标仓库"
 
 #: lib/transport.tcl:158
 msgid "Transfer Options"

@@ -7,6 +7,7 @@
 #  Changwoo Ryu <cwryu@debian.org>, 2015-2018.
 #  Sihyeon Jang <uneedsihyeon@gmail.com>, 2018.
 #  Gwan-gyeong Mun <elongbug@gmail.com>, 2018.
+#  Seoyeon Kwon <syeon0204@gmail.com>, 2025.
 #
 # - 작업자는 위 Contributors 목록에 추가해 주세요.
 # - 번역하면서 80컬럼을 넘어가지 않도록 해 주세요.

@@ -63,7 +63,7 @@
 #   fast-forward                     |  快进
 #   fetch                            |  获取
 #   file system                      |  文件系统
-#   fork                             |  派生
+#   fork                             |  复刻
 #   Git archive                      |  仓库（对于 arch 用户）
 #   gitfile                          |  gitfile（仓库链接文件）
 #   grafts                           |  （提交）移植
@@ -268,7 +268,7 @@ msgstr "补丁更新"
 
 #: add-interactive.c
 msgid "Review diff"
-msgstr "检视 diff"
+msgstr "检视差异"
 
 #: add-interactive.c
 msgid "show paths with changes"
@@ -17540,6 +17540,9 @@ msgstr "应用一个补丁到文件和/或索引区"
 #: command-list.h
 msgid "Import a GNU Arch repository into Git"
 msgstr "将一个 GNU Arch 仓库导入到 Git"
+
+msgid "Download missing objects in a partial clone"
+msgstr "在部分克隆中下载缺失的对象"
 
 #: command-list.h
 msgid "Create an archive of files from a named tree"

@@ -1,0 +1,2676 @@
+# Irish translations for Git package.
+# Copyright (C) 2025 THE Git'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Git package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Git\n"
+"Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
+"POT-Creation-Date: 2025-05-14 08:56+0100\n"
+"PO-Revision-Date: 2025-05-14 13:12+0100\n"
+"Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: builtin/checkout.c:47
+msgid "git checkout [<options>] <branch>"
+msgstr "git checkout [<roghanna>] <brainse>"
+
+#: builtin/checkout.c:48
+msgid "git checkout [<options>] [<branch>] -- <file>..."
+msgstr "git checkout [<roghanna>] [<brainse>] --<comhad>..."
+
+#: builtin/checkout.c:53
+msgid "git switch [<options>] [<branch>]"
+msgstr "git switch [<roghanna>] [<brainse>]"
+
+#: builtin/checkout.c:58
+msgid "git restore [<options>] [--source=<branch>] <file>..."
+msgstr "git restore [<roghanna>] [--source=<brainse>] <comhad>..."
+
+#: builtin/checkout.c:215 builtin/checkout.c:254
+#, c-format
+msgid "path '%s' does not have our version"
+msgstr "níl ár leagan ag cosán '%s'"
+
+#: builtin/checkout.c:217 builtin/checkout.c:256
+#, c-format
+msgid "path '%s' does not have their version"
+msgstr "níl a leagan ag cosán '%s'"
+
+#: builtin/checkout.c:233
+#, c-format
+msgid "path '%s' does not have all necessary versions"
+msgstr "níl gach leagan riachtanach ag cosán '%s'"
+
+#: builtin/checkout.c:288
+#, c-format
+msgid "path '%s' does not have necessary versions"
+msgstr "níl leaganacha riachtanacha ag cosán '%s'"
+
+#: builtin/checkout.c:308
+#, c-format
+msgid "path '%s': cannot merge"
+msgstr "cosán '%s': ní féidir a chumasc"
+
+#: builtin/checkout.c:324
+#, c-format
+msgid "Unable to add merge result for '%s'"
+msgstr "Ní féidir toradh cumaisc a chur le haghaidh '%s'"
+
+#: builtin/checkout.c:328 builtin/reset.c:186
+#, c-format
+msgid "make_cache_entry failed for path '%s'"
+msgstr "theip ar make_cache_entry le haghaidh cosán '%s'"
+
+#: builtin/checkout.c:442
+#, c-format
+msgid "Recreated %d merge conflict"
+msgid_plural "Recreated %d merge conflicts"
+msgstr[0] "Athchruthaíodh %d coimhlint chumasc"
+msgstr[1] "Athchruthaíodh %d coinbhleachtaí chumaisc"
+msgstr[2] "Athchruthaíodh %d coinbhleachtaí chumaisc"
+
+#: builtin/checkout.c:447
+#, c-format
+msgid "Updated %d path from %s"
+msgid_plural "Updated %d paths from %s"
+msgstr[0] "Nuashonraíodh %d cosán ó %s"
+msgstr[1] "Nuashonraíodh %d cosán ó %s"
+msgstr[2] "Nuashonraíodh %d cosán ó %s"
+
+#: builtin/checkout.c:454
+#, c-format
+msgid "Updated %d path from the index"
+msgid_plural "Updated %d paths from the index"
+msgstr[0] "Nuashonraíodh %d cosán ón innéacs"
+msgstr[1] "Nuashonraíodh %d cosán ón innéacs"
+msgstr[2] "Nuashonraíodh %d cosán ón innéacs"
+
+#: builtin/checkout.c:477 builtin/checkout.c:480 builtin/checkout.c:483 builtin/checkout.c:487
+#, c-format
+msgid "'%s' cannot be used with updating paths"
+msgstr "Ní féidir '%s' a úsáid le cosáin a nuashonrú"
+
+#: builtin/checkout.c:490 builtin/checkout.c:493 builtin/checkout.c:1805 builtin/checkout.c:1915
+#: builtin/checkout.c:1918 builtin/clone.c:1033 builtin/clone.c:1038 builtin/index-pack.c:2026
+#: builtin/reset.c:388 builtin/reset.c:425
+#, c-format
+msgid "options '%s' and '%s' cannot be used together"
+msgstr "ní féidir roghanna '%s' agus '%s' a úsáid le chéile"
+
+#: builtin/checkout.c:497
+#, c-format
+msgid "Cannot update paths and switch to branch '%s' at the same time."
+msgstr "Ní féidir cosáin a nuashonrú agus aistriú go brainse '%s' ag an am céanna."
+
+#: builtin/checkout.c:501
+#, c-format
+msgid "neither '%s' or '%s' is specified"
+msgstr "níl '%s' ná '%s' sonraithe"
+
+#: builtin/checkout.c:505
+#, c-format
+msgid "'%s' must be used when '%s' is not specified"
+msgstr "Ní mór '%s' a úsáid nuair nach sonraítear '%s'"
+
+#: builtin/checkout.c:523 builtin/checkout.c:527
+#, c-format
+msgid "'%s' or '%s' cannot be used with %s"
+msgstr "Ní féidir '%s' nó '%s' a úsáid le %s"
+
+#: builtin/checkout.c:537
+#, c-format
+msgid "'%s', '%s', or '%s' cannot be used when checking out of a tree"
+msgstr "Ní féidir '%s', '%s', nó '%s' a úsáid agus tú ag seiceáil amach as crann"
+
+#: builtin/checkout.c:573 builtin/checkout.c:789 builtin/reset.c:464
+msgid "index file corrupt"
+msgstr "comhad innéacs truaillithe"
+
+#: builtin/checkout.c:610 builtin/checkout.c:617
+#, c-format
+msgid "path '%s' is unmerged"
+msgstr "tá cosán '%s' neamh-chomhcheangailte"
+
+#: builtin/checkout.c:642 builtin/checkout.c:931 builtin/clone.c:693
+msgid "unable to write new index file"
+msgstr "in ann comhad innéacs nua a scríobh"
+
+#: builtin/checkout.c:802 builtin/checkout.c:1274 builtin/checkout.c:1280 builtin/reset.c:123
+#, c-format
+msgid "unable to read tree (%s)"
+msgstr "nach féidir crann a léamh (%s)"
+
+#: builtin/checkout.c:818
+msgid "you need to resolve your current index first"
+msgstr "ní mór duit d'innéacs reatha a réiteach ar dtús"
+
+#: builtin/checkout.c:835 builtin/clone.c:683
+#, c-format
+msgid "unable to parse commit %s"
+msgstr "nach féidir le tiomantas %s a pharsáil"
+
+#: builtin/checkout.c:873
+#, c-format
+msgid ""
+"cannot continue with staged changes in the following files:\n"
+"%s"
+msgstr ""
+"ní féidir leanúint ar aghaidh le hathruithe céime sna comhaid seo a leanas:\n"
+"%s"
+
+#: builtin/checkout.c:971
+#, c-format
+msgid "Can not do reflog for '%s': %s\n"
+msgstr "Ní féidir athbhreithniú a dhéanamh le haghaidh '%s': %s\n"
+
+#: builtin/checkout.c:1018
+msgid "HEAD is now at"
+msgstr "Tá HEAD anois ag"
+
+#: builtin/checkout.c:1022 builtin/clone.c:578 builtin/clone.c:608
+msgid "unable to update HEAD"
+msgstr "in ann HEAD a nuashonrú"
+
+#: builtin/checkout.c:1026
+#, c-format
+msgid "Reset branch '%s'\n"
+msgstr "Athshocraigh brainse '%s'\n"
+
+#: builtin/checkout.c:1029
+#, c-format
+msgid "Already on '%s'\n"
+msgstr "Ar '%s' cheana féin\n"
+
+#: builtin/checkout.c:1033
+#, c-format
+msgid "Switched to and reset branch '%s'\n"
+msgstr "Aistrigh agus athshocraigh brainse '%s'\n"
+
+#: builtin/checkout.c:1035 builtin/checkout.c:1488
+#, c-format
+msgid "Switched to a new branch '%s'\n"
+msgstr "Aistrithe go brainse nua '%s'\n"
+
+#: builtin/checkout.c:1037
+#, c-format
+msgid "Switched to branch '%s'\n"
+msgstr "Aistrithe go brainse '%s'\n"
+
+#: builtin/checkout.c:1090
+#, c-format
+msgid " ... and %d more.\n"
+msgstr " ... agus %d níos mó.\n"
+
+#: builtin/checkout.c:1096
+#, c-format
+msgid ""
+"Warning: you are leaving %d commit behind, not connected to\n"
+"any of your branches:\n"
+"\n"
+"%s\n"
+msgid_plural ""
+"Warning: you are leaving %d commits behind, not connected to\n"
+"any of your branches:\n"
+"\n"
+"%s\n"
+msgstr[0] ""
+"Rabhadh: tá %d tiomantas á fhágáil agat, gan cheangal le haon cheann de do bhrainsí:\n"
+"\n"
+"%s\n"
+msgstr[1] ""
+"Rabhadh: tá %d tiomantas á bhfágáil agat i do dhiaidh, gan aon cheangal le haon cheann de do "
+"bhrainsí:\n"
+"\n"
+"%s\n"
+msgstr[2] ""
+"Rabhadh: tá %d tiomantas á bhfágáil agat i do dhiaidh, gan aon cheangal le haon cheann de do "
+"bhrainsí:\n"
+"\n"
+"%s\n"
+
+#: builtin/checkout.c:1115
+#, c-format
+msgid ""
+"If you want to keep it by creating a new branch, this may be a good time\n"
+"to do so with:\n"
+"\n"
+" git branch <new-branch-name> %s\n"
+"\n"
+msgid_plural ""
+"If you want to keep them by creating a new branch, this may be a good time\n"
+"to do so with:\n"
+"\n"
+" git branch <new-branch-name> %s\n"
+"\n"
+msgstr[0] ""
+"Más mian leat é a choinneáil trí bhrainse nua a chruthú, b'fhéidir gur dea-am é seo chun é sin a "
+"dhéanamh le:\n"
+"\n"
+"git branch <ainm-brainse-nua> %s\n"
+msgstr[1] ""
+"Más mian leat iad a choinneáil trí bhrainse nua a chruthú, b'fhéidir gur dea-am é seo chun é sin a "
+"dhéanamh le:\n"
+"\n"
+"git branch <ainm-brainse-nua> %s\n"
+msgstr[2] ""
+"Más mian leat iad a choinneáil trí bhrainse nua a chruthú, b'fhéidir gur dea-am é seo chun é sin a "
+"dhéanamh le:\n"
+"\n"
+"git branch <ainm-brainse-nua> %s\n"
+
+#: builtin/checkout.c:1151
+msgid "internal error in revision walk"
+msgstr "earráid inmheánach i dsiúlóid"
+
+#: builtin/checkout.c:1155
+msgid "Previous HEAD position was"
+msgstr "Bhí post CEAD roimhe seo"
+
+#: builtin/checkout.c:1200 builtin/checkout.c:1482
+msgid "You are on a branch yet to be born"
+msgstr "Tá tú ar bhrainse nach rugadh fós"
+
+#: builtin/checkout.c:1293
+#, c-format
+msgid ""
+"'%s' could be both a local file and a tracking branch.\n"
+"Please use -- (and optionally --no-guess) to disambiguate"
+msgstr ""
+"D'fhéadfadh '%s' a bheith ina chomhad áitiúil agus ina bhrainse rianaithe araon.\n"
+"Úsáid le do thoil -- (agus go roghnach --no-thuairim) chun a dhíbhriú"
+
+#: builtin/checkout.c:1300
+msgid ""
+"If you meant to check out a remote tracking branch on, e.g. 'origin',\n"
+"you can do so by fully qualifying the name with the --track option:\n"
+"\n"
+"    git checkout --track origin/<name>\n"
+"\n"
+"If you'd like to always have checkouts of an ambiguous <name> prefer\n"
+"one remote, e.g. the 'origin' remote, consider setting\n"
+"checkout.defaultRemote=origin in your config."
+msgstr ""
+"Má bhí sé i gceist agat brainse cianrianaithe a sheiceáil ar, m.sh. 'tionscnamh',\n"
+"is féidir leat é sin a dhéanamh tríd an ainm a cháiliú go hiomlán leis an rogha --track:\n"
+"\n"
+" seiceáil git --track bunaidh/<name>\n"
+"\n"
+"<name>Más mian leat seiceálacha débhríoch a bheith agat i gcónaí is fearr leat\n"
+"iargúlta amháin, m.sh. an iargúlta 'bunús', smaoinigh ar shocrú\n"
+"checkout.defaultRemote=Bunús i do chumraíocht."
+
+#: builtin/checkout.c:1310
+#, c-format
+msgid "'%s' matched multiple (%d) remote tracking branches"
+msgstr "Mheaitseáil '%s' roinnt (%d) brainsí rianaithe iargúlta"
+
+#: builtin/checkout.c:1377
+msgid "only one reference expected"
+msgstr "níl ach tagairt amháin ag súil leis"
+
+#: builtin/checkout.c:1394
+#, c-format
+msgid "only one reference expected, %d given."
+msgstr "níl ach tagairt amháin ag súil leis, %d tugtha."
+
+#: builtin/checkout.c:1440
+#, c-format
+msgid "invalid reference: %s"
+msgstr "tagairt neamhbhailí: %s"
+
+#: builtin/checkout.c:1453 builtin/checkout.c:1886
+#, c-format
+msgid "reference is not a tree: %s"
+msgstr "ní crann é tagairt: %s"
+
+#: builtin/checkout.c:1504
+#, c-format
+msgid "a branch is expected, got tag '%s'"
+msgstr "táthar ag súil le brainse, faightear tag '%s'"
+
+#: builtin/checkout.c:1506
+#, c-format
+msgid "a branch is expected, got remote branch '%s'"
+msgstr "táthar ag súil le brainse, fuair brainse iargúlta '%s'"
+
+#: builtin/checkout.c:1508 builtin/checkout.c:1517
+#, c-format
+msgid "a branch is expected, got '%s'"
+msgstr "táthar ag súil le brainse, fuair '%s'"
+
+#: builtin/checkout.c:1511
+#, c-format
+msgid "a branch is expected, got commit '%s'"
+msgstr "táthar ag súil le brainse, fuair sé tiomantas '%s'"
+
+#: builtin/checkout.c:1520
+msgid "If you want to detach HEAD at the commit, try again with the --detach option."
+msgstr "Más mian leat HEAD a dhícheangal ag an tiomantas, déan iarracht arís leis an rogha --detach."
+
+#: builtin/checkout.c:1533
+msgid ""
+"cannot switch branch while merging\n"
+"Consider \"git merge --quit\" or \"git worktree add\"."
+msgstr ""
+"ní féidir brainse a athrú agus cumasc á dhéanamh\n"
+"Smaoinigh ar \"git merge --quit\" nó \"git worktree add\"."
+
+#: builtin/checkout.c:1537
+msgid ""
+"cannot switch branch in the middle of an am session\n"
+"Consider \"git am --quit\" or \"git worktree add\"."
+msgstr ""
+"ní féidir brainse a athrú i lár seisiún am\n"
+"Smaoinigh ar \"git am --quit\" nó \"git worktree add\"."
+
+#: builtin/checkout.c:1541
+msgid ""
+"cannot switch branch while rebasing\n"
+"Consider \"git rebase --quit\" or \"git worktree add\"."
+msgstr ""
+"ní féidir brainse a athrú agus athbhunú á dhéanamh\n"
+"Smaoinigh ar \"git rebase --quit\" nó \"git worktree add\"."
+
+#: builtin/checkout.c:1545
+msgid ""
+"cannot switch branch while cherry-picking\n"
+"Consider \"git cherry-pick --quit\" or \"git worktree add\"."
+msgstr ""
+"ní féidir brainse a athrú agus tú ag roghnú brainse nua\n"
+"Smaoinigh ar \"git cherry-pick --quit\" nó \"git worktree add\"."
+
+#: builtin/checkout.c:1549
+msgid ""
+"cannot switch branch while reverting\n"
+"Consider \"git revert --quit\" or \"git worktree add\"."
+msgstr ""
+"ní féidir brainse a athrú agus aisiompú á dhéanamh\n"
+"Smaoinigh ar \"git revert --quit\" nó \"git worktree add\"."
+
+#: builtin/checkout.c:1553
+msgid "you are switching branch while bisecting"
+msgstr "tá tú ag athrú brainse agus tú ag déileáil"
+
+#: builtin/checkout.c:1587
+msgid "paths cannot be used with switching branches"
+msgstr "ní féidir cosáin a úsáid le brainsí a athrú"
+
+#: builtin/checkout.c:1590 builtin/checkout.c:1594 builtin/checkout.c:1602
+#, c-format
+msgid "'%s' cannot be used with switching branches"
+msgstr "Ní féidir '%s' a úsáid le brainsí a athrú"
+
+#: builtin/checkout.c:1600
+#, c-format
+msgid "'%s' needs the paths to check out"
+msgstr "Teastaíonn '%s' na cosáin chun seiceáil"
+
+#: builtin/checkout.c:1607 builtin/checkout.c:1610 builtin/checkout.c:1613 builtin/checkout.c:1618
+#: builtin/checkout.c:1623
+#, c-format
+msgid "'%s' cannot be used with '%s'"
+msgstr "Ní féidir '%s' a úsáid le '%s'"
+
+#: builtin/checkout.c:1620
+#, c-format
+msgid "'%s' cannot take <start-point>"
+msgstr "Ní féidir '%s' a ghlacadh <start-point>"
+
+#: builtin/checkout.c:1628
+#, c-format
+msgid "Cannot switch branch to a non-commit '%s'"
+msgstr "Ní féidir brainse a aistriú go '%s' neamh-thiomanta"
+
+#: builtin/checkout.c:1633
+msgid "missing branch or commit argument"
+msgstr "brainse ar iarraidh nó argóint a dhéanamh"
+
+#: builtin/checkout.c:1678
+#, c-format
+msgid "unknown conflict style '%s'"
+msgstr "stíl choimhlinte anaithnid '%s'"
+
+#: builtin/checkout.c:1690
+msgid "suppress progress reporting"
+msgstr "cur chun cinn tuairiscithe"
+
+#: builtin/checkout.c:1694 builtin/clone.c:917 builtin/push.c:586
+msgid "force progress reporting"
+msgstr "tuairisciú dul chun cinn"
+
+#: builtin/checkout.c:1695
+msgid "perform a 3-way merge with the new branch"
+msgstr "cumasc 3 bhealach a dhéanamh leis an mbrainse nua"
+
+#: builtin/checkout.c:1696
+msgid "style"
+msgstr "stíl"
+
+#: builtin/checkout.c:1697
+msgid "conflict style (merge, diff3, or zdiff3)"
+msgstr "stíl choimhlinte (cumaisc, diff3, nó zdiff3)"
+
+#: builtin/checkout.c:1710
+msgid "detach HEAD at named commit"
+msgstr "dícheangail HEAD ag an tiomnú ainmnithe"
+
+#: builtin/checkout.c:1712
+msgid "set branch tracking configuration"
+msgstr "cumraíocht rianaithe brainse a shoc"
+
+#: builtin/checkout.c:1715
+msgid "force checkout (throw away local modifications)"
+msgstr "seiceáil fórsa (caith modhnuithe áitiúla)"
+
+#: builtin/checkout.c:1717
+msgid "new-branch"
+msgstr "brainse-nua"
+
+#: builtin/checkout.c:1717
+msgid "new unborn branch"
+msgstr "brainse nua gan breith"
+
+#: builtin/checkout.c:1719
+msgid "update ignored files (default)"
+msgstr "nuashonrú comhaid a dhéantar neamhaird orthu"
+
+#: builtin/checkout.c:1722
+msgid "do not check if another worktree is using this branch"
+msgstr "ná seiceáil an bhfuil crann oibre eile á úsáid ag baint úsáide as an mbrainse seo"
+
+#: builtin/checkout.c:1735
+msgid "checkout our version for unmerged files"
+msgstr "seiceáil ár leagan le haghaidh comhaid neamh-chumasaithe"
+
+#: builtin/checkout.c:1738
+msgid "checkout their version for unmerged files"
+msgstr "seiceáil a leagan le haghaidh comhaid neamh-chumasaithe"
+
+#: builtin/checkout.c:1740 builtin/reset.c:372
+msgid "select hunks interactively"
+msgstr "roghnaigh hunks idirghníomhach"
+
+#: builtin/checkout.c:1742
+msgid "do not limit pathspecs to sparse entries only"
+msgstr "ná teorainn le speisiúintí cosáin le hiontrálacha neamhchoitianta"
+
+#: builtin/checkout.c:1801
+#, c-format
+msgid "options '-%c', '-%c', and '%s' cannot be used together"
+msgstr "ní féidir na roghanna '-%c', '-%c', agus '%s' a úsáid le chéile"
+
+#: builtin/checkout.c:1842
+msgid "--track needs a branch name"
+msgstr "Teastaíonn ainm brainse ó --track"
+
+#: builtin/checkout.c:1847
+#, c-format
+msgid "missing branch name; try -%c"
+msgstr "ainm brainse ar iarraidh; iarracht -%c"
+
+#: builtin/checkout.c:1879
+#, c-format
+msgid "could not resolve %s"
+msgstr "ní fhéadfaí %s a réiteach"
+
+#: builtin/checkout.c:1895
+msgid "invalid path specification"
+msgstr "sonraíocht cosáin nebhail"
+
+#: builtin/checkout.c:1902
+#, c-format
+msgid "'%s' is not a commit and a branch '%s' cannot be created from it"
+msgstr "Ní tiomantas é '%s' agus ní féidir brainse '%s' a chruthú uaidh"
+
+#: builtin/checkout.c:1906
+#, c-format
+msgid "git checkout: --detach does not take a path argument '%s'"
+msgstr "git checkout: Ní ghlacann --detach argóint cosáin '%s'"
+
+#: builtin/checkout.c:1912 builtin/reset.c:391
+#, c-format
+msgid "'%s' and pathspec arguments cannot be used together"
+msgstr "Ní féidir argóintí '%s' agus pathspec a úsáid le chéile"
+
+#: builtin/checkout.c:1924 builtin/clone.c:1269 builtin/clone.c:1272 builtin/index-pack.c:2020
+#: builtin/reset.c:397 builtin/reset.c:458
+#, c-format
+msgid "the option '%s' requires '%s'"
+msgstr "tá %s ag teastáil don rogha '%s'"
+
+#: builtin/checkout.c:1931
+msgid ""
+"git checkout: --ours/--theirs, --force and --merge are incompatible when\n"
+"checking out of the index."
+msgstr ""
+"git checkout: - ours/--a gcuid féin, --force agus --merge neamhoiriúnach nuair\n"
+"seiceáil amach as an innéacs."
+
+#: builtin/checkout.c:1936
+msgid "you must specify path(s) to restore"
+msgstr "ní mór duit cosáin(í) a shonrú chun athchóiriú"
+
+#: builtin/checkout.c:1971 builtin/checkout.c:1973 builtin/checkout.c:2021 builtin/checkout.c:2023
+#: builtin/clone.c:956
+msgid "branch"
+msgstr "brainse"
+
+#: builtin/checkout.c:1972
+msgid "create and checkout a new branch"
+msgstr "brainse nua a chruthú agus a sheiceáil"
+
+#: builtin/checkout.c:1974
+msgid "create/reset and checkout a branch"
+msgstr "cruthaigh/athshocraigh agus seiceáil amach brainse"
+
+#: builtin/checkout.c:1975
+msgid "create reflog for new branch"
+msgstr "cruthú reflog do bhrainse nua"
+
+#: builtin/checkout.c:1977
+msgid "second guess 'git checkout <no-such-branch>' (default)"
+msgstr "an dara tuairim 'git check <no-such-branch>'(réamhshocraithe)"
+
+#: builtin/checkout.c:1978
+msgid "use overlay mode (default)"
+msgstr "úsáid modh forleagtha (réamhshocraithe)"
+
+#: builtin/checkout.c:2022
+msgid "create and switch to a new branch"
+msgstr "cruthú agus aistrigh go brainse nua"
+
+#: builtin/checkout.c:2024
+msgid "create/reset and switch to a branch"
+msgstr "cruthú/athshocraigh agus aistrigh go brainse"
+
+#: builtin/checkout.c:2026
+msgid "second guess 'git switch <no-such-branch>'"
+msgstr "buille faoi thuairim eile 'git switch <gan-bhrainse-den-sórt-sin>'"
+
+#: builtin/checkout.c:2028
+msgid "throw away local modifications"
+msgstr "modhnuithe áitiúla a chaitheamh"
+
+#: builtin/checkout.c:2061
+msgid "which tree-ish to checkout from"
+msgstr "cén crainn le seiceáil uaidh"
+
+#: builtin/checkout.c:2063
+msgid "restore the index"
+msgstr "an t-innéacs a chur ar ais"
+
+#: builtin/checkout.c:2065
+msgid "restore the working tree (default)"
+msgstr "an crann oibre a chur ar ais (réamhshocraithe)"
+
+#: builtin/checkout.c:2067
+msgid "ignore unmerged entries"
+msgstr "neamhaird a dhéanamh ar iontrálacha"
+
+#: builtin/checkout.c:2068
+msgid "use overlay mode"
+msgstr "úsáid modh forleagtha"
+
+#: builtin/clone.c:169
+#, c-format
+msgid "info: Could not add alternate for '%s': %s\n"
+msgstr "eolas: Ní féidir malartach a chur le haghaidh '%s': %s\n"
+
+#: builtin/clone.c:238
+#, c-format
+msgid "failed to create directory '%s'"
+msgstr "theip ar eolaire '%s' a chruthú"
+
+#: builtin/clone.c:240
+#, c-format
+msgid "failed to stat '%s'"
+msgstr "theip ar '%s' a stáil"
+
+#: builtin/clone.c:242
+#, c-format
+msgid "%s exists and is not a directory"
+msgstr "Tá %s ann agus ní eolaire é"
+
+#: builtin/clone.c:276
+#, c-format
+msgid "'%s' is a symlink, refusing to clone with --local"
+msgstr "Is nasc comhsheasmhach é '%s', ag diúltú clónú le --local"
+
+#: builtin/clone.c:280
+#, c-format
+msgid "failed to start iterator over '%s'"
+msgstr "theip ar an iterator a thosú thar '%s'"
+
+#: builtin/clone.c:295
+#, c-format
+msgid "symlink '%s' exists, refusing to clone with --local"
+msgstr "tá nasc symlink '%s' ann, ag diúltú clónú le --local"
+
+#: builtin/clone.c:310
+#, c-format
+msgid "failed to unlink '%s'"
+msgstr "theip ar '%s' a dhínascadh"
+
+#: builtin/clone.c:322
+#, c-format
+msgid "hardlink cannot be checked at '%s'"
+msgstr "ní féidir crua-nasc a sheiceáil ag '%s'"
+
+#: builtin/clone.c:329
+#, c-format
+msgid "hardlink different from source at '%s'"
+msgstr "crua-nasc difriúil ó fhoinse ag '%s'"
+
+#: builtin/clone.c:334
+#, c-format
+msgid "failed to create link '%s'"
+msgstr "theip ar nasc '%s' a chruthú"
+
+#: builtin/clone.c:338
+#, c-format
+msgid "failed to copy file to '%s'"
+msgstr "theip ar chomhad a chóipeáil chuig '%s'"
+
+#: builtin/clone.c:343
+#, c-format
+msgid "failed to iterate over '%s'"
+msgstr "theip ar athrá thar '%s'"
+
+#: builtin/clone.c:370
+#, c-format
+msgid "done.\n"
+msgstr "déanta.\n"
+
+#: builtin/clone.c:384
+msgid ""
+"Clone succeeded, but checkout failed.\n"
+"You can inspect what was checked out with 'git status'\n"
+"and retry with 'git restore --source=HEAD :/'\n"
+msgstr ""
+"D'éirigh le clón, ach theip ar an tseiceáil.\n"
+"Is féidir leat iniúchadh a dhéanamh ar an méid a sheiceáladh le 'git status'\n"
+"agus déan iarracht arís le 'git restore --source=head: /'\n"
+
+#: builtin/clone.c:550
+msgid "remote did not send all necessary objects"
+msgstr "níor sheol iargúlta gach rud riachtanach"
+
+#: builtin/clone.c:566
+#, c-format
+msgid "unable to update %s"
+msgstr "nach féidir %s a nuashonrú"
+
+#: builtin/clone.c:628
+msgid "failed to initialize sparse-checkout"
+msgstr "theip ar sheiceáil éagsúil a thosú"
+
+#: builtin/clone.c:652
+msgid "remote HEAD refers to nonexistent ref, unable to checkout"
+msgstr "tagraíonn iargúlta HEAD do thagartha nach bhfuil ann, nach féidir a sheiceáil"
+
+#: builtin/clone.c:662
+msgid "HEAD not found below refs/heads!"
+msgstr "Ní fhaightear CEAD thíos na tagairtí/cinn!"
+
+#: builtin/clone.c:688
+msgid "unable to checkout working tree"
+msgstr "in ann crann oibre a sheiceáil"
+
+#: builtin/clone.c:782
+msgid "unable to write parameters to config file"
+msgstr "in ann paraiméadair a scríobh chuig comhad cumraithe"
+
+#: builtin/clone.c:849
+msgid "cannot repack to clean up"
+msgstr "ní féidir athphacáil chun glanadh"
+
+#: builtin/clone.c:851
+msgid "cannot unlink temporary alternates file"
+msgstr "ní féidir le comhad malartacha sealadacha a dhínascadh"
+
+#: builtin/clone.c:919
+msgid "don't clone shallow repository"
+msgstr "ná clóin stór éadomhain"
+
+#: builtin/clone.c:921
+msgid "don't create a checkout"
+msgstr "ná cruthaigh seiceáil"
+
+#: builtin/clone.c:922 builtin/clone.c:924
+msgid "create a bare repository"
+msgstr "stóras lom a chruthú"
+
+#: builtin/clone.c:926
+msgid "create a mirror repository (implies --bare)"
+msgstr "stóras scátháin a chruthú (tugann le tuiscint --lom)"
+
+#: builtin/clone.c:928
+msgid "to clone from a local repository"
+msgstr "a chlónú ó stór áitiúil"
+
+#: builtin/clone.c:930
+msgid "don't use local hardlinks, always copy"
+msgstr "ná húsáid crua-naisc áitiúla, cóipeáil i gcónaí"
+
+#: builtin/clone.c:932
+msgid "setup as shared repository"
+msgstr "socrú mar stór roinnte"
+
+#: builtin/clone.c:937
+msgid "pathspec"
+msgstr "sonraíocht chosáin"
+
+#: builtin/clone.c:938
+msgid "initialize submodules in the clone"
+msgstr "fo-mhodúil a thionscnamh sa chlón"
+
+#: builtin/clone.c:945
+msgid "number of submodules cloned in parallel"
+msgstr "líon na bhfo-mhodúil atá clónaithe go comhthreomhar"
+
+#: builtin/clone.c:946
+msgid "template-directory"
+msgstr "eolaire teimpléad"
+
+#: builtin/clone.c:947
+msgid "directory from which templates will be used"
+msgstr "eolaire as a n-úsáidfear teimpléid"
+
+#: builtin/clone.c:948 builtin/clone.c:951
+msgid "repo"
+msgstr "stór"
+
+#: builtin/clone.c:949 builtin/clone.c:951
+msgid "reference repository"
+msgstr "stór tagartha"
+
+#: builtin/clone.c:953
+msgid "use --reference only while cloning"
+msgstr "bain úsáid as --reference amháin agus tú ag clónú"
+
+#: builtin/clone.c:954
+msgid "name"
+msgstr "ainm"
+
+#: builtin/clone.c:955
+msgid "use <name> instead of 'origin' to track upstream"
+msgstr "úsáid in <name>ionad 'tionscnamh' chun suas an sruth a rianú"
+
+#: builtin/clone.c:957
+msgid "checkout <branch> instead of the remote's HEAD"
+msgstr "seiceáil <brainse>in ionad CEAD an iargúlta"
+
+#: builtin/clone.c:958
+msgid "rev"
+msgstr "rev"
+
+#: builtin/clone.c:959
+msgid "clone single revision <rev> and check out"
+msgstr "clóin athbhreithni <rev>ú aonair agus seiceáil"
+
+#: builtin/clone.c:960
+msgid "path"
+msgstr "cosán"
+
+#: builtin/clone.c:961
+msgid "path to git-upload-pack on the remote"
+msgstr "cosán chuig pacáiste uaslódála git-ar an iargúlta"
+
+#: builtin/clone.c:962
+msgid "depth"
+msgstr "doimhneacht"
+
+#: builtin/clone.c:963
+msgid "create a shallow clone of that depth"
+msgstr "clón éadomhain den doimhneacht sin a chruthú"
+
+#: builtin/clone.c:964
+msgid "time"
+msgstr "am"
+
+#: builtin/clone.c:965
+msgid "create a shallow clone since a specific time"
+msgstr "clón éadrom a chruthú ó am ar leith"
+
+#: builtin/clone.c:966
+msgid "ref"
+msgstr "tagairt"
+
+#: builtin/clone.c:967
+msgid "deepen history of shallow clone, excluding ref"
+msgstr "stair an chlóin éadomhain a dhoimhniú, gan tagairt"
+
+#: builtin/clone.c:969
+msgid "clone only one branch, HEAD or --branch"
+msgstr "clóin ach brainse amháin, HEAD nó --branch"
+
+#: builtin/clone.c:971
+msgid "clone tags, and make later fetches not to follow them"
+msgstr "clibeanna clóin, agus tógáil níos déanaí a dhéanamh gan iad a leanúint"
+
+#: builtin/clone.c:973
+msgid "any cloned submodules will be shallow"
+msgstr "beidh aon fho-mhodúil clónaithe éadrom"
+
+#: builtin/clone.c:974
+msgid "gitdir"
+msgstr "gitdir"
+
+#: builtin/clone.c:975
+msgid "separate git dir from working tree"
+msgstr "git dir ar leithligh ó chrann oibre"
+
+#: builtin/clone.c:976
+msgid "format"
+msgstr "formáid"
+
+#: builtin/clone.c:977
+msgid "specify the reference format to use"
+msgstr "sonraigh an fhormáid tagartha le húsáid"
+
+#: builtin/clone.c:978
+msgid "key=value"
+msgstr "eochair=luach"
+
+#: builtin/clone.c:979
+msgid "set config inside the new repository"
+msgstr "socraigh cumraíocht taobh istigh den stór nua"
+
+#: builtin/clone.c:981 builtin/push.c:595
+msgid "server-specific"
+msgstr "freastalaí-shonrach"
+
+#: builtin/clone.c:981 builtin/push.c:595
+msgid "option to transmit"
+msgstr "rogha a tharchur"
+
+#: builtin/clone.c:985
+msgid "apply partial clone filters to submodules"
+msgstr "cuir scagairí clóin páirteacha i bhfeidhm"
+
+#: builtin/clone.c:987
+msgid "any cloned submodules will use their remote-tracking branch"
+msgstr "úsáidfidh aon fho-mhodúil clónaithe a mbrainse cianrianaithe"
+
+#: builtin/clone.c:989
+msgid "initialize sparse-checkout file to include only files at root"
+msgstr "comhad seiceála neamhchoitianta a thosú chun comhaid amháin a áireamh ag fréamh"
+
+#: builtin/clone.c:991
+msgid "uri"
+msgstr "uri"
+
+#: builtin/clone.c:991
+msgid "a URI for downloading bundles before fetching from origin remote"
+msgstr "a URI chun cuachtaí a íoslódáil sula n-iarrtar iad ó chianchéim tionscnaimh"
+
+#: builtin/clone.c:996
+msgid "git clone [<options>] [--] <repo> [<dir>]"
+msgstr "git clone [<roghanna>] [--] <stór>[<eolaire>]"
+
+#: builtin/clone.c:1008
+msgid "Too many arguments."
+msgstr "An iomarca argóintí."
+
+#: builtin/clone.c:1012
+msgid "You must specify a repository to clone."
+msgstr "Ní mór duit stór a shonrú le clónú."
+
+#: builtin/clone.c:1023
+#, c-format
+msgid "unknown ref storage format '%s'"
+msgstr "formáid stórála tagartha anaithnid '%s'"
+
+#: builtin/clone.c:1052
+#, c-format
+msgid "repository '%s' does not exist"
+msgstr "níl an stóras '%s' ann"
+
+#: builtin/clone.c:1056
+#, c-format
+msgid "depth %s is not a positive number"
+msgstr "ní uimhir dhearfach é doimhneacht %s"
+
+#: builtin/clone.c:1066
+#, c-format
+msgid "destination path '%s' already exists and is not an empty directory."
+msgstr "tá cosán ceann scríbe '%s' ann cheana féin agus ní eolaire folamh é."
+
+#: builtin/clone.c:1072
+#, c-format
+msgid "repository path '%s' already exists and is not an empty directory."
+msgstr "tá cosán stórais '%s' ann cheana féin agus ní eolaire folamh é."
+
+#: builtin/clone.c:1086
+#, c-format
+msgid "working tree '%s' already exists."
+msgstr "tá crann oibre '%s' ann cheana féin."
+
+#: builtin/clone.c:1101 builtin/clone.c:1122
+#, c-format
+msgid "could not create leading directories of '%s'"
+msgstr "ní fhéadfaí eolairí tosaigh de '%s' a chruthú"
+
+#: builtin/clone.c:1106
+#, c-format
+msgid "could not create work tree dir '%s'"
+msgstr "ní fhéadfaí crann oibre a chruthú dir '%s'"
+
+#: builtin/clone.c:1126
+#, c-format
+msgid "Cloning into bare repository '%s'...\n"
+msgstr "Clónáil isteach i stóras lom '%s'...\n"
+
+#: builtin/clone.c:1128
+#, c-format
+msgid "Cloning into '%s'...\n"
+msgstr "Clónáil isteach '%s'...\n"
+
+#: builtin/clone.c:1157
+msgid "clone --recursive is not compatible with both --reference and --reference-if-able"
+msgstr "níl clón --recursive comhoiriúnach le --reference agus --reference-if-able araon"
+
+#: builtin/clone.c:1288
+#, c-format
+msgid "'%s' is not a valid remote name"
+msgstr "Ní ainm iargúlta bailí é '%s'"
+
+#: builtin/clone.c:1323
+msgid "--depth is ignored in local clones; use file:// instead."
+msgstr "Déantar neamhaird ar --deep i gclóin áitiúla; bain úsáid as comhad://ina ionad sin."
+
+#: builtin/clone.c:1325
+msgid "--shallow-since is ignored in local clones; use file:// instead."
+msgstr "Déantar neamhaird ar --shallow-since i gclóin áitiúla; bain úsáid as comhad://ina ionad sin."
+
+#: builtin/clone.c:1327
+msgid "--shallow-exclude is ignored in local clones; use file:// instead."
+msgstr ""
+"Déantar neamhaird ar --shallow-exclusive i gclóin áitiúla; bain úsáid as comhad://ina ionad sin."
+
+#: builtin/clone.c:1329
+msgid "--filter is ignored in local clones; use file:// instead."
+msgstr "Déantar neamhaird ar --filter i gclóin áitiúla; bain úsáid as comhad://ina ionad sin."
+
+#: builtin/clone.c:1332
+msgid "source repository is shallow, reject to clone."
+msgstr "tá stóras foinse éadrom, diúltaigh clóin."
+
+#: builtin/clone.c:1334
+msgid "source repository is shallow, ignoring --local"
+msgstr "tá stóras foinse éadrom, ag neamhaird a dhéanamh ar --local"
+
+#: builtin/clone.c:1339
+msgid "--local is ignored"
+msgstr "Déantar neamhaird a dhéanamh ar --local"
+
+#: builtin/clone.c:1355
+msgid "cannot clone from filtered bundle"
+msgstr "ní féidir clónú ó bhearta scagtha"
+
+#: builtin/clone.c:1463 builtin/clone.c:1494
+msgid "failed to initialize the repo, skipping bundle URI"
+msgstr "theip ar an repo a thionscnamh, ag scipeáil URI beartán"
+
+#: builtin/clone.c:1465
+#, c-format
+msgid "failed to fetch objects from bundle URI '%s'"
+msgstr "theip ar rudaí a fháil ó URI '%s'"
+
+#: builtin/clone.c:1497
+msgid "failed to fetch advertised bundles"
+msgstr "theip orthu beartáin fógraithe a fháil"
+
+#: builtin/clone.c:1530 builtin/clone.c:1597
+msgid "remote transport reported error"
+msgstr "earráid tuairiscithe ar iompar"
+
+#: builtin/clone.c:1541
+#, c-format
+msgid "Remote branch %s not found in upstream %s"
+msgstr "Níor aimsíodh brainse iargúlta %s i suas sruth %s"
+
+#: builtin/clone.c:1546
+#, c-format
+msgid "Remote revision %s not found in upstream %s"
+msgstr "Ní aimsíodh athbhreithniú iargúlta %s i suas sruth %s"
+
+#: builtin/clone.c:1557
+msgid "You appear to have cloned an empty repository."
+msgstr "Is cosúil gur chlónaigh tú stór folamh."
+
+#: builtin/index-pack.c:245
+#, c-format
+msgid "object type mismatch at %s"
+msgstr "mímheaitseáil cineál réad ag %s"
+
+#: builtin/index-pack.c:265
+#, c-format
+msgid "did not receive expected object %s"
+msgstr "nár bhfuair sé réad ag súil leis %s"
+
+#: builtin/index-pack.c:268
+#, c-format
+msgid "object %s: expected type %s, found %s"
+msgstr "réad %s: súil leis an gcineál %s, aimsíodh %s"
+
+#: builtin/index-pack.c:286
+msgid "Checking objects"
+msgstr "Rud a sheiceáil"
+
+#: builtin/index-pack.c:319
+#, c-format
+msgid "cannot fill %d byte"
+msgid_plural "cannot fill %d bytes"
+msgstr[0] "ní féidir %d beart a líonadh"
+msgstr[1] "ní féidir %d beart a líonadh"
+msgstr[2] "ní féidir %d beart a líonadh"
+
+#: builtin/index-pack.c:329
+msgid "early EOF"
+msgstr "luath EOF"
+
+#: builtin/index-pack.c:330
+msgid "read error on input"
+msgstr "earráid léigh ar ionchur"
+
+#: builtin/index-pack.c:342
+msgid "used more bytes than were available"
+msgstr "úsáideadh níos mó bytes ná mar a bhí ar fáil"
+
+#: builtin/index-pack.c:349
+msgid "pack too large for current definition of off_t"
+msgstr "pacáiste ró-mhór le haghaidh sainmhíniú reatha ar off_t"
+
+#: builtin/index-pack.c:354
+#, c-format
+msgid "pack exceeds maximum allowed size (%s)"
+msgstr "sáraíonn an pacáiste an méid uasta ceadaithe (%s)"
+
+#: builtin/index-pack.c:387
+msgid "pack signature mismatch"
+msgstr "mímheaitseáil sínithe pacáiste"
+
+#: builtin/index-pack.c:390
+#, c-format
+msgid "pack version %<PRIu32> unsupported"
+msgstr "leagan pacáiste %<PRIu32> gan tacaíocht"
+
+#: builtin/index-pack.c:407
+#, c-format
+msgid "pack has bad object at offset %<PRIuMAX>: %s"
+msgstr "tá réad lochtach sa phacáiste ag an bhfritháireamh %<PRIuMAX>: %s"
+
+#: builtin/index-pack.c:513
+#, c-format
+msgid "inflate returned %d"
+msgstr "infleáil ar ais %d"
+
+#: builtin/index-pack.c:563
+msgid "offset value overflow for delta base object"
+msgstr "ró-shreabhadh luacha a fhritháireamh do réad"
+
+#: builtin/index-pack.c:571
+msgid "delta base offset is out of bound"
+msgstr "tá fhritháireamh bonn delta as ceangailte"
+
+#: builtin/index-pack.c:579
+#, c-format
+msgid "unknown object type %d"
+msgstr "cineál réad anaithnid %d"
+
+#: builtin/index-pack.c:610
+msgid "cannot pread pack file"
+msgstr "ní féidir comhad pacáiste a roghnú"
+
+#: builtin/index-pack.c:612
+#, c-format
+msgid "premature end of pack file, %<PRIuMAX> byte missing"
+msgid_plural "premature end of pack file, %<PRIuMAX> bytes missing"
+msgstr[0] "deireadh roimh am comhaid phacáiste, %<PRIuMAX> beart ar iarraidh"
+msgstr[1] "deireadh roimh am comhaid phacáiste, %<PRIuMAX> beart ar iarraidh"
+msgstr[2] "deireadh roimh am comhaid phacáiste, %<PRIuMAX> beart ar iarraidh"
+
+#: builtin/index-pack.c:638
+msgid "serious inflate inconsistency"
+msgstr "neamhchomhsheasmhacht tromchúiseach"
+
+#: builtin/index-pack.c:783 builtin/index-pack.c:789 builtin/index-pack.c:814
+#: builtin/index-pack.c:915 builtin/index-pack.c:925
+#, c-format
+msgid "SHA1 COLLISION FOUND WITH %s !"
+msgstr "FUARTHAS IMBHALL SHA1 LE %s!"
+
+#: builtin/index-pack.c:786
+#, c-format
+msgid "unable to read %s"
+msgstr "nach féidir %s a léamh"
+
+#: builtin/index-pack.c:913
+#, c-format
+msgid "cannot read existing object info %s"
+msgstr "ní féidir faisnéis réad atá ann cheana %s a léamh"
+
+#: builtin/index-pack.c:922
+#, c-format
+msgid "cannot read existing object %s"
+msgstr "ní féidir réad %s atá ann cheana a léamh"
+
+#: builtin/index-pack.c:936
+#, c-format
+msgid "invalid blob object %s"
+msgstr "réad blob neamhbhailí %s"
+
+#: builtin/index-pack.c:939 builtin/index-pack.c:958
+msgid "fsck error in packed object"
+msgstr "earráid fsck i réad pacáilte"
+
+#: builtin/index-pack.c:955
+#, c-format
+msgid "invalid %s"
+msgstr "%s neamhbhailí"
+
+#: builtin/index-pack.c:960
+#, c-format
+msgid "Not all child objects of %s are reachable"
+msgstr "Níl gach réad leanbh de %s inrochtana"
+
+#: builtin/index-pack.c:1023 builtin/index-pack.c:1070
+msgid "failed to apply delta"
+msgstr "theip ar delta a chur i bhfeidhm"
+
+#: builtin/index-pack.c:1264
+msgid "Receiving objects"
+msgstr "Rudaí a fháil"
+
+#: builtin/index-pack.c:1264
+msgid "Indexing objects"
+msgstr "Rudaí innéacsála"
+
+#: builtin/index-pack.c:1300
+msgid "pack is corrupted (SHA1 mismatch)"
+msgstr "tá an pacáiste truaillithe (neamhoiriúnú SHA1)"
+
+#: builtin/index-pack.c:1305
+msgid "cannot fstat packfile"
+msgstr "ní féidir le pacáiste fstat"
+
+#: builtin/index-pack.c:1308
+msgid "pack has junk at the end"
+msgstr "tá bruscar ag an bpacáiste ag an deireadh"
+
+#: builtin/index-pack.c:1320
+msgid "confusion beyond insanity in parse_pack_objects()"
+msgstr "mearbhall níos faide ná imní i parse_pack_objects()"
+
+#: builtin/index-pack.c:1344
+msgid "Resolving deltas"
+msgstr "Deltas a réiteach"
+
+#: builtin/index-pack.c:1355
+#, c-format
+msgid "unable to create thread: %s"
+msgstr "nach féidir snáithe a chruthú: %s"
+
+#: builtin/index-pack.c:1388
+msgid "confusion beyond insanity"
+msgstr "mearbhall níos faide ná mar gheall"
+
+#: builtin/index-pack.c:1394
+#, c-format
+msgid "completed with %d local object"
+msgid_plural "completed with %d local objects"
+msgstr[0] "críochnaithe le %d réad áitiúil"
+msgstr[1] "críochnaithe le %d réad áitiúil"
+msgstr[2] "críochnaithe le %d réad áitiúil"
+
+#: builtin/index-pack.c:1406
+#, c-format
+msgid "Unexpected tail checksum for %s (disk corruption?)"
+msgstr "Seicsum eireaball gan choinne do %s (éilliú diosca?)"
+
+#: builtin/index-pack.c:1410
+#, c-format
+msgid "pack has %d unresolved delta"
+msgid_plural "pack has %d unresolved deltas"
+msgstr[0] "tá %d delta gan réiteach sa phacáiste"
+msgstr[1] "tá %d deiltí gan réiteach sa phacáiste"
+msgstr[2] "tá %d deiltí gan réiteach sa phacáiste"
+
+#: builtin/index-pack.c:1434
+#, c-format
+msgid "unable to deflate appended object (%d)"
+msgstr "nach féidir réad cuibheangailte a dhíscaoileadh (%d)"
+
+#: builtin/index-pack.c:1530
+#, c-format
+msgid "local object %s is corrupt"
+msgstr "tá réad áitiúil %s truaillithe"
+
+#: builtin/index-pack.c:1552
+#, c-format
+msgid "packfile name '%s' does not end with '.%s'"
+msgstr "ní chríochnaíonn ainm pacáiste '%s' le '.%s'"
+
+#: builtin/index-pack.c:1576
+#, c-format
+msgid "cannot write %s file '%s'"
+msgstr "ní féidir comhad %s '%s' a scríobh"
+
+#: builtin/index-pack.c:1584
+#, c-format
+msgid "cannot close written %s file '%s'"
+msgstr "ní féidir comhad %s scríofa '%s' a dhúnadh"
+
+#: builtin/index-pack.c:1601
+#, c-format
+msgid "unable to rename temporary '*.%s' file to '%s'"
+msgstr "in ann athainmniú sealadach '*.%s' comhad chuig '%s'"
+
+#: builtin/index-pack.c:1624
+msgid "error while closing pack file"
+msgstr "earráid agus comhad pacáiste á dúnadh"
+
+#: builtin/index-pack.c:1676
+#, c-format
+msgid "bad pack.indexVersion=%<PRIu32>"
+msgstr "droch-pack.indexVersion=%<PRIu32>"
+
+#: builtin/index-pack.c:1682
+#, c-format
+msgid "invalid number of threads specified (%d)"
+msgstr "líon neamhbhailí na snáitheanna sonraithe (%d)"
+
+#: builtin/index-pack.c:1685 builtin/index-pack.c:1965
+#, c-format
+msgid "no threads support, ignoring %s"
+msgstr "gan tacaíocht do shnáitheanna, ag déanamh neamhaird ar %s"
+
+#: builtin/index-pack.c:1751
+#, c-format
+msgid "Cannot open existing pack file '%s'"
+msgstr "Ní féidir comhad pacáiste atá ann cheana '%s' a oscailt"
+
+#: builtin/index-pack.c:1753
+#, c-format
+msgid "Cannot open existing pack idx file for '%s'"
+msgstr "Ní féidir comhad idx pacáiste atá ann cheana a oscailt do '%s'"
+
+#: builtin/index-pack.c:1801
+#, c-format
+msgid "non delta: %d object"
+msgid_plural "non delta: %d objects"
+msgstr[0] "neamh-delta: %d réad"
+msgstr[1] "neamh-delta: %d réad"
+msgstr[2] "neamh-delta: %d réad"
+
+#: builtin/index-pack.c:1808
+#, c-format
+msgid "chain length = %d: %lu object"
+msgid_plural "chain length = %d: %lu objects"
+msgstr[0] "fad slabhra = %d: %lu réad"
+msgstr[1] "fad slabhra = %d: %lu réada"
+msgstr[2] "fad slabhra = %d: %lu réada"
+
+#: builtin/index-pack.c:1850
+msgid "could not start pack-objects to repack local links"
+msgstr "ní fhéadfaí pacáiste-earraí a thosú chun naisc áitiúla a athphacáil"
+
+#: builtin/index-pack.c:1855
+msgid "failed to feed local object to pack-objects"
+msgstr "theip ar réad áitiúil a bheathú ar rudaí pacáiste"
+
+#: builtin/index-pack.c:1868
+msgid "index-pack: Expecting full hex object ID lines only from pack-objects."
+msgstr ""
+"index-pack: Ag súil le línte aitheantais réada heicsidheachúlach iomlán ó pack-objects amháin."
+
+#: builtin/index-pack.c:1879
+msgid "could not finish pack-objects to repack local links"
+msgstr "ní fhéadfaí pacáistí a chríochnú chun naisc áitiúla a athphacáil"
+
+#: builtin/index-pack.c:1921
+msgid "Cannot come back to cwd"
+msgstr "Ní féidir teacht ar ais chuig cwd"
+
+#: builtin/index-pack.c:1972
+#, c-format
+msgid "bad --pack_header: %s"
+msgstr "droch --pack_header: %s"
+
+#: builtin/index-pack.c:1991 builtin/index-pack.c:1995
+#, c-format
+msgid "bad %s"
+msgstr "droch %s"
+
+#: builtin/index-pack.c:2001
+#, c-format
+msgid "unknown hash algorithm '%s'"
+msgstr "algartam hais anaithnid '%s'"
+
+#: builtin/index-pack.c:2022
+msgid "--promisor cannot be used with a pack name"
+msgstr "Ní féidir --promisor a úsáid le hainm pacáiste"
+
+#: builtin/index-pack.c:2024
+msgid "--stdin requires a git repository"
+msgstr "Teastaíonn stór git ag teastáil ó --stdin"
+
+#: builtin/index-pack.c:2050
+msgid "--verify with no packfile name given"
+msgstr "- fíorú gan aon ainm pacáiste a thugtar"
+
+#: builtin/index-pack.c:2117
+msgid "fsck error in pack objects"
+msgstr "earráid fsck i rudaí pacáiste"
+
+#: builtin/push.c:26
+msgid "git push [<options>] [<repository> [<refspec>...]]"
+msgstr "git push [<roghanna>] [<stóras> [<refspec>...]]"
+
+#: builtin/push.c:112
+msgid "tag shorthand without <tag>"
+msgstr "gearrthand clib gan <tag>"
+
+#: builtin/push.c:120
+msgid "--delete only accepts plain target ref names"
+msgstr "Ní ghlacann --delete ach le spriocainmneacha tagartha simplí"
+
+#: builtin/push.c:162
+msgid ""
+"\n"
+"To choose either option permanently, see push.default in 'git help config'.\n"
+msgstr ""
+"\n"
+"Chun ceachtar rogha a roghnú go buan, féach push.default i 'git help config'.\n"
+
+#: builtin/push.c:166
+msgid ""
+"\n"
+"To avoid automatically configuring an upstream branch when its name\n"
+"won't match the local branch, see option 'simple' of branch.autoSetupMerge\n"
+"in 'git help config'.\n"
+msgstr ""
+"\n"
+"Chun brainse suas srutha a chumrú go huathoibríoch a sheachaint nuair a\n"
+"ní mheaitseoidh sé leis an mbrainse áitiúil, féach an rogha 'simplí' de branch.autoSetupMerge\n"
+"i 'git help config'.\n"
+
+#: builtin/push.c:172
+#, c-format
+msgid ""
+"The upstream branch of your current branch does not match\n"
+"the name of your current branch.  To push to the upstream branch\n"
+"on the remote, use\n"
+"\n"
+"    git push %s HEAD:%s\n"
+"\n"
+"To push to the branch of the same name on the remote, use\n"
+"\n"
+"    git push %s HEAD\n"
+"%s%s"
+msgstr ""
+"Ní mheaitseálann an brainse suas srutha de do bhrainse reatha\n"
+"ainm do bhrainse reatha. Chun brú go dtí an bhrainse suas srutha\n"
+"ar an iargúlta, bain úsáid as\n"
+"\n"
+"    git push %s HEAD:%s\n"
+"\n"
+"Chun brú chuig an mbrainse den ainm céanna ar an iargúlta, bain úsáid as\n"
+"\n"
+"    git push %s HEAD\n"
+"%s%s"
+
+#: builtin/push.c:188
+#, c-format
+msgid ""
+"You are not currently on a branch.\n"
+"To push the history leading to the current (detached HEAD)\n"
+"state now, use\n"
+"\n"
+"    git push %s HEAD:<name-of-remote-branch>\n"
+msgstr ""
+"Níl tú ar bhrainse faoi láthair.\n"
+"Chun an stair a bhrú mar thoradh ar an gceann reatha (CEAD scoite)\n"
+"stát anois, bain úsáid as\n"
+"\n"
+" git push %s HEAD:<ainm-na-brainse-cianda>\n"
+
+#: builtin/push.c:204
+msgid ""
+"\n"
+"To have this happen automatically for branches without a tracking\n"
+"upstream, see 'push.autoSetupRemote' in 'git help config'.\n"
+msgstr ""
+"\n"
+"Chun é seo a tharlóidh go huathoibríoch do bhrainsí gan rianú\n"
+"suas sruth, féach 'Push.AutoSetUpRemote' i 'git help config'.\n"
+
+#: builtin/push.c:210
+#, c-format
+msgid ""
+"The current branch %s has no upstream branch.\n"
+"To push the current branch and set the remote as upstream, use\n"
+"\n"
+"    git push --set-upstream %s %s\n"
+"%s"
+msgstr ""
+"Níl brainse suas srutha ag an mbrainse reatha %s.\n"
+"Chun an brainse reatha a bhrú agus an iargúlta a shocrú mar thuas an sruth, bain úsáid as\n"
+"\n"
+"    git push --set-upstream %s %s\n"
+"%s"
+
+#: builtin/push.c:221
+#, c-format
+msgid "The current branch %s has multiple upstream branches, refusing to push."
+msgstr "Tá brainsí iolracha suas srutha ag an mbrainse reatha %s, ag diúltú brú."
+
+#: builtin/push.c:239
+msgid "You didn't specify any refspecs to push, and push.default is \"nothing\"."
+msgstr "Níor shonraigh tú aon refspec le brú, agus is é push.default “rud ar bith”."
+
+#: builtin/push.c:265
+#, c-format
+msgid ""
+"You are pushing to remote '%s', which is not the upstream of\n"
+"your current branch '%s', without telling me what to push\n"
+"to update which remote branch."
+msgstr ""
+"Tá tú ag brú chuig '%s' iargúlta, nach bhfuil suas sruth\n"
+"do bhrainse reatha '%s', gan insint liom cad ba cheart a bhrú\n"
+"chun an brainse iargúlta a nuashonrú."
+
+#: builtin/push.c:288
+msgid ""
+"Updates were rejected because the tip of your current branch is behind\n"
+"its remote counterpart. If you want to integrate the remote changes,\n"
+"use 'git pull' before pushing again.\n"
+"See the 'Note about fast-forwards' in 'git push --help' for details."
+msgstr ""
+"Diúltaíodh nuashonruithe toisc go bhfuil barr do bhrainse reatha taobh thiar de\n"
+"a mhacasamhail iargúlta. Más mian leat na hathruithe iargúlta a chomhtháthú,\n"
+"bain úsáid as 'git pull' sula mbrú arís.\n"
+"Féach an 'Nóta faoi fast-forward 'i 'git push --help' le haghaidh sonraí."
+
+#: builtin/push.c:294
+msgid ""
+"Updates were rejected because a pushed branch tip is behind its remote\n"
+"counterpart. If you want to integrate the remote changes, use 'git pull'\n"
+"before pushing again.\n"
+"See the 'Note about fast-forwards' in 'git push --help' for details."
+msgstr ""
+"Diúltaíodh nuashonruithe toisc go bhfuil barr brainse brúite taobh thiar dá\n"
+"comhghleacaí. Más mian leat na hathruithe iargúlta a chomhtháthú, bain úsáid as 'git pull'\n"
+"sula ndéantar é a bhrú arís.\n"
+"Féach an 'Nóta faoi fast-forward 'i 'git push --help' le haghaidh sonraí."
+
+#: builtin/push.c:300
+msgid ""
+"Updates were rejected because the remote contains work that you do not\n"
+"have locally. This is usually caused by another repository pushing to\n"
+"the same ref. If you want to integrate the remote changes, use\n"
+"'git pull' before pushing again.\n"
+"See the 'Note about fast-forwards' in 'git push --help' for details."
+msgstr ""
+"Diúltaíodh nuashonruithe toisc go bhfuil obair nach ndéanann tú san iargúlta\n"
+"a bheith agat go háitiúil. De ghnáth bíonn stór eile ag brú chuig seo\n"
+"an tagairt chéanna. Más mian leat na hathruithe iargúlta a chomhtháthú, bain úsáid as\n"
+"'git tarraing' sula ndéantar é a bhrú arís.\n"
+"Féach an 'Nóta faoi fast-forward 'i 'git push --help' le haghaidh sonraí."
+
+#: builtin/push.c:307
+msgid "Updates were rejected because the tag already exists in the remote."
+msgstr "Diúltaíodh nuashonruithe toisc go bhfuil an clib ann cheana féin sa iargúlta."
+
+#: builtin/push.c:310
+msgid ""
+"You cannot update a remote ref that points at a non-commit object,\n"
+"or update a remote ref to make it point at a non-commit object,\n"
+"without using the '--force' option.\n"
+msgstr ""
+"Ní féidir leat tagairt iargúlta a nuashonrú a chuireann in iúl ar réad neamh-thiomanta,\n"
+"nó tagairt iargúlta a nuashonrú chun é a chur in iúl ar réad neamh-thiomanta,\n"
+"gan an rogha '--force' a úsáid.\n"
+
+#: builtin/push.c:315
+msgid ""
+"Updates were rejected because the tip of the remote-tracking branch has\n"
+"been updated since the last checkout. If you want to integrate the\n"
+"remote changes, use 'git pull' before pushing again.\n"
+"See the 'Note about fast-forwards' in 'git push --help' for details."
+msgstr ""
+"Diúltaíodh nuashonruithe toisc go bhfuil barr na brainse cianrianaithe\n"
+"nuashonraíodh ón tseiceáil deireanach. Más mian leat an\n"
+"athruithe iargúlta, bain úsáid as 'git pull' sula mbrú arís.\n"
+"Féach an 'Nóta faoi fast-forward 'i 'git push --help' le haghaidh sonraí."
+
+#: builtin/push.c:385
+#, c-format
+msgid "Pushing to %s\n"
+msgstr "Ag brú chuig %s\n"
+
+#: builtin/push.c:392
+#, c-format
+msgid "failed to push some refs to '%s'"
+msgstr "theip ar roinnt réimsí a bhrú chuig '%s'"
+
+#: builtin/push.c:458
+msgid "recursing into submodule with push.recurseSubmodules=only; using on-demand instead"
+msgstr ""
+"athfhillteach isteach i bhfo-mhodúl le push.RecursesubModules=amháin; ag baint úsáide as ar-"
+"éileamh ina ionad"
+
+#: builtin/push.c:515
+#, c-format
+msgid "invalid value for '%s'"
+msgstr "luach neamhbhailí do '%s'"
+
+#: builtin/push.c:563
+msgid "repository"
+msgstr "stóras"
+
+#: builtin/push.c:564
+msgid "push all branches"
+msgstr "brúigh gach brainse"
+
+#: builtin/push.c:566
+msgid "mirror all refs"
+msgstr "scáthán gach ceann"
+
+#: builtin/push.c:568
+msgid "delete refs"
+msgstr "scrios réimsí"
+
+#: builtin/push.c:569
+msgid "push tags (can't be used with --all or --branches or --mirror)"
+msgstr "clibeanna brú (ní féidir iad a úsáid le --all nó --crainsí nó --scáthán)"
+
+#: builtin/push.c:570
+msgid "dry run"
+msgstr "rith tirim"
+
+#: builtin/push.c:571
+msgid "machine-readable output"
+msgstr "aschur inléite meaisín"
+
+#: builtin/push.c:572
+msgid "force updates"
+msgstr "nuashonruithe fórsa"
+
+#: builtin/push.c:573
+msgid "<refname>:<expect>"
+msgstr "<refname>:<expect>"
+
+#: builtin/push.c:574
+msgid "require old value of ref to be at this value"
+msgstr "a cheangal go mbeadh seanluach an tagartha ag an luach seo"
+
+#: builtin/push.c:577
+msgid "require remote updates to be integrated locally"
+msgstr "éilíonn go ndéanfaí nuashonruithe iargúlta"
+
+#: builtin/push.c:580
+msgid "control recursive pushing of submodules"
+msgstr "brú athfhillteach ar fho-mhodúil a rialú"
+
+#: builtin/push.c:581
+msgid "use thin pack"
+msgstr "bain úsáid as pacáiste tanaí"
+
+#: builtin/push.c:582 builtin/push.c:583
+msgid "receive pack program"
+msgstr "clár pacáiste a fháil"
+
+#: builtin/push.c:584
+msgid "set upstream for git pull/status"
+msgstr "socraigh suas sruth le haghaidh tarraing/stádas git"
+
+#: builtin/push.c:587
+msgid "prune locally removed refs"
+msgstr "gearradh a bhaintear go háitiúil"
+
+#: builtin/push.c:589
+msgid "bypass pre-push hook"
+msgstr "seachbhóthar crúca réamh"
+
+#: builtin/push.c:590
+msgid "push missing but relevant tags"
+msgstr "clibeanna atá ar iarraidh ach ábhartha a"
+
+#: builtin/push.c:592
+msgid "GPG sign the push"
+msgstr "Síníonn GPG an brú"
+
+#: builtin/push.c:594
+msgid "request atomic transaction on remote side"
+msgstr "iarraidh idirbheart adamach ar an taobh iargúl"
+
+#: builtin/push.c:613
+msgid "--delete doesn't make sense without any refs"
+msgstr "--ní bhíonn ciall ag scriosadh gan aon ghearradh"
+
+#: builtin/push.c:631
+#, c-format
+msgid "bad repository '%s'"
+msgstr "droch-stóras '%s'"
+
+#: builtin/push.c:632
+msgid ""
+"No configured push destination.\n"
+"Either specify the URL from the command-line or configure a remote repository using\n"
+"\n"
+"    git remote add <name> <url>\n"
+"\n"
+"and then push using the remote name\n"
+"\n"
+"    git push <name>\n"
+msgstr ""
+"Gan aon cheann scríbe brúite cumraithe.\n"
+"Sonraigh an URL ón líne ordaithe nó cumraigh stór iargúlta ag baint úsáide as\n"
+"\n"
+"    git remote add <name> <url>\n"
+"\n"
+"agus ansin brúigh ag úsáid an ainm iargúlta\n"
+"\n"
+"    git push <ainm>\n"
+
+#: builtin/push.c:650
+msgid "--all can't be combined with refspecs"
+msgstr "--ní féidir gach rud a chomhcheangal le refspecs"
+
+#: builtin/push.c:654
+msgid "--mirror can't be combined with refspecs"
+msgstr "--ní féidir scáthán a chomhcheangal le refspecs"
+
+#: builtin/push.c:662
+msgid "push options must not have new line characters"
+msgstr "ní chóir go mbeadh carachtair líne nua ag roghanna brú"
+
+#: builtin/reset.c:45
+msgid "git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]"
+msgstr "git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]"
+
+#: builtin/reset.c:46
+msgid "git reset [-q] [<tree-ish>] [--] <pathspec>..."
+msgstr "git reset [-q] [<tree-ish>] [--] <pathspec>..."
+
+#: builtin/reset.c:47
+msgid "git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]"
+msgstr "git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]"
+
+#: builtin/reset.c:48
+msgid "git reset --patch [<tree-ish>] [--] [<pathspec>...]"
+msgstr "git reset --patch [<tree-ish>] [--] [<pathspec>...]"
+
+#: builtin/reset.c:54
+msgid "mixed"
+msgstr "measctha"
+
+#: builtin/reset.c:54
+msgid "soft"
+msgstr "bog"
+
+#: builtin/reset.c:54
+msgid "hard"
+msgstr "crua"
+
+#: builtin/reset.c:54
+msgid "merge"
+msgstr "cumaisc"
+
+#: builtin/reset.c:54
+msgid "keep"
+msgstr "coinnigh"
+
+#: builtin/reset.c:104
+msgid "You do not have a valid HEAD."
+msgstr "Níl CEANN bailí agat."
+
+#: builtin/reset.c:106
+msgid "Failed to find tree of HEAD."
+msgstr "Theip ar chrann HEAD a aimsiú."
+
+#: builtin/reset.c:112
+#, c-format
+msgid "Failed to find tree of %s."
+msgstr "Theip ar chrann %s a aimsiú."
+
+#: builtin/reset.c:141
+#, c-format
+msgid "HEAD is now at %s"
+msgstr "Tá HEAD anois ag %s"
+
+#: builtin/reset.c:242
+#, c-format
+msgid "Cannot do a %s reset in the middle of a merge."
+msgstr "Ní féidir athshocrú %s a dhéanamh i lár cumaisc."
+
+#: builtin/reset.c:350
+msgid "be quiet, only report errors"
+msgstr "bí ciúin, ní thuairiscigh ach earráidí"
+
+#: builtin/reset.c:352
+msgid "skip refreshing the index after reset"
+msgstr "scipeáil an t-innéacs a athnuachan tar éis"
+
+#: builtin/reset.c:354
+msgid "reset HEAD and index"
+msgstr "athshocraigh HEAD agus innéacs"
+
+#: builtin/reset.c:357
+msgid "reset only HEAD"
+msgstr "athshocraigh CEAD amháin"
+
+#: builtin/reset.c:360 builtin/reset.c:363
+msgid "reset HEAD, index and working tree"
+msgstr "athshocraigh HEAD, innéacs agus crann oibre"
+
+#: builtin/reset.c:366
+msgid "reset HEAD but keep local changes"
+msgstr "athshocraigh HEAD ach coinnigh athruithe áiti"
+
+#: builtin/reset.c:374
+msgid "record only the fact that removed paths will be added later"
+msgstr "ní thaifeadadh ach an fíric go gcuirfear cosáin bainte leis níos déanaí"
+
+#: builtin/reset.c:408
+#, c-format
+msgid "Failed to resolve '%s' as a valid revision."
+msgstr "Theip ar '%s' a réiteach mar athbhreithniú bailí."
+
+#: builtin/reset.c:411 builtin/reset.c:419
+#, c-format
+msgid "Could not parse object '%s'."
+msgstr "Ní fhéadfaí réad '%s' a pháirseáil."
+
+#: builtin/reset.c:416
+#, c-format
+msgid "Failed to resolve '%s' as a valid tree."
+msgstr "Theip ar '%s' a réiteach mar chrann bailí."
+
+#: builtin/reset.c:437
+msgid "--mixed with paths is deprecated; use 'git reset -- <paths>' instead."
+msgstr "<paths>Tá - measctha le cosáin míshuanta; bain úsáid as 'git reset -- 'ina ionad sin."
+
+#: builtin/reset.c:439
+#, c-format
+msgid "Cannot do %s reset with paths."
+msgstr "Ní féidir %s a athshocrú le cosáin."
+
+#: builtin/reset.c:454
+#, c-format
+msgid "%s reset is not allowed in a bare repository"
+msgstr "Ní cheadaítear athshocrú %s i stóras lom"
+
+#: builtin/reset.c:488
+msgid "Unstaged changes after reset:"
+msgstr "Athruithe gan stáitse tar éis athshocrú:"
+
+#: builtin/reset.c:491
+#, c-format
+msgid ""
+"It took %.2f seconds to refresh the index after reset.  You can use\n"
+"'--no-refresh' to avoid this."
+msgstr ""
+"Thóg sé %.2f soicind an t-innéacs a athnuachan tar éis athshocrú. Is féidir leat úsáid a bhaint "
+"as\n"
+"'--no-athnuachan' chun é seo a sheachaint."
+
+#: builtin/reset.c:509
+#, c-format
+msgid "Could not reset index file to revision '%s'."
+msgstr "Ní fhéadfaí comhad innéacs a athshocrú chun athbhreithniú '%s'."
+
+#: builtin/reset.c:514
+msgid "Could not write new index file."
+msgstr "Ní fhéadfaí comhad innéacs nua a scríobh."
+
+#: remote.c:308
+#, c-format
+msgid ""
+"reading remote from \"%s/%s\", which is nominated for removal.\n"
+"\n"
+"If you still use the \"remotes/\" directory it is recommended to\n"
+"migrate to config-based remotes:\n"
+"\n"
+"\tgit remote rename %s %s\n"
+"\n"
+"If you cannot, please let us know why you still need to use it by\n"
+"sending an e-mail to <git@vger.kernel.org>."
+msgstr ""
+"léamh iargúlta ó \"%s/%s\", atá ainmnithe lena bhaint.\n"
+"\n"
+"Má úsáideann tú an eolaire “iargúlta/” fós moltar\n"
+"aistriú chuig iargúlta bunaithe ar chumraíocht:\n"
+"\n"
+" git iargúlta a athainmniú %s %s\n"
+"\n"
+"Mura féidir leat, cuir in iúl dúinn le do thoil cén fáth a gcaithfidh tú\n"
+"é a úsáid fós trí ríomhphost a sheoladh chuig <git@vger.kernel.org>."
+
+#: remote.c:469
+#, c-format
+msgid "config remote shorthand cannot begin with '/': %s"
+msgstr "ní féidir le '/' tosú le gearrthánach iargúlta config: %s"
+
+#: remote.c:515
+msgid "more than one receivepack given, using the first"
+msgstr "níos mó ná pacáiste glacadóra amháin a thugtar, ag baint úsáide as an gcéad"
+
+#: remote.c:523
+msgid "more than one uploadpack given, using the first"
+msgstr "níos mó ná pacáiste uaslódála amháin tugtha, ag baint úsáide as an gcéad"
+
+#: remote.c:558
+#, c-format
+msgid "unrecognized followRemoteHEAD value '%s' ignored"
+msgstr "neamhaird a dhéanamh ar luach FollowRemoteHead '%s' gan aithint"
+
+#: remote.c:732
+#, c-format
+msgid "unrecognized value transfer.credentialsInUrl: '%s'"
+msgstr "aistriú luacha neamhaitheantaí.CredentialsInURL: '%s'"
+
+#: remote.c:748 remote.c:750
+#, c-format
+msgid "URL '%s' uses plaintext credentials"
+msgstr "Úsáideann URL '%s' dhintiúir téacs simplí"
+
+#: remote.c:853
+#, c-format
+msgid "Cannot fetch both %s and %s to %s"
+msgstr "Ní féidir %s agus %s a fháil chuig %s"
+
+#: remote.c:857
+#, c-format
+msgid "%s usually tracks %s, not %s"
+msgstr "Is gnách go rianann %s %s, ní %s"
+
+#: remote.c:861
+#, c-format
+msgid "%s tracks both %s and %s"
+msgstr "Rianann %s %s agus %s araon"
+
+#: remote.c:1147
+#, c-format
+msgid "src refspec %s does not match any"
+msgstr "src refspec %s ní mheaitseálann aon"
+
+#: remote.c:1152
+#, c-format
+msgid "src refspec %s matches more than one"
+msgstr "meaitseálann src refspec %s níos mó ná ceann amháin"
+
+#. TRANSLATORS: "matches '%s'%" is the <dst> part of "git push
+#. <remote> <src>:<dst>" push, and "being pushed ('%s')" is
+#. the <src>.
+#.
+#: remote.c:1167
+#, c-format
+msgid ""
+"The destination you provided is not a full refname (i.e.,\n"
+"starting with \"refs/\"). We tried to guess what you meant by:\n"
+"\n"
+"- Looking for a ref that matches '%s' on the remote side.\n"
+"- Checking if the <src> being pushed ('%s')\n"
+"  is a ref in \"refs/{heads,tags}/\". If so we add a corresponding\n"
+"  refs/{heads,tags}/ prefix on the remote side.\n"
+"\n"
+"Neither worked, so we gave up. You must fully qualify the ref."
+msgstr ""
+"Ní ainm athainmnithe iomlán é an ceann scríbe a sholáthair tú (i.e., \n"
+"ag tosú le \"refs/\"). Rinneamar iarracht buille faoi thuairim a thabhairt faoi cad a bhí i gceist "
+"agat le:\n"
+"\n"
+"- Ag lorg tagartha a mheaitseálann '%s' ar an taobh iargúlta.\n"
+"- Ag seiceáil an bhfuil an <src> atá á bhrú ('%s') ina thagairt \n"
+"  i \"refs/{heads,tags}/\". Más ea, cuirimid réimír comhfhreagrach r\n"
+"  efs/{heads,tags}/ leis ar an taobh iargúlta.\n"
+"\n"
+"Níor oibrigh ceachtar acu, mar sin thugamar suas. Caithfidh tú an tagairt a cháiliú go hiomlán."
+
+#: remote.c:1187
+#, c-format
+msgid ""
+"The <src> part of the refspec is a commit object.\n"
+"Did you mean to create a new branch by pushing to\n"
+"'%s:refs/heads/%s'?"
+msgstr ""
+"Is <src>réad tiomanta í an chuid den refspec.\n"
+"An raibh i gceist agat brainse nua a chruthú trí bhrú chuig\n"
+"'%s:refs/heads/%s'?"
+
+#: remote.c:1192
+#, c-format
+msgid ""
+"The <src> part of the refspec is a tag object.\n"
+"Did you mean to create a new tag by pushing to\n"
+"'%s:refs/tags/%s'?"
+msgstr ""
+"Is <src>réad clibeanna é an chuid den refspec.\n"
+"An raibh i gceist agat clib nua a chruthú trí bhrú chuig\n"
+"'%s:refs/tags/%s'?"
+
+#: remote.c:1197
+#, c-format
+msgid ""
+"The <src> part of the refspec is a tree object.\n"
+"Did you mean to tag a new tree by pushing to\n"
+"'%s:refs/tags/%s'?"
+msgstr ""
+"Is <src>réad crann í an chuid den refspec.\n"
+"An raibh sé i gceist agat crann nua a chlibeáil trí bhrú chuig\n"
+"'%s:refs/tags/%s'?"
+
+#: remote.c:1202
+#, c-format
+msgid ""
+"The <src> part of the refspec is a blob object.\n"
+"Did you mean to tag a new blob by pushing to\n"
+"'%s:refs/tags/%s'?"
+msgstr ""
+"Is <src>réad blob é an chuid den refspec.\n"
+"An raibh sé i gceist agat blob nua a chlibeáil trí bhrú chuig\n"
+"'%s:refs/tags/%s'?"
+
+#: remote.c:1242
+#, c-format
+msgid "%s cannot be resolved to branch"
+msgstr "Ní féidir %s a réiteach chuig an mbrainse"
+
+#: remote.c:1253
+#, c-format
+msgid "unable to delete '%s': remote ref does not exist"
+msgstr "ní féidir '%s' a scriosadh: níl tagairt iargúlta ann"
+
+#: remote.c:1265
+#, c-format
+msgid "dst refspec %s matches more than one"
+msgstr "meaitseálann dst refspec %s níos mó ná ceann amháin"
+
+#: remote.c:1276
+#, c-format
+msgid "dst ref %s receives from more than one src"
+msgstr "faigheann dst ref %s ó níos mó ná src amháin"
+
+#: remote.c:1806 remote.c:1913
+msgid "HEAD does not point to a branch"
+msgstr "Ní chuireann HEAD in iúl do bhrainse"
+
+#: remote.c:1815
+#, c-format
+msgid "no such branch: '%s'"
+msgstr "aon bhrainse den sórt sin: '%s'"
+
+#: remote.c:1818
+#, c-format
+msgid "no upstream configured for branch '%s'"
+msgstr "níl aon chumrú suas srutha le haghaidh brainse '%s'"
+
+#: remote.c:1824
+#, c-format
+msgid "upstream branch '%s' not stored as a remote-tracking branch"
+msgstr "brainse suas srutha '%s' nach stóráiltear mar bhrainse cianrianaithe"
+
+#: remote.c:1839
+#, c-format
+msgid "push destination '%s' on remote '%s' has no local tracking branch"
+msgstr "níl aon bhrainse rianaithe áitiúil ag ceann scríbe brúite '%s' ar iargúlta '%s'"
+
+#: remote.c:1854
+#, c-format
+msgid "branch '%s' has no remote for pushing"
+msgstr "níl aon iargúlta ag brainse '%s' chun brú"
+
+#: remote.c:1864
+#, c-format
+msgid "push refspecs for '%s' do not include '%s'"
+msgstr "ní chuimsíonn '%s' brú refspections do '%s'"
+
+#: remote.c:1877
+msgid "push has no destination (push.default is 'nothing')"
+msgstr "níl aon cheann scríbe ag brú (is é 'rud ar bith' push.default)"
+
+#: remote.c:1899
+msgid "cannot resolve 'simple' push to a single destination"
+msgstr "ní féidir brú 'simplí' a réiteach chuig ceann scríbe amháin"
+
+#: remote.c:2034
+#, c-format
+msgid "couldn't find remote ref %s"
+msgstr "ní raibh in ann tagairt iargúlta %s a fháil"
+
+#: remote.c:2047
+#, c-format
+msgid "* Ignoring funny ref '%s' locally"
+msgstr "* Ag neamhaird den tagairt ghreannmhar '%s' go háitiúil"
+
+#: remote.c:2135
+msgid "revision walk setup failed"
+msgstr "theip ar socrú siúlóid ath"
+
+#: remote.c:2216
+#, c-format
+msgid "Your branch is based on '%s', but the upstream is gone.\n"
+msgstr "Tá do bhrainse bunaithe ar '%s', ach tá an suas sruth imithe.\n"
+
+#: remote.c:2220
+msgid "  (use \"git branch --unset-upstream\" to fixup)\n"
+msgstr " (bain úsáid as \"git branch --unset-upstream\" chun é a dheisiú)\n"
+
+#: remote.c:2223
+#, c-format
+msgid "Your branch is up to date with '%s'.\n"
+msgstr "Tá do bhrainse cothrom le dáta le '%s'.\n"
+
+#: remote.c:2227
+#, c-format
+msgid "Your branch and '%s' refer to different commits.\n"
+msgstr "Tagraíonn do bhrainse agus '%s' do thiomnuithe difriúla.\n"
+
+#: remote.c:2230
+#, c-format
+msgid "  (use \"%s\" for details)\n"
+msgstr " (bain úsáid as \"%s\" le haghaidh sonraí)\n"
+
+#: remote.c:2234
+#, c-format
+msgid "Your branch is ahead of '%s' by %d commit.\n"
+msgid_plural "Your branch is ahead of '%s' by %d commits.\n"
+msgstr[0] "Tá do bhrainse chun tosaigh ar '%s' le tiomantas %d.\n"
+msgstr[1] "Tá do bhrainse chun tosaigh ar '%s' le tiomantais %d.\n"
+msgstr[2] "Tá do bhrainse chun tosaigh ar '%s' le tiomantais %d.\n"
+
+#: remote.c:2240
+msgid "  (use \"git push\" to publish your local commits)\n"
+msgstr " (bain úsáid as “git push” chun do thiomanta áitiúla a fhoilsiú)\n"
+
+#: remote.c:2243
+#, c-format
+msgid "Your branch is behind '%s' by %d commit, and can be fast-forwarded.\n"
+msgid_plural "Your branch is behind '%s' by %d commits, and can be fast-forwarded.\n"
+msgstr[0] ""
+"Tá do bhrainse taobh thiar de '%s' faoi %d tiomantas, agus is féidir é a luasghéarú ar aghaidh.\n"
+msgstr[1] ""
+"Tá do bhrainse taobh thiar de '%s' faoi %d tiomnuithe, agus is féidir é a luasghéarú ar aghaidh.\n"
+msgstr[2] ""
+"Tá do bhrainse taobh thiar de '%s' faoi %d tiomnuithe, agus is féidir é a luasghéarú ar aghaidh.\n"
+
+#: remote.c:2251
+msgid "  (use \"git pull\" to update your local branch)\n"
+msgstr " (bain úsáid as “git pull” chun do bhrainse áitiúil a nuashonrú)\n"
+
+#: remote.c:2254
+#, c-format
+msgid ""
+"Your branch and '%s' have diverged,\n"
+"and have %d and %d different commit each, respectively.\n"
+msgid_plural ""
+"Your branch and '%s' have diverged,\n"
+"and have %d and %d different commits each, respectively.\n"
+msgstr[0] ""
+"Tá do bhrainse agus '%s' scartha óna chéile,\n"
+"agus tá %d agus %d tiomnú difriúil acu faoi seach.\n"
+msgstr[1] ""
+"Tá do bhrainse agus '%s' scartha óna chéile,\n"
+"agus tá %d agus %d tiomnuithe difriúla acu faoi seach.\n"
+msgstr[2] ""
+"Tá do bhrainse agus '%s' scartha óna chéile,\n"
+"agus tá %d agus %d tiomnuithe difriúla acu faoi seach.\n"
+
+#: remote.c:2265
+msgid "  (use \"git pull\" if you want to integrate the remote branch with yours)\n"
+msgstr " (bain úsáid as “git pull” más mian leat an brainse iargúlta a chomhtháthú le leatsa)\n"
+
+#: remote.c:2464
+#, c-format
+msgid "cannot parse expected object name '%s'"
+msgstr "ní féidir ainm réad a bhfuil súil leis '%s' a pharsáil"
+
+#: remote.c:2757
+#, c-format
+msgid "cannot strip one component off url '%s'"
+msgstr "ní féidir comhpháirt amháin a bhaint as url '%s'"
+
+#: wt-status.c:178
+msgid "Unmerged paths:"
+msgstr "Cosáin neamh-chumasaithe:"
+
+#: wt-status.c:207 wt-status.c:239
+msgid "  (use \"git restore --staged <file>...\" to unstage)"
+msgstr " (bain úsáid as “git restore --stage <comhad>...” chun an stáitse a dhíchur)"
+
+#: wt-status.c:210 wt-status.c:242
+#, c-format
+msgid "  (use \"git restore --source=%s --staged <file>...\" to unstage)"
+msgstr " (bain úsáid as \"git restore --source=%s --staged <comhad>...\" chun an stáitse a dhí-ardú)"
+
+#: wt-status.c:213 wt-status.c:245
+msgid "  (use \"git rm --cached <file>...\" to unstage)"
+msgstr " (bain úsáid as “git rm --cached <comhad>...” chun an stáitse a dhíchur)"
+
+#: wt-status.c:217
+msgid "  (use \"git add <file>...\" to mark resolution)"
+msgstr " (bain úsáid as “git add <comhad>...” chun réiteach a mharcáil)"
+
+#: wt-status.c:219 wt-status.c:223
+msgid "  (use \"git add/rm <file>...\" as appropriate to mark resolution)"
+msgstr " (bain úsáid \"git add/rm <comhad>...\" de réir mar is cuí chun réiteach a mharcáil)"
+
+#: wt-status.c:221
+msgid "  (use \"git rm <file>...\" to mark resolution)"
+msgstr " (bain úsáid as “git rm <comhad>...” chun réiteach a mharcáil)"
+
+#: wt-status.c:231 wt-status.c:1174
+msgid "Changes to be committed:"
+msgstr "Athruithe atá le déanamh:"
+
+#: wt-status.c:254 wt-status.c:1183
+msgid "Changes not staged for commit:"
+msgstr "Athruithe nach ndearnadh a chur ar stáitse le haghaidh tiomantais:"
+
+#: wt-status.c:258
+msgid "  (use \"git add <file>...\" to update what will be committed)"
+msgstr "  (bain úsáid as “git add <comhad>...” chun an méid a bheidh tiomanta a nuashonrú)"
+
+#: wt-status.c:260
+msgid "  (use \"git add/rm <file>...\" to update what will be committed)"
+msgstr "  (bain úsáid as “git add/rm <comhad>...” chun an méid a bheidh tiomanta a nuashonrú)"
+
+#: wt-status.c:261
+msgid "  (use \"git restore <file>...\" to discard changes in working directory)"
+msgstr " (bain úsáid as “git restore <comhad>...” chun athruithe ar eolaire oibre a dhiúscairt)"
+
+#: wt-status.c:263
+msgid "  (commit or discard the untracked or modified content in submodules)"
+msgstr " (an t-ábhar neamhrianaithe nó modhnaithe i bhfo-mhodúil a thiomsú nó a dhiúscairt)"
+
+#: wt-status.c:274
+#, c-format
+msgid "  (use \"git %s <file>...\" to include in what will be committed)"
+msgstr " (bain úsáid as “git %s <comhad>...” chun an méid a bheidh tiomanta san áireamh)"
+
+#: wt-status.c:286
+msgid "both deleted:"
+msgstr "scriosta an dá cheann:"
+
+#: wt-status.c:288
+msgid "added by us:"
+msgstr "curtha leis againn:"
+
+#: wt-status.c:290
+msgid "deleted by them:"
+msgstr "scriosta ag siad:"
+
+#: wt-status.c:292
+msgid "added by them:"
+msgstr "a chuir siad leis:"
+
+#: wt-status.c:294
+msgid "deleted by us:"
+msgstr "scriosta againn:"
+
+#: wt-status.c:296
+msgid "both added:"
+msgstr "chuir an bheirt leis:"
+
+#: wt-status.c:298
+msgid "both modified:"
+msgstr "an dá cheann modhnaithe:"
+
+#: wt-status.c:308
+msgid "new file:"
+msgstr "comhad nua:"
+
+#: wt-status.c:310
+msgid "copied:"
+msgstr "cóipeáilte:"
+
+#: wt-status.c:312
+msgid "deleted:"
+msgstr "scriosta:"
+
+#: wt-status.c:314
+msgid "modified:"
+msgstr "modhnaithe:"
+
+#: wt-status.c:316
+msgid "renamed:"
+msgstr "athainmnithe:"
+
+#: wt-status.c:318
+msgid "typechange:"
+msgstr "cineál cineál:"
+
+#: wt-status.c:320
+msgid "unknown:"
+msgstr "anaithnid:"
+
+#: wt-status.c:322
+msgid "unmerged:"
+msgstr "gan chumasc:"
+
+#: wt-status.c:402
+msgid "new commits, "
+msgstr "tiomantais nua, "
+
+#: wt-status.c:404
+msgid "modified content, "
+msgstr "ábhar modhnaithe, "
+
+#: wt-status.c:406
+msgid "untracked content, "
+msgstr "ábhar neamhrianaithe, "
+
+#: wt-status.c:1000
+#, c-format
+msgid "Your stash currently has %d entry"
+msgid_plural "Your stash currently has %d entries"
+msgstr[0] "Tá %d iontráil i do stash faoi láthair"
+msgstr[1] "Tá %d iontrálacha ar do stash faoi láthair"
+msgstr[2] "Tá %d iontrálacha ar do stash faoi láthair"
+
+#: wt-status.c:1031
+msgid "Submodules changed but not updated:"
+msgstr "Fo-mhodúil athraithe ach gan nuashonrú:"
+
+#: wt-status.c:1033
+msgid "Submodule changes to be committed:"
+msgstr "Athruithe fo-mhodúil atá le tiomantas:"
+
+#: wt-status.c:1118
+msgid ""
+"Do not modify or remove the line above.\n"
+"Everything below it will be ignored."
+msgstr ""
+"Ná déan an líne thuas a mhodhnú ná a bhaint.\n"
+"Déanfar neamhaird ar gach rud thíos é."
+
+#: wt-status.c:1214
+#, c-format
+msgid ""
+"\n"
+"It took %.2f seconds to compute the branch ahead/behind values.\n"
+"You can use '--no-ahead-behind' to avoid this.\n"
+msgstr ""
+"\n"
+"Thóg sé %.2f soicind chun luachanna na brainse chun tosaigh/taobh thiar a ríomh.\n"
+"Is féidir leat '--no-ahead-behind' a úsáid chun seo a sheachaint.\n"
+
+#: wt-status.c:1246
+msgid "You have unmerged paths."
+msgstr "Tá cosáin neamh-chumasaithe agat."
+
+#: wt-status.c:1249
+msgid "  (fix conflicts and run \"git commit\")"
+msgstr " (coinbhleachtaí a shocrú agus reáchtáil “git commit”)"
+
+#: wt-status.c:1251
+msgid "  (use \"git merge --abort\" to abort the merge)"
+msgstr " (bain úsáid as “git merge --abort” chun an cumaisc a chur ar deireadh)"
+
+#: wt-status.c:1255
+msgid "All conflicts fixed but you are still merging."
+msgstr "Socraíodh gach coinbhleacht ach tá tú fós ag cumasc."
+
+#: wt-status.c:1258
+msgid "  (use \"git commit\" to conclude merge)"
+msgstr "  (bain úsáid as “git commit” chun cumasc a thabhairt i gcrích)"
+
+#: wt-status.c:1269
+msgid "You are in the middle of an am session."
+msgstr "Tá tú i lár seisiún am."
+
+#: wt-status.c:1272
+msgid "The current patch is empty."
+msgstr "Tá an paiste reatha folamh."
+
+#: wt-status.c:1277
+msgid "  (fix conflicts and then run \"git am --continue\")"
+msgstr "  (déan coinbhleachtaí a shocrú agus ansin rith “git am --continue”)"
+
+#: wt-status.c:1279
+msgid "  (use \"git am --skip\" to skip this patch)"
+msgstr " (bain úsáid as “git am --skip” chun an paiste seo a scipeáil)"
+
+#: wt-status.c:1282
+msgid "  (use \"git am --allow-empty\" to record this patch as an empty commit)"
+msgstr ""
+" (bain úsáid as “git am --allow-empty” chun an paiste seo a thaifeadadh mar thiomantas folamh)"
+
+#: wt-status.c:1284
+msgid "  (use \"git am --abort\" to restore the original branch)"
+msgstr " (bain úsáid as “git am --abort” chun an bhrainse bunaidh a chur ar ais)"
+
+#: wt-status.c:1430
+msgid "git-rebase-todo is missing."
+msgstr "tá git-rebase-todo ar iarraidh."
+
+#: wt-status.c:1432
+msgid "No commands done."
+msgstr "Níl aon orduithe déanta."
+
+#: wt-status.c:1435
+#, c-format
+msgid "Last command done (%<PRIuMAX> command done):"
+msgid_plural "Last commands done (%<PRIuMAX> commands done):"
+msgstr[0] "An chéad ordú eile le déanamh (%<PRIuMAX>ordú atá fágtha):"
+msgstr[1] "Na chéad orduithe eile le déanamh (%<PRIuMAX> orduithe atá fágtha):"
+msgstr[2] "Na chéad orduithe eile le déanamh (%<PRIuMAX> orduithe atá fágtha):"
+
+#: wt-status.c:1447
+#, c-format
+msgid "  (see more in file %s)"
+msgstr " (féach tuilleadh i gcomhad %s)"
+
+#: wt-status.c:1454
+msgid "No commands remaining."
+msgstr "Níl aon orduithe fágtha."
+
+#: wt-status.c:1457
+#, c-format
+msgid "Next command to do (%<PRIuMAX> remaining command):"
+msgid_plural "Next commands to do (%<PRIuMAX> remaining commands):"
+msgstr[0] "An chéad ordú eile le déanamh (%<PRIuMAX> an t-ordú atá fágtha):"
+msgstr[1] "Na chéad orduithe eile le déanamh (%<PRIuMAX> orduithe atá fágtha):"
+msgstr[2] "Na chéad orduithe eile le déanamh (%<PRIuMAX> orduithe atá fágtha):"
+
+#: wt-status.c:1465
+msgid "  (use \"git rebase --edit-todo\" to view and edit)"
+msgstr " (bain úsáid as “git rebase --edit-todo” chun féachaint agus eagar a chur in eagar)"
+
+#: wt-status.c:1477
+#, c-format
+msgid "You are currently rebasing branch '%s' on '%s'."
+msgstr "Tá tú ag athbhunú brainse '%s' faoi láthair ar '%s'."
+
+#: wt-status.c:1482
+msgid "You are currently rebasing."
+msgstr "Tá tú ag athbhunú faoi láthair."
+
+#: wt-status.c:1495
+msgid "  (fix conflicts and then run \"git rebase --continue\")"
+msgstr " (déan coinbhleachtaí a shocrú agus ansin rith “git rebase --continue”)"
+
+#: wt-status.c:1497
+msgid "  (use \"git rebase --skip\" to skip this patch)"
+msgstr " (bain úsáid as “git rebase --skip” chun an paiste seo a scipeáil)"
+
+#: wt-status.c:1499
+msgid "  (use \"git rebase --abort\" to check out the original branch)"
+msgstr " (bain úsáid as “git rebase --abort” chun an bhrainse bunaidh a sheiceáil)"
+
+#: wt-status.c:1506
+msgid "  (all conflicts fixed: run \"git rebase --continue\")"
+msgstr " (gach coinbhleacht socraithe: reáchtáil “git rebase --continue”)"
+
+#: wt-status.c:1510
+#, c-format
+msgid "You are currently splitting a commit while rebasing branch '%s' on '%s'."
+msgstr "Tá tiomantas á roinnt agat faoi láthair agus tú ag athbhunú brainse '%s' ar '%s'."
+
+#: wt-status.c:1515
+msgid "You are currently splitting a commit during a rebase."
+msgstr "Tá tú ag roinnt tiomantas faoi láthair le linn athbhunaithe."
+
+#: wt-status.c:1518
+msgid "  (Once your working directory is clean, run \"git rebase --continue\")"
+msgstr " (Nuair a bheidh d'eolaire oibre glan, reáchtáil “git rebase --continue”)"
+
+#: wt-status.c:1522
+#, c-format
+msgid "You are currently editing a commit while rebasing branch '%s' on '%s'."
+msgstr "Tá tú ag eagarthóireacht faoi láthair agus tú ag athbhunú brainse '%s' ar '%s'."
+
+#: wt-status.c:1527
+msgid "You are currently editing a commit during a rebase."
+msgstr "Tá tú ag eagarthóireacht tiomanta faoi láthair le linn athbhunaithe."
+
+#: wt-status.c:1530
+msgid "  (use \"git commit --amend\" to amend the current commit)"
+msgstr " (bain úsáid as “git commit --amend” chun an tiomantas reatha a leasú)"
+
+#: wt-status.c:1532
+msgid "  (use \"git rebase --continue\" once you are satisfied with your changes)"
+msgstr " (bain úsáid as “git rebase --continue” nuair a bheidh tú sásta le d'athruithe)"
+
+#: wt-status.c:1543
+msgid "Cherry-pick currently in progress."
+msgstr "Cherry-pick atá ar siúl faoi láthair."
+
+#: wt-status.c:1546
+#, c-format
+msgid "You are currently cherry-picking commit %s."
+msgstr "Tá tiomantas %s ag piocadh silíní faoi láthair."
+
+#: wt-status.c:1553
+msgid "  (fix conflicts and run \"git cherry-pick --continue\")"
+msgstr " (coinbhleachtaí a shocrú agus reáchtáil “git cherry-pick --continue”)"
+
+#: wt-status.c:1556
+msgid "  (run \"git cherry-pick --continue\" to continue)"
+msgstr " (reáchtáil “git cherry-pick - lean” chun leanúint ar aghaidh)"
+
+#: wt-status.c:1559
+msgid "  (all conflicts fixed: run \"git cherry-pick --continue\")"
+msgstr " (gach coinbhleacht socraithe: reáchtáil “git cherry-pick --continue”)"
+
+#: wt-status.c:1561
+msgid "  (use \"git cherry-pick --skip\" to skip this patch)"
+msgstr " (bain úsáid as “git cherry-pick --skip” chun an paiste seo a scipeáil)"
+
+#: wt-status.c:1563
+msgid "  (use \"git cherry-pick --abort\" to cancel the cherry-pick operation)"
+msgstr " (bain úsáid as “git cherry-pick --abort” chun an oibríocht pioc silíní a chealú)"
+
+#: wt-status.c:1573
+msgid "Revert currently in progress."
+msgstr "Ar ais atá ar siúl faoi láthair."
+
+#: wt-status.c:1576
+#, c-format
+msgid "You are currently reverting commit %s."
+msgstr "Tá tiomantas %s á chur ar ais faoi láthair."
+
+#: wt-status.c:1582
+msgid "  (fix conflicts and run \"git revert --continue\")"
+msgstr " (déan coinbhleachtaí a shocrú agus rith “git revert --continue”)"
+
+#: wt-status.c:1585
+msgid "  (run \"git revert --continue\" to continue)"
+msgstr " (reáchtáil “git revert --continue” chun leanúint ar aghaidh)"
+
+#: wt-status.c:1588
+msgid "  (all conflicts fixed: run \"git revert --continue\")"
+msgstr " (gach coinbhleacht socraithe: reáchtáil “git revert --continue”)"
+
+#: wt-status.c:1590
+msgid "  (use \"git revert --skip\" to skip this patch)"
+msgstr " (bain úsáid as “git revert --skip” chun an paiste seo a scipeáil)"
+
+#: wt-status.c:1592
+msgid "  (use \"git revert --abort\" to cancel the revert operation)"
+msgstr " (bain úsáid as “git revert --abort” chun an oibríocht aisghabhála a chealú)"
+
+#: wt-status.c:1602
+#, c-format
+msgid "You are currently bisecting, started from branch '%s'."
+msgstr "Tá tú ag déileáil faoi láthair, tosaigh tú ó bhrainse '%s'."
+
+#: wt-status.c:1606
+msgid "You are currently bisecting."
+msgstr "Tá tú ag déileáil faoi láthair."
+
+#: wt-status.c:1609
+msgid "  (use \"git bisect reset\" to get back to the original branch)"
+msgstr " (bain úsáid as “git bisect reset” chun filleadh ar an mbrainse bunaidh)"
+
+#: wt-status.c:1620
+msgid "You are in a sparse checkout."
+msgstr "Tá tú i seiceáil neamhchoitianta."
+
+#: wt-status.c:1623
+#, c-format
+msgid "You are in a sparse checkout with %d%% of tracked files present."
+msgstr "Tá tú i seiceáil neamhchoitianta le %d%% de na comhaid rianaithe i láthair."
+
+#: wt-status.c:1871
+msgid "On branch "
+msgstr "Ar bhrainse "
+
+#: wt-status.c:1878
+msgid "interactive rebase in progress; onto "
+msgstr "athbhunú idirghníomhach atá ar siúl; ar "
+
+#: wt-status.c:1880
+msgid "rebase in progress; onto "
+msgstr "athbhunú atá ar siúl; ar "
+
+#: wt-status.c:1885
+msgid "HEAD detached at "
+msgstr "HEAD scoite ag "
+
+#: wt-status.c:1887
+msgid "HEAD detached from "
+msgstr "CEANN scartha ó "
+
+#: wt-status.c:1890
+msgid "Not currently on any branch."
+msgstr "Níl sé ar aon bhrainse faoi láthair."
+
+#: wt-status.c:1907
+msgid "Initial commit"
+msgstr "Tiomantas tosaigh"
+
+#: wt-status.c:1908
+msgid "No commits yet"
+msgstr "Níl aon gealltanais fós"
+
+#: wt-status.c:1922
+msgid "Untracked files"
+msgstr "Comhaid neamhrianaithe"
+
+#: wt-status.c:1924
+msgid "Ignored files"
+msgstr "Comhaid neamhaird"
+
+#: wt-status.c:1929
+#, c-format
+msgid ""
+"It took %.2f seconds to enumerate untracked files,\n"
+"but the results were cached, and subsequent runs may be faster."
+msgstr ""
+"Thóg sé %.2f soicind comhaid gan rianú a áireamh,\n"
+"ach cuireadh na torthaí a chosc, agus d'fhéadfadh rith ina dhiaidh sin a bheith níos gasta."
+
+#: wt-status.c:1934
+#, c-format
+msgid "It took %.2f seconds to enumerate untracked files."
+msgstr "Thóg sé %.2f soicind comhaid gan rianú a áireamh."
+
+#: wt-status.c:1938
+msgid "See 'git help status' for information on how to improve this."
+msgstr "Féach 'git help status' le haghaidh faisnéise maidir le conas é seo a fheabhsú."
+
+#: wt-status.c:1942
+#, c-format
+msgid "Untracked files not listed%s"
+msgstr "Comhaid neamhrianaithe nár liostaíodh %s"
+
+#: wt-status.c:1944
+msgid " (use -u option to show untracked files)"
+msgstr " (bain úsáid as an rogha -u chun comhaid neamhrianaithe a thaispeáint)"
+
+#: wt-status.c:1950
+msgid "No changes"
+msgstr "Gan aon athruithe"
+
+#: wt-status.c:1955
+#, c-format
+msgid "no changes added to commit (use \"git add\" and/or \"git commit -a\")\n"
+msgstr "níl aon athruithe curtha le tiomantas (bain úsáid as “git add” agus/nó “git commit -a”)\n"
+
+#: wt-status.c:1959
+#, c-format
+msgid "no changes added to commit\n"
+msgstr "níl aon athruithe curtha le tiomantas\n"
+
+#: wt-status.c:1963
+#, c-format
+msgid "nothing added to commit but untracked files present (use \"git add\" to track)\n"
+msgstr ""
+"ní chuirtear aon rud le tiomantas ach comhaid neamhrianaithe i láthair (bain úsáid as “git add” "
+"chun rianú)\n"
+
+#: wt-status.c:1967
+#, c-format
+msgid "nothing added to commit but untracked files present\n"
+msgstr "ní chuir aon rud le tiomantas ach comhaid neamhrianaithe i láthair\n"
+
+#: wt-status.c:1971
+#, c-format
+msgid "nothing to commit (create/copy files and use \"git add\" to track)\n"
+msgstr "aon rud le tiomantas (comhaid a chruthú/cóipeáil agus bain úsáid as “git add” chun rianú)\n"
+
+#: wt-status.c:1975 wt-status.c:1981
+#, c-format
+msgid "nothing to commit\n"
+msgstr "aon rud le tiomantas\n"
+
+#: wt-status.c:1978
+#, c-format
+msgid "nothing to commit (use -u to show untracked files)\n"
+msgstr "aon rud le tiomantas (bain úsáid as -u chun comhaid neamhrianaithe a thaispeáint)\n"
+
+#: wt-status.c:1983
+#, c-format
+msgid "nothing to commit, working tree clean\n"
+msgstr "aon rud le tiomantas, crann oibre glan\n"
+
+#: wt-status.c:2088
+msgid "No commits yet on "
+msgstr "Níl aon gealltanas ar aghaidh go fóill "
+
+#: wt-status.c:2092
+msgid "HEAD (no branch)"
+msgstr "CEAD (gan aon bhrainse)"
+
+#: wt-status.c:2122
+msgid "gone"
+msgstr "imithe"
+
+#: wt-status.c:2124
+msgid "different"
+msgstr "difriúil"
+
+#: wt-status.c:2126 wt-status.c:2134
+msgid "behind "
+msgstr "taobh thiar "
+
+#: wt-status.c:2129 wt-status.c:2132
+msgid "ahead "
+msgstr "chun tosaigh "
+
+#. TRANSLATORS: the action is e.g. "pull with rebase"
+#: wt-status.c:2674
+#, c-format
+msgid "cannot %s: You have unstaged changes."
+msgstr "ní féidir %s: Tá athruithe gan stáitse agat."
+
+#: wt-status.c:2680
+msgid "additionally, your index contains uncommitted changes."
+msgstr "ina theannta sin, tá athruithe neamhthiomanta i d'innéacs."
+
+#: wt-status.c:2682
+#, c-format
+msgid "cannot %s: Your index contains uncommitted changes."
+msgstr "ní féidir %s: Tá athruithe neamhthiomanta ag d'innéacs."

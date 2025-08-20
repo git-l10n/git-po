@@ -22363,7 +22363,7 @@ msgid ""
 "(e.g., 'git config imap.host imaps://imap.example.com')"
 msgstr ""
 "socraigh an t-óstach IMAP le 'git config imap.host <host>'.\n"
-" (m.sh., 'git config imap.host imaps://imap.example.com')"
+" (e.g., 'git config imap.host imaps://imap.example.com')"
 
 #: imap-send.c:1831
 msgid "no IMAP folder specified"
@@ -22375,7 +22375,7 @@ msgid ""
 "(e.g., 'git config imap.folder Drafts')"
 msgstr ""
 "socraigh an fillteán sprice le 'git config imap.folder <folder>'.\n"
-" (m.sh., 'git config imap.folder Dréachtaí')"
+" (e.g., 'git config imap.folder Dréachtaí')"
 
 #: list-objects-filter-options.c:67
 msgid "expected 'tree:<depth>'"

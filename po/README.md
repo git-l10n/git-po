@@ -459,5 +459,287 @@ additional conventions:
   ```
 
 
+## Artificial Intelligence (AI) as Translation Assistant
+
+This section provides guidance for human translators who choose to use AI tools
+as assistants in their localization work. The use of AI is entirely optional.
+Many successful translation teams work effectively without it.
+
+
+### Human translators remain in control
+
+Translation of Git is a human-driven community effort. Language team leaders and
+contributors are responsible for:
+
+- Understanding the technical context of Git commands and messages
+- Making linguistic and cultural adaptation decisions for their target language
+- Maintaining translation quality and consistency within their language team
+- Ensuring translations follow Git l10n conventions and community standards
+- Building and maintaining language-specific glossaries
+- Reviewing and approving all changes before submission
+
+AI tools, if used, serve only to accelerate routine tasks. While they may assist
+with decisions, judgment, and understanding of context, it remains the human
+translators' responsibility to monitor these AI-generated decisions, judgement,
+and understanding, and countermand them as needed.
+
+
+### When AI assistance may be helpful
+
+AI tools can help speed up certain mechanical aspects of translation work:
+
+- Generating first-draft translations for new or updated messages
+- Identifying untranslated or fuzzy entries across large PO files
+- Checking consistency with existing translations and glossary terms
+- Detecting technical errors (missing placeholders, formatting issues)
+- Reviewing translations against quality criteria
+
+However, AI-generated output should always be treated as rough drafts requiring
+human review, editing, and approval by someone who understands both the
+technical context and the target language.
+
+
+### Preparing your translation environment for effective AI use
+
+If you choose to use AI assistance, investing time in preparation will
+significantly improve the quality of AI-generated suggestions:
+
+- **Maintain a glossary**: Add a "Git glossary for XX translators" section in
+  the header comments of your `po/XX.po` file (before the first `msgid`). List
+  key Git terms with their approved translations. AI tools can read and follow
+  this glossary. See `po/zh_CN.po` for an example of this practice.
+
+- **Choose appropriate AI coding tools**: Evaluate and use models and tools
+  that work best for your target language. Different AI models have varying
+  levels of proficiency across languages. Test multiple tools to find which
+  produces the most natural and accurate translations for your language.
+
+
+### Technical guidelines for AI tools
+
+The following sections provide technical specifications for AI tools that
+assist with Git translation. These guidelines ensure AI-generated suggestions
+are technically correct and follow Git l10n conventions. Human translators
+should be familiar with these requirements to effectively review AI output.
+
+
+#### Scope and context
+
+- Primary files: `po/XX.po` for translations, `po/git.pot` for the source
+  template (generated on demand; see "Dynamically generated POT files").
+- Source language: English. Target language: derived from the language code in
+  the `po/XX.po` filename based on ISO 639 and ISO 3166.
+- Glossary: Git l10n teams may add glossary sections (e.g. "Git glossary for
+  Chinese translators") in the header comments of `po/XX.po` immediately before
+  the first `msgid` entry. If a glossary exists, read it and keep terminology
+  consistent.
+
+
+#### Quality checklist
+
+- Accuracy: faithfully conveys the original meaning; no omissions or distortions.
+- Terminology: uses correct, consistent terms per glossary or domain standards.
+- Grammar and fluency: grammatically correct and reads naturally.
+- Placeholders: preserves variables (e.g. `%s`, `{name}`, `$1`) exactly. If
+  reordering is needed for the target language, use positional parameters as
+  described below.
+- Plurals and gender: handles plural forms, gender, and agreement correctly.
+- Context fit: suitable for UI space, tone, and usage (e.g. error vs. tooltip).
+- Cultural appropriateness: avoids offensive or ambiguous content.
+- Consistency: matches prior translations of the same source string.
+- Technical integrity: do not translate code, paths, commands, brand names, or
+  proper nouns.
+- Readability: clear, concise, and user-friendly.
+
+
+#### Locating untranslated, fuzzy, and obsolete entries
+
+Use GNU gettext tools to parse PO structure reliably (safe for multi-line
+`msgid`/`msgstr`):
+
+- Untranslated entries:
+
+  ```shell
+  msgattrib --untranslated --no-obsolete po/XX.po
+  ```
+
+- Fuzzy entries:
+
+  ```shell
+  msgattrib --only-fuzzy --no-obsolete po/XX.po
+  ```
+
+- Obsolete entries (marked with `#~`):
+
+  ```shell
+  msgattrib --obsolete --no-wrap po/XX.po
+  ```
+
+If you only want the message IDs, you can pipe to:
+
+```shell
+msgattrib --untranslated --no-obsolete po/XX.po | sed -n '/^msgid /,/^$/p'
+```
+
+```shell
+msgattrib --only-fuzzy --no-obsolete po/XX.po | sed -n '/^msgid /,/^$/p'
+```
+
+
+#### Translation workflow (`po/XX.po`)
+
+When asked to update translations, follow the steps in this section in order
+and reference this section in your plan before making edits.
+
+- Generate `po/git.pot` from source code (see "Dynamically generated POT files").
+- Update `po/XX.po` with the new template.
+- Translate new entries identified by `msgattrib --untranslated` (see above).
+- Fix fuzzy entries identified by `msgattrib --only-fuzzy` (see above) by
+  re-translating and removing the `fuzzy` tag after updating `msgstr`.
+- For entries with `msgid_plural`, consult [Plural forms](#plural-forms) to
+  supply all required `msgstr[n]` forms based on the `Plural-Forms` header.
+- Apply the quality checklist to every translation.
+
+
+#### Review workflow
+
+Review workflow has two modes: direct review against local `po/XX.po`, and
+review based on a patch.
+
+
+##### Full file review
+
+- When explicitly asked to review all translated content, review `po/XX.po`
+  in chunks (see [Handling large inputs](#handling-large-inputs) for splitting).
+- Apply the quality checklist to each message you review.
+- Unless otherwise specified, update `po/XX.po` directly; if a summary is
+  requested, provide a consolidated report of the issues.
+
+
+##### Patch review
+
+- Review requests may come as patches of `po/XX.po`:
+  - Workspace changes: `git diff HEAD -- po/XX.po`
+  - Changes since a commit-ish: `git diff <commit-ish> -- po/XX.po`
+  - Changes in a specific commit: `git show <commit-ish> -- po/XX.po`
+- For large patches, follow the split guidance in
+  [Handling large inputs](#handling-large-inputs) when splitting.
+- When diff context is incomplete (truncated `msgid` or `msgstr`), use file
+  viewing tools to pull nearby context for accurate review.
+- Apply the same quality checklist as in full file reviews.
+- If the patch is based on workspace changes, update `po/XX.po` directly
+  unless a summary is requested.
+- If the patch is from a specific commit, report issues or apply fixes when
+  comparing against the current `po/XX.po` in the workspace.
+
+
+#### Handling large inputs
+
+When a `po/XX.po` file or a patch is too large for LLM context, split it into
+chunks while keeping `msgid` and `msgstr` pairs intact. This includes plural
+forms: `msgid`, `msgid_plural`, `msgstr[0]`, `msgstr[1]`, and any additional
+plural indices required by the language.
+
+For `po/XX.po`, split on the line immediately before each `msgid` entry. This
+guarantees no chunk begins with an unpaired `msgid`. Use
+`grep -n '^msgid' po/XX.po` to locate split points, and group the file into
+chunks of no more than 200 `msgid` entries (about 50K bytes each).
+
+For patch files, check the patch size first:
+
+- If the patch is <= 100KB, do not split.
+- If the patch is > 100KB, split it using the same rule as for `po/XX.po`:
+  split on the line immediately before each `msgid` entry so message pairs
+  stay together.
+
+
+#### Plural forms
+
+This section defines how translators should handle `msgid_plural` entries,
+including how many `msgstr[n]` forms are required and how to index them. It
+provides the canonical example and points to the `Plural-Forms` header for the
+language-specific rule set.
+
+For entries with `msgid_plural`, provide plural forms:
+
+```po
+msgid "..."
+msgid_plural "..."
+msgstr[0] "..."
+msgstr[1] "..."
+```
+
+Use `msgstr[0]`/`msgstr[1]` as required. If the language has more plural forms,
+follow the `Plural-Forms` header in `po/XX.po` to determine the required number
+of `msgstr[n]` entries.
+
+
+#### Placeholder reordering
+
+When a translation reorders placeholders, mark them with positional parameter
+syntax (`%n$`) so each argument maps to the correct source value. Keep the
+width/precision modifiers intact and place the position specifier before them.
+
+Example:
+
+```po
+msgid "missing environment variable '%s' for configuration '%.*s'"
+msgstr "配置 '%3$.*2$s' 缺少环境变量 '%1$s'"
+```
+
+Here the translation swaps the two placeholders. `%1$s` still refers to the
+first argument (`%s`), while `%3$.*2$s` refers to the third string argument
+with the precision taken from the second argument (`%.*s`).
+
+
+### Integrating AI tools into your workflow
+
+If you decide to use AI assistance, here's how to integrate it responsibly:
+
+
+#### For AI tool developers and users
+
+When building or configuring AI-assisted translation tools:
+
+- Use the quality checklist (above) to score or filter draft suggestions
+- Apply the `msgattrib` + `sed` commands to extract relevant entries for processing
+- Ensure AI tools read and respect glossary terms from the `po/XX.po` header
+- Configure tools to follow the technical workflows documented above
+
+
+#### Human oversight is mandatory
+
+**Never submit AI-generated translations without human review.** The human
+translator must:
+
+- Verify technical accuracy (correct placeholders, plural forms, formatting)
+- Ensure linguistic quality (natural phrasing, appropriate terminology)
+- Check cultural appropriateness for the target audience
+- Confirm consistency with the language team's established style
+- Take full responsibility for the final translation
+
+Example usage in prompts to AI assistants:
+
+- "Update translations in `po/XX.po` following the guidelines in @po/README.md"
+- "Review all translations in `po/XX.po` following the guidelines in @po/README.md"
+
+
+### Summary: AI as a tool, humans as translators
+
+AI can accelerate translation work, but it is not a substitute for human
+translators. The Git localization community values:
+
+- **Human expertise**: Deep understanding of Git's technical context and the
+  cultural nuances of each target language
+- **Community standards**: Consistency across releases and alignment with
+  language team conventions
+- **Accountability**: Human translators who stand behind their work and respond
+  to feedback from users
+
+If you choose to use AI tools, they should enhance these human contributions,
+not replace them. The best results come from combining AI efficiency with human
+judgment, cultural insight, and community engagement.
+
+
 [git-po-helper/README]: https://github.com/git-l10n/git-po-helper#readme
 [Documentation/SubmittingPatches]: Documentation/SubmittingPatches

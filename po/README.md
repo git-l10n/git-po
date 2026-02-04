@@ -166,23 +166,26 @@ and make a user-friendly patch for review.
 To save a location-less "po/XX.po" automatically in repository, you
 can:
 
-First define a new attribute for "po/XX.po" by appending the following
-line in ".git/info/attributes":
+First, check which filter is configured for your "po/XX.po" file:
 
 ```
-/po/XX.po filter=gettext-no-location
+git check-attr filter po/XX.po
 ```
 
-Then define the driver for the "gettext-no-location" clean filter to
-strip out both filenames and locations from the contents as follows:
+The filter configuration is defined in the "po/.gitattributes" file.
+
+Then define the driver for the filter. Most languages use the
+"gettext-no-file-no-location" clean filter, which strips out both filenames and
+locations from the comments. To set this up, run the following command:
 
 ```shell
-git config --global filter.gettext-no-location.clean \
+git config --global filter.gettext-no-file-no-location.clean \
            "msgcat --no-location -"
 ```
 
-For users who have gettext version 0.20 or higher, it is also possible
-to define a clean filter to preserve filenames but not locations:
+Some languages use the "gettext-no-location" clean filter, which preserves
+filenames but not locations. For these, install gettext version 0.20 or higher
+and setup the driver as below:
 
 ```shell
 git config --global filter.gettext-no-location.clean \

@@ -159,38 +159,6 @@ It will:
   and these location lines will help translation tools to locate
   translation context easily.
 
-Once you are done testing the translation (see below), it's better
-to commit a location-less "po/XX.po" file to save repository space
-and make a user-friendly patch for review.
-
-To save a location-less "po/XX.po" automatically in repository, you
-can:
-
-First define a new attribute for "po/XX.po" by appending the following
-line in ".git/info/attributes":
-
-```
-/po/XX.po filter=gettext-no-location
-```
-
-Then define the driver for the "gettext-no-location" clean filter to
-strip out both filenames and locations from the contents as follows:
-
-```shell
-git config --global filter.gettext-no-location.clean \
-           "msgcat --no-location -"
-```
-
-For users who have gettext version 0.20 or higher, it is also possible
-to define a clean filter to preserve filenames but not locations:
-
-```shell
-git config --global filter.gettext-no-location.clean \
-           "msgcat --add-location=file -"
-```
-
-You're now ready to ask the l10n coordinator to pull from you.
-
 
 ## Fuzzy translation
 
@@ -227,6 +195,45 @@ L10n coordinator will check your contributions using a helper program
 git-po-helper check-po po/XX.po
 git-po-helper check-commits <rev-list-opts>
 ```
+
+
+## Preparing a "XX.po" file for commit
+
+Once you are done testing the translation, it's better to commit a
+location-less "po/XX.po" file to save repository space and make a
+user-friendly patch for review.
+
+To save a location-less "po/XX.po" automatically in the repository,
+follow these steps:
+
+First, check which filter is configured for your "po/XX.po" file:
+
+```
+git check-attr filter po/XX.po
+```
+
+The filter configuration is defined in the "po/.gitattributes" file.
+
+Then define the driver for the filter. Most languages use the
+"gettext-no-location" clean filter, which strips out both filenames and line
+numbers from location comments. To set this up, run the following command:
+
+```shell
+git config --global filter.gettext-no-location.clean \
+           "msgcat --no-location -"
+```
+
+Some PO files use the "gettext-no-line-number" clean filter, which keeps
+filenames but strips line numbers. This filter requires gettext 0.20 or
+later. The only benefit is being able to locate source files from location
+comments when the .po file is not updated from the POT via `make po-update`.
+
+```shell
+git config --global filter.gettext-no-line-number.clean \
+           "msgcat --add-location=file -"
+```
+
+You're now ready to ask the l10n coordinator to pull from you.
 
 
 ## Marking strings for translation

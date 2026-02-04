@@ -512,8 +512,8 @@ msgstr ""
 #, c-format
 msgid "Discard mode change from index and worktree [y,n,q,a,d%s,?]? "
 msgstr ""
-"Descarta el canvi de mode de l'índex i de l'arbre de treball [y,n,q,a,d"
-"%s,?]? "
+"Descarta el canvi de mode de l'índex i de l'arbre de treball "
+"[y,n,q,a,d%s,?]? "
 
 #: add-patch.c
 #, c-format
@@ -3879,11 +3879,11 @@ msgstr "HEAD no trobat sota refs/heads!"
 
 #: builtin/branch.c
 msgid ""
-"branch with --recurse-submodules can only be used if submodule."
-"propagateBranches is enabled"
+"branch with --recurse-submodules can only be used if "
+"submodule.propagateBranches is enabled"
 msgstr ""
-"la branca amb --recurse-submodules només es pot utilitzar si submodule."
-"propagateBranches està habilitat"
+"la branca amb --recurse-submodules només es pot utilitzar si "
+"submodule.propagateBranches està habilitat"
 
 #: builtin/branch.c
 msgid "--recurse-submodules can only be used to create branches"
@@ -7983,11 +7983,11 @@ msgstr "el protocol no admet --negotiate-only, se surt"
 
 #: builtin/fetch.c
 msgid ""
-"--filter can only be used with the remote configured in extensions."
-"partialclone"
+"--filter can only be used with the remote configured in "
+"extensions.partialclone"
 msgstr ""
-"--filter només es pot utilitzar amb el remot configurat en extensions."
-"partialclone"
+"--filter només es pot utilitzar amb el remot configurat en "
+"extensions.partialclone"
 
 #: builtin/fetch.c
 msgid "--atomic can only be used when fetching from one remote"
@@ -11436,8 +11436,8 @@ msgid ""
 "| -C) <object>] [<object>] [-e]"
 msgstr ""
 "git notes [--ref <referència-notes>] add [-f] [--allow-empty] [--"
-"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | -"
-"F <fitxer> | (-c | -C) <objecte>] [<objecte>]"
+"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | "
+"-F <fitxer> | (-c | -C) <objecte>] [<objecte>]"
 
 #: builtin/notes.c
 msgid "git notes [--ref <notes-ref>] copy [-f] <from-object> <to-object>"
@@ -11451,8 +11451,8 @@ msgid ""
 "| -C) <object>] [<object>] [-e]"
 msgstr ""
 "git notes [--ref <referència-notes>] append [--allow-empty] [--"
-"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | -"
-"F <fitxer> | (-c | -C) <objecte>] [<objecte>] [-e]"
+"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | "
+"-F <fitxer> | (-c | -C) <objecte>] [<objecte>] [-e]"
 
 #: builtin/notes.c
 msgid "git notes [--ref <notes-ref>] edit [--allow-empty] [<object>]"
@@ -13231,8 +13231,8 @@ msgstr "--empty=ask és obslolet; utilitzeu '--empty=stop' en el seu lloc."
 #: builtin/rebase.c
 #, c-format
 msgid ""
-"unrecognized empty type '%s'; valid values are \"drop\", \"keep\", and \"stop"
-"\"."
+"unrecognized empty type '%s'; valid values are \"drop\", \"keep\", and "
+"\"stop\"."
 msgstr ""
 "tipus buit «%s» no reconegut; els valors vàlids són \"drop\", \"keep\" i "
 "\"stop\"."
@@ -14440,8 +14440,8 @@ msgid ""
 msgstr ""
 "Els reempaquetaments incrementals són incompatibles amb els índexs de mapes "
 "de bits.  Useu\n"
-"--no-write-bitmap-index o inhabiliteu el paràmetre de configuració pack."
-"writeBitmaps."
+"--no-write-bitmap-index o inhabiliteu el paràmetre de configuració "
+"pack.writeBitmaps."
 
 #: builtin/repack.c
 msgid "could not start pack-objects to repack promisor objects"
@@ -19350,11 +19350,11 @@ msgstr ""
 #: commit-graph.c
 #, c-format
 msgid ""
-"attempting to write a commit-graph, but 'commitGraph."
-"changedPathsVersion' (%d) is not supported"
+"attempting to write a commit-graph, but 'commitGraph.changedPathsVersion' "
+"(%d) is not supported"
 msgstr ""
-"s'ha intentat escriure un graf de comissió, però no s'admet 'commitGraph."
-"changedPathsVersion' (%d)"
+"s'ha intentat escriure un graf de comissió, però no s'admet "
+"'commitGraph.changedPathsVersion' (%d)"
 
 #: commit-graph.c
 msgid "too many commits to write graph"
@@ -22940,8 +22940,8 @@ msgstr "el fitxer de l'índex multipaquet %s és massa petit"
 #, c-format
 msgid "multi-pack-index signature 0x%08x does not match signature 0x%08x"
 msgstr ""
-"la signatura de l'índex multipaquet 0x%08x no coincideix amb la signatura 0x"
-"%08x"
+"la signatura de l'índex multipaquet 0x%08x no coincideix amb la signatura "
+"0x%08x"
 
 #: midx.c
 #, c-format

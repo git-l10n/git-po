@@ -70,6 +70,7 @@
 #   grafts                           |  （提交）嫁接
 #   hash                             |  哈希值
 #   HEAD                             |  HEAD（头指针，亦即当前分支）
+#   heap                             |  堆
 #   head                             |  头、分支
 #   head ref                         |  分支
 #   header                           |  头信息
@@ -131,6 +132,7 @@
 #   signed tag                       |  签名标签
 #   smart HTTP protocol              |  智能 HTTP 协议
 #   squash                           |  挤压
+#   stack                            |  栈
 #   stage                            |  n. 暂存区（即索引）; v. 暂存
 #   stale                            |  过期的
 #   stash                            |  n. 储藏区; v. 储藏
@@ -22583,7 +22585,7 @@ msgstr "无法将 SSL 后端设置为 '%s'：已经设置"
 
 #: http.c
 msgid "refusing to read cookies from http.cookiefile '-'"
-msgstr "拒绝从 http.cookiefile '-' 读取 Cookie"
+msgstr "拒绝从 http.cookiefile '-' 读取 cookie"
 
 #: http.c
 msgid "ignoring http.savecookies for empty http.cookiefile"
@@ -25741,7 +25743,7 @@ msgstr "reftable：事务失败：%s"
 #: refs/reftable-backend.c
 #, c-format
 msgid "unable to compact stack: %s"
-msgstr "无法压缩堆栈：%s"
+msgstr "无法压缩栈：%s"
 
 #: refs/reftable-backend.c
 #, c-format
@@ -25756,7 +25758,7 @@ msgstr "引用名 %s 是一个符号引用，不支持复制"
 #: refs/reftable-backend.c
 #, c-format
 msgid "reftable stack for worktree '%s' is broken"
-msgstr "工作区 '%s' 的 reftable 堆栈已损坏"
+msgstr "工作区 '%s' 的 reftable 栈已损坏"
 
 #: refs/reftable-backend.c
 #, c-format
@@ -25883,7 +25885,7 @@ msgstr "获取失败。"
 
 #: remote-curl.c
 msgid "cannot fetch by sha1 over smart http"
-msgstr "无法通过智能 HTTP 获取 SHA-1"
+msgstr "无法经由智能 HTTP 通过 SHA-1 获取"
 
 #: remote-curl.c
 #, c-format

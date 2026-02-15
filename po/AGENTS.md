@@ -59,6 +59,17 @@ When asked to generate or update `po/git.pot` (or the like):
    command and consider the task complete.
 
 
+### Task 2: Updating po/XX.po
+
+When asked to update `po/XX.po` (or the like):
+
+1. **Directly execute** the command `make po-update PO_FILE=po/XX.po`
+   without reading or checking the file content beforehand.
+
+2. **Do not verify, translate, or review** the updated file after execution.
+   Simply run the command and consider the task complete.
+
+
 ## Human translators remain in control
 
 Git translation is human-driven; language team leaders and contributors are

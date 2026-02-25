@@ -10,6 +10,7 @@ most commonly used housekeeping tasks:
 1. Generating or updating po/git.pot
 2. Updating po/XX.po
 3. Translating po/XX.po
+4. Reviewing translation quality
 
 
 ## Background knowledge for localization workflows
@@ -662,6 +663,202 @@ step 8 after step 6.
    ```shell
    msgfmt --check --stat -o /dev/null po/XX.po
    ```
+
+
+### Task 4: Review translation quality
+
+Review may target the full `po/XX.po`, a specific commit, or changes since a
+commit. When asked to review, follow the steps below.
+
+**Workflow**: Follow steps in order. Do **NOT** use `git show`, `git diff`,
+`git format-patch`, or similar to get changes—they break PO context; use **only**
+`git-po-helper compare` for extraction. Without `git-po-helper`, refuse the task.
+Steps 3→4→5→6→7 loop: after step 6, **always** go to step 7 (back to step 3).
+The **only** ways to step 8 are when step 4 finds `po/review-todo.json` missing
+or empty (no batch left to review), or when step 1 finds `po/review-result.json`
+already present.
+
+1. **Check for existing review (resume support)**: Evaluate the following in order:
+
+   - If `po/review-input.po` does **not** exist, proceed to step 2 (Extract
+     entries) for a fresh start.
+   - Else If `po/review-result.json` exists, go to step 8 (only after loop exits).
+   - Else If `po/review-done.json` exists, go to step 6 (Rename result).
+   - Else if `po/review-todo.json` exists, go to step 5 (Review the current
+     batch).
+   - Else go to step 3 (Prepare one batch).
+
+2. **Extract entries**: Run `git-po-helper compare` with the desired range and
+   redirect the output to `po/review-input.po`. See "Comparing PO files for
+   translation and review" under git-po-helper for options.
+
+3. **Prepare one batch**: Batching keeps each run small so the model can
+   complete review within limited context. **Directly execute** the script
+   below—it is authoritative; do not reimplement.
+
+   ```shell
+   review_one_batch () {
+       min_batch_size=${1:-100}
+       INPUT_PO="po/review-input.po"
+       PENDING="po/review-pending.po"
+       TODO="po/review-todo.json"
+       DONE="po/review-done.json"
+       BATCH_FILE="po/review-batch.txt"
+
+       if test ! -f "$INPUT_PO"
+       then
+           rm -f "$TODO"
+           echo >&2 "cannot find $INPUT_PO, nothing for review"
+           return 1
+       fi
+       if test ! -f "$PENDING" || test "$INPUT_PO" -nt "$PENDING"
+       then
+           rm -f "$BATCH_FILE" "$TODO" "$DONE"
+           rm -f po/review-result*.json
+           cp "$INPUT_PO" "$PENDING"
+       fi
+
+       ENTRY_COUNT=$(grep -c '^msgid ' "$PENDING" 2>/dev/null || echo 0)
+       ENTRY_COUNT=$((ENTRY_COUNT > 0 ? ENTRY_COUNT - 1 : 0))
+       if test "$ENTRY_COUNT" -eq 0
+       then
+           rm -f "$TODO"
+           echo >&2 "No entries left for review"
+           return 1
+       fi
+
+       if test "$ENTRY_COUNT" -gt $min_batch_size
+       then
+           if test "$ENTRY_COUNT" -gt $((min_batch_size * 8))
+           then
+               NUM=$((min_batch_size * 2))
+           elif test "$ENTRY_COUNT" -gt $((min_batch_size * 4))
+           then
+               NUM=$((min_batch_size + min_batch_size / 2))
+           else
+               NUM=$min_batch_size
+           fi
+       else
+           NUM=$ENTRY_COUNT
+       fi
+
+       BATCH=$(cat "$BATCH_FILE" 2>/dev/null || echo 0)
+       BATCH=$((BATCH + 1))
+       echo "$BATCH" >"$BATCH_FILE"
+
+       git-po-helper msg-select --json --head "$NUM" -o "$TODO" "$PENDING"
+       git-po-helper msg-select --since "$((NUM + 1))" -o "${PENDING}.tmp" "$PENDING"
+       mv "${PENDING}.tmp" "$PENDING"
+       echo "Processing batch $BATCH ($NUM entries out of $ENTRY_COUNT)"
+   }
+   # The parameter controls batch size; reduce if the batch file is too large.
+   review_one_batch 100
+   ```
+
+4. **Check todo file**: If `po/review-todo.json` does not exist or is empty,
+   review is complete; go to step 8 (only after loop exits). Otherwise proceed to
+   step 5.
+
+5. **Review the current batch**: Review translations in `po/review-todo.json`
+   and write findings to `po/review-done.json` as follows:
+   - Use "Background knowledge for localization workflows" for PO/JSON structure,
+     placeholders, and terminology.
+   - If `header_comment` includes a glossary, follow it for consistency.
+   - Do **not** review the header (`header_comment`, `header_meta`).
+   - For every other entry, check the entry's `msgstr` **array** (translation
+     forms) against `msgid` / `msgid_plural` using the "Quality checklist" above.
+   - Write JSON per "Review result JSON format" below; use `{"issues": []}` when
+     there are no issues. **Always** write `po/review-done.json`—it marks the
+     batch complete.
+
+6. **Rename result**: Rename `po/review-done.json` to `po/review-result-<N>.json`,
+   where N is the value in `po/review-batch.txt` (the batch just completed).
+   Run the script below:
+
+   ```shell
+   review_rename_result () {
+       TODO="po/review-todo.json"
+       DONE="po/review-done.json"
+       BATCH_FILE="po/review-batch.txt"
+       if test -f "$DONE"
+       then
+           N=$(cat "$BATCH_FILE" 2>/dev/null) || { echo "ERROR: $BATCH_FILE not found." >&2; return 1; }
+           mv "$DONE" "po/review-result-$N.json"
+           echo "Renamed to po/review-result-$N.json"
+       fi
+       rm -f "$TODO"
+   }
+   review_rename_result
+   ```
+
+7. **Loop**: **MUST** return to step 3 (Prepare one batch) and repeat the cycle.
+   Do **not** skip this step or go to step 8. Step 8 is reached **only** when
+   step 4 finds `po/review-todo.json` missing or empty.
+
+8. **Only after loop exits**: **Directly execute** the command below. It merges
+   results, applies suggestions, and displays the report. The process ends here.
+
+   ```shell
+   git-po-helper agent-run report
+   ```
+
+   **Do not** run cleanup or delete intermediate files. Keep them for inspection
+   or resumption.
+
+**Review result JSON format**:
+
+The **Review result JSON** format defines the structure for translation
+review reports. For each entry with translation issues, create an issue
+object as follows:
+
+- Copy the original entry's `msgid`, optional `msgid_plural`, and optional
+  `msgstr` array (original translation forms) into the issue object. Use the
+  same shape as GETTEXT JSON: `msgstr` is **always a JSON array** when present
+  (one element singular, multiple for plural).
+- Write a summary of all issues found for this entry in `description`.
+- Set `score` according to the severity of issues found for this entry,
+  from 0 to 3 (0 = critical; 1 = major; 2 = minor; 3 = perfect, no issues).
+  **Lower score means more severe issues.**
+- Place the suggested translation in **`suggest_msgstr`** as a **JSON array**:
+  one string for singular, multiple strings for plural forms in order. This is
+  required for `git-po-helper` to apply suggestions.
+- Include only entries with issues (score less than 3). When no issues are
+  found in the batch, write `{"issues": []}`.
+
+Example review result (with issues):
+
+```json
+{
+  "issues": [
+    {
+      "msgid": "commit",
+      "msgstr": ["委托"],
+      "score": 0,
+      "description": "Terminology error: 'commit' should be translated as '提交'",
+      "suggest_msgstr": ["提交"]
+    },
+    {
+      "msgid": "repository",
+      "msgid_plural": "repositories",
+      "msgstr": ["版本库", "版本库"],
+      "score": 2,
+      "description": "Consistency issue: suggest using '仓库' consistently",
+      "suggest_msgstr": ["仓库", "仓库"]
+    }
+  ]
+}
+```
+
+Field descriptions for each issue object (element of the `issues` array):
+
+- `msgid` (and optional `msgid_plural` for plural entries): Original source text.
+- `msgstr` (optional): JSON array of original translation forms (same meaning as
+  in GETTEXT JSON entries).
+- `suggest_msgstr`: JSON array of suggested translation forms; **must be an
+  array** (e.g. `["提交"]` for singular). Plural entries use multiple elements
+  in order.
+- `score`: 0–3 (0 = critical; 1 = major; 2 = minor; 3 = perfect, no issues).
+- `description`: Brief summary of the issue.
 
 
 ## Human translators remain in control

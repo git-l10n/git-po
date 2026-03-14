@@ -1,0 +1,159 @@
+From e1258eac7deb27c3152633b0ba68beb6b05e3142 Mon Sep 17 00:00:00 2001
+Message-ID: <e1258eac7deb27c3152633b0ba68beb6b05e3142.1773704908.git.worldhello.net@gmail.com>
+In-Reply-To: <cover.1773704908.git.worldhello.net@gmail.com>
+References: <CANYiYbFM9+4xGmeBRNCC6VyW9EzjEFxEWHDNnOVhJNM73Ga_FA@mail.gmail.com>
+	<cover.1773704908.git.worldhello.net@gmail.com>
+From: Jiang Xin <worldhello.net@gmail.com>
+Date: Sat, 14 Feb 2026 14:08:46 +0800
+Subject: [PATCH v4 2/5] docs(l10n): add AGENTS.md with optimized update-pot
+ instructions
+To: Junio C Hamano <gitster@pobox.com>,
+    Johannes Sixt <j6t@kdbg.org>,
+    Git List <git@vger.kernel.org>
+Cc: Alexander Shopov <ash@kambanaria.org>,
+    Mikel Forcada <mikel.forcada@gmail.com>,
+    Ralf Thielow <ralf.thielow@gmail.com>,
+    Jean-Noël Avila <jn.avila@free.fr>,
+    Bagas Sanjaya <bagasdotme@gmail.com>,
+    Dimitriy Ryazantcev <DJm00n@mail.ru>,
+    Peter Krefting <peter@softwolves.pp.se>,
+    Emir SARI <bitigchi@me.com>,
+    Arkadii Yakovets <ark@cho.red>,
+    Vũ Tiến Hưng <newcomerminecraft@gmail.com>,
+    Teng Long <dyroneteng@gmail.com>,
+    Yi-Jyun Pan <pan93412@gmail.com>
+
+Add a new documentation file po/AGENTS.md that provides agent-specific
+instructions for generating or updating po/git.pot, separating them
+from the general po/README.md. This separation allows for more targeted
+optimization of AI agent workflows.
+
+Performance evaluation with the Qwen model:
+
+    # Before: No agent-specific instructions; use po/README.md for
+    # reference.
+    git-po-helper agent-test --runs=5 --agent=qwen update-pot \
+	--prompt="Update po/git.pot according to po/README.md"
+
+    # Phase 1: add the instructions to po/README.md; the prompt
+    # references po/README.md during execution
+    git-po-helper agent-test --runs=5 --agent=qwen update-pot \
+	--prompt="Update po/git.pot according to po/README.md"
+
+    # Phase 2: add the instructions to po/AGENTS.md; use the built-in
+    # prompt that references po/AGENTS.md during execution
+    git-po-helper agent-test --runs=5 --agent=qwen update-pot
+
+Benchmark results (5-run average):
+
+Phase 1 - Optimizing po/README.md:
+
+    | Metric      | Before  | Phase 1 | Improvement |
+    |-------------|---------|---------|-------------|
+    | Turns       | 17      | 5       | -71%        |
+    | Exec. time  | 34s     | 14s     | -59%        |
+    | Turn range  | 3-36    | 3-7     |             |
+    | Time range  | 10s-59s | 9s-19s  |             |
+
+Phase 2 - Adding po/AGENTS.md (further optimization):
+
+    | Metric      | Before  | Phase 2 | Improvement |
+    |-------------|---------|---------|-------------|
+    | Turns       | 17      | 3       | -82%        |
+    | Exec. time  | 34s     | 8s      | -76%        |
+    | Turn range  | 3-36    | 3-3     |             |
+    | Time range  | 10s-59s | 6s-9s   |             |
+
+Separating agent-specific instructions into AGENTS.md provides:
+
+- More focused and concise instructions for AI agents
+- Cleaner README.md for human readers
+- An additional 11% reduction in turns and 17% reduction in execution
+  time
+- More consistent behavior (turn range reduced from 3-7 to 3-3)
+
+Signed-off-by: Jiang Xin <worldhello.net@gmail.com>
+---
+ po/AGENTS.md | 70 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
+ create mode 100644 po/AGENTS.md
+
+diff --git a/po/AGENTS.md b/po/AGENTS.md
+new file mode 100644
+index 0000000000..94b7aa7f28
+--- /dev/null
++++ b/po/AGENTS.md
+@@ -0,0 +1,70 @@
++# Instructions for AI Agents
++
++This file gives specific instructions for AI agents that perform
++housekeeping tasks for Git l10n. Use of AI is optional; many successful
++l10n teams work well without it.
++
++The section "Housekeeping tasks for localization workflows" documents the
++most commonly used housekeeping tasks.
++
++
++## Background knowledge for localization workflows
++
++Essential background for the workflows below; understand these concepts before
++performing any housekeeping tasks in this document.
++
++### Language code and notation (XX, ll, ll\_CC)
++
++**XX** is a placeholder for the language code: either `ll` (ISO 639) or
++`ll_CC` (e.g. `de`, `zh_CN`). It appears in the PO file header metadata
++(e.g. `"Language: zh_CN\n"`) and is typically used to name the PO file:
++`po/XX.po`.
++
++
++### Header Entry
++
++The **header entry** is the first entry in every `po/XX.po`. It has an empty
++`msgid`; translation metadata (project, language, plural rules, encoding, etc.)
++is stored in `msgstr`, as in this example:
++
++```po
++msgid ""
++msgstr ""
++"Project-Id-Version: Git\n"
++"Language: zh_CN\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Transfer-Encoding: 8bit\n"
++"Plural-Forms: nplurals=2; plural=(n != 1);\n"
++```
++
++**CRITICAL**: Do not edit the header's `msgstr` while translating. It holds
++metadata only and must be left unchanged.
++
++
++## Housekeeping tasks for localization workflows
++
++For common housekeeping tasks, follow the steps in the matching subsection
++below.
++
++
++### Task 1: Generating or updating po/git.pot
++
++When asked to generate or update `po/git.pot` (or the like):
++
++1. **Directly execute** the command `make po/git.pot` without checking
++   if the file exists beforehand.
++
++2. **Do not verify** the generated file after execution. Simply run the
++   command and consider the task complete.
++
++
++## Human translators remain in control
++
++Git translation is human-driven; language team leaders and contributors are
++responsible for maintaining translation quality and consistency.
++
++AI-generated output should always be treated as drafts that must be reviewed
++and approved by someone who understands both the technical context and the
++target language. The best results come from combining AI efficiency with human
++judgment, cultural insight, and community engagement.
+-- 
+2.53.0.rc2.20.g532543fa46
+

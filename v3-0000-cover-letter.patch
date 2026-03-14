@@ -1,0 +1,95 @@
+From 208c1230d1152f96474abbd0a8da9222b3cca081 Mon Sep 17 00:00:00 2001
+Message-ID: <cover.1773497547.git.worldhello.net@gmail.com>
+In-Reply-To: <CANYiYbFM9+4xGmeBRNCC6VyW9EzjEFxEWHDNnOVhJNM73Ga_FA@mail.gmail.com>
+References: <CANYiYbFM9+4xGmeBRNCC6VyW9EzjEFxEWHDNnOVhJNM73Ga_FA@mail.gmail.com>
+From: Jiang Xin <worldhello.net@gmail.com>
+Date: Sat, 14 Mar 2026 22:12:27 +0800
+Subject: [PATCH v3 0/5] docs(l10n): AI agent instructions and workflow improvements
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+To: Junio C Hamano <gitster@pobox.com>,
+    Git List <git@vger.kernel.org>
+Cc: Alexander Shopov <ash@kambanaria.org>,
+    Mikel Forcada <mikel.forcada@gmail.com>,
+    Ralf Thielow <ralf.thielow@gmail.com>,
+    Jean-Noël Avila <jn.avila@free.fr>,
+    Bagas Sanjaya <bagasdotme@gmail.com>,
+    Dimitriy Ryazantcev <DJm00n@mail.ru>,
+    Peter Krefting <peter@softwolves.pp.se>,
+    Emir SARI <bitigchi@me.com>,
+    Arkadii Yakovets <ark@cho.red>,
+    Vũ Tiến Hưng <newcomerminecraft@gmail.com>,
+    Teng Long <dyroneteng@gmail.com>,
+    Yi-Jyun Pan <pan93412@gmail.com>
+
+## Changes since v2
+
+- CI: Fix trailing spaces that caused check-whitespace to fail.
+- Size: Trim po/AGENTS.md by removing unnecessary examples and compressing
+  wording so the file stays smaller and easier to follow.
+- GETTEXT JSON: Use a single `msgstr` array for all translations instead
+  of separate `msgstr` (string) and `msgstr_plural` (array). One element
+  means singular; multiple elements mean plural forms in order. This reduces
+  redundancy and model errors.
+- Workflow: Rename the final step of translation workflow to "Only after
+  loop exits" so agents do not jump from the merge step to the final step
+  before the loop has exited. Simplify the review flow by using one pending
+  file for entries awaiting review instead of multiple review-input-<N>.json
+  files and file-selection logic.
+
+## Introduction
+
+This series introduces AI agent instructions for Git localization (l10n)
+workflows to help localization contributors quickly complete drafts and
+use AI to check translation quality. The changes focus on:
+
+1. Separating agent-specific documentation into po/AGENTS.md for
+   targeted optimization of AI-assisted workflows
+2. Providing step-by-step instructions for update-pot, update-po,
+   translation, and review tasks
+3. Simplifying location filtering for PO file commits via .gitattributes
+
+AI-assisted translation is optional; many successful l10n teams work
+well without it. When used, AI output serves as reference only—human
+contributors must review and approve before submission.
+
+## Performance summary
+
+Benchmarks use the Qwen model via git-po-helper. The improvements reduce
+API costs and make agent workflows more efficient while maintaining human
+oversight of translation quality.
+
+| Task        | Before              | After                    | Improvement                           |
+|-------------|---------------------|--------------------------|---------------------------------------|
+| update-pot  | 17 turns, 34s       | 3 turns, 8s (range 3–3)  | -82% turns, -76% time                 |
+| update-po   | 22 turns, 38s       | 4 turns, 9s (3–9, 7–14s) | -82% turns, -76% time                 |
+| translate   | 86 turns, ~21m      | 56 turns, ~19m           | -35% turns (git-po-helper JSON batch) |
+| review      | N/A                 | 22 turns (63 entries)    |                                       |
+
+## Testing
+
+All changes have been evaluated with the qwen model via git-po-helper
+agent-test and agent-run. The po/AGENTS.md instructions are designed
+to work with coding tools that support file references (e.g.,
+"Translate po/zh_CN.po by referring to @po/AGENTS.md").
+
+## Changes
+
+Jiang Xin (5):
+  l10n: add .gitattributes to simplify location filtering
+  docs(l10n): add AGENTS.md with optimized update-pot instructions
+  docs(l10n): add AI agent instructions for updating po/XX.po files
+  docs(l10n): add AI agent instructions for translating PO files
+  docs(l10n): add AI agent instructions to review translations
+
+ po/.gitattributes |  36 ++
+ po/AGENTS.md      | 872 ++++++++++++++++++++++++++++++++++++++++++++++
+ po/README.md      |  70 ++--
+ 3 files changed, 946 insertions(+), 32 deletions(-)
+ create mode 100644 po/.gitattributes
+ create mode 100644 po/AGENTS.md
+
+-- 
+2.53.0.rc2.20.g532543fa46
+

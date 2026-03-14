@@ -1,0 +1,230 @@
+From 9388b8e9f471c68e7d08ff9f2ccf1d699f5079c1 Mon Sep 17 00:00:00 2001
+Message-ID: <cover.1773704908.git.worldhello.net@gmail.com>
+In-Reply-To: <CANYiYbFM9+4xGmeBRNCC6VyW9EzjEFxEWHDNnOVhJNM73Ga_FA@mail.gmail.com>
+References: <CANYiYbFM9+4xGmeBRNCC6VyW9EzjEFxEWHDNnOVhJNM73Ga_FA@mail.gmail.com>
+From: Jiang Xin <worldhello.net@gmail.com>
+Date: Tue, 17 Mar 2026 07:48:28 +0800
+Subject: [PATCH v4 0/5] docs(l10n): AI agent instructions and workflow improvements
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+To: Junio C Hamano <gitster@pobox.com>,
+    Johannes Sixt <j6t@kdbg.org>,
+    Git List <git@vger.kernel.org>
+Cc: Alexander Shopov <ash@kambanaria.org>,
+    Mikel Forcada <mikel.forcada@gmail.com>,
+    Ralf Thielow <ralf.thielow@gmail.com>,
+    Jean-Noël Avila <jn.avila@free.fr>,
+    Bagas Sanjaya <bagasdotme@gmail.com>,
+    Dimitriy Ryazantcev <DJm00n@mail.ru>,
+    Peter Krefting <peter@softwolves.pp.se>,
+    Emir SARI <bitigchi@me.com>,
+    Arkadii Yakovets <ark@cho.red>,
+    Vũ Tiến Hưng <newcomerminecraft@gmail.com>,
+    Teng Long <dyroneteng@gmail.com>,
+    Yi-Jyun Pan <pan93412@gmail.com>
+
+## range-diff v3...v4
+
+1:  0c00f09918 ! 1:  cb99047e24 l10n: add .gitattributes to simplify location filtering
+    @@ Commit message
+         l10n: add .gitattributes to simplify location filtering
+     
+         To simplify the location filtering process for l10n contributors when
+    -    committing po/XX.po files, add the filter attributes for selected PO
+    +    committing po/XX.po files, add filter attributes for selected PO
+         files to the repository. This ensures all contributors automatically
+         get the same filter configuration without manual setup in
+         .git/info/attributes.
+     
+    -    The filter attribute is only applied to specific PO files that have
+    -    been properly prepared. Files without the filter attribute fall into
+    -    two categories:
+    +    The default filter (gettext-no-location) is applied to all .po files
+    +    except:
+     
+    -    - Legacy files that lack maintenance and still contain location
+    -      comments that have not been cleaned up
+    -    - Files that are already location-less but whose formatting (e.g., line
+    -      wrapping style) differs from the output of msgcat processing
+    +    - Legacy, unmaintained PO files that still contain location comments.
+    +      Leaving the filter off avoids index vs working-tree discrepancies for
+    +      these files. The CI pipeline will report an error when future updates
+    +      touch these legacy files.
+    +    - Some PO files use a different filter that strips only line numbers
+    +      from location comments while keeping filenames.
+     
+    -    To avoid discrepancies between the filtered blob in the index and the
+    -    unfiltered working tree for these files, the filter attribute is not
+    -    applied to them.
+    -
+    -    Contributors still need to manually define the filter drivers using
+    +    Contributors still need to manually define the filter drivers via
+         git-config as documented in po/README.md.
+     
+    -    Additionally, po/README.md has been reorganized: the content of handling
+    -    location-less PO file content has been moved from the "Updating a XX.po
+    -    file" section to a separate "Preparing a XX.po file for commit" section.
+    -    This prevents AI agents from introducing unrelated operations when
+    -    updating PO files.
+    +    Four PO files that use location filtering (po/ca.po, po/es.po, po/ga.po,
+    +    po/ru.po) were batch-modified so their on-disk format matches the filter
+    +    output (e.g. line wrapping), avoiding index vs working-tree mismatch.
+    +
+    +    Additionally, po/README.md has been reorganized: the material on
+    +    preparing location-less PO files for commit has been moved from
+    +    "Updating a XX.po file" to a separate "Preparing a XX.po file for
+    +    commit" section. This prevents AI agents from introducing unrelated
+    +    operations when updating PO files.
+     
+         Signed-off-by: Jiang Xin <worldhello.net@gmail.com>
+     
+    @@ po/.gitattributes (new)
+     +# space.
+     +#
+     +# Two filter types are used:
+    -+# 1. gettext-no-file-no-location: Strips both filenames and line numbers
+    ++# 1. gettext-no-location: Strips both filenames and line numbers
+     +#    (e.g., removes "#: main.c:123" entirely)
+    -+# 2. gettext-no-location: Preserves filenames but removes line numbers, which
+    ++# 2. gettext-no-line-number: Preserves filenames but removes line numbers, which
+     +#    requires gettext 0.20 or higher
+     +#    (e.g., "#: main.c:123" becomes "#: main.c")
+     +#
+     +# See `po/README.md` for instructions on setting up the required filter drivers.
+     +
+    -+# Do not apply these filters to all `*.po` files via a wildcard. For legacy,
+    -+# unmaintained PO files, that would cause discrepancies between the filtered
+    -+# blob in the index and the unfiltered file in the working tree.
+    ++# Default: Strip the whole location comments for all .po files
+    ++*.po	filter=gettext-no-location
+     +
+    -+# Languages that strip both filenames and line numbers
+    -+bg.po	filter=gettext-no-file-no-location
+    -+de.po	filter=gettext-no-file-no-location
+    -+#es.po	filter=gettext-no-file-no-location
+    -+fr.po	filter=gettext-no-file-no-location
+    -+#ga.po	filter=gettext-no-file-no-location
+    -+#ru.po	filter=gettext-no-file-no-location
+    -+sv.po	filter=gettext-no-file-no-location
+    -+tr.po	filter=gettext-no-file-no-location
+    -+uk.po	filter=gettext-no-file-no-location
+    -+vi.po	filter=gettext-no-file-no-location
+    ++# Legacy, unmaintained PO files: filter disabled to avoid index vs
+    ++# working-tree mismatch (these files still have location comments).
+    ++el.po	-filter
+    ++is.po	-filter
+    ++it.po	-filter
+    ++ko.po	-filter
+    ++pl.po	-filter
+    ++pt_PT.po	-filter
+     +
+    -+# Languages that preserve filenames but strip line numbers
+    -+#ca.po	filter=gettext-no-location
+    -+id.po	filter=gettext-no-location
+    -+zh_CN.po	filter=gettext-no-location
+    -+zh_TW.po	filter=gettext-no-location
+    ++# These files use gettext-no-line-number (keep filenames, strip line
+    ++# numbers). The choice is per l10n team preference. Requires gettext 0.20+.
+    ++# The only benefit is locating source files from location comments when
+    ++# the .po file is not updated from the POT via make po-update.
+    ++ca.po	filter=gettext-no-line-number
+    ++id.po	filter=gettext-no-line-number
+    ++zh_CN.po	filter=gettext-no-line-number
+    ++zh_TW.po	filter=gettext-no-line-number
+     
+      ## po/README.md ##
+     @@ po/README.md: It will:
+    @@ po/README.md: git-po-helper check-commits <rev-list-opts>
+     +The filter configuration is defined in the "po/.gitattributes" file.
+     +
+     +Then define the driver for the filter. Most languages use the
+    -+"gettext-no-file-no-location" clean filter, which strips out both filenames and
+    -+line numbers from location comments. To set this up, run the following command:
+    ++"gettext-no-location" clean filter, which strips out both filenames and line
+    ++numbers from location comments. To set this up, run the following command:
+     +
+     +```shell
+    -+git config --global filter.gettext-no-file-no-location.clean \
+    ++git config --global filter.gettext-no-location.clean \
+     +           "msgcat --no-location -"
+     +```
+     +
+    -+Some languages use the "gettext-no-location" clean filter, which preserves
+    -+filenames but not line numbers. For these, install gettext version 0.20 or
+    -+higher and set up the driver as follows:
+    ++Some PO files use the "gettext-no-line-number" clean filter, which keeps
+    ++filenames but strips line numbers. This filter requires gettext 0.20 or
+    ++later. The only benefit is being able to locate source files from location
+    ++comments when the .po file is not updated from the POT via `make po-update`.
+     +
+     +```shell
+    -+git config --global filter.gettext-no-location.clean \
+    ++git config --global filter.gettext-no-line-number.clean \
+     +           "msgcat --add-location=file -"
+     +```
+     +
+2:  573c24e798 = 2:  e1258eac7d docs(l10n): add AGENTS.md with optimized update-pot instructions
+3:  bc00ca2d30 = 3:  88f9e2e2cd docs(l10n): add AI agent instructions for updating po/XX.po files
+4:  6c61a8ca25 = 4:  5034063c2b docs(l10n): add AI agent instructions for translating PO files
+5:  208c1230d1 = 5:  9388b8e9f4 docs(l10n): add AI agent instructions to review translations
+
+## Introduction
+
+This series introduces AI agent instructions for Git localization (l10n)
+workflows to help localization contributors quickly complete drafts and
+use AI to check translation quality. The changes focus on:
+
+1. Separating agent-specific documentation into po/AGENTS.md for
+   targeted optimization of AI-assisted workflows
+2. Providing step-by-step instructions for update-pot, update-po,
+   translation, and review tasks
+3. Simplifying location filtering for PO file commits via .gitattributes
+
+AI-assisted translation is optional; many successful l10n teams work
+well without it. When used, AI output serves as reference only—human
+contributors must review and approve before submission.
+
+## Performance summary
+
+Benchmarks use the Qwen model via git-po-helper. The improvements reduce
+API costs and make agent workflows more efficient while maintaining human
+oversight of translation quality.
+
+| Task        | Before              | After                    | Improvement                           |
+|-------------|---------------------|--------------------------|---------------------------------------|
+| update-pot  | 17 turns, 34s       | 3 turns, 8s (range 3–3)  | -82% turns, -76% time                 |
+| update-po   | 22 turns, 38s       | 4 turns, 9s (3–9, 7–14s) | -82% turns, -76% time                 |
+| translate   | 86 turns, ~21m      | 56 turns, ~19m           | -35% turns (git-po-helper JSON batch) |
+| review      | N/A                 | 22 turns (63 entries)    |                                       |
+
+## Testing
+
+All changes have been evaluated with the qwen model via git-po-helper
+agent-test and agent-run. The po/AGENTS.md instructions are designed
+to work with coding tools that support file references (e.g.,
+"Translate po/zh_CN.po by referring to @po/AGENTS.md").
+
+## Changes
+
+Jiang Xin (5):
+  l10n: add .gitattributes to simplify location filtering
+  docs(l10n): add AGENTS.md with optimized update-pot instructions
+  docs(l10n): add AI agent instructions for updating po/XX.po files
+  docs(l10n): add AI agent instructions for translating PO files
+  docs(l10n): add AI agent instructions to review translations
+
+ po/.gitattributes |  35 ++
+ po/AGENTS.md      | 872 ++++++++++++++++++++++++++++++++++++++++++++++
+ po/README.md      |  71 ++--
+ po/ca.po          |  48 +--
+ po/es.po          |  34 +-
+ po/ga.po          |  64 ++--
+ po/ru.po          |  28 +-
+ 7 files changed, 1033 insertions(+), 119 deletions(-)
+ create mode 100644 po/.gitattributes
+ create mode 100644 po/AGENTS.md
+
+-- 
+2.53.0.rc2.20.g532543fa46
+

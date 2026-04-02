@@ -1372,7 +1372,7 @@ msgstr "內部錯誤"
 #, c-format
 msgid "Applying patch %%s with %d reject..."
 msgid_plural "Applying patch %%s with %d rejects..."
-msgstr[0] "套用 %%s 個修補檔，其中 %d 個被拒絕……"
+msgstr[0] "套用修補檔 %%s，其中 %d 個被拒絕……"
 
 #: apply.c
 #, c-format

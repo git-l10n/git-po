@@ -25692,239 +25692,78 @@ msgstr "Ag scipeáil %s leis an iarmhír chúltaca '%s'.\n"
 msgid "Do you really want to send %s? [y|N]: "
 msgstr "An bhfuil tú ag iarraidh %s a sheoladh i ndáiríre? [y|N]: "
 
-#~ msgid ""
-#~ "'strip-if-invalid' is not a valid mode for git fast-export with --signed-"
-#~ "commits=<mode>"
-#~ msgstr ""
-#~ "'strip-if-invalid' ní mód bailí é seo le haghaidh easpórtáil le haghaidh "
-#~ "git fast-export le --signed-commits=<mód>"
 
-#~ msgid ""
-#~ "'strip-if-invalid' is not a valid mode for git fast-export with --signed-"
-#~ "tags=<mode>"
-#~ msgstr ""
-#~ "'strip-if-invalid' ní mód bailí é seo le haghaidh git fast-export le --"
-#~ "signed-tags=<mode>"
 
-#~ msgid ""
-#~ "'strip-if-invalid' is not a valid mode for git fast-import with --signed-"
-#~ "tags=<mode>"
-#~ msgstr ""
-#~ "Ní mód bailí é 'strip-if-invalid' le haghaidh git fast-import le --signed-"
-#~ "tags=<mode>"
 
-#~ msgid "could not open temporary file"
-#~ msgstr "ní fhéadfadh comhad sealadach a oscailt"
 
-#~ msgid "unable to setup last-modified"
-#~ msgstr "ní féidir an modhnú deireanach a shocrú"
 
-#~ msgid "option --onto or --advance is mandatory"
-#~ msgstr "tá rogha --onto nó --advance éigeantach"
 
-#~ msgid "replaying down from root commit is not supported yet!"
-#~ msgstr "ní thacaítear le hathsheinm anuas ó fréamh-thiomantas go fóill!"
 
 #, c-format
-#~ msgid ""
-#~ "Unable to create '%s.lock': %s.\n"
-#~ "\n"
-#~ "Another git process seems to be running in this repository, e.g.\n"
-#~ "an editor opened by 'git commit'. Please make sure all processes\n"
-#~ "are terminated then try again. If it still fails, a git process\n"
-#~ "may have crashed in this repository earlier:\n"
-#~ "remove the file manually to continue."
-#~ msgstr ""
-#~ "Ní féidir '%s.lock' a chruthú: %s.\n"
-#~ "\n"
-#~ "Is cosúil go bhfuil próiseas git eile ag rith sa stór seo, e.g.\n"
-#~ "eagarthóir a osclaíodh ag 'git commit'. Déan cinnte le do thoil gach "
-#~ "próiseas\n"
-#~ "foirceanntar ansin déan iarracht arís. Má theipeann air fós, próiseas "
-#~ "git\n"
-#~ "d'fhéadfadh go mbeadh sé titim sa stór seo níos luaithe:\n"
-#~ "bain an comhad de láimh chun leanúint ar aghaidh."
 
-#~ msgid "ref updates aborted by hook"
-#~ msgstr "nuashonruithe tagartha a chuirtear deireadh leis"
 
 #, c-format
-#~ msgid "refusing to move '%s' into an existing git dir"
-#~ msgstr "diúltú '%s' a bhogadh isteach i git dir atá ann cheana"
 
 #, c-format
-#~ msgid "could not resolve %s"
-#~ msgstr "ní fhéadfaí %s a réiteach"
 
 #, c-format
-#~ msgid "Checking %s link"
-#~ msgstr "Nasc %s a sheiceáil"
 
 #, c-format
-#~ msgid "%s points to something strange (%s)"
-#~ msgstr "Léiríonn %s rud éigin aisteach (%s)"
 
 #, c-format
-#~ msgid "%s: detached HEAD points at nothing"
-#~ msgstr "%s: pointí HEAD scoite ag aon rud"
 
 #, c-format
-#~ msgid "notice: %s points to an unborn branch (%s)"
-#~ msgstr "fógra: Díríonn %s chuig brainse neamhbhreithe (%s)"
 
 #, c-format
-#~ msgid "%s: object missing"
-#~ msgstr "%s: réad ar iarraidh"
 
-#~ msgid ""
-#~ "cannot implicitly determine whether this is an --advance or --onto "
-#~ "operation"
-#~ msgstr ""
-#~ "ní féidir a chinneadh go hinneach an oibríocht --advance nó --onto é seo"
 
-#~ msgid ""
-#~ "cannot advance target with multiple source branches because ordering "
-#~ "would be ill-defined"
-#~ msgstr ""
-#~ "ní féidir leis an sprioc a chur chun cinn le brainsí foinse iolracha mar "
-#~ "go mbeadh ordú"
 
-#~ msgid "cannot implicitly determine correct base for --onto"
-#~ msgstr "ní féidir leis an mbonn ceart do --onto a chinneadh go hinneach"
 
-#~ msgid "advance all branches contained in revision-range"
-#~ msgstr "gach brainse atá sa raon athbhreithnithe a chur chun cinn"
 
-#~ msgid "Reset current HEAD to the specified state"
-#~ msgstr "Athshocraigh HEAD reatha go dtí an stát sonraithe"
 
 #, c-format
-#~ msgid "%u.%2.2u GiB/s"
-#~ msgstr "%u.%2.2u GiB/s"
 
 #, c-format
-#~ msgid "%u.%2.2u MiB"
-#~ msgstr "%u.%2.2u MiB"
 
 #, c-format
-#~ msgid "%u.%2.2u MiB/s"
-#~ msgstr "%u.%2.2u MiB/s"
 
 #, c-format
-#~ msgid "%u.%2.2u KiB"
-#~ msgstr "%u.%2.2u KiB"
 
 #, c-format
-#~ msgid "%u.%2.2u KiB/s"
-#~ msgstr "%u.%2.2u KiB/s"
 
 #, c-format
-#~ msgid "%u byte"
-#~ msgid_plural "%u bytes"
-#~ msgstr[0] "%u beart"
-#~ msgstr[1] "%u beart"
-#~ msgstr[2] "%u beart"
 
 #, c-format
-#~ msgid "%u byte/s"
-#~ msgid_plural "%u bytes/s"
-#~ msgstr[0] "%u beart/s"
-#~ msgstr[1] "%u beart/s"
-#~ msgstr[2] "%u beart/s"
 
 #, c-format
-#~ msgid "   (%s will become dangling)"
-#~ msgstr "   (beidh %s ag crochadh)"
 
 #, c-format
-#~ msgid "   (%s has become dangling)"
-#~ msgstr "   (%s has become dangling)"
 
-#~ msgid "git for-each-ref [<options>] [<pattern>]"
-#~ msgstr "git for-each-ref [<options>] [<pattern>]"
 
-#~ msgid "git for-each-ref [--merged [<commit>]] [--no-merged [<commit>]]"
-#~ msgstr "git for-each-ref [--merged [<commit>]] [--no-merged [<commit>]]"
 
-#~ msgid "git for-each-ref [--contains [<commit>]] [--no-contains [<commit>]]"
-#~ msgstr "git for-each-ref [--contains [<commit>]] [--no-contains [<commit>]]"
 
-#~ msgid "use at most one of --auto and --schedule=<frequency>"
-#~ msgstr "bain úsáid as --auto agus --schedule=<frequency> ar a mhéad"
 
 #, c-format
-#~ msgid "Final output: %d %s\n"
-#~ msgstr "Aschur deiridh: %d %s\n"
 
 #, c-format
-#~ msgid "%d (FSCK_IGNORE?) should never trigger this callback"
-#~ msgstr "%d (FSCK_IGNORE?) níor cheart go spreagfadh an t-aisghlaoch seo"
 
-#~ msgid ""
-#~ "git pack-objects --stdout [<options>] [< <ref-list> | < <object-list>]"
-#~ msgstr ""
-#~ "git pack-objects --stdout [<options>] [< <ref-list> | < <object-list>]"
 
-#~ msgid ""
-#~ "git pack-objects [<options>] <base-name> [< <ref-list> | < <object-list>]"
-#~ msgstr ""
-#~ "git pack-objects [<options>] <base-name> [< <ref-list> | < <object-list>]"
 
-#~ msgid "cannot use --stdin-packs with --cruft"
-#~ msgstr "ní féidir --stdin-packs a úsáid le --cruft"
 
-#~ msgid ""
-#~ "'git pack-redundant' is nominated for removal.\n"
-#~ "If you still use this command, please add an extra\n"
-#~ "option, '--i-still-use-this', on the command line\n"
-#~ "and let us know you still use it by sending an e-mail\n"
-#~ "to <git@vger.kernel.org>.  Thanks.\n"
-#~ msgstr ""
-#~ "Tá 'git pack-redundant' ainmnithe le baint.\n"
-#~ "Má úsáideann tú an t-ordú seo fós, cuir rogha b\n"
-#~ "hreise, '--i-still-use-this', leis an líne ordaithe \n"
-#~ "agus cuir in iúl dúinn go n-úsáideann tú fós é trí ríomhphost \n"
-#~ "a sheoladh chuig <git@vger.kernel.org>.  Go raibh maith agat.\n"
 
-#~ msgid ""
-#~ "git pack-refs [--all] [--no-prune] [--auto] [--include <pattern>] [--"
-#~ "exclude <pattern>]"
-#~ msgstr ""
-#~ "<pattern><pattern>git pack-refs [--all] [--no-prunes] [--auto] [--"
-#~ "include] [--eisiamh]"
 
 #, c-format
-#~ msgid "deleting '%s' failed"
-#~ msgstr "theip ar '%s' a scriosadh"
 
 #, c-format
-#~ msgid "creating '%s' failed"
-#~ msgstr "theip ar chruthú '%s'"
 
 #, c-format
-#~ msgid "unreachable: invalid reference: %s"
-#~ msgstr "unrochtana: tagairt neamhbhailí: %s"
 
 #, c-format
-#~ msgid "could not open index for %s"
-#~ msgstr "ní raibh in ann innéacs a oscailt do %s"
 
-#~ msgid "trying to write commit not in index"
-#~ msgstr "ag iarraidh tiomantas a scríobh ní in innéacs"
 
-#~ msgid "cannot handle pushes this big"
-#~ msgstr "ní féidir brú mór seo a láimhseáil"
 
-#~ msgid "git cat-file (-t | -s) [--allow-unknown-type] <object>"
-#~ msgstr "git cat-file (-t | -s) [--leis-cineál gan eolas] <object>"
 
-#~ msgid "allow -s and -t to work with broken/corrupt objects"
-#~ msgstr "ligean do -s agus -t oibriú le rudaí briste/truaillithe"
 
 #, c-format
-#~ msgid "%s: object is of unknown type '%s': %s"
-#~ msgstr "%s: tá réad de chineál anaithnid '%s': %s"
 
 #, c-format
-#~ msgid "unable to read '%s'"
-#~ msgstr "ní féidir '%s' a léamh"

@@ -81,7 +81,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2026-04-15 07:38+0800\n"
-"PO-Revision-Date: 2026-04-10 16:52+0200\n"
+"PO-Revision-Date: 2026-04-21 22:32+0200\n"
 "Last-Translator: Mikel Forcada <mikel.forcada@gmail.com>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -508,8 +508,8 @@ msgstr ""
 #, c-format
 msgid "Discard mode change from index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Descarta el canvi de mode de l'índex i de l'arbre de treball%s "
-"[y,n,q,a,d%s,?]? "
+"Descarta el canvi de mode de l'índex i de l'arbre de treball%s [y,n,q,a,"
+"d%s,?]? "
 
 #: add-patch.c
 #, c-format
@@ -2291,12 +2291,10 @@ msgstr ""
 msgid "not tracking: ambiguous information for ref '%s'"
 msgstr "no s'està seguint: informació ambigua per a la referència «%s»"
 
-#. #-#-#-#-#  branch.c.po  #-#-#-#-#
 #. TRANSLATORS: This is a line listing a remote with duplicate
 #. refspecs in the advice message below. For RTL languages you'll
 #. probably want to swap the "%s" and leading "  " space around.
 #.
-#. #-#-#-#-#  object-name.c.po  #-#-#-#-#
 #. TRANSLATORS: This is line item of ambiguous object output
 #. from describe_ambiguous_object() above. For RTL languages
 #. you'll probably want to swap the "%s" and leading " " space
@@ -3154,7 +3152,7 @@ msgstr "git bisect (bad|new|<term-nou>) [<revisió>]"
 
 #: builtin/bisect.c
 msgid "git bisect (good|old|<term-old>) [<rev>...]"
-msgstr "git bisect (good|old|<term-nou>) [<revisió>...]"
+msgstr "git bisect (good|old|<term-antic>) [<revisió>...]"
 
 #: builtin/bisect.c
 msgid "git bisect skip [(<rev>|<range>)...]"
@@ -4032,11 +4030,11 @@ msgstr "HEAD no trobat sota refs/heads!"
 
 #: builtin/branch.c
 msgid ""
-"branch with --recurse-submodules can only be used if "
-"submodule.propagateBranches is enabled"
+"branch with --recurse-submodules can only be used if submodule."
+"propagateBranches is enabled"
 msgstr ""
-"la branca amb --recurse-submodules només es pot utilitzar si "
-"submodule.propagateBranches està habilitat"
+"la branca amb --recurse-submodules només es pot utilitzar si submodule."
+"propagateBranches està habilitat"
 
 #: builtin/branch.c
 msgid "--recurse-submodules can only be used to create branches"
@@ -7281,7 +7279,7 @@ msgstr "no es pot cercar el blob «%s» en una branca no nascuda"
 #: builtin/describe.c
 #, c-format
 msgid "blob '%s' not reachable from HEAD"
-msgstr "el tros «%s» no és accessible des de HEAD"
+msgstr "el blob «%s» no és accessible des de HEAD"
 
 #: builtin/describe.c
 #, c-format
@@ -7905,7 +7903,7 @@ msgstr "no es pot emmagatzemar el fitxer d'índex"
 #: builtin/fast-import.c
 #, c-format
 msgid "failed seeking to start of '%s'"
-msgstr "s'ha produït un error fent seek a l'inici de «%s»"
+msgstr "s'ha produït un error cercant l'inici de «%s»"
 
 #: builtin/fast-import.c
 #, c-format
@@ -8975,11 +8973,11 @@ msgstr "el protocol no admet --negotiate-only, se surt"
 
 #: builtin/fetch.c
 msgid ""
-"--filter can only be used with the remote configured in "
-"extensions.partialclone"
+"--filter can only be used with the remote configured in extensions."
+"partialclone"
 msgstr ""
-"--filter només es pot utilitzar amb el remot configurat en "
-"extensions.partialclone"
+"--filter només es pot utilitzar amb el remot configurat en extensions."
+"partialclone"
 
 #: builtin/fetch.c
 msgid "--atomic can only be used when fetching from one remote"
@@ -9888,7 +9886,6 @@ msgstr "grep: s'ha produït un error en crear fil: %s"
 msgid "invalid number of threads specified (%d) for %s"
 msgstr "s'ha especificat un nombre de fils no vàlid (%d) per a %s"
 
-#. #-#-#-#-#  grep.c.po  #-#-#-#-#
 #. TRANSLATORS: %s is the configuration
 #. variable for tweaking threads, currently
 #. grep.threads
@@ -10409,7 +10406,7 @@ msgstr "controla quines referències s'haurien d'actualitzar"
 
 #: builtin/history.c
 msgid "perform a dry-run without updating any refs"
-msgstr "fes una prova dry-run sense actualitzar cap referència"
+msgstr "fes una prova no destructiva sense actualitzar cap referència"
 
 #: builtin/history.c
 msgid "command expects a single revision"
@@ -11090,7 +11087,7 @@ msgstr ""
 "consell: Podeu reemplaçar 'git whatchanged <opts>' amb:\n"
 "consell:\tgit log <opts> --raw --no-merges\n"
 "consell: O creant un àlies:\n"
-"hint:\tgit config set --global alias.whatchanged 'log --raw --no-merges'\n"
+"consell:\tgit config set --global alias.whatchanged 'log --raw --no-merges'\n"
 "\n"
 
 #: builtin/log.c
@@ -12651,8 +12648,8 @@ msgid ""
 "| -C) <object>] [<object>] [-e]"
 msgstr ""
 "git notes [--ref <referència-notes>] add [-f] [--allow-empty] [--"
-"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | "
-"-F <fitxer> | (-c | -C) <objecte>] [<objecte>]"
+"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | -"
+"F <fitxer> | (-c | -C) <objecte>] [<objecte>]"
 
 #: builtin/notes.c
 msgid "git notes [--ref <notes-ref>] copy [-f] <from-object> <to-object>"
@@ -12666,8 +12663,8 @@ msgid ""
 "| -C) <object>] [<object>] [-e]"
 msgstr ""
 "git notes [--ref <referència-notes>] append [--allow-empty] [--"
-"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | "
-"-F <fitxer> | (-c | -C) <objecte>] [<objecte>] [-e]"
+"[no-]separator|--separator=<salt-paràgraf>] [--[no-]stripspace] [-m <msg> | -"
+"F <fitxer> | (-c | -C) <objecte>] [<objecte>] [-e]"
 
 #: builtin/notes.c
 msgid "git notes [--ref <notes-ref>] edit [--allow-empty] [<object>]"
@@ -15732,8 +15729,8 @@ msgid ""
 msgstr ""
 "Els reempaquetaments incrementals són incompatibles amb els índexs de mapes "
 "de bits.  Useu\n"
-"--no-write-bitmap-index o inhabiliteu el paràmetre de configuració "
-"pack.writeBitmaps."
+"--no-write-bitmap-index o inhabiliteu el paràmetre de configuració pack."
+"writeBitmaps."
 
 #: builtin/repack.c
 msgid "pack everything in a single pack"
@@ -17003,7 +17000,7 @@ msgstr "s'assumeix SHA-1; useu --object-format per a sobreescriure-ho"
 
 #: builtin/show-index.c
 msgid "unable to read header"
-msgstr "no s'ha pogut llegir la capçalera %s"
+msgstr "no s'ha pogut llegir la capçalera"
 
 #: builtin/show-index.c
 msgid "unknown index version"
@@ -20782,11 +20779,11 @@ msgstr ""
 #: commit-graph.c
 #, c-format
 msgid ""
-"attempting to write a commit-graph, but 'commitGraph.changedPathsVersion' "
-"(%d) is not supported"
+"attempting to write a commit-graph, but 'commitGraph."
+"changedPathsVersion' (%d) is not supported"
 msgstr ""
-"s'ha intentat escriure un graf de comissió, però no s'admet "
-"'commitGraph.changedPathsVersion' (%d)"
+"s'ha intentat escriure un graf de comissió, però no s'admet 'commitGraph."
+"changedPathsVersion' (%d)"
 
 #: commit-graph.c
 msgid "too many commits to write graph"
@@ -20840,7 +20837,7 @@ msgstr ""
 #: commit-graph.c
 #, c-format
 msgid "commit-graph parent for %s is %s != %s"
-msgstr "el pare pel graf de comissions %s és %s != %s"
+msgstr "el pare per al graf de comissions %s és %s != %s"
 
 #: commit-graph.c
 #, c-format
@@ -22173,7 +22170,7 @@ msgstr "--follow requereix exactament una especificació de camí"
 #: diff.c
 #, c-format
 msgid "pathspec magic not supported by --follow: %s"
-msgstr "la màgia d'especificació de camí no està suportat per --follow: %s"
+msgstr "la màgia d'especificació de camí no està admesa per --follow: %s"
 
 #: diff.c parse-options.c
 #, c-format
@@ -24303,7 +24300,7 @@ msgstr ""
 #. conflict in a submodule. The first argument is the submodule
 #. name, and the second argument is the abbreviated id of the
 #. commit that needs to be merged.  For example:
-#.  - go to submodule (mysubmodule), and either merge commit abc1234"
+#. - go to submodule (mysubmodule), and either merge commit abc1234"
 #.
 #: merge-ort.c
 #, c-format
@@ -24977,7 +24974,7 @@ msgstr "%s [objecte incorrecte]"
 #. TRANSLATORS: This is a line of ambiguous commit
 #. object output. E.g.:
 #. *
-#.    "deadbeef commit 2021-01-01 - Some Commit Message"
+#. "deadbeef commit 2021-01-01 - Some Commit Message"
 #.
 #: object-name.c
 #, c-format
@@ -24987,7 +24984,7 @@ msgstr "%s comissió %s - %s"
 #. TRANSLATORS: This is a line of ambiguous
 #. tag object output. E.g.:
 #. *
-#.    "deadbeef tag 2022-01-01 - Some Tag Message"
+#. "deadbeef tag 2022-01-01 - Some Tag Message"
 #. *
 #. The second argument is the YYYY-MM-DD found
 #. in the tag.
@@ -25004,7 +25001,7 @@ msgstr "%s etiqueta %s - %s"
 #. tag object output where we couldn't parse
 #. the tag itself. E.g.:
 #. *
-#.    "deadbeef [bad tag, could not parse it]"
+#. "deadbeef [bad tag, could not parse it]"
 #.
 #: object-name.c
 #, c-format
@@ -27226,7 +27223,7 @@ msgstr ""
 #, c-format
 msgid "reftable stack for worktree '%s' is broken"
 msgstr ""
-"la pila de taula de referències per a l'arbre de treball '%s\" està trencada"
+"la pila de taula de referències per a l'arbre de treball «%s» està trencada"
 
 #: refs/reftable-backend.c
 #, c-format
@@ -29991,8 +29988,8 @@ msgstr "ls-tree ha retornat un codi de retorn %d no esperat"
 msgid ""
 "the 'submodule.%s.gitdir' config does not exist for module '%s'. Please "
 "ensure it is set, for example by running something like: 'git config "
-"submodule.%s.gitdir .git/modules/%s'. For details see the "
-"extensions.submodulePathConfig documentation."
+"submodule.%s.gitdir .git/modules/%s'. For details see the extensions."
+"submodulePathConfig documentation."
 msgstr ""
 "la configuració «submodule.%s.gitdir» no existeix per al mòdul «%s». Si us "
 "plau, assegureu-vos que està establerta, per exemple, executant una ordre de "

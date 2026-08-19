@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
-"POT-Creation-Date: 2026-08-18 21:06+0000\n"
+"POT-Creation-Date: 2026-08-18 23:08+0000\n"
 "PO-Revision-Date: 2026-08-13 21:52-0300\n"
 "Last-Translator: Daniel Pereira <danielmaraboo@gmail.com>\n"
 "Language-Team: none\n"
@@ -25,13 +25,13 @@ msgid "could not read index"
 msgstr "não foi possível ler o índice"
 
 msgid "binary"
-msgstr "binary"
+msgstr "binário"
 
 msgid "nothing"
 msgstr "nada"
 
 msgid "unchanged"
-msgstr "unchanged"
+msgstr "inalterado"
 
 msgid "Update"
 msgstr "Atualizar"
@@ -105,52 +105,52 @@ msgstr "mostrar caminhos com mudanças"
 
 msgid "add working tree state to the staged set of changes"
 msgstr ""
-"adicione o estado da árvore de trabalho ao conjunto preparado de alterações"
+"adicionar o estado da árvore de trabalho ao conjunto de alterações preparadas"
 
 msgid "revert staged set of changes back to the HEAD version"
 msgstr ""
-"reverter o conjunto preparado de alterações de volta para a versão HEAD"
+"reverter o conjunto de alterações preparadas de volta para a versão HEAD"
 
 msgid "pick hunks and update selectively"
-msgstr "escolha pedaços e atualize seletivamente"
+msgstr "escolher trechos e atualizar seletivamente"
 
 msgid "view diff between HEAD and index"
-msgstr "ver a diferença entre HEAD e índice"
+msgstr "ver diff entre HEAD e o índice"
 
 msgid "add contents of untracked files to the staged set of changes"
 msgstr ""
-"adicione o conteúdo de arquivos não rastreados ao conjunto preparado de "
-"alterações"
+"adicionar o conteúdo de arquivos não rastreados ao conjunto de alterações "
+"preparadas"
 
 msgid "Prompt help:"
-msgstr "Ajuda imediata:"
+msgstr "Ajuda do prompt:"
 
 msgid "select a single item"
-msgstr "selecione um único item"
+msgstr "selecionar um único item"
 
 msgid "select a range of items"
-msgstr "selecione uma variedade de itens"
+msgstr "selecionar um intervalo de itens"
 
 msgid "select multiple ranges"
-msgstr "selecione vários intervalos"
+msgstr "selecionar múltiplos intervalos"
 
 msgid "select item based on unique prefix"
-msgstr "selecione o item com base no prefixo exclusivo"
+msgstr "selecionar item com base em prefixo único"
 
 msgid "unselect specified items"
 msgstr "desmarcar itens especificados"
 
 msgid "choose all items"
-msgstr "escolha todos os itens"
+msgstr "escolher todos os itens"
 
 msgid "(empty) finish selecting"
-msgstr "(vazio) terminar de selecionar"
+msgstr "(vazio) concluir seleção"
 
 msgid "select a numbered item"
-msgstr "selecione um item numerado"
+msgstr "selecionar um item numerado"
 
 msgid "(empty) select nothing"
-msgstr "(vazio) não selecione nada"
+msgstr "(vazio) não selecionar nada"
 
 msgid "*** Commands ***"
 msgstr "*** Comandos ***"
@@ -159,7 +159,7 @@ msgid "What now"
 msgstr "E agora"
 
 msgid "staged"
-msgstr "staged"
+msgstr "preparado"
 
 msgid "unstaged"
 msgstr "não preparado"
@@ -176,19 +176,19 @@ msgstr "Tchau.\n"
 
 #, c-format
 msgid "Stage mode change%s [y,n,q,a,d%s,?]? "
-msgstr "Mudança de modo de estágio%s [y,n,q,a,d%s,?]?"
+msgstr "Preparar alteração de modo%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage deletion%s [y,n,q,a,d%s,?]? "
-msgstr "Exclusão de estágio%s [y,n,q,a,d%s,?]?"
+msgstr "Preparar exclusão%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage addition%s [y,n,q,a,d%s,?]? "
-msgstr "Adição de estágio%s [y,n,q,a,d%s,?]?"
+msgstr "Preparar adição%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage this hunk%s [y,n,q,a,d%s,?]? "
-msgstr "Prepare esse pedaço%s [y,n,q,a,d%s,?]?"
+msgstr "Preparar este pedaço%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "If the patch applies cleanly, the edited hunk will immediately be marked for "
@@ -204,20 +204,19 @@ msgid ""
 "a - stage this hunk and all later hunks in the file\n"
 "d - do not stage this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - encenar esse pedaço\n"
-"n - não encena esse pedaço\n"
-"q - sair;não encene este pedaço ou qualquer um dos restantes\n"
-"a - prepare este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não prepare este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - preparar este pedaço\n"
+"n - não preparar este pedaço\n"
+"q - sair; não preparar este pedaço nem nenhum dos restantes\n"
+"a - preparar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não preparar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "Stash mode change%s [y,n,q,a,d%s,?]? "
-msgstr "Mudança no modo Stash%s [y,n,q,a,d%s,?]?"
+msgstr "Fazer stash da alteração de modo%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stash deletion%s [y,n,q,a,d%s,?]? "
-msgstr "Exclusão de stash%s [y,n,q,a,d%s,?]?"
+msgstr "Fazer stash da exclusão%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stash addition%s [y,n,q,a,d%s,?]? "
@@ -225,14 +224,14 @@ msgstr "Fazer stash da adição%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stash this hunk%s [y,n,q,a,d%s,?]? "
-msgstr "Esconda esse pedaço%s [y,n,q,a,d%s,?]?"
+msgstr "Fazer stash deste pedaço%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "If the patch applies cleanly, the edited hunk will immediately be marked for "
 "stashing."
 msgstr ""
 "Se o patch for aplicado corretamente, o pedaço editado será imediatamente "
-"marcado para armazenamento."
+"marcado para stash."
 
 msgid ""
 "y - stash this hunk\n"
@@ -241,11 +240,11 @@ msgid ""
 "a - stash this hunk and all later hunks in the file\n"
 "d - do not stash this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - esconda esse pedaço\n"
-"n - não esconda esse pedaço\n"
-"q - sair;não esconda este pedaço ou qualquer um dos restantes\n"
-"a - guarde este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não esconda este pedaço ou qualquer um dos pedaços posteriores no "
+"y - fazer stash deste pedaço\n"
+"n - não fazer stash deste pedaço\n"
+"q - sair; não fazer stash deste pedaço nem de nenhum dos restantes\n"
+"a - fazer stash deste pedaço e de todos os pedaços posteriores no arquivo\n"
+"d - não fazer stash deste pedaço nem de nenhum dos pedaços posteriores no "
 "arquivo\n"
 
 #, c-format
@@ -287,19 +286,19 @@ msgstr ""
 
 #, c-format
 msgid "Apply mode change to index%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar alteração de modo ao índice%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar alteração de modo ao índice%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply deletion to index%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar exclusão ao índice%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar exclusão ao índice%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply addition to index%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar adição ao índice%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar adição ao índice%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply this hunk to index%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar este pedaço ao índice%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar este pedaço ao índice%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "If the patch applies cleanly, the edited hunk will immediately be marked for "
@@ -315,28 +314,27 @@ msgid ""
 "a - apply this hunk and all later hunks in the file\n"
 "d - do not apply this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - aplique este pedaço ao índice\n"
-"n - não aplique este pedaço ao índice\n"
-"q - sair;não aplique este pedaço ou qualquer um dos restantes\n"
-"a - aplique este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não aplique este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - aplicar este pedaço ao índice\n"
+"n - não aplicar este pedaço ao índice\n"
+"q - sair; não aplicar este pedaço nem nenhum dos restantes\n"
+"a - aplicar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não aplicar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "Discard mode change from worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Descartar mudança de modo da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Descartar alteração de modo da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard deletion from worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Descartar exclusão da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Descartar exclusão da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard addition from worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Descartar adição da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Descartar adição da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard this hunk from worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Descartar este pedaço da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Descartar este pedaço da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "If the patch applies cleanly, the edited hunk will immediately be marked for "
@@ -352,32 +350,31 @@ msgid ""
 "a - discard this hunk and all later hunks in the file\n"
 "d - do not discard this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - descarte este pedaço da árvore de trabalho\n"
-"n - não descarte este pedaço da árvore de trabalho\n"
-"q - sair;não descarte este pedaço ou qualquer um dos restantes\n"
-"a - descarte este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não descarte este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - descartar este pedaço da árvore de trabalho\n"
+"n - não descartar este pedaço da árvore de trabalho\n"
+"q - sair; não descartar este pedaço nem nenhum dos restantes\n"
+"a - descartar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não descartar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "Discard mode change from index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Descartar mudança de modo do índice e da árvore de trabalho%s "
-"[y,n,q,a,d%s,?]?"
+"Descartar alteração de modo do índice e da árvore de trabalho%s "
+"[y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard deletion from index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Descartar exclusão do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+"Descartar exclusão do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard addition from index and worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Descartar adição do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Descartar adição do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Discard this hunk from index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Descartar este pedaço do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]?"
+"Descartar este pedaço do índice e da árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "y - discard this hunk from index and worktree\n"
@@ -386,30 +383,30 @@ msgid ""
 "a - discard this hunk and all later hunks in the file\n"
 "d - do not discard this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - descarta este pedaço do índice e da árvore de trabalho\n"
-"n - não descarte este pedaço do índice e da árvore de trabalho\n"
-"q - sair;não descarte este pedaço ou qualquer um dos restantes\n"
-"a - descarte este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não descarte este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - descartar este pedaço do índice e da árvore de trabalho\n"
+"n - não descartar este pedaço do índice e da árvore de trabalho\n"
+"q - sair; não descartar este pedaço nem nenhum dos restantes\n"
+"a - descartar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não descartar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "Apply mode change to index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Aplicar alteração de modo ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+"Aplicar alteração de modo ao índice e à árvore de trabalho%s "
+"[y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply deletion to index and worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar exclusão ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar exclusão ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply addition to index and worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar adição ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar adição ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply this hunk to index and worktree%s [y,n,q,a,d%s,?]? "
 msgstr ""
-"Aplicar este pedaço ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+"Aplicar este pedaço ao índice e à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "y - apply this hunk to index and worktree\n"
@@ -418,28 +415,27 @@ msgid ""
 "a - apply this hunk and all later hunks in the file\n"
 "d - do not apply this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - aplique este pedaço ao índice e à árvore de trabalho\n"
-"n - não aplique este pedaço ao índice e à árvore de trabalho\n"
-"q - sair;não aplique este pedaço ou qualquer um dos restantes\n"
-"a - aplique este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não aplique este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - aplicar este pedaço ao índice e à árvore de trabalho\n"
+"n - não aplicar este pedaço ao índice e à árvore de trabalho\n"
+"q - sair; não aplicar este pedaço nem nenhum dos restantes\n"
+"a - aplicar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não aplicar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "Apply mode change to worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar alteração de modo à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar alteração de modo à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply deletion to worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar exclusão à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar exclusão à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply addition to worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar adição à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar adição à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Apply this hunk to worktree%s [y,n,q,a,d%s,?]? "
-msgstr "Aplicar este pedaço à árvore de trabalho%s [y,n,q,a,d%s,?]?"
+msgstr "Aplicar este pedaço à árvore de trabalho%s [y,n,q,a,d%s,?]? "
 
 msgid ""
 "y - apply this hunk to worktree\n"
@@ -448,12 +444,11 @@ msgid ""
 "a - apply this hunk and all later hunks in the file\n"
 "d - do not apply this hunk or any of the later hunks in the file\n"
 msgstr ""
-"y - aplique este pedaço à árvore de trabalho\n"
-"n - não aplique este pedaço à árvore de trabalho\n"
-"q - sair;não aplique este pedaço ou qualquer um dos restantes\n"
-"a - aplique este pedaço e todos os pedaços posteriores no arquivo\n"
-"d - não aplique este pedaço ou qualquer um dos pedaços posteriores no "
-"arquivo\n"
+"y - aplicar este pedaço à árvore de trabalho\n"
+"n - não aplicar este pedaço à árvore de trabalho\n"
+"q - sair; não aplicar este pedaço nem nenhum dos restantes\n"
+"a - aplicar este pedaço e todos os pedaços posteriores no arquivo\n"
+"d - não aplicar este pedaço nem nenhum dos pedaços posteriores no arquivo\n"
 
 #, c-format
 msgid "%s cannot be negative"
@@ -464,23 +459,23 @@ msgid "could not parse hunk header '%.*s'"
 msgstr "não foi possível analisar o cabeçalho do pedaço '%.*s'"
 
 msgid "could not parse diff"
-msgstr "não foi possível analisar a diferença"
+msgstr "não foi possível analisar o diff"
 
 msgid "could not parse colored diff"
-msgstr "não foi possível analisar a diferença colorida"
+msgstr "não foi possível analisar o diff colorido"
 
 #, c-format
 msgid "failed to run '%s'"
 msgstr "falha ao executar '%s'"
 
 msgid "mismatched output from interactive.diffFilter"
-msgstr "mismatched output from interactive.diffFilter"
+msgstr "saída incompatível de interactive.diffFilter"
 
 msgid ""
 "Your filter must maintain a one-to-one correspondence\n"
 "between its input and output lines."
 msgstr ""
-"Seu filtro deve manter uma correspondência individual\n"
+"Seu filtro deve manter uma correspondência um-para-um\n"
 "entre suas linhas de entrada e saída."
 
 #, c-format
@@ -500,11 +495,11 @@ msgid ""
 msgstr ""
 "pedaços não se sobrepõem:\n"
 "%.*s\n"
-"não termina com:\n"
+"\tnão termina com:\n"
 "%.*s"
 
 msgid "Manual hunk edit mode -- see bottom for a quick guide.\n"
-msgstr "Modo de edição manual de pedaços - veja abaixo um guia rápido.\n"
+msgstr "Modo de edição manual de pedaços -- veja abaixo um guia rápido.\n"
 
 #, c-format
 msgid ""
@@ -523,9 +518,9 @@ msgid ""
 "edit again.  If all lines of the hunk are removed, then the edit is\n"
 "aborted and the hunk is left unchanged.\n"
 msgstr ""
-"If it does not apply cleanly, you will be given an opportunity to\n"
-"edit again.  If all lines of the hunk are removed, then the edit is\n"
-"aborted and the hunk is left unchanged.\n"
+"Se não for aplicado corretamente, você terá a oportunidade de\n"
+"editar novamente. Se todas as linhas do pedaço forem removidas, a edição\n"
+"será abortada e o pedaço permanecerá inalterado.\n"
 
 msgid "could not parse hunk header"
 msgstr "não foi possível analisar o cabeçalho do pedaço"
@@ -542,13 +537,14 @@ msgstr "'git apply --cached' falhou"
 msgid ""
 "Your edited hunk does not apply. Edit again (saying \"no\" discards!) [y/n]? "
 msgstr ""
-"Your edited hunk does not apply. Edit again (saying \"no\" discards!) [y/n]? "
+"Seu pedaço editado não se aplica. Editar novamente (dizer \"não\" descarta!) "
+"[y/n]? "
 
 msgid "The selected hunks do not apply to the index!"
 msgstr "Os pedaços selecionados não se aplicam ao índice!"
 
 msgid "Apply them to the worktree anyway? "
-msgstr "Mesmo assim, aplicá-los à árvore de trabalho?"
+msgstr "Aplicá-los à árvore de trabalho mesmo assim? "
 
 msgid "Nothing was applied.\n"
 msgstr "Nada foi aplicado.\n"
@@ -570,19 +566,21 @@ msgid ""
 "? - print help\n"
 "HUNKS SUMMARY - Hunks: %d, USE: %d, SKIP: %d\n"
 msgstr ""
-"j - vá para o próximo pedaço indeciso, role na parte inferior\n"
-"J - vá para o próximo pedaço, role na parte inferior\n"
-"k - vá para o pedaço indeciso anterior, role no topo\n"
-"K - vá para o pedaço anterior, role por cima\n"
-"g - selecione um pedaço para ir\n"
-"/ - procura um pedaço que corresponda ao regex fornecido\n"
-"s - divide o pedaço atual em pedaços menores\n"
-"e - edite manualmente o pedaço atual\n"
-"p - imprime o pedaço atual\n"
-"P - imprima o pedaço atual usando o pager\n"
-"> - vá para o próximo arquivo, role na parte inferior\n"
-"< - vá para o arquivo anterior, role para cima\n"
-"?- imprimir ajuda\n"
+"j - ir para o próximo pedaço indeciso, recomeçar do início ao atingir o "
+"final\n"
+"J - ir para o próximo pedaço, recomeçar do início ao atingir o final\n"
+"k - ir para o pedaço indeciso anterior, recomeçar do fim ao atingir o "
+"início\n"
+"K - ir para o pedaço anterior, recomeçar do fim ao atingir o início\n"
+"g - selecionar um pedaço para ir\n"
+"/ - procurar um pedaço que corresponda à regex fornecida\n"
+"s - dividir o pedaço atual em pedaços menores\n"
+"e - editar manualmente o pedaço atual\n"
+"p - exibir o pedaço atual\n"
+"P - exibir o pedaço atual usando o paginador\n"
+"> - ir para o próximo arquivo, recomeçar do início ao atingir o final\n"
+"< - ir para o arquivo anterior, recomeçar do fim ao atingir o início\n"
+"? - imprimir ajuda\n"
 "RESUMO DE PEDAÇOS - Pedaços: %d, USE: %d, SKIP: %d\n"
 
 msgid "'git apply' failed"
@@ -592,7 +590,7 @@ msgid " (was: y)"
 msgstr " (era: y)"
 
 msgid " (was: n)"
-msgstr "(era: n)"
+msgstr " (era: n)"
 
 #, c-format
 msgid "Only one letter is expected, got '%s'"
@@ -614,10 +612,10 @@ msgid "No other hunks to goto"
 msgstr "Não há outros pedaços para ir"
 
 msgid "go to which hunk (<ret> to see more)? "
-msgstr "vá para qual pedaço (<ret> para ver mais)?"
+msgstr "ir para qual pedaço (<ret> para ver mais)? "
 
 msgid "go to which hunk? "
-msgstr "ir para qual pedaço?"
+msgstr "ir para qual pedaço? "
 
 #, c-format
 msgid "Invalid number: '%s'"
@@ -626,14 +624,14 @@ msgstr "Número inválido: '%s'"
 #, c-format
 msgid "Sorry, only %d hunk available."
 msgid_plural "Sorry, only %d hunks available."
-msgstr[0] "Desculpe, apenas %d hunk disponível."
-msgstr[1] "Desculpe, apenas %d hunks disponíveis."
+msgstr[0] "Desculpe, apenas %d pedaço disponível."
+msgstr[1] "Desculpe, apenas %d pedaços disponíveis."
 
 msgid "No other hunks to search"
 msgstr "Não há outros pedaços para pesquisar"
 
 msgid "search for regex? "
-msgstr "procurar por regex?"
+msgstr "procurar por regex? "
 
 #, c-format
 msgid "Malformed search regexp %s: %s"
@@ -643,11 +641,11 @@ msgid "No hunk matches the given pattern"
 msgstr "Nenhum pedaço corresponde ao padrão fornecido"
 
 msgid "Sorry, cannot split this hunk"
-msgstr "Desculpe, não posso dividir este pedaço"
+msgstr "Desculpe, não é possível dividir este pedaço"
 
 #, c-format
 msgid "Split into %d hunks."
-msgstr "Divida em %d pedaços."
+msgstr "Dividido em %d pedaços."
 
 msgid "Sorry, cannot edit this hunk"
 msgstr "Desculpe, não é possível editar este pedaço"
@@ -664,19 +662,19 @@ msgstr "Apenas arquivos binários foram alterados."
 
 #, c-format
 msgid "Stage mode change [y,n,q,a,d%s,?]? "
-msgstr "Alteração do modo de estágio [y,n,q,a,d%s,?]?"
+msgstr "Preparar alteração de modo [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage deletion [y,n,q,a,d%s,?]? "
-msgstr "Exclusão de estágio [y,n,q,a,d%s,?]?"
+msgstr "Preparar exclusão [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage addition [y,n,q,a,d%s,?]? "
-msgstr "Adição de estágio [y,n,q,a,d%s,?]?"
+msgstr "Preparar adição [y,n,q,a,d%s,?]? "
 
 #, c-format
 msgid "Stage this hunk [y,n,q,a,d%s,?]? "
-msgstr "Prepare esse pedaço [y,n,q,a,d%s,?]?"
+msgstr "Preparar este pedaço [y,n,q,a,d%s,?]? "
 
 msgid "Revision does not refer to a commit"
 msgstr "A revisão não se refere a um commit"
@@ -695,22 +693,22 @@ msgstr "%shint:%s%.*s%s\n"
 
 msgid "Cherry-picking is not possible because you have unmerged files."
 msgstr ""
-"A seleção seletiva não é possível porque você tem arquivos não mesclados."
+"Não é possível fazer cherry-pick porque você tem arquivos não mesclados."
 
 msgid "Committing is not possible because you have unmerged files."
-msgstr "A confirmação não é possível porque você tem arquivos não mesclados."
+msgstr "Não é possível fazer commit porque você tem arquivos não mesclados."
 
 msgid "Merging is not possible because you have unmerged files."
-msgstr "A mesclagem não é possível porque você possui arquivos não mesclados."
+msgstr "Não é possível mesclar porque você tem arquivos não mesclados."
 
 msgid "Pulling is not possible because you have unmerged files."
-msgstr "A extração não é possível porque você tem arquivos não mesclados."
+msgstr "Não é possível fazer pull porque você tem arquivos não mesclados."
 
 msgid "Reverting is not possible because you have unmerged files."
-msgstr "A reversão não é possível porque você tem arquivos não mesclados."
+msgstr "Não é possível reverter porque você tem arquivos não mesclados."
 
 msgid "Rebasing is not possible because you have unmerged files."
-msgstr "A rebase não é possível porque você possui arquivos não mesclados."
+msgstr "Não é possível fazer rebase porque você tem arquivos não mesclados."
 
 msgid ""
 "Fix them up in the work tree, and then use 'git add/rm <file>'\n"
@@ -720,13 +718,13 @@ msgstr ""
 "conforme apropriado para marcar a resolução e fazer um commit."
 
 msgid "Exiting because of an unresolved conflict."
-msgstr "Sair por causa de um conflito não resolvido."
+msgstr "Saindo devido a um conflito não resolvido."
 
 msgid "You have not concluded your merge (MERGE_HEAD exists)."
 msgstr "Você não concluiu sua mesclagem (MERGE_HEAD existe)."
 
 msgid "Please, commit your changes before merging."
-msgstr "Por favor, confirme suas alterações antes de mesclar."
+msgstr "Por favor, faça commit das suas alterações antes de mesclar."
 
 msgid "Exiting because of unfinished merge."
 msgstr "Saindo devido a uma mesclagem inacabada."
@@ -901,11 +899,11 @@ msgstr ""
 
 #, c-format
 msgid "git apply: bad git-diff - expected /dev/null at %s:%d"
-msgstr "git apply: git-diff ruim - esperado /dev/null em %s:%d"
+msgstr "git apply: git-diff inválido - esperado /dev/null em %s:%d"
 
 #, c-format
 msgid "git apply: bad git-diff - expected /dev/null on line %d"
-msgstr "git apply: git-diff ruim - esperado /dev/null na linha %d"
+msgstr "git apply: git-diff inválido - esperado /dev/null na linha %d"
 
 #, c-format
 msgid "invalid mode at %s:%d: %s"
@@ -927,11 +925,11 @@ msgid_plural ""
 "git diff header lacks filename information when removing %d leading pathname "
 "components at %s:%d"
 msgstr[0] ""
-"git diff header lacks filename information when removing %d leading pathname "
-"component at %s:%d"
+"o cabeçalho do git diff não contém informações de nome de arquivo ao remover "
+"%d componente inicial do caminho em %s:%d"
 msgstr[1] ""
-"git diff header lacks filename information when removing %d leading pathname "
-"components at %s:%d"
+"o cabeçalho do git diff não contém informações de nome de arquivo ao remover "
+"%d componentes iniciais do caminho em %s:%d"
 
 #, c-format
 msgid ""
@@ -941,20 +939,21 @@ msgid_plural ""
 "git diff header lacks filename information when removing %d leading pathname "
 "components (line %d)"
 msgstr[0] ""
-"git diff header lacks filename information when removing %d leading pathname "
-"component (line %d)"
+"o cabeçalho do git diff não contém informações de nome de arquivo ao remover "
+"%d componente inicial do caminho (linha %d)"
 msgstr[1] ""
-"git diff header lacks filename information when removing %d leading pathname "
-"components (line %d)"
+"o cabeçalho do git diff não contém informações de nome de arquivo ao remover "
+"%d componentes iniciais do caminho (linha %d)"
 
 #, c-format
 msgid "git diff header lacks filename information at %s:%d"
 msgstr ""
-"O cabeçalho git diff não possui informações de nome de arquivo em %s:%d"
+"o cabeçalho do git diff não contém informações de nome de arquivo em %s:%d"
 
 #, c-format
 msgid "git diff header lacks filename information (line %d)"
-msgstr "git diff header lacks filename information (line %d)"
+msgstr ""
+"o cabeçalho do git diff não contém informações de nome de arquivo (linha %d)"
 
 #, c-format
 msgid "recount: unexpected line: %.*s"
@@ -1004,7 +1003,7 @@ msgstr "não foi possível ler o link simbólico %s"
 
 #, c-format
 msgid "unable to open or read %s"
-msgstr "não consigo abrir ou ler %s"
+msgstr "não foi possível abrir ou ler %s"
 
 #, c-format
 msgid "invalid start of line: '%c'"
@@ -1013,8 +1012,8 @@ msgstr "início de linha inválido: '%c'"
 #, c-format
 msgid "Hunk #%d succeeded at %d (offset %d line)."
 msgid_plural "Hunk #%d succeeded at %d (offset %d lines)."
-msgstr[0] "Hunk #%d aplicado com sucesso em %d (deslocamento de %d linha)."
-msgstr[1] "Hunk #%d aplicado com sucesso em %d (deslocamento de %d linhas)."
+msgstr[0] "Pedaço #%d aplicado com sucesso em %d (deslocamento de %d linha)."
+msgstr[1] "Pedaço #%d aplicado com sucesso em %d (deslocamento de %d linhas)."
 
 #, c-format
 msgid "Context reduced to (%ld/%ld) to apply fragment at %d"
@@ -1035,8 +1034,8 @@ msgstr "faltando dados de patch binário para '%s'"
 #, c-format
 msgid "cannot reverse-apply a binary patch without the reverse hunk to '%s'"
 msgstr ""
-"não é possível aplicar reversamente um patch binário sem o pedaço reverso em "
-"'%s'"
+"não é possível aplicar um patch binário de forma reversa sem o pedaço "
+"reverso em '%s'"
 
 #, c-format
 msgid "cannot apply binary patch to '%s' without full index line"
@@ -1116,7 +1115,7 @@ msgstr "Aplicado patch em '%s' com conflitos.\n"
 
 #, c-format
 msgid "Applied patch to '%s' cleanly.\n"
-msgstr "Aplicado patch em '%s' de forma limpa.\n"
+msgstr "Patch aplicado a '%s' com sucesso.\n"
 
 #, c-format
 msgid "Falling back to direct application...\n"
@@ -1171,7 +1170,7 @@ msgstr "informações sha1 estão faltando ou são inúteis para o submódulo %s
 
 #, c-format
 msgid "mode change for %s, which is not in current HEAD"
-msgstr "mudança de modo para %s, que não está no HEAD atual"
+msgstr "alteração de modo para %s, que não está no HEAD atual"
 
 #, c-format
 msgid "sha1 information is lacking or useless (%s)."
@@ -1195,7 +1194,7 @@ msgstr "patch corrompido para o submódulo %s"
 
 #, c-format
 msgid "unable to stat newly created file '%s'"
-msgstr "não foi possível registrar o arquivo recém-criado '%s'"
+msgstr "não foi possível obter o estado do arquivo recém-criado '%s'"
 
 #, c-format
 msgid "unable to create backing store for newly created file %s"
@@ -1217,11 +1216,11 @@ msgstr "fechando arquivo '%s'"
 
 #, c-format
 msgid "unable to write file '%s' mode %o"
-msgstr "não foi possível gravar o arquivo no modo '%s' %o"
+msgstr "não foi possível gravar o arquivo '%s' no modo %o"
 
 #, c-format
 msgid "Applied patch %s cleanly."
-msgstr "Aplicou o patch %s corretamente."
+msgstr "Patch %s aplicado com sucesso."
 
 msgid "internal error"
 msgstr "erro interno"
@@ -1242,11 +1241,11 @@ msgstr "não é possível desvincular '%s'"
 
 #, c-format
 msgid "Hunk #%d applied cleanly."
-msgstr "Pedaço #%d aplicado de forma limpa."
+msgstr "Pedaço #%d aplicado com sucesso."
 
 #, c-format
 msgid "Rejected hunk #%d."
-msgstr "Pedaço rejeitado #%d."
+msgstr "Pedaço #%d rejeitado."
 
 #, c-format
 msgid "Skipped patch '%s'."
@@ -1289,7 +1288,7 @@ msgstr[0] "%d linha aplicada após corrigir erros de espaço em branco."
 msgstr[1] "%d linhas aplicadas após corrigir erros de espaço em branco."
 
 msgid "Unable to write new index file"
-msgstr "incapaz de escrever novo arquivo de índice"
+msgstr "Não foi possível gravar o novo arquivo de índice"
 
 msgid "don't apply changes matching the given path"
 msgstr "não aplicar alterações que correspondam ao caminho fornecido"
@@ -1319,13 +1318,13 @@ msgid "instead of applying the patch, see if the patch is applicable"
 msgstr "em vez de aplicar o patch, verificar se o patch é aplicável"
 
 msgid "make sure the patch is applicable to the current index"
-msgstr "garantir que o patch seja aplicável ao index atual"
+msgstr "garantir que o patch seja aplicável ao índice atual"
 
 msgid "mark new files with `git add --intent-to-add`"
 msgstr "marcar novos arquivos com `git add --intent-to-add`"
 
 msgid "apply a patch without touching the working tree"
-msgstr "aplicar um patch sem modificar a working tree"
+msgstr "aplicar um patch sem modificar a árvore de trabalho"
 
 msgid "accept a patch that touches outside the working area"
 msgstr "aceitar um patch que modifica fora da área de trabalho"
@@ -1347,7 +1346,7 @@ msgstr "para conflitos, usar uma versão união"
 
 msgid "build a temporary index based on embedded index information"
 msgstr ""
-"construir um index temporário baseado nas informações de index embutidas"
+"construir um índice temporário baseado nas informações de índice embutidas"
 
 msgid "paths are separated with NUL character"
 msgstr "caminhos são separados pelo caractere NUL"
@@ -1372,16 +1371,16 @@ msgid "don't expect at least one line of context"
 msgstr "não exigir ao menos uma linha de contexto"
 
 msgid "leave the rejected hunks in corresponding *.rej files"
-msgstr "deixar os hunks rejeitados nos arquivos *.rej correspondentes"
+msgstr "deixar os pedaços rejeitados nos arquivos *.rej correspondentes"
 
 msgid "allow overlapping hunks"
-msgstr "permitir hunks sobrepostos"
+msgstr "permitir pedaços sobrepostos"
 
 msgid "tolerate incorrectly detected missing new-line at the end of file"
 msgstr "tolerar detecção incorreta de nova linha ausente no final do arquivo"
 
 msgid "do not trust the line counts in the hunk headers"
-msgstr "não confiar na contagem de linhas nos cabeçalhos de hunk"
+msgstr "não confiar na contagem de linhas nos cabeçalhos de pedaço"
 
 msgid "root"
 msgstr "root"
@@ -1412,11 +1411,11 @@ msgid "unable to start '%s' filter"
 msgstr "não foi possível iniciar o filtro '%s'"
 
 msgid "unable to redirect descriptor"
-msgstr "unable to redirect descriptor"
+msgstr "não foi possível redirecionar o descritor"
 
 #, c-format
 msgid "'%s' filter reported error"
-msgstr "'%s' filter reported error"
+msgstr "o filtro '%s' relatou um erro"
 
 #, c-format
 msgid "path is not valid UTF-8: %s"
@@ -1443,7 +1442,7 @@ msgstr "git archive --remote <repo> [--exec <cmd>] --list"
 
 #, c-format
 msgid "cannot read '%s'"
-msgstr "cannot read '%s'"
+msgstr "não é possível ler '%s'"
 
 #, c-format
 msgid "pathspec '%s' matches files outside the current directory"
@@ -1455,7 +1454,7 @@ msgstr "o pathspec '%s' não corresponde a nenhum arquivo"
 
 #, c-format
 msgid "no such ref: %.*s"
-msgstr "no such ref: %.*s"
+msgstr "referência inexistente: %.*s"
 
 #, c-format
 msgid "not a valid object name: %s"
@@ -1490,7 +1489,7 @@ msgid "empty file name: '%s'"
 msgstr "nome de arquivo vazio: '%s'"
 
 msgid "fmt"
-msgstr "formatar"
+msgstr "formato"
 
 msgid "archive format"
 msgstr "formato do arquivo compactado"
@@ -1505,7 +1504,7 @@ msgid "file"
 msgstr "arquivo"
 
 msgid "add untracked file to archive"
-msgstr "add untracked file to archive"
+msgstr "adicionar arquivo não rastreado ao arquivo compactado"
 
 msgid "path:content"
 msgstr "caminho:conteúdo"
@@ -1541,7 +1540,7 @@ msgid "command"
 msgstr "comando"
 
 msgid "path to the remote git-upload-archive command"
-msgstr "path to the remote git-upload-archive command"
+msgstr "caminho para o comando remoto git-upload-archive"
 
 msgid "Unexpected option --remote"
 msgstr "Opção inesperada --remote"
@@ -1563,11 +1562,11 @@ msgstr "Formato de arquivo compactado desconhecido '%s'"
 
 #, c-format
 msgid "Argument not supported for format '%s': -%d"
-msgstr "Argument not supported for format '%s': -%d"
+msgstr "Argumento não suportado para o formato '%s': -%d"
 
 #, c-format
 msgid "%.*s is not a valid attribute name"
-msgstr "%.*s is not a valid attribute name"
+msgstr "%.*s não é um nome de atributo válido"
 
 msgid "unable to add additional attribute"
 msgstr "não foi possível adicionar atributo adicional"
@@ -1589,7 +1588,7 @@ msgstr ""
 
 #, c-format
 msgid "cannot fstat gitattributes file '%s'"
-msgstr "cannot fstat gitattributes file '%s'"
+msgstr "não foi possível executar fstat no arquivo gitattributes '%s'"
 
 #, c-format
 msgid "ignoring overly large gitattributes file '%s'"
@@ -1612,7 +1611,7 @@ msgstr "não foi possível obter o status de '%s'"
 
 #, c-format
 msgid "unable to read %s"
-msgstr "não consigo ler %s"
+msgstr "não foi possível ler %s"
 
 #, c-format
 msgid "Badly quoted content in file '%s': %s"
@@ -1740,11 +1739,11 @@ msgstr ""
 
 #, c-format
 msgid "no such path %s in %s"
-msgstr "no such path %s in %s"
+msgstr "nenhum caminho %s em %s"
 
 #, c-format
 msgid "cannot read blob %s for path %s"
-msgstr "cannot read blob %s for path %s"
+msgstr "não foi possível ler o blob %s para o caminho %s"
 
 msgid ""
 "cannot inherit upstream tracking configuration of multiple refs when "
@@ -1755,7 +1754,7 @@ msgstr ""
 
 #, c-format
 msgid "not setting branch '%s' as its own upstream"
-msgstr "not setting branch '%s' as its own upstream"
+msgstr "não configurando o branch '%s' como seu próprio upstream"
 
 #, c-format
 msgid "branch '%s' set up to track '%s' by rebasing."
@@ -1763,7 +1762,7 @@ msgstr "branch '%s' configurado para rastrear '%s' por rebase."
 
 #, c-format
 msgid "branch '%s' set up to track '%s'."
-msgstr "branch '%s' set up to track '%s'."
+msgstr "branch '%s' configurado para rastrear '%s'."
 
 #, c-format
 msgid "branch '%s' set up to track:"
@@ -1891,23 +1890,23 @@ msgstr "nome de objeto ambíguo: '%s'"
 
 #, c-format
 msgid "not a valid branch point: '%s'"
-msgstr "tal branch não existe: '%s'"
+msgstr "não é um ponto de partida válido para branch: '%s'"
 
 #, c-format
 msgid "submodule '%s': unable to find submodule"
-msgstr "submodule '%s': não foi possível encontrar o submodule"
+msgstr "submódulo '%s': não foi possível encontrar o submódulo"
 
 #, c-format
 msgid ""
 "You may try updating the submodules using 'git checkout --no-recurse-"
 "submodules %s && git submodule update --init'"
 msgstr ""
-"Você pode tentar atualizar os submodules usando 'git checkout --no-recurse-"
+"Você pode tentar atualizar os submódulos usando 'git checkout --no-recurse-"
 "submodules %s && git submodule update --init'"
 
 #, c-format
 msgid "submodule '%s': cannot create branch '%s'"
-msgstr "submodule '%s': não é possível criar o branch '%s'"
+msgstr "submódulo '%s': não é possível criar o branch '%s'"
 
 #, c-format
 msgid "'%s' is already used by worktree at '%s'"
@@ -1918,7 +1917,7 @@ msgstr "git add [<options>] [--] <pathspec>..."
 
 #, c-format
 msgid "cannot chmod %cx '%s'"
-msgstr "cannot chmod %cx '%s'"
+msgstr "não foi possível executar chmod %cx '%s'"
 
 msgid "Unstaged changes after refreshing the index:"
 msgstr "Alterações não preparadas após atualizar o índice:"
@@ -1954,7 +1953,7 @@ msgid "interactive picking"
 msgstr "seleção interativa"
 
 msgid "select hunks interactively"
-msgstr "selecione pedaços interativamente"
+msgstr "selecionar pedaços interativamente"
 
 msgid "auto advance to the next file when selecting hunks interactively"
 msgstr ""
@@ -1978,17 +1977,17 @@ msgstr "adicionar arquivos rastreados com conflitos resolvidos"
 
 msgid "record only the fact that the path will be added later"
 msgstr ""
-"registre apenas o fato de que os caminhos removidos serão adicionados "
-"posteriormente"
+"registrar apenas o fato de que o caminho será adicionado posteriormente"
 
 msgid "add changes from all tracked and untracked files"
 msgstr "adicionar alterações de todos os arquivos rastreados e não rastreados"
 
 msgid "ignore paths removed in the working tree (same as --no-all)"
-msgstr "ignore paths removed in the working tree (same as --no-all)"
+msgstr ""
+"ignorar caminhos removidos na árvore de trabalho (o mesmo que --no-all)"
 
 msgid "don't add, only refresh the index"
-msgstr "não adicionar, apenas atualizar o index"
+msgstr "não adicionar, apenas atualizar o índice"
 
 msgid "just skip files which cannot be added because of errors"
 msgstr ""
@@ -2026,12 +2025,12 @@ msgstr ""
 "Você adicionou outro repositório git dentro do seu repositório atual.\n"
 "Clones do repositório externo não conterão o conteúdo do\n"
 "repositório incorporado e não saberão como obtê-lo.\n"
-"Se você pretendia adicionar um submodule, use:\n"
+"Se você pretendia adicionar um submódulo, use:\n"
 "\n"
 "\tgit submodule add <url> %s\n"
 "\n"
 "Se você adicionou este caminho por engano, você pode removê-lo do\n"
-"index com:\n"
+"índice com:\n"
 "\n"
 "\tgit rm --cached %s\n"
 "\n"
@@ -2039,7 +2038,7 @@ msgstr ""
 
 #, c-format
 msgid "adding embedded git repository: %s"
-msgstr "adding embedded git repository: %s"
+msgstr "adicionando repositório git incorporado: %s"
 
 msgid "Use -f if you really want to add them."
 msgstr "Use -f se você realmente quiser adicioná-los."
@@ -2073,7 +2072,7 @@ msgstr "o parâmetro --chmod '%s' deve ser -x ou +x"
 
 #, c-format
 msgid "'%s' and pathspec arguments cannot be used together"
-msgstr "Os argumentos '%s' e pathspec não podem ser usados ​​juntos"
+msgstr "Os argumentos '%s' e pathspec não podem ser usados juntos"
 
 #, c-format
 msgid "Nothing specified, nothing added.\n"
@@ -2086,7 +2085,7 @@ msgid "index file corrupt"
 msgstr "arquivo de índice corrompido"
 
 msgid "unable to write new index file"
-msgstr "incapaz de escrever novo arquivo de índice"
+msgstr "não foi possível gravar o novo arquivo de índice"
 
 #, c-format
 msgid "bad action '%s' for '%s'"
@@ -2094,14 +2093,14 @@ msgstr "ação inválida '%s' para '%s'"
 
 #, c-format
 msgid "invalid value for '%s': '%s'"
-msgstr "invalid value for '%s': '%s'"
+msgstr "valor inválido para '%s': '%s'"
 
 #, c-format
 msgid "could not read '%s'"
 msgstr "não foi possível ler '%s'"
 
 msgid "could not parse author script"
-msgstr "could not parse author script"
+msgstr "não foi possível analisar o script de autor"
 
 #, c-format
 msgid "could not parse %s"
@@ -2117,7 +2116,7 @@ msgstr "Linha de entrada malformada: '%s'."
 
 #, c-format
 msgid "Failed to copy notes from '%s' to '%s'"
-msgstr "Failed to copy notes from '%s' to '%s'"
+msgstr "Falha ao copiar notas de '%s' para '%s'"
 
 msgid "fseek failed"
 msgstr "fseek falhou"
@@ -2138,7 +2137,7 @@ msgid "Only one StGIT patch series can be applied at once"
 msgstr "Apenas uma série de patches StGIT pode ser aplicada por vez"
 
 msgid "invalid timestamp"
-msgstr "invalid timestamp"
+msgstr "timestamp inválido"
 
 msgid "invalid Date line"
 msgstr "linha Date inválida"
@@ -2154,7 +2153,7 @@ msgid "failed to create directory '%s'"
 msgstr "falha ao criar o diretório '%s'"
 
 msgid "Failed to split patches."
-msgstr "Failed to split patches."
+msgstr "Falha ao dividir patches."
 
 #, c-format
 msgid "When you have resolved this problem, run \"%s --continue\".\n"
@@ -2185,11 +2184,11 @@ msgstr ""
 
 #, c-format
 msgid "missing author line in commit %s"
-msgstr "missing author line in commit %s"
+msgstr "linha de autor ausente no commit %s"
 
 #, c-format
 msgid "invalid ident line: %.*s"
-msgstr "invalid ident line: %.*s"
+msgstr "linha de identificação inválida: %.*s"
 
 #, c-format
 msgid "unable to parse commit %s"
@@ -2201,29 +2200,29 @@ msgstr ""
 "vias."
 
 msgid "Using index info to reconstruct a base tree..."
-msgstr "Usando informações do index para reconstruir uma tree base..."
+msgstr "Usando informações do índice para reconstruir uma árvore base..."
 
 msgid ""
 "Did you hand edit your patch?\n"
 "It does not apply to blobs recorded in its index."
 msgstr ""
 "Você editou seu patch manualmente?\n"
-"Ele não se aplica aos blobs registrados em seu index."
+"Ele não se aplica aos blobs registrados em seu índice."
 
 msgid "Falling back to patching base and 3-way merge..."
 msgstr "Recorrendo à aplicação de patch na base e merge de 3 vias..."
 
 msgid "Failed to merge in the changes."
-msgstr "Failed to merge in the changes."
+msgstr "Falha ao mesclar as alterações."
 
 msgid "git write-tree failed to write a tree"
-msgstr "git write-tree falhou ao gravar uma tree"
+msgstr "git write-tree falhou ao gravar uma árvore"
 
 msgid "applying to an empty history"
 msgstr "aplicando a um histórico vazio"
 
 msgid "failed to write commit object"
-msgstr "failed to write commit object"
+msgstr "falha ao gravar o objeto de commit"
 
 #, c-format
 msgid "cannot resume: %s does not exist."
@@ -2241,11 +2240,11 @@ msgid "Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all: "
 msgstr "Aplicar? [y] sim/[n]ão/[e]ditar/[v]isualizar patch/[a]ceitar todos: "
 
 msgid "unable to write index file"
-msgstr "incapaz de escrever novo arquivo de índice"
+msgstr "não foi possível gravar o arquivo de índice"
 
 #, c-format
 msgid "Dirty index: cannot apply patches (dirty: %s)"
-msgstr "Index sujo: não é possível aplicar patches (sujo: %s)"
+msgstr "Índice sujo: não é possível aplicar patches (sujo: %s)"
 
 #, c-format
 msgid "Skipping: %.*s"
@@ -2267,7 +2266,7 @@ msgstr "Sem alterações -- Patch já aplicado."
 
 #, c-format
 msgid "Patch failed at %s %.*s"
-msgstr "Patch failed at %s %.*s"
+msgstr "Falha no patch em %s %.*s"
 
 msgid "Use 'git am --show-current-patch=diff' to see the failed patch"
 msgstr "Use 'git am --show-current-patch=diff' para ver o patch com falha"
@@ -2291,10 +2290,10 @@ msgid ""
 "such.\n"
 "You might run `git rm` on a file to accept \"deleted by them\" for it."
 msgstr ""
-"Você ainda tem caminhos não mesclados no seu index.\n"
+"Você ainda tem caminhos não mesclados no seu índice.\n"
 "Você deve executar 'git add' em cada arquivo com conflitos resolvidos para "
 "marcá-los como tal.\n"
-"Você pode executar `git rm` em um arquivo para aceitar \"deletado por eles\" "
+"Você pode executar `git rm` em um arquivo para aceitar \"excluído por eles\" "
 "para ele."
 
 #, c-format
@@ -2302,7 +2301,7 @@ msgid "Could not parse object '%s'."
 msgstr "Não foi possível analisar o objeto '%s'."
 
 msgid "failed to clean index"
-msgstr "failed to clean index"
+msgstr "falha ao limpar o índice"
 
 msgid ""
 "You seem to have moved HEAD since the last 'am' failure.\n"
@@ -2367,7 +2366,7 @@ msgid "n"
 msgstr "n"
 
 msgid "format"
-msgstr "formatar"
+msgstr "formato"
 
 msgid "format the patch(es) are in"
 msgstr "formato em que o(s) patch(es) estão"
@@ -2389,16 +2388,17 @@ msgstr ""
 "restaurar o branch original e cancelar a operação de aplicação de patches"
 
 msgid "abort the patching operation but keep HEAD where it is"
-msgstr "aborta a operação de patch, mas mantém o HEAD onde está"
+msgstr ""
+"abortar a operação de aplicação de patches, mas manter o HEAD onde está"
 
 msgid "show the patch being applied"
 msgstr "exibir o patch sendo aplicado"
 
 msgid "try to apply current patch again"
-msgstr "tenta aplicar o patch atual novamente"
+msgstr "tentar aplicar o patch atual novamente"
 
 msgid "record the empty patch as an empty commit"
-msgstr "record the empty patch as an empty commit"
+msgstr "registrar o patch vazio como um commit vazio"
 
 msgid "lie about committer date"
 msgstr "falsificar a data do committer"
@@ -2422,7 +2422,7 @@ msgid ""
 "The -b/--binary option has been a no-op for long time, and\n"
 "it will be removed. Please do not use it anymore."
 msgstr ""
-"A opção -b/--binary tem sido inútil por muito tempo e\n"
+"A opção -b/--binary não tem efeito há muito tempo e\n"
 "será removida. Por favor, não a use mais."
 
 msgid "failed to read the index"
@@ -2464,7 +2464,7 @@ msgid "git archive: protocol error"
 msgstr "git archive: erro de protocolo"
 
 msgid "git archive: expected a flush"
-msgstr "git archive: expected a flush"
+msgstr "git archive: esperava um flush"
 
 msgid ""
 "git backfill [--min-batch-size=<n>] [--[no-]sparse] [--[no-]include-edges] "
@@ -2475,10 +2475,10 @@ msgstr ""
 
 #, c-format
 msgid "'%s' cannot be used with 'git backfill'"
-msgstr "'%s' cannot be used with 'git backfill'"
+msgstr "'%s' não pode ser usado com 'git backfill'"
 
 msgid "cannot backfill with these filter options"
-msgstr "cannot backfill with these filter options"
+msgstr "não é possível fazer backfill com estas opções de filtro"
 
 msgid "cannot backfill with blob size limits"
 msgstr "não é possível fazer backfill com limites de tamanho de blob"
@@ -2490,10 +2490,10 @@ msgid "Minimum number of objects to request at a time"
 msgstr "Número mínimo de objetos para solicitar de uma vez"
 
 msgid "Restrict the missing objects to the current sparse-checkout"
-msgstr "Restringe os objetos ausentes ao sparse-checkout atual"
+msgstr "Restringir os objetos ausentes ao sparse-checkout atual"
 
 msgid "Include blobs from boundary commits in the backfill"
-msgstr "Inclui blobs de commits de limite no backfill"
+msgstr "Incluir blobs de commits de limite no backfill"
 
 #, c-format
 msgid "unrecognized argument: %s"
@@ -2501,12 +2501,12 @@ msgstr "argumento não reconhecido: %s"
 
 msgid ""
 "git bisect start [--term-(bad|new)=<term-new> --term-(good|old)=<term-old>]\n"
-"                 [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
-"[<pathspec>...]"
+"                 [--no-checkout] [--first-parent] [--reset-when-"
+"found[=<where>]] [<bad> [<good>...]] [--] [<pathspec>...]"
 msgstr ""
 "git bisect start [--term-(bad|new)=<term-new> --term-(good|old)=<term-old>]\n"
-"                 [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] "
-"[<pathspec>...]"
+"                 [--no-checkout] [--first-parent] [--reset-when-"
+"found[=<where>]] [<bad> [<good>...]] [--] [<pathspec>...]"
 
 msgid "git bisect (bad|new|<term-new>) [<rev>]"
 msgstr "git bisect (bad|new|<term-new>) [<rev>]"
@@ -2523,8 +2523,8 @@ msgstr "git bisect reset [<commit>]"
 msgid "git bisect replay <logfile>"
 msgstr "git bisect replay <logfile>"
 
-msgid "git bisect run <cmd> [<arg>...]"
-msgstr "git bisect run <cmd> [<arg>...]"
+msgid "git bisect run [--reset-when-found[=<where>]] <cmd> [<arg>...]"
+msgstr "git bisect run [--reset-when-found[=<where>]] <cmd> [<arg>...]"
 
 #, c-format
 msgid "cannot open file '%s' in mode '%s'"
@@ -2536,7 +2536,7 @@ msgstr "não foi possível gravar no arquivo '%s'"
 
 #, c-format
 msgid "cannot open file '%s' for reading"
-msgstr "cannot open file '%s' for reading"
+msgstr "não é possível abrir o arquivo '%s' para leitura"
 
 #, c-format
 msgid "'%s' is not a valid term"
@@ -2555,7 +2555,7 @@ msgstr "por favor, use dois termos diferentes"
 
 #, c-format
 msgid "We are not bisecting.\n"
-msgstr "Não estamos bissecionando.\n"
+msgstr "Não estamos em um bisect.\n"
 
 #, c-format
 msgid "'%s' is not a valid commit"
@@ -2567,6 +2567,10 @@ msgid ""
 msgstr ""
 "não foi possível fazer o checkout do HEAD original '%s'. Tente 'git bisect "
 "reset <commit>'."
+
+#, c-format
+msgid "invalid value for '--reset-when-found': '%s'"
+msgstr "valor inválido para '--reset-when-found': '%s'"
 
 #, c-format
 msgid "Bad bisect_write argument: %s"
@@ -2620,8 +2624,8 @@ msgstr "status: aguardando ambos os commits '%s' e '%s'\n"
 #, c-format
 msgid "status: waiting for '%s' commit, %d '%s' commit known\n"
 msgid_plural "status: waiting for '%s' commit, %d '%s' commits known\n"
-msgstr[0] "status: waiting for '%s' commit, %d '%s' commit known\n"
-msgstr[1] "status: waiting for '%s' commit, %d '%s' commits known\n"
+msgstr[0] "status: aguardando o commit '%s', %d commit '%s' conhecido\n"
+msgstr[1] "status: aguardando o commit '%s', %d commits '%s' conhecidos\n"
 
 #, c-format
 msgid "status: waiting for '%s' commit(s), '%s' commit known\n"
@@ -2655,7 +2659,7 @@ msgid "could not find commit for '%s'"
 msgstr "não foi possível encontrar o commit para '%s'"
 
 msgid "'' is not a valid term"
-msgstr "'' is not a valid term"
+msgstr "'' não é um termo válido"
 
 #, c-format
 msgid "unrecognized option: '%s'"
@@ -2670,14 +2674,15 @@ msgstr "HEAD inválido - preciso de um HEAD"
 
 #, c-format
 msgid "checking out '%s' failed. Try 'git bisect start <valid-branch>'."
-msgstr "checking out '%s' failed. Try 'git bisect start <valid-branch>'."
+msgstr ""
+"falha ao fazer checkout de '%s'. Tente 'git bisect start <valid-branch>'."
 
 msgid "bad HEAD - strange symbolic ref"
 msgstr "HEAD inválido - ref simbólica estranha"
 
 #, c-format
 msgid "invalid ref: '%s'"
-msgstr "referência inválida: %s"
+msgstr "referência inválida: '%s'"
 
 msgid "You need to start by \"git bisect start\"\n"
 msgstr "Você precisa começar por \"git bisect start\"\n"
@@ -2705,7 +2710,7 @@ msgid "Bad rev input (not a commit): %s"
 msgstr "Entrada de rev inválida (não é um commit): %s"
 
 msgid "We are not bisecting."
-msgstr "Não estamos bissecionando."
+msgstr "Não estamos em um bisect."
 
 #, c-format
 msgid "'%s'?? what are you talking about?"
@@ -2713,7 +2718,7 @@ msgstr "'%s'?? do que você está falando?"
 
 #, c-format
 msgid "cannot read file '%s' for replaying"
-msgstr "cannot read file '%s' for replaying"
+msgstr "não é possível ler o arquivo '%s' para reprodução"
 
 #, c-format
 msgid "running %s\n"
@@ -2724,7 +2729,7 @@ msgstr "falha na execução do bisect: nenhum comando fornecido."
 
 #, c-format
 msgid "unable to verify %s on '%s' revision"
-msgstr "unable to verify %s on '%s' revision"
+msgstr "não foi possível verificar %s na revisão '%s'"
 
 #, c-format
 msgid "bogus exit code %d for '%s' revision"
@@ -2732,11 +2737,12 @@ msgstr "código de saída %d inválido para a revisão '%s'"
 
 #, c-format
 msgid "bisect run failed: exit code %d from %s is < 0 or >= 128"
-msgstr "bisect run failed: exit code %d from %s is < 0 or >= 128"
+msgstr ""
+"falha na execução do bisect: o código de saída %d de %s é < 0 ou >= 128"
 
 #, c-format
 msgid "cannot open file '%s' for writing"
-msgstr "cannot open file '%s' for writing"
+msgstr "não é possível abrir o arquivo '%s' para gravação"
 
 msgid "bisect run cannot continue any more"
 msgstr "bisect run não pode mais continuar"
@@ -2797,7 +2803,7 @@ msgstr "deve terminar com uma cor"
 
 #, c-format
 msgid "unknown value for config '%s': %s"
-msgstr "unknown value for config '%s': %s"
+msgstr "valor desconhecido para a configuração '%s': %s"
 
 msgid ""
 "option diff-algorithm accepts \"myers\", \"minimal\", \"patience\" and "
@@ -2844,13 +2850,13 @@ msgid "use the same output mode as git-annotate (Default: off)"
 msgstr "usar o mesmo modo de saída do git-annotate (Padrão: desativado)"
 
 msgid "show raw timestamp (Default: off)"
-msgstr "exibir timestamp bruto (padrão: desligado)"
+msgstr "exibir timestamp bruto (Padrão: desativado)"
 
 msgid "show long commit SHA1 (Default: off)"
 msgstr "mostrar SHA1 longo do commit (Padrão: desativado)"
 
 msgid "suppress author name and timestamp (Default: off)"
-msgstr "suprimir nome do autor e timestamp (padrão: desligado)"
+msgstr "suprimir nome do autor e timestamp (Padrão: desativado)"
 
 msgid "show author email instead of name (Default: off)"
 msgstr "mostrar e-mail do autor ao invés do nome (Padrão: desativado)"
@@ -2905,7 +2911,8 @@ msgstr ""
 "processar apenas o intervalo de linhas <start>,<end> ou função :<funcname>"
 
 msgid "--progress can't be used with --incremental or porcelain formats"
-msgstr "--progress can't be used with --incremental or porcelain formats"
+msgstr ""
+"--progress não pode ser usado com os formatos --incremental ou porcelain"
 
 #. TRANSLATORS: This string is used to tell us the
 #. maximum display width for a relative timestamp in
@@ -2921,8 +2928,8 @@ msgstr "4 anos, 11 meses atrás"
 #, c-format
 msgid "file %s has only %lu line"
 msgid_plural "file %s has only %lu lines"
-msgstr[0] "file %s has only %lu line"
-msgstr[1] "file %s has only %lu lines"
+msgstr[0] "o arquivo %s tem apenas %lu linha"
+msgstr[1] "o arquivo %s tem apenas %lu linhas"
 
 msgid "Blaming lines"
 msgstr "Anotando linhas"
@@ -2960,16 +2967,16 @@ msgid ""
 "deleting branch '%s' that has been merged to\n"
 "         '%s', but not yet merged to HEAD"
 msgstr ""
-"excluindo branch '%s' que sofreu merge para\n"
-"         '%s', mas ainda não sofreu merge para HEAD"
+"excluindo o branch '%s' que foi mesclado a\n"
+"         '%s', mas ainda não foi mesclado ao HEAD"
 
 #, c-format
 msgid ""
 "not deleting branch '%s' that is not yet merged to\n"
 "         '%s', even though it is merged to HEAD"
 msgstr ""
-"não excluindo branch '%s' que ainda não sofreu merge para\n"
-"         '%s', mesmo tendo sofrido merge para HEAD"
+"não excluindo o branch '%s' que ainda não foi mesclado a\n"
+"         '%s', mesmo tendo sido mesclado ao HEAD"
 
 #, c-format
 msgid "couldn't look up commit object for '%s'"
@@ -2987,7 +2994,7 @@ msgid "update of config-file failed"
 msgstr "falha ao atualizar o arquivo de configuração"
 
 msgid "cannot use -a with -d"
-msgstr "cannot use -a with -d"
+msgstr "não é possível usar -a com -d"
 
 #, c-format
 msgid "cannot delete branch '%s' used by worktree at '%s' for bisect"
@@ -3001,7 +3008,7 @@ msgstr "não é possível excluir o branch '%s' usado pela worktree em '%s'"
 
 #, c-format
 msgid "remote-tracking branch '%s' not found"
-msgstr "remote-tracking branch '%s' not found"
+msgstr "branch de rastreamento remoto '%s' não encontrado"
 
 #, c-format
 msgid ""
@@ -3021,29 +3028,29 @@ msgstr "Branch de rastreamento remoto %s excluído (era %s).\n"
 
 #, c-format
 msgid "Deleted branch %s (was %s).\n"
-msgstr "Deleted branch %s (was %s).\n"
+msgstr "Branch %s excluído (era %s).\n"
 
 msgid "unable to parse format string"
-msgstr "unable to parse format string"
+msgstr "não foi possível analisar a string de formato"
 
 msgid "could not resolve HEAD"
-msgstr "could not resolve HEAD"
+msgstr "não foi possível resolver o HEAD"
 
 #, c-format
 msgid "HEAD (%s) points outside of refs/heads/"
-msgstr "HEAD (%s) points outside of refs/heads/"
+msgstr "HEAD (%s) aponta para fora de refs/heads/"
 
 #, c-format
 msgid "branch %s is being rebased at %s"
-msgstr "branch %s is being rebased at %s"
+msgstr "o branch %s está passando por rebase em %s"
 
 #, c-format
 msgid "branch %s is being bisected at %s"
-msgstr "branch %s is being bisected at %s"
+msgstr "o branch %s está passando por bisect em %s"
 
 #, c-format
 msgid "HEAD of working tree %s is not updated"
-msgstr "HEAD do diretório de trabalho %s não está atualizado"
+msgstr "o HEAD da árvore de trabalho %s não está atualizado"
 
 #, c-format
 msgid "invalid branch name: '%s'"
@@ -3065,11 +3072,11 @@ msgstr "falha ao copiar branch"
 
 #, c-format
 msgid "created a copy of a misnamed branch '%s'"
-msgstr "created a copy of a misnamed branch '%s'"
+msgstr "criada uma cópia do branch com nome incorreto '%s'"
 
 #, c-format
 msgid "renamed a misnamed branch '%s' away"
-msgstr "branch '%s' renomeado incorretamente"
+msgstr "renomeado o branch com nome incorreto '%s'"
 
 #, c-format
 msgid "branch renamed to %s, but HEAD is not updated"
@@ -3098,7 +3105,7 @@ msgstr "--set-upstream-to aceita apenas um argumento <remote>/<branch>"
 
 #, c-format
 msgid "Did you mean to use: git branch --set-upstream-to=%s/%s?"
-msgstr "Did you mean to use: git branch --set-upstream-to=%s/%s?"
+msgstr "Você quis dizer: git branch --set-upstream-to=%s/%s?"
 
 msgid "Generic options"
 msgstr "Opções genéricas"
@@ -3128,7 +3135,7 @@ msgid "use colored output"
 msgstr "usar saída colorida"
 
 msgid "act on remote-tracking branches"
-msgstr "act on remote-tracking branches"
+msgstr "atuar em branches de rastreamento remoto"
 
 msgid "print only branches that contain the commit"
 msgstr "exibir apenas branches que contêm o commit"
@@ -3143,16 +3150,16 @@ msgid "list both remote-tracking and local branches"
 msgstr "listar tanto branches de rastreamento remoto quanto branches locais"
 
 msgid "delete fully merged branch"
-msgstr "excluir branch totalmente integrada por merge"
+msgstr "excluir branch totalmente mesclado"
 
 msgid "delete branch (even if not merged)"
-msgstr "excluir branch (mesmo que não tenha sido integrada por merge)"
+msgstr "excluir branch (mesmo que não tenha sido mesclado)"
 
 msgid "move/rename a branch and its reflog"
-msgstr "mover/renomear uma branch e seu reflog"
+msgstr "mover/renomear um branch e seu reflog"
 
 msgid "move/rename a branch, even if target exists"
-msgstr "mover/renomear uma branch, mesmo que o destino já exista"
+msgstr "mover/renomear um branch, mesmo que o destino já exista"
 
 msgid "do not output a newline after empty formatted refs"
 msgstr "não exibir uma nova linha após refs formatadas vazias"
@@ -3161,16 +3168,16 @@ msgid "copy a branch and its reflog"
 msgstr "copiar um branch e seu reflog"
 
 msgid "copy a branch, even if target exists"
-msgstr "copiar uma branch, mesmo que o destino já exista"
+msgstr "copiar um branch, mesmo que o destino já exista"
 
 msgid "list branch names"
-msgstr "list branch names"
+msgstr "listar nomes de branch"
 
 msgid "show current branch name"
 msgstr "mostrar o nome do branch atual"
 
 msgid "create the branch's reflog"
-msgstr "criar o reflog da branch"
+msgstr "criar o reflog do branch"
 
 msgid "edit the description for the branch"
 msgstr "editar a descrição do branch"
@@ -3179,10 +3186,10 @@ msgid "force creation, move/rename, deletion"
 msgstr "forçar criação, mover/renomear, exclusão"
 
 msgid "print only branches that are merged"
-msgstr "exibir apenas branches que foram integradas por merge"
+msgstr "exibir apenas branches que foram mesclados"
 
 msgid "print only branches that are not merged"
-msgstr "exibir apenas branches que não foram integradas por merge"
+msgstr "exibir apenas branches que não foram mesclados"
 
 msgid "list branches in columns"
 msgstr "listar branches em colunas"
@@ -3203,7 +3210,7 @@ msgid "format to use for the output"
 msgstr "formato a ser usado para a saída"
 
 msgid "failed to resolve HEAD as a valid ref"
-msgstr "failed to resolve HEAD as a valid ref"
+msgstr "falha ao resolver HEAD como uma ref válida"
 
 msgid "HEAD not found below refs/heads!"
 msgstr "HEAD não encontrado abaixo de refs/heads!"
@@ -3258,10 +3265,12 @@ msgid "branch '%s' does not exist"
 msgstr "o branch '%s' não existe"
 
 msgid "too many arguments to unset upstream"
-msgstr "Muitos argumentos."
+msgstr "muitos argumentos para remover upstream"
 
 msgid "could not unset upstream of HEAD when it does not point to any branch"
-msgstr "HEAD não aponta para um branch"
+msgstr ""
+"não foi possível remover o upstream de HEAD quando ele não aponta para "
+"nenhum branch"
 
 #, c-format
 msgid "branch '%s' has no upstream information"
@@ -3347,10 +3356,10 @@ msgstr ""
 "criar um arquivo zip adicional com diagnósticos detalhados (padrão 'stats')"
 
 msgid "specify a destination for the bugreport file(s)"
-msgstr "especifique um destino para o(s) arquivo(s) de bugreport"
+msgstr "especificar um destino para o(s) arquivo(s) de bugreport"
 
 msgid "specify a strftime format suffix for the filename(s)"
-msgstr "especifique um sufixo de formato strftime para o(s) nome(s) de arquivo"
+msgstr "especificar um sufixo de formato strftime para o(s) nome(s) de arquivo"
 
 #, c-format
 msgid "unknown argument `%s'"
@@ -3395,13 +3404,13 @@ msgid "git bundle unbundle [--progress] <file> [<refname>...]"
 msgstr "git bundle unbundle [--progress] <file> [<refname>...]"
 
 msgid "need a <file> argument"
-msgstr "need a <file> argument"
+msgstr "é necessário um argumento <file>"
 
 msgid "do not show progress meter"
 msgstr "não exibir o medidor de progresso"
 
 msgid "show progress meter"
-msgstr "forçar relatórios de progresso"
+msgstr "exibir o medidor de progresso"
 
 msgid "historical; same as --progress"
 msgstr "histórico; o mesmo que --progress"
@@ -3410,7 +3419,7 @@ msgid "historical; does nothing"
 msgstr "histórico; não faz nada"
 
 msgid "specify bundle format version"
-msgstr "especifique a versão de formato do bundle"
+msgstr "especificar a versão de formato do bundle"
 
 msgid "Need a repository to create a bundle."
 msgstr "É necessário um repositório para criar um bundle."
@@ -3433,7 +3442,7 @@ msgstr "Desempacotando objetos"
 
 #, c-format
 msgid "cannot read object %s '%s'"
-msgstr "cannot read object %s '%s'"
+msgstr "não é possível ler o objeto %s '%s'"
 
 msgid "must supply valid remote when using remote-object-info"
 msgstr "deve fornecer um remote válido ao usar remote-object-info"
@@ -3447,7 +3456,7 @@ msgid "not a valid object name '%s'"
 msgstr "nome de objeto inválido '%s'"
 
 msgid "remote-object-info requires objects"
-msgstr "remote-object-info requer objects"
+msgstr "remote-object-info requer objetos"
 
 #, c-format
 msgid "mailmap: invalid boolean '%s'"
@@ -3462,7 +3471,7 @@ msgstr "remote-object-info: falha ao analisar a linha de comando: %s"
 
 #, c-format
 msgid "remote-object-info supports at most %d objects"
-msgstr "remote-object-info suporta no máximo %d objects"
+msgstr "remote-object-info suporta no máximo %d objetos"
 
 #, c-format
 msgid "failed to get object info from the remote: %s"
@@ -3484,7 +3493,7 @@ msgstr "%s requer argumentos"
 
 #, c-format
 msgid "%s takes no arguments"
-msgstr "%s takes no arguments"
+msgstr "%s não aceita argumentos"
 
 msgid "only one batch option may be specified"
 msgstr "apenas uma opção batch pode ser especificada"
@@ -3517,7 +3526,7 @@ msgid "Check object existence or emit object contents"
 msgstr "Verificar a existência do objeto ou emitir o conteúdo do objeto"
 
 msgid "check if <object> exists"
-msgstr "check if <object> exists"
+msgstr "verificar se <object> existe"
 
 msgid "pretty-print <object> content"
 msgstr "imprimir o conteúdo de <object> de forma legível"
@@ -3565,7 +3574,7 @@ msgid "buffer --batch output"
 msgstr "usar buffer para a saída do --batch"
 
 msgid "follow in-tree symlinks"
-msgstr "seguir links simbólicos na tree"
+msgstr "seguir links simbólicos na árvore"
 
 msgid "do not order objects before emitting them"
 msgstr "não ordenar os objetos antes de emiti-los"
@@ -3574,7 +3583,7 @@ msgid ""
 "Emit object (blob or tree) with conversion or filter (stand-alone, or with "
 "batch)"
 msgstr ""
-"Emitir objeto (blob ou tree) com conversão ou filtro (independente, ou com "
+"Emitir objeto (blob ou árvore) com conversão ou filtro (independente, ou com "
 "lote)"
 
 msgid "run textconv on object's content"
@@ -3642,7 +3651,7 @@ msgid "report all attributes set on file"
 msgstr "reportar todos os atributos definidos no arquivo"
 
 msgid "use .gitattributes only from the index"
-msgstr "usar .gitattributes apenas do index"
+msgstr "usar .gitattributes apenas do índice"
 
 msgid "read file names from stdin"
 msgstr "ler nomes de arquivos do stdin"
@@ -3663,7 +3672,7 @@ msgid "show non-matching input paths"
 msgstr "mostrar caminhos de entrada que não correspondem"
 
 msgid "ignore index when checking"
-msgstr "ignorar o index ao verificar"
+msgstr "ignorar o índice ao verificar"
 
 msgid "cannot specify pathnames with --stdin"
 msgstr "não é possível especificar nomes de caminho com --stdin"
@@ -3672,7 +3681,7 @@ msgid "-z only makes sense with --stdin"
 msgstr "-z só faz sentido com --stdin"
 
 msgid "no path specified"
-msgstr "especificação de caminho inválida"
+msgstr "nenhum caminho especificado"
 
 msgid "--quiet is only valid with a single pathname"
 msgstr "--quiet é válido apenas com um único nome de caminho"
@@ -3717,7 +3726,7 @@ msgid "stage should be between 1 and 3 or all"
 msgstr "stage deve ser entre 1 e 3 ou all"
 
 msgid "check out all files in the index"
-msgstr "fazer checkout de todos os arquivos no index"
+msgstr "fazer checkout de todos os arquivos no índice"
 
 msgid "do not skip files with skip-worktree set"
 msgstr "não pular arquivos com skip-worktree definido"
@@ -3727,7 +3736,7 @@ msgstr "forçar sobrescrita de arquivos existentes"
 
 msgid "no warning for existing files and files not in index"
 msgstr ""
-"nenhum aviso para arquivos existentes e arquivos que não estão no index"
+"nenhum aviso para arquivos existentes e arquivos que não estão no índice"
 
 msgid "don't checkout new files"
 msgstr "não fazer checkout de novos arquivos"
@@ -3750,7 +3759,7 @@ msgstr "o caminho '%s' não possui nossa versão"
 
 #, c-format
 msgid "path '%s' does not have their version"
-msgstr "o caminho '%s' não possui sua versão"
+msgstr "o caminho '%s' não possui a versão deles"
 
 #, c-format
 msgid "path '%s' does not have all necessary versions"
@@ -3771,20 +3780,20 @@ msgstr "Não foi possível adicionar o resultado da mesclagem para '%s'"
 #, c-format
 msgid "Recreated %d merge conflict"
 msgid_plural "Recreated %d merge conflicts"
-msgstr[0] "Recreated %d merge conflict"
-msgstr[1] "Recreated %d merge conflicts"
+msgstr[0] "Recriado %d conflito de mesclagem"
+msgstr[1] "Recriados %d conflitos de mesclagem"
 
 #, c-format
 msgid "Updated %d path from %s"
 msgid_plural "Updated %d paths from %s"
-msgstr[0] "Updated %d path from %s"
-msgstr[1] "Updated %d paths from %s"
+msgstr[0] "Atualizado %d caminho a partir de %s"
+msgstr[1] "Atualizados %d caminhos a partir de %s"
 
 #, c-format
 msgid "Updated %d path from the index"
 msgid_plural "Updated %d paths from the index"
-msgstr[0] "Updated %d path from the index"
-msgstr[1] "Updated %d paths from the index"
+msgstr[0] "Atualizado %d caminho a partir do índice"
+msgstr[1] "Atualizados %d caminhos a partir do índice"
 
 #, c-format
 msgid "'%s' cannot be used with updating paths"
@@ -3793,8 +3802,8 @@ msgstr "'%s' não pode ser usado com atualização de caminhos"
 #, c-format
 msgid "Cannot update paths and switch to branch '%s' at the same time."
 msgstr ""
-"Não é possível atualizar caminhos e alternar para a ramificação '%s' ao "
-"mesmo tempo."
+"Não é possível atualizar caminhos e alternar para o branch '%s' ao mesmo "
+"tempo."
 
 #, c-format
 msgid "neither '%s' or '%s' is specified"
@@ -3806,12 +3815,12 @@ msgstr "'%s' deve ser usado quando '%s' não for especificado"
 
 #, c-format
 msgid "'%s' or '%s' cannot be used with %s"
-msgstr "'%s' ou '%s' não podem ser usados ​​com %s"
+msgstr "'%s' ou '%s' não podem ser usados com %s"
 
 #, c-format
 msgid "'%s', '%s', or '%s' cannot be used when checking out of a tree"
 msgstr ""
-"'%s', '%s' ou '%s' não podem ser usados ​​ao fazer check-out de uma árvore"
+"'%s', '%s' ou '%s' não podem ser usados ao fazer checkout de uma árvore"
 
 #, c-format
 msgid "path '%s' is unmerged"
@@ -3819,7 +3828,7 @@ msgstr "o caminho '%s' não foi mesclado"
 
 #, c-format
 msgid "unable to read tree (%s)"
-msgstr "incapaz de ler a árvore (%s)"
+msgstr "não foi possível ler a árvore (%s)"
 
 msgid "you need to resolve your current index first"
 msgstr "você precisa resolver seu índice atual primeiro"

@@ -80,6 +80,7 @@ static int get_default_remote_submodule(const char *module_path, char **default_
 	struct repository subrepo;
 	const char *remote_name = NULL;
 	char *url = NULL;
+	int ret = 0;
 
 	sub = submodule_from_path(the_repository, null_oid(the_hash_algo), module_path);
 	if (sub && sub->url) {
@@ -96,9 +97,11 @@ static int get_default_remote_submodule(const char *module_path, char **default_
 	}
 
 	if (repo_submodule_init(&subrepo, the_repository, module_path,
-				null_oid(the_hash_algo)) < 0)
-		return die_message(_("could not get a repository handle for submodule '%s'"),
+				null_oid(the_hash_algo)) < 0) {
+		ret = die_message(_("could not get a repository handle for submodule '%s'"),
 				   module_path);
+		goto out;
+	}
 
 	/* Look up by URL first */
 	if (url)
@@ -108,10 +111,11 @@ static int get_default_remote_submodule(const char *module_path, char **default_
 
 	*default_remote = xstrdup(remote_name);
 
+out:
 	repo_clear(&subrepo);
 	free(url);
 
-	return 0;
+	return ret;
 }
 
 static int module_get_default_remote(int argc, const char **argv, const char *prefix,
@@ -3041,7 +3045,7 @@ static int module_update(int argc, const char **argv, const char *prefix,
 		NULL
 	};
 
-	update_clone_config_from_gitmodules(&opt.max_jobs);
+	update_clone_config_from_gitmodules(the_repository, &opt.max_jobs);
 	repo_config(the_repository, git_update_clone_config, &opt.max_jobs);
 
 	argc = parse_options(argc, argv, prefix, module_update_options,
@@ -3255,7 +3259,7 @@ static int module_set_url(int argc, const char **argv, const char *prefix,
 		    path);
 
 	config_name = xstrfmt("submodule.%s.url", sub->name);
-	ret = config_set_in_gitmodules_file_gently(config_name, newurl);
+	ret = config_set_in_gitmodules_file_gently(the_repository, config_name, newurl);
 
 	if (!ret) {
 		repo_read_gitmodules(the_repository, 0);
@@ -3311,7 +3315,7 @@ static int module_set_branch(int argc, const char **argv, const char *prefix,
 		    path);
 
 	config_name = xstrfmt("submodule.%s.branch", sub->name);
-	ret = config_set_in_gitmodules_file_gently(config_name, opt_branch);
+	ret = config_set_in_gitmodules_file_gently(the_repository, config_name, opt_branch);
 
 	free(config_name);
 	return !!ret;
@@ -3510,7 +3514,7 @@ static int config_submodule_in_gitmodules(const char *name, const char *var, con
 		die(_("please make sure that the .gitmodules file is in the working tree"));
 
 	key = xstrfmt("submodule.%s.%s", name, var);
-	ret = config_set_in_gitmodules_file_gently(key, value);
+	ret = config_set_in_gitmodules_file_gently(the_repository, key, value);
 	free(key);
 
 	return ret;

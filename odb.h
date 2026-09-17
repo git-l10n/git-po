@@ -89,12 +89,6 @@ struct object_database {
 	unsigned long object_count;
 	unsigned object_count_flags;
 	unsigned object_count_valid : 1;
-
-	/*
-	 * Submodule source paths that will be added as additional sources to
-	 * allow lookup of submodule objects via the main object database.
-	 */
-	struct string_list submodule_source_paths;
 };
 
 enum odb_new_flags {
@@ -198,6 +192,39 @@ void odb_prepare(struct object_database *o, enum odb_prepare_flags flags);
 /* Equivalent to `odb_prepare(o, ODB_PREPARE_FLUSH_CACHES)`. */
 void odb_reprepare(struct object_database *o);
 
+enum odb_fsck_flags {
+	/*
+	 * If set, perform a full consistency check for the full object
+	 * database, including all of its sources and the contents of their
+	 * optimized formats. Otherwise, only check the local source, and
+	 * restrict checks of its optimized formats to cheap structural
+	 * verification of their metadata.
+	 */
+	ODB_FSCK_FULL = (1 << 0),
+
+	/* Display a progress meter, if sensible. */
+	ODB_FSCK_PROGRESS = (1 << 1),
+
+	/* Be extra verbose when checking the database. */
+	ODB_FSCK_VERBOSE = (1 << 2),
+};
+
+/* Options that shall be passed to `odb_fsck()`. */
+struct odb_fsck_options {
+	enum odb_fsck_flags flags;
+
+	int (*object_cb)(const struct object_id *oid, enum object_type type,
+			 unsigned long size, void *buffer, int *eaten, void *cb_data);
+	void *object_payload;
+};
+
+/*
+ * Run backend-specific integrity checks on all object sources. Each source
+ * performs the checks appropriate to its type. Returns 0 on success, a
+ * negative error code otherwise.
+ */
+int odb_fsck(struct object_database *odb, struct odb_fsck_options *opts);
+
 /*
  * Find source by its object directory path. Returns a `NULL` pointer in case
  * the source could not be found.
@@ -223,14 +250,6 @@ struct odb_source *odb_set_temporary_primary_source(struct object_database *odb,
 void odb_restore_primary_source(struct object_database *odb,
 				struct odb_source *restore_source,
 				const char *old_path);
-
-/*
- * Call odb_add_submodule_source_by_path() to add the submodule at the given
- * path to a list. The object stores of all submodules in that list will be
- * added as additional sources in the object store when looking up objects.
- */
-void odb_add_submodule_source_by_path(struct object_database *odb,
-				      const char *path);
 
 /*
  * Iterate through all alternates of the database and execute the provided
@@ -271,14 +290,6 @@ int odb_has_alternates(struct object_database *odb);
  */
 void odb_add_to_alternates_file(struct object_database *odb,
 				const char *dir);
-
-/*
- * Add the directory to the in-memory list of alternate sources (along with any
- * recursive alternates it points to), but do not modify the on-disk alternates
- * file.
- */
-struct odb_source *odb_add_to_alternates_memory(struct object_database *odb,
-						const char *dir);
 
 /*
  * Read an object from the database. Returns the object data and assigns object

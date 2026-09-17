@@ -573,6 +573,19 @@ test_expect_success 'verify incorrect checksum' '
 		$objdir "incorrect checksum"
 '
 
+test_expect_success 'git fsck --no-full checks multi-pack-index, --connectivity-only does not' '
+	pos=$(($(wc -c <$objdir/pack/multi-pack-index) - 10)) &&
+	corrupt_midx_and_verify $pos \
+		"\377\377\377\377\377\377\377\377\377\377" \
+		$objdir "incorrect checksum" &&
+
+	test_must_fail git fsck --no-full 2>err &&
+	test_grep "incorrect checksum" err &&
+
+	git fsck --connectivity-only 2>err &&
+	test_grep ! "incorrect checksum" err
+'
+
 test_expect_success 'setup for v1-specific fsck tests' '
 	git -c midx.version=1 multi-pack-index write
 '
@@ -698,10 +711,9 @@ test_expect_success 'force some 64-bit offsets with pack-objects' '
 	corrupt_data $idx64 $(test_oid idxoff) "\02" &&
 	# objects64 is not a real repository, but can serve as an alternate
 	# anyway so we can write a MIDX into it
-	git init repo &&
-	test_when_finished "rm -fr repo" &&
+	git init repo64 &&
 	(
-		cd repo &&
+		cd repo64 &&
 		( cd ../objects64 && pwd ) >.git/objects/info/alternates &&
 		midx64=$(git multi-pack-index --object-dir=../objects64 write)
 	) &&
@@ -709,7 +721,7 @@ test_expect_success 'force some 64-bit offsets with pack-objects' '
 '
 
 test_expect_success 'verify multi-pack-index with 64-bit offsets' '
-	git multi-pack-index verify --object-dir=objects64
+	git -C repo64 multi-pack-index verify --object-dir=../objects64
 '
 
 NUM_OBJECTS=63
@@ -721,7 +733,7 @@ MIDX_BYTE_LARGE_OFFSET=$(($MIDX_OFFSET_LARGE_OFFSETS + 3))
 
 test_expect_success 'verify incorrect 64-bit offset' '
 	corrupt_midx_and_verify $MIDX_BYTE_LARGE_OFFSET "\07" objects64 \
-		"incorrect object offset"
+		"incorrect object offset" "git -C repo64 multi-pack-index verify --object-dir=../objects64"
 '
 
 test_expect_success 'setup expire tests' '
